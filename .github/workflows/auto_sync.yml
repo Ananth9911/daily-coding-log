@@ -2,8 +2,10 @@ name: ⚡ Webhook Instant Sync
 
 on:
   repository_dispatch:
-    types: [sheet_update]  # <--- This is the magic word
-  workflow_dispatch:       # Keeps the manual button as a backup
+    types: [sheet_update]
+  workflow_dispatch:
+  schedule:
+    - cron: '*/30 * * * *'
 
 jobs:
   update_portfolio:
@@ -30,6 +32,17 @@ jobs:
         run: |
           git config --global user.name "Auto-Bot"
           git config --global user.email "bot@ananth.com"
-          git add problems.json topic_breakdown.png
-          # Only commit if data actually changed
-          git diff --quiet && git diff --staged --quiet || (git commit -m "⚡ Instant Sync: New Problem Added" && git push)
+          
+          # Force Add all generated files
+          git add problems.json topic_breakdown.png README.md
+          
+          # SAFETY CHECK: Only commit if files actually changed
+          if [[ -n $(git status -s) ]]; then
+            git commit -m "⚡ Sync: Portfolio & Readme Updated"
+            
+            # THE FIX: Pull before Push to prevent conflicts
+            git pull --rebase origin main
+            git push origin main
+          else
+            echo "No changes detected. Skipping push."
+          fi
