@@ -49,7 +49,7 @@ def update_portfolio():
     except:
         print("⚠️ Date sorting skipped. Keeping original order.")
 
-    # 4. UPDATE JSON (For Website)
+    # 4. UPDATE JSON
     with open("problems.json", "w") as f:
         json.dump(problems, f, indent=2)
     print("✅ Updated problems.json")
@@ -71,19 +71,26 @@ def update_portfolio():
         plt.savefig('topic_breakdown.png', transparent=True)
         print("✅ Generated Pie Chart")
 
-    # 6. UPDATE README.md (The GitHub Homepage)
-    # This creates the table you see on your repo's front page
-    readme_content = """# 🚀 Ananth's Engineering Log
-### Automated Tracking System
+    # 6. UPDATE README.md (Total Count + Top 10)
+    total_count = len(problems)
+    
+    readme_content = f"""# 🚀 Ananth's Engineering Log
+### ⚡ Automated Career Tracker
+- **Total Problems Solved:** {total_count} 🔥
+- **System Status:** Online 🟢
+
 ![Topic Breakdown](topic_breakdown.png)
 
+### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
 """
     
-    # Add top 20 problems to README to keep it clean
-    for p in problems[:20]:
+    # ONLY TAKE THE FIRST 10
+    for p in problems[:10]:
         readme_content += f"| {p['date']} | {p['name']} | {p['topic']} | {p['source']} |\n"
+
+    readme_content += "\n[View Full Archive](https://ananth9911.github.io)"
 
     with open("README.md", "w") as f:
         f.write(readme_content)
