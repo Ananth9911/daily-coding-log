@@ -90,7 +90,7 @@ def update_portfolio():
     for p in problems[:10]:
         readme_content += f"| {p['date']} | {p['name']} | {p['topic']} | {p['source']} |\n"
 
-    readme_content += "\n[View Full Archive](https://ananth9911.github.io)"
+    readme_content += "\n[View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)"
 
     with open("README.md", "w") as f:
         f.write(readme_content)
