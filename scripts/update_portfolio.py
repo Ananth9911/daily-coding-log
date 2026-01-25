@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 from collections import Counter
 import os
+import time
+import random
 
 # ==========================================
 # 👇 PASTE YOUR GOOGLE SHEET CSV LINK HERE 👇
@@ -11,11 +13,20 @@ LIVE_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTQO1O6tuJ-Byk
 # ==========================================
 
 def update_portfolio():
-    print("🚀 Connecting to Google Sheet...")
-    
-    # 1. READ DATA
+    print("🚀 Starting Engine...")
+
+    # 1. THE CACHE BUSTER (The Magic Fix)
+    # We add a random number to the end of the URL to force a fresh download
+    if "?" in LIVE_SHEET_URL:
+        secure_url = f"{LIVE_SHEET_URL}&cb={int(time.time())}"
+    else:
+        secure_url = f"{LIVE_SHEET_URL}?cb={int(time.time())}"
+        
+    print(f"🔗 Fetching from: {secure_url}")
+
+    # 2. READ DATA
     try:
-        df = pd.read_csv(LIVE_SHEET_URL)
+        df = pd.read_csv(secure_url)
         print(f"✅ Downloaded {len(df)} rows.")
     except Exception as e:
         print(f"❌ Connection Failed: {e}")
@@ -23,7 +34,7 @@ def update_portfolio():
 
     problems = []
     
-    # 2. PROCESS & CLEAN
+    # 3. PROCESS DATA
     for index, row in df.iterrows():
         try:
             date_val = str(row['Date']).strip()
@@ -31,7 +42,8 @@ def update_portfolio():
             topic_val = str(row['Topic']).strip()
             source_val = str(row['Source (Scaler/LC)']).strip()
             
-            if date_val.lower() == 'nan' or name_val.lower() == 'nan' or date_val == '': 
+            # Strict Filter: If name is empty, SKIP
+            if name_val.lower() == 'nan' or name_val == '': 
                 continue
 
             problems.append({
@@ -43,18 +55,18 @@ def update_portfolio():
         except:
             continue
 
-    # 3. SORT (Newest First)
+    # 4. SORT
     try:
         problems.sort(key=lambda x: datetime.strptime(x['date'], "%d/%m/%Y"), reverse=True)
     except:
-        print("⚠️ Date sorting skipped. Keeping original order.")
+        print("⚠️ Date sorting skipped.")
 
-    # 4. UPDATE JSON
+    # 5. UPDATE JSON
     with open("problems.json", "w") as f:
         json.dump(problems, f, indent=2)
-    print("✅ Updated problems.json")
+    print(f"✅ Updated problems.json with {len(problems)} records.")
 
-    # 5. GENERATE PIE CHART
+    # 6. GENERATE PIE CHART
     topics = [p['topic'] for p in problems if p['topic'] != 'nan']
     topic_counts = Counter(topics)
     
@@ -71,9 +83,8 @@ def update_portfolio():
         plt.savefig('topic_breakdown.png', transparent=True)
         print("✅ Generated Pie Chart")
 
-    # 6. UPDATE README.md (Total Count + Top 10)
+    # 7. UPDATE README.md
     total_count = len(problems)
-    
     readme_content = f"""# 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
 - **Total Problems Solved:** {total_count} 🔥
@@ -85,12 +96,10 @@ def update_portfolio():
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
 """
-    
-    # ONLY TAKE THE FIRST 10
     for p in problems[:10]:
         readme_content += f"| {p['date']} | {p['name']} | {p['topic']} | {p['source']} |\n"
-
-    readme_content += "\n[View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)"
+    
+    readme_content += "\n[View Full Archive](https://ananth9911.github.io)"
 
     with open("README.md", "w") as f:
         f.write(readme_content)
