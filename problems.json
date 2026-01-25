@@ -30,12 +30,6 @@
     "source": "Scaler"
   },
   {
-    "date": "25/01/2026",
-    "name": "Least Common Multiple",
-    "topic": "Maths",
-    "source": "Scaler"
-  },
-  {
     "date": "24/01/2026",
     "name": "Unique elements from every row",
     "topic": "Array",
