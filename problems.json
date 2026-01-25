@@ -24,6 +24,12 @@
     "source": "Scaler"
   },
   {
+    "date": "25/01/2026",
+    "name": "Highest Common Factor",
+    "topic": "Maths",
+    "source": "Scaler"
+  },
+  {
     "date": "24/01/2026",
     "name": "Unique elements from every row",
     "topic": "Array",
