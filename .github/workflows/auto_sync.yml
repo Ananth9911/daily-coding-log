@@ -1,0 +1,35 @@
+name: ⚡ Webhook Instant Sync
+
+on:
+  repository_dispatch:
+    types: [sheet_update]  # <--- This is the magic word
+  workflow_dispatch:       # Keeps the manual button as a backup
+
+jobs:
+  update_portfolio:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install Dependencies
+        run: pip install pandas matplotlib requests
+
+      - name: Run Python Engine
+        run: python scripts/update_portfolio.py
+
+      - name: Commit & Push Changes
+        run: |
+          git config --global user.name "Auto-Bot"
+          git config --global user.email "bot@ananth.com"
+          git add problems.json topic_breakdown.png
+          # Only commit if data actually changed
+          git diff --quiet && git diff --staged --quiet || (git commit -m "⚡ Instant Sync: New Problem Added" && git push)
