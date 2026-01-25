@@ -1,1 +1,992 @@
-[{"date": "25/01/2026", "name": "Extracting Numbers", "topic": "String", "source": "Scaler"}, {"date": "25/01/2026", "name": "Conditional Replacement", "topic": "String", "source": "Scaler"}, {"date": "25/01/2026", "name": "Length of the Longest word", "topic": "String", "source": "Scaler"}, {"date": "25/01/2026", "name": "Lowercase letters only", "topic": "String", "source": "Scaler"}, {"date": "24/01/2026", "name": "Unique elements from every row", "topic": "Array", "source": "Scaler"}, {"date": "23/01/2026", "name": "Check If Array Is Strictly Decreasing?", "topic": "Array", "source": "Scaler"}, {"date": "23/01/2026", "name": "Print matrix row by row", "topic": "Array", "source": "Scaler"}, {"date": "23/01/2026", "name": "Even elements from every row", "topic": "Array", "source": "Scaler"}, {"date": "23/01/2026", "name": "Sum Of Ith Row", "topic": "Array", "source": "Scaler"}, {"date": "23/01/2026", "name": "Max of ith Row", "topic": "Array", "source": "Scaler"}, {"date": "23/01/2026", "name": "Wave Print (Row Wise", "topic": "Array", "source": "Scaler"}, {"date": "23/01/2026", "name": "Print matrix column by column", "topic": "Array", "source": "Scaler"}, {"date": "23/01/2026", "name": "Sum Of Jth Column", "topic": "Array", "source": "Scaler"}, {"date": "23/01/2026", "name": "Odd elements from every row", "topic": "Array", "source": "Scaler"}, {"date": "23/01/2026", "name": "sum of column in matrix", "topic": "Array", "source": "Scaler"}, {"date": "23/01/2026", "name": "Max of jth Column", "topic": "Array", "source": "Scaler"}, {"date": "23/01/2026", "name": "Multiples of each element", "topic": "Array", "source": "Scaler"}, {"date": "23/01/2026", "name": "Max Element In Matrix", "topic": "Array", "source": "Scaler"}, {"date": "23/01/2026", "name": "Sum Of Every Column", "topic": "Array", "source": "Scaler"}, {"date": "23/01/2026", "name": "Min element in Matrix", "topic": "Array", "source": "Scaler"}, {"date": "23/01/2026", "name": "Row & Column Sums", "topic": "Array", "source": "Scaler"}, {"date": "23/01/2026", "name": "Return vowels from every row", "topic": "Array", "source": "Scaler"}, {"date": "22/01/2026", "name": "Right Shift an Array", "topic": "Array", "source": "Scaler"}, {"date": "22/01/2026", "name": "Reverse in a range", "topic": "Array", "source": "Scaler"}, {"date": "22/01/2026", "name": "Frequency count", "topic": "Array", "source": "Scaler"}, {"date": "22/01/2026", "name": "Left Shift An Array", "topic": "Array", "source": "Scaler"}, {"date": "22/01/2026", "name": "Max and Min of an Array", "topic": "Array", "source": "Scaler"}, {"date": "22/01/2026", "name": "Pair Count", "topic": "Array", "source": "Scaler"}, {"date": "22/01/2026", "name": "Check if Array is Sorted", "topic": "Array", "source": "Scaler"}, {"date": "22/01/2026", "name": "Count of elements", "topic": "Array", "source": "Scaler"}, {"date": "22/01/2026", "name": "All Unique Elements", "topic": "Array", "source": "Scaler"}, {"date": "20/01/2026", "name": "All Even Numbers", "topic": "Array", "source": "Scaler"}, {"date": "20/01/2026", "name": "Increment by one - ArrayList", "topic": "Array", "source": "Scaler"}, {"date": "20/01/2026", "name": "Increment by one - In place", "topic": "Array", "source": "Scaler"}, {"date": "20/01/2026", "name": "Divisible by 5 and 7", "topic": "Array", "source": "Scaler"}, {"date": "20/01/2026", "name": "List of Positive numbers", "topic": "Array", "source": "Scaler"}, {"date": "20/01/2026", "name": "Natural Numbers - 1 to A", "topic": "Array", "source": "Scaler"}, {"date": "15/01/2026", "name": "reverse array", "topic": "Array", "source": "Scaler"}, {"date": "15/01/2026", "name": "Frequency of K in array", "topic": "Array", "source": "Scaler"}, {"date": "15/01/2026", "name": "Print 1 to N array", "topic": "Array", "source": "Scaler"}, {"date": "14/01/2026", "name": "Array shift one step right", "topic": "Array", "source": "Scaler"}, {"date": "10/01/2026", "name": "Isalnum()", "topic": "String", "source": "Scaler"}, {"date": "10/01/2026", "name": "Vowels vs Consonants - II", "topic": "String", "source": "Scaler"}, {"date": "10/01/2026", "name": "Sum the Array", "topic": "Array", "source": "Scaler"}, {"date": "10/01/2026", "name": "Print in Reverse", "topic": "Array", "source": "Scaler"}, {"date": "10/01/2026", "name": "Is X present ?", "topic": "Array", "source": "Scaler"}, {"date": "10/01/2026", "name": "Position Of Element B", "topic": "Array", "source": "Scaler"}, {"date": "09/01/2026", "name": "Print Even Odd - Function", "topic": "Basic", "source": "Scaler"}, {"date": "09/01/2026", "name": "Count of primes", "topic": "Basic", "source": "Scaler"}, {"date": "09/01/2026", "name": "Square root of a number", "topic": "Basic", "source": "Scaler"}, {"date": "09/01/2026", "name": "Power function", "topic": "Basic", "source": "Scaler"}, {"date": "09/01/2026", "name": "Copy The String", "topic": "String", "source": "Scaler"}, {"date": "09/01/2026", "name": "Count uppercase and lowercase", "topic": "String", "source": "Scaler"}, {"date": "09/01/2026", "name": "Character Pattern", "topic": "String", "source": "Scaler"}, {"date": "09/01/2026", "name": "Jewels and Stones", "topic": "String", "source": "Scaler"}, {"date": "08/01/2026", "name": "Add the numbers-Functions", "topic": "Basic", "source": "Scaler"}, {"date": "08/01/2026", "name": "Multiply the numbers-FUNCTION", "topic": "Basic", "source": "Scaler"}, {"date": "08/01/2026", "name": "Square of a number - Function", "topic": "Basic", "source": "Scaler"}, {"date": "08/01/2026", "name": "Cube It! - Function", "topic": "Basic", "source": "Scaler"}, {"date": "08/01/2026", "name": "Factorial of N - Functions", "topic": "Basic", "source": "Scaler"}, {"date": "08/01/2026", "name": "Find The Floor", "topic": "Basic", "source": "Scaler"}, {"date": "08/01/2026", "name": "Find The Ceil", "topic": "Basic", "source": "Scaler"}, {"date": "08/01/2026", "name": "Volume Of Cuboid-Function", "topic": "Basic", "source": "Scaler"}, {"date": "08/01/2026", "name": "Count Of Digits - Function", "topic": "Basic", "source": "Scaler"}, {"date": "08/01/2026", "name": "find out if a number is perfect square or not", "topic": "Basic", "source": "Scaler"}, {"date": "08/01/2026", "name": "Sum of evens!", "topic": "Basic", "source": "Scaler"}, {"date": "08/01/2026", "name": "s Perfect Square", "topic": "Basic", "source": "Scaler"}, {"date": "07/01/2026", "name": "Leading spaces pyramid", "topic": "Basic", "source": "Scaler"}, {"date": "07/01/2026", "name": "Leading spaces inverted pyramid", "topic": "Basic", "source": "Scaler"}, {"date": "05/01/2026", "name": "Hollow inverted pyramid pattern", "topic": "Basic", "source": "Scaler"}, {"date": "05/01/2026", "name": "Hollow pyramid pattern", "topic": "Basic", "source": "Scaler"}, {"date": "05/01/2026", "name": "Find Reverse Number", "topic": "Basic", "source": "Scaler"}, {"date": "05/01/2026", "name": "Check Palindrome for T numbers", "topic": "Basic", "source": "Scaler"}, {"date": "05/01/2026", "name": "First vs Last", "topic": "Basic", "source": "Scaler"}, {"date": "05/01/2026", "name": "Find Last digit for T numbers", "topic": "Basic", "source": "Scaler"}, {"date": "05/01/2026", "name": "Sum of digits for T numbers", "topic": "Basic", "source": "Scaler"}, {"date": "05/01/2026", "name": "Full pyramid", "topic": "Basic", "source": "Scaler"}, {"date": "05/01/2026", "name": "Inverted Full Pyramid", "topic": "Basic", "source": "Scaler"}, {"date": "05/01/2026", "name": "Numeric Stair Pattern", "topic": "Basic", "source": "Scaler"}, {"date": "05/01/2026", "name": "Armstrong number in a range", "topic": "Basic", "source": "Scaler"}, {"date": "05/01/2026", "name": "Inverted Numeric Pyramid", "topic": "Basic", "source": "Scaler"}, {"date": "05/01/2026", "name": "Skip Even Numbers Half Pyramid", "topic": "Basic", "source": "Scaler"}, {"date": "04/01/2026", "name": "space_pattern_1", "topic": "Basic", "source": "Scaler"}, {"date": "04/01/2026", "name": "space_pattern_2", "topic": "Basic", "source": "Scaler"}, {"date": "04/01/2026", "name": "space_pattern_3", "topic": "Basic", "source": "Scaler"}, {"date": "04/01/2026", "name": "space_pattern_4", "topic": "Basic", "source": "Scaler"}, {"date": "04/01/2026", "name": "Diamond", "topic": "Basic", "source": "Scaler"}, {"date": "04/01/2026", "name": "Armstong", "topic": "Basic", "source": "Scaler"}, {"date": "03/01/2026", "name": "Append digit to number", "topic": "Basic", "source": "Scaler"}, {"date": "03/01/2026", "name": "Stair Pattern", "topic": "Basic", "source": "Scaler"}, {"date": "03/01/2026", "name": "Inverted Half Pyramid", "topic": "Basic", "source": "Scaler"}, {"date": "03/01/2026", "name": "Print N stars", "topic": "Basic", "source": "Scaler"}, {"date": "03/01/2026", "name": "Print a matrix of stars", "topic": "Basic", "source": "Scaler"}, {"date": "03/01/2026", "name": "Arthemetic_pattern-1", "topic": "Basic", "source": "Scaler"}, {"date": "03/01/2026", "name": "Arthemetic_pattern-2", "topic": "Basic", "source": "Scaler"}, {"date": "03/01/2026", "name": "Arthemetic_pattern-3", "topic": "Basic", "source": "Scaler"}, {"date": "28/12/2025", "name": "Multiples of 4", "topic": "Basic", "source": "Scaler"}, {"date": "28/12/2025", "name": "Count the digits -Different", "topic": "Basic", "source": "Scaler"}, {"date": "28/12/2025", "name": "Print Even numbers from N to 0", "topic": "Basic", "source": "Scaler"}, {"date": "27/12/2025", "name": "Print Even number 1 to n", "topic": "Basic", "source": "Scaler"}, {"date": "27/12/2025", "name": "Print Even number n to 1", "topic": "Basic", "source": "Scaler"}, {"date": "27/12/2025", "name": "Multiple of 4", "topic": "Basic", "source": "Scaler"}, {"date": "27/12/2025", "name": "Count of Digits", "topic": "Basic", "source": "Scaler"}, {"date": "27/12/2025", "name": "Sum of Digits", "topic": "Basic", "source": "Scaler"}, {"date": "27/12/2025", "name": "Multiplication Table", "topic": "Basic", "source": "Scaler"}, {"date": "27/12/2025", "name": "Print in Range", "topic": "Basic", "source": "Scaler"}, {"date": "27/12/2025", "name": "Even Game", "topic": "Basic", "source": "Scaler"}, {"date": "26/12/2025", "name": "Max of three", "topic": "Basic", "source": "Scaler"}, {"date": "26/12/2025", "name": "Which triangle", "topic": "Basic", "source": "Scaler"}, {"date": "26/12/2025", "name": "Fizz Buzz", "topic": "Basic", "source": "Scaler"}, {"date": "26/12/2025", "name": "Divisible By 5?", "topic": "Basic", "source": "Scaler"}, {"date": "26/12/2025", "name": "Categorise the number - Nested if-else", "topic": "Basic", "source": "Scaler"}, {"date": "26/12/2025", "name": "Max of two", "topic": "Basic", "source": "Scaler"}, {"date": "26/12/2025", "name": "Min of two", "topic": "Basic", "source": "Scaler"}, {"date": "26/12/2025", "name": "Percentage and Grade", "topic": "Basic", "source": "Scaler"}, {"date": "26/12/2025", "name": "Angles Of Valid Triangle", "topic": "Basic", "source": "Scaler"}, {"date": "26/12/2025", "name": "Music Certification", "topic": "Basic", "source": "Scaler"}, {"date": "26/12/2025", "name": "Leap Year III", "topic": "Basic", "source": "Scaler"}, {"date": "26/12/2025", "name": "Coding Rating", "topic": "Basic", "source": "Scaler"}, {"date": "26/12/2025", "name": "From top to down", "topic": "Basic", "source": "Scaler"}, {"date": "26/12/2025", "name": "From down to top", "topic": "Basic", "source": "Scaler"}, {"date": "26/12/2025", "name": "Summation Game", "topic": "Basic", "source": "Scaler"}, {"date": "26/12/2025", "name": "Last Digit Of A Number", "topic": "Basic", "source": "Scaler"}, {"date": "26/12/2025", "name": "Print All Digits - From Right To Left", "topic": "Basic", "source": "Scaler"}, {"date": "25/12/2025", "name": "Check even/odd", "topic": "Basic", "source": "Scaler"}, {"date": "25/12/2025", "name": "Categories the number", "topic": "Basic", "source": "Scaler"}, {"date": "25/12/2025", "name": "Situation Of Number", "topic": "Basic", "source": "Scaler"}, {"date": "25/12/2025", "name": "Categorise Age Of A Person", "topic": "Basic", "source": "Scaler"}, {"date": "25/12/2025", "name": "Divisible by 2 numbers", "topic": "Basic", "source": "Scaler"}, {"date": "25/12/2025", "name": "Calculate Attendance", "topic": "Basic", "source": "Scaler"}, {"date": "25/12/2025", "name": "Situation Of Person", "topic": "Basic", "source": "Scaler"}, {"date": "24/12/2025", "name": "Overflow multiplication", "topic": "Basic", "source": "Scaler"}, {"date": "24/12/2025", "name": "Logical Printing", "topic": "Basic", "source": "Scaler"}, {"date": "24/12/2025", "name": "Operator Printing", "topic": "Basic", "source": "Scaler"}, {"date": "24/12/2025", "name": "Modify-X", "topic": "Basic", "source": "Scaler"}, {"date": "24/12/2025", "name": "Find New Volume", "topic": "Basic", "source": "Scaler"}, {"date": "24/12/2025", "name": "Check If One Condition is True", "topic": "Basic", "source": "Scaler"}, {"date": "24/12/2025", "name": "Check If All Conditions are True", "topic": "Basic", "source": "Scaler"}, {"date": "23/12/2025", "name": "Remaining Bake Time", "topic": "Basic", "source": "Scaler"}, {"date": "23/12/2025", "name": "Sum 3", "topic": "Basic", "source": "Scaler"}, {"date": "23/12/2025", "name": "Problem With Younger Brother", "topic": "Basic", "source": "Scaler"}, {"date": "23/12/2025", "name": "Preparation Time", "topic": "Basic", "source": "Scaler"}, {"date": "23/12/2025", "name": "Number of bills", "topic": "Basic", "source": "Scaler"}, {"date": "23/12/2025", "name": "Calculate Currency Change", "topic": "Basic", "source": "Scaler"}, {"date": "23/12/2025", "name": "Area Of Rectangle", "topic": "Basic", "source": "Scaler"}, {"date": "22/12/2025", "name": "Q1. Hello World ! - 2", "topic": "Basic", "source": "Scaler"}, {"date": "22/12/2025", "name": "Q2. Getting Started - 1", "topic": "Basic", "source": "Scaler"}, {"date": "22/12/2025", "name": "Q3. Hello World ! - 4", "topic": "Basic", "source": "Scaler"}, {"date": "22/12/2025", "name": "Odd numbers", "topic": "Basic", "source": "Scaler"}, {"date": "22/12/2025", "name": "Even Numbers", "topic": "Basic", "source": "Scaler"}, {"date": "22/12/2025", "name": "Print Table of 3", "topic": "Basic", "source": "Scaler"}, {"date": "22/12/2025", "name": "Print Rectangle", "topic": "Basic", "source": "Scaler"}, {"date": "22/12/2025", "name": "Print Rhombus", "topic": "Basic", "source": "Scaler"}, {"date": "22/12/2025", "name": "Print Table of 3 Detailed", "topic": "Basic", "source": "Scaler"}, {"date": "21/12/2025", "name": "Print C", "topic": "Basic", "source": "Scaler"}, {"date": "21/12/2025", "name": "Print O", "topic": "Basic", "source": "Scaler"}, {"date": "21/12/2025", "name": "Print Z", "topic": "Basic", "source": "Scaler"}, {"date": "21/12/2025", "name": "Print S", "topic": "Basic", "source": "Scaler"}, {"date": "21/12/2025", "name": "Print Request", "topic": "Basic", "source": "Scaler"}, {"date": "15/12/2025", "name": "Print the first five letters of the English alphabet i.e. A, B, C, D and E.", "topic": "Basic", "source": "Scaler"}, {"date": "15/12/2025", "name": "Hello World !", "topic": "Basic", "source": "Scaler"}, {"date": "15/12/2025", "name": "Simple Maths", "topic": "Basic", "source": "Scaler"}, {"date": "15/12/2025", "name": "Manual pattern printing - 1", "topic": "Basic", "source": "Scaler"}, {"date": "15/12/2025", "name": "Manual pattern printing - 2", "topic": "Basic", "source": "Scaler"}]
+[
+  {
+    "date": "26/01/2026",
+    "name": "Calculus",
+    "topic": "Maths",
+    "source": "Scaler"
+  },
+  {
+    "date": "25/01/2026",
+    "name": "Extracting Numbers",
+    "topic": "String",
+    "source": "Scaler"
+  },
+  {
+    "date": "25/01/2026",
+    "name": "Conditional Replacement",
+    "topic": "String",
+    "source": "Scaler"
+  },
+  {
+    "date": "25/01/2026",
+    "name": "Length of the Longest word",
+    "topic": "String",
+    "source": "Scaler"
+  },
+  {
+    "date": "25/01/2026",
+    "name": "Lowercase letters only",
+    "topic": "String",
+    "source": "Scaler"
+  },
+  {
+    "date": "24/01/2026",
+    "name": "Unique elements from every row",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "23/01/2026",
+    "name": "Check If Array Is Strictly Decreasing?",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "23/01/2026",
+    "name": "Print matrix row by row",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "23/01/2026",
+    "name": "Even elements from every row",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "23/01/2026",
+    "name": "Sum Of Ith Row",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "23/01/2026",
+    "name": "Max of ith Row",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "23/01/2026",
+    "name": "Wave Print (Row Wise",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "23/01/2026",
+    "name": "Print matrix column by column",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "23/01/2026",
+    "name": "Sum Of Jth Column",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "23/01/2026",
+    "name": "Odd elements from every row",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "23/01/2026",
+    "name": "sum of column in matrix",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "23/01/2026",
+    "name": "Max of jth Column",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "23/01/2026",
+    "name": "Multiples of each element",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "23/01/2026",
+    "name": "Max Element In Matrix",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "23/01/2026",
+    "name": "Sum Of Every Column",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "23/01/2026",
+    "name": "Min element in Matrix",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "23/01/2026",
+    "name": "Row & Column Sums",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "23/01/2026",
+    "name": "Return vowels from every row",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "22/01/2026",
+    "name": "Right Shift an Array",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "22/01/2026",
+    "name": "Reverse in a range",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "22/01/2026",
+    "name": "Frequency count",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "22/01/2026",
+    "name": "Left Shift An Array",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "22/01/2026",
+    "name": "Max and Min of an Array",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "22/01/2026",
+    "name": "Pair Count",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "22/01/2026",
+    "name": "Check if Array is Sorted",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "22/01/2026",
+    "name": "Count of elements",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "22/01/2026",
+    "name": "All Unique Elements",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "20/01/2026",
+    "name": "All Even Numbers",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "20/01/2026",
+    "name": "Increment by one - ArrayList",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "20/01/2026",
+    "name": "Increment by one - In place",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "20/01/2026",
+    "name": "Divisible by 5 and 7",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "20/01/2026",
+    "name": "List of Positive numbers",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "20/01/2026",
+    "name": "Natural Numbers - 1 to A",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "15/01/2026",
+    "name": "reverse array",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "15/01/2026",
+    "name": "Frequency of K in array",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "15/01/2026",
+    "name": "Print 1 to N array",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "14/01/2026",
+    "name": "Array shift one step right",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "10/01/2026",
+    "name": "Isalnum()",
+    "topic": "String",
+    "source": "Scaler"
+  },
+  {
+    "date": "10/01/2026",
+    "name": "Vowels vs Consonants - II",
+    "topic": "String",
+    "source": "Scaler"
+  },
+  {
+    "date": "10/01/2026",
+    "name": "Sum the Array",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "10/01/2026",
+    "name": "Print in Reverse",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "10/01/2026",
+    "name": "Is X present ?",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "10/01/2026",
+    "name": "Position Of Element B",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "09/01/2026",
+    "name": "Print Even Odd - Function",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "09/01/2026",
+    "name": "Count of primes",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "09/01/2026",
+    "name": "Square root of a number",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "09/01/2026",
+    "name": "Power function",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "09/01/2026",
+    "name": "Copy The String",
+    "topic": "String",
+    "source": "Scaler"
+  },
+  {
+    "date": "09/01/2026",
+    "name": "Count uppercase and lowercase",
+    "topic": "String",
+    "source": "Scaler"
+  },
+  {
+    "date": "09/01/2026",
+    "name": "Character Pattern",
+    "topic": "String",
+    "source": "Scaler"
+  },
+  {
+    "date": "09/01/2026",
+    "name": "Jewels and Stones",
+    "topic": "String",
+    "source": "Scaler"
+  },
+  {
+    "date": "08/01/2026",
+    "name": "Add the numbers-Functions",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "08/01/2026",
+    "name": "Multiply the numbers-FUNCTION",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "08/01/2026",
+    "name": "Square of a number - Function",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "08/01/2026",
+    "name": "Cube It! - Function",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "08/01/2026",
+    "name": "Factorial of N - Functions",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "08/01/2026",
+    "name": "Find The Floor",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "08/01/2026",
+    "name": "Find The Ceil",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "08/01/2026",
+    "name": "Volume Of Cuboid-Function",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "08/01/2026",
+    "name": "Count Of Digits - Function",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "08/01/2026",
+    "name": "find out if a number is perfect square or not",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "08/01/2026",
+    "name": "Sum of evens!",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "08/01/2026",
+    "name": "s Perfect Square",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "07/01/2026",
+    "name": "Leading spaces pyramid",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "07/01/2026",
+    "name": "Leading spaces inverted pyramid",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "05/01/2026",
+    "name": "Hollow inverted pyramid pattern",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "05/01/2026",
+    "name": "Hollow pyramid pattern",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "05/01/2026",
+    "name": "Find Reverse Number",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "05/01/2026",
+    "name": "Check Palindrome for T numbers",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "05/01/2026",
+    "name": "First vs Last",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "05/01/2026",
+    "name": "Find Last digit for T numbers",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "05/01/2026",
+    "name": "Sum of digits for T numbers",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "05/01/2026",
+    "name": "Full pyramid",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "05/01/2026",
+    "name": "Inverted Full Pyramid",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "05/01/2026",
+    "name": "Numeric Stair Pattern",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "05/01/2026",
+    "name": "Armstrong number in a range",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "05/01/2026",
+    "name": "Inverted Numeric Pyramid",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "05/01/2026",
+    "name": "Skip Even Numbers Half Pyramid",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "04/01/2026",
+    "name": "space_pattern_1",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "04/01/2026",
+    "name": "space_pattern_2",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "04/01/2026",
+    "name": "space_pattern_3",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "04/01/2026",
+    "name": "space_pattern_4",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "04/01/2026",
+    "name": "Diamond",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "04/01/2026",
+    "name": "Armstong",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "03/01/2026",
+    "name": "Append digit to number",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "03/01/2026",
+    "name": "Stair Pattern",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "03/01/2026",
+    "name": "Inverted Half Pyramid",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "03/01/2026",
+    "name": "Print N stars",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "03/01/2026",
+    "name": "Print a matrix of stars",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "03/01/2026",
+    "name": "Arthemetic_pattern-1",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "03/01/2026",
+    "name": "Arthemetic_pattern-2",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "03/01/2026",
+    "name": "Arthemetic_pattern-3",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "28/12/2025",
+    "name": "Multiples of 4",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "28/12/2025",
+    "name": "Count the digits -Different",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "28/12/2025",
+    "name": "Print Even numbers from N to 0",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "27/12/2025",
+    "name": "Print Even number 1 to n",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "27/12/2025",
+    "name": "Print Even number n to 1",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "27/12/2025",
+    "name": "Multiple of 4",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "27/12/2025",
+    "name": "Count of Digits",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "27/12/2025",
+    "name": "Sum of Digits",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "27/12/2025",
+    "name": "Multiplication Table",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "27/12/2025",
+    "name": "Print in Range",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "27/12/2025",
+    "name": "Even Game",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "26/12/2025",
+    "name": "Max of three",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "26/12/2025",
+    "name": "Which triangle",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "26/12/2025",
+    "name": "Fizz Buzz",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "26/12/2025",
+    "name": "Divisible By 5?",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "26/12/2025",
+    "name": "Categorise the number - Nested if-else",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "26/12/2025",
+    "name": "Max of two",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "26/12/2025",
+    "name": "Min of two",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "26/12/2025",
+    "name": "Percentage and Grade",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "26/12/2025",
+    "name": "Angles Of Valid Triangle",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "26/12/2025",
+    "name": "Music Certification",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "26/12/2025",
+    "name": "Leap Year III",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "26/12/2025",
+    "name": "Coding Rating",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "26/12/2025",
+    "name": "From top to down",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "26/12/2025",
+    "name": "From down to top",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "26/12/2025",
+    "name": "Summation Game",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "26/12/2025",
+    "name": "Last Digit Of A Number",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "26/12/2025",
+    "name": "Print All Digits - From Right To Left",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "25/12/2025",
+    "name": "Check even/odd",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "25/12/2025",
+    "name": "Categories the number",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "25/12/2025",
+    "name": "Situation Of Number",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "25/12/2025",
+    "name": "Categorise Age Of A Person",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "25/12/2025",
+    "name": "Divisible by 2 numbers",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "25/12/2025",
+    "name": "Calculate Attendance",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "25/12/2025",
+    "name": "Situation Of Person",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "24/12/2025",
+    "name": "Overflow multiplication",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "24/12/2025",
+    "name": "Logical Printing",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "24/12/2025",
+    "name": "Operator Printing",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "24/12/2025",
+    "name": "Modify-X",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "24/12/2025",
+    "name": "Find New Volume",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "24/12/2025",
+    "name": "Check If One Condition is True",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "24/12/2025",
+    "name": "Check If All Conditions are True",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "23/12/2025",
+    "name": "Remaining Bake Time",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "23/12/2025",
+    "name": "Sum 3",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "23/12/2025",
+    "name": "Problem With Younger Brother",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "23/12/2025",
+    "name": "Preparation Time",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "23/12/2025",
+    "name": "Number of bills",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "23/12/2025",
+    "name": "Calculate Currency Change",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "23/12/2025",
+    "name": "Area Of Rectangle",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "22/12/2025",
+    "name": "Q1. Hello World ! - 2",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "22/12/2025",
+    "name": "Q2. Getting Started - 1",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "22/12/2025",
+    "name": "Q3. Hello World ! - 4",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "22/12/2025",
+    "name": "Odd numbers",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "22/12/2025",
+    "name": "Even Numbers",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "22/12/2025",
+    "name": "Print Table of 3",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "22/12/2025",
+    "name": "Print Rectangle",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "22/12/2025",
+    "name": "Print Rhombus",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "22/12/2025",
+    "name": "Print Table of 3 Detailed",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "21/12/2025",
+    "name": "Print C",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "21/12/2025",
+    "name": "Print O",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "21/12/2025",
+    "name": "Print Z",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "21/12/2025",
+    "name": "Print S",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "21/12/2025",
+    "name": "Print Request",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "15/12/2025",
+    "name": "Print the first five letters of the English alphabet i.e. A, B, C, D and E.",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "15/12/2025",
+    "name": "Hello World !",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "15/12/2025",
+    "name": "Simple Maths",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "15/12/2025",
+    "name": "Manual pattern printing - 1",
+    "topic": "Basic",
+    "source": "Scaler"
+  },
+  {
+    "date": "15/12/2025",
+    "name": "Manual pattern printing - 2",
+    "topic": "Basic",
+    "source": "Scaler"
+  }
+]
