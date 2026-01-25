@@ -6,63 +6,61 @@ from collections import Counter
 import os
 
 # ==========================================
-# 👇 PASTE YOUR GOOGLE SHEET LINK HERE 👇
+# 👇 PASTE YOUR GOOGLE SHEET CSV LINK HERE 👇
 LIVE_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTQO1O6tuJ-BykB1-96MjCERmbqV205_0QFGRT6s5h1opfAFygWJb98gBvvuXLBKLb7-LG8Q1Uh0MMI/pub?gid=2101622849&single=true&output=csv" 
 # ==========================================
 
 def update_portfolio():
-    print("🚀 Connecting to Google Cloud Sheet...")
+    print("🚀 Connecting to Google Sheet...")
     
-    # 1. READ THE LIVE DATA
+    # 1. READ DATA
     try:
-        # This reads the CSV directly from the URL
         df = pd.read_csv(LIVE_SHEET_URL)
-        print(f"✅ Connection Successful. Found {len(df)} rows.")
+        print(f"✅ Downloaded {len(df)} rows.")
     except Exception as e:
-        print(f"❌ Error reading Sheet: {e}")
+        print(f"❌ Connection Failed: {e}")
         return
 
     problems = []
     
-    # 2. PROCESS DATA (Using your exact column names)
+    # 2. PROCESS & CLEAN
     for index, row in df.iterrows():
         try:
-            # Skip empty rows
             date_val = str(row['Date']).strip()
             name_val = str(row['Problem Name']).strip()
+            topic_val = str(row['Topic']).strip()
+            source_val = str(row['Source (Scaler/LC)']).strip()
             
-            if date_val == 'nan' or name_val == 'nan' or date_val == '': 
+            if date_val.lower() == 'nan' or name_val.lower() == 'nan' or date_val == '': 
                 continue
 
             problems.append({
                 "date": date_val,
                 "name": name_val,
-                "topic": str(row['Topic']).strip(),
-                "source": str(row['Source (Scaler/LC)']).strip()
+                "topic": topic_val,
+                "source": source_val
             })
         except:
             continue
 
-    # 3. SORT BY DATE
+    # 3. SORT (Newest First)
     try:
-        # Assuming date format is DD/MM/YYYY or similar
         problems.sort(key=lambda x: datetime.strptime(x['date'], "%d/%m/%Y"), reverse=True)
     except:
-        print("⚠️ Date format warning (Expected DD/MM/YYYY). Sorting as text.")
+        print("⚠️ Date sorting skipped. Keeping original order.")
 
-    # 4. SAVE TO JSON (This updates the website content)
+    # 4. UPDATE JSON (For Website)
     with open("problems.json", "w") as f:
         json.dump(problems, f, indent=2)
-    print(f"✅ Saved {len(problems)} problems to database.")
+    print("✅ Updated problems.json")
 
-    # 5. GENERATE PIE CHART IMAGE
+    # 5. GENERATE PIE CHART
     topics = [p['topic'] for p in problems if p['topic'] != 'nan']
     topic_counts = Counter(topics)
     
     if topic_counts:
         plt.figure(figsize=(10, 6))
         plt.style.use('dark_background')
-        
         most_common = topic_counts.most_common(8)
         labels = [x[0] for x in most_common]
         sizes = [x[1] for x in most_common]
@@ -70,10 +68,26 @@ def update_portfolio():
         
         plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140, colors=colors[:len(labels)])
         plt.title('Technical Focus', color='white')
-        
-        # Save explicitly to the root directory
         plt.savefig('topic_breakdown.png', transparent=True)
-        print("✅ Generated Pie Chart.")
+        print("✅ Generated Pie Chart")
+
+    # 6. UPDATE README.md (The GitHub Homepage)
+    # This creates the table you see on your repo's front page
+    readme_content = """# 🚀 Ananth's Engineering Log
+### Automated Tracking System
+![Topic Breakdown](topic_breakdown.png)
+
+| Date | Problem Name | Topic | Source |
+| :--- | :--- | :--- | :--- |
+"""
+    
+    # Add top 20 problems to README to keep it clean
+    for p in problems[:20]:
+        readme_content += f"| {p['date']} | {p['name']} | {p['topic']} | {p['source']} |\n"
+
+    with open("README.md", "w") as f:
+        f.write(readme_content)
+    print("✅ Updated README.md")
 
 if __name__ == "__main__":
     update_portfolio()
