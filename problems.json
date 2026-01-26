@@ -1,6 +1,12 @@
 [
   {
     "date": "26/01/2026",
+    "name": "Matrix Subtraction",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "26/01/2026",
     "name": "Rotate Matrix",
     "topic": "Array",
     "source": "Scaler"
