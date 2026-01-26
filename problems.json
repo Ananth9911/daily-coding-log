@@ -8,7 +8,13 @@
   {
     "date": "26/01/2026",
     "name": "Add the matrices",
-    "topic": "Maths",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "26/01/2026",
+    "name": "Square Matrix Transpose",
+    "topic": "Array",
     "source": "Scaler"
   },
   {
