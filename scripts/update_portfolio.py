@@ -15,8 +15,7 @@ LIVE_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTQO1O6tuJ-Byk
 def update_portfolio():
     print("🚀 Starting Engine...")
 
-    # 1. THE CACHE BUSTER (The Magic Fix)
-    # We add a random number to the end of the URL to force a fresh download
+    # 1. THE CACHE BUSTER
     if "?" in LIVE_SHEET_URL:
         secure_url = f"{LIVE_SHEET_URL}&cb={int(time.time())}"
     else:
@@ -42,7 +41,7 @@ def update_portfolio():
             topic_val = str(row['Topic']).strip()
             source_val = str(row['Source (Scaler/LC)']).strip()
             
-            # Strict Filter: If name is empty, SKIP
+            # Strict Filter: If name is empty or 'nan', SKIP
             if name_val.lower() == 'nan' or name_val == '': 
                 continue
 
@@ -55,11 +54,17 @@ def update_portfolio():
         except:
             continue
 
-    # 4. SORT
+    # 4. SORTING LOGIC (UPDATED FOR LATEST-FIRST)
     try:
+        # STEP A: Reverse the list first. 
+        # This ensures that for problems on the SAME day, the one you added LAST (bottom of sheet) comes FIRST.
+        problems.reverse()
+
+        # STEP B: Sort by Date Descending.
+        # Python's sort is "Stable", so it keeps the relative order from Step A for same-day items.
         problems.sort(key=lambda x: datetime.strptime(x['date'], "%d/%m/%Y"), reverse=True)
     except:
-        print("⚠️ Date sorting skipped.")
+        print("⚠️ Date sorting skipped (Check date format in Sheet).")
 
     # 5. UPDATE JSON
     with open("problems.json", "w") as f:
@@ -70,9 +75,10 @@ def update_portfolio():
     topics = [p['topic'] for p in problems if p['topic'] != 'nan']
     topic_counts = Counter(topics)
     
+    plt.figure(figsize=(10, 6))
+    plt.style.use('dark_background')
+
     if topic_counts:
-        plt.figure(figsize=(10, 6))
-        plt.style.use('dark_background')
         most_common = topic_counts.most_common(8)
         labels = [x[0] for x in most_common]
         sizes = [x[1] for x in most_common]
@@ -80,8 +86,13 @@ def update_portfolio():
         
         plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140, colors=colors[:len(labels)])
         plt.title('Technical Focus', color='white')
-        plt.savefig('topic_breakdown.png', transparent=True)
-        print("✅ Generated Pie Chart")
+    else:
+        plt.text(0.5, 0.5, "No Data Logged Yet", ha='center', va='center', color='white', fontsize=14)
+        plt.title('Technical Focus (Waiting for Logs)', color='white')
+
+    plt.savefig('topic_breakdown.png', transparent=True)
+    plt.close()
+    print("✅ Generated Pie Chart")
 
     # 7. UPDATE README.md
     total_count = len(problems)
@@ -96,8 +107,11 @@ def update_portfolio():
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
 """
-    for p in problems[:10]:
-        readme_content += f"| {p['date']} | {p['name']} | {p['topic']} | {p['source']} |\n"
+    if total_count > 0:
+        for p in problems[:10]:
+            readme_content += f"| {p['date']} | {p['name']} | {p['topic']} | {p['source']} |\n"
+    else:
+        readme_content += "| - | No logs found yet | - | - |\n"
     
     readme_content += "\n[View Full Archive](https://ananth9911.github.io)"
 
