@@ -24,6 +24,12 @@
     "source": "Scaler"
   },
   {
+    "date": "26/01/2026",
+    "name": "Main Diagonal Sum",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
     "date": "25/01/2026",
     "name": "Extracting Numbers",
     "topic": "String",

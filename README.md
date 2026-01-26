@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 169 🔥
+- **Total Problems Solved:** 170 🔥
 - **System Status:** Online 🟢
 
 ![Topic Breakdown](topic_breakdown.png)
@@ -12,11 +12,11 @@
 | 26/01/2026 | Add the matrices | Array | Scaler |
 | 26/01/2026 | Square Matrix Transpose | Array | Scaler |
 | 26/01/2026 | Matrix Transpose - Rectangular | Array | Scaler |
+| 26/01/2026 | Main Diagonal Sum | Array | Scaler |
 | 25/01/2026 | Extracting Numbers | String | Scaler |
 | 25/01/2026 | Conditional Replacement | String | Scaler |
 | 25/01/2026 | Length of the Longest word | String | Scaler |
 | 25/01/2026 | Lowercase letters only | String | Scaler |
 | 25/01/2026 | Highest Common Factor | Maths | Scaler |
-| 24/01/2026 | Unique elements from every row | Array | Scaler |
 
 [View Full Archive](https://ananth9911.github.io)
