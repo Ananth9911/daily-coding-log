@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 172 🔥
+- **Total Problems Solved:** 173 🔥
 - **System Status:** Online 🟢
 
 ![Topic Breakdown](topic_breakdown.png)
@@ -15,8 +15,8 @@
 | 26/01/2026 | Main Diagonal Sum | Array | Scaler |
 | 26/01/2026 | Is It Identity Matrix? | Array | Scaler |
 | 26/01/2026 | Rotate Matrix | Array | Scaler |
+| 26/01/2026 | Matrix Subtraction | Array | Scaler |
 | 25/01/2026 | Extracting Numbers | String | Scaler |
 | 25/01/2026 | Conditional Replacement | String | Scaler |
-| 25/01/2026 | Length of the Longest word | String | Scaler |
 
 [View Full Archive](https://ananth9911.github.io)
