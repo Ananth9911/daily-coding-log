@@ -1,6 +1,12 @@
 [
   {
     "date": "26/01/2026",
+    "name": "Check if a String Is an Acronym of Word",
+    "topic": "String",
+    "source": "Scaler"
+  },
+  {
+    "date": "26/01/2026",
     "name": "String operations",
     "topic": "String",
     "source": "Scaler"
