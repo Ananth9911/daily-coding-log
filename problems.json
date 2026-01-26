@@ -30,6 +30,12 @@
     "source": "Scaler"
   },
   {
+    "date": "26/01/2026",
+    "name": "Is It Identity Matrix?",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
     "date": "25/01/2026",
     "name": "Extracting Numbers",
     "topic": "String",
