@@ -1,6 +1,12 @@
 [
   {
     "date": "27/01/2026",
+    "name": "Time to equality",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "27/01/2026",
     "name": "Max Min of an Array",
     "topic": "Array",
     "source": "Scaler"
