@@ -1,6 +1,12 @@
 [
   {
-    "date": "29/01/2026",
+    "date": "28/01/2026",
+    "name": "Reverse in a range",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "28/01/2026",
     "name": "elements",
     "topic": "Array",
     "source": "Scaler"
