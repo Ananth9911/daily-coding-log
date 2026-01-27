@@ -1,5 +1,11 @@
 [
   {
+    "date": "29/01/2026",
+    "name": "elements",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
     "date": "28/01/2026",
     "name": "Linear Search - Multiple Occurences",
     "topic": "Array",
