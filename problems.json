@@ -1,5 +1,11 @@
 [
   {
+    "date": "27/01/2026",
+    "name": "Good Pair",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
     "date": "26/01/2026",
     "name": "Longest Common Prefix",
     "topic": "String",
