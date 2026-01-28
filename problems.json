@@ -1,5 +1,11 @@
 [
   {
+    "date": "29/01/2026",
+    "name": "Rotation of array - O(N)",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
     "date": "28/01/2026",
     "name": "Second Largest",
     "topic": "Array",
