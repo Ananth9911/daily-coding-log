@@ -1,6 +1,12 @@
 [
   {
     "date": "29/01/2026",
+    "name": "Range Sum Query",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "29/01/2026",
     "name": "Rotation of array - O(N)",
     "topic": "Array",
     "source": "Scaler"
