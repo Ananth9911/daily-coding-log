@@ -7,6 +7,12 @@
   },
   {
     "date": "29/01/2026",
+    "name": "Sum of Even indexed elements in a range",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "29/01/2026",
     "name": "Range Sum Query",
     "topic": "Array",
     "source": "Scaler"
