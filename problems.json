@@ -1,5 +1,11 @@
 [
   {
+    "date": "30/01/2026",
+    "name": "Equilibrium index of an array",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
     "date": "29/01/2026",
     "name": "Carry Forward - Special Subsequences",
     "topic": "Array",
