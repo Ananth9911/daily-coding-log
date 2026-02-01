@@ -3,6 +3,13 @@
 - **Total Problems Solved:** 189 🔥
 - **System Status:** Online 🟢
 
+### 🎓 Curriculum Progress
+- **Foundation (Intro)** `[██████████]` **100%** *(25/25)*
+- **DSA Core** `[░░░░░░░░░░]` **4%** *(5/110)*
+- **System Design (SQL/HLD)** `[░░░░░░░░░░]` **8%** *(3/37)*
+- **LLD & Projects** `[░░░░░░░░░░]` **0%** *(0/102)*
+
+
 ![Topic Breakdown](topic_breakdown.png)
 
 ### ⏳ Latest 10 Solved
@@ -19,4 +26,4 @@
 | 28/01/2026 | elements | Array | Scaler |
 | 28/01/2026 | Linear Search - Multiple Occurences | Array | Scaler |
 
-[View Full Archive](https://ananth9911.github.io)
+[View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
