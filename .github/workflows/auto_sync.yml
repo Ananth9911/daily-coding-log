@@ -30,8 +30,8 @@ jobs:
 
       - name: Commit & Push Changes
         run: |
-          git config --global user.name "Auto-Bot"
-          git config --global user.email "bot@ananth.com"
+          git config --global user.name "Ananth9911"
+          git config --global user.email "ananthj43@gmail.com"
           
           # Force Add all generated files
           git add problems.json topic_breakdown.png README.md
