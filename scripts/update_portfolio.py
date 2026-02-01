@@ -8,22 +8,79 @@ import time
 import random
 
 # ==========================================
-# 👇 PASTE YOUR GOOGLE SHEET CSV LINK HERE 👇
-LIVE_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTQO1O6tuJ-BykB1-96MjCERmbqV205_0QFGRT6s5h1opfAFygWJb98gBvvuXLBKLb7-LG8Q1Uh0MMI/pub?gid=2101622849&single=true&output=csv" 
+# 👇 CONFIGURATION SECTION 👇
+# 1. YOUR PROBLEMS CSV (Keep existing)
+LIVE_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTQO1O6tuJ-BykB1-96MjCERmbqV205_0QFGRT6s5h1opfAFygWJb98gBvvuXLBKLb7-LG8Q1Uh0MMI/pub?gid=2101622849&single=true&output=csv"
+
+# 2. YOUR MASTER PLAN CSV (Paste the NEW link here)
+# Go to File > Share > Publish to Web > Select "Master_PLAN" > Select "CSV"
+PLAN_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTQO1O6tuJ-BykB1-96MjCERmbqV205_0QFGRT6s5h1opfAFygWJb98gBvvuXLBKLb7-LG8Q1Uh0MMI/pub?gid=0&single=true&output=csv"
 # ==========================================
+
+def make_progress_bar(percent, length=10):
+    # Generates a text bar like: [███████░░░]
+    filled_length = int(length * percent // 100)
+    bar = '█' * filled_length + '░' * (length - filled_length)
+    return f"`[{bar}]` **{int(percent)}%**"
+
+def get_curriculum_stats():
+    # Fetches the Master Plan and calculates progress
+    print("📊 Fetching Curriculum Data...")
+    try:
+        if "PASTE_YOUR" in PLAN_SHEET_URL:
+            return "*(Configure PLAN_SHEET_URL in scripts/update_portfolio.py to see progress)*"
+            
+        # Cache Buster
+        url = f"{PLAN_SHEET_URL}&cb={int(time.time())}" if "?" in PLAN_SHEET_URL else f"{PLAN_SHEET_URL}?cb={int(time.time())}"
+        
+        df = pd.read_csv(url)
+        print(f"✅ Loaded Plan: {len(df)} rows")
+        
+        # Define Modules to Track (Matches your Excel keywords)
+        modules = {
+            "Foundation (Intro)": ["Intro"],
+            "DSA Core": ["DSA"],
+            "System Design (SQL/HLD)": ["SQL", "HLD", "Database"],
+            "LLD & Projects": ["LLD"]
+        }
+        
+        stats_md = ""
+        
+        for name, keywords in modules.items():
+            # Filter rows belonging to this module
+            # We look at 'Phase' or 'Module' column for keywords
+            mask = df['Module'].astype(str).apply(lambda x: any(k in x for k in keywords)) | \
+                   df['Phase'].astype(str).apply(lambda x: any(k in x for k in keywords))
+            
+            subset = df[mask]
+            total = len(subset)
+            
+            if total == 0: 
+                continue
+            
+            # Count "Done" status
+            done = len(subset[subset['Status'].astype(str).str.strip() == 'Done'])
+            percent = (done / total) * 100 if total > 0 else 0
+            
+            bar = make_progress_bar(percent)
+            stats_md += f"- **{name}** {bar} *({done}/{total})*\n"
+            
+        return stats_md
+    except Exception as e:
+        print(f"⚠️ Plan Sync Failed: {e}")
+        return "*(System Error: Could not load Plan)*"
 
 def update_portfolio():
     print("🚀 Starting Engine...")
 
-    # 1. THE CACHE BUSTER
+    # --- PART 1: FETCH PROBLEM LOGS ---
     if "?" in LIVE_SHEET_URL:
         secure_url = f"{LIVE_SHEET_URL}&cb={int(time.time())}"
     else:
         secure_url = f"{LIVE_SHEET_URL}?cb={int(time.time())}"
         
-    print(f"🔗 Fetching from: {secure_url}")
+    print(f"🔗 Fetching Problems from: {secure_url}")
 
-    # 2. READ DATA
     try:
         df = pd.read_csv(secure_url)
         print(f"✅ Downloaded {len(df)} rows.")
@@ -33,7 +90,7 @@ def update_portfolio():
 
     problems = []
     
-    # 3. PROCESS DATA
+    # --- PART 2: PROCESS PROBLEMS ---
     for index, row in df.iterrows():
         try:
             date_val = str(row['Date']).strip()
@@ -54,24 +111,19 @@ def update_portfolio():
         except:
             continue
 
-    # 4. SORTING LOGIC (UPDATED FOR LATEST-FIRST)
+    # Sorting Logic (Latest First)
     try:
-        # STEP A: Reverse the list first. 
-        # This ensures that for problems on the SAME day, the one you added LAST (bottom of sheet) comes FIRST.
         problems.reverse()
-
-        # STEP B: Sort by Date Descending.
-        # Python's sort is "Stable", so it keeps the relative order from Step A for same-day items.
         problems.sort(key=lambda x: datetime.strptime(x['date'], "%d/%m/%Y"), reverse=True)
     except:
         print("⚠️ Date sorting skipped (Check date format in Sheet).")
 
-    # 5. UPDATE JSON
+    # Update JSON
     with open("problems.json", "w") as f:
         json.dump(problems, f, indent=2)
     print(f"✅ Updated problems.json with {len(problems)} records.")
 
-    # 6. GENERATE PIE CHART
+    # --- PART 3: GENERATE PIE CHART ---
     topics = [p['topic'] for p in problems if p['topic'] != 'nan']
     topic_counts = Counter(topics)
     
@@ -94,12 +146,18 @@ def update_portfolio():
     plt.close()
     print("✅ Generated Pie Chart")
 
-    # 7. UPDATE README.md
+    # --- PART 4: FETCH CURRICULUM STATS ---
+    curriculum_section = get_curriculum_stats()
+
+    # --- PART 5: UPDATE README.md ---
     total_count = len(problems)
     readme_content = f"""# 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
 - **Total Problems Solved:** {total_count} 🔥
 - **System Status:** Online 🟢
+
+### 🎓 Curriculum Progress
+{curriculum_section}
 
 ![Topic Breakdown](topic_breakdown.png)
 
@@ -113,7 +171,7 @@ def update_portfolio():
     else:
         readme_content += "| - | No logs found yet | - | - |\n"
     
-    readme_content += "\n[View Full Archive](https://ananth9911.github.io)"
+    readme_content += "\n[View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)"
 
     with open("README.md", "w") as f:
         f.write(readme_content)
