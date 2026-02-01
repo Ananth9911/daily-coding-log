@@ -168,7 +168,7 @@ def update_portfolio():
 - **Total Problems Solved:** {total_count} 🔥
 - **System Status:** Online 🟢
 
-### 🎓 Curriculum Progress
+### 🎓 Progress
 {curriculum_section}
 
 ![Topic Breakdown](topic_breakdown.png)
