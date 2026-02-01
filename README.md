@@ -3,7 +3,7 @@
 - **Total Problems Solved:** 189 🔥
 - **System Status:** Online 🟢
 
-### 🎓 Curriculum Progress
+### 🎓 Progress
 - **Foundation** `[██████████]` **100%** *(25/25)*
 - **DSA (Data Structures)** `[░░░░░░░░░░]` **6%** *(6/93)*
 - **Core (SQL/CS Fund)** `[█░░░░░░░░░]` **11%** *(3/26)*
