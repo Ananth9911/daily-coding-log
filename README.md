@@ -1,4 +1,4 @@
-# 🚀 Ananth's Engineering Log
+# 🚀Log
 ### ⚡ Automated Career Tracker
 - **Total Problems Solved:** 189 🔥
 - **System Status:** Online 🟢
