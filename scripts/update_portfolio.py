@@ -36,21 +36,33 @@ def get_curriculum_stats():
         df = pd.read_csv(url)
         print(f"✅ Loaded Plan: {len(df)} rows")
         
-        # Define Modules to Track (Matches your Excel keywords)
+        # ---------------------------------------------------------
+        # 🎯 CUSTOM MODULE GROUPING LOGIC
+        # ---------------------------------------------------------
         modules = {
-            "Foundation (Intro)": ["Intro"],
-            "DSA Core": ["DSA"],
-            "System Design (SQL/HLD)": ["SQL", "HLD", "Database"],
-            "LLD & Projects": ["LLD"]
+            "Foundation": ["Intro to Programming"],
+            
+            "DSA (Data Structures)": [
+                "DSA 1", "DSA 2", "DSA 3", "DSA 4", "DSA 4.2", 
+                "Problem Solving", "DSA Practice", "DSA Revision"
+            ],
+            
+            "Core (SQL/CS Fund)": [
+                "Databases", "SQL", "CS Fundamentals"
+            ],
+            
+            "System Design (LLD/HLD)": [
+                "LLD", "High Level Design", "System Design"
+            ]
         }
+        # ---------------------------------------------------------
         
         stats_md = ""
         
         for name, keywords in modules.items():
-            # Filter rows belonging to this module
-            # We look at 'Phase' or 'Module' column for keywords
-            mask = df['Module'].astype(str).apply(lambda x: any(k in x for k in keywords)) | \
-                   df['Phase'].astype(str).apply(lambda x: any(k in x for k in keywords))
+            # Filter rows where the 'Module' column contains ANY of the keywords
+            # We treat everything as string to avoid errors with NaNs
+            mask = df['Module'].astype(str).apply(lambda x: any(k in x for k in keywords))
             
             subset = df[mask]
             total = len(subset)
@@ -58,7 +70,7 @@ def get_curriculum_stats():
             if total == 0: 
                 continue
             
-            # Count "Done" status
+            # Count "Done" status (Trim whitespace to be safe)
             done = len(subset[subset['Status'].astype(str).str.strip() == 'Done'])
             percent = (done / total) * 100 if total > 0 else 0
             
