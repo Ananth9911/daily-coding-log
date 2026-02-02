@@ -1,5 +1,11 @@
 [
   {
+    "date": "01/02/2026",
+    "name": "Sum of All Subarrays",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
     "date": "31/01/2026",
     "name": "Sum of Odd indexed elements in a range",
     "topic": "Array",
