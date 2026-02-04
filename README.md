@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 191 🔥
+- **Total Problems Solved:** 192 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 03/02/2026 | Generate all subarrays | Array | Scaler |
 | 02/02/2026 | Subarray with given sum and length | Array | Scaler |
 | 01/02/2026 | Sum of All Subarrays | Array | Scaler |
 | 31/01/2026 | Sum of Odd indexed elements in a range | Array | Scaler |
@@ -24,6 +25,5 @@
 | 29/01/2026 | Range Sum Query | Array | Scaler |
 | 29/01/2026 | Rotation of array - O(N) | Array | Scaler |
 | 28/01/2026 | Second Largest | Array | Scaler |
-| 28/01/2026 | Reverse in a range | Array | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)

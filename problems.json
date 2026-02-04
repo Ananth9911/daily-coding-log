@@ -1,5 +1,11 @@
 [
   {
+    "date": "03/02/2026",
+    "name": "Generate all subarrays",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
     "date": "02/02/2026",
     "name": "Subarray with given sum and length",
     "topic": "Array",
