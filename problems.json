@@ -1,6 +1,12 @@
 [
   {
     "date": "03/02/2026",
+    "name": "Closest MinMax",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "03/02/2026",
     "name": "In-place Prefix Sum",
     "topic": "Array",
     "source": "Scaler"
