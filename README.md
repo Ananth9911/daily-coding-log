@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 195 🔥
+- **Total Problems Solved:** 196 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -16,6 +16,7 @@
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
 | 04/02/2026 | Special Index | Array | Scaler |
+| 04/02/2026 | Even numbers in a range | Array | Scaler |
 | 03/02/2026 | Closest MinMax | Array | Scaler |
 | 03/02/2026 | In-place Prefix Sum | Array | Scaler |
 | 03/02/2026 | Generate all subarrays | Array | Scaler |
@@ -24,6 +25,5 @@
 | 31/01/2026 | Sum of Odd indexed elements in a range | Array | Scaler |
 | 30/01/2026 | Equilibrium index of an array | Array | Scaler |
 | 29/01/2026 | Carry Forward - Special Subsequences | Array | Scaler |
-| 29/01/2026 | Sum of Even indexed elements in a range | Array | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
