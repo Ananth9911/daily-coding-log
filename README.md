@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 199 🔥
+- **Total Problems Solved:** 200 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -16,6 +16,7 @@
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
 | 06/02/2026 | Noble Integer | Array | Scaler |
+| 05/02/2026 | Arithmetic Progression? | Array | Scaler |
 | 05/02/2026 | Kth Smallest Element | Array | Scaler |
 | 05/02/2026 | Best Time to Buy and Sell Stocks | Array | Scaler |
 | 04/02/2026 | Special Index | Array | Scaler |
@@ -24,6 +25,5 @@
 | 03/02/2026 | In-place Prefix Sum | Array | Scaler |
 | 03/02/2026 | Generate all subarrays | Array | Scaler |
 | 02/02/2026 | Subarray with given sum and length | Array | Scaler |
-| 01/02/2026 | Sum of All Subarrays | Array | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)

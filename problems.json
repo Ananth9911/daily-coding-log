@@ -7,6 +7,12 @@
   },
   {
     "date": "05/02/2026",
+    "name": "Arithmetic Progression?",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "05/02/2026",
     "name": "Kth Smallest Element",
     "topic": "Array",
     "source": "Scaler"
