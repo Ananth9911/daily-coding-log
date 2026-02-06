@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 197 🔥
+- **Total Problems Solved:** 198 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 05/02/2026 | Kth Smallest Element | Array | Scaler |
 | 05/02/2026 | Best Time to Buy and Sell Stocks | Array | Scaler |
 | 04/02/2026 | Special Index | Array | Scaler |
 | 04/02/2026 | Even numbers in a range | Array | Scaler |
@@ -24,6 +25,5 @@
 | 02/02/2026 | Subarray with given sum and length | Array | Scaler |
 | 01/02/2026 | Sum of All Subarrays | Array | Scaler |
 | 31/01/2026 | Sum of Odd indexed elements in a range | Array | Scaler |
-| 30/01/2026 | Equilibrium index of an array | Array | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
