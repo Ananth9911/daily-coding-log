@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 200 🔥
+- **Total Problems Solved:** 201 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 06/02/2026 | Elements Removal | Array | Scaler |
 | 06/02/2026 | Noble Integer | Array | Scaler |
 | 05/02/2026 | Arithmetic Progression? | Array | Scaler |
 | 05/02/2026 | Kth Smallest Element | Array | Scaler |
@@ -24,6 +25,5 @@
 | 03/02/2026 | Closest MinMax | Array | Scaler |
 | 03/02/2026 | In-place Prefix Sum | Array | Scaler |
 | 03/02/2026 | Generate all subarrays | Array | Scaler |
-| 02/02/2026 | Subarray with given sum and length | Array | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
