@@ -1,5 +1,11 @@
 [
   {
+    "date": "06/02/2026",
+    "name": "Noble Integer",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
     "date": "05/02/2026",
     "name": "Kth Smallest Element",
     "topic": "Array",
