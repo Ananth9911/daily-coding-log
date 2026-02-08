@@ -1,5 +1,11 @@
 [
   {
+    "date": "08/02/2026",
+    "name": "Maximum subarray sum of fixed length",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
     "date": "07/02/2026",
     "name": "Maximum Subarray",
     "topic": "Array",

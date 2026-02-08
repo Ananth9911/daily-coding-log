@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 202 🔥
+- **Total Problems Solved:** 203 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 08/02/2026 | Maximum subarray sum of fixed length | Array | Scaler |
 | 07/02/2026 | Maximum Subarray | Array | Scaler |
 | 06/02/2026 | Elements Removal | Array | Scaler |
 | 06/02/2026 | Noble Integer | Array | Scaler |
@@ -24,6 +25,5 @@
 | 04/02/2026 | Special Index | Array | Scaler |
 | 04/02/2026 | Even numbers in a range | Array | Scaler |
 | 03/02/2026 | Closest MinMax | Array | Scaler |
-| 03/02/2026 | In-place Prefix Sum | Array | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
