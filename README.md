@@ -15,7 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
-| 07/02/2026 | Maximum Subarray Easy | Array | Scaler |
+| 07/02/2026 | Maximum Subarray | Array | Scaler |
 | 06/02/2026 | Elements Removal | Array | Scaler |
 | 06/02/2026 | Noble Integer | Array | Scaler |
 | 05/02/2026 | Arithmetic Progression? | Array | Scaler |
