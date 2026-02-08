@@ -1,5 +1,11 @@
 [
   {
+    "date": "07/02/2026",
+    "name": "Maximum Subarray Easy",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
     "date": "06/02/2026",
     "name": "Elements Removal",
     "topic": "Array",
