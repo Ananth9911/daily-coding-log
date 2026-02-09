@@ -1,11 +1,11 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 203 🔥
+- **Total Problems Solved:** 204 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
 - **Foundation** `[██████████]` **100%** *(25/25)*
-- **DSA (Data Structures)** `[█░░░░░░░░░]` **12%** *(11/89)*
+- **DSA (Data Structures)** `[█░░░░░░░░░]` **13%** *(12/89)*
 - **Core (SQL/CS Fund)** `[█░░░░░░░░░]` **16%** *(5/30)*
 - **System Design (LLD/HLD)** `[░░░░░░░░░░]` **0%** *(0/121)*
 
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 09/02/2026 | Row Sum | Array | Scaler |
 | 08/02/2026 | Maximum subarray sum of fixed length | Array | Scaler |
 | 07/02/2026 | Maximum Subarray | Array | Scaler |
 | 06/02/2026 | Elements Removal | Array | Scaler |
@@ -24,6 +25,5 @@
 | 05/02/2026 | Best Time to Buy and Sell Stocks | Array | Scaler |
 | 04/02/2026 | Special Index | Array | Scaler |
 | 04/02/2026 | Even numbers in a range | Array | Scaler |
-| 03/02/2026 | Closest MinMax | Array | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
