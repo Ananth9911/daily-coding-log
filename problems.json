@@ -1,5 +1,11 @@
 [
   {
+    "date": "10/02/2026",
+    "name": "Column Sum",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
     "date": "09/02/2026",
     "name": "Row Sum",
     "topic": "Array",
