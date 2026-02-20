@@ -1,11 +1,11 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 207 🔥
+- **Total Problems Solved:** 208 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
 - **Foundation** `[██████████]` **100%** *(25/25)*
-- **DSA (Data Structures)** `[██░░░░░░░░]` **24%** *(22/90)*
+- **DSA (Data Structures)** `[██░░░░░░░░]` **25%** *(23/90)*
 - **Core (SQL/CS Fund)** `[█░░░░░░░░░]` **16%** *(5/30)*
 - **System Design (LLD/HLD)** `[░░░░░░░░░░]` **0%** *(0/124)*
 
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 20/02/2026 | Minimum Swaps | Array | Scaler |
 | 19/02/2026 | Pick from both sides! | Array | Scaler |
 | 19/02/2026 | Leaders in an array | Array | Scaler |
 | 10/02/2026 | Column Sum | Array | Scaler |
@@ -24,6 +25,5 @@
 | 06/02/2026 | Elements Removal | Array | Scaler |
 | 06/02/2026 | Noble Integer | Array | Scaler |
 | 05/02/2026 | Arithmetic Progression? | Array | Scaler |
-| 05/02/2026 | Kth Smallest Element | Array | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
