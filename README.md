@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 209 🔥
+- **Total Problems Solved:** 210 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 22/02/2026 | Counting Subarrays Easy | Array | Scaler |
 | 21/02/2026 | Subarray with least averag | Array | Scaler |
 | 20/02/2026 | Minimum Swaps | Array | Scaler |
 | 19/02/2026 | Pick from both sides! | Array | Scaler |
@@ -24,6 +25,5 @@
 | 08/02/2026 | Maximum subarray sum of fixed length | Array | Scaler |
 | 07/02/2026 | Maximum Subarray | Array | Scaler |
 | 06/02/2026 | Elements Removal | Array | Scaler |
-| 06/02/2026 | Noble Integer | Array | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
