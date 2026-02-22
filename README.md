@@ -7,7 +7,7 @@
 - **Foundation** `[██████████]` **100%** *(25/25)*
 - **DSA (Data Structures)** `[██░░░░░░░░]` **27%** *(25/92)*
 - **Core (SQL/CS Fund)** `[█░░░░░░░░░]` **17%** *(5/28)*
-- **System Design (LLD/HLD)** `[░░░░░░░░░░]` **0%** *(0/43)*
+- **System Design (LLD/HLD)** `[░░░░░░░░░░]` **0%** *(0/47)*
 
 
 ![Topic Breakdown](topic_breakdown.png)
