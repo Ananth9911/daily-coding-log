@@ -1,5 +1,11 @@
 [
   {
+    "date": "21/02/2026",
+    "name": "Subarray with least averag",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
     "date": "20/02/2026",
     "name": "Minimum Swaps",
     "topic": "Array",
