@@ -1,6 +1,12 @@
 [
   {
     "date": "22/02/2026",
+    "name": "Good Subarrays",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "22/02/2026",
     "name": "Counting Subarrays Easy",
     "topic": "Array",
     "source": "Scaler"
