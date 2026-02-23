@@ -15,7 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
-| 23/02/2026 | Longest Palindromic Substring | Array | Scaler |
+| 23/02/2026 | Longest Palindromic Substring | String | Scaler |
 | 22/02/2026 | Good Subarrays | Array | Scaler |
 | 22/02/2026 | Counting Subarrays Easy | Array | Scaler |
 | 21/02/2026 | Subarray with least averag | Array | Scaler |
