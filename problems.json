@@ -1,6 +1,12 @@
 [
   {
     "date": "23/02/2026",
+    "name": "Isalnum()",
+    "topic": "String",
+    "source": "Scaler"
+  },
+  {
+    "date": "23/02/2026",
     "name": "String operations",
     "topic": "String",
     "source": "Scaler"
