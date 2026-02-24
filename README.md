@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 216 🔥
+- **Total Problems Solved:** 217 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 24/02/2026 | Simple Reverse | String | Scaler |
 | 24/02/2026 | Matrix Transpose - Rectangular | Array | Scaler |
 | 23/02/2026 | Isalnum() | String | Scaler |
 | 23/02/2026 | String operations | String | Scaler |
@@ -24,6 +25,5 @@
 | 22/02/2026 | Counting Subarrays Easy | Array | Scaler |
 | 21/02/2026 | Subarray with least averag | Array | Scaler |
 | 20/02/2026 | Minimum Swaps | Array | Scaler |
-| 19/02/2026 | Pick from both sides! | Array | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
