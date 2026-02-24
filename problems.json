@@ -1,6 +1,12 @@
 [
   {
     "date": "24/02/2026",
+    "name": "Length of longest consecutive ones",
+    "topic": "String",
+    "source": "Scaler"
+  },
+  {
+    "date": "24/02/2026",
     "name": "Reverse the String",
     "topic": "String",
     "source": "Scaler"
