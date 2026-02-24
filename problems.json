@@ -1,6 +1,12 @@
 [
   {
     "date": "24/02/2026",
+    "name": "Rotate Matrix",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "24/02/2026",
     "name": "Simple Reverse",
     "topic": "String",
     "source": "Scaler"
