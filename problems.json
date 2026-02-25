@@ -1,6 +1,12 @@
 [
   {
     "date": "25/02/2026",
+    "name": "Continuous Sum Query",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "25/02/2026",
     "name": "Max Sum Contiguous Subarray",
     "topic": "Array",
     "source": "Scaler"
