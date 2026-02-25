@@ -1,11 +1,11 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 220 🔥
+- **Total Problems Solved:** 221 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
 - **Foundation** `[██████████]` **100%** *(25/25)*
-- **DSA (Data Structures)** `[██░░░░░░░░]` **29%** *(27/92)*
+- **DSA (Data Structures)** `[███░░░░░░░]` **30%** *(28/92)*
 - **Core (SQL/CS Fund)** `[█████░░░░░]` **53%** *(15/28)*
 - **System Design (LLD/HLD)** `[░░░░░░░░░░]` **0%** *(0/124)*
 
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 25/02/2026 | Max Sum Contiguous Subarray | Array | Scaler |
 | 24/02/2026 | Length of longest consecutive ones | String | Scaler |
 | 24/02/2026 | Reverse the String | String | Scaler |
 | 24/02/2026 | Rotate Matrix | Array | Scaler |
@@ -24,6 +25,5 @@
 | 23/02/2026 | String operations | String | Scaler |
 | 23/02/2026 | Toggle Case | String | Scaler |
 | 23/02/2026 | Longest Palindromic Substring | String | Scaler |
-| 22/02/2026 | Good Subarrays | Array | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)

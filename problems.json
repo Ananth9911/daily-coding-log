@@ -1,5 +1,11 @@
 [
   {
+    "date": "25/02/2026",
+    "name": "Max Sum Contiguous Subarray",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
     "date": "24/02/2026",
     "name": "Length of longest consecutive ones",
     "topic": "String",
