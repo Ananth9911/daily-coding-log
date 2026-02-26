@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 224 🔥
+- **Total Problems Solved:** 225 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 26/02/2026 | Sum of all Submatrices | Array | Scaler |
 | 26/02/2026 | First Missing Integer | Array | Scaler |
 | 25/02/2026 | Merge Sorted Overlapping Intervals - 2 | Array | Scaler |
 | 25/02/2026 | Continuous Sum Query | Array | Scaler |
@@ -24,6 +25,5 @@
 | 24/02/2026 | Rotate Matrix | Array | Scaler |
 | 24/02/2026 | Simple Reverse | String | Scaler |
 | 24/02/2026 | Matrix Transpose - Rectangular | Array | Scaler |
-| 23/02/2026 | Isalnum() | String | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)

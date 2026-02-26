@@ -1,6 +1,12 @@
 [
   {
     "date": "26/02/2026",
+    "name": "Sum of all Submatrices",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "26/02/2026",
     "name": "First Missing Integer",
     "topic": "Array",
     "source": "Scaler"
