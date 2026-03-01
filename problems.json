@@ -1,11 +1,5 @@
 [
   {
-    "date": "28/02/2026",
-    "name": "Number of 1 Bits",
-    "topic": "Bit",
-    "source": "Scaler"
-  },
-  {
     "date": "27/02/2026",
     "name": "Unset i-th bit",
     "topic": "Bit",
