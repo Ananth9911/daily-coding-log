@@ -1,5 +1,11 @@
 [
   {
+    "date": "02/03/2026",
+    "name": "Rain Water Trapped",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
     "date": "01/03/2026",
     "name": "Find nth Magic Number",
     "topic": "Bit",
