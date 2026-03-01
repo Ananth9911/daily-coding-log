@@ -1,5 +1,11 @@
 [
   {
+    "date": "03/03/2026",
+    "name": "Spiral Order Matrix II",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
     "date": "02/03/2026",
     "name": "Rain Water Trapped",
     "topic": "Array",
