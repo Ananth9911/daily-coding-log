@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 227 🔥
+- **Total Problems Solved:** 229 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,8 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 28/02/2026 | Single Number | Bit | Scaler |
+| 27/02/2026 | Number of 1 Bits | Bit | Scaler |
 | 27/02/2026 | Unset i-th bit | Bit | Scaler |
 | 26/02/2026 | Search in a row wise and column wise sorted matrix | Array | Scaler |
 | 26/02/2026 | Sum of all Submatrices | Array | Scaler |
@@ -23,7 +25,5 @@
 | 25/02/2026 | Continuous Sum Query | Array | Scaler |
 | 25/02/2026 | Max Sum Contiguous Subarray | Array | Scaler |
 | 24/02/2026 | Length of longest consecutive ones | String | Scaler |
-| 24/02/2026 | Reverse the String | String | Scaler |
-| 24/02/2026 | Rotate Matrix | Array | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
