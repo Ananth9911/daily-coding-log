@@ -1,12 +1,18 @@
 [
   {
-    "date": "28/02/2026",
+    "date": "01/03/2026",
+    "name": "Set Bit",
+    "topic": "Bit",
+    "source": "Scaler"
+  },
+  {
+    "date": "01/03/2026",
     "name": "Toggle i-th bit",
     "topic": "Bit",
     "source": "Scaler"
   },
   {
-    "date": "28/02/2026",
+    "date": "01/03/2026",
     "name": "Single Number III",
     "topic": "Bit",
     "source": "Scaler"
