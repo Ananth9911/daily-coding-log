@@ -1,8 +1,14 @@
 [
   {
     "date": "03/03/2026",
+    "name": "Single Number II",
+    "topic": "Bit",
+    "source": "Scaler"
+  },
+  {
+    "date": "03/03/2026",
     "name": "Number of 1 Bits",
-    "topic": "Array",
+    "topic": "Bit",
     "source": "Scaler"
   },
   {
