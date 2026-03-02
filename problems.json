@@ -1,6 +1,12 @@
 [
   {
     "date": "03/03/2026",
+    "name": "Subarrays with OR 1",
+    "topic": "Bit",
+    "source": "Scaler"
+  },
+  {
+    "date": "03/03/2026",
     "name": "Finding Good Days",
     "topic": "Bit",
     "source": "Scaler"

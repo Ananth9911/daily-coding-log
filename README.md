@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 239 🔥
+- **Total Problems Solved:** 240 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 03/03/2026 | Subarrays with OR 1 | Bit | Scaler |
 | 03/03/2026 | Finding Good Days | Bit | Scaler |
 | 03/03/2026 | Single Number II | Bit | Scaler |
 | 03/03/2026 | Number of 1 Bits | Bit | Scaler |
@@ -24,6 +25,5 @@
 | 01/03/2026 | Find nth Magic Number | Bit | Scaler |
 | 01/03/2026 | Set Bit | Bit | Scaler |
 | 01/03/2026 | Toggle i-th bit | Bit | Scaler |
-| 01/03/2026 | Single Number III | Bit | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
