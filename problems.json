@@ -1,5 +1,11 @@
 [
   {
+    "date": "03/03/2026",
+    "name": "Number of 1 Bits",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
     "date": "02/03/2026",
     "name": "Next Permutation",
     "topic": "Array",
