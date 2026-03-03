@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 241 🔥
+- **Total Problems Solved:** 242 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 04/03/2026 | Recursion - Factorial | Math | Scaler |
 | 04/03/2026 | Recursion-1 | Math | Scaler |
 | 03/03/2026 | Subarrays with OR 1 | Bit | Scaler |
 | 03/03/2026 | Finding Good Days | Bit | Scaler |
@@ -24,6 +25,5 @@
 | 02/03/2026 | Spiral Order Matrix II | Array | Scaler |
 | 02/03/2026 | Rain Water Trapped | Array | Scaler |
 | 01/03/2026 | Find nth Magic Number | Bit | Scaler |
-| 01/03/2026 | Set Bit | Bit | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
