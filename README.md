@@ -15,7 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
-| 04/03/2026 | Recursion-1 | nan | nan |
+| 04/03/2026 | Recursion-1 | Math | Scaler |
 | 03/03/2026 | Subarrays with OR 1 | Bit | Scaler |
 | 03/03/2026 | Finding Good Days | Bit | Scaler |
 | 03/03/2026 | Single Number II | Bit | Scaler |
