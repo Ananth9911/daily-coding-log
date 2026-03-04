@@ -15,7 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
-| 05/03/2026 | All Indices Of Array | nan | nan |
+| 05/03/2026 | All Indices Of Array | Array | Scaler |
 | 05/03/2026 | Fast Power | Math | Scaler |
 | 04/03/2026 | Recursion -Array | Array | Scaler |
 | 04/03/2026 | Recursion -Print | Math | Scaler |
