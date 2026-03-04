@@ -1,6 +1,12 @@
 [
   {
     "date": "05/03/2026",
+    "name": "All Indices Of Array",
+    "topic": "nan",
+    "source": "nan"
+  },
+  {
+    "date": "05/03/2026",
     "name": "Fast Power",
     "topic": "Math",
     "source": "Scaler"

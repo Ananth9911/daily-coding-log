@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 246 🔥
+- **Total Problems Solved:** 247 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 05/03/2026 | All Indices Of Array | nan | nan |
 | 05/03/2026 | Fast Power | Math | Scaler |
 | 04/03/2026 | Recursion -Array | Array | Scaler |
 | 04/03/2026 | Recursion -Print | Math | Scaler |
@@ -24,6 +25,5 @@
 | 03/03/2026 | Subarrays with OR 1 | Bit | Scaler |
 | 03/03/2026 | Finding Good Days | Bit | Scaler |
 | 03/03/2026 | Single Number II | Bit | Scaler |
-| 03/03/2026 | Number of 1 Bits | Bit | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
