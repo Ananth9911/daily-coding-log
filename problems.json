@@ -1,5 +1,11 @@
 [
   {
+    "date": "05/03/2026",
+    "name": "Fast Power",
+    "topic": "Math",
+    "source": "Scaler"
+  },
+  {
     "date": "04/03/2026",
     "name": "Recursion -Array",
     "topic": "Array",
