@@ -1,5 +1,17 @@
 [
   {
+    "date": "06/03/2026",
+    "name": "Recursive - GCD",
+    "topic": "Math",
+    "source": "Scaler"
+  },
+  {
+    "date": "06/03/2026",
+    "name": "Implement modulo calculation",
+    "topic": "Math",
+    "source": "Scaler"
+  },
+  {
     "date": "05/03/2026",
     "name": "Tower of Hanoi",
     "topic": "Math",
