@@ -1,6 +1,12 @@
 [
   {
     "date": "06/03/2026",
+    "name": "Pair Sum divisible by M",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "06/03/2026",
     "name": "Recursive - GCD",
     "topic": "Math",
     "source": "Scaler"

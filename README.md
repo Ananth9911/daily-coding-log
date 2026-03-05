@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 250 🔥
+- **Total Problems Solved:** 251 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 06/03/2026 | Pair Sum divisible by M | Array | Scaler |
 | 06/03/2026 | Recursive - GCD | Math | Scaler |
 | 06/03/2026 | Implement modulo calculation | Math | Scaler |
 | 05/03/2026 | Tower of Hanoi | Math | Scaler |
@@ -24,6 +25,5 @@
 | 04/03/2026 | Recursion -Print | Math | Scaler |
 | 04/03/2026 | Recursion - Fibonacci | Math | Scaler |
 | 04/03/2026 | Recursion - Factorial | Math | Scaler |
-| 04/03/2026 | Recursion-1 | Math | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
