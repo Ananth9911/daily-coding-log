@@ -1,5 +1,11 @@
 [
   {
+    "date": "08/03/2026",
+    "name": "Count Pair Sum",
+    "topic": "Hashing",
+    "source": "Scaler"
+  },
+  {
     "date": "07/03/2026",
     "name": "Count distinct elements",
     "topic": "Hashing",
