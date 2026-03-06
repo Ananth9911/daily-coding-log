@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 254 🔥
+- **Total Problems Solved:** 255 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,7 +15,8 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
-| 08/03/2026 | Count Pair Sum | Hashing | Scaler |
+| 07/03/2026 | Frequency of element query | Hashing | Scaler |
+| 07/03/2026 | Count Pair Sum | Hashing | Scaler |
 | 07/03/2026 | Count distinct elements | Hashing | Scaler |
 | 07/03/2026 | Check Pair Sum | Hashing | Scaler |
 | 06/03/2026 | Pair Sum divisible by M | Array | Scaler |
@@ -24,6 +25,5 @@
 | 05/03/2026 | Tower of Hanoi | Math | Scaler |
 | 05/03/2026 | All Indices Of Array | Array | Scaler |
 | 05/03/2026 | Fast Power | Math | Scaler |
-| 04/03/2026 | Recursion -Array | Array | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
