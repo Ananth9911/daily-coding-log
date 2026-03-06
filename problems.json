@@ -1,5 +1,11 @@
 [
   {
+    "date": "07/03/2026",
+    "name": "Check Pair Sum",
+    "topic": "Hashing",
+    "source": "Scaler"
+  },
+  {
     "date": "06/03/2026",
     "name": "Pair Sum divisible by M",
     "topic": "Array",
