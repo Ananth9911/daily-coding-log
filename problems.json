@@ -1,6 +1,12 @@
 [
   {
     "date": "08/03/2026",
+    "name": "First Repeating element",
+    "topic": "Hashing",
+    "source": "Scaler"
+  },
+  {
+    "date": "08/03/2026",
     "name": "Sub-array with 0 sum",
     "topic": "Hashing",
     "source": "Scaler"
