@@ -1,5 +1,11 @@
 [
   {
+    "date": "08/03/2026",
+    "name": "Longest Substring Without Repeat",
+    "topic": "Hashing",
+    "source": "Scaler"
+  },
+  {
     "date": "07/03/2026",
     "name": "Frequency of element query",
     "topic": "Hashing",
