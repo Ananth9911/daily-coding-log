@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 256 🔥
+- **Total Problems Solved:** 257 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 08/03/2026 | Sub-array with 0 sum | Hashing | Scaler |
 | 08/03/2026 | Longest Substring Without Repeat | Hashing | Scaler |
 | 07/03/2026 | Frequency of element query | Hashing | Scaler |
 | 07/03/2026 | Count Pair Sum | Hashing | Scaler |
@@ -24,6 +25,5 @@
 | 06/03/2026 | Recursive - GCD | Math | Scaler |
 | 06/03/2026 | Implement modulo calculation | Math | Scaler |
 | 05/03/2026 | Tower of Hanoi | Math | Scaler |
-| 05/03/2026 | All Indices Of Array | Array | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
