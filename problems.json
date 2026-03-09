@@ -1,5 +1,11 @@
 [
   {
+    "date": "09/03/2026",
+    "name": "Merge Two Sorted Arrays",
+    "topic": "Sorting",
+    "source": "Scaler"
+  },
+  {
     "date": "08/03/2026",
     "name": "Subarray Sum Equals K",
     "topic": "Hashing",
