@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 261 🔥
+- **Total Problems Solved:** 262 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,7 +15,8 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
-| 10/03/2026 | Sort by Color | Sorting | Scaler |
+| 09/03/2026 | Merge Sort | Sorting | Scaler |
+| 09/03/2026 | Sort by Color | Sorting | Scaler |
 | 09/03/2026 | Merge Two Sorted Arrays | Sorting | Scaler |
 | 08/03/2026 | Subarray Sum Equals K | Hashing | Scaler |
 | 08/03/2026 | First Repeating element | Hashing | Scaler |
@@ -24,6 +25,5 @@
 | 07/03/2026 | Frequency of element query | Hashing | Scaler |
 | 07/03/2026 | Count Pair Sum | Hashing | Scaler |
 | 07/03/2026 | Count distinct elements | Hashing | Scaler |
-| 07/03/2026 | Check Pair Sum | Hashing | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)

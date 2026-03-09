@@ -1,6 +1,12 @@
 [
   {
-    "date": "10/03/2026",
+    "date": "09/03/2026",
+    "name": "Merge Sort",
+    "topic": "Sorting",
+    "source": "Scaler"
+  },
+  {
+    "date": "09/03/2026",
     "name": "Sort by Color",
     "topic": "Sorting",
     "source": "Scaler"
