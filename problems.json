@@ -1,6 +1,12 @@
 [
   {
     "date": "10/03/2026",
+    "name": "Partition Index",
+    "topic": "Sorting",
+    "source": "Scaler"
+  },
+  {
+    "date": "10/03/2026",
     "name": "Factors sort",
     "topic": "Sorting",
     "source": "Scaler"
