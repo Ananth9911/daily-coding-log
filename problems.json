@@ -1,5 +1,11 @@
 [
   {
+    "date": "11/03/2026",
+    "name": "Quick Sort",
+    "topic": "Sorting",
+    "source": "Scaler"
+  },
+  {
     "date": "10/03/2026",
     "name": "Partition Index",
     "topic": "Sorting",
