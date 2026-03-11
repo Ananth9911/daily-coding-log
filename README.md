@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 270 🔥
+- **Total Problems Solved:** 269 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,7 +15,6 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
-| 11/03/2026 | Find a peak element | nan | nan |
 | 11/03/2026 | Square Root of Integer | Maths | Scaler |
 | 11/03/2026 | Search for a Range | Array | Scaler |
 | 11/03/2026 | Quick Sort | Sorting | Scaler |
@@ -25,5 +24,6 @@
 | 09/03/2026 | Count Sort | Sorting | Scaler |
 | 09/03/2026 | Merge Sort | Sorting | Scaler |
 | 09/03/2026 | Sort by Color | Sorting | Scaler |
+| 09/03/2026 | Merge Two Sorted Arrays | Sorting | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
