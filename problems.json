@@ -1,6 +1,12 @@
 [
   {
     "date": "11/03/2026",
+    "name": "Find a peak element",
+    "topic": "nan",
+    "source": "nan"
+  },
+  {
+    "date": "11/03/2026",
     "name": "Square Root of Integer",
     "topic": "Maths",
     "source": "Scaler"
