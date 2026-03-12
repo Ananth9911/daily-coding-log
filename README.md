@@ -1,11 +1,11 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 270 🔥
+- **Total Problems Solved:** 271 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
 - **Foundation** `[██████████]` **100%** *(25/25)*
-- **DSA (Data Structures)** `[████░░░░░░]` **45%** *(42/92)*
+- **DSA (Data Structures)** `[████░░░░░░]` **46%** *(43/92)*
 - **Core (SQL/CS Fund)** `[█████░░░░░]` **53%** *(15/28)*
 - **System Design (LLD/HLD)** `[░░░░░░░░░░]` **0%** *(0/124)*
 
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 12/03/2026 | Painter's Partition Problem | Array | Scaler |
 | 11/03/2026 | Find a peak element | Array | Scaler |
 | 11/03/2026 | Square Root of Integer | Maths | Scaler |
 | 11/03/2026 | Search for a Range | Array | Scaler |
@@ -24,6 +25,5 @@
 | 09/03/2026 | Smallest Number | Sorting | Scaler |
 | 09/03/2026 | Count Sort | Sorting | Scaler |
 | 09/03/2026 | Merge Sort | Sorting | Scaler |
-| 09/03/2026 | Sort by Color | Sorting | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)

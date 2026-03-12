@@ -1,5 +1,11 @@
 [
   {
+    "date": "12/03/2026",
+    "name": "Painter's Partition Problem",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
     "date": "11/03/2026",
     "name": "Find a peak element",
     "topic": "Array",
