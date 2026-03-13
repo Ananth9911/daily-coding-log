@@ -1,6 +1,12 @@
 [
   {
     "date": "14/03/2026",
+    "name": "Median of two sorted arrays",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "14/03/2026",
     "name": "Single Element in Sorted Array",
     "topic": "Array",
     "source": "Scaler"
