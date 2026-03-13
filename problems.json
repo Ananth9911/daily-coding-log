@@ -1,6 +1,12 @@
 [
   {
     "date": "13/03/2026",
+    "name": "Rotated Sorted Array Search",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "13/03/2026",
     "name": "Allocate Books",
     "topic": "Array",
     "source": "Scaler"
