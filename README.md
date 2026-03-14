@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 276 🔥
+- **Total Problems Solved:** 277 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 14/03/2026 | Common Elements | Hashing | Scaler |
 | 14/03/2026 | Median of two sorted arrays | Array | Scaler |
 | 14/03/2026 | Single Element in Sorted Array | Array | Scaler |
 | 13/03/2026 | Rotated Sorted Array Search | Array | Scaler |
@@ -24,6 +25,5 @@
 | 11/03/2026 | Find a peak element | Array | Scaler |
 | 11/03/2026 | Square Root of Integer | Maths | Scaler |
 | 11/03/2026 | Search for a Range | Array | Scaler |
-| 11/03/2026 | Quick Sort | Sorting | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
