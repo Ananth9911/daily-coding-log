@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 278 🔥
+- **Total Problems Solved:** 279 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 14/03/2026 | Count Pair Difference | Hashing | Scaler |
 | 14/03/2026 | Count unique elements | Hashing | Scaler |
 | 14/03/2026 | Common Elements | Hashing | Scaler |
 | 14/03/2026 | Median of two sorted arrays | Array | Scaler |
@@ -24,6 +25,5 @@
 | 12/03/2026 | Aggressive cows | Array | Scaler |
 | 12/03/2026 | Painter's Partition Problem | Array | Scaler |
 | 11/03/2026 | Find a peak element | Array | Scaler |
-| 11/03/2026 | Square Root of Integer | Maths | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
