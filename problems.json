@@ -1,5 +1,11 @@
 [
   {
+    "date": "15/03/2026",
+    "name": "Print Linked List",
+    "topic": "LinkedList",
+    "source": "Scaler"
+  },
+  {
     "date": "14/03/2026",
     "name": "Count Pair Difference",
     "topic": "Hashing",
