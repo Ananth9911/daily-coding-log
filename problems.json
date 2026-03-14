@@ -1,6 +1,12 @@
 [
   {
     "date": "15/03/2026",
+    "name": "kth Node in a List",
+    "topic": "LinkedList",
+    "source": "Scaler"
+  },
+  {
+    "date": "15/03/2026",
     "name": "Print Linked List",
     "topic": "LinkedList",
     "source": "Scaler"
