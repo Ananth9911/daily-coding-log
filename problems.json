@@ -1,5 +1,11 @@
 [
   {
+    "date": "16/03/2026",
+    "name": "Insert in Linked List",
+    "topic": "LinkedList",
+    "source": "Scaler"
+  },
+  {
     "date": "15/03/2026",
     "name": "kth Node in a List",
     "topic": "LinkedList",
