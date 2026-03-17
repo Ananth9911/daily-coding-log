@@ -1,6 +1,12 @@
 [
   {
     "date": "17/03/2026",
+    "name": "Delete in Linked List",
+    "topic": "LinkedList",
+    "source": "Scaler"
+  },
+  {
+    "date": "17/03/2026",
     "name": "Reverse Linked List",
     "topic": "LinkedList",
     "source": "Scaler"
