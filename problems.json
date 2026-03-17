@@ -1,6 +1,12 @@
 [
   {
     "date": "18/03/2026",
+    "name": "Passing game",
+    "topic": "Stack",
+    "source": "Scaler"
+  },
+  {
+    "date": "18/03/2026",
     "name": "Balanced Paranthesis",
     "topic": "Stack",
     "source": "Scaler"
