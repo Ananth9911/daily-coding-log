@@ -1,5 +1,11 @@
 [
   {
+    "date": "18/03/2026",
+    "name": "Evaluate Expression",
+    "topic": "Stack",
+    "source": "Scaler"
+  },
+  {
     "date": "17/03/2026",
     "name": "Delete in Linked List",
     "topic": "LinkedList",
