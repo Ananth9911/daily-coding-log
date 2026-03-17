@@ -1,5 +1,11 @@
 [
   {
+    "date": "17/03/2026",
+    "name": "Reverse Linked List",
+    "topic": "LinkedList",
+    "source": "Scaler"
+  },
+  {
     "date": "16/03/2026",
     "name": "Insert in Linked List",
     "topic": "LinkedList",
