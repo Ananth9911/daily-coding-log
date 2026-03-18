@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 289 🔥
+- **Total Problems Solved:** 290 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 19/03/2026 | Subarray(MAX - MIN) | Stack | Scaler |
 | 19/03/2026 | Largest Rectangle in Histogram | Stack | Scaler |
 | 19/03/2026 | Double Character Trouble | Stack | Scaler |
 | 18/03/2026 | Passing game | Stack | Scaler |
@@ -24,6 +25,5 @@
 | 17/03/2026 | Reverse Linked List | LinkedList | Scaler |
 | 16/03/2026 | Insert in Linked List | LinkedList | Scaler |
 | 15/03/2026 | kth Node in a List | LinkedList | Scaler |
-| 15/03/2026 | Print Linked List | LinkedList | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
