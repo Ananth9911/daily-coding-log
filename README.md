@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 288 🔥
+- **Total Problems Solved:** 289 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 19/03/2026 | Largest Rectangle in Histogram | Stack | Scaler |
 | 19/03/2026 | Double Character Trouble | Stack | Scaler |
 | 18/03/2026 | Passing game | Stack | Scaler |
 | 18/03/2026 | Balanced Paranthesis | Stack | Scaler |
@@ -24,6 +25,5 @@
 | 16/03/2026 | Insert in Linked List | LinkedList | Scaler |
 | 15/03/2026 | kth Node in a List | LinkedList | Scaler |
 | 15/03/2026 | Print Linked List | LinkedList | Scaler |
-| 14/03/2026 | Count Pair Difference | Hashing | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)

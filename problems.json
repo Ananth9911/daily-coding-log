@@ -1,6 +1,12 @@
 [
   {
     "date": "19/03/2026",
+    "name": "Largest Rectangle in Histogram",
+    "topic": "Stack",
+    "source": "Scaler"
+  },
+  {
+    "date": "19/03/2026",
     "name": "Double Character Trouble",
     "topic": "Stack",
     "source": "Scaler"
