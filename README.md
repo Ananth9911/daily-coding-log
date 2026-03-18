@@ -1,11 +1,11 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 287 🔥
+- **Total Problems Solved:** 288 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
 - **Foundation** `[██████████]` **100%** *(25/25)*
-- **DSA (Data Structures)** `[█████░░░░░]` **51%** *(47/92)*
+- **DSA (Data Structures)** `[█████░░░░░]` **52%** *(48/92)*
 - **Core (SQL/CS Fund)** `[█████░░░░░]` **53%** *(15/28)*
 - **System Design (LLD/HLD)** `[░░░░░░░░░░]` **0%** *(0/124)*
 
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 19/03/2026 | Double Character Trouble | Stack | Scaler |
 | 18/03/2026 | Passing game | Stack | Scaler |
 | 18/03/2026 | Balanced Paranthesis | Stack | Scaler |
 | 18/03/2026 | Evaluate Expression | Stack | Scaler |
@@ -24,6 +25,5 @@
 | 15/03/2026 | kth Node in a List | LinkedList | Scaler |
 | 15/03/2026 | Print Linked List | LinkedList | Scaler |
 | 14/03/2026 | Count Pair Difference | Hashing | Scaler |
-| 14/03/2026 | Count unique elements | Hashing | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
