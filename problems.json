@@ -1,5 +1,17 @@
 [
   {
+    "date": "21/03/2026",
+    "name": "Parking Ice Cream Truck",
+    "topic": "Queue",
+    "source": "Scaler"
+  },
+  {
+    "date": "20/03/2026",
+    "name": "Queue Using Stacks",
+    "topic": "Queue",
+    "source": "Scaler"
+  },
+  {
     "date": "19/03/2026",
     "name": "Subarray(MAX - MIN)",
     "topic": "Stack",
