@@ -1,5 +1,11 @@
 [
   {
+    "date": "20/03/2026",
+    "name": "Queue Using Stacks",
+    "topic": "Queue",
+    "source": "Scaler"
+  },
+  {
     "date": "19/03/2026",
     "name": "Subarray(MAX - MIN)",
     "topic": "Stack",
