@@ -5,8 +5,9 @@
 
 ### 🎓 Progress
 - **Foundation** `[██████████]` **100%** *(25/25)*
-- **DSA (Data Structures)** `[██████████]` **100%** *(49/49)*
-- **Core (SQL/CS Fund)** `[██████████]` **100%** *(5/5)*
+- **DSA (Data Structures)** `[█████░░░░░]` **53%** *(49/92)*
+- **Core (SQL/CS Fund)** `[█░░░░░░░░░]` **17%** *(5/28)*
+- **System Design (LLD/HLD)** `[░░░░░░░░░░]` **0%** *(0/124)*
 
 
 ![Topic Breakdown](topic_breakdown.png)
