@@ -15,7 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
-| 24/03/2026 | Right View of Binary tree | nan | nan |
+| 24/03/2026 | Right View of Binary tree | Tree | Scaler |
 | 23/03/2026 | Preorder Traversal | Tree | Scaler |
 | 23/03/2026 | Inorder Traversal | Tree | Scaler |
 | 23/03/2026 | Level Order | Tree | Scaler |
