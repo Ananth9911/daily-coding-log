@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 293 🔥
+- **Total Problems Solved:** 294 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,7 +15,8 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
-| 21/03/2026 | Unique Letter | Queue | Scaler |
+| 23/03/2026 | Level Order | Tree | Scaler |
+| 22/03/2026 | Unique Letter | Queue | Scaler |
 | 21/03/2026 | Parking Ice Cream Truck | Queue | Scaler |
 | 20/03/2026 | Queue Using Stacks | Queue | Scaler |
 | 19/03/2026 | Subarray(MAX - MIN) | Stack | Scaler |
@@ -24,6 +25,5 @@
 | 18/03/2026 | Passing game | Stack | Scaler |
 | 18/03/2026 | Balanced Paranthesis | Stack | Scaler |
 | 18/03/2026 | Evaluate Expression | Stack | Scaler |
-| 17/03/2026 | Delete in Linked List | LinkedList | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
