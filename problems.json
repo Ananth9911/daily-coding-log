@@ -1,6 +1,12 @@
 [
   {
     "date": "23/03/2026",
+    "name": "Preorder Traversal",
+    "topic": "Tree",
+    "source": "Scaler"
+  },
+  {
+    "date": "23/03/2026",
     "name": "Inorder Traversal",
     "topic": "Tree",
     "source": "Scaler"
