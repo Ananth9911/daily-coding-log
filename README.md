@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 296 🔥
+- **Total Problems Solved:** 297 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 24/03/2026 | Right View of Binary tree | nan | nan |
 | 23/03/2026 | Preorder Traversal | Tree | Scaler |
 | 23/03/2026 | Inorder Traversal | Tree | Scaler |
 | 23/03/2026 | Level Order | Tree | Scaler |
@@ -24,6 +25,5 @@
 | 19/03/2026 | Subarray(MAX - MIN) | Stack | Scaler |
 | 19/03/2026 | Largest Rectangle in Histogram | Stack | Scaler |
 | 19/03/2026 | Double Character Trouble | Stack | Scaler |
-| 18/03/2026 | Passing game | Stack | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
