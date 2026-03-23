@@ -1,6 +1,12 @@
 [
   {
     "date": "24/03/2026",
+    "name": "Sum binary tree or not",
+    "topic": "Tree",
+    "source": "Scaler"
+  },
+  {
+    "date": "24/03/2026",
     "name": "Postorder Traversal",
     "topic": "Tree",
     "source": "Scaler"
