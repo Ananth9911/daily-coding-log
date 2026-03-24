@@ -1,6 +1,12 @@
 [
   {
     "date": "25/03/2026",
+    "name": "Sorted Array To Balanced BST",
+    "topic": "Tree",
+    "source": "Scaler"
+  },
+  {
+    "date": "25/03/2026",
     "name": "Valid Binary Search Tree",
     "topic": "Tree",
     "source": "Scaler"
