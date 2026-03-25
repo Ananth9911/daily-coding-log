@@ -1,5 +1,11 @@
 [
   {
+    "date": "26/03/2026",
+    "name": "Balanced Binary Tree",
+    "topic": "Tree",
+    "source": "Scaler"
+  },
+  {
     "date": "25/03/2026",
     "name": "Search in BST",
     "topic": "Tree",
