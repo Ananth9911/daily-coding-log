@@ -1,6 +1,12 @@
 [
   {
     "date": "27/03/2026",
+    "name": "Binary Tree From Inorder And Postorder",
+    "topic": "Tree",
+    "source": "Scaler"
+  },
+  {
+    "date": "27/03/2026",
     "name": "Copy List",
     "topic": "LinkedList",
     "source": "Scaler"
