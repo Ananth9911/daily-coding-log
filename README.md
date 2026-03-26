@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 306 🔥
+- **Total Problems Solved:** 307 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 27/03/2026 | Copy List | LinkedList | Scaler |
 | 26/03/2026 | Equal Tree Partition | Tree | Scaler |
 | 26/03/2026 | Path Sum | Tree | Scaler |
 | 26/03/2026 | Balanced Binary Tree | Tree | Scaler |
@@ -24,6 +25,5 @@
 | 25/03/2026 | Valid Binary Search Tree | Tree | Scaler |
 | 24/03/2026 | Sum binary tree or not | Tree | Scaler |
 | 24/03/2026 | Postorder Traversal | Tree | Scaler |
-| 24/03/2026 | Right View of Binary tree | Tree | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)

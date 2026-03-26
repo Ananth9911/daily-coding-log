@@ -1,5 +1,11 @@
 [
   {
+    "date": "27/03/2026",
+    "name": "Copy List",
+    "topic": "LinkedList",
+    "source": "Scaler"
+  },
+  {
     "date": "26/03/2026",
     "name": "Equal Tree Partition",
     "topic": "Tree",
