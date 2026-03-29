@@ -1,5 +1,11 @@
 [
   {
+    "date": "28/03/2026",
+    "name": "Serialize Binary Tree",
+    "topic": "Tree",
+    "source": "Scaler"
+  },
+  {
     "date": "27/03/2026",
     "name": "Binary Tree From Inorder And Preorder",
     "topic": "Tree",
