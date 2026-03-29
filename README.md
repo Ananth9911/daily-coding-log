@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 311 🔥
+- **Total Problems Solved:** 312 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 29/03/2026 | Check for BST with One Child | Tree | Scaler |
 | 29/03/2026 | Deserialize Binary Tree | Tree | Scaler |
 | 28/03/2026 | Serialize Binary Tree | Tree | Scaler |
 | 27/03/2026 | Binary Tree From Inorder And Preorder | Tree | Scaler |
@@ -24,6 +25,5 @@
 | 26/03/2026 | Path Sum | Tree | Scaler |
 | 26/03/2026 | Balanced Binary Tree | Tree | Scaler |
 | 25/03/2026 | Search in BST | Tree | Scaler |
-| 25/03/2026 | Delete a node in BST | Tree | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)

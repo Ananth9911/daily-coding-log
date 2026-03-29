@@ -1,6 +1,12 @@
 [
   {
     "date": "29/03/2026",
+    "name": "Check for BST with One Child",
+    "topic": "Tree",
+    "source": "Scaler"
+  },
+  {
+    "date": "29/03/2026",
     "name": "Deserialize Binary Tree",
     "topic": "Tree",
     "source": "Scaler"
