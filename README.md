@@ -15,7 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
-| 30/03/2026 | Compute nCr % m(Legendre's + Sieve) | Maths | nan |
+| 30/03/2026 | Compute nCr % m(Legendre's + Sieve) | Maths | Scaler |
 | 29/03/2026 | Two Sum BST | Tree | Scaler |
 | 29/03/2026 | BST nodes in a range | Tree | Scaler |
 | 29/03/2026 | Check for BST with One Child | Tree | Scaler |
