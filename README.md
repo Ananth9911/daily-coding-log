@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 314 🔥
+- **Total Problems Solved:** 315 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 30/03/2026 | Compute nCr % m(Legendre's + Sieve) | Maths | nan |
 | 29/03/2026 | Two Sum BST | Tree | Scaler |
 | 29/03/2026 | BST nodes in a range | Tree | Scaler |
 | 29/03/2026 | Check for BST with One Child | Tree | Scaler |
@@ -24,6 +25,5 @@
 | 27/03/2026 | Binary Tree From Inorder And Postorder | Tree | Scaler |
 | 27/03/2026 | Copy List | LinkedList | Scaler |
 | 26/03/2026 | Equal Tree Partition | Tree | Scaler |
-| 26/03/2026 | Path Sum | Tree | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
