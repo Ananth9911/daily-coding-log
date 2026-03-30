@@ -1,6 +1,12 @@
 [
   {
     "date": "30/03/2026",
+    "name": "Sieve of Eratosthenes",
+    "topic": "Maths",
+    "source": "Scaler"
+  },
+  {
+    "date": "30/03/2026",
     "name": "Compute nCr % m(Legendre's + Sieve)",
     "topic": "Maths",
     "source": "Scaler"
