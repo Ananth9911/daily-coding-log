@@ -1,5 +1,11 @@
 [
   {
+    "date": "31/03/2026",
+    "name": "Goldbach Algo",
+    "topic": "Maths",
+    "source": "Scaler"
+  },
+  {
     "date": "30/03/2026",
     "name": "Sieve of Eratosthenes",
     "topic": "Maths",
