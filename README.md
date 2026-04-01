@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 317 🔥
+- **Total Problems Solved:** 318 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 01/04/2026 | Pascal Triangle | Maths | Scaler |
 | 31/03/2026 | Goldbach Algo | Maths | Scaler |
 | 30/03/2026 | Sieve of Eratosthenes | Maths | Scaler |
 | 30/03/2026 | Compute nCr % m(Legendre's + Sieve) | Maths | Scaler |
@@ -24,6 +25,5 @@
 | 29/03/2026 | Deserialize Binary Tree | Tree | Scaler |
 | 28/03/2026 | Serialize Binary Tree | Tree | Scaler |
 | 27/03/2026 | Binary Tree From Inorder And Preorder | Tree | Scaler |
-| 27/03/2026 | Binary Tree From Inorder And Postorder | Tree | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)

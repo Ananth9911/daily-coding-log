@@ -1,5 +1,11 @@
 [
   {
+    "date": "01/04/2026",
+    "name": "Pascal Triangle",
+    "topic": "Maths",
+    "source": "Scaler"
+  },
+  {
     "date": "31/03/2026",
     "name": "Goldbach Algo",
     "topic": "Maths",
