@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 319 🔥
+- **Total Problems Solved:** 320 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 02/04/2026 | Pairs with given sum II | Maths | Scaler |
 | 01/04/2026 | Sieve of Eratosthenes - Divisors | Maths | Scaler |
 | 01/04/2026 | Pascal Triangle | Maths | Scaler |
 | 31/03/2026 | Goldbach Algo | Maths | Scaler |
@@ -24,6 +25,5 @@
 | 29/03/2026 | BST nodes in a range | Tree | Scaler |
 | 29/03/2026 | Check for BST with One Child | Tree | Scaler |
 | 29/03/2026 | Deserialize Binary Tree | Tree | Scaler |
-| 28/03/2026 | Serialize Binary Tree | Tree | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
