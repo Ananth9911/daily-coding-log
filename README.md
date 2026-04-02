@@ -15,7 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
-| 03/04/2026 | Container With Most Water | Maths | Scaler |
+| 03/04/2026 | Container With Most Water | Array | Scaler |
 | 03/04/2026 | Excel Column Title | Maths | Scaler |
 | 02/04/2026 | 3 Sum | Maths | Scaler |
 | 02/04/2026 | Pairs with given sum II | Maths | Scaler |
