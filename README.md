@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 324 🔥
+- **Total Problems Solved:** 325 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 03/04/2026 | Pairs with Given Difference | Array | Scaler |
 | 03/04/2026 | Sorted Permutation Rank | Array | Scaler |
 | 03/04/2026 | Container With Most Water | Array | Scaler |
 | 03/04/2026 | Excel Column Title | Maths | Scaler |
@@ -24,6 +25,5 @@
 | 01/04/2026 | Pascal Triangle | Maths | Scaler |
 | 31/03/2026 | Goldbach Algo | Maths | Scaler |
 | 30/03/2026 | Sieve of Eratosthenes | Maths | Scaler |
-| 30/03/2026 | Compute nCr % m(Legendre's + Sieve) | Maths | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
