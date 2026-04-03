@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 326 🔥
+- **Total Problems Solved:** 327 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 04/04/2026 | Generate Subsets | Backtracking | Scaler |
 | 04/04/2026 | Generate all Parentheses II | Backtracking | Scaler |
 | 03/04/2026 | Pairs with Given Difference | Array | Scaler |
 | 03/04/2026 | Sorted Permutation Rank | Array | Scaler |
@@ -24,6 +25,5 @@
 | 02/04/2026 | Pairs with given sum II | Maths | Scaler |
 | 01/04/2026 | Sieve of Eratosthenes - Divisors | Maths | Scaler |
 | 01/04/2026 | Pascal Triangle | Maths | Scaler |
-| 31/03/2026 | Goldbach Algo | Maths | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
