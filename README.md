@@ -1,11 +1,11 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 325 🔥
+- **Total Problems Solved:** 326 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
 - **Foundation** `[██████████]` **100%** *(25/25)*
-- **DSA (Data Structures)** `[██████░░░░]` **61%** *(57/92)*
+- **DSA (Data Structures)** `[██████░░░░]` **63%** *(58/92)*
 - **Core (SQL/CS Fund)** `[██░░░░░░░░]` **28%** *(8/28)*
 - **System Design (LLD/HLD)** `[░░░░░░░░░░]` **0%** *(0/124)*
 
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 04/04/2026 | Generate all Parentheses II | nan | nan |
 | 03/04/2026 | Pairs with Given Difference | Array | Scaler |
 | 03/04/2026 | Sorted Permutation Rank | Array | Scaler |
 | 03/04/2026 | Container With Most Water | Array | Scaler |
@@ -24,6 +25,5 @@
 | 01/04/2026 | Sieve of Eratosthenes - Divisors | Maths | Scaler |
 | 01/04/2026 | Pascal Triangle | Maths | Scaler |
 | 31/03/2026 | Goldbach Algo | Maths | Scaler |
-| 30/03/2026 | Sieve of Eratosthenes | Maths | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
