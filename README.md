@@ -15,7 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
-| 04/04/2026 | Generate all Parentheses II | Backtracking | nan |
+| 04/04/2026 | Generate all Parentheses II | nan | nan |
 | 03/04/2026 | Pairs with Given Difference | Array | Scaler |
 | 03/04/2026 | Sorted Permutation Rank | Array | Scaler |
 | 03/04/2026 | Container With Most Water | Array | Scaler |
