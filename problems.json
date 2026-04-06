@@ -1,6 +1,12 @@
 [
   {
-    "date": "05/04/2026",
+    "date": "07/04/2026",
+    "name": "Shortest path in a Binary Maze with Hurdles",
+    "topic": "Backtracking",
+    "source": "Scaler"
+  },
+  {
+    "date": "06/04/2026",
     "name": "Print All Maze Paths",
     "topic": "Backtracking",
     "source": "Scaler"

@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 330 🔥
+- **Total Problems Solved:** 331 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,7 +15,8 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
-| 05/04/2026 | Print All Maze Paths | Backtracking | Scaler |
+| 07/04/2026 | Shortest path in a Binary Maze with Hurdles | Backtracking | Scaler |
+| 06/04/2026 | Print All Maze Paths | Backtracking | Scaler |
 | 05/04/2026 | Print paths in Staircase | Backtracking | Scaler |
 | 04/04/2026 | Permutations | Backtracking | Scaler |
 | 04/04/2026 | Generate Subsets | Backtracking | Scaler |
@@ -24,6 +25,5 @@
 | 03/04/2026 | Sorted Permutation Rank | Array | Scaler |
 | 03/04/2026 | Container With Most Water | Array | Scaler |
 | 03/04/2026 | Excel Column Title | Maths | Scaler |
-| 02/04/2026 | 3 Sum | Maths | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
