@@ -1,5 +1,11 @@
 [
   {
+    "date": "05/04/2026",
+    "name": "Print paths in Staircase",
+    "topic": "Backtracking",
+    "source": "Scaler"
+  },
+  {
     "date": "04/04/2026",
     "name": "Permutations",
     "topic": "Backtracking",
