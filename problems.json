@@ -1,6 +1,12 @@
 [
   {
     "date": "08/04/2026",
+    "name": "Merge Two Sorted Lists",
+    "topic": "LinkedList",
+    "source": "Scaler"
+  },
+  {
+    "date": "08/04/2026",
     "name": "Middle element of linked list",
     "topic": "LinkedList",
     "source": "Scaler"
