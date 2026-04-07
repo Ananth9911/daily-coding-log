@@ -1,5 +1,11 @@
 [
   {
+    "date": "08/04/2026",
+    "name": "Middle element of linked list",
+    "topic": "LinkedList",
+    "source": "Scaler"
+  },
+  {
     "date": "07/04/2026",
     "name": "Shortest path in a Binary Maze with Hurdles",
     "topic": "Backtracking",
