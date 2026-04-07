@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 334 🔥
+- **Total Problems Solved:** 335 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 08/04/2026 | Palindrome List | LinkedList | Scaler |
 | 08/04/2026 | Sort List | LinkedList | Scaler |
 | 08/04/2026 | Merge Two Sorted Lists | LinkedList | Scaler |
 | 08/04/2026 | Middle element of linked list | LinkedList | Scaler |
@@ -24,6 +25,5 @@
 | 04/04/2026 | Permutations | Backtracking | Scaler |
 | 04/04/2026 | Generate Subsets | Backtracking | Scaler |
 | 04/04/2026 | Generate all Parentheses II | Backtracking | Scaler |
-| 03/04/2026 | Pairs with Given Difference | Array | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
