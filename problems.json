@@ -1,5 +1,11 @@
 [
   {
+    "date": "09/04/2026",
+    "name": "Intersection of Linked Lists",
+    "topic": "LinkedList",
+    "source": "Scaler"
+  },
+  {
     "date": "08/04/2026",
     "name": "Palindrome List",
     "topic": "LinkedList",
