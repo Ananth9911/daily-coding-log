@@ -1,6 +1,12 @@
 [
   {
     "date": "09/04/2026",
+    "name": "LRU Cache",
+    "topic": "LinkedList",
+    "source": "Scaler"
+  },
+  {
+    "date": "09/04/2026",
     "name": "Remove Loop from Linked List",
     "topic": "LinkedList",
     "source": "Scaler"
