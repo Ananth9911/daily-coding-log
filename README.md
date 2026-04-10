@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 342 🔥
+- **Total Problems Solved:** 343 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 11/04/2026 | Recover Binary Search Tree | Tree | Scaler |
 | 11/04/2026 | Morris Inorder Traversal | Tree | Scaler |
 | 11/04/2026 | LCA in BST | Tree | Scaler |
 | 10/04/2026 | Kth Smallest Element In BST | Tree | Scaler |
@@ -24,6 +25,5 @@
 | 09/04/2026 | Intersection of Linked Lists | LinkedList | Scaler |
 | 08/04/2026 | Palindrome List | LinkedList | Scaler |
 | 08/04/2026 | Sort List | LinkedList | Scaler |
-| 08/04/2026 | Merge Two Sorted Lists | LinkedList | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
