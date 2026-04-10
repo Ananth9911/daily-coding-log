@@ -1,6 +1,12 @@
 [
   {
     "date": "10/04/2026",
+    "name": "Kth Smallest Element In BST",
+    "topic": "Tree",
+    "source": "Scaler"
+  },
+  {
+    "date": "10/04/2026",
     "name": "Least Common Ancestor",
     "topic": "Tree",
     "source": "Scaler"
