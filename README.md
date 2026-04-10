@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 340 🔥
+- **Total Problems Solved:** 341 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 11/04/2026 | LCA in BST | Tree | Scaler |
 | 10/04/2026 | Kth Smallest Element In BST | Tree | Scaler |
 | 10/04/2026 | Least Common Ancestor | Tree | Scaler |
 | 09/04/2026 | LRU Cache | LinkedList | Scaler |
@@ -24,6 +25,5 @@
 | 08/04/2026 | Sort List | LinkedList | Scaler |
 | 08/04/2026 | Merge Two Sorted Lists | LinkedList | Scaler |
 | 08/04/2026 | Middle element of linked list | LinkedList | Scaler |
-| 07/04/2026 | Shortest path in a Binary Maze with Hurdles | Backtracking | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
