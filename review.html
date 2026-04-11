@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRS Dashboard | Ananth</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #030303; --card: #0a0a0a; --green: #39d353; --text: #fff; --muted: #888; }
+        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; padding: 40px 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 30px; }
+        h1 { margin: 0; font-size: 1.5rem; }
+        .problem-card { background: var(--card); border: 1px solid #222; border-radius: 12px; padding: 20px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; }
+        .problem-info h3 { margin: 0 0 5px 0; font-size: 1.1rem; }
+        .problem-info p { margin: 0; color: var(--muted); font-size: 0.85rem; }
+        .badge { background: #222; padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; margin-right: 10px; color: #ccc;}
+        .actions { display: flex; gap: 10px; }
+        button, a.btn { padding: 8px 16px; border-radius: 6px; border: none; cursor: pointer; font-weight: 600; font-size: 0.85rem; text-decoration: none; display: inline-block; }
+        .btn-solve { background: #222; color: #fff; border: 1px solid #444; }
+        .btn-smooth { background: rgba(57, 211, 83, 0.1); color: var(--green); border: 1px solid var(--green); }
+        .btn-struggled { background: rgba(255, 85, 85, 0.1); color: #ff5555; border: 1px solid #ff5555; }
+        button:disabled { opacity: 0.5; cursor: not-allowed; }
+        .empty-state { text-align: center; color: var(--muted); padding: 50px; background: #0a0a0a; border-radius: 12px; border: 1px solid #222;}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Nightly Review Queue</h1>
+        <span id="date-display" style="color: var(--muted);"></span>
+    </div>
+    
+    <div id="loading" class="empty-state">Establishing connection to FSM...</div>
+    <div id="queue"></div>
+</div>
+
+<script>
+    // ==========================================
+    // PASTE YOUR GOOGLE APPS SCRIPT URL BELOW 👇
+    // ==========================================
+    const API_URL = "https://script.google.com/macros/s/AKfycbwEX9PR1P7sKSL5BIbFis9IS9-gpAOQnwjvYt15fnZbeJY1WkvCArkkLPRe4TPIp5kAuw/exec";
+
+    document.getElementById('date-display').innerText = new Date().toDateString();
+
+    async function loadQueue() {
+        try {
+            const response = await fetch(API_URL);
+            const data = await response.json();
+            
+            // Fix timezone issue by checking local string
+            const todayDate = new Date();
+            const todayStr = todayDate.getFullYear() + "-" + 
+                             String(todayDate.getMonth() + 1).padStart(2, '0') + "-" + 
+                             String(todayDate.getDate()).padStart(2, '0');
+            
+            let dueProblems = [];
+            let newProblems = [];
+
+            data.forEach(p => {
+                if (p.reviewDate === "Review-Not needed" || p.phase === "Completed") return;
+                
+                // If it is in the queue but has no date yet
+                if (p.phase === "New" || p.reviewDate === "") {
+                    newProblems.push(p);
+                } 
+                // If the date is today or earlier
+                else if (p.reviewDate <= todayStr) {
+                    dueProblems.push(p);
+                }
+            });
+
+            // Strategy: Give 4 Review Problems, and exactly 1 "New to loop" problem
+            let finalQueue = dueProblems.slice(0, 4);
+            if (newProblems.length > 0) {
+                finalQueue.push(newProblems[0]); // Pick the oldest blank one
+            }
+
+            renderQueue(finalQueue);
+
+        } catch (error) {
+            document.getElementById('loading').innerText = "Database connection failed. Check URL.";
+            console.error(error);
+        }
+    }
+
+    function renderQueue(problems) {
+        const queueDiv = document.getElementById('queue');
+        document.getElementById('loading').style.display = "none";
+        queueDiv.innerHTML = "";
+
+        if (problems.length === 0) {
+            queueDiv.innerHTML = `<div class="empty-state">Queue is perfectly clear. Take your Magnesium and rest! 🧠</div>`;
+            return;
+        }
+
+        problems.forEach(p => {
+            const card = document.createElement('div');
+            card.className = "problem-card";
+            card.id = `card-${btoa(p.name).replace(/[^a-zA-Z0-9]/g, '')}`; 
+
+            card.innerHTML = `
+                <div class="problem-info">
+                    <h3>${p.name}</h3>
+                    <p><span class="badge">${p.topic}</span> Phase: ${p.phase}</p>
+                </div>
+                <div class="actions">
+                    <a href="${p.url}" target="_blank" class="btn btn-solve">Solve</a>
+                    <button class="btn-struggled" onclick="updateProblem('${p.name}', 'Struggled', '${card.id}')">Struggled</button>
+                    <button class="btn-smooth" onclick="updateProblem('${p.name}', 'Smooth', '${card.id}')">Smooth</button>
+                </div>
+            `;
+            queueDiv.appendChild(card);
+        });
+    }
+
+    async function updateProblem(name, action, cardId) {
+        const card = document.getElementById(cardId);
+        const buttons = card.querySelectorAll('button');
+        buttons.forEach(b => b.disabled = true);
+        
+        // Show loading state
+        const targetBtn = action === 'Smooth' ? buttons[1] : buttons[0];
+        targetBtn.innerText = "Syncing...";
+
+        try {
+            await fetch(API_URL, {
+                method: "POST",
+                body: JSON.stringify({ name: name, action: action })
+            });
+            // Smoothly remove card
+            card.style.opacity = 0;
+            setTimeout(() => card.remove(), 300);
+            
+            // Check if queue is empty now
+            if (document.querySelectorAll('.problem-card').length === 1) {
+                setTimeout(() => {
+                    document.getElementById('queue').innerHTML = `<div class="empty-state">Queue cleared! 🚀</div>`;
+                }, 300);
+            }
+        } catch (error) {
+            alert("Sync failed. Check console.");
+            buttons.forEach(b => b.disabled = false);
+            targetBtn.innerText = action;
+        }
+    }
+
+    loadQueue();
+</script>
+
+</body>
+</html>
