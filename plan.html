@@ -11,6 +11,7 @@
             --bg: #09090b; --card: #18181b; --border: #3f3f46;
             --primary: #39d353; --danger: #ef4444; --text: #f4f4f5; --muted: #a1a1aa;
             --accent: #3b82f6; --warning: #eab308; --done: #2ea44f; --purple: #a855f7;
+            --weekend: rgba(168, 85, 247, 0.1);
         }
         body {
             background-color: var(--bg); background-image: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
@@ -20,8 +21,9 @@
         .header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 20px; flex-wrap: wrap; gap: 15px;}
         h1 { margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; letter-spacing: -0.5px; }
         
+        /* Progress HUD */
         .progress-hud { display: flex; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
-        .hud-item { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 10px 15px; flex: 1; min-width: 120px; text-align: center;}
+        .hud-item { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 10px 15px; flex: 1; min-width: 110px; text-align: center; display: flex; flex-direction: column; justify-content: center;}
         .hud-val { font-family: 'Space Grotesk'; font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 2px;}
         .hud-label { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px;}
 
@@ -33,12 +35,16 @@
         .timeline-card {
             background: var(--card); border: 1px solid var(--border); border-radius: 12px;
             padding: 20px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;
-            transition: all 0.3s ease; border-left: 4px solid var(--border);
+            transition: all 0.3s ease; border-left: 4px solid var(--border); position: relative; overflow: hidden;
         }
+        
+        /* State Colors */
         .card-done { border-left-color: var(--done); background: rgba(46, 164, 79, 0.05); opacity: 0.7;}
         .card-overdue { border-left-color: var(--danger); background: rgba(239, 68, 68, 0.05); }
         .card-today { border-left-color: var(--primary); background: rgba(57, 211, 83, 0.05); box-shadow: 0 0 20px rgba(57,211,83,0.1);}
         .card-upcoming { border-left-color: var(--accent); opacity: 0.9;}
+        .card-weekend { border-left-color: var(--purple); background: var(--weekend); }
+        
         .timeline-card:hover { transform: translateX(5px); border-color: #71717a; }
 
         .class-info h3 { margin: 0 0 8px 0; font-size: 1.1rem; font-weight: 600; }
@@ -47,7 +53,7 @@
         .b-track { background: rgba(255, 255, 255, 0.1); color: #fff; border: 1px solid #555; }
         .b-module { background: rgba(59, 130, 246, 0.1); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.2); }
 
-        .actions { display: flex; gap: 10px; }
+        .actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
         button { padding: 8px 16px; border-radius: 6px; font-weight: 600; font-size: 0.85rem; border: none; cursor: pointer; transition: 0.2s; font-family: 'Inter', sans-serif; }
         
         .btn-pull { background: transparent; color: var(--purple); border: 1px solid var(--purple); }
@@ -68,8 +74,15 @@
         .btn-revision { background: transparent; color: #c084fc; border: 1px solid #c084fc; font-size: 0.8rem;}
         .btn-revision:hover { background: rgba(168, 85, 247, 0.1); }
 
+        /* Focus Timer */
+        .btn-timer { background: var(--accent); color: #fff; }
+        .btn-timer:hover { opacity: 0.8; }
+        .timer-display { font-family: 'Space Grotesk', monospace; font-size: 1.1rem; font-weight: 700; display: none; width: 60px; text-align: center; color: var(--primary); }
+        .timer-danger { color: var(--danger); animation: pulse 1s infinite; }
+
         button:disabled { opacity: 0.5; pointer-events: none; }
         .empty-state { color: var(--muted); font-style: italic; font-size: 0.9rem; padding: 10px; background: var(--card); border-radius: 8px; border: 1px dashed var(--border);}
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
     </style>
 </head>
 <body>
@@ -77,12 +90,12 @@
 <div class="container">
     <div class="header">
         <div>
-            <p style="margin: 0; color: var(--accent); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px;">• Strict Sequence Active</p>
+            <p style="margin: 0; color: var(--accent); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px;">• Dual-Track Engine V8</p>
             <h1>Master Schedule</h1>
         </div>
         <div style="display: flex; gap: 10px;">
-            <button class="btn-sync" onclick="smartSync()">⚡ Smart Sync</button>
-            <button class="btn-revision" onclick="startRevisionPhase()">🎓 Final Revision Mode</button>
+            <button class="btn-sync" onclick="smartSync(this)">⚡ Smart Sync</button>
+            <button class="btn-revision" onclick="startRevisionPhase(this)">🎓 Final Revision Mode</button>
         </div>
     </div>
 
@@ -116,6 +129,25 @@
 
     let allUpcoming = []; 
     let showingAll = false; 
+    let activeTimers = {};
+
+    // Calculate Streak based on local storage
+    function getStreak(todayStr) {
+        let lastDate = localStorage.getItem('srs_last_done');
+        let currentStreak = parseInt(localStorage.getItem('srs_streak')) || 0;
+        
+        let today = new Date(todayStr);
+        let yesterday = new Date(today);
+        yesterday.setDate(yesterday.getDate() - 1);
+        let yesterdayStr = yesterday.toISOString().split('T')[0];
+
+        // If last done was before yesterday, streak is lost.
+        if (lastDate !== todayStr && lastDate !== yesterdayStr && lastDate !== null) {
+            currentStreak = 0;
+            localStorage.setItem('srs_streak', 0);
+        }
+        return currentStreak;
+    }
 
     async function loadTimeline() {
         document.getElementById('loading').style.display = "block";
@@ -125,25 +157,34 @@
             let data = await response.json();
             
             data.sort((a, b) => new Date(a.date) - new Date(b.date));
-            calculateHUD(data);
 
             const todayDate = new Date();
             const todayStr = todayDate.getFullYear() + "-" + String(todayDate.getMonth() + 1).padStart(2, '0') + "-" + String(todayDate.getDate()).padStart(2, '0');
             
+            calculateHUD(data, todayStr);
+
             let lastCompletedItem = null;
+            let highestRowIndex = -1; // FIXED: Relies on true curriculum order, not typed dates
+            
             let overdue = [], today = [];
             allUpcoming = []; 
             
             data.forEach(item => {
-                if (item.status === "Done") { lastCompletedItem = item; return; }
+                if (item.status === "Done") { 
+                    if (item.rowIndex > highestRowIndex) {
+                        highestRowIndex = item.rowIndex;
+                        lastCompletedItem = item;
+                    }
+                    return; 
+                }
                 if (item.date < todayStr) overdue.push(item);
                 else if (item.date === todayStr) today.push(item);
                 else allUpcoming.push(item);
             });
 
-            if (lastCompletedItem) renderSection('last-completed', [lastCompletedItem], 'card-done', false);
-            renderSection('overdue-queue', overdue, 'card-overdue', true, todayStr);
-            renderSection('today-queue', today, 'card-today', true, todayStr);
+            if (lastCompletedItem) renderSection('last-completed', [lastCompletedItem], 'card-done', false, todayStr, false);
+            renderSection('overdue-queue', overdue, 'card-overdue', true, todayStr, true); // Allow timers on overdue
+            renderSection('today-queue', today, 'card-today', true, todayStr, true); // Allow timers on today
             renderUpcoming(todayStr); 
             
             document.getElementById('loading').style.display = "none";
@@ -153,15 +194,15 @@
         }
     }
 
-    function calculateHUD(data) {
-        let stats = { "DSA": {d:0, t:0}, "HLD": {d:0, t:0}, "Core (DB/CN)": {d:0, t:0} };
+    function calculateHUD(data, todayStr) {
+        let stats = { "DSA": {d:0, t:0}, "HLD": {d:0, t:0}, "Core": {d:0, t:0} };
         
         data.forEach(p => {
             let mod = p.module.toLowerCase();
             let key = null;
             if (mod.includes("dsa") || mod.includes("intro")) key = "DSA";
             else if (mod.includes("hld") || mod.includes("system design")) key = "HLD";
-            else if (mod.includes("sql") || mod.includes("database") || mod.includes("network") || mod.includes("cs fund")) key = "Core (DB/CN)";
+            else if (mod.includes("sql") || mod.includes("database") || mod.includes("network") || mod.includes("cs fund")) key = "Core";
             
             if (key) {
                 stats[key].t++;
@@ -169,8 +210,21 @@
             }
         });
 
+        // ETA Predictor
+        let pending = data.filter(d => d.status !== "Done" && d.status !== "NA" && !d.track.includes("Practice"));
+        let etaString = "Unknown";
+        if (pending.length > 0) {
+            let finalClass = pending[pending.length - 1];
+            etaString = new Date(finalClass.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+        } else {
+            etaString = "Completed 🚀";
+        }
+
+        let streak = getStreak(todayStr);
+
         const hud = document.getElementById('hud-stats');
         hud.innerHTML = "";
+        
         for (const [key, val] of Object.entries(stats)) {
             if (val.t === 0) continue;
             let pct = Math.round((val.d / val.t) * 100);
@@ -181,6 +235,22 @@
                 </div>
             `;
         }
+
+        // Streak Widget
+        hud.innerHTML += `
+            <div class="hud-item" style="border-color: rgba(234, 179, 8, 0.4); background: rgba(234, 179, 8, 0.05);">
+                <div class="hud-val" style="color: var(--warning);">🔥 ${streak}</div>
+                <div class="hud-label">Day Streak</div>
+            </div>
+        `;
+
+        // ETA Widget
+        hud.innerHTML += `
+            <div class="hud-item" style="flex: 1.5; border-color: rgba(59, 130, 246, 0.4); background: rgba(59, 130, 246, 0.05);">
+                <div class="hud-val" style="color: var(--accent);">${etaString}</div>
+                <div class="hud-label">🎯 Goal Target</div>
+            </div>
+        `;
     }
 
     function toggleUpcoming() {
@@ -193,10 +263,32 @@
 
     function renderUpcoming(todayStr) {
         const limit = showingAll ? allUpcoming.length : 5;
-        renderSection('upcoming-queue', allUpcoming.slice(0, limit), 'card-upcoming', true, todayStr);
+        renderSection('upcoming-queue', allUpcoming.slice(0, limit), 'card-upcoming', true, todayStr, false);
     }
 
-    function renderSection(elementId, items, cardClass, showButtons, todayStr) {
+    function startTimer(cardId) {
+        if (activeTimers[cardId]) return; 
+
+        const btn = document.getElementById(`btn-timer-${cardId}`);
+        const display = document.getElementById(`timer-${cardId}`);
+        
+        btn.style.display = "none"; 
+        display.style.display = "inline-block";
+
+        let seconds = 0;
+        activeTimers[cardId] = setInterval(() => {
+            seconds++;
+            let m = Math.floor(seconds / 60).toString().padStart(2, '0');
+            let s = (seconds % 60).toString().padStart(2, '0');
+            display.innerText = `${m}:${s}`;
+
+            if (seconds >= 1800) { // 30 minutes
+                display.classList.add('timer-danger');
+            }
+        }, 1000);
+    }
+
+    function renderSection(elementId, items, cardClass, showButtons, todayStr, allowTimer) {
         const div = document.getElementById(elementId);
         if (items.length === 0) {
             if (elementId === 'last-completed') div.innerHTML = `<div class="empty-state">No classes completed yet.</div>`;
@@ -209,11 +301,19 @@
         items.forEach(item => {
             const prettyDate = new Date(item.date).toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
             const card = document.createElement('div');
-            card.className = `timeline-card ${cardClass}`;
+            
+            // Visual logic for weekends
+            let finalCardClass = cardClass;
+            if (cardClass === 'card-upcoming' && (item.track.includes("Weekend") || item.track.includes("Practice"))) {
+                finalCardClass += ' card-weekend';
+            }
+            
+            card.className = `timeline-card ${finalCardClass}`;
             card.id = `row-${item.rowIndex}`;
 
             let buttonHTML = showButtons ? `
                 <div class="actions">
+                    ${allowTimer ? `<button class="btn-timer" id="btn-timer-${card.id}" onclick="startTimer('${card.id}')">▶ Focus</button><span class="timer-display" id="timer-${card.id}">00:00</span>` : ''}
                     ${item.date > todayStr ? `<button class="btn-pull" onclick="processAction('pull_to_today', ${item.rowIndex}, '${item.track}', '${card.id}')">⏬ Do Today</button>` : ''}
                     <button class="btn-shift" onclick="processAction('shift', ${item.rowIndex}, '${item.track}', '${card.id}')">⏩ Shift</button>
                     <button class="btn-done" onclick="processAction('done', ${item.rowIndex}, '${item.track}', '${card.id}')">✅ Done</button>
@@ -240,8 +340,10 @@
     async function processAction(action, rowIndex, track, cardId) {
         const card = document.getElementById(cardId);
         const buttons = card.querySelectorAll('button');
-        buttons.forEach(b => b.disabled = true);
+        buttons.forEach(b => b.disabled = true); 
         
+        if (activeTimers[cardId]) clearInterval(activeTimers[cardId]); // Stop timer
+
         document.getElementById('loading').style.display = "block";
         document.getElementById('loading').innerText = "Syncing with Database...";
 
@@ -250,7 +352,21 @@
                 method: "POST",
                 body: JSON.stringify({ action: action, rowIndex: rowIndex, track: track })
             });
-            if (action === 'done') confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+
+            if (action === 'done') {
+                confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+                
+                // Update Streak
+                const todayDate = new Date();
+                const todayStr = todayDate.getFullYear() + "-" + String(todayDate.getMonth() + 1).padStart(2, '0') + "-" + String(todayDate.getDate()).padStart(2, '0');
+                let lastDone = localStorage.getItem('srs_last_done');
+                if (lastDone !== todayStr) {
+                    let streak = parseInt(localStorage.getItem('srs_streak')) || 0;
+                    localStorage.setItem('srs_streak', streak + 1);
+                    localStorage.setItem('srs_last_done', todayStr);
+                }
+            }
+            
             setTimeout(() => loadTimeline(), 800); 
         } catch (error) {
             alert("Sync Failed.");
@@ -259,24 +375,32 @@
         }
     }
 
-    async function smartSync() {
+    async function smartSync(btn) {
         if (!confirm("This will perfectly align your remaining curriculum chronologically without breaking Weekday/Weekend rules. Continue?")) return;
+        btn.disabled = true; 
+        btn.innerText = "Syncing...";
         document.getElementById('loading').style.display = "block";
         document.getElementById('loading').innerText = "Auto-Healing Schedule Boundaries...";
         try {
             await fetch(API_URL, { method: "POST", body: JSON.stringify({ action: "smart_sync" }) });
+            btn.disabled = false;
+            btn.innerText = "⚡ Smart Sync";
             loadTimeline();
-        } catch (e) { alert("Failed to sync."); }
+        } catch (e) { alert("Failed to sync."); btn.disabled = false; btn.innerText = "⚡ Smart Sync";}
     }
 
-    async function startRevisionPhase() {
+    async function startRevisionPhase(btn) {
         if (!confirm("🎓 Only click this when you have finished Lec 234! This will convert all remaining blank rows into Daily Revision Practice. Are you ready?")) return;
+        btn.disabled = true; 
+        btn.innerText = "Processing...";
         document.getElementById('loading').style.display = "block";
         document.getElementById('loading').innerText = "Entering Final Revision Phase...";
         try {
             await fetch(API_URL, { method: "POST", body: JSON.stringify({ action: "revision_mode" }) });
+            btn.disabled = false;
+            btn.innerText = "🎓 Final Revision Mode";
             loadTimeline();
-        } catch (e) { alert("Failed to activate revision mode."); }
+        } catch (e) { alert("Failed to activate revision mode."); btn.disabled = false; btn.innerText = "🎓 Final Revision Mode";}
     }
 
     loadTimeline();
