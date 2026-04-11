@@ -1,5 +1,11 @@
 [
   {
+    "date": "12/04/2026",
+    "name": "Test-AlgoArray",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
     "date": "11/04/2026",
     "name": "Recover Binary Search Tree",
     "topic": "Tree",
