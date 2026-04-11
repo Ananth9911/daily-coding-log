@@ -90,8 +90,15 @@
     document.getElementById('date-display').innerText = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
 
     // Helper: Random Shuffle
+    // Helper: True Fisher-Yates Random Shuffle
     function shuffle(array) {
-        return array.sort(() => Math.random() - 0.5);
+        let currentIndex = array.length, randomIndex;
+        while (currentIndex !== 0) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+            [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+        }
+        return array;
     }
 
     // NEW: Chronological Bracketing Algorithm
