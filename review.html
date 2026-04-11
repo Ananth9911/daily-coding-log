@@ -3,36 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SRS Dashboard | Ananth</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <title>SRS Neural Engine | Ananth</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
-        :root { --bg: #030303; --card: #0a0a0a; --green: #39d353; --text: #fff; --muted: #888; }
-        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; padding: 40px 20px; }
-        .container { max-width: 800px; margin: 0 auto; }
-        .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 30px; }
-        h1 { margin: 0; font-size: 1.5rem; }
-        .problem-card { background: var(--card); border: 1px solid #222; border-radius: 12px; padding: 20px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; }
-        .problem-info h3 { margin: 0 0 5px 0; font-size: 1.1rem; }
-        .problem-info p { margin: 0; color: var(--muted); font-size: 0.85rem; }
-        .badge { background: #222; padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; margin-right: 10px; color: #ccc;}
-        .actions { display: flex; gap: 10px; }
-        button, a.btn { padding: 8px 16px; border-radius: 6px; border: none; cursor: pointer; font-weight: 600; font-size: 0.85rem; text-decoration: none; display: inline-block; }
-        .btn-solve { background: #222; color: #fff; border: 1px solid #444; }
-        .btn-smooth { background: rgba(57, 211, 83, 0.1); color: var(--green); border: 1px solid var(--green); }
-        .btn-struggled { background: rgba(255, 85, 85, 0.1); color: #ff5555; border: 1px solid #ff5555; }
-        button:disabled { opacity: 0.5; cursor: not-allowed; }
-        .empty-state { text-align: center; color: var(--muted); padding: 50px; background: #0a0a0a; border-radius: 12px; border: 1px solid #222;}
+        :root {
+            --bg: #09090b;
+            --card: #18181b;
+            --border: #3f3f46;
+            --primary: #39d353;
+            --danger: #ef4444;
+            --text: #f4f4f5;
+            --muted: #a1a1aa;
+        }
+        body {
+            background-color: var(--bg);
+            background-image: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+            color: var(--text); font-family: 'Inter', sans-serif;
+            margin: 0; padding: 40px 20px; min-height: 100vh;
+        }
+        .container { max-width: 750px; margin: 0 auto; }
+        .header {
+            display: flex; justify-content: space-between; align-items: flex-end;
+            border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 30px;
+        }
+        h1 { margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; letter-spacing: -0.5px; }
+        .date-chip { background: rgba(255,255,255,0.05); padding: 6px 14px; border-radius: 50px; font-size: 0.85rem; color: var(--muted); border: 1px solid var(--border); }
+        
+        .problem-card {
+            background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+            padding: 24px; margin-bottom: 16px; 
+            display: flex; justify-content: space-between; align-items: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: all 0.3s ease;
+        }
+        .problem-card:hover { transform: translateY(-3px); border-color: #71717a; }
+
+        .problem-info h3 { margin: 0 0 10px 0; font-size: 1.2rem; font-weight: 600; }
+        .meta-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+        .badge { padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .b-topic { background: rgba(255, 255, 255, 0.1); color: #fff; border: 1px solid #555; }
+        .b-phase { background: rgba(255, 255, 255, 0.05); color: #d4d4d8; border: 1px solid var(--border); }
+        .b-attempt { background: rgba(255, 255, 255, 0.1); color: #fff; border: 1px solid #555; }
+        .b-date { background: rgba(59, 130, 246, 0.1); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.2); }
+
+        .actions { display: flex; gap: 12px; }
+        button, a.btn { 
+            padding: 10px 18px; border-radius: 8px; font-weight: 600; font-size: 0.85rem; 
+            text-decoration: none; display: flex; align-items: center; gap: 6px; cursor: pointer; transition: 0.2s;
+        }
+        .btn-solve { background: #fff; color: #000; border: none; }
+        .btn-struggled { background: transparent; color: #fff; border: 1px dashed #fff; }
+        .btn-struggled:hover { background: rgba(255,255,255,0.1); }
+        .btn-smooth { background: #fff; color: #000; border: 1px solid #fff; }
+        .btn-smooth:hover { opacity: 0.8; }
+        button:disabled { opacity: 0.5; pointer-events: none; }
+
+        .empty-state {
+            text-align: center; padding: 60px 20px; background: var(--card); 
+            border-radius: 16px; border: 1px dashed #3f3f46;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
     <div class="header">
-        <h1>Nightly Review Queue</h1>
-        <span id="date-display" style="color: var(--muted);"></span>
+        <div>
+            <p style="margin: 0; color: #fff; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px;">• System Online</p>
+            <h1>Nightly Review Queue</h1>
+        </div>
+        <div class="date-chip" id="date-display"></div>
     </div>
     
-    <div id="loading" class="empty-state">Establishing connection to FSM...</div>
+    <div id="loading" class="empty-state">
+        <h2 style="color: var(--muted);">Syncing Neural Cache...</h2>
+    </div>
     <div id="queue"></div>
 </div>
 
@@ -42,69 +87,106 @@
     // ==========================================
     const API_URL = "https://script.google.com/macros/s/AKfycbwEX9PR1P7sKSL5BIbFis9IS9-gpAOQnwjvYt15fnZbeJY1WkvCArkkLPRe4TPIp5kAuw/exec";
 
-    document.getElementById('date-display').innerText = new Date().toDateString();
+    document.getElementById('date-display').innerText = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+
+    // Helper: Random Shuffle
+    function shuffle(array) {
+        return array.sort(() => Math.random() - 0.5);
+    }
+
+    // NEW: Chronological Bracketing Algorithm
+    // If you need 2 problems, it grabs 1 Oldest and 1 Newest.
+    function smartMix(array, count) {
+        if (array.length <= count) return array;
+        
+        // Sort chronologically
+        array.sort((a, b) => new Date(a.initialDate) - new Date(b.initialDate));
+        
+        let selected = [];
+        if (count === 1) {
+            // If just 1, pick randomly so you don't always get the same era
+            selected.push(array[Math.floor(Math.random() * array.length)]);
+        } else if (count === 2) {
+            selected.push(array[0]); // Absolute Oldest
+            selected.push(array[array.length - 1]); // Absolute Newest
+        } else {
+            selected.push(array.shift());
+            selected.push(array.pop());
+            // Randomize the middle and take what's needed
+            array = shuffle(array);
+            selected.push(...array.slice(0, count - 2));
+        }
+        return selected;
+    }
 
     async function loadQueue() {
         try {
-            const response = await fetch(API_URL);
+            const response = await fetch(API_URL + "?t=" + new Date().getTime());
             const data = await response.json();
             
-            // 1. Get today's local date
             const todayDate = new Date();
-            const todayStr = todayDate.getFullYear() + "-" + 
-                             String(todayDate.getMonth() + 1).padStart(2, '0') + "-" + 
-                             String(todayDate.getDate()).padStart(2, '0');
+            const todayStr = todayDate.getFullYear() + "-" + String(todayDate.getMonth() + 1).padStart(2, '0') + "-" + String(todayDate.getDate()).padStart(2, '0');
             
-            // 2. Fetch live data from Google Sheets
-            let liveDue = [];
-            let liveNew = [];
+            let dueStruggled = [];
+            let dueSmooth = [];
+            let newProblems = [];
             
             data.forEach(p => {
                 if (p.reviewDate === "Review-Not needed" || p.phase === "Completed") return;
                 
                 if (p.phase === "New" || p.reviewDate === "") {
-                    liveNew.push(p);
-                } 
-                else if (p.reviewDate <= todayStr) {
-                    liveDue.push(p);
+                    newProblems.push(p);
+                } else if (p.reviewDate <= todayStr) {
+                    if (p.phase === "Struggled") dueStruggled.push(p);
+                    else dueSmooth.push(p); 
                 }
             });
 
-            // 3. THE SNAPSHOT LOCK (Prevents the Infinite Dispenser)
             let snapshotDate = localStorage.getItem("srs_date");
             let snapshotNames = JSON.parse(localStorage.getItem("srs_queue_names") || "[]");
 
-            if (snapshotDate !== todayStr) {
-                // It's a new day! Calculate the locked queue.
-                let targetQueue = [...liveDue]; // Take ALL due problems
+            if (snapshotDate !== todayStr || snapshotNames.length === 0) {
+                let targetQueue = [];
+
+                // Step 1: Chronological Mix of Struggled (Max 2)
+                targetQueue.push(...smartMix(dueStruggled, Math.min(2, dueStruggled.length)));
+
+                // Step 2: Chronological Mix of Smooth (Max 2)
+                targetQueue.push(...smartMix(dueSmooth, Math.min(2, dueSmooth.length)));
+
+                // Step 3: 1 Random New concept
+                targetQueue.push(...smartMix(newProblems, Math.min(1, newProblems.length)));
+
+                // Step 4: Fill any empty slots with remainders
+                let remaining = 5 - targetQueue.length;
+                let pool = data.filter(p => 
+                    !targetQueue.find(t => t.name === p.name) && 
+                    p.reviewDate !== "Review-Not needed" && p.phase !== "Completed" && 
+                    (p.reviewDate === "" || p.reviewDate <= todayStr)
+                );
                 
-                // If we have less than 5 due, fill the rest with New concepts
-                let remainingSlots = 5 - targetQueue.length;
-                if (liveNew.length > 0 && remainingSlots > 0) {
-                    targetQueue = targetQueue.concat(liveNew.slice(0, remainingSlots));
+                if (remaining > 0 && pool.length > 0) {
+                    targetQueue.push(...shuffle(pool).slice(0, remaining));
                 }
-                
-                // Save just the names to browser memory
+
+                // Final Shuffle so the presentation order is natural
+                targetQueue = shuffle(targetQueue);
+
                 snapshotNames = targetQueue.map(p => p.name);
                 localStorage.setItem("srs_date", todayStr);
                 localStorage.setItem("srs_queue_names", JSON.stringify(snapshotNames));
             }
 
-            // 4. Render ONLY the problems from the Snapshot that haven't been solved yet
             let finalQueue = [];
             snapshotNames.forEach(name => {
-                // If it's still in liveDue or liveNew, it means you haven't clicked a button yet
-                let found = liveDue.find(p => p.name === name) || liveNew.find(p => p.name === name);
-                if (found) {
-                    finalQueue.push(found);
-                }
+                let found = data.find(p => p.name === name);
+                if (found) finalQueue.push(found);
             });
 
             renderQueue(finalQueue);
 
         } catch (error) {
-            document.getElementById('loading').innerText = "Database connection failed. Check URL.";
-            console.error(error);
+            document.getElementById('loading').innerHTML = `<h2>Connection Failed</h2><p>Check the console for errors.</p>`;
         }
     }
 
@@ -114,7 +196,12 @@
         queueDiv.innerHTML = "";
 
         if (problems.length === 0) {
-            queueDiv.innerHTML = `<div class="empty-state">Queue is perfectly clear. Take your Magnesium and rest! 🧠</div>`;
+            triggerSuccess();
+            queueDiv.innerHTML = `
+                <div class="empty-state">
+                    <h2>Queue Cleared 🚀</h2>
+                    <p>Your memory cache is optimized for today. Time for rest.</p>
+                </div>`;
             return;
         }
 
@@ -122,16 +209,27 @@
             const card = document.createElement('div');
             card.className = "problem-card";
             card.id = `card-${btoa(p.name).replace(/[^a-zA-Z0-9]/g, '')}`; 
+            
+            // Try to make the date pretty if it exists
+            let prettyDate = "Unknown";
+            if(p.initialDate && p.initialDate !== "Unknown") {
+                try { prettyDate = new Date(p.initialDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }); } catch(e) {}
+            }
 
             card.innerHTML = `
                 <div class="problem-info">
                     <h3>${p.name}</h3>
-                    <p><span class="badge">${p.topic}</span> Phase: ${p.phase}</p>
+                    <div class="meta-tags">
+                        <span class="badge b-topic">${p.topic}</span>
+                        <span class="badge b-phase">Phase: ${p.phase}</span>
+                        <span class="badge b-attempt">🔄 ${p.attempts}</span>
+                        <span class="badge b-date">📅 Added: ${prettyDate}</span>
+                    </div>
                 </div>
                 <div class="actions">
-                    <a href="${p.url}" target="_blank" class="btn btn-solve">Solve</a>
-                    <button class="btn-struggled" onclick="updateProblem('${p.name}', 'Struggled', '${card.id}')">Struggled</button>
-                    <button class="btn-smooth" onclick="updateProblem('${p.name}', 'Smooth', '${card.id}')">Smooth</button>
+                    <a href="${p.url}" target="_blank" class="btn btn-solve">Solve IDE</a>
+                    <button class="btn-struggled" onclick="updateProblem('${p.name}', 'Struggled', '${card.id}')">⚠️ Struggled</button>
+                    <button class="btn-smooth" onclick="updateProblem('${p.name}', 'Smooth', '${card.id}')">🚀 Smooth</button>
                 </div>
             `;
             queueDiv.appendChild(card);
@@ -143,8 +241,8 @@
         const buttons = card.querySelectorAll('button');
         buttons.forEach(b => b.disabled = true);
         
-        // Show loading state
         const targetBtn = action === 'Smooth' ? buttons[1] : buttons[0];
+        const originalText = targetBtn.innerText;
         targetBtn.innerText = "Syncing...";
 
         try {
@@ -152,25 +250,38 @@
                 method: "POST",
                 body: JSON.stringify({ name: name, action: action })
             });
-            // Smoothly remove card
-            card.style.opacity = 0;
-            setTimeout(() => card.remove(), 300);
             
-            // Check if queue is empty now
-            if (document.querySelectorAll('.problem-card').length === 1) {
-                setTimeout(() => {
-                    document.getElementById('queue').innerHTML = `<div class="empty-state">Queue cleared! 🚀</div>`;
-                }, 300);
-            }
+            let currentSnapshot = JSON.parse(localStorage.getItem("srs_queue_names") || "[]");
+            currentSnapshot = currentSnapshot.filter(n => n !== name);
+            localStorage.setItem("srs_queue_names", JSON.stringify(currentSnapshot));
+
+            card.style.transform = "scale(0.95)";
+            card.style.opacity = 0;
+            setTimeout(() => {
+                card.remove();
+                if (document.querySelectorAll('.problem-card').length === 0) {
+                    renderQueue([]); 
+                }
+            }, 300);
+            
         } catch (error) {
-            alert("Sync failed. Check console.");
+            alert("Database Sync Failed.");
             buttons.forEach(b => b.disabled = false);
-            targetBtn.innerText = action;
+            targetBtn.innerText = originalText;
         }
+    }
+
+    function triggerSuccess() {
+        var duration = 3 * 1000;
+        var end = Date.now() + duration;
+        (function frame() {
+            confetti({ particleCount: 5, angle: 60, spread: 55, origin: { x: 0 }, colors: ['#ffffff', '#888888'] });
+            confetti({ particleCount: 5, angle: 120, spread: 55, origin: { x: 1 }, colors: ['#ffffff', '#888888'] });
+            if (Date.now() < end) requestAnimationFrame(frame);
+        }());
     }
 
     loadQueue();
 </script>
-
 </body>
 </html>
