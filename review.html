@@ -157,10 +157,19 @@
         document.getElementById('btn-cancel').disabled = true;
 
         try {
-            await fetch(API_URL, { method: "POST", body: JSON.stringify(payload) });
+            const response = await fetch(API_URL, { method: "POST", body: JSON.stringify(payload) });
+            const result = await response.json(); // Reads the server's reply
+            
+            if (result.error || result.status === "Error") {
+                alert("SERVER REJECTED IT: " + (result.error || result.message));
+                document.getElementById('btn-save').innerText = "Save & Sync";
+                document.getElementById('btn-save').disabled = false;
+                document.getElementById('btn-cancel').disabled = false;
+                return; // Stops the confetti from firing!
+            }
+
             closeModal();
             triggerSuccess();
-            // Optional: Reload the queue so it appears immediately if it's due
             loadQueue(); 
         } catch (error) {
             alert("Failed to inject data.");
@@ -345,10 +354,18 @@
         targetBtn.innerText = "Syncing...";
 
         try {
-            await fetch(API_URL, {
+            const response = await fetch(API_URL, {
                 method: "POST",
                 body: JSON.stringify({ name: name, action: action, secret: localStorage.getItem("admin_key") })
             });
+            const result = await response.json();
+            
+            if (result.error || result.status === "Error") {
+                alert("SERVER REJECTED IT: " + (result.error || result.message));
+                buttons.forEach(b => b.disabled = false);
+                targetBtn.innerText = originalText;
+                return; // Stops the card from disappearing!
+            }
             
             let currentSnapshot = JSON.parse(localStorage.getItem("srs_queue_names") || "[]");
             currentSnapshot = currentSnapshot.filter(n => n !== name);
