@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Plan Timeline | Ananth</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        :root {
+            --bg: #09090b; --card: #18181b; --border: #3f3f46;
+            --primary: #39d353; --danger: #ef4444; --text: #f4f4f5; --muted: #a1a1aa;
+            --accent: #3b82f6; --warning: #eab308;
+        }
+        body {
+            background-color: var(--bg);
+            background-image: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+            color: var(--text); font-family: 'Inter', sans-serif;
+            margin: 0; padding: 40px 20px; min-height: 100vh;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header {
+            display: flex; justify-content: space-between; align-items: flex-end;
+            border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 30px;
+        }
+        h1 { margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; letter-spacing: -0.5px; }
+        
+        .section-title { font-family: 'Space Grotesk'; font-size: 1.2rem; margin: 30px 0 15px 0; display: flex; align-items: center; gap: 8px;}
+        .overdue-title { color: var(--danger); }
+        .today-title { color: var(--primary); }
+        .upcoming-title { color: var(--muted); }
+
+        .timeline-card {
+            background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+            padding: 20px; margin-bottom: 12px; 
+            display: flex; justify-content: space-between; align-items: center;
+            transition: all 0.3s ease; border-left: 4px solid var(--border);
+        }
+        .card-overdue { border-left-color: var(--danger); background: rgba(239, 68, 68, 0.03); }
+        .card-today { border-left-color: var(--primary); background: rgba(57, 211, 83, 0.03); box-shadow: 0 0 20px rgba(57,211,83,0.1);}
+        .card-upcoming { border-left-color: var(--accent); opacity: 0.8;}
+        
+        .timeline-card:hover { transform: translateX(5px); border-color: #71717a; }
+
+        .class-info h3 { margin: 0 0 8px 0; font-size: 1.1rem; font-weight: 600; }
+        .meta-tags { display: flex; gap: 8px; flex-wrap: wrap; font-size: 0.8rem; color: var(--muted);}
+        .badge { padding: 3px 8px; border-radius: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; font-size: 0.7rem;}
+        .b-track { background: rgba(255, 255, 255, 0.1); color: #fff; border: 1px solid #555; }
+        .b-module { background: rgba(59, 130, 246, 0.1); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.2); }
+
+        .actions { display: flex; gap: 10px; }
+        button { 
+            padding: 8px 16px; border-radius: 6px; font-weight: 600; font-size: 0.85rem; 
+            border: none; cursor: pointer; transition: 0.2s; font-family: 'Inter', sans-serif;
+        }
+        
+        .btn-shift { background: transparent; color: var(--warning); border: 1px solid var(--warning); }
+        .btn-shift:hover { background: rgba(234, 179, 8, 0.1); }
+        
+        .btn-done { background: var(--primary); color: #000; }
+        .btn-done:hover { opacity: 0.8; box-shadow: 0 0 15px rgba(57,211,83,0.4);}
+        
+        button:disabled { opacity: 0.5; pointer-events: none; }
+        .empty-state { color: var(--muted); font-style: italic; font-size: 0.9rem; padding: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div>
+            <p style="margin: 0; color: var(--accent); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px;">• Dynamic Routing Active</p>
+            <h1>Master Schedule</h1>
+        </div>
+        <div id="loading" style="color: var(--muted); animation: pulse 1s infinite;">Syncing Timeline...</div>
+    </div>
+
+    <h2 class="section-title overdue-title">⚠️ Action Required (Overdue)</h2>
+    <div id="overdue-queue"><div class="empty-state">No overdue classes. You are perfectly on schedule!</div></div>
+
+    <h2 class="section-title today-title">🔥 Today's Mission</h2>
+    <div id="today-queue"><div class="empty-state">No classes scheduled for today. Rest and recover.</div></div>
+
+    <h2 class="section-title upcoming-title">📅 Next 5 Classes</h2>
+    <div id="upcoming-queue"><div class="empty-state">Loading future timeline...</div></div>
+</div>
+
+<script>
+    // ==========================================
+    // PASTE YOUR GOOGLE APPS SCRIPT URL BELOW 👇
+    // ==========================================
+    const API_URL = "https://script.google.com/macros/s/AKfycbziO7UXoTfbgegAbdoRksCxy3OI0Nn_p8vDJnQ1VboVjVhE1SsJFwnIjtK4kzz2-kDzkA/exec";
+
+    async function loadTimeline() {
+        try {
+            const response = await fetch(API_URL + "?t=" + new Date().getTime());
+            const data = await response.json();
+            
+            const todayDate = new Date();
+            const todayStr = todayDate.getFullYear() + "-" + String(todayDate.getMonth() + 1).padStart(2, '0') + "-" + String(todayDate.getDate()).padStart(2, '0');
+            
+            let overdue = [], today = [], upcoming = [];
+            
+            data.forEach(item => {
+                if (item.status === "Done") return; // Ignore completed items
+                
+                if (item.date < todayStr) overdue.push(item);
+                else if (item.date === todayStr) today.push(item);
+                else upcoming.push(item);
+            });
+
+            // Render the UI
+            renderSection('overdue-queue', overdue, 'card-overdue');
+            renderSection('today-queue', today, 'card-today');
+            renderSection('upcoming-queue', upcoming.slice(0, 5), 'card-upcoming'); // Only show next 5
+            
+            document.getElementById('loading').style.display = "none";
+
+        } catch (error) {
+            document.getElementById('loading').innerText = "Connection Failed.";
+            console.error(error);
+        }
+    }
+
+    function renderSection(elementId, items, cardClass) {
+        const div = document.getElementById(elementId);
+        if (items.length === 0) return; // Keep default empty state
+        
+        div.innerHTML = "";
+        items.forEach(item => {
+            const prettyDate = new Date(item.date).toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
+            
+            const card = document.createElement('div');
+            card.className = `timeline-card ${cardClass}`;
+            card.id = `row-${item.rowIndex}`;
+
+            card.innerHTML = `
+                <div class="class-info">
+                    <div style="color: #a1a1aa; font-size: 0.8rem; margin-bottom: 5px; font-family: monospace;">
+                        ${prettyDate} • ${item.instructor}
+                    </div>
+                    <h3>${item.lecture}</h3>
+                    <div class="meta-tags">
+                        <span class="badge b-track">${item.track}</span>
+                        <span class="badge b-module">${item.module}</span>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button class="btn-shift" onclick="processAction('shift', ${item.rowIndex}, '${item.track}', '${card.id}')">⏩ Shift</button>
+                    <button class="btn-done" onclick="processAction('done', ${item.rowIndex}, '${item.track}', '${card.id}')">✅ Done</button>
+                </div>
+            `;
+            div.appendChild(card);
+        });
+    }
+
+    async function processAction(action, rowIndex, track, cardId) {
+        const card = document.getElementById(cardId);
+        const buttons = card.querySelectorAll('button');
+        buttons.forEach(b => b.disabled = true);
+        
+        const targetBtn = action === 'done' ? buttons[1] : buttons[0];
+        targetBtn.innerText = "Syncing...";
+
+        try {
+            await fetch(API_URL, {
+                method: "POST",
+                body: JSON.stringify({ action: action, rowIndex: rowIndex, track: track })
+            });
+
+            if (action === 'done') {
+                confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+                card.style.opacity = 0;
+                setTimeout(() => card.remove(), 300);
+            } else {
+                // If we shifted, we MUST reload the entire timeline to see the new cascaded dates!
+                document.getElementById('loading').style.display = "block";
+                document.getElementById('loading').innerText = "Recalculating Timeline Cascade...";
+                loadTimeline(); 
+            }
+        } catch (error) {
+            alert("Sync Failed.");
+            buttons.forEach(b => b.disabled = false);
+            targetBtn.innerText = action === 'done' ? "✅ Done" : "⏩ Shift";
+        }
+    }
+
+    loadTimeline();
+</script>
+</body>
+</html>
