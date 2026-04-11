@@ -4,17 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SRS Neural Engine | Ananth</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
         :root {
-            --bg: #09090b;
-            --card: #18181b;
-            --border: #3f3f46;
-            --primary: #39d353;
-            --danger: #ef4444;
-            --text: #f4f4f5;
-            --muted: #a1a1aa;
+            --bg: #09090b; --card: #18181b; --border: #3f3f46;
+            --primary: #39d353; --danger: #ef4444; --text: #f4f4f5; --muted: #a1a1aa;
+            --accent: #3b82f6;
         }
         body {
             background-color: var(--bg);
@@ -22,7 +18,7 @@
             color: var(--text); font-family: 'Inter', sans-serif;
             margin: 0; padding: 40px 20px; min-height: 100vh;
         }
-        .container { max-width: 750px; margin: 0 auto; }
+        .container { max-width: 800px; margin: 0 auto; }
         .header {
             display: flex; justify-content: space-between; align-items: flex-end;
             border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 30px;
@@ -33,11 +29,11 @@
         .problem-card {
             background: var(--card); border: 1px solid var(--border); border-radius: 16px;
             padding: 24px; margin-bottom: 16px; 
-            display: flex; justify-content: space-between; align-items: center;
             box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: all 0.3s ease;
         }
-        .problem-card:hover { transform: translateY(-3px); border-color: #71717a; }
+        .problem-card:hover { border-color: #71717a; }
 
+        .problem-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
         .problem-info h3 { margin: 0 0 10px 0; font-size: 1.2rem; font-weight: 600; }
         .meta-tags { display: flex; gap: 8px; flex-wrap: wrap; }
         .badge { padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
@@ -46,22 +42,36 @@
         .b-attempt { background: rgba(255, 255, 255, 0.1); color: #fff; border: 1px solid #555; }
         .b-date { background: rgba(59, 130, 246, 0.1); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.2); }
 
-        .actions { display: flex; gap: 12px; }
-        button, a.btn { 
+        .actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+        button { 
             padding: 10px 18px; border-radius: 8px; font-weight: 600; font-size: 0.85rem; 
-            text-decoration: none; display: flex; align-items: center; gap: 6px; cursor: pointer; transition: 0.2s;
+            border: none; cursor: pointer; transition: 0.2s; font-family: 'Inter', sans-serif;
         }
-        .btn-solve { background: #fff; color: #000; border: none; }
-        .btn-struggled { background: transparent; color: #fff; border: 1px dashed #fff; }
+        
+        .btn-hint { background: transparent; color: var(--muted); border: 1px solid var(--border); }
+        .btn-hint:hover { color: var(--text); border-color: #777; }
+        
+        .btn-timer { background: var(--accent); color: #fff; }
+        .btn-timer:hover { opacity: 0.8; }
+        
+        .timer-display { font-family: 'Space Grotesk', monospace; font-size: 1.1rem; font-weight: 700; display: none; width: 60px; text-align: center; }
+        .timer-danger { color: var(--danger); animation: pulse 1s infinite; }
+
+        .btn-struggled { background: transparent; color: #fff; border: 1px dashed #fff; margin-left: auto; }
         .btn-struggled:hover { background: rgba(255,255,255,0.1); }
         .btn-smooth { background: #fff; color: #000; border: 1px solid #fff; }
         .btn-smooth:hover { opacity: 0.8; }
         button:disabled { opacity: 0.5; pointer-events: none; }
 
-        .empty-state {
-            text-align: center; padding: 60px 20px; background: var(--card); 
-            border-radius: 16px; border: 1px dashed #3f3f46;
+        .hint-box {
+            display: none; background: rgba(59, 130, 246, 0.05); padding: 16px; 
+            border-radius: 8px; margin-top: 20px; font-size: 0.95rem; color: #cbd5e1; 
+            border-left: 3px solid var(--accent); line-height: 1.5; border-top: 1px solid var(--border);
+            border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);
         }
+
+        .empty-state { text-align: center; padding: 60px 20px; background: var(--card); border-radius: 16px; border: 1px dashed #3f3f46; }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
     </style>
 </head>
 <body>
@@ -74,10 +84,7 @@
         </div>
         <div class="date-chip" id="date-display"></div>
     </div>
-    
-    <div id="loading" class="empty-state">
-        <h2 style="color: var(--muted);">Syncing Neural Cache...</h2>
-    </div>
+    <div id="loading" class="empty-state"><h2 style="color: var(--muted); animation: pulse 1.5s infinite;">Syncing Neural Cache...</h2></div>
     <div id="queue"></div>
 </div>
 
@@ -87,10 +94,10 @@
     // ==========================================
     const API_URL = "https://script.google.com/macros/s/AKfycbwEX9PR1P7sKSL5BIbFis9IS9-gpAOQnwjvYt15fnZbeJY1WkvCArkkLPRe4TPIp5kAuw/exec";
 
+    let activeTimers = {}; // Stores stopwatch intervals
+
     document.getElementById('date-display').innerText = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
 
-    // Helper: Random Shuffle
-    // Helper: True Fisher-Yates Random Shuffle
     function shuffle(array) {
         let currentIndex = array.length, randomIndex;
         while (currentIndex !== 0) {
@@ -101,25 +108,18 @@
         return array;
     }
 
-    // NEW: Chronological Bracketing Algorithm
-    // If you need 2 problems, it grabs 1 Oldest and 1 Newest.
     function smartMix(array, count) {
         if (array.length <= count) return array;
-        
-        // Sort chronologically
         array.sort((a, b) => new Date(a.initialDate) - new Date(b.initialDate));
-        
         let selected = [];
         if (count === 1) {
-            // If just 1, pick randomly so you don't always get the same era
             selected.push(array[Math.floor(Math.random() * array.length)]);
         } else if (count === 2) {
-            selected.push(array[0]); // Absolute Oldest
-            selected.push(array[array.length - 1]); // Absolute Newest
+            selected.push(array[0]); 
+            selected.push(array[array.length - 1]); 
         } else {
             selected.push(array.shift());
             selected.push(array.pop());
-            // Randomize the middle and take what's needed
             array = shuffle(array);
             selected.push(...array.slice(0, count - 2));
         }
@@ -134,16 +134,12 @@
             const todayDate = new Date();
             const todayStr = todayDate.getFullYear() + "-" + String(todayDate.getMonth() + 1).padStart(2, '0') + "-" + String(todayDate.getDate()).padStart(2, '0');
             
-            let dueStruggled = [];
-            let dueSmooth = [];
-            let newProblems = [];
+            let dueStruggled = [], dueSmooth = [], newProblems = [];
             
             data.forEach(p => {
                 if (p.reviewDate === "Review-Not needed" || p.phase === "Completed") return;
-                
-                if (p.phase === "New" || p.reviewDate === "") {
-                    newProblems.push(p);
-                } else if (p.reviewDate <= todayStr) {
+                if (p.phase === "New" || p.reviewDate === "") newProblems.push(p);
+                else if (p.reviewDate <= todayStr) {
                     if (p.phase === "Struggled") dueStruggled.push(p);
                     else dueSmooth.push(p); 
                 }
@@ -154,31 +150,15 @@
 
             if (snapshotDate !== todayStr || snapshotNames.length === 0) {
                 let targetQueue = [];
-
-                // Step 1: Chronological Mix of Struggled (Max 2)
                 targetQueue.push(...smartMix(dueStruggled, Math.min(2, dueStruggled.length)));
-
-                // Step 2: Chronological Mix of Smooth (Max 2)
                 targetQueue.push(...smartMix(dueSmooth, Math.min(2, dueSmooth.length)));
-
-                // Step 3: 1 Random New concept
                 targetQueue.push(...smartMix(newProblems, Math.min(1, newProblems.length)));
 
-                // Step 4: Fill any empty slots with remainders
                 let remaining = 5 - targetQueue.length;
-                let pool = data.filter(p => 
-                    !targetQueue.find(t => t.name === p.name) && 
-                    p.reviewDate !== "Review-Not needed" && p.phase !== "Completed" && 
-                    (p.reviewDate === "" || p.reviewDate <= todayStr)
-                );
-                
-                if (remaining > 0 && pool.length > 0) {
-                    targetQueue.push(...shuffle(pool).slice(0, remaining));
-                }
+                let pool = data.filter(p => !targetQueue.find(t => t.name === p.name) && p.reviewDate !== "Review-Not needed" && p.phase !== "Completed" && (p.reviewDate === "" || p.reviewDate <= todayStr));
+                if (remaining > 0 && pool.length > 0) targetQueue.push(...shuffle(pool).slice(0, remaining));
 
-                // Final Shuffle so the presentation order is natural
                 targetQueue = shuffle(targetQueue);
-
                 snapshotNames = targetQueue.map(p => p.name);
                 localStorage.setItem("srs_date", todayStr);
                 localStorage.setItem("srs_queue_names", JSON.stringify(snapshotNames));
@@ -191,7 +171,6 @@
             });
 
             renderQueue(finalQueue);
-
         } catch (error) {
             document.getElementById('loading').innerHTML = `<h2>Connection Failed</h2><p>Check the console for errors.</p>`;
         }
@@ -204,11 +183,7 @@
 
         if (problems.length === 0) {
             triggerSuccess();
-            queueDiv.innerHTML = `
-                <div class="empty-state">
-                    <h2>Queue Cleared 🚀</h2>
-                    <p>Your memory cache is optimized for today. Time for rest.</p>
-                </div>`;
+            queueDiv.innerHTML = `<div class="empty-state"><h2>Queue Cleared 🚀</h2><p>Your memory cache is optimized for today. Time for rest.</p></div>`;
             return;
         }
 
@@ -217,30 +192,65 @@
             card.className = "problem-card";
             card.id = `card-${btoa(p.name).replace(/[^a-zA-Z0-9]/g, '')}`; 
             
-            // Try to make the date pretty if it exists
             let prettyDate = "Unknown";
             if(p.initialDate && p.initialDate !== "Unknown") {
                 try { prettyDate = new Date(p.initialDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }); } catch(e) {}
             }
 
             card.innerHTML = `
-                <div class="problem-info">
-                    <h3>${p.name}</h3>
-                    <div class="meta-tags">
-                        <span class="badge b-topic">${p.topic}</span>
-                        <span class="badge b-phase">Phase: ${p.phase}</span>
-                        <span class="badge b-attempt">🔄 ${p.attempts}</span>
-                        <span class="badge b-date">📅 Added: ${prettyDate}</span>
+                <div class="problem-header">
+                    <div class="problem-info">
+                        <h3>${p.name}</h3>
+                        <div class="meta-tags">
+                            <span class="badge b-topic">${p.topic}</span>
+                            <span class="badge b-phase">Phase: ${p.phase}</span>
+                            <span class="badge b-attempt">🔄 ${p.attempts}</span>
+                            <span class="badge b-date">📅 Added: ${prettyDate}</span>
+                        </div>
                     </div>
                 </div>
                 <div class="actions">
-                    <a href="${p.url}" target="_blank" class="btn btn-solve">Solve IDE</a>
+                    <button class="btn-hint" onclick="toggleHint('hint-${card.id}')">💡 Hint</button>
+                    <button class="btn-timer" id="btn-timer-${card.id}" onclick="startTimer('${card.id}')">▶ Start Focus</button>
+                    <span class="timer-display" id="timer-${card.id}">00:00</span>
+                    
                     <button class="btn-struggled" onclick="updateProblem('${p.name}', 'Struggled', '${card.id}')">⚠️ Struggled</button>
                     <button class="btn-smooth" onclick="updateProblem('${p.name}', 'Smooth', '${card.id}')">🚀 Smooth</button>
+                </div>
+                <div class="hint-box" id="hint-${card.id}">
+                    <strong style="color: var(--accent);">Algorithm Hint:</strong><br>
+                    ${p.hint}
                 </div>
             `;
             queueDiv.appendChild(card);
         });
+    }
+
+    function toggleHint(id) {
+        const hintBox = document.getElementById(id);
+        hintBox.style.display = hintBox.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function startTimer(cardId) {
+        if (activeTimers[cardId]) return; 
+
+        const btn = document.getElementById(`btn-timer-${cardId}`);
+        const display = document.getElementById(`timer-${cardId}`);
+        
+        btn.style.display = "none"; 
+        display.style.display = "inline-block";
+
+        let seconds = 0;
+        activeTimers[cardId] = setInterval(() => {
+            seconds++;
+            let m = Math.floor(seconds / 60).toString().padStart(2, '0');
+            let s = (seconds % 60).toString().padStart(2, '0');
+            display.innerText = `${m}:${s}`;
+
+            if (seconds >= 1800) { // 30 minutes
+                display.classList.add('timer-danger');
+            }
+        }, 1000);
     }
 
     async function updateProblem(name, action, cardId) {
@@ -248,7 +258,10 @@
         const buttons = card.querySelectorAll('button');
         buttons.forEach(b => b.disabled = true);
         
-        const targetBtn = action === 'Smooth' ? buttons[1] : buttons[0];
+        // Stop the timer if it's running
+        if (activeTimers[cardId]) clearInterval(activeTimers[cardId]);
+
+        const targetBtn = action === 'Smooth' ? buttons[4] : buttons[3];
         const originalText = targetBtn.innerText;
         targetBtn.innerText = "Syncing...";
 
@@ -266,9 +279,7 @@
             card.style.opacity = 0;
             setTimeout(() => {
                 card.remove();
-                if (document.querySelectorAll('.problem-card').length === 0) {
-                    renderQueue([]); 
-                }
+                if (document.querySelectorAll('.problem-card').length === 0) renderQueue([]); 
             }, 300);
             
         } catch (error) {
@@ -279,8 +290,7 @@
     }
 
     function triggerSuccess() {
-        var duration = 3 * 1000;
-        var end = Date.now() + duration;
+        var duration = 3 * 1000, end = Date.now() + duration;
         (function frame() {
             confetti({ particleCount: 5, angle: 60, spread: 55, origin: { x: 0 }, colors: ['#ffffff', '#888888'] });
             confetti({ particleCount: 5, angle: 120, spread: 55, origin: { x: 1 }, colors: ['#ffffff', '#888888'] });
