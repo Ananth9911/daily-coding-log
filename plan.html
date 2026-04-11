@@ -17,10 +17,9 @@
             color: var(--text); font-family: 'Inter', sans-serif; margin: 0; padding: 40px 20px; min-height: 100vh;
         }
         .container { max-width: 800px; margin: 0 auto; }
-        .header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 20px; }
+        .header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 20px; flex-wrap: wrap; gap: 15px;}
         h1 { margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; letter-spacing: -0.5px; }
         
-        /* Progress HUD */
         .progress-hud { display: flex; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
         .hud-item { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 10px 15px; flex: 1; min-width: 120px; text-align: center;}
         .hud-val { font-family: 'Space Grotesk'; font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 2px;}
@@ -66,6 +65,9 @@
         .btn-sync { background: rgba(57, 211, 83, 0.1); color: var(--primary); border: 1px solid var(--primary); font-size: 0.8rem;}
         .btn-sync:hover { background: rgba(57, 211, 83, 0.2); box-shadow: 0 0 15px rgba(57,211,83,0.2); }
         
+        .btn-revision { background: transparent; color: #c084fc; border: 1px solid #c084fc; font-size: 0.8rem;}
+        .btn-revision:hover { background: rgba(168, 85, 247, 0.1); }
+
         button:disabled { opacity: 0.5; pointer-events: none; }
         .empty-state { color: var(--muted); font-style: italic; font-size: 0.9rem; padding: 10px; background: var(--card); border-radius: 8px; border: 1px dashed var(--border);}
     </style>
@@ -75,14 +77,16 @@
 <div class="container">
     <div class="header">
         <div>
-            <p style="margin: 0; color: var(--accent); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px;">• Dual-Track Engine</p>
+            <p style="margin: 0; color: var(--accent); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px;">• Strict Sequence Active</p>
             <h1>Master Schedule</h1>
         </div>
-        <button class="btn-sync" onclick="smartSync()">⚡ Smart Sync</button>
+        <div style="display: flex; gap: 10px;">
+            <button class="btn-sync" onclick="smartSync()">⚡ Smart Sync</button>
+            <button class="btn-revision" onclick="startRevisionPhase()">🎓 Final Revision Mode</button>
+        </div>
     </div>
 
-    <div class="progress-hud" id="hud-stats">
-        </div>
+    <div class="progress-hud" id="hud-stats"></div>
 
     <div id="loading" style="color: var(--muted); margin-bottom: 20px; animation: pulse 1s infinite; display: none;">Syncing Timeline...</div>
 
@@ -157,7 +161,7 @@
             let key = null;
             if (mod.includes("dsa") || mod.includes("intro")) key = "DSA";
             else if (mod.includes("hld") || mod.includes("system design")) key = "HLD";
-            else if (mod.includes("sql") || mod.includes("database") || mod.includes("network")) key = "Core (DB/CN)";
+            else if (mod.includes("sql") || mod.includes("database") || mod.includes("network") || mod.includes("cs fund")) key = "Core (DB/CN)";
             
             if (key) {
                 stats[key].t++;
@@ -256,20 +260,23 @@
     }
 
     async function smartSync() {
-        if (!confirm("This will perfectly align all uncompleted Weekday classes to Mon-Fri and all Weekend classes to Sat-Sun starting from Today. Continue?")) return;
-        
+        if (!confirm("This will perfectly align your remaining curriculum chronologically without breaking Weekday/Weekend rules. Continue?")) return;
         document.getElementById('loading').style.display = "block";
         document.getElementById('loading').innerText = "Auto-Healing Schedule Boundaries...";
-        
         try {
-            await fetch(API_URL, {
-                method: "POST",
-                body: JSON.stringify({ action: "smart_sync" })
-            });
+            await fetch(API_URL, { method: "POST", body: JSON.stringify({ action: "smart_sync" }) });
             loadTimeline();
-        } catch (e) {
-            alert("Failed to sync.");
-        }
+        } catch (e) { alert("Failed to sync."); }
+    }
+
+    async function startRevisionPhase() {
+        if (!confirm("🎓 Only click this when you have finished Lec 234! This will convert all remaining blank rows into Daily Revision Practice. Are you ready?")) return;
+        document.getElementById('loading').style.display = "block";
+        document.getElementById('loading').innerText = "Entering Final Revision Phase...";
+        try {
+            await fetch(API_URL, { method: "POST", body: JSON.stringify({ action: "revision_mode" }) });
+            loadTimeline();
+        } catch (e) { alert("Failed to activate revision mode."); }
     }
 
     loadTimeline();
