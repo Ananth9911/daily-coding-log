@@ -10,7 +10,7 @@
         :root { --bg: #09090b; --card: #18181b; --border: #3f3f46; --primary: #39d353; --danger: #ef4444; --text: #f4f4f5; --muted: #a1a1aa; --accent: #3b82f6; }
         body { background-color: var(--bg); background-image: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.03) 0%, transparent 50%); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; padding: 40px 20px; min-height: 100vh; }
         .container { max-width: 800px; margin: 0 auto; }
-        .header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 30px; }
+        .header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 30px; flex-wrap: wrap; gap: 15px; }
         h1 { margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; letter-spacing: -0.5px; }
         .date-chip { background: rgba(255,255,255,0.05); padding: 6px 14px; border-radius: 50px; font-size: 0.85rem; color: var(--muted); border: 1px solid var(--border); }
         .problem-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; margin-bottom: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: all 0.3s ease; }
@@ -35,9 +35,23 @@
         .btn-struggled:hover { background: rgba(255,255,255,0.1); }
         .btn-smooth { background: #fff; color: #000; border: 1px solid #fff; }
         .btn-smooth:hover { opacity: 0.8; }
+        .btn-add { background: transparent; color: var(--primary); border: 1px solid var(--primary); }
+        .btn-add:hover { background: rgba(57, 211, 83, 0.1); box-shadow: 0 0 15px rgba(57,211,83,0.2); }
         button:disabled { opacity: 0.5; pointer-events: none; }
         .hint-box { display: none; background: rgba(59, 130, 246, 0.05); padding: 16px; border-radius: 8px; margin-top: 20px; font-size: 0.95rem; color: #cbd5e1; border-left: 3px solid var(--accent); line-height: 1.5; border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
         .empty-state { text-align: center; padding: 60px 20px; background: var(--card); border-radius: 16px; border: 1px dashed #3f3f46; }
+        
+        /* Modal Styles */
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); z-index: 100; align-items: center; justify-content: center; }
+        .modal { background: var(--card); border: 1px solid var(--border); width: 90%; max-width: 500px; border-radius: 16px; padding: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.8); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 0.85rem; color: var(--muted); margin-bottom: 8px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .form-control { width: 100%; box-sizing: border-box; background: #0a0a0a; border: 1px solid var(--border); color: #fff; padding: 12px 15px; border-radius: 8px; font-family: 'Inter'; outline: none; transition: 0.2s; }
+        .form-control:focus { border-color: var(--accent); }
+        .modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 30px; }
+        .btn-cancel { background: transparent; border: 1px solid var(--muted); color: var(--muted); }
+        .btn-cancel:hover { color: #fff; border-color: #fff; }
+        
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
     </style>
 </head>
@@ -49,10 +63,57 @@
             <p style="margin: 0; color: #fff; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px;">• System Online</p>
             <h1>Nightly Review Queue</h1>
         </div>
-        <div class="date-chip" id="date-display"></div>
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <button class="btn-add" onclick="openModal()">+ Log Problem</button>
+            <div class="date-chip" id="date-display"></div>
+        </div>
     </div>
     <div id="loading" class="empty-state"><h2 style="color: var(--muted); animation: pulse 1.5s infinite;">Syncing Neural Cache...</h2></div>
     <div id="queue"></div>
+</div>
+
+<div class="modal-overlay" id="addModal">
+    <div class="modal">
+        <h2 style="margin: 0 0 20px 0; font-family: 'Space Grotesk';">Log New Problem</h2>
+        
+        <div class="form-group">
+            <label>Problem Name</label>
+            <input type="text" id="p-name" class="form-control" placeholder="e.g. Morris Inorder Traversal">
+        </div>
+        
+        <div style="display: flex; gap: 15px;">
+            <div class="form-group" style="flex: 1;">
+                <label>Topic</label>
+                <input type="text" id="p-topic" class="form-control" placeholder="e.g. Trees">
+            </div>
+            <div class="form-group" style="flex: 1;">
+                <label>Source</label>
+                <select id="p-source" class="form-control">
+                    <option value="Scaler">Scaler</option>
+                    <option value="LeetCode">LeetCode</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Initial Status</label>
+            <select id="p-phase" class="form-control">
+                <option value="Smooth">🚀 Smooth (Review in 3 Days)</option>
+                <option value="Struggled">⚠️ Struggled (Review Tomorrow)</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Hint / Core Logic (Optional)</label>
+            <input type="text" id="p-hint" class="form-control" placeholder="What is the trick to solve this?">
+        </div>
+
+        <div class="modal-actions">
+            <button class="btn-cancel" onclick="closeModal()" id="btn-cancel">Cancel</button>
+            <button class="btn-smooth" onclick="submitProblem()" id="btn-save">Save & Sync</button>
+        </div>
+    </div>
 </div>
 
 <script>
@@ -61,6 +122,56 @@
 
     document.getElementById('date-display').innerText = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
 
+    /* MODAL LOGIC */
+    function openModal() {
+        if (localStorage.getItem("admin_key") !== "scaler2026") {
+            alert("🔒 READ-ONLY MODE: You cannot inject data into Ananth's database.");
+            return;
+        }
+        document.getElementById('addModal').style.display = 'flex';
+    }
+    
+    function closeModal() {
+        document.getElementById('addModal').style.display = 'none';
+        document.getElementById('p-name').value = '';
+        document.getElementById('p-topic').value = '';
+        document.getElementById('p-hint').value = '';
+    }
+
+    async function submitProblem() {
+        const name = document.getElementById('p-name').value.trim();
+        if (!name) return alert("Problem Name is required.");
+
+        const payload = {
+            action: "add_problem",
+            secret: localStorage.getItem("admin_key"),
+            name: name,
+            topic: document.getElementById('p-topic').value.trim() || "Uncategorized",
+            source: document.getElementById('p-source').value,
+            phase: document.getElementById('p-phase').value,
+            hint: document.getElementById('p-hint').value.trim()
+        };
+
+        document.getElementById('btn-save').innerText = "Syncing...";
+        document.getElementById('btn-save').disabled = true;
+        document.getElementById('btn-cancel').disabled = true;
+
+        try {
+            await fetch(API_URL, { method: "POST", body: JSON.stringify(payload) });
+            closeModal();
+            triggerSuccess();
+            // Optional: Reload the queue so it appears immediately if it's due
+            loadQueue(); 
+        } catch (error) {
+            alert("Failed to inject data.");
+        } finally {
+            document.getElementById('btn-save').innerText = "Save & Sync";
+            document.getElementById('btn-save').disabled = false;
+            document.getElementById('btn-cancel').disabled = false;
+        }
+    }
+
+    /* EXISTING QUEUE LOGIC */
     function shuffle(array) {
         let currentIndex = array.length, randomIndex;
         while (currentIndex !== 0) {
@@ -190,13 +301,10 @@
 
     function startTimer(cardId) {
         if (activeTimers[cardId]) return; 
-
         const btn = document.getElementById(`btn-timer-${cardId}`);
         const display = document.getElementById(`timer-${cardId}`);
-        
         btn.style.display = "none"; 
         display.style.display = "inline-block";
-
         let seconds = 0;
         activeTimers[cardId] = setInterval(() => {
             seconds++;
@@ -208,9 +316,8 @@
     }
 
     async function updateProblem(name, action, cardId) {
-        // 🔒 LAYER 1: READ-ONLY LOCK
         if (localStorage.getItem("admin_key") !== "scaler2026") {
-            alert("🔒 READ-ONLY MODE: You are viewing a live demo of Ananth's Spaced Repetition Engine. Database write-access is restricted to the administrator.");
+            alert("🔒 READ-ONLY MODE: You are viewing a live demo. Database write-access is restricted.");
             return;
         }
 
@@ -227,11 +334,7 @@
         try {
             await fetch(API_URL, {
                 method: "POST",
-                body: JSON.stringify({ 
-                    name: name, 
-                    action: action,
-                    secret: localStorage.getItem("admin_key") // Sends the key!
-                })
+                body: JSON.stringify({ name: name, action: action, secret: localStorage.getItem("admin_key") })
             });
             
             let currentSnapshot = JSON.parse(localStorage.getItem("srs_queue_names") || "[]");
@@ -244,7 +347,6 @@
                 card.remove();
                 if (document.querySelectorAll('.problem-card').length === 0) renderQueue([]); 
             }, 300);
-            
         } catch (error) {
             alert("Database Sync Failed.");
             buttons.forEach(b => b.disabled = false);
