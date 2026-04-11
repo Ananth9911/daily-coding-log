@@ -10,21 +10,22 @@
         :root {
             --bg: #09090b; --card: #18181b; --border: #3f3f46;
             --primary: #39d353; --danger: #ef4444; --text: #f4f4f5; --muted: #a1a1aa;
-            --accent: #3b82f6; --warning: #eab308; --done: #2ea44f;
+            --accent: #3b82f6; --warning: #eab308; --done: #2ea44f; --purple: #a855f7;
         }
         body {
-            background-color: var(--bg);
-            background-image: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
-            color: var(--text); font-family: 'Inter', sans-serif;
-            margin: 0; padding: 40px 20px; min-height: 100vh;
+            background-color: var(--bg); background-image: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+            color: var(--text); font-family: 'Inter', sans-serif; margin: 0; padding: 40px 20px; min-height: 100vh;
         }
         .container { max-width: 800px; margin: 0 auto; }
-        .header {
-            display: flex; justify-content: space-between; align-items: flex-end;
-            border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 30px;
-        }
+        .header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 20px; }
         h1 { margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; letter-spacing: -0.5px; }
         
+        /* Progress HUD */
+        .progress-hud { display: flex; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
+        .hud-item { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 10px 15px; flex: 1; min-width: 120px; text-align: center;}
+        .hud-val { font-family: 'Space Grotesk'; font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 2px;}
+        .hud-label { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px;}
+
         .section-title { font-family: 'Space Grotesk'; font-size: 1.2rem; margin: 30px 0 15px 0; display: flex; align-items: center; justify-content: space-between;}
         .overdue-title { color: var(--danger); }
         .today-title { color: var(--primary); }
@@ -32,17 +33,13 @@
 
         .timeline-card {
             background: var(--card); border: 1px solid var(--border); border-radius: 12px;
-            padding: 20px; margin-bottom: 12px; 
-            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;
             transition: all 0.3s ease; border-left: 4px solid var(--border);
         }
-        
-        /* State Colors */
         .card-done { border-left-color: var(--done); background: rgba(46, 164, 79, 0.05); opacity: 0.7;}
         .card-overdue { border-left-color: var(--danger); background: rgba(239, 68, 68, 0.05); }
         .card-today { border-left-color: var(--primary); background: rgba(57, 211, 83, 0.05); box-shadow: 0 0 20px rgba(57,211,83,0.1);}
         .card-upcoming { border-left-color: var(--accent); opacity: 0.9;}
-        
         .timeline-card:hover { transform: translateX(5px); border-color: #71717a; }
 
         .class-info h3 { margin: 0 0 8px 0; font-size: 1.1rem; font-weight: 600; }
@@ -52,10 +49,10 @@
         .b-module { background: rgba(59, 130, 246, 0.1); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.2); }
 
         .actions { display: flex; gap: 10px; }
-        button { 
-            padding: 8px 16px; border-radius: 6px; font-weight: 600; font-size: 0.85rem; 
-            border: none; cursor: pointer; transition: 0.2s; font-family: 'Inter', sans-serif;
-        }
+        button { padding: 8px 16px; border-radius: 6px; font-weight: 600; font-size: 0.85rem; border: none; cursor: pointer; transition: 0.2s; font-family: 'Inter', sans-serif; }
+        
+        .btn-pull { background: transparent; color: var(--purple); border: 1px solid var(--purple); }
+        .btn-pull:hover { background: rgba(168, 85, 247, 0.1); }
         
         .btn-shift { background: transparent; color: var(--warning); border: 1px solid var(--warning); }
         .btn-shift:hover { background: rgba(234, 179, 8, 0.1); }
@@ -65,6 +62,9 @@
 
         .btn-toggle { background: #27272a; color: #fff; padding: 6px 12px; font-size: 0.75rem; border: 1px solid #3f3f46;}
         .btn-toggle:hover { background: #3f3f46; }
+
+        .btn-sync { background: rgba(57, 211, 83, 0.1); color: var(--primary); border: 1px solid var(--primary); font-size: 0.8rem;}
+        .btn-sync:hover { background: rgba(57, 211, 83, 0.2); box-shadow: 0 0 15px rgba(57,211,83,0.2); }
         
         button:disabled { opacity: 0.5; pointer-events: none; }
         .empty-state { color: var(--muted); font-style: italic; font-size: 0.9rem; padding: 10px; background: var(--card); border-radius: 8px; border: 1px dashed var(--border);}
@@ -75,11 +75,16 @@
 <div class="container">
     <div class="header">
         <div>
-            <p style="margin: 0; color: var(--accent); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px;">• Dynamic Routing Active</p>
+            <p style="margin: 0; color: var(--accent); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px;">• Dual-Track Engine</p>
             <h1>Master Schedule</h1>
         </div>
-        <div id="loading" style="color: var(--muted); animation: pulse 1s infinite;">Syncing Timeline...</div>
+        <button class="btn-sync" onclick="smartSync()">⚡ Smart Sync</button>
     </div>
+
+    <div class="progress-hud" id="hud-stats">
+        </div>
+
+    <div id="loading" style="color: var(--muted); margin-bottom: 20px; animation: pulse 1s infinite; display: none;">Syncing Timeline...</div>
 
     <div style="margin-bottom: 30px;">
         <span style="font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px;">Checkpoint: Last Completed</span>
@@ -90,7 +95,7 @@
     <div id="overdue-queue"><div class="empty-state">No overdue classes. You are perfectly on schedule!</div></div>
 
     <h2 class="section-title today-title">🔥 Today's Mission</h2>
-    <div id="today-queue"><div class="empty-state">No classes scheduled for today. Rest and recover.</div></div>
+    <div id="today-queue"><div class="empty-state">No classes scheduled for today. Rest or revise.</div></div>
 
     <h2 class="section-title upcoming-title">
         📅 Upcoming Timeline
@@ -105,79 +110,107 @@
     // ==========================================
     const API_URL = "https://script.google.com/macros/s/AKfycbziO7UXoTfbgegAbdoRksCxy3OI0Nn_p8vDJnQ1VboVjVhE1SsJFwnIjtK4kzz2-kDzkA/exec";
 
-    let allUpcoming = []; // Stores the full schedule globally
-    let showingAll = false; // Toggle state
+    let allUpcoming = []; 
+    let showingAll = false; 
 
     async function loadTimeline() {
+        document.getElementById('loading').style.display = "block";
+        document.getElementById('loading').innerText = "Syncing Timeline...";
         try {
             const response = await fetch(API_URL + "?t=" + new Date().getTime());
             let data = await response.json();
             
-            // 1. FORCE CHRONOLOGICAL SORT (Fixes frontend zigzag)
             data.sort((a, b) => new Date(a.date) - new Date(b.date));
+            calculateHUD(data);
 
             const todayDate = new Date();
             const todayStr = todayDate.getFullYear() + "-" + String(todayDate.getMonth() + 1).padStart(2, '0') + "-" + String(todayDate.getDate()).padStart(2, '0');
             
             let lastCompletedItem = null;
             let overdue = [], today = [];
-            allUpcoming = []; // Reset global
+            allUpcoming = []; 
             
             data.forEach(item => {
-                if (item.status === "Done") {
-                    lastCompletedItem = item; // Because it's sorted, the last "Done" is the most recent
-                    return; 
-                }
-                
+                if (item.status === "Done") { lastCompletedItem = item; return; }
                 if (item.date < todayStr) overdue.push(item);
                 else if (item.date === todayStr) today.push(item);
                 else allUpcoming.push(item);
             });
 
-            // Render Context
-            if (lastCompletedItem) {
-                renderSection('last-completed', [lastCompletedItem], 'card-done', false);
-            }
-
-            // Render Main Queues
-            renderSection('overdue-queue', overdue, 'card-overdue', true);
-            renderSection('today-queue', today, 'card-today', true);
-            renderUpcoming(); // Renders upcoming based on toggle state
+            if (lastCompletedItem) renderSection('last-completed', [lastCompletedItem], 'card-done', false);
+            renderSection('overdue-queue', overdue, 'card-overdue', true, todayStr);
+            renderSection('today-queue', today, 'card-today', true, todayStr);
+            renderUpcoming(todayStr); 
             
             document.getElementById('loading').style.display = "none";
 
         } catch (error) {
             document.getElementById('loading').innerText = "Connection Failed.";
-            console.error(error);
         }
     }
 
-    // Toggle between 5 items and the entire array
+    function calculateHUD(data) {
+        let stats = { "DSA": {d:0, t:0}, "HLD": {d:0, t:0}, "Core (DB/CN)": {d:0, t:0} };
+        
+        data.forEach(p => {
+            let mod = p.module.toLowerCase();
+            let key = null;
+            if (mod.includes("dsa") || mod.includes("intro")) key = "DSA";
+            else if (mod.includes("hld") || mod.includes("system design")) key = "HLD";
+            else if (mod.includes("sql") || mod.includes("database") || mod.includes("network")) key = "Core (DB/CN)";
+            
+            if (key) {
+                stats[key].t++;
+                if (p.status === "Done") stats[key].d++;
+            }
+        });
+
+        const hud = document.getElementById('hud-stats');
+        hud.innerHTML = "";
+        for (const [key, val] of Object.entries(stats)) {
+            if (val.t === 0) continue;
+            let pct = Math.round((val.d / val.t) * 100);
+            hud.innerHTML += `
+                <div class="hud-item">
+                    <div class="hud-val" style="color: ${pct === 100 ? 'var(--primary)' : '#fff'}">${pct}%</div>
+                    <div class="hud-label">${key}</div>
+                </div>
+            `;
+        }
+    }
+
     function toggleUpcoming() {
         showingAll = !showingAll;
         document.getElementById('btn-toggle').innerText = showingAll ? "Collapse Schedule" : "View Full Schedule";
-        renderUpcoming();
+        const todayDate = new Date();
+        const todayStr = todayDate.getFullYear() + "-" + String(todayDate.getMonth() + 1).padStart(2, '0') + "-" + String(todayDate.getDate()).padStart(2, '0');
+        renderUpcoming(todayStr);
     }
 
-    function renderUpcoming() {
+    function renderUpcoming(todayStr) {
         const limit = showingAll ? allUpcoming.length : 5;
-        renderSection('upcoming-queue', allUpcoming.slice(0, limit), 'card-upcoming', true);
+        renderSection('upcoming-queue', allUpcoming.slice(0, limit), 'card-upcoming', true, todayStr);
     }
 
-    function renderSection(elementId, items, cardClass, showButtons) {
+    function renderSection(elementId, items, cardClass, showButtons, todayStr) {
         const div = document.getElementById(elementId);
-        if (items.length === 0) return; 
+        if (items.length === 0) {
+            if (elementId === 'last-completed') div.innerHTML = `<div class="empty-state">No classes completed yet.</div>`;
+            else if (elementId === 'overdue-queue') div.innerHTML = `<div class="empty-state">No overdue classes. You are perfectly on schedule!</div>`;
+            else if (elementId === 'today-queue') div.innerHTML = `<div class="empty-state">No classes scheduled for today. Rest or revise.</div>`;
+            return;
+        }
         
         div.innerHTML = "";
         items.forEach(item => {
             const prettyDate = new Date(item.date).toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
-            
             const card = document.createElement('div');
             card.className = `timeline-card ${cardClass}`;
             card.id = `row-${item.rowIndex}`;
 
             let buttonHTML = showButtons ? `
                 <div class="actions">
+                    ${item.date > todayStr ? `<button class="btn-pull" onclick="processAction('pull_to_today', ${item.rowIndex}, '${item.track}', '${card.id}')">⏬ Do Today</button>` : ''}
                     <button class="btn-shift" onclick="processAction('shift', ${item.rowIndex}, '${item.track}', '${card.id}')">⏩ Shift</button>
                     <button class="btn-done" onclick="processAction('done', ${item.rowIndex}, '${item.track}', '${card.id}')">✅ Done</button>
                 </div>
@@ -205,29 +238,37 @@
         const buttons = card.querySelectorAll('button');
         buttons.forEach(b => b.disabled = true);
         
-        const targetBtn = action === 'done' ? buttons[1] : buttons[0];
-        targetBtn.innerText = "Syncing...";
+        document.getElementById('loading').style.display = "block";
+        document.getElementById('loading').innerText = "Syncing with Database...";
 
         try {
             await fetch(API_URL, {
                 method: "POST",
                 body: JSON.stringify({ action: action, rowIndex: rowIndex, track: track })
             });
-
-            if (action === 'done') {
-                confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
-                document.getElementById('loading').style.display = "block";
-                document.getElementById('loading').innerText = "Updating Checkpoint...";
-                setTimeout(() => loadTimeline(), 1000); // Reload to update "Last Completed" section
-            } else {
-                document.getElementById('loading').style.display = "block";
-                document.getElementById('loading').innerText = "Recalculating Timeline Cascade...";
-                loadTimeline(); 
-            }
+            if (action === 'done') confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+            setTimeout(() => loadTimeline(), 800); 
         } catch (error) {
             alert("Sync Failed.");
             buttons.forEach(b => b.disabled = false);
-            targetBtn.innerText = action === 'done' ? "✅ Done" : "⏩ Shift";
+            document.getElementById('loading').style.display = "none";
+        }
+    }
+
+    async function smartSync() {
+        if (!confirm("This will perfectly align all uncompleted Weekday classes to Mon-Fri and all Weekend classes to Sat-Sun starting from Today. Continue?")) return;
+        
+        document.getElementById('loading').style.display = "block";
+        document.getElementById('loading').innerText = "Auto-Healing Schedule Boundaries...";
+        
+        try {
+            await fetch(API_URL, {
+                method: "POST",
+                body: JSON.stringify({ action: "smart_sync" })
+            });
+            loadTimeline();
+        } catch (e) {
+            alert("Failed to sync.");
         }
     }
 
