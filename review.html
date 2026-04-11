@@ -99,8 +99,8 @@
         <div class="form-group">
             <label>Initial Status</label>
             <select id="p-phase" class="form-control">
-                <option value="Smooth">🚀 Smooth (Review in 3 Days)</option>
-                <option value="Struggled">⚠️ Struggled (Review Tomorrow)</option>
+                <option value="Smooth">🚀 Smooth (Review in 8 Days)</option>
+                <option value="Struggled">⚠️ Struggled (Review in 4 Days)</option>
             </select>
         </div>
 
@@ -295,16 +295,29 @@
     }
 
     function toggleHint(id) {
+        // 🔒 SECURITY LOCK
+        if (localStorage.getItem("admin_key") !== "scaler2026") {
+            alert("🔒 READ-ONLY MODE: Hints are restricted.");
+            return;
+        }
         const hintBox = document.getElementById(id);
         hintBox.style.display = hintBox.style.display === 'block' ? 'none' : 'block';
     }
 
     function startTimer(cardId) {
+        // 🔒 SECURITY LOCK
+        if (localStorage.getItem("admin_key") !== "scaler2026") {
+            alert("🔒 READ-ONLY MODE: Focus timer is restricted.");
+            return;
+        }
         if (activeTimers[cardId]) return; 
+
         const btn = document.getElementById(`btn-timer-${cardId}`);
         const display = document.getElementById(`timer-${cardId}`);
+        
         btn.style.display = "none"; 
         display.style.display = "inline-block";
+
         let seconds = 0;
         activeTimers[cardId] = setInterval(() => {
             seconds++;
