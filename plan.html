@@ -10,7 +10,7 @@
         :root {
             --bg: #09090b; --card: #18181b; --border: #3f3f46;
             --primary: #39d353; --danger: #ef4444; --text: #f4f4f5; --muted: #a1a1aa;
-            --accent: #3b82f6; --warning: #eab308;
+            --accent: #3b82f6; --warning: #eab308; --done: #2ea44f;
         }
         body {
             background-color: var(--bg);
@@ -25,7 +25,7 @@
         }
         h1 { margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; letter-spacing: -0.5px; }
         
-        .section-title { font-family: 'Space Grotesk'; font-size: 1.2rem; margin: 30px 0 15px 0; display: flex; align-items: center; gap: 8px;}
+        .section-title { font-family: 'Space Grotesk'; font-size: 1.2rem; margin: 30px 0 15px 0; display: flex; align-items: center; justify-content: space-between;}
         .overdue-title { color: var(--danger); }
         .today-title { color: var(--primary); }
         .upcoming-title { color: var(--muted); }
@@ -36,9 +36,12 @@
             display: flex; justify-content: space-between; align-items: center;
             transition: all 0.3s ease; border-left: 4px solid var(--border);
         }
-        .card-overdue { border-left-color: var(--danger); background: rgba(239, 68, 68, 0.03); }
-        .card-today { border-left-color: var(--primary); background: rgba(57, 211, 83, 0.03); box-shadow: 0 0 20px rgba(57,211,83,0.1);}
-        .card-upcoming { border-left-color: var(--accent); opacity: 0.8;}
+        
+        /* State Colors */
+        .card-done { border-left-color: var(--done); background: rgba(46, 164, 79, 0.05); opacity: 0.7;}
+        .card-overdue { border-left-color: var(--danger); background: rgba(239, 68, 68, 0.05); }
+        .card-today { border-left-color: var(--primary); background: rgba(57, 211, 83, 0.05); box-shadow: 0 0 20px rgba(57,211,83,0.1);}
+        .card-upcoming { border-left-color: var(--accent); opacity: 0.9;}
         
         .timeline-card:hover { transform: translateX(5px); border-color: #71717a; }
 
@@ -59,9 +62,12 @@
         
         .btn-done { background: var(--primary); color: #000; }
         .btn-done:hover { opacity: 0.8; box-shadow: 0 0 15px rgba(57,211,83,0.4);}
+
+        .btn-toggle { background: #27272a; color: #fff; padding: 6px 12px; font-size: 0.75rem; border: 1px solid #3f3f46;}
+        .btn-toggle:hover { background: #3f3f46; }
         
         button:disabled { opacity: 0.5; pointer-events: none; }
-        .empty-state { color: var(--muted); font-style: italic; font-size: 0.9rem; padding: 10px; }
+        .empty-state { color: var(--muted); font-style: italic; font-size: 0.9rem; padding: 10px; background: var(--card); border-radius: 8px; border: 1px dashed var(--border);}
     </style>
 </head>
 <body>
@@ -75,13 +81,21 @@
         <div id="loading" style="color: var(--muted); animation: pulse 1s infinite;">Syncing Timeline...</div>
     </div>
 
+    <div style="margin-bottom: 30px;">
+        <span style="font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px;">Checkpoint: Last Completed</span>
+        <div id="last-completed"><div class="empty-state">No classes completed yet.</div></div>
+    </div>
+
     <h2 class="section-title overdue-title">⚠️ Action Required (Overdue)</h2>
     <div id="overdue-queue"><div class="empty-state">No overdue classes. You are perfectly on schedule!</div></div>
 
     <h2 class="section-title today-title">🔥 Today's Mission</h2>
     <div id="today-queue"><div class="empty-state">No classes scheduled for today. Rest and recover.</div></div>
 
-    <h2 class="section-title upcoming-title">📅 Next 5 Classes</h2>
+    <h2 class="section-title upcoming-title">
+        📅 Upcoming Timeline
+        <button id="btn-toggle" class="btn-toggle" onclick="toggleUpcoming()">View Full Schedule</button>
+    </h2>
     <div id="upcoming-queue"><div class="empty-state">Loading future timeline...</div></div>
 </div>
 
@@ -91,28 +105,44 @@
     // ==========================================
     const API_URL = "https://script.google.com/macros/s/AKfycbziO7UXoTfbgegAbdoRksCxy3OI0Nn_p8vDJnQ1VboVjVhE1SsJFwnIjtK4kzz2-kDzkA/exec";
 
+    let allUpcoming = []; // Stores the full schedule globally
+    let showingAll = false; // Toggle state
+
     async function loadTimeline() {
         try {
             const response = await fetch(API_URL + "?t=" + new Date().getTime());
-            const data = await response.json();
+            let data = await response.json();
             
+            // 1. FORCE CHRONOLOGICAL SORT (Fixes frontend zigzag)
+            data.sort((a, b) => new Date(a.date) - new Date(b.date));
+
             const todayDate = new Date();
             const todayStr = todayDate.getFullYear() + "-" + String(todayDate.getMonth() + 1).padStart(2, '0') + "-" + String(todayDate.getDate()).padStart(2, '0');
             
-            let overdue = [], today = [], upcoming = [];
+            let lastCompletedItem = null;
+            let overdue = [], today = [];
+            allUpcoming = []; // Reset global
             
             data.forEach(item => {
-                if (item.status === "Done") return; // Ignore completed items
+                if (item.status === "Done") {
+                    lastCompletedItem = item; // Because it's sorted, the last "Done" is the most recent
+                    return; 
+                }
                 
                 if (item.date < todayStr) overdue.push(item);
                 else if (item.date === todayStr) today.push(item);
-                else upcoming.push(item);
+                else allUpcoming.push(item);
             });
 
-            // Render the UI
-            renderSection('overdue-queue', overdue, 'card-overdue');
-            renderSection('today-queue', today, 'card-today');
-            renderSection('upcoming-queue', upcoming.slice(0, 5), 'card-upcoming'); // Only show next 5
+            // Render Context
+            if (lastCompletedItem) {
+                renderSection('last-completed', [lastCompletedItem], 'card-done', false);
+            }
+
+            // Render Main Queues
+            renderSection('overdue-queue', overdue, 'card-overdue', true);
+            renderSection('today-queue', today, 'card-today', true);
+            renderUpcoming(); // Renders upcoming based on toggle state
             
             document.getElementById('loading').style.display = "none";
 
@@ -122,9 +152,21 @@
         }
     }
 
-    function renderSection(elementId, items, cardClass) {
+    // Toggle between 5 items and the entire array
+    function toggleUpcoming() {
+        showingAll = !showingAll;
+        document.getElementById('btn-toggle').innerText = showingAll ? "Collapse Schedule" : "View Full Schedule";
+        renderUpcoming();
+    }
+
+    function renderUpcoming() {
+        const limit = showingAll ? allUpcoming.length : 5;
+        renderSection('upcoming-queue', allUpcoming.slice(0, limit), 'card-upcoming', true);
+    }
+
+    function renderSection(elementId, items, cardClass, showButtons) {
         const div = document.getElementById(elementId);
-        if (items.length === 0) return; // Keep default empty state
+        if (items.length === 0) return; 
         
         div.innerHTML = "";
         items.forEach(item => {
@@ -133,6 +175,13 @@
             const card = document.createElement('div');
             card.className = `timeline-card ${cardClass}`;
             card.id = `row-${item.rowIndex}`;
+
+            let buttonHTML = showButtons ? `
+                <div class="actions">
+                    <button class="btn-shift" onclick="processAction('shift', ${item.rowIndex}, '${item.track}', '${card.id}')">⏩ Shift</button>
+                    <button class="btn-done" onclick="processAction('done', ${item.rowIndex}, '${item.track}', '${card.id}')">✅ Done</button>
+                </div>
+            ` : `<div style="color: var(--done); font-weight: 600; font-size: 0.9rem;">✓ Completed</div>`;
 
             card.innerHTML = `
                 <div class="class-info">
@@ -145,10 +194,7 @@
                         <span class="badge b-module">${item.module}</span>
                     </div>
                 </div>
-                <div class="actions">
-                    <button class="btn-shift" onclick="processAction('shift', ${item.rowIndex}, '${item.track}', '${card.id}')">⏩ Shift</button>
-                    <button class="btn-done" onclick="processAction('done', ${item.rowIndex}, '${item.track}', '${card.id}')">✅ Done</button>
-                </div>
+                ${buttonHTML}
             `;
             div.appendChild(card);
         });
@@ -170,10 +216,10 @@
 
             if (action === 'done') {
                 confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
-                card.style.opacity = 0;
-                setTimeout(() => card.remove(), 300);
+                document.getElementById('loading').style.display = "block";
+                document.getElementById('loading').innerText = "Updating Checkpoint...";
+                setTimeout(() => loadTimeline(), 1000); // Reload to update "Last Completed" section
             } else {
-                // If we shifted, we MUST reload the entire timeline to see the new cascaded dates!
                 document.getElementById('loading').style.display = "block";
                 document.getElementById('loading').innerText = "Recalculating Timeline Cascade...";
                 loadTimeline(); 
