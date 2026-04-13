@@ -1,5 +1,11 @@
 [
   {
+    "date": "13/04/2026",
+    "name": "Next Pointer Binary Tree",
+    "topic": "Tree",
+    "source": "Scaler"
+  },
+  {
     "date": "12/04/2026",
     "name": "Test-AlgoArray",
     "topic": "Array",
