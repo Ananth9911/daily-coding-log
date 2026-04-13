@@ -349,7 +349,7 @@
         
         if (activeTimers[cardId]) clearInterval(activeTimers[cardId]);
 
-        const targetBtn = action === 'Smooth' ? buttons[4] : buttons[3];
+        const targetBtn = action === 'Smooth' ? buttons[3] : buttons[2];
         const originalText = targetBtn.innerText;
         targetBtn.innerText = "Syncing...";
 
