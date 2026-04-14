@@ -1,5 +1,23 @@
 [
   {
+    "date": "15/04/2026",
+    "name": "Custom Hashmap (Chaining)",
+    "topic": "Hashing",
+    "source": "Scaler"
+  },
+  {
+    "date": "15/04/2026",
+    "name": "Group Anagrams 1",
+    "topic": "Hashing",
+    "source": "Scaler"
+  },
+  {
+    "date": "15/04/2026",
+    "name": "Longest Subarray Zero Sum",
+    "topic": "Hashing",
+    "source": "Scaler"
+  },
+  {
     "date": "14/04/2026",
     "name": "Diameter of binary tree",
     "topic": "Tree",
