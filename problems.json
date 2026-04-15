@@ -1,6 +1,12 @@
 [
   {
     "date": "16/04/2026",
+    "name": "Heap Queries",
+    "topic": "Heap",
+    "source": "Scaler"
+  },
+  {
+    "date": "16/04/2026",
     "name": "Build a Heap",
     "topic": "Heap",
     "source": "Scaler"

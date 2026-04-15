@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 353 🔥
+- **Total Problems Solved:** 354 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 16/04/2026 | Heap Queries | Heap | Scaler |
 | 16/04/2026 | Build a Heap | Heap | Scaler |
 | 16/04/2026 | Connect ropes | Heap | Scaler |
 | 15/04/2026 | Custom Hashmap (Chaining) | Hashing | Scaler |
@@ -24,6 +25,5 @@
 | 14/04/2026 | Top View of Binary tree | Tree | Scaler |
 | 14/04/2026 | Vertical Order traversal | Tree | Scaler |
 | 13/04/2026 | Next Pointer Binary Tree | Tree | Scaler |
-| 12/04/2026 | Test-AlgoArray | Array | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
