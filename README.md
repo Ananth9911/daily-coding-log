@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 351 🔥
+- **Total Problems Solved:** 353 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,8 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 16/04/2026 | Build a Heap | Heap | Scaler |
+| 16/04/2026 | Connect ropes | Heap | Scaler |
 | 15/04/2026 | Custom Hashmap (Chaining) | Hashing | Scaler |
 | 15/04/2026 | Group Anagrams 1 | Hashing | Scaler |
 | 15/04/2026 | Longest Subarray Zero Sum | Hashing | Scaler |
@@ -23,7 +25,5 @@
 | 14/04/2026 | Vertical Order traversal | Tree | Scaler |
 | 13/04/2026 | Next Pointer Binary Tree | Tree | Scaler |
 | 12/04/2026 | Test-AlgoArray | Array | Scaler |
-| 11/04/2026 | Recover Binary Search Tree | Tree | Scaler |
-| 11/04/2026 | Morris Inorder Traversal | Tree | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
