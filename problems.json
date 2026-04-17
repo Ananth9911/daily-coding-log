@@ -1,5 +1,17 @@
 [
   {
+    "date": "17/04/2026",
+    "name": "Seats",
+    "topic": "Greedy",
+    "source": "Scaler"
+  },
+  {
+    "date": "17/04/2026",
+    "name": "Finish Maximum Jobs",
+    "topic": "Greedy",
+    "source": "Scaler"
+  },
+  {
     "date": "16/04/2026",
     "name": "Running Median",
     "topic": "Heap",

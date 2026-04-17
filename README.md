@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 355 🔥
+- **Total Problems Solved:** 357 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,8 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 17/04/2026 | Seats | Greedy | Scaler |
+| 17/04/2026 | Finish Maximum Jobs | Greedy | Scaler |
 | 16/04/2026 | Running Median | Heap | Scaler |
 | 16/04/2026 | Heap Queries | Heap | Scaler |
 | 16/04/2026 | Build a Heap | Heap | Scaler |
@@ -23,7 +25,5 @@
 | 15/04/2026 | Group Anagrams 1 | Hashing | Scaler |
 | 15/04/2026 | Longest Subarray Zero Sum | Hashing | Scaler |
 | 14/04/2026 | Diameter of binary tree | Tree | Scaler |
-| 14/04/2026 | Top View of Binary tree | Tree | Scaler |
-| 14/04/2026 | Vertical Order traversal | Tree | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
