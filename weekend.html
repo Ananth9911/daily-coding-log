@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekend Execution Engine</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 { 
+            color: #ffffff; 
+            border-bottom: 2px solid #333; 
+            padding-bottom: 10px; 
+        }
+        .lane {
+            background: #1e1e1e;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-left: 5px solid #00ffcc;
+        }
+        .lane h2 { 
+            margin-top: 0; 
+            color: #00ffcc; 
+        }
+        .lane-2 { 
+            border-left-color: #ff00ff; 
+        }
+        .lane-2 h2 { 
+            color: #ff00ff; 
+        }
+        ul { 
+            list-style-type: none; 
+            padding: 0; 
+        }
+        li {
+            background: #2a2a2a;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+        a { 
+            color: #4da6ff; 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 1.1em;
+        }
+        a:hover { 
+            text-decoration: underline; 
+        }
+        .topic-tag {
+            background-color: #333;
+            color: #aaa;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            margin-right: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .instructions { 
+            font-size: 0.9em; 
+            color: #888; 
+            margin-bottom: 20px; 
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Weekend Deep-Dive Engine</h1>
+    <p class="instructions">
+        Target block: Saturday & Sunday, 4:30 PM - 8:30 PM. <br>
+        <em>Data is synced live from Google Sheets. Mark items as "Done" in the sheet and refresh this page.</em>
+    </p>
+
+    <div class="lane">
+        <h2>Lane 1: Backlog Burner</h2>
+        <ul id="lane1-list"></ul>
+    </div>
+
+    <div class="lane lane-2">
+        <h2>Lane 2: Recent Anchor</h2>
+        <ul id="lane2-list"></ul>
+    </div>
+
+    <script>
+        // ==========================================
+        // 🚨 PASTE YOUR GOOGLE SHEETS CSV LINK HERE 🚨
+        // ==========================================
+        const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTQO1O6tuJ-BykB1-96MjCERmbqV205_0QFGRT6s5h1opfAFygWJb98gBvvuXLBKLb7-LG8Q1Uh0MMI/pub?gid=2010525446&single=true&output=csv";
+
+        async function loadQueue() {
+            try {
+                // Fetch the live data from Google Sheets
+                const response = await fetch(sheetUrl);
+                const csvText = await response.text();
+                
+                // Parse CSV (split by new line and skip the first row because it's the header)
+                const rows = csvText.split('\n').slice(1);
+                
+                const backlogQueue = [];
+                const recentQueue = [];
+
+                rows.forEach(row => {
+                    // Skip empty rows
+                    if (!row.trim()) return; 
+                    
+                    // Note: This simple split assumes YOU HAVE NO COMMAS IN YOUR TITLES.
+                    const columns = row.split(','); 
+                    
+                    // Make sure the row has all 5 columns
+                    if (columns.length >= 5) {
+                        const lane = columns[0].trim().toLowerCase();
+                        const topic = columns[1].trim();
+                        const title = columns[2].trim();
+                        const url = columns[3].trim();
+                        const status = columns[4].trim().toLowerCase();
+
+                        // Only add problems marked as "Pending"
+                        if (status === 'pending') {
+                            const problemInfo = { topic: topic, title: title, url: url };
+                            
+                            if (lane === 'backlog') {
+                                backlogQueue.push(problemInfo);
+                            } else if (lane === 'recent') {
+                                recentQueue.push(problemInfo);
+                            }
+                        }
+                    }
+                });
+
+                // Render the UI
+                renderLane(backlogQueue, "lane1-list");
+                renderLane(recentQueue, "lane2-list");
+
+            } catch (error) {
+                console.error("Error fetching the database:", error);
+                document.getElementById("lane1-list").innerHTML = "<li>Error loading database. Make sure the CSV link is correct.</li>";
+                document.getElementById("lane2-list").innerHTML = "<li>Error loading database. Make sure the CSV link is correct.</li>";
+            }
+        }
+
+        function renderLane(queue, elementId) {
+            const list = document.getElementById(elementId);
+            
+            // Strictly pick the first 2 problems (FIFO)
+            const targetProblems = queue.slice(0, 2); 
+            
+            list.innerHTML = ""; // Clear loading text
+
+            if (targetProblems.length === 0) {
+                list.innerHTML = "<li>🎉 Queue empty. You cleared this lane!</li>";
+                return;
+            }
+
+            targetProblems.forEach(prob => {
+                const li = document.createElement("li");
+                // Added a visual topic tag so you know what you are clicking into
+                li.innerHTML = `
+                    <span class="topic-tag">${prob.topic}</span>
+                    <a href="${prob.url}" target="_blank">${prob.title}</a>
+                `;
+                list.appendChild(li);
+            });
+        }
+
+        // Initialize the engine loading state
+        document.getElementById("lane1-list").innerHTML = "<li>Loading live database...</li>";
+        document.getElementById("lane2-list").innerHTML = "<li>Loading live database...</li>";
+        
+        // Run the fetch function
+        loadQueue();
+    </script>
+
+</body>
+</html>
