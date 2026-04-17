@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 357 🔥
+- **Total Problems Solved:** 358 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 18/04/2026 | Distribute Candy | Greedy | Scaler |
 | 17/04/2026 | Seats | Greedy | Scaler |
 | 17/04/2026 | Finish Maximum Jobs | Greedy | Scaler |
 | 16/04/2026 | Running Median | Heap | Scaler |
@@ -24,6 +25,5 @@
 | 15/04/2026 | Custom Hashmap (Chaining) | Hashing | Scaler |
 | 15/04/2026 | Group Anagrams 1 | Hashing | Scaler |
 | 15/04/2026 | Longest Subarray Zero Sum | Hashing | Scaler |
-| 14/04/2026 | Diameter of binary tree | Tree | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
