@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 354 🔥
+- **Total Problems Solved:** 355 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 16/04/2026 | Running Median | Heap | Scaler |
 | 16/04/2026 | Heap Queries | Heap | Scaler |
 | 16/04/2026 | Build a Heap | Heap | Scaler |
 | 16/04/2026 | Connect ropes | Heap | Scaler |
@@ -24,6 +25,5 @@
 | 14/04/2026 | Diameter of binary tree | Tree | Scaler |
 | 14/04/2026 | Top View of Binary tree | Tree | Scaler |
 | 14/04/2026 | Vertical Order traversal | Tree | Scaler |
-| 13/04/2026 | Next Pointer Binary Tree | Tree | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
