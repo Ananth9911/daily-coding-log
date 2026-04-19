@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 361 🔥
+- **Total Problems Solved:** 363 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,8 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 19/04/2026 | Anti Diagonals | Array | Scaler |
+| 19/04/2026 | Sum Of Odd & Even Digits In A Number | Basic | Scaler |
 | 18/04/2026 | Flipkart's Challenge in Effective Inventory Management | Heap | Scaler |
 | 18/04/2026 | Ath largest element | Heap | Scaler |
 | 18/04/2026 | Merge K Sorted Lists | Heap | Scaler |
@@ -23,7 +25,5 @@
 | 17/04/2026 | Finish Maximum Jobs | Greedy | Scaler |
 | 16/04/2026 | Running Median | Heap | Scaler |
 | 16/04/2026 | Heap Queries | Heap | Scaler |
-| 16/04/2026 | Build a Heap | Heap | Scaler |
-| 16/04/2026 | Connect ropes | Heap | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
