@@ -1,6 +1,24 @@
 [
   {
     "date": "19/04/2026",
+    "name": "Identical Binary Trees",
+    "topic": "Treee",
+    "source": "Scaler"
+  },
+  {
+    "date": "19/04/2026",
+    "name": "Distance between Nodes of BST",
+    "topic": "Tree",
+    "source": "Scaler"
+  },
+  {
+    "date": "19/04/2026",
+    "name": "Common Nodes in Two BST",
+    "topic": "Tree",
+    "source": "Scaler"
+  },
+  {
+    "date": "19/04/2026",
     "name": "Row to Column Zero",
     "topic": "Array",
     "source": "Scaler"
