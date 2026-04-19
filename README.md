@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 367 🔥
+- **Total Problems Solved:** 368 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,7 +15,8 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
-| 19/04/2026 | Identical Binary Trees | Treee | Scaler |
+| 19/04/2026 | Invert the Binary Tree | Tree | Scaler |
+| 19/04/2026 | Identical Binary Trees | Tree | Scaler |
 | 19/04/2026 | Distance between Nodes of BST | Tree | Scaler |
 | 19/04/2026 | Common Nodes in Two BST | Tree | Scaler |
 | 19/04/2026 | Row to Column Zero | Array | Scaler |
@@ -24,6 +25,5 @@
 | 18/04/2026 | Flipkart's Challenge in Effective Inventory Management | Heap | Scaler |
 | 18/04/2026 | Ath largest element | Heap | Scaler |
 | 18/04/2026 | Merge K Sorted Lists | Heap | Scaler |
-| 18/04/2026 | Distribute Candy | Greedy | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)

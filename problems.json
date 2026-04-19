@@ -1,8 +1,14 @@
 [
   {
     "date": "19/04/2026",
+    "name": "Invert the Binary Tree",
+    "topic": "Tree",
+    "source": "Scaler"
+  },
+  {
+    "date": "19/04/2026",
     "name": "Identical Binary Trees",
-    "topic": "Treee",
+    "topic": "Tree",
     "source": "Scaler"
   },
   {
