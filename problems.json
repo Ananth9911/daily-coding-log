@@ -1,6 +1,12 @@
 [
   {
     "date": "19/04/2026",
+    "name": "Row to Column Zero",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "19/04/2026",
     "name": "Anti Diagonals",
     "topic": "Array",
     "source": "Scaler"
