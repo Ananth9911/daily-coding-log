@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 368 🔥
+- **Total Problems Solved:** 370 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,8 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 21/04/2026 | K Places Apart | Heap | Scaler |
+| 21/04/2026 | Shaggy and distances | Hashing | Scaler |
 | 19/04/2026 | Invert the Binary Tree | Tree | Scaler |
 | 19/04/2026 | Identical Binary Trees | Tree | Scaler |
 | 19/04/2026 | Distance between Nodes of BST | Tree | Scaler |
@@ -23,7 +25,5 @@
 | 19/04/2026 | Anti Diagonals | Array | Scaler |
 | 19/04/2026 | Sum Of Odd & Even Digits In A Number | Basic | Scaler |
 | 18/04/2026 | Flipkart's Challenge in Effective Inventory Management | Heap | Scaler |
-| 18/04/2026 | Ath largest element | Heap | Scaler |
-| 18/04/2026 | Merge K Sorted Lists | Heap | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)

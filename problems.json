@@ -1,5 +1,17 @@
 [
   {
+    "date": "21/04/2026",
+    "name": "K Places Apart",
+    "topic": "Heap",
+    "source": "Scaler"
+  },
+  {
+    "date": "21/04/2026",
+    "name": "Shaggy and distances",
+    "topic": "Hashing",
+    "source": "Scaler"
+  },
+  {
     "date": "19/04/2026",
     "name": "Invert the Binary Tree",
     "topic": "Tree",
