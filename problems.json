@@ -1,6 +1,12 @@
 [
   {
     "date": "21/04/2026",
+    "name": "Matrix Scalar Product",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "21/04/2026",
     "name": "Minimum Number of Squares",
     "topic": "DP",
     "source": "Scaler"

@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 375 🔥
+- **Total Problems Solved:** 376 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 21/04/2026 | Matrix Scalar Product | Array | Scaler |
 | 21/04/2026 | Minimum Number of Squares | DP | Scaler |
 | 21/04/2026 | Stairs | DP | Scaler |
 | 21/04/2026 | Fibonacci Number -DP | DP | Scaler |
@@ -24,6 +25,5 @@
 | 20/04/2026 | Shaggy and distances | Hashing | Scaler |
 | 19/04/2026 | Invert the Binary Tree | Tree | Scaler |
 | 19/04/2026 | Identical Binary Trees | Tree | Scaler |
-| 19/04/2026 | Distance between Nodes of BST | Tree | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
