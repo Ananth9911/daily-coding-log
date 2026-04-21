@@ -1,5 +1,23 @@
 [
   {
+    "date": "22/04/2026",
+    "name": "Colorful Number",
+    "topic": "Hashing",
+    "source": "Scaler"
+  },
+  {
+    "date": "21/04/2026",
+    "name": "Count Increasing Triplets",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "21/04/2026",
+    "name": "Minor Diagonal Sum",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
     "date": "21/04/2026",
     "name": "Matrix Scalar Product",
     "topic": "Array",
