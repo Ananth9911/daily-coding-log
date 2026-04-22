@@ -4,7 +4,11 @@
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
-*(System Error: Could not load Plan)*
+- **Foundation** `[██████████]` **100%** *(25/25)*
+- **DSA (Data Structures)** `[███████░░░]` **76%** *(70/92)*
+- **Core (SQL/CS Fund)** `[███░░░░░░░]` **32%** *(9/28)*
+- **System Design (LLD/HLD)** `[░░░░░░░░░░]` **0%** *(0/121)*
+
 
 ![Topic Breakdown](topic_breakdown.png)
 
