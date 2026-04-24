@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 384 🔥
+- **Total Problems Solved:** 385 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 24/04/2026 | Fractional Knapsack | DP | Scaler |
 | 23/04/2026 | N digit numbers | DP | Scaler |
 | 23/04/2026 | Max Sum Without Adjacent Elements | DP | Scaler |
 | 23/04/2026 | Unique Binary Search Trees II | DP | Scaler |
@@ -24,6 +25,5 @@
 | 21/04/2026 | Count Increasing Triplets | Array | Scaler |
 | 21/04/2026 | Minor Diagonal Sum | Array | Scaler |
 | 21/04/2026 | Matrix Scalar Product | Array | Scaler |
-| 21/04/2026 | Minimum Number of Squares | DP | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
