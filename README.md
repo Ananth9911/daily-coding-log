@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 387 🔥
+- **Total Problems Solved:** 388 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 25/04/2026 | Amazing Subarrays | Array | Scaler |
 | 25/04/2026 | Unbounded Knapsack | DP | Scaler |
 | 25/04/2026 | 0-1 Knapsack | DP | Scaler |
 | 24/04/2026 | Fractional Knapsack | DP | Scaler |
@@ -24,6 +25,5 @@
 | 23/04/2026 | Unique Paths in a Grid | DP | Scaler |
 | 22/04/2026 | Count Subarrays- Unique | Hashing | Scaler |
 | 22/04/2026 | Colorful Number | Hashing | Scaler |
-| 21/04/2026 | Count Increasing Triplets | Array | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
