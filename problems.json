@@ -1,6 +1,12 @@
 [
   {
     "date": "25/04/2026",
+    "name": "N/3 Repeat Number - Boyer-Moore Algo",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "25/04/2026",
     "name": "Amazing Subarrays",
     "topic": "Array",
     "source": "Scaler"
