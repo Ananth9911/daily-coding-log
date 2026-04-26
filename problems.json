@@ -1,6 +1,12 @@
 [
   {
     "date": "27/04/2026",
+    "name": "0-1 Knapsack II - Optimised",
+    "topic": "DP",
+    "source": "Scaler"
+  },
+  {
+    "date": "27/04/2026",
     "name": "Cutting a Rod",
     "topic": "DP",
     "source": "Scaler"
