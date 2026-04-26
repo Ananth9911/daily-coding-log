@@ -1,5 +1,11 @@
 [
   {
+    "date": "26/04/2026",
+    "name": "Coin Sum Infinite",
+    "topic": "DP",
+    "source": "Scaler"
+  },
+  {
     "date": "25/04/2026",
     "name": "N/3 Repeat Number - Boyer-Moore Algo",
     "topic": "Array",

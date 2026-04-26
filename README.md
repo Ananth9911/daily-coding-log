@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 389 🔥
+- **Total Problems Solved:** 390 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 26/04/2026 | Coin Sum Infinite | DP | Scaler |
 | 25/04/2026 | N/3 Repeat Number - Boyer-Moore Algo | Array | Scaler |
 | 25/04/2026 | Amazing Subarrays | Array | Scaler |
 | 25/04/2026 | Unbounded Knapsack | DP | Scaler |
@@ -24,6 +25,5 @@
 | 23/04/2026 | Max Sum Without Adjacent Elements | DP | Scaler |
 | 23/04/2026 | Unique Binary Search Trees II | DP | Scaler |
 | 23/04/2026 | Unique Paths in a Grid | DP | Scaler |
-| 22/04/2026 | Count Subarrays- Unique | Hashing | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
