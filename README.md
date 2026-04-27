@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 393 🔥
+- **Total Problems Solved:** 395 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,8 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 28/04/2026 | Connected Components in an Undirected Graph | Graph | Scaler |
+| 28/04/2026 | Path in Directed Graph | Graph | Scaler |
 | 28/04/2026 | Cycle in Directed Graph | Graph | Scaler |
 | 27/04/2026 | 0-1 Knapsack II - Optimised | DP | Scaler |
 | 27/04/2026 | Cutting a Rod | DP | Scaler |
@@ -23,7 +25,5 @@
 | 25/04/2026 | Amazing Subarrays | Array | Scaler |
 | 25/04/2026 | Unbounded Knapsack | DP | Scaler |
 | 25/04/2026 | 0-1 Knapsack | DP | Scaler |
-| 24/04/2026 | Fractional Knapsack | DP | Scaler |
-| 23/04/2026 | N digit numbers | DP | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
