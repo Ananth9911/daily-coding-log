@@ -1,6 +1,18 @@
 [
   {
     "date": "29/04/2026",
+    "name": "Commutable Islands",
+    "topic": "Graph",
+    "source": "Scaler"
+  },
+  {
+    "date": "29/04/2026",
+    "name": "Construction Cost",
+    "topic": "Graph",
+    "source": "Scaler"
+  },
+  {
+    "date": "29/04/2026",
     "name": "Rotten Oranges",
     "topic": "Graph",
     "source": "Scaler"

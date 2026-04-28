@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 396 🔥
+- **Total Problems Solved:** 398 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,8 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 29/04/2026 | Commutable Islands | Graph | Scaler |
+| 29/04/2026 | Construction Cost | Graph | Scaler |
 | 29/04/2026 | Rotten Oranges | Graph | Scaler |
 | 28/04/2026 | Connected Components in an Undirected Graph | Graph | Scaler |
 | 28/04/2026 | Path in Directed Graph | Graph | Scaler |
@@ -23,7 +25,5 @@
 | 27/04/2026 | Cutting a Rod | DP | Scaler |
 | 26/04/2026 | Coin Sum Infinite | DP | Scaler |
 | 25/04/2026 | N/3 Repeat Number - Boyer-Moore Algo | Array | Scaler |
-| 25/04/2026 | Amazing Subarrays | Array | Scaler |
-| 25/04/2026 | Unbounded Knapsack | DP | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
