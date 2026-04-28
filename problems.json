@@ -1,5 +1,11 @@
 [
   {
+    "date": "29/04/2026",
+    "name": "Rotten Oranges",
+    "topic": "Graph",
+    "source": "Scaler"
+  },
+  {
     "date": "28/04/2026",
     "name": "Connected Components in an Undirected Graph",
     "topic": "Graph",
