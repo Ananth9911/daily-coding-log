@@ -274,6 +274,12 @@
                 try { prettyDate = new Date(p.initialDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }); } catch(e) {}
             }
 
+            // Parse the new Last Solved date
+            let prettyLastSolved = "Never";
+            if(p.lastSolved && p.lastSolved !== "Never") {
+                try { prettyLastSolved = new Date(p.lastSolved).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }); } catch(e) {}
+            }
+
             card.innerHTML = `
                 <div class="problem-header">
                     <div class="problem-info">
@@ -283,6 +289,7 @@
                             <span class="badge b-phase">Phase: ${p.phase}</span>
                             <span class="badge b-attempt">🔄 ${p.attempts}</span>
                             <span class="badge b-date">📅 Added: ${prettyDate}</span>
+                            <span class="badge" style="background: rgba(168, 85, 247, 0.1); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.2);">✔️ Last Solved: ${prettyLastSolved}</span>
                         </div>
                     </div>
                 </div>
