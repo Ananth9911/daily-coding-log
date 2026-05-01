@@ -5,7 +5,7 @@
 
 ### 🎓 Progress
 - **Foundation** `[██████████]` **100%** *(25/25)*
-- **DSA (Data Structures)** `[████████░░]` **81%** *(75/92)*
+- **DSA (Data Structures)** `[████████░░]` **82%** *(76/92)*
 - **Core (SQL/CS Fund)** `[███░░░░░░░]` **35%** *(10/28)*
 - **System Design (LLD/HLD)** `[░░░░░░░░░░]` **0%** *(0/121)*
 
@@ -17,7 +17,7 @@
 | :--- | :--- | :--- | :--- |
 | 02/05/2026 | Topological Sort (Kahn's Algorithm) | Graph | Scaler |
 | 02/05/2026 | Dijkstra | Graph | Scaler |
-| 02/05/2026 | Possibility of Finishing | Graph | Scaler |
+| 01/05/2026 | Possibility of Finishing | Graph | Scaler |
 | 30/04/2026 | Another BFS | Graph | Scaler |
 | 29/04/2026 | Commutable Islands | Graph | Scaler |
 | 29/04/2026 | Construction Cost | Graph | Scaler |
