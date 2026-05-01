@@ -1,6 +1,18 @@
 [
   {
     "date": "02/05/2026",
+    "name": "Topological Sort (Kahn's Algorithm)",
+    "topic": "Graph",
+    "source": "Scaler"
+  },
+  {
+    "date": "02/05/2026",
+    "name": "Dijkstra",
+    "topic": "Graph",
+    "source": "Scaler"
+  },
+  {
+    "date": "02/05/2026",
     "name": "Possibility of Finishing",
     "topic": "Graph",
     "source": "Scaler"
