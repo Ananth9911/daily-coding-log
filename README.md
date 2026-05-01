@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 398 🔥
+- **Total Problems Solved:** 399 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 30/04/2026 | Another BFS | Graph | Scaler |
 | 29/04/2026 | Commutable Islands | Graph | Scaler |
 | 29/04/2026 | Construction Cost | Graph | Scaler |
 | 29/04/2026 | Rotten Oranges | Graph | Scaler |
@@ -24,6 +25,5 @@
 | 27/04/2026 | 0-1 Knapsack II - Optimised | DP | Scaler |
 | 27/04/2026 | Cutting a Rod | DP | Scaler |
 | 26/04/2026 | Coin Sum Infinite | DP | Scaler |
-| 25/04/2026 | N/3 Repeat Number - Boyer-Moore Algo | Array | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
