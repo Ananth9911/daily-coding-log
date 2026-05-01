@@ -17,7 +17,7 @@
 | :--- | :--- | :--- | :--- |
 | 02/05/2026 | Topological Sort (Kahn's Algorithm) | Graph | Scaler |
 | 02/05/2026 | Dijkstra | Graph | Scaler |
-| 01/05/2026 | Possibility of Finishing | Graph | Scaler |
+| 02/05/2026 | Possibility of Finishing | Graph | Scaler |
 | 30/04/2026 | Another BFS | Graph | Scaler |
 | 29/04/2026 | Commutable Islands | Graph | Scaler |
 | 29/04/2026 | Construction Cost | Graph | Scaler |
