@@ -1,5 +1,11 @@
 [
   {
+    "date": "05/05/2026",
+    "name": "Shortest Distance in a Maze",
+    "topic": "Graph",
+    "source": "Scaler"
+  },
+  {
     "date": "04/05/2026",
     "name": "Number of islands",
     "topic": "Graph",
