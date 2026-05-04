@@ -1,5 +1,11 @@
 [
   {
+    "date": "04/05/2026",
+    "name": "Number of islands",
+    "topic": "Graph",
+    "source": "Scaler"
+  },
+  {
     "date": "03/05/2026",
     "name": "Best Time to Buy and Sell Stocks II",
     "topic": "Greedy",
