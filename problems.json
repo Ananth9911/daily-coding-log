@@ -1,5 +1,11 @@
 [
   {
+    "date": "03/05/2026",
+    "name": "Best Time to Buy and Sell Stocks II",
+    "topic": "Greedy",
+    "source": "Scaler"
+  },
+  {
     "date": "02/05/2026",
     "name": "Topological Sort (Kahn's Algorithm)",
     "topic": "Graph",
