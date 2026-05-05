@@ -1,5 +1,11 @@
 [
   {
+    "date": "06/05/2026",
+    "name": "Jump Game 2",
+    "topic": "DP",
+    "source": "Scaler"
+  },
+  {
     "date": "05/05/2026",
     "name": "Shortest Distance in a Maze",
     "topic": "Graph",
