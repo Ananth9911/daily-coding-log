@@ -1,6 +1,12 @@
 [
   {
     "date": "06/05/2026",
+    "name": "Nearest Smaller Element",
+    "topic": "Stack",
+    "source": "Scaler"
+  },
+  {
+    "date": "06/05/2026",
     "name": "Jump Game 2",
     "topic": "DP",
     "source": "Scaler"
