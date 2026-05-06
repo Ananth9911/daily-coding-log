@@ -1,5 +1,29 @@
 [
   {
+    "date": "07/05/2026",
+    "name": "Very Large Power",
+    "topic": "Maths",
+    "source": "Scaler"
+  },
+  {
+    "date": "07/05/2026",
+    "name": "Compute nCr % p",
+    "topic": "Maths",
+    "source": "Scaler"
+  },
+  {
+    "date": "07/05/2026",
+    "name": "Pubg- Minimum Health",
+    "topic": "Array",
+    "source": "Scaler"
+  },
+  {
+    "date": "07/05/2026",
+    "name": "Trailing Zeros in Factorial",
+    "topic": "Maths",
+    "source": "Scaler"
+  },
+  {
     "date": "06/05/2026",
     "name": "Nearest Smaller Element",
     "topic": "Stack",
