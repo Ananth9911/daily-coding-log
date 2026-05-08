@@ -1,5 +1,17 @@
 [
   {
+    "date": "09/05/2026",
+    "name": "Sudoku",
+    "topic": "Backtracking",
+    "source": "Scaler"
+  },
+  {
+    "date": "08/05/2026",
+    "name": "NQueens",
+    "topic": "Backtracking",
+    "source": "Scaler"
+  },
+  {
     "date": "07/05/2026",
     "name": "Very Large Power",
     "topic": "Maths",
