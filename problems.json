@@ -1,6 +1,12 @@
 [
   {
     "date": "09/05/2026",
+    "name": "Word Break",
+    "topic": "DP",
+    "source": "Scaler"
+  },
+  {
+    "date": "09/05/2026",
     "name": "Sudoku",
     "topic": "Backtracking",
     "source": "Scaler"
