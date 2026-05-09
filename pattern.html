@@ -110,7 +110,7 @@
         </div>
         
         <div class="tabs">
-            <div class="tab active" onclick="switchTab(0)">🎯 How to Spot</div>
+            <div class="tab active" onclick="switchTab(0)">🎯 How to Spot (Linguistic Cues)</div>
             <div class="tab" onclick="switchTab(1)">📐 Logic Blueprint</div>
             <div class="tab" onclick="switchTab(2)">💻 Java Template</div>
         </div>
@@ -135,46 +135,72 @@
 
 <script>
     // --- MASTER DATA ARCHIVE (28 PATTERNS) ---
+    // The "triggers" array now strictly contains analytical, linguistic, and structural cues.
     const patterns = [
         // --- ARRAYS & STRINGS ---
         {
             id: 1, name: "Sliding Window", category: "Arrays & Strings",
-            triggers: ["Contiguous subarray", "Longest/Shortest substring", "Max sum of size K"],
+            triggers: [
+                "Mentions 'Contiguous' elements (subarray/substring)", 
+                "Asks to find the 'Longest', 'Shortest', 'Maximum', or 'Minimum' of a sequence", 
+                "Involves a target condition (e.g., 'sum is less than K', 'contains exactly 2 unique characters')"
+            ],
             tc: "O(N)", sc: "O(1)",
             pseudo: `INITIALIZE left = 0, max_result = 0, window_state = empty\nFOR right FROM 0 TO end_of_array:\n    ADD array[right] TO window_state\n    WHILE window_state is INVALID:\n        REMOVE array[left] FROM window_state\n        INCREMENT left\n    UPDATE max_result = MAX(max_result, right - left + 1)`,
             java: `int left = 0, maxLength = 0, state = 0;\nfor (int right = 0; right < nums.length; right++) {\n    state += nums[right];\n    while (/* invalid */) {\n        state -= nums[left];\n        left++;\n    }\n    maxLength = Math.max(maxLength, right - left + 1);\n}`
         },
         {
             id: 2, name: "Two Pointers", category: "Arrays & Strings",
-            triggers: ["Sorted array", "Find pairs that sum to X", "Palindromes", "Water trapping"],
+            triggers: [
+                "Input array is explicitly 'Sorted'", 
+                "Need to find a 'Pair', 'Triplet', or set of elements that sum to a target", 
+                "Comparing elements from opposite ends of an array (e.g., Palindrome checks)",
+                "Requires in-place array manipulation or swapping"
+            ],
             tc: "O(N)", sc: "O(1)",
             pseudo: `INITIALIZE left = 0, right = end_of_array\nWHILE left < right:\n    CALCULATE sum = array[left] + array[right]\n    IF sum == target: RETURN success\n    ELSE IF sum < target: INCREMENT left\n    ELSE: DECREMENT right`,
             java: `int left = 0, right = nums.length - 1;\nwhile (left < right) {\n    int sum = nums[left] + nums[right];\n    if (sum == target) return new int[]{left, right};\n    else if (sum < target) left++;\n    else right--;\n}`
         },
         {
             id: 3, name: "Prefix Sum", category: "Arrays & Strings",
-            triggers: ["Sum of elements between index L and R", "Subarray sum equals K", "Equilibrium index"],
+            triggers: [
+                "Requires calculating the 'Sum of elements between index L and R' repeatedly", 
+                "Need cumulative totals to quickly find mathematical differences", 
+                "Finding a 'Subarray sum equals K' (often paired with a HashMap)"
+            ],
             tc: "O(N)", sc: "O(N)",
             pseudo: `INITIALIZE map to store { running_sum : frequency }\nADD { 0 : 1 } to map\nINITIALIZE current_sum = 0, count = 0\nFOR EACH number IN array:\n    current_sum += number\n    IF (current_sum - target) EXISTS in map:\n        ADD map[current_sum - target] TO count\n    SAVE current_sum TO map`,
             java: `Map<Integer, Integer> map = new HashMap<>();\nmap.put(0, 1);\nint currentSum = 0, count = 0;\nfor (int num : nums) {\n    currentSum += num;\n    if (map.containsKey(currentSum - target)) count += map.get(currentSum - target);\n    map.put(currentSum, map.getOrDefault(currentSum, 0) + 1);\n}`
         },
         {
             id: 4, name: "Kadane's Algorithm", category: "Arrays & Strings",
-            triggers: ["Maximum subarray sum", "Largest contiguous sum"],
+            triggers: [
+                "Must find the 'Maximum' possible sum of a 'Contiguous' subarray", 
+                "The input array contains both positive and negative numbers",
+                "You need an O(N) solution rather than an O(N^2) brute force"
+            ],
             tc: "O(N)", sc: "O(1)",
             pseudo: `INITIALIZE current_sum = 0, max_sum = -INFINITY\nFOR EACH num IN array:\n    current_sum += num\n    max_sum = MAX(max_sum, current_sum)\n    IF current_sum < 0:\n        current_sum = 0 // Reset`,
             java: `int currentSum = 0, maxSum = Integer.MIN_VALUE;\nfor (int num : nums) {\n    currentSum += num;\n    maxSum = Math.max(maxSum, currentSum);\n    if (currentSum < 0) currentSum = 0;\n}\nreturn maxSum;`
         },
         {
             id: 5, name: "Merge Intervals", category: "Arrays & Strings",
-            triggers: ["Overlapping timelines", "Meeting rooms", "Merge schedules"],
+            triggers: [
+                "Input involves 'Timelines', 'Ranges', 'Schedules', or [start, end] pairs", 
+                "Requires checking if two events are mutually exclusive or 'Overlapping'", 
+                "Need to combine or flatten intersecting segments into a single continuous range"
+            ],
             tc: "O(N log N)", sc: "O(N)",
             pseudo: `SORT intervals by start_time\nSET current = intervals[0]\nFOR EACH next IN intervals:\n    IF current.end >= next.start:\n        current.end = MAX(current.end, next.end)\n    ELSE:\n        ADD current TO result\n        current = next`,
             java: `Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));\nList<int[]> merged = new ArrayList<>();\nint[] current = intervals[0];\nmerged.add(current);\nfor (int[] next : intervals) {\n    if (current[1] >= next[0]) current[1] = Math.max(current[1], next[1]);\n    else {\n        current = next;\n        merged.add(current);\n    }\n}`
         },
         {
             id: 6, name: "Cyclic Sort", category: "Arrays & Strings",
-            triggers: ["Array contains numbers from 1 to N", "Find missing number", "Find all duplicates"],
+            triggers: [
+                "The array explicitly contains numbers restricted to a range like '1 to N'", 
+                "You need to find a 'Missing' or 'Duplicate' number",
+                "The problem enforces strict O(N) Time AND O(1) Space constraints"
+            ],
             tc: "O(N)", sc: "O(1)",
             pseudo: `WHILE i < length:\n    correct_idx = array[i] - 1\n    IF array[i] is valid AND NOT in correct_idx:\n        SWAP(array[i], array[correct_idx])\n    ELSE:\n        INCREMENT i`,
             java: `int i = 0;\nwhile (i < nums.length) {\n    int correctIdx = nums[i] - 1;\n    if (nums[i] > 0 && nums[i] <= nums.length && nums[i] != nums[correctIdx]) {\n        int temp = nums[i]; \n        nums[i] = nums[correctIdx]; \n        nums[correctIdx] = temp;\n    } else i++;\n}`
@@ -183,28 +209,44 @@
         // --- MATH & SEARCH ---
         {
             id: 7, name: "Binary Search on Array", category: "Math & Search",
-            triggers: ["Sorted array", "O(log N) time complexity"],
+            triggers: [
+                "Input array is 'Sorted' or 'Monotonically' increasing/decreasing", 
+                "Strict 'O(log N)' time complexity is requested in the prompt",
+                "Need to find an exact target or its closest insertion point"
+            ],
             tc: "O(log N)", sc: "O(1)",
             pseudo: `INITIALIZE left = 0, right = N - 1\nWHILE left <= right:\n    mid = left + (right - left) / 2\n    IF array[mid] == target: RETURN mid\n    IF target > array[mid]: left = mid + 1\n    ELSE: right = mid - 1`,
             java: `int left = 0, right = nums.length - 1;\nwhile (left <= right) {\n    int mid = left + (right - left) / 2;\n    if (nums[mid] == target) return mid;\n    else if (nums[mid] < target) left = mid + 1;\n    else right = mid - 1;\n}\nreturn -1;`
         },
         {
             id: 8, name: "Binary Search on Answer", category: "Math & Search",
-            triggers: ["Minimize the maximum", "Maximize the minimum", "Aggressive Cows", "Allocate Books"],
+            triggers: [
+                "Prompt asks to 'Minimize the maximum' or 'Maximize the minimum'", 
+                "You need to find the 'Smallest valid integer X' that satisfies a condition", 
+                "The problem has a monotonic boundary: Valid for all x >= K, invalid for all x < K"
+            ],
             tc: "O(N log(Range))", sc: "O(1)",
             pseudo: `INITIALIZE low = min_possible, high = max_possible\nWHILE low <= high:\n    mid = low + (high - low) / 2\n    IF is_Valid_Simulation(mid):\n        ans = mid\n        high = mid - 1 // Or low = mid + 1 based on optimization\n    ELSE:\n        low = mid + 1`,
             java: `long low = min, high = max, ans = -1;\nwhile (low <= high) {\n    long mid = low + (high - low) / 2;\n    if (isValid(mid, nums)) {\n        ans = mid;\n        high = mid - 1;\n    } else {\n        low = mid + 1;\n    }\n}\nreturn ans;`
         },
         {
             id: 9, name: "Bit Manipulation Basics", category: "Math & Search",
-            triggers: ["Single number", "XOR tricks", "Check if i-th bit is set", "Count set bits"],
+            triggers: [
+                "Required O(1) space, meaning you cannot use HashMaps or extra arrays", 
+                "Need to find an element appearing an odd/even number of times (XOR trick)", 
+                "Checking if a number is a Power of 2 or counting 'Set bits' (1s)"
+            ],
             tc: "O(1)", sc: "O(1)",
             pseudo: `CHECK BIT: (number & (1 << i)) != 0\nSET BIT: number | (1 << i)\nUNSET BIT: number & ~(1 << i)\nTOGGLE BIT: number ^ (1 << i)\nXOR ALL: a ^ a = 0, a ^ 0 = a`,
             java: `boolean isSet = (num & (1 << i)) != 0;\nnum = num | (1 << i); // Set\nnum = num & ~(1 << i); // Unset\nnum = num ^ (1 << i); // Toggle`
         },
         {
             id: 10, name: "Inverse Modulo (Fermat's)", category: "Math & Search",
-            triggers: ["(A / B) % M", "Combinatorics (nCr % M)", "Large factorials"],
+            triggers: [
+                "Prompt says 'Answer may be too large, return modulo 10^9+7'", 
+                "You need to perform Division within a Modulo operation ((A / B) % M)", 
+                "Involves Combinatorics (nCr) or calculating large factorials"
+            ],
             tc: "O(log M)", sc: "O(1)",
             pseudo: `Fermat's Little Theorem: B^-1 % M = B^(M-2) % M\nFUNCTION Power_Mod(base, exp, M):\n    WHILE exp > 0:\n        IF exp is ODD: res = (res * base) % M\n        base = (base * base) % M\n        exp = exp / 2`,
             java: `public long powerMod(long base, long exp, long mod) {\n    long res = 1;\n    base = base % mod;\n    while (exp > 0) {\n        if (exp % 2 == 1) res = (res * base) % mod;\n        base = (base * base) % mod;\n        exp /= 2;\n    }\n    return res;\n}\n// modInverse = powerMod(B, M - 2, M);`
@@ -213,7 +255,11 @@
         // --- STACKS & QUEUES ---
         {
             id: 11, name: "Monotonic Stack", category: "Stacks & Queues",
-            triggers: ["Next Greater Element", "Nearest Smaller Element", "Daily Temperatures", "Largest Rectangle in Histogram"],
+            triggers: [
+                "Must find the 'Next Greater' or 'Next Smaller' element in an array", 
+                "Must find the 'Previous Greater' or 'Previous Smaller' element", 
+                "Requires maintaining a strictly increasing/decreasing history of seen elements"
+            ],
             tc: "O(N)", sc: "O(N)",
             pseudo: `INITIALIZE empty stack\nFOR EACH index i IN array:\n    WHILE stack NOT EMPTY AND array[i] > array[stack.top()]:\n        popped_index = stack.pop()\n        result_array[popped_index] = array[i]\n    stack.push(i)`,
             java: `Stack<Integer> stack = new Stack<>();\nint[] result = new int[nums.length];\nfor (int i = 0; i < nums.length; i++) {\n    while (!stack.isEmpty() && nums[i] > nums[stack.peek()]) {\n        result[stack.pop()] = nums[i]; \n    }\n    stack.push(i);\n}`
@@ -222,28 +268,43 @@
         // --- HEAPS & GREEDY ---
         {
             id: 12, name: "Top K Elements (Min/Max Heap)", category: "Heaps & Greedy",
-            triggers: ["Kth largest element", "Kth smallest element", "Top K frequent"],
+            triggers: [
+                "Need to find the 'K-th largest', 'K-th smallest', or 'Top K frequent' elements", 
+                "Processing a data stream where you only care about the absolute top/bottom K elements",
+                "Sorting the entire array (N log N) is too slow; you need it faster (N log K)"
+            ],
             tc: "O(N log K)", sc: "O(K)",
             pseudo: `INITIALIZE Min-Heap\nFOR EACH number IN array:\n    ADD number TO Min-Heap\n    IF size of Min-Heap > K:\n        REMOVE top element (kicks out smallest)\nRETURN top element`,
             java: `PriorityQueue<Integer> minHeap = new PriorityQueue<>();\nfor (int num : nums) {\n    minHeap.offer(num);\n    if (minHeap.size() > k) minHeap.poll();\n}\nreturn minHeap.peek();`
         },
         {
-            id: 13, name: "Two Heaps (Running Median)", category: "Heaps & Greedy",
-            triggers: ["Find Median in a Data Stream", "Running median"],
+            id: 13, name: "Two Heaps", category: "Heaps & Greedy",
+            triggers: [
+                "Requires calculating the 'Median' of a continuous stream of data", 
+                "Need instant O(1) access to both the largest element of the bottom half, and smallest of the top half"
+            ],
             tc: "O(log N) insert", sc: "O(N)",
             pseudo: `INITIALIZE Max-Heap (left half), Min-Heap (right half)\nON ADD:\n    PUSH to Max-Heap\n    MOVE top of Max-Heap to Min-Heap\n    IF Min-Heap size > Max-Heap size:\n        MOVE top of Min-Heap to Max-Heap`,
             java: `PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());\nPriorityQueue<Integer> minHeap = new PriorityQueue<>();\npublic void addNum(int num) {\n    maxHeap.offer(num);\n    minHeap.offer(maxHeap.poll());\n    if (maxHeap.size() < minHeap.size()) maxHeap.offer(minHeap.poll());\n}\npublic double findMedian() {\n    if (maxHeap.size() > minHeap.size()) return maxHeap.peek();\n    return (maxHeap.peek() + minHeap.peek()) / 2.0;\n}`
         },
         {
-            id: 14, name: "Greedy (Activity Selection)", category: "Heaps & Greedy",
-            triggers: ["Finish Maximum Jobs", "Meeting Rooms", "Non-overlapping Intervals"],
+            id: 14, name: "Greedy Algorithm", category: "Heaps & Greedy",
+            triggers: [
+                "Goal is to 'Maximize' or 'Minimize' a value using a sequence of optimal local choices", 
+                "Involves scheduling jobs or maximizing intervals without overlap", 
+                "The solution involves sorting items by an end-time or a specific ratio before processing"
+            ],
             tc: "O(N log N)", sc: "O(1) / O(N)",
             pseudo: `SORT jobs BY end_time ASCENDING\nINITIALIZE count = 1, last_end = jobs[0].end\nFOR i FROM 1 TO N-1:\n    IF jobs[i].start >= last_end:\n        INCREMENT count\n        last_end = jobs[i].end`,
             java: `Arrays.sort(intervals, (a, b) -> Integer.compare(a[1], b[1]));\nint count = 1, lastEnd = intervals[0][1];\nfor (int i = 1; i < intervals.length; i++) {\n    if (intervals[i][0] >= lastEnd) {\n        count++;\n        lastEnd = intervals[i][1];\n    }\n}\nreturn count;`
         },
         {
             id: 15, name: "Line Sweep Algorithm", category: "Heaps & Greedy",
-            triggers: ["Maximum overlapping intervals", "Minimum number of airplanes on runway", "My Calendar"],
+            triggers: [
+                "Multiple intervals or events are overlapping at the exact same time", 
+                "Need to count the 'Maximum concurrent events' (e.g., max people in a room at once)", 
+                "Time events are processed sequentially (+1 for start, -1 for end)"
+            ],
             tc: "O(N log N)", sc: "O(N)",
             pseudo: `INITIALIZE chronological_map (TreeMap)\nFOR EACH interval:\n    ADD { start : +1 } TO map\n    ADD { end : -1 } TO map\nFOR EACH time_event IN map:\n    active += map[time_event]\n    max_active = MAX(max_active, active)`,
             java: `TreeMap<Integer, Integer> timeline = new TreeMap<>();\nfor (int[] interval : intervals) {\n    timeline.put(interval[0], timeline.getOrDefault(interval[0], 0) + 1);\n    timeline.put(interval[1], timeline.getOrDefault(interval[1], 0) - 1);\n}\nint active = 0, max = 0;\nfor (int count : timeline.values()) {\n    active += count;\n    max = Math.max(max, active);\n}`
@@ -252,63 +313,99 @@
         // --- TREES & GRAPHS ---
         {
             id: 16, name: "Fast & Slow Pointers (Lists)", category: "Trees & Graphs",
-            triggers: ["Detect Cycle", "Middle of Linked List", "Linked List Palindrome"],
+            triggers: [
+                "Need to detect if a 'Cycle' exists in a sequence or graph (Linked List)", 
+                "Finding the exact 'Midpoint' of a Linked List", 
+                "Traversing a Linked List without knowing its total length beforehand"
+            ],
             tc: "O(N)", sc: "O(1)",
             pseudo: `INITIALIZE slow = head, fast = head\nWHILE fast AND fast.next EXIST:\n    slow = slow.next\n    fast = fast.next.next\n    IF slow == fast: RETURN "Cycle"`,
             java: `ListNode slow = head, fast = head;\nwhile (fast != null && fast.next != null) {\n    slow = slow.next;\n    fast = fast.next.next;\n    if (slow == fast) return true;\n}\nreturn false;`
         },
         {
             id: 17, name: "Tree Traversal (DFS/BFS)", category: "Trees & Graphs",
-            triggers: ["Inorder/Preorder/Postorder", "Height of Tree", "Level Order (BFS)"],
+            triggers: [
+                "Dealing with explicitly hierarchical data structure (Trees)", 
+                "Need to find the maximum 'Depth' or 'Height' of a structure", 
+                "Processing nodes 'Level-by-level' (BFS) or 'Branch-by-branch' (DFS)"
+            ],
             tc: "O(N)", sc: "O(H)",
             pseudo: `FUNCTION DFS(node):\n    IF node is NULL: RETURN\n    // PRE-ORDER: Process node\n    DFS(node.left)\n    // IN-ORDER: Process node\n    DFS(node.right)\n    // POST-ORDER: Process node`,
             java: `public void traverse(TreeNode node) {\n    if (node == null) return;\n    // pre-order\n    traverse(node.left);\n    // in-order\n    traverse(node.right);\n    // post-order\n}`
         },
         {
-            id: 18, name: "Graph BFS (Shortest Path)", category: "Trees & Graphs",
-            triggers: ["Shortest path (unweighted)", "Rotten Oranges", "Level Order", "Minimum steps"],
+            id: 18, name: "Graph BFS", category: "Trees & Graphs",
+            triggers: [
+                "Must find the 'Shortest path' in an UNWEIGHTED graph or grid", 
+                "Finding the 'Minimum steps' required to reach a specific target state", 
+                "Simulating the step-by-step spread of an entity (e.g., infection, rotting oranges)"
+            ],
             tc: "O(V + E)", sc: "O(V)",
             pseudo: `INITIALIZE Queue, push start, mark visited\nWHILE Queue NOT EMPTY:\n    size = Queue.size\n    FOR 1 TO size:\n        curr = Queue.pop\n        FOR EACH neighbor OF curr:\n            IF NOT visited: MARK visited, PUSH`,
             java: `Queue<Integer> q = new LinkedList<>();\nSet<Integer> visited = new HashSet<>();\nq.offer(start); visited.add(start);\nint steps = 0;\nwhile (!q.isEmpty()) {\n    int size = q.size();\n    for (int i = 0; i < size; i++) {\n        int curr = q.poll();\n        if (curr == target) return steps;\n        for (int n : graph.get(curr)) if (visited.add(n)) q.offer(n);\n    }\n    steps++;\n}`
         },
         {
             id: 19, name: "Graph DFS", category: "Trees & Graphs",
-            triggers: ["Number of Islands", "Connectivity", "Path Exists", "Matrix traversal"],
+            triggers: [
+                "Need to explore all deep possibilities in a grid or graph before backtracking", 
+                "Counting isolated 'Connected Components' (e.g., number of islands in a grid)", 
+                "Just checking if *any* valid path exists between A and B, not necessarily the shortest"
+            ],
             tc: "O(V + E)", sc: "O(V)",
             pseudo: `FUNCTION DFS(r, c):\n    IF out_of_bounds OR visited: RETURN\n    MARK visited\n    DFS(r+1, c); DFS(r-1, c)\n    DFS(r, c+1); DFS(r, c-1)`,
             java: `public void dfs(char[][] grid, int r, int c) {\n    if (r < 0 || c < 0 || r >= grid.length || c >= grid[0].length || grid[r][c] == '0') return;\n    grid[r][c] = '0'; // Mark visited\n    dfs(grid, r + 1, c);\n    dfs(grid, r - 1, c);\n    dfs(grid, r, c + 1);\n    dfs(grid, r, c - 1);\n}`
         },
         {
             id: 20, name: "Topological Sort (Kahn's)", category: "Trees & Graphs",
-            triggers: ["Course scheduling", "Dependencies", "Build order", "DAG Cycle Check"],
+            triggers: [
+                "Given a list of strict 'Dependencies' or 'Prerequisites'", 
+                "Must find a valid 'Build order' or 'Schedule' that satisfies all rules", 
+                "Checking if it is even possible to complete all tasks (Detecting cycles in a Directed Graph)"
+            ],
             tc: "O(V + E)", sc: "O(V)",
             pseudo: `CALCULATE in_degree FOR ALL nodes\nPUSH ALL nodes WITH in_degree == 0 TO Queue\nWHILE Queue NOT EMPTY:\n    curr = Queue.pop\n    ADD curr TO result\n    FOR EACH neighbor OF curr:\n        DECREMENT in_degree[neighbor]\n        IF in_degree[neighbor] == 0: PUSH`,
             java: `int[] inDegree = new int[n];\n// populate inDegree...\nQueue<Integer> q = new LinkedList<>();\nfor (int i = 0; i < n; i++) if (inDegree[i] == 0) q.offer(i);\nList<Integer> order = new ArrayList<>();\nwhile (!q.isEmpty()) {\n    int curr = q.poll();\n    order.add(curr);\n    for (int next : graph.get(curr)) if (--inDegree[next] == 0) q.offer(next);\n}`
         },
         {
             id: 21, name: "Dijkstra's Algorithm", category: "Trees & Graphs",
-            triggers: ["Shortest path (weighted)", "Network delay time", "Cheapest flights"],
+            triggers: [
+                "Must find the 'Shortest path' in a explicitly WEIGHTED graph", 
+                "Finding the 'Minimum cost' or 'Minimum time' to travel across a network", 
+                "The problem guarantees that all edge weights are non-negative"
+            ],
             tc: "O(E log V)", sc: "O(V)",
             pseudo: `INITIALIZE Min-Heap for (cost, node), dist array with INFINITY\ndist[start] = 0, PUSH (0, start) TO Min-Heap\nWHILE Min-Heap NOT EMPTY:\n    POP (curr_cost, curr_node)\n    IF curr_cost > dist[curr_node]: CONTINUE\n    FOR EACH (neighbor, weight) OF curr_node:\n        IF curr_cost + weight < dist[neighbor]:\n            dist[neighbor] = curr_cost + weight\n            PUSH TO Min-Heap`,
             java: `PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> a[0] - b[0]);\nint[] dist = new int[N];\nArrays.fill(dist, Integer.MAX_VALUE);\ndist[start] = 0;\npq.offer(new int[]{0, start});\nwhile (!pq.isEmpty()) {\n    int[] curr = pq.poll();\n    if (curr[0] > dist[curr[1]]) continue;\n    for (int[] edge : graph.get(curr[1])) {\n        if (curr[0] + edge[1] < dist[edge[0]]) {\n            dist[edge[0]] = curr[0] + edge[1];\n            pq.offer(new int[]{dist[edge[0]], edge[0]});\n        }\n    }\n}`
         },
         {
             id: 22, name: "Minimum Spanning Tree (Prim's)", category: "Trees & Graphs",
-            triggers: ["Connect all points with minimum cost", "Minimum wire length"],
+            triggers: [
+                "Need to 'Connect all points/nodes' together in a single network", 
+                "Must 'Minimize the total cost' of all connecting wires or roads combined", 
+                "Ensure every component is reachable without caring about the shortest specific path to the origin"
+            ],
             tc: "O(E log V)", sc: "O(V)",
             pseudo: `INITIALIZE Min-Heap, visited_set, total_cost = 0\nPUSH (0, start_node) TO Min-Heap\nWHILE Min-Heap NOT EMPTY:\n    POP (weight, node)\n    IF node IN visited: CONTINUE\n    MARK visited, total_cost += weight\n    FOR EACH (neighbor, edge_weight) OF node:\n        IF neighbor NOT IN visited: PUSH`,
             java: `PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> a[0] - b[0]);\nboolean[] visited = new boolean[N];\npq.offer(new int[]{0, 0}); // {weight, node}\nint cost = 0;\nwhile (!pq.isEmpty()) {\n    int[] curr = pq.poll();\n    if (visited[curr[1]]) continue;\n    visited[curr[1]] = true;\n    cost += curr[0];\n    for (int[] edge : graph.get(curr[1])) {\n        if (!visited[edge[0]]) pq.offer(new int[]{edge[1], edge[0]});\n    }\n}`
         },
         {
             id: 23, name: "Union-Find (DSU)", category: "Trees & Graphs",
-            triggers: ["Cycle detection in undirected graphs", "Number of Provinces", "Redundant Connection", "Kruskal's MST"],
+            triggers: [
+                "Need to rapidly group items into overlapping 'Connected components'", 
+                "Dynamically connecting network nodes and checking 'Are they in the same set?'", 
+                "Detecting a cycle in an UNDIRECTED graph (e.g. finding a redundant connection)"
+            ],
             tc: "O(α(N))", sc: "O(N)",
             pseudo: `FUNCTION Find_Boss(node):\n    IF parent[node] == node: RETURN node\n    parent[node] = Find_Boss(parent[node]) // Path compression\n    RETURN parent[node]\nFUNCTION Union(A, B):\n    boss_A = Find_Boss(A), boss_B = Find_Boss(B)\n    IF boss_A == boss_B: RETURN false\n    parent[boss_A] = boss_B`,
             java: `class DSU {\n    int[] parent, rank;\n    public DSU(int n) {\n        parent = new int[n]; rank = new int[n];\n        for (int i=0; i<n; i++) parent[i] = i;\n    }\n    public int find(int i) {\n        if (parent[i] == i) return i;\n        return parent[i] = find(parent[i]);\n    }\n    public boolean union(int i, int j) {\n        int rootI = find(i), rootJ = find(j);\n        if (rootI == rootJ) return false;\n        if (rank[rootI] < rank[rootJ]) parent[rootI] = rootJ;\n        else if (rank[rootI] > rank[rootJ]) parent[rootJ] = rootI;\n        else { parent[rootJ] = rootI; rank[rootI]++; }\n        return true;\n    }\n}`
         },
         {
             id: 24, name: "Trie (Prefix Tree)", category: "Trees & Graphs",
-            triggers: ["Auto-complete", "Word Search II", "Prefix matching", "Max XOR pair"],
+            triggers: [
+                "Implementing an 'Autocomplete' or 'Prefix matching' system", 
+                "Searching for multiple dictionary words across a large board (Word Search)", 
+                "Finding the longest common prefix among a massive list of strings"
+            ],
             tc: "O(L) per word", sc: "O(N * L)",
             pseudo: `DEFINE Node: children[], is_end\nFUNCTION Insert(word):\n    curr = root\n    FOR EACH char IN word:\n        IF char NOT IN curr.children: CREATE new Node\n        curr = curr.children[char]\n    curr.is_end = true`,
             java: `class TrieNode { TrieNode[] children = new TrieNode[26]; boolean isWord; }\nclass Trie {\n    TrieNode root = new TrieNode();\n    public void insert(String word) {\n        TrieNode curr = root;\n        for (char c : word.toCharArray()) {\n            if (curr.children[c - 'a'] == null) curr.children[c - 'a'] = new TrieNode();\n            curr = curr.children[c - 'a'];\n        }\n        curr.isWord = true;\n    }\n}`
@@ -317,28 +414,44 @@
         // --- DP & BACKTRACKING ---
         {
             id: 25, name: "Backtracking", category: "DP & Backtracking",
-            triggers: ["Generate all combinations/permutations", "N-Queens", "Sudoku", "Word Break"],
+            triggers: [
+                "Prompt explicitly asks to generate 'ALL valid permutations', 'ALL combinations', or 'ALL subsets'", 
+                "Constraint satisfaction problem: Requires exploring a path, testing it, and 'undoing' the choice if it fails", 
+                "Returning all possible physical paths across a board or matrix"
+            ],
             tc: "O(2^N) or O(N!)", sc: "O(N)",
             pseudo: `FUNCTION Backtrack(path, index):\n    IF path is complete: SAVE AND RETURN\n    FOR EACH choice:\n        IF choice is valid:\n            ADD choice // DO\n            Backtrack(path, new_index) // RECURSE\n            REMOVE choice // UNDO`,
             java: `public void backtrack(List<List<Integer>> res, List<Integer> temp, int[] nums, int start) {\n    res.add(new ArrayList<>(temp)); // 1. Save\n    for (int i = start; i < nums.length; i++) {\n        temp.add(nums[i]);                    // 2. Do\n        backtrack(res, temp, nums, i + 1);    // 3. Recurse\n        temp.remove(temp.size() - 1);         // 4. Undo\n    }\n}`
         },
         {
             id: 26, name: "1D DP (Memoization)", category: "DP & Backtracking",
-            triggers: ["Maximum/Minimum total cost", "Number of ways", "House Robber", "Climbing Stairs"],
+            triggers: [
+                "Must find the 'Maximum/Minimum cost' or 'Total number of ways' to reach an end state", 
+                "Choice at the current step only depends on 1 or 2 immediately preceding steps", 
+                "Contains massive 'Overlapping subproblems' that cause standard recursion to Time Out"
+            ],
             tc: "O(N)", sc: "O(N)",
             pseudo: `INITIALIZE DP_cache\nFUNCTION Solve(index):\n    IF index == base: RETURN val\n    IF DP_cache[index] NOT NULL: RETURN DP_cache[index]\n    option_1 = logic for picking\n    option_2 = logic for skipping\n    DP_cache[index] = MAX(option_1, option_2)\n    RETURN DP_cache[index]`,
             java: `public int dfs(int i, int[] nums, Integer[] dp) {\n    if (i >= nums.length) return 0; // Base Case\n    if (dp[i] != null) return dp[i]; // Cached\n    int take = nums[i] + dfs(i + 2, nums, dp);\n    int skip = dfs(i + 1, nums, dp);\n    return dp[i] = Math.max(take, skip);\n}`
         },
         {
             id: 27, name: "0-1 Knapsack (2D DP)", category: "DP & Backtracking",
-            triggers: ["Maximize value given weight limit", "Subset Sum", "Target Sum"],
+            triggers: [
+                "Need to 'Pick or Skip' items given a strict 'Capacity limit'", 
+                "Goal is to Maximize value or weight without exceeding a physical constraint", 
+                "Finding if a specific 'Target sum' can be generated using a subset of array elements"
+            ],
             tc: "O(N * W)", sc: "O(N * W)",
             pseudo: `INITIALIZE DP[items+1][capacity+1] to 0\nFOR i FROM 1 TO items:\n    FOR w FROM 1 TO capacity:\n        IF weight[i-1] <= w:\n            DP[i][w] = MAX(DP[i-1][w], value[i-1] + DP[i-1][w - weight[i-1]])\n        ELSE:\n            DP[i][w] = DP[i-1][w]`,
             java: `int[][] dp = new int[N + 1][W + 1];\nfor (int i = 1; i <= N; i++) {\n    for (int w = 1; w <= W; w++) {\n        if (wt[i - 1] <= w) {\n            dp[i][w] = Math.max(dp[i - 1][w], val[i - 1] + dp[i - 1][w - wt[i - 1]]);\n        } else {\n            dp[i][w] = dp[i - 1][w];\n        }\n    }\n}`
         },
         {
             id: 28, name: "Bitmask DP", category: "DP & Backtracking",
-            triggers: ["Small array (N < 20)", "Optimal way to pair/group elements", "Traveling Salesperson"],
+            triggers: [
+                "The input array is explicitly very small (e.g., N <= 20)", 
+                "Need to try all assignments, pairings, or groupings of a small set of items", 
+                "The state (visited/unvisited items) must be represented efficiently as an integer bitmask"
+            ],
             tc: "O(N * 2^N)", sc: "O(2^N)",
             pseudo: `FUNCTION Solve(index, bit_mask):\n    IF bit_mask == ALL_BITS_SET: RETURN 0\n    IF DP_cache has answer: RETURN DP_cache\n    FOR EACH item IN items:\n        IF item UNUSED (bit is 0):\n            TURN ON bit\n            RECURSE\n    SAVE and RETURN`,
             java: `public int solve(int mask, int[] nums, Integer[] dp) {\n    if (mask == (1 << nums.length) - 1) return 0;\n    if (dp[mask] != null) return dp[mask];\n    int res = 0;\n    for (int j = 0; j < nums.length; j++) {\n        if ((mask & (1 << j)) == 0) {\n            res = Math.max(res, nums[j] + solve(mask | (1 << j), nums, dp));\n        }\n    }\n    return dp[mask] = res;\n}`
@@ -378,7 +491,7 @@
                 <div>
                     <div class="p-category">${p.category}</div>
                     <h3 class="p-title">${p.name}</h3>
-                    <div class="p-triggers"><strong>Keywords:</strong> ${triggersDisplay}</div>
+                    <div class="p-triggers"><strong>Linguistic Cues:</strong> ${triggersDisplay}</div>
                 </div>
                 <div class="badge-container">
                     <span class="badge b-time">⏱️ ${p.tc}</span>
