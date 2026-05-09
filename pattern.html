@@ -22,10 +22,13 @@
         
         .header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 30px; flex-wrap: wrap; gap: 15px; }
         h1 { margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 2rem; letter-spacing: -0.5px; }
-        .search-container { position: relative; width: 100%; max-width: 400px; }
-        .search-input { width: 100%; box-sizing: border-box; background: #0a0a0a; border: 1px solid var(--border); color: #fff; padding: 12px 20px; border-radius: 50px; font-family: 'Inter'; outline: none; transition: 0.2s; font-size: 0.95rem; }
+        .search-container { display: flex; gap: 15px; width: 100%; max-width: 550px; align-items: center; }
+        .search-input { flex-grow: 1; box-sizing: border-box; background: #0a0a0a; border: 1px solid var(--border); color: #fff; padding: 12px 20px; border-radius: 50px; font-family: 'Inter'; outline: none; transition: 0.2s; font-size: 0.95rem; }
         .search-input:focus { border-color: var(--accent); box-shadow: 0 0 15px rgba(59, 130, 246, 0.2); }
         
+        .btn-masterclass { background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.4); color: #c084fc; padding: 10px 20px; border-radius: 50px; cursor: pointer; font-family: 'Inter'; font-weight: 600; font-size: 0.9rem; transition: 0.2s; white-space: nowrap; display: flex; align-items: center; gap: 8px; }
+        .btn-masterclass:hover { background: rgba(168, 85, 247, 0.2); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(168, 85, 247, 0.2); }
+
         .filters { display: flex; gap: 10px; margin-bottom: 30px; overflow-x: auto; padding-bottom: 10px; scrollbar-width: none; }
         .filter-btn { background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--muted); padding: 8px 16px; border-radius: 50px; cursor: pointer; font-family: 'Inter'; font-weight: 600; font-size: 0.85rem; white-space: nowrap; transition: 0.2s; }
         .filter-btn:hover { color: #fff; border-color: #777; }
@@ -68,10 +71,21 @@
         .btn-master { border-color: var(--primary); color: var(--primary); }
         .btn-master.active { background: var(--primary); color: #000; }
         
-        .trigger-list, .proof-list { list-style-type: none; padding: 0; margin: 0; }
+        .trigger-list, .proof-list, .bigo-list { list-style-type: none; padding: 0; margin: 0; }
         .trigger-list li, .proof-list li { padding: 12px; background: rgba(255,255,255,0.03); margin-bottom: 8px; border-radius: 6px; border-left: 3px solid var(--accent); }
         .proof-list li { border-left-color: var(--warning); }
         .pitfall-list li { border-left-color: var(--danger); }
+        
+        /* Big-O Specific Styles */
+        .bigo-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); padding: 20px; border-radius: 12px; margin-bottom: 20px; }
+        .bigo-card h3 { color: #c084fc; margin-top: 0; font-family: 'Space Grotesk'; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+        .bigo-code { background: #0a0a0a; padding: 10px; border-radius: 6px; font-family: 'Fira Code', monospace; font-size: 0.85rem; color: #60a5fa; margin: 10px 0; border: 1px solid #222; }
+        .hierarchy { display: flex; gap: 5px; flex-wrap: wrap; margin: 15px 0; }
+        .h-badge { padding: 6px 12px; border-radius: 4px; font-family: 'Fira Code', monospace; font-size: 0.8rem; font-weight: bold; }
+        .h-best { background: rgba(57, 211, 83, 0.2); color: #39d353; }
+        .h-good { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
+        .h-fair { background: rgba(234, 179, 8, 0.2); color: #eab308; }
+        .h-bad { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
 
         .empty-state { text-align: center; padding: 60px 20px; grid-column: 1 / -1; color: var(--muted); }
     </style>
@@ -86,6 +100,7 @@
         </div>
         <div class="search-container">
             <input type="text" id="searchInput" class="search-input" placeholder="Search keywords (e.g., 'contiguous', 'O(log N)')...">
+            <button class="btn-masterclass" onclick="openBigOModal()">🚀 Big-O Masterclass</button>
         </div>
     </div>
 
@@ -142,6 +157,78 @@
 
         <div class="tab-content" id="tab-pitfalls">
             <ul class="trigger-list pitfall-list" id="modalPitfalls"></ul>
+        </div>
+    </div>
+</div>
+
+<div class="modal-overlay" id="bigOModal">
+    <div class="modal" style="max-height: 85vh;">
+        <div class="modal-header">
+            <div>
+                <div class="p-category" style="margin-bottom: 4px; color: #c084fc;">Algorithms Core Concept</div>
+                <h2 class="modal-title">How to Determine Time Complexity</h2>
+            </div>
+            <button class="close-btn" onclick="closeBigOModal()">&times;</button>
+        </div>
+        
+        <div class="tab-content active" style="overflow-y: auto;">
+            
+            <div class="bigo-card">
+                <h3>1. The Hierarchy (Best to Worst)</h3>
+                <p style="font-size: 0.9rem; color: var(--muted);">Memorize this order. If your solution is O(N²) and the array size is 10^5, it will Time Out (TLE). You must move left on this scale.</p>
+                <div class="hierarchy">
+                    <span class="h-badge h-best">O(1) Constant</span> ➔
+                    <span class="h-badge h-best">O(log N) Logarithmic</span> ➔
+                    <span class="h-badge h-good">O(N) Linear</span> ➔
+                    <span class="h-badge h-fair">O(N log N) Log-Linear</span> ➔
+                    <span class="h-badge h-bad">O(N²) Quadratic</span> ➔
+                    <span class="h-badge h-bad">O(2^N) Exponential</span> ➔
+                    <span class="h-badge h-bad">O(N!) Factorial</span>
+                </div>
+            </div>
+
+            <div class="bigo-card">
+                <h3>2. The 3 Golden Rules (How to calculate it)</h3>
+                <ul class="trigger-list" style="font-size: 0.9rem;">
+                    <li><strong>Rule 1: Drop the Constants.</strong> If your code loops through an array twice sequentially, it is `O(N + N) = O(2N)`. You drop the `2`. The answer is just `O(N)`.</li>
+                    <li><strong>Rule 2: Drop the Non-Dominant Terms.</strong> If your code has a nested loop `O(N²)` followed by a single loop `O(N)`, the total is `O(N² + N)`. As N gets massive, the single N stops mattering. Drop it. The answer is `O(N²)`.</li>
+                    <li><strong>Rule 3: Different Inputs = Different Variables.</strong> If you iterate through Array A (size N) and then Array B (size M), the time complexity is `O(N + M)`, NOT `O(N)`. Do not merge them unless the problem explicitly states N = M.</li>
+                </ul>
+            </div>
+
+            <div class="bigo-card">
+                <h3>3. The Visual Cues (How to spot it in code)</h3>
+                <p style="font-size: 0.9rem; color: var(--muted);">Look at the structural shape of your loops to instantly guess the Big-O.</p>
+                
+                <div class="bigo-code">for (int i = 0; i < N; i++) { ... }</div>
+                <p style="font-size: 0.85rem; margin-top: 0;">➔ <strong>O(N)</strong>: Standard iteration. Touches every element once.</p>
+
+                <div class="bigo-code">for (int i = 0; i < N; i++) {<br>    for (int j = 0; j < N; j++) { ... }<br>}</div>
+                <p style="font-size: 0.85rem; margin-top: 0;">➔ <strong>O(N²)</strong>: A loop inside a loop, both going to N. (Classic Brute Force).</p>
+
+                <div class="bigo-code">for (int i = 0; i < N; i++) {<br>    for (int j = i + 1; j < N; j++) { ... }<br>}</div>
+                <p style="font-size: 0.85rem; margin-top: 0;">➔ <strong>O(N²)</strong>: Even though `j` starts at `i`, mathematically this runs (N * (N-1)) / 2 times. Drop constants = O(N²).</p>
+
+                <div class="bigo-code">while (left < right) { ... left++; right--; }</div>
+                <p style="font-size: 0.85rem; margin-top: 0;">➔ <strong>O(N)</strong>: Two pointers moving towards each other. They cover the array exactly once collectively.</p>
+
+                <div class="bigo-code">for (int i = 1; i < N; i *= 2) { ... }</div>
+                <p style="font-size: 0.85rem; margin-top: 0;">➔ <strong>O(log N)</strong>: If the loop variable multiplies or divides (like Binary Search cutting the space in half), it's logarithmic.</p>
+
+                <div class="bigo-code">Arrays.sort(nums);</div>
+                <p style="font-size: 0.85rem; margin-top: 0;">➔ <strong>O(N log N)</strong>: The instant you call a standard sorting library, your time complexity can never be better than N log N.</p>
+                
+                <div class="bigo-code">return dfs(node.left) + dfs(node.right);</div>
+                <p style="font-size: 0.85rem; margin-top: 0;">➔ <strong>O(2^N)</strong>: Basic recursion that branches into two paths every step (without memoization/caching).</p>
+            </div>
+
+            <div class="bigo-card">
+                <h3>4. The "Amortized" Trap (SDE-2 Interview Secret)</h3>
+                <p style="font-size: 0.9rem; color: var(--text);">If you see a `while` loop inside a `for` loop, you will instantly want to say `O(N²)`. <strong>Stop and look at the variables.</strong></p>
+                <div class="bigo-code">for (int right = 0; right < N; right++) {<br>    while (sum > target) { left++; }<br>}</div>
+                <p style="font-size: 0.85rem; margin-top: 0;">➔ <strong>O(N)</strong>: This is a Sliding Window. The `right` pointer moves N times. The `left` pointer moves a maximum of N times across the <em>entire execution of the program</em>. Total operations = 2N. This is called <strong>Amortized O(N)</strong>.</p>
+            </div>
+
         </div>
     </div>
 </div>
@@ -591,7 +678,7 @@
         }
         
         localStorage.setItem('mastered_patterns', JSON.stringify(mastered));
-        renderCards(); // Re-render to show/hide checkmark on card
+        renderCards(); 
     }
 
     function renderCards() {
@@ -646,7 +733,7 @@
 
     searchInput.addEventListener('input', renderCards);
 
-    // --- MODAL LOGIC ---
+    // --- PATTERN MODAL LOGIC ---
     function openModal(pattern) {
         activePatternId = pattern.id;
         document.getElementById('modalCategory').innerText = pattern.category;
@@ -658,7 +745,6 @@
         document.getElementById('modalProof').innerHTML = pattern.proofs.map(t => `<li>${t}</li>`).join('');
         document.getElementById('modalPitfalls').innerHTML = pattern.pitfalls.map(t => `<li>${t}</li>`).join('');
         
-        // Sync Mastery Button State
         const btn = document.getElementById('btnMaster');
         if (getMasteredList().includes(pattern.id)) {
             btn.classList.add('active');
@@ -681,7 +767,7 @@
 
     function switchTab(index) {
         const tabs = document.querySelectorAll('.tab');
-        const contents = document.querySelectorAll('.tab-content');
+        const contents = document.querySelectorAll('#patternModal .tab-content');
         
         tabs.forEach(t => t.classList.remove('active'));
         contents.forEach(c => c.classList.remove('active'));
@@ -700,9 +786,23 @@
         });
     }
 
+    // --- BIG-O MODAL LOGIC ---
+    function openBigOModal() {
+        document.getElementById('bigOModal').style.display = 'flex';
+        document.body.style.overflow = 'hidden'; 
+    }
+
+    function closeBigOModal() {
+        document.getElementById('bigOModal').style.display = 'none';
+        document.body.style.overflow = 'auto'; 
+    }
+
+    // Close modals on outside click
     window.onclick = function(event) {
-        const modal = document.getElementById('patternModal');
-        if (event.target == modal) closeModal();
+        const patternModal = document.getElementById('patternModal');
+        const bigOModal = document.getElementById('bigOModal');
+        if (event.target == patternModal) closeModal();
+        if (event.target == bigOModal) closeBigOModal();
     }
 
     renderCards();
