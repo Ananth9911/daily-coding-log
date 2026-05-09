@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAANG Pattern Engine | Ananth</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --bg: #09090b; --card: #18181b; --border: #3f3f46; 
+            --primary: #39d353; --danger: #ef4444; --text: #f4f4f5; 
+            --muted: #a1a1aa; --accent: #3b82f6; --warning: #eab308;
+        }
+        body { 
+            background-color: var(--bg); 
+            background-image: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.05) 0%, transparent 50%); 
+            color: var(--text); 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; padding: 40px 20px; min-height: 100vh; 
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        
+        /* Header & Search */
+        .header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 30px; flex-wrap: wrap; gap: 15px; }
+        h1 { margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 2rem; letter-spacing: -0.5px; }
+        .search-container { position: relative; width: 100%; max-width: 400px; }
+        .search-input { width: 100%; box-sizing: border-box; background: #0a0a0a; border: 1px solid var(--border); color: #fff; padding: 12px 20px; border-radius: 50px; font-family: 'Inter'; outline: none; transition: 0.2s; font-size: 0.95rem; }
+        .search-input:focus { border-color: var(--accent); box-shadow: 0 0 15px rgba(59, 130, 246, 0.2); }
+        
+        /* Category Filters */
+        .filters { display: flex; gap: 10px; margin-bottom: 30px; overflow-x: auto; padding-bottom: 10px; scrollbar-width: none; }
+        .filter-btn { background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--muted); padding: 8px 16px; border-radius: 50px; cursor: pointer; font-family: 'Inter'; font-weight: 600; font-size: 0.85rem; white-space: nowrap; transition: 0.2s; }
+        .filter-btn:hover { color: #fff; border-color: #777; }
+        .filter-btn.active { background: rgba(59, 130, 246, 0.1); color: #60a5fa; border-color: rgba(59, 130, 246, 0.4); }
+
+        /* Grid & Cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+        .pattern-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); transition: all 0.3s ease; cursor: pointer; display: flex; flex-direction: column; justify-content: space-between; }
+        .pattern-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 8px 30px rgba(59, 130, 246, 0.15); }
+        .p-category { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); font-weight: 700; margin-bottom: 8px; }
+        .p-title { margin: 0 0 15px 0; font-size: 1.3rem; font-family: 'Space Grotesk'; }
+        .p-triggers { font-size: 0.85rem; color: var(--muted); margin-bottom: 20px; line-height: 1.5; flex-grow: 1; }
+        
+        /* Badges */
+        .badge-container { display: flex; gap: 10px; margin-top: auto; padding-top: 15px; border-top: 1px dashed var(--border); }
+        .badge { padding: 4px 8px; border-radius: 6px; font-size: 0.75rem; font-family: 'Fira Code', monospace; font-weight: 500; }
+        .b-time { background: rgba(234, 179, 8, 0.1); color: var(--warning); border: 1px solid rgba(234, 179, 8, 0.2); }
+        .b-space { background: rgba(57, 211, 83, 0.1); color: var(--primary); border: 1px solid rgba(57, 211, 83, 0.2); }
+
+        /* Modal Overlay */
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); z-index: 100; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; }
+        .modal { background: var(--card); border: 1px solid var(--border); width: 100%; max-width: 800px; max-height: 90vh; border-radius: 16px; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.9); }
+        .modal-header { padding: 24px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+        .modal-title { margin: 0; font-family: 'Space Grotesk'; font-size: 1.5rem; }
+        .close-btn { background: transparent; border: none; color: var(--muted); font-size: 1.5rem; cursor: pointer; transition: 0.2s; }
+        .close-btn:hover { color: #fff; }
+        
+        /* Tabs */
+        .tabs { display: flex; border-bottom: 1px solid var(--border); background: rgba(0,0,0,0.2); flex-wrap: wrap; }
+        .tab { padding: 15px 24px; color: var(--muted); cursor: pointer; font-weight: 600; font-size: 0.9rem; transition: 0.2s; border-bottom: 2px solid transparent; }
+        .tab:hover { color: #fff; background: rgba(255,255,255,0.02); }
+        .tab.active { color: var(--accent); border-bottom-color: var(--accent); background: rgba(59, 130, 246, 0.05); }
+        
+        .tab-content { display: none; padding: 24px; overflow-y: auto; flex-grow: 1; }
+        .tab-content.active { display: block; }
+        
+        pre { background: #0a0a0a; border: 1px solid var(--border); padding: 20px; border-radius: 8px; overflow-x: auto; font-family: 'Fira Code', monospace; font-size: 0.9rem; line-height: 1.5; color: #e2e8f0; margin: 0; white-space: pre-wrap; }
+        .copy-btn { margin-top: 15px; background: transparent; border: 1px solid var(--border); color: var(--text); padding: 8px 16px; border-radius: 6px; cursor: pointer; font-family: 'Inter'; font-size: 0.85rem; font-weight: 600; transition: 0.2s; display: flex; align-items: center; gap: 8px; }
+        .copy-btn:hover { background: rgba(255,255,255,0.05); }
+        .trigger-list { list-style-type: none; padding: 0; margin: 0; }
+        .trigger-list li { padding: 12px; background: rgba(255,255,255,0.03); margin-bottom: 8px; border-radius: 6px; border-left: 3px solid var(--accent); }
+
+        .empty-state { text-align: center; padding: 60px 20px; grid-column: 1 / -1; color: var(--muted); }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div>
+            <p style="margin: 0; color: var(--accent); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; margin-bottom: 5px;">• System Design & Algorithms</p>
+            <h1>FAANG Pattern Engine</h1>
+        </div>
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search keywords (e.g., 'contiguous', 'O(log N)')...">
+        </div>
+    </div>
+
+    <div class="filters" id="categoryFilters">
+        <button class="filter-btn active" data-cat="All">All Patterns</button>
+        <button class="filter-btn" data-cat="Arrays & Strings">Arrays & Strings</button>
+        <button class="filter-btn" data-cat="Math & Search">Math & Search</button>
+        <button class="filter-btn" data-cat="Stacks & Queues">Stacks & Queues</button>
+        <button class="filter-btn" data-cat="Heaps & Greedy">Heaps & Greedy</button>
+        <button class="filter-btn" data-cat="Trees & Graphs">Trees & Graphs</button>
+        <button class="filter-btn" data-cat="DP & Backtracking">DP & Backtracking</button>
+    </div>
+
+    <div class="grid" id="patternGrid"></div>
+</div>
+
+<div class="modal-overlay" id="patternModal">
+    <div class="modal">
+        <div class="modal-header">
+            <div>
+                <div class="p-category" id="modalCategory" style="margin-bottom: 4px;">Category</div>
+                <h2 class="modal-title" id="modalTitle">Pattern Name</h2>
+            </div>
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+        </div>
+        
+        <div class="tabs">
+            <div class="tab active" onclick="switchTab(0)">🎯 How to Spot</div>
+            <div class="tab" onclick="switchTab(1)">📐 Logic Blueprint</div>
+            <div class="tab" onclick="switchTab(2)">💻 Java Template</div>
+        </div>
+
+        <div class="tab-content active" id="tab-triggers">
+            <ul class="trigger-list" id="modalTriggers"></ul>
+        </div>
+        
+        <div class="tab-content" id="tab-pseudocode">
+            <pre><code id="modalPseudo"></code></pre>
+        </div>
+        
+        <div class="tab-content" id="tab-java">
+            <pre><code id="modalJava"></code></pre>
+            <button class="copy-btn" onclick="copyCode()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                Copy Template
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // --- MASTER DATA ARCHIVE (28 PATTERNS) ---
+    const patterns = [
+        // --- ARRAYS & STRINGS ---
+        {
+            id: 1, name: "Sliding Window", category: "Arrays & Strings",
+            triggers: ["Contiguous subarray", "Longest/Shortest substring", "Max sum of size K"],
+            tc: "O(N)", sc: "O(1)",
+            pseudo: `INITIALIZE left = 0, max_result = 0, window_state = empty\nFOR right FROM 0 TO end_of_array:\n    ADD array[right] TO window_state\n    WHILE window_state is INVALID:\n        REMOVE array[left] FROM window_state\n        INCREMENT left\n    UPDATE max_result = MAX(max_result, right - left + 1)`,
+            java: `int left = 0, maxLength = 0, state = 0;\nfor (int right = 0; right < nums.length; right++) {\n    state += nums[right];\n    while (/* invalid */) {\n        state -= nums[left];\n        left++;\n    }\n    maxLength = Math.max(maxLength, right - left + 1);\n}`
+        },
+        {
+            id: 2, name: "Two Pointers", category: "Arrays & Strings",
+            triggers: ["Sorted array", "Find pairs that sum to X", "Palindromes", "Water trapping"],
+            tc: "O(N)", sc: "O(1)",
+            pseudo: `INITIALIZE left = 0, right = end_of_array\nWHILE left < right:\n    CALCULATE sum = array[left] + array[right]\n    IF sum == target: RETURN success\n    ELSE IF sum < target: INCREMENT left\n    ELSE: DECREMENT right`,
+            java: `int left = 0, right = nums.length - 1;\nwhile (left < right) {\n    int sum = nums[left] + nums[right];\n    if (sum == target) return new int[]{left, right};\n    else if (sum < target) left++;\n    else right--;\n}`
+        },
+        {
+            id: 3, name: "Prefix Sum", category: "Arrays & Strings",
+            triggers: ["Sum of elements between index L and R", "Subarray sum equals K", "Equilibrium index"],
+            tc: "O(N)", sc: "O(N)",
+            pseudo: `INITIALIZE map to store { running_sum : frequency }\nADD { 0 : 1 } to map\nINITIALIZE current_sum = 0, count = 0\nFOR EACH number IN array:\n    current_sum += number\n    IF (current_sum - target) EXISTS in map:\n        ADD map[current_sum - target] TO count\n    SAVE current_sum TO map`,
+            java: `Map<Integer, Integer> map = new HashMap<>();\nmap.put(0, 1);\nint currentSum = 0, count = 0;\nfor (int num : nums) {\n    currentSum += num;\n    if (map.containsKey(currentSum - target)) count += map.get(currentSum - target);\n    map.put(currentSum, map.getOrDefault(currentSum, 0) + 1);\n}`
+        },
+        {
+            id: 4, name: "Kadane's Algorithm", category: "Arrays & Strings",
+            triggers: ["Maximum subarray sum", "Largest contiguous sum"],
+            tc: "O(N)", sc: "O(1)",
+            pseudo: `INITIALIZE current_sum = 0, max_sum = -INFINITY\nFOR EACH num IN array:\n    current_sum += num\n    max_sum = MAX(max_sum, current_sum)\n    IF current_sum < 0:\n        current_sum = 0 // Reset`,
+            java: `int currentSum = 0, maxSum = Integer.MIN_VALUE;\nfor (int num : nums) {\n    currentSum += num;\n    maxSum = Math.max(maxSum, currentSum);\n    if (currentSum < 0) currentSum = 0;\n}\nreturn maxSum;`
+        },
+        {
+            id: 5, name: "Merge Intervals", category: "Arrays & Strings",
+            triggers: ["Overlapping timelines", "Meeting rooms", "Merge schedules"],
+            tc: "O(N log N)", sc: "O(N)",
+            pseudo: `SORT intervals by start_time\nSET current = intervals[0]\nFOR EACH next IN intervals:\n    IF current.end >= next.start:\n        current.end = MAX(current.end, next.end)\n    ELSE:\n        ADD current TO result\n        current = next`,
+            java: `Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));\nList<int[]> merged = new ArrayList<>();\nint[] current = intervals[0];\nmerged.add(current);\nfor (int[] next : intervals) {\n    if (current[1] >= next[0]) current[1] = Math.max(current[1], next[1]);\n    else {\n        current = next;\n        merged.add(current);\n    }\n}`
+        },
+        {
+            id: 6, name: "Cyclic Sort", category: "Arrays & Strings",
+            triggers: ["Array contains numbers from 1 to N", "Find missing number", "Find all duplicates"],
+            tc: "O(N)", sc: "O(1)",
+            pseudo: `WHILE i < length:\n    correct_idx = array[i] - 1\n    IF array[i] is valid AND NOT in correct_idx:\n        SWAP(array[i], array[correct_idx])\n    ELSE:\n        INCREMENT i`,
+            java: `int i = 0;\nwhile (i < nums.length) {\n    int correctIdx = nums[i] - 1;\n    if (nums[i] > 0 && nums[i] <= nums.length && nums[i] != nums[correctIdx]) {\n        int temp = nums[i]; \n        nums[i] = nums[correctIdx]; \n        nums[correctIdx] = temp;\n    } else i++;\n}`
+        },
+
+        // --- MATH & SEARCH ---
+        {
+            id: 7, name: "Binary Search on Array", category: "Math & Search",
+            triggers: ["Sorted array", "O(log N) time complexity"],
+            tc: "O(log N)", sc: "O(1)",
+            pseudo: `INITIALIZE left = 0, right = N - 1\nWHILE left <= right:\n    mid = left + (right - left) / 2\n    IF array[mid] == target: RETURN mid\n    IF target > array[mid]: left = mid + 1\n    ELSE: right = mid - 1`,
+            java: `int left = 0, right = nums.length - 1;\nwhile (left <= right) {\n    int mid = left + (right - left) / 2;\n    if (nums[mid] == target) return mid;\n    else if (nums[mid] < target) left = mid + 1;\n    else right = mid - 1;\n}\nreturn -1;`
+        },
+        {
+            id: 8, name: "Binary Search on Answer", category: "Math & Search",
+            triggers: ["Minimize the maximum", "Maximize the minimum", "Aggressive Cows", "Allocate Books"],
+            tc: "O(N log(Range))", sc: "O(1)",
+            pseudo: `INITIALIZE low = min_possible, high = max_possible\nWHILE low <= high:\n    mid = low + (high - low) / 2\n    IF is_Valid_Simulation(mid):\n        ans = mid\n        high = mid - 1 // Or low = mid + 1 based on optimization\n    ELSE:\n        low = mid + 1`,
+            java: `long low = min, high = max, ans = -1;\nwhile (low <= high) {\n    long mid = low + (high - low) / 2;\n    if (isValid(mid, nums)) {\n        ans = mid;\n        high = mid - 1;\n    } else {\n        low = mid + 1;\n    }\n}\nreturn ans;`
+        },
+        {
+            id: 9, name: "Bit Manipulation Basics", category: "Math & Search",
+            triggers: ["Single number", "XOR tricks", "Check if i-th bit is set", "Count set bits"],
+            tc: "O(1)", sc: "O(1)",
+            pseudo: `CHECK BIT: (number & (1 << i)) != 0\nSET BIT: number | (1 << i)\nUNSET BIT: number & ~(1 << i)\nTOGGLE BIT: number ^ (1 << i)\nXOR ALL: a ^ a = 0, a ^ 0 = a`,
+            java: `boolean isSet = (num & (1 << i)) != 0;\nnum = num | (1 << i); // Set\nnum = num & ~(1 << i); // Unset\nnum = num ^ (1 << i); // Toggle`
+        },
+        {
+            id: 10, name: "Inverse Modulo (Fermat's)", category: "Math & Search",
+            triggers: ["(A / B) % M", "Combinatorics (nCr % M)", "Large factorials"],
+            tc: "O(log M)", sc: "O(1)",
+            pseudo: `Fermat's Little Theorem: B^-1 % M = B^(M-2) % M\nFUNCTION Power_Mod(base, exp, M):\n    WHILE exp > 0:\n        IF exp is ODD: res = (res * base) % M\n        base = (base * base) % M\n        exp = exp / 2`,
+            java: `public long powerMod(long base, long exp, long mod) {\n    long res = 1;\n    base = base % mod;\n    while (exp > 0) {\n        if (exp % 2 == 1) res = (res * base) % mod;\n        base = (base * base) % mod;\n        exp /= 2;\n    }\n    return res;\n}\n// modInverse = powerMod(B, M - 2, M);`
+        },
+
+        // --- STACKS & QUEUES ---
+        {
+            id: 11, name: "Monotonic Stack", category: "Stacks & Queues",
+            triggers: ["Next Greater Element", "Nearest Smaller Element", "Daily Temperatures", "Largest Rectangle in Histogram"],
+            tc: "O(N)", sc: "O(N)",
+            pseudo: `INITIALIZE empty stack\nFOR EACH index i IN array:\n    WHILE stack NOT EMPTY AND array[i] > array[stack.top()]:\n        popped_index = stack.pop()\n        result_array[popped_index] = array[i]\n    stack.push(i)`,
+            java: `Stack<Integer> stack = new Stack<>();\nint[] result = new int[nums.length];\nfor (int i = 0; i < nums.length; i++) {\n    while (!stack.isEmpty() && nums[i] > nums[stack.peek()]) {\n        result[stack.pop()] = nums[i]; \n    }\n    stack.push(i);\n}`
+        },
+
+        // --- HEAPS & GREEDY ---
+        {
+            id: 12, name: "Top K Elements (Min/Max Heap)", category: "Heaps & Greedy",
+            triggers: ["Kth largest element", "Kth smallest element", "Top K frequent"],
+            tc: "O(N log K)", sc: "O(K)",
+            pseudo: `INITIALIZE Min-Heap\nFOR EACH number IN array:\n    ADD number TO Min-Heap\n    IF size of Min-Heap > K:\n        REMOVE top element (kicks out smallest)\nRETURN top element`,
+            java: `PriorityQueue<Integer> minHeap = new PriorityQueue<>();\nfor (int num : nums) {\n    minHeap.offer(num);\n    if (minHeap.size() > k) minHeap.poll();\n}\nreturn minHeap.peek();`
+        },
+        {
+            id: 13, name: "Two Heaps (Running Median)", category: "Heaps & Greedy",
+            triggers: ["Find Median in a Data Stream", "Running median"],
+            tc: "O(log N) insert", sc: "O(N)",
+            pseudo: `INITIALIZE Max-Heap (left half), Min-Heap (right half)\nON ADD:\n    PUSH to Max-Heap\n    MOVE top of Max-Heap to Min-Heap\n    IF Min-Heap size > Max-Heap size:\n        MOVE top of Min-Heap to Max-Heap`,
+            java: `PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());\nPriorityQueue<Integer> minHeap = new PriorityQueue<>();\npublic void addNum(int num) {\n    maxHeap.offer(num);\n    minHeap.offer(maxHeap.poll());\n    if (maxHeap.size() < minHeap.size()) maxHeap.offer(minHeap.poll());\n}\npublic double findMedian() {\n    if (maxHeap.size() > minHeap.size()) return maxHeap.peek();\n    return (maxHeap.peek() + minHeap.peek()) / 2.0;\n}`
+        },
+        {
+            id: 14, name: "Greedy (Activity Selection)", category: "Heaps & Greedy",
+            triggers: ["Finish Maximum Jobs", "Meeting Rooms", "Non-overlapping Intervals"],
+            tc: "O(N log N)", sc: "O(1) / O(N)",
+            pseudo: `SORT jobs BY end_time ASCENDING\nINITIALIZE count = 1, last_end = jobs[0].end\nFOR i FROM 1 TO N-1:\n    IF jobs[i].start >= last_end:\n        INCREMENT count\n        last_end = jobs[i].end`,
+            java: `Arrays.sort(intervals, (a, b) -> Integer.compare(a[1], b[1]));\nint count = 1, lastEnd = intervals[0][1];\nfor (int i = 1; i < intervals.length; i++) {\n    if (intervals[i][0] >= lastEnd) {\n        count++;\n        lastEnd = intervals[i][1];\n    }\n}\nreturn count;`
+        },
+        {
+            id: 15, name: "Line Sweep Algorithm", category: "Heaps & Greedy",
+            triggers: ["Maximum overlapping intervals", "Minimum number of airplanes on runway", "My Calendar"],
+            tc: "O(N log N)", sc: "O(N)",
+            pseudo: `INITIALIZE chronological_map (TreeMap)\nFOR EACH interval:\n    ADD { start : +1 } TO map\n    ADD { end : -1 } TO map\nFOR EACH time_event IN map:\n    active += map[time_event]\n    max_active = MAX(max_active, active)`,
+            java: `TreeMap<Integer, Integer> timeline = new TreeMap<>();\nfor (int[] interval : intervals) {\n    timeline.put(interval[0], timeline.getOrDefault(interval[0], 0) + 1);\n    timeline.put(interval[1], timeline.getOrDefault(interval[1], 0) - 1);\n}\nint active = 0, max = 0;\nfor (int count : timeline.values()) {\n    active += count;\n    max = Math.max(max, active);\n}`
+        },
+
+        // --- TREES & GRAPHS ---
+        {
+            id: 16, name: "Fast & Slow Pointers (Lists)", category: "Trees & Graphs",
+            triggers: ["Detect Cycle", "Middle of Linked List", "Linked List Palindrome"],
+            tc: "O(N)", sc: "O(1)",
+            pseudo: `INITIALIZE slow = head, fast = head\nWHILE fast AND fast.next EXIST:\n    slow = slow.next\n    fast = fast.next.next\n    IF slow == fast: RETURN "Cycle"`,
+            java: `ListNode slow = head, fast = head;\nwhile (fast != null && fast.next != null) {\n    slow = slow.next;\n    fast = fast.next.next;\n    if (slow == fast) return true;\n}\nreturn false;`
+        },
+        {
+            id: 17, name: "Tree Traversal (DFS/BFS)", category: "Trees & Graphs",
+            triggers: ["Inorder/Preorder/Postorder", "Height of Tree", "Level Order (BFS)"],
+            tc: "O(N)", sc: "O(H)",
+            pseudo: `FUNCTION DFS(node):\n    IF node is NULL: RETURN\n    // PRE-ORDER: Process node\n    DFS(node.left)\n    // IN-ORDER: Process node\n    DFS(node.right)\n    // POST-ORDER: Process node`,
+            java: `public void traverse(TreeNode node) {\n    if (node == null) return;\n    // pre-order\n    traverse(node.left);\n    // in-order\n    traverse(node.right);\n    // post-order\n}`
+        },
+        {
+            id: 18, name: "Graph BFS (Shortest Path)", category: "Trees & Graphs",
+            triggers: ["Shortest path (unweighted)", "Rotten Oranges", "Level Order", "Minimum steps"],
+            tc: "O(V + E)", sc: "O(V)",
+            pseudo: `INITIALIZE Queue, push start, mark visited\nWHILE Queue NOT EMPTY:\n    size = Queue.size\n    FOR 1 TO size:\n        curr = Queue.pop\n        FOR EACH neighbor OF curr:\n            IF NOT visited: MARK visited, PUSH`,
+            java: `Queue<Integer> q = new LinkedList<>();\nSet<Integer> visited = new HashSet<>();\nq.offer(start); visited.add(start);\nint steps = 0;\nwhile (!q.isEmpty()) {\n    int size = q.size();\n    for (int i = 0; i < size; i++) {\n        int curr = q.poll();\n        if (curr == target) return steps;\n        for (int n : graph.get(curr)) if (visited.add(n)) q.offer(n);\n    }\n    steps++;\n}`
+        },
+        {
+            id: 19, name: "Graph DFS", category: "Trees & Graphs",
+            triggers: ["Number of Islands", "Connectivity", "Path Exists", "Matrix traversal"],
+            tc: "O(V + E)", sc: "O(V)",
+            pseudo: `FUNCTION DFS(r, c):\n    IF out_of_bounds OR visited: RETURN\n    MARK visited\n    DFS(r+1, c); DFS(r-1, c)\n    DFS(r, c+1); DFS(r, c-1)`,
+            java: `public void dfs(char[][] grid, int r, int c) {\n    if (r < 0 || c < 0 || r >= grid.length || c >= grid[0].length || grid[r][c] == '0') return;\n    grid[r][c] = '0'; // Mark visited\n    dfs(grid, r + 1, c);\n    dfs(grid, r - 1, c);\n    dfs(grid, r, c + 1);\n    dfs(grid, r, c - 1);\n}`
+        },
+        {
+            id: 20, name: "Topological Sort (Kahn's)", category: "Trees & Graphs",
+            triggers: ["Course scheduling", "Dependencies", "Build order", "DAG Cycle Check"],
+            tc: "O(V + E)", sc: "O(V)",
+            pseudo: `CALCULATE in_degree FOR ALL nodes\nPUSH ALL nodes WITH in_degree == 0 TO Queue\nWHILE Queue NOT EMPTY:\n    curr = Queue.pop\n    ADD curr TO result\n    FOR EACH neighbor OF curr:\n        DECREMENT in_degree[neighbor]\n        IF in_degree[neighbor] == 0: PUSH`,
+            java: `int[] inDegree = new int[n];\n// populate inDegree...\nQueue<Integer> q = new LinkedList<>();\nfor (int i = 0; i < n; i++) if (inDegree[i] == 0) q.offer(i);\nList<Integer> order = new ArrayList<>();\nwhile (!q.isEmpty()) {\n    int curr = q.poll();\n    order.add(curr);\n    for (int next : graph.get(curr)) if (--inDegree[next] == 0) q.offer(next);\n}`
+        },
+        {
+            id: 21, name: "Dijkstra's Algorithm", category: "Trees & Graphs",
+            triggers: ["Shortest path (weighted)", "Network delay time", "Cheapest flights"],
+            tc: "O(E log V)", sc: "O(V)",
+            pseudo: `INITIALIZE Min-Heap for (cost, node), dist array with INFINITY\ndist[start] = 0, PUSH (0, start) TO Min-Heap\nWHILE Min-Heap NOT EMPTY:\n    POP (curr_cost, curr_node)\n    IF curr_cost > dist[curr_node]: CONTINUE\n    FOR EACH (neighbor, weight) OF curr_node:\n        IF curr_cost + weight < dist[neighbor]:\n            dist[neighbor] = curr_cost + weight\n            PUSH TO Min-Heap`,
+            java: `PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> a[0] - b[0]);\nint[] dist = new int[N];\nArrays.fill(dist, Integer.MAX_VALUE);\ndist[start] = 0;\npq.offer(new int[]{0, start});\nwhile (!pq.isEmpty()) {\n    int[] curr = pq.poll();\n    if (curr[0] > dist[curr[1]]) continue;\n    for (int[] edge : graph.get(curr[1])) {\n        if (curr[0] + edge[1] < dist[edge[0]]) {\n            dist[edge[0]] = curr[0] + edge[1];\n            pq.offer(new int[]{dist[edge[0]], edge[0]});\n        }\n    }\n}`
+        },
+        {
+            id: 22, name: "Minimum Spanning Tree (Prim's)", category: "Trees & Graphs",
+            triggers: ["Connect all points with minimum cost", "Minimum wire length"],
+            tc: "O(E log V)", sc: "O(V)",
+            pseudo: `INITIALIZE Min-Heap, visited_set, total_cost = 0\nPUSH (0, start_node) TO Min-Heap\nWHILE Min-Heap NOT EMPTY:\n    POP (weight, node)\n    IF node IN visited: CONTINUE\n    MARK visited, total_cost += weight\n    FOR EACH (neighbor, edge_weight) OF node:\n        IF neighbor NOT IN visited: PUSH`,
+            java: `PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> a[0] - b[0]);\nboolean[] visited = new boolean[N];\npq.offer(new int[]{0, 0}); // {weight, node}\nint cost = 0;\nwhile (!pq.isEmpty()) {\n    int[] curr = pq.poll();\n    if (visited[curr[1]]) continue;\n    visited[curr[1]] = true;\n    cost += curr[0];\n    for (int[] edge : graph.get(curr[1])) {\n        if (!visited[edge[0]]) pq.offer(new int[]{edge[1], edge[0]});\n    }\n}`
+        },
+        {
+            id: 23, name: "Union-Find (DSU)", category: "Trees & Graphs",
+            triggers: ["Cycle detection in undirected graphs", "Number of Provinces", "Redundant Connection", "Kruskal's MST"],
+            tc: "O(α(N))", sc: "O(N)",
+            pseudo: `FUNCTION Find_Boss(node):\n    IF parent[node] == node: RETURN node\n    parent[node] = Find_Boss(parent[node]) // Path compression\n    RETURN parent[node]\nFUNCTION Union(A, B):\n    boss_A = Find_Boss(A), boss_B = Find_Boss(B)\n    IF boss_A == boss_B: RETURN false\n    parent[boss_A] = boss_B`,
+            java: `class DSU {\n    int[] parent, rank;\n    public DSU(int n) {\n        parent = new int[n]; rank = new int[n];\n        for (int i=0; i<n; i++) parent[i] = i;\n    }\n    public int find(int i) {\n        if (parent[i] == i) return i;\n        return parent[i] = find(parent[i]);\n    }\n    public boolean union(int i, int j) {\n        int rootI = find(i), rootJ = find(j);\n        if (rootI == rootJ) return false;\n        if (rank[rootI] < rank[rootJ]) parent[rootI] = rootJ;\n        else if (rank[rootI] > rank[rootJ]) parent[rootJ] = rootI;\n        else { parent[rootJ] = rootI; rank[rootI]++; }\n        return true;\n    }\n}`
+        },
+        {
+            id: 24, name: "Trie (Prefix Tree)", category: "Trees & Graphs",
+            triggers: ["Auto-complete", "Word Search II", "Prefix matching", "Max XOR pair"],
+            tc: "O(L) per word", sc: "O(N * L)",
+            pseudo: `DEFINE Node: children[], is_end\nFUNCTION Insert(word):\n    curr = root\n    FOR EACH char IN word:\n        IF char NOT IN curr.children: CREATE new Node\n        curr = curr.children[char]\n    curr.is_end = true`,
+            java: `class TrieNode { TrieNode[] children = new TrieNode[26]; boolean isWord; }\nclass Trie {\n    TrieNode root = new TrieNode();\n    public void insert(String word) {\n        TrieNode curr = root;\n        for (char c : word.toCharArray()) {\n            if (curr.children[c - 'a'] == null) curr.children[c - 'a'] = new TrieNode();\n            curr = curr.children[c - 'a'];\n        }\n        curr.isWord = true;\n    }\n}`
+        },
+
+        // --- DP & BACKTRACKING ---
+        {
+            id: 25, name: "Backtracking", category: "DP & Backtracking",
+            triggers: ["Generate all combinations/permutations", "N-Queens", "Sudoku", "Word Break"],
+            tc: "O(2^N) or O(N!)", sc: "O(N)",
+            pseudo: `FUNCTION Backtrack(path, index):\n    IF path is complete: SAVE AND RETURN\n    FOR EACH choice:\n        IF choice is valid:\n            ADD choice // DO\n            Backtrack(path, new_index) // RECURSE\n            REMOVE choice // UNDO`,
+            java: `public void backtrack(List<List<Integer>> res, List<Integer> temp, int[] nums, int start) {\n    res.add(new ArrayList<>(temp)); // 1. Save\n    for (int i = start; i < nums.length; i++) {\n        temp.add(nums[i]);                    // 2. Do\n        backtrack(res, temp, nums, i + 1);    // 3. Recurse\n        temp.remove(temp.size() - 1);         // 4. Undo\n    }\n}`
+        },
+        {
+            id: 26, name: "1D DP (Memoization)", category: "DP & Backtracking",
+            triggers: ["Maximum/Minimum total cost", "Number of ways", "House Robber", "Climbing Stairs"],
+            tc: "O(N)", sc: "O(N)",
+            pseudo: `INITIALIZE DP_cache\nFUNCTION Solve(index):\n    IF index == base: RETURN val\n    IF DP_cache[index] NOT NULL: RETURN DP_cache[index]\n    option_1 = logic for picking\n    option_2 = logic for skipping\n    DP_cache[index] = MAX(option_1, option_2)\n    RETURN DP_cache[index]`,
+            java: `public int dfs(int i, int[] nums, Integer[] dp) {\n    if (i >= nums.length) return 0; // Base Case\n    if (dp[i] != null) return dp[i]; // Cached\n    int take = nums[i] + dfs(i + 2, nums, dp);\n    int skip = dfs(i + 1, nums, dp);\n    return dp[i] = Math.max(take, skip);\n}`
+        },
+        {
+            id: 27, name: "0-1 Knapsack (2D DP)", category: "DP & Backtracking",
+            triggers: ["Maximize value given weight limit", "Subset Sum", "Target Sum"],
+            tc: "O(N * W)", sc: "O(N * W)",
+            pseudo: `INITIALIZE DP[items+1][capacity+1] to 0\nFOR i FROM 1 TO items:\n    FOR w FROM 1 TO capacity:\n        IF weight[i-1] <= w:\n            DP[i][w] = MAX(DP[i-1][w], value[i-1] + DP[i-1][w - weight[i-1]])\n        ELSE:\n            DP[i][w] = DP[i-1][w]`,
+            java: `int[][] dp = new int[N + 1][W + 1];\nfor (int i = 1; i <= N; i++) {\n    for (int w = 1; w <= W; w++) {\n        if (wt[i - 1] <= w) {\n            dp[i][w] = Math.max(dp[i - 1][w], val[i - 1] + dp[i - 1][w - wt[i - 1]]);\n        } else {\n            dp[i][w] = dp[i - 1][w];\n        }\n    }\n}`
+        },
+        {
+            id: 28, name: "Bitmask DP", category: "DP & Backtracking",
+            triggers: ["Small array (N < 20)", "Optimal way to pair/group elements", "Traveling Salesperson"],
+            tc: "O(N * 2^N)", sc: "O(2^N)",
+            pseudo: `FUNCTION Solve(index, bit_mask):\n    IF bit_mask == ALL_BITS_SET: RETURN 0\n    IF DP_cache has answer: RETURN DP_cache\n    FOR EACH item IN items:\n        IF item UNUSED (bit is 0):\n            TURN ON bit\n            RECURSE\n    SAVE and RETURN`,
+            java: `public int solve(int mask, int[] nums, Integer[] dp) {\n    if (mask == (1 << nums.length) - 1) return 0;\n    if (dp[mask] != null) return dp[mask];\n    int res = 0;\n    for (int j = 0; j < nums.length; j++) {\n        if ((mask & (1 << j)) == 0) {\n            res = Math.max(res, nums[j] + solve(mask | (1 << j), nums, dp));\n        }\n    }\n    return dp[mask] = res;\n}`
+        }
+    ];
+
+    // --- ENGINE LOGIC ---
+    let currentCategory = "All";
+    const grid = document.getElementById('patternGrid');
+    const searchInput = document.getElementById('searchInput');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+
+    function renderCards() {
+        const query = searchInput.value.toLowerCase();
+        
+        const filtered = patterns.filter(p => {
+            const matchCategory = currentCategory === "All" || p.category === currentCategory;
+            const matchSearch = p.name.toLowerCase().includes(query) || p.triggers.some(t => t.toLowerCase().includes(query));
+            return matchCategory && matchSearch;
+        });
+
+        grid.innerHTML = "";
+        
+        if (filtered.length === 0) {
+            grid.innerHTML = `<div class="empty-state"><h2>No patterns found</h2><p>Try adjusting your search or category filter.</p></div>`;
+            return;
+        }
+
+        filtered.forEach(p => {
+            const card = document.createElement('div');
+            card.className = 'pattern-card';
+            card.onclick = () => openModal(p);
+            
+            const triggersDisplay = p.triggers.slice(0, 3).join(" • ") + (p.triggers.length > 3 ? "..." : "");
+
+            card.innerHTML = `
+                <div>
+                    <div class="p-category">${p.category}</div>
+                    <h3 class="p-title">${p.name}</h3>
+                    <div class="p-triggers"><strong>Keywords:</strong> ${triggersDisplay}</div>
+                </div>
+                <div class="badge-container">
+                    <span class="badge b-time">⏱️ ${p.tc}</span>
+                    <span class="badge b-space">💾 ${p.sc}</span>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    // Event Listeners for Filters
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+            currentCategory = e.target.getAttribute('data-cat');
+            renderCards();
+        });
+    });
+
+    searchInput.addEventListener('input', renderCards);
+
+    // --- MODAL LOGIC ---
+    function openModal(pattern) {
+        document.getElementById('modalCategory').innerText = pattern.category;
+        document.getElementById('modalTitle').innerText = pattern.name;
+        
+        const triggerList = document.getElementById('modalTriggers');
+        triggerList.innerHTML = pattern.triggers.map(t => `<li>${t}</li>`).join('');
+        
+        document.getElementById('modalPseudo').innerText = pattern.pseudo;
+        document.getElementById('modalJava').innerText = pattern.java;
+        
+        switchTab(0); 
+        document.getElementById('patternModal').style.display = 'flex';
+        document.body.style.overflow = 'hidden'; 
+    }
+
+    function closeModal() {
+        document.getElementById('patternModal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    function switchTab(index) {
+        const tabs = document.querySelectorAll('.tab');
+        const contents = document.querySelectorAll('.tab-content');
+        
+        tabs.forEach(t => t.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
+        
+        tabs[index].classList.add('active');
+        contents[index].classList.add('active');
+    }
+
+    function copyCode() {
+        const code = document.getElementById('modalJava').innerText;
+        navigator.clipboard.writeText(code).then(() => {
+            const btn = document.querySelector('.copy-btn');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = `✔️ Copied!`;
+            setTimeout(() => btn.innerHTML = originalText, 2000);
+        });
+    }
+
+    window.onclick = function(event) {
+        const modal = document.getElementById('patternModal');
+        if (event.target == modal) closeModal();
+    }
+
+    // Initial render
+    renderCards();
+</script>
+</body>
+</html>
