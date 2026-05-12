@@ -1,5 +1,29 @@
 [
   {
+    "date": "13/05/2026",
+    "name": "Shortest Unique Prefix",
+    "topic": "Tries",
+    "source": "Scaler"
+  },
+  {
+    "date": "12/05/2026",
+    "name": "Trie Deletion",
+    "topic": "Tries",
+    "source": "Scaler"
+  },
+  {
+    "date": "11/05/2026",
+    "name": "Search in Tries",
+    "topic": "Tries",
+    "source": "Scaler"
+  },
+  {
+    "date": "10/05/2026",
+    "name": "Insertion in Tries",
+    "topic": "Tries",
+    "source": "Scaler"
+  },
+  {
     "date": "09/05/2026",
     "name": "Word Break",
     "topic": "DP",
