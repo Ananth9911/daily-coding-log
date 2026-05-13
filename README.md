@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 418 🔥
+- **Total Problems Solved:** 420 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,8 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 14/05/2026 | Auto Complete | Tries | Scaler |
+| 13/05/2026 | Spelling Checker | Tries | Scaler |
 | 13/05/2026 | Shortest Unique Prefix | Tries | Scaler |
 | 12/05/2026 | Trie Deletion | Tries | Scaler |
 | 11/05/2026 | Search in Tries | Tries | Scaler |
@@ -23,7 +25,5 @@
 | 09/05/2026 | Sudoku | Backtracking | Scaler |
 | 08/05/2026 | NQueens | Backtracking | Scaler |
 | 07/05/2026 | Very Large Power | Maths | Scaler |
-| 07/05/2026 | Compute nCr % p | Maths | Scaler |
-| 07/05/2026 | Pubg- Minimum Health | Array | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)

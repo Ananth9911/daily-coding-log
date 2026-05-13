@@ -1,5 +1,17 @@
 [
   {
+    "date": "14/05/2026",
+    "name": "Auto Complete",
+    "topic": "Tries",
+    "source": "Scaler"
+  },
+  {
+    "date": "13/05/2026",
+    "name": "Spelling Checker",
+    "topic": "Tries",
+    "source": "Scaler"
+  },
+  {
     "date": "13/05/2026",
     "name": "Shortest Unique Prefix",
     "topic": "Tries",
