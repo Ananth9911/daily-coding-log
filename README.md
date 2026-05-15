@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 420 🔥
+- **Total Problems Solved:** 422 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,8 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 16/05/2026 | Maximum XOR Subarray | Tries | Scaler |
+| 15/05/2026 | Maximum XOR | Tries | Scaler |
 | 14/05/2026 | Auto Complete | Tries | Scaler |
 | 13/05/2026 | Spelling Checker | Tries | Scaler |
 | 13/05/2026 | Shortest Unique Prefix | Tries | Scaler |
@@ -23,7 +25,5 @@
 | 10/05/2026 | Insertion in Tries | Tries | Scaler |
 | 09/05/2026 | Word Break | DP | Scaler |
 | 09/05/2026 | Sudoku | Backtracking | Scaler |
-| 08/05/2026 | NQueens | Backtracking | Scaler |
-| 07/05/2026 | Very Large Power | Maths | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
