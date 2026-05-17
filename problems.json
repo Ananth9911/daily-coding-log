@@ -1,5 +1,11 @@
 [
   {
+    "date": "18/05/2026",
+    "name": "Node distance C in binary tree",
+    "topic": "Tree",
+    "source": "Scaler"
+  },
+  {
     "date": "17/05/2026",
     "name": "Flatten Binary Tree to Linked List",
     "topic": "Tree",
