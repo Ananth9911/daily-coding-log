@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 422 🔥
+- **Total Problems Solved:** 423 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 17/05/2026 | Flatten Binary Tree to Linked List | Tree | Scaler |
 | 16/05/2026 | Maximum XOR Subarray | Tries | Scaler |
 | 15/05/2026 | Maximum XOR | Tries | Scaler |
 | 14/05/2026 | Auto Complete | Tries | Scaler |
@@ -24,6 +25,5 @@
 | 11/05/2026 | Search in Tries | Tries | Scaler |
 | 10/05/2026 | Insertion in Tries | Tries | Scaler |
 | 09/05/2026 | Word Break | DP | Scaler |
-| 09/05/2026 | Sudoku | Backtracking | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
