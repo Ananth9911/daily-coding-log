@@ -1,6 +1,24 @@
 [
   {
     "date": "19/05/2026",
+    "name": "Period of a string (KMP-LPS)",
+    "topic": "String",
+    "source": "Scaler"
+  },
+  {
+    "date": "19/05/2026",
+    "name": "Cyclic Permutations -KMP",
+    "topic": "String",
+    "source": "Scaler"
+  },
+  {
+    "date": "19/05/2026",
+    "name": "Permutations of A in B",
+    "topic": "String",
+    "source": "Scaler"
+  },
+  {
+    "date": "18/05/2026",
     "name": "Boring substring",
     "topic": "String",
     "source": "Scaler"
