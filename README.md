@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 424 🔥
+- **Total Problems Solved:** 425 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 19/05/2026 | Boring substring | String | Scaler |
 | 18/05/2026 | Node distance C in binary tree | Tree | Scaler |
 | 17/05/2026 | Flatten Binary Tree to Linked List | Tree | Scaler |
 | 16/05/2026 | Maximum XOR Subarray | Tries | Scaler |
@@ -24,6 +25,5 @@
 | 13/05/2026 | Shortest Unique Prefix | Tries | Scaler |
 | 12/05/2026 | Trie Deletion | Tries | Scaler |
 | 11/05/2026 | Search in Tries | Tries | Scaler |
-| 10/05/2026 | Insertion in Tries | Tries | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
