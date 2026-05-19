@@ -157,7 +157,7 @@
   },
   {
     "date": "02/05/2026",
-    "name": "Topological Sort (Kahn's Algorithm)",
+    "name": "Topological Sort - Kahn's Algorithm",
     "topic": "Graph",
     "source": "Scaler"
   },
