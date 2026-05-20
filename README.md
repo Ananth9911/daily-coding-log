@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 428 🔥
+- **Total Problems Solved:** 429 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 21/05/2026 | Longest Common Subsequence | DP | Scaler |
 | 19/05/2026 | Period of a string (KMP-LPS) | String | Scaler |
 | 19/05/2026 | Cyclic Permutations -KMP | String | Scaler |
 | 19/05/2026 | Permutations of A in B | String | Scaler |
@@ -24,6 +25,5 @@
 | 16/05/2026 | Maximum XOR Subarray | Tries | Scaler |
 | 15/05/2026 | Maximum XOR | Tries | Scaler |
 | 14/05/2026 | Auto Complete | Tries | Scaler |
-| 13/05/2026 | Spelling Checker | Tries | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
