@@ -16,7 +16,7 @@
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
 | 21/05/2026 | Edit Distance | DP | Scaler |
-| 21/05/2026 | Longest Common Subsequence | DP | Scaler |
+| 20/05/2026 | Longest Common Subsequence | DP | Scaler |
 | 19/05/2026 | Period of a string (KMP-LPS) | String | Scaler |
 | 19/05/2026 | Cyclic Permutations -KMP | String | Scaler |
 | 19/05/2026 | Permutations of A in B | String | Scaler |
