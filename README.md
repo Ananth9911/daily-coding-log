@@ -1,11 +1,11 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 429 🔥
+- **Total Problems Solved:** 430 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
 - **Foundation** `[██████████]` **100%** *(25/25)*
-- **DSA (Data Structures)** `[█████████░]` **91%** *(84/92)*
+- **DSA (Data Structures)** `[█████████░]` **93%** *(86/92)*
 - **Core (SQL/CS Fund)** `[██████████]` **100%** *(16/16)*
 - **System Design (LLD/HLD)** `[░░░░░░░░░░]` **0%** *(0/133)*
 
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 21/05/2026 | Edit Distance | DP | Scaler |
 | 21/05/2026 | Longest Common Subsequence | DP | Scaler |
 | 19/05/2026 | Period of a string (KMP-LPS) | String | Scaler |
 | 19/05/2026 | Cyclic Permutations -KMP | String | Scaler |
@@ -24,6 +25,5 @@
 | 17/05/2026 | Flatten Binary Tree to Linked List | Tree | Scaler |
 | 16/05/2026 | Maximum XOR Subarray | Tries | Scaler |
 | 15/05/2026 | Maximum XOR | Tries | Scaler |
-| 14/05/2026 | Auto Complete | Tries | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)

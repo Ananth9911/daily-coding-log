@@ -1,6 +1,12 @@
 [
   {
     "date": "21/05/2026",
+    "name": "Edit Distance",
+    "topic": "DP",
+    "source": "Scaler"
+  },
+  {
+    "date": "21/05/2026",
     "name": "Longest Common Subsequence",
     "topic": "DP",
     "source": "Scaler"
