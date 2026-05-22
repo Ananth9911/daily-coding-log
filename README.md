@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
-- **Total Problems Solved:** 430 🔥
+- **Total Problems Solved:** 431 🔥
 - **System Status:** Online 🟢
 
 ### 🎓 Progress
@@ -15,6 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
+| 23/05/2026 | Longest Increasing Subsequence | DP | Scaler |
 | 21/05/2026 | Edit Distance | DP | Scaler |
 | 20/05/2026 | Longest Common Subsequence | DP | Scaler |
 | 19/05/2026 | Period of a string (KMP-LPS) | String | Scaler |
@@ -24,6 +25,5 @@
 | 18/05/2026 | Node distance C in binary tree | Tree | Scaler |
 | 17/05/2026 | Flatten Binary Tree to Linked List | Tree | Scaler |
 | 16/05/2026 | Maximum XOR Subarray | Tries | Scaler |
-| 15/05/2026 | Maximum XOR | Tries | Scaler |
 
 [View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
