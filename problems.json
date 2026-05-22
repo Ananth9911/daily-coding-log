@@ -1,5 +1,23 @@
 [
   {
+    "date": "23/05/2026",
+    "name": "Palindrome Partitioning II",
+    "topic": "DP",
+    "source": "Scaler"
+  },
+  {
+    "date": "23/05/2026",
+    "name": "Palindromic Substrings Count",
+    "topic": "DP",
+    "source": "Scaler"
+  },
+  {
+    "date": "23/05/2026",
+    "name": "Russian Doll Envelopes",
+    "topic": "DP",
+    "source": "Scaler"
+  },
+  {
     "date": "22/05/2026",
     "name": "Longest Increasing Subsequence",
     "topic": "DP",
