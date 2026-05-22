@@ -15,7 +15,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem Name | Topic | Source |
 | :--- | :--- | :--- | :--- |
-| 23/05/2026 | Longest Increasing Subsequence | DP | Scaler |
+| 22/05/2026 | Longest Increasing Subsequence | DP | Scaler |
 | 21/05/2026 | Edit Distance | DP | Scaler |
 | 20/05/2026 | Longest Common Subsequence | DP | Scaler |
 | 19/05/2026 | Period of a string (KMP-LPS) | String | Scaler |
