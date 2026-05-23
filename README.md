@@ -1,7 +1,7 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker
 - **Total Problems Solved:** 434 🔥  
-- **Overall Mastery:** 84% Smooth | Hard: 76 | Medium: 182
+- **Overall Mastery:** 84% Smooth | Hard: 76 | Medium: 181
 - **System Status:** Online 🟢
 
 ### 🎓 Curriculum Progress
