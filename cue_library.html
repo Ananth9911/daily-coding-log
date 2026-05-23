@@ -13,43 +13,50 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellips
 .sys-tag{font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--purple);margin-bottom:8px}
 h1{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;letter-spacing:-1px;color:#fff}
 .subtitle{color:var(--muted);font-size:.78rem;margin-top:6px}
-.header{margin-bottom:32px;border-bottom:1px solid var(--border);padding-bottom:24px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px}
+.header{margin-bottom:28px;border-bottom:1px solid var(--border);padding-bottom:22px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:14px}
 /* controls */
-.controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px;align-items:center}
-input[type=text]{background:var(--card);border:1px solid var(--border);color:var(--text);padding:10px 16px;border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:.8rem;outline:none;transition:.2s;min-width:220px}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;align-items:center}
+input[type=text]{background:var(--card);border:1px solid var(--border);color:var(--text);padding:10px 16px;border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:.78rem;outline:none;transition:.2s;min-width:240px}
 input[type=text]:focus{border-color:var(--purple)}
-.topic-filter{display:flex;gap:6px;flex-wrap:wrap;flex:1}
-.topic-btn{background:var(--card);border:1px solid var(--border);color:var(--muted);padding:6px 12px;border-radius:6px;font-size:.68rem;font-family:'JetBrains Mono',monospace;cursor:pointer;transition:.2s}
+.topic-filter{display:flex;gap:6px;flex-wrap:wrap}
+.topic-btn{background:var(--card);border:1px solid var(--border);color:var(--muted);padding:5px 11px;border-radius:6px;font-size:.65rem;font-family:'JetBrains Mono',monospace;cursor:pointer;transition:.2s}
 .topic-btn:hover,.topic-btn.active{border-color:var(--purple);color:var(--purple);background:rgba(167,139,250,.08)}
-.count-badge{font-size:.7rem;color:var(--muted);margin-left:auto;align-self:center}
+/* stats row */
+.stats-row{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+.stat-chip{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px 16px;font-size:.72rem}
+.stat-chip span{color:#fff;font-weight:700}
 /* grid */
-.cue-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
-.cue-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;transition:all .25s ease;cursor:pointer;position:relative;overflow:hidden}
-.cue-card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(167,139,250,.07),transparent 60%);opacity:0;transition:opacity .3s}
-.cue-card:hover{border-color:rgba(167,139,250,.4);transform:translateY(-2px)}
-.cue-card:hover::before{opacity:1}
-.cue-card.struggled{border-left:3px solid var(--red)}
-.cue-card.smooth{border-left:3px solid var(--green)}
-.card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;gap:8px}
-.topic-tag{display:inline-block;padding:3px 9px;border-radius:5px;font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;background:rgba(167,139,250,.12);color:var(--purple);flex-shrink:0}
-.diff-badge{font-size:.65rem;font-weight:700;padding:2px 7px;border-radius:4px}
+.cue-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.cue-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;transition:all .2s ease;cursor:pointer;position:relative;overflow:hidden;border-left:3px solid transparent}
+.cue-card.struggled{border-left-color:var(--red)}
+.cue-card.smooth{border-left-color:var(--green)}
+.cue-card.mastered{border-left-color:var(--purple)}
+.cue-card:hover{border-color:rgba(167,139,250,.35);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;gap:6px}
+.topic-tag{display:inline-block;padding:3px 8px;border-radius:4px;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;background:rgba(167,139,250,.12);color:var(--purple);flex-shrink:0}
+.diff-badge{font-size:.62rem;font-weight:700;padding:2px 7px;border-radius:4px;flex-shrink:0}
 .diff-H{background:rgba(248,113,113,.15);color:var(--red)}
 .diff-M{background:rgba(251,191,36,.15);color:var(--yellow)}
-.diff-L{background:rgba(74,222,128,.15);color:var(--green)}
-.cue-text{font-size:.78rem;color:var(--text);line-height:1.65;margin-bottom:12px}
-.one-liner{font-size:.7rem;color:var(--muted);font-style:italic;border-top:1px solid var(--border);padding-top:10px;line-height:1.5}
-.example-prob{font-size:.65rem;color:var(--blue);margin-top:8px}
+.diff-L,.diff-E{background:rgba(74,222,128,.15);color:var(--green)}
+.cue-text{font-size:.76rem;color:var(--text);line-height:1.65;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.one-liner{font-size:.68rem;color:var(--blue);margin-bottom:6px;font-weight:600}
+.example-prob{font-size:.63rem;color:var(--muted)}
 /* modal */
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);backdrop-filter:blur(8px);z-index:100;align-items:center;justify-content:center}
-.modal{background:var(--card);border:1px solid rgba(167,139,250,.3);width:90%;max-width:560px;border-radius:16px;padding:32px;box-shadow:0 20px 60px rgba(0,0,0,.8),0 0 40px rgba(167,139,250,.05)}
-.modal-close{position:absolute;top:20px;right:20px;background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer}
-.modal-topic{font-size:.65rem;text-transform:uppercase;letter-spacing:2px;color:var(--purple);margin-bottom:8px}
-.modal-cue{font-size:1rem;color:#fff;line-height:1.7;margin-bottom:16px}
-.modal-one{font-size:.82rem;color:var(--muted);line-height:1.6;border-top:1px solid var(--border);padding-top:16px;margin-bottom:16px}
-.modal-example{font-size:.75rem;color:var(--blue)}
-.empty{text-align:center;padding:60px;color:var(--muted);font-size:.82rem}
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-.fade{animation:fadeIn .3s ease}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.82);backdrop-filter:blur(10px);z-index:100;align-items:center;justify-content:center;padding:20px}
+.modal{background:var(--card);border:1px solid rgba(167,139,250,.25);width:100%;max-width:600px;border-radius:16px;padding:32px;box-shadow:0 20px 60px rgba(0,0,0,.8);position:relative;max-height:85vh;overflow-y:auto}
+.modal-close{position:absolute;top:16px;right:16px;background:none;border:none;color:var(--muted);font-size:1.1rem;cursor:pointer;font-family:'JetBrains Mono',monospace}
+.modal-close:hover{color:#fff}
+.modal-topic{font-size:.62rem;text-transform:uppercase;letter-spacing:2px;color:var(--purple);margin-bottom:6px}
+.modal-name{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:16px}
+.modal-section{margin-bottom:16px}
+.modal-label{font-size:.6rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:6px}
+.modal-cue{font-size:.85rem;color:var(--text);line-height:1.7;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:8px;padding:14px}
+.modal-one{font-size:.82rem;color:var(--blue);font-weight:600}
+.modal-example{font-size:.75rem;color:var(--muted)}
+.empty{text-align:center;padding:60px;color:var(--muted);font-size:.82rem;line-height:1.7}
+.debug-box{background:rgba(251,191,36,.05);border:1px solid rgba(251,191,36,.2);border-radius:8px;padding:14px;margin-bottom:20px;font-size:.72rem;color:var(--yellow);display:none}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.fade{animation:fadeIn .25s ease}
 </style>
 </head>
 <body>
@@ -58,9 +65,18 @@ input[type=text]:focus{border-color:var(--purple)}
     <div>
       <p class="sys-tag">● Auto-Generated from Problem Log</p>
       <h1>Cue Library</h1>
-      <p class="subtitle">Every pattern extracted from your solved problems. Updates automatically when you solve new ones.</p>
+      <p class="subtitle">Every pattern extracted from your Notes column. Populate the <code style="color:var(--purple)">Notes / Pattern Used</code> column in your sheet — it auto-appears here.</p>
     </div>
-    <div id="total-cues" style="font-size:.78rem;color:var(--muted)">Loading…</div>
+    <div id="total-cues" style="font-size:.75rem;color:var(--muted)">Loading…</div>
+  </div>
+
+  <div class="debug-box" id="debug-box"></div>
+
+  <div class="stats-row" id="stats-row" style="display:none">
+    <div class="stat-chip">Total Cues: <span id="sc-total">—</span></div>
+    <div class="stat-chip">Topics: <span id="sc-topics">—</span></div>
+    <div class="stat-chip">Hard Cues: <span id="sc-hard">—</span></div>
+    <div class="stat-chip">Struggled Cues: <span id="sc-struggled">—</span></div>
   </div>
 
   <div class="controls">
@@ -68,49 +84,117 @@ input[type=text]:focus{border-color:var(--purple)}
     <div class="topic-filter" id="topic-btns"></div>
   </div>
 
-  <div class="cue-grid" id="cue-grid"><div class="empty">Loading cues from your problem log…</div></div>
+  <div class="cue-grid" id="cue-grid">
+    <div class="empty">Loading cues from your sheet…</div>
+  </div>
 </div>
 
 <!-- DETAIL MODAL -->
-<div class="modal-overlay" id="modal" onclick="closeModal(event)">
-  <div class="modal" style="position:relative">
-    <button class="modal-close" onclick="document.getElementById('modal').style.display='none'">✕</button>
+<div class="modal-overlay" id="modal" onclick="maybeClose(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕ close</button>
     <div class="modal-topic" id="m-topic"></div>
-    <div class="modal-cue"   id="m-cue"></div>
-    <div class="modal-one"   id="m-one"></div>
-    <div class="modal-example" id="m-ex"></div>
+    <div class="modal-name"  id="m-name"></div>
+    <div class="modal-section">
+      <div class="modal-label">Core Pattern / Logic</div>
+      <div class="modal-cue" id="m-cue"></div>
+    </div>
+    <div class="modal-section" id="m-one-wrap" style="display:none">
+      <div class="modal-label">One-Line Summary</div>
+      <div class="modal-one" id="m-one"></div>
+    </div>
+    <div class="modal-section">
+      <div class="modal-label">Example Problem</div>
+      <div class="modal-example" id="m-ex"></div>
+    </div>
   </div>
 </div>
 
 <script>
-// Uses same SRS backend — action=cues
-const SRS_API = "https://script.google.com/macros/s/AKfycbzcAr2oVXOKjoSMPimm3a0ARrcBSAL8geTNR6WQ8y9aE9WA87U91qm13YKOzShZ1d-R/exec";
+// ── CONFIG ────────────────────────────────────────────────────
+// Same SRS GS URL — action=cues hits the new getCues() function
+const SRS_API  = "https://script.google.com/macros/s/AKfycbzcAr2oVXOKjoSMPimm3a0ARrcBSAL8geTNR6WQ8y9aE9WA87U91qm13YKOzShZ1d-R/exec";
+// Fallback: cues.json generated by update_portfolio.py
+const CUES_JSON = "https://raw.githubusercontent.com/Ananth9911/daily-coding-log/main/cues.json";
+// ─────────────────────────────────────────────────────────────
 
 let allCues = [], activeTopic = "all";
+let _filtered = [];
 
 async function loadCues() {
+  let source = "";
   try {
+    // Primary: live GS data
     const res = await fetch(SRS_API + "?action=cues&t=" + Date.now());
-    allCues = await res.json();
+    const d   = await res.json();
+
+    if (d && d.error) {
+      showDebug("GS error: " + d.error + " — falling back to cues.json");
+      throw new Error(d.error);
+    }
+    if (Array.isArray(d) && d.length > 0) {
+      allCues = d; source = "Live GS Sheet";
+    } else {
+      showDebug("GS returned 0 cues. Your 'Notes / Pattern Used' column may be empty or column header doesn't match exactly. Trying cues.json fallback.");
+      throw new Error("Empty GS response");
+    }
   } catch(e) {
-    // Fallback: try cues.json (generated by Python script)
+    // Fallback: cues.json
     try {
-      const res2 = await fetch("https://raw.githubusercontent.com/Ananth9911/daily-coding-log/main/cues.json");
+      const res2 = await fetch(CUES_JSON + "?t=" + Date.now());
       allCues = await res2.json();
+      source = "cues.json (run update_portfolio.py to refresh)";
     } catch(e2) {
-      document.getElementById('cue-grid').innerHTML = '<div class="empty">Run update_portfolio.py to generate cues.json, or connect to GS backend.</div>';
+      document.getElementById('cue-grid').innerHTML =
+        `<div class="empty">Could not load cues.<br><br>
+        Fix: Make sure your Google Sheet has a column called <code>Notes / Pattern Used</code> (exact spelling).<br>
+        Then redeploy the GS script and refresh this page.<br><br>
+        Or run <code>update_portfolio.py</code> locally to generate cues.json.</div>`;
       return;
     }
   }
+
+  if (allCues.length === 0) {
+    document.getElementById('cue-grid').innerHTML =
+      `<div class="empty">0 cues found from your problem log.<br><br>
+      This page reads your <code>Notes / Pattern Used</code> column in Master_Problems.<br>
+      Start filling that column when you solve problems — notes like<br>
+      <em>"Use sliding window: expand right, shrink left when invalid"</em><br>
+      will appear here automatically as searchable cue cards.</div>`;
+    return;
+  }
+
+  document.getElementById('total-cues').textContent = `${allCues.length} cues · ${source}`;
+  buildStats();
   buildTopicFilters();
   renderCues();
 }
 
+function showDebug(msg) {
+  const el = document.getElementById('debug-box');
+  el.style.display = 'block';
+  el.textContent = '⚠ ' + msg;
+}
+
+function buildStats() {
+  const topics     = new Set(allCues.map(c=>c.topic)).size;
+  const hard       = allCues.filter(c=>c.difficulty==='H').length;
+  const struggled  = allCues.filter(c=>c.friction&&c.friction.toLowerCase().includes('struggled')).length;
+  document.getElementById('sc-total').textContent     = allCues.length;
+  document.getElementById('sc-topics').textContent    = topics;
+  document.getElementById('sc-hard').textContent      = hard;
+  document.getElementById('sc-struggled').textContent = struggled;
+  document.getElementById('stats-row').style.display  = 'flex';
+}
+
 function buildTopicFilters() {
   const topics = [...new Set(allCues.map(c=>c.topic))].sort();
-  const wrap = document.getElementById('topic-btns');
-  wrap.innerHTML = `<button class="topic-btn active" onclick="setTopic('all',this)">All</button>` +
-    topics.map(t=>`<button class="topic-btn" onclick="setTopic('${t}',this)">${t}</button>`).join('');
+  const wrap   = document.getElementById('topic-btns');
+  wrap.innerHTML = `<button class="topic-btn active" onclick="setTopic('all',this)">All (${allCues.length})</button>` +
+    topics.map(t => {
+      const cnt = allCues.filter(c=>c.topic===t).length;
+      return `<button class="topic-btn" onclick="setTopic('${t.replace(/'/g,"\\'")}',this)">${t} (${cnt})</button>`;
+    }).join('');
 }
 
 function setTopic(t, el) {
@@ -122,46 +206,59 @@ function setTopic(t, el) {
 
 function renderCues() {
   const q = document.getElementById('search').value.toLowerCase();
-  const filtered = allCues.filter(c =>
+  _filtered = allCues.filter(c =>
     (activeTopic==='all' || c.topic===activeTopic) &&
-    (!q || c.cue.toLowerCase().includes(q) || c.topic.toLowerCase().includes(q) || (c.oneLiner||'').toLowerCase().includes(q) || (c.exampleProblem||'').toLowerCase().includes(q))
+    (!q ||
+      c.cue.toLowerCase().includes(q) ||
+      c.topic.toLowerCase().includes(q) ||
+      (c.oneLiner||'').toLowerCase().includes(q) ||
+      (c.exampleProblem||'').toLowerCase().includes(q)
+    )
   );
-  document.getElementById('total-cues').textContent = `${filtered.length} cues${activeTopic!=='all'?' in '+activeTopic:''} / ${allCues.length} total`;
-  const grid = document.getElementById('cue-grid');
-  if (!filtered.length) { grid.innerHTML='<div class="empty">No cues match. Try a different search.</div>'; return; }
 
-  grid.innerHTML = filtered.map((c,i) => {
-    const friClass = c.friction&&c.friction.toLowerCase().includes('struggled')?'struggled':'smooth';
-    const diffClass = 'diff-'+(c.difficulty||'M');
-    const shortCue = c.cue.length > 140 ? c.cue.substring(0,140)+'…' : c.cue;
-    return `<div class="cue-card ${friClass} fade" style="animation-delay:${Math.min(i*20,200)}ms" onclick="openModal(${i})"
-      onmousemove="this.style.setProperty('--mx',event.offsetX+'px');this.style.setProperty('--my',event.offsetY+'px')">
+  document.getElementById('total-cues').textContent =
+    `${_filtered.length} cues${activeTopic!=='all'?' in '+activeTopic:''} / ${allCues.length} total`;
+
+  const grid = document.getElementById('cue-grid');
+  if (!_filtered.length) {
+    grid.innerHTML = '<div class="empty">No cues match. Try a different search or topic.</div>';
+    return;
+  }
+
+  grid.innerHTML = _filtered.map((c,i) => {
+    const fri   = c.friction&&c.friction.toLowerCase().includes('struggled') ? 'struggled' : 'smooth';
+    const diff  = 'diff-'+(c.difficulty||'M');
+    const short = c.cue.length>160 ? c.cue.substring(0,157)+'…' : c.cue;
+    return `<div class="cue-card ${fri} fade" style="animation-delay:${Math.min(i*15,250)}ms" onclick="openModal(${i})">
       <div class="card-top">
         <span class="topic-tag">${c.topic}</span>
-        <span class="diff-badge ${diffClass}">${c.difficulty||'M'}</span>
+        <span class="diff-badge ${diff}">${c.difficulty||'M'}</span>
       </div>
-      <div class="cue-text">${shortCue}</div>
-      ${c.oneLiner?`<div class="one-liner">${c.oneLiner.substring(0,100)}</div>`:''}
+      <div class="cue-text">${short}</div>
+      ${c.oneLiner?`<div class="one-liner">→ ${c.oneLiner.substring(0,80)}</div>`:''}
       ${c.exampleProblem?`<div class="example-prob">↳ ${c.exampleProblem}</div>`:''}
     </div>`;
   }).join('');
-
-  // Store filtered for modal use
-  window._filteredCues = filtered;
 }
 
 function openModal(i) {
-  const c = window._filteredCues[i];
-  document.getElementById('m-topic').textContent = c.topic + (c.difficulty?' · '+c.difficulty:'');
-  document.getElementById('m-cue').textContent   = c.cue;
-  document.getElementById('m-one').textContent   = c.oneLiner || 'No one-liner recorded.';
-  document.getElementById('m-ex').textContent    = c.exampleProblem ? '↳ Example: ' + c.exampleProblem : '';
+  const c = _filtered[i];
+  document.getElementById('m-topic').textContent   = c.topic + (c.difficulty ? ' · ' + c.difficulty : '');
+  document.getElementById('m-name').textContent    = c.exampleProblem || 'Unknown Problem';
+  document.getElementById('m-cue').textContent     = c.cue;
+  document.getElementById('m-ex').textContent      = '↳ ' + (c.exampleProblem || '—');
+  const oneWrap = document.getElementById('m-one-wrap');
+  if (c.oneLiner) {
+    document.getElementById('m-one').textContent = c.oneLiner;
+    oneWrap.style.display = 'block';
+  } else {
+    oneWrap.style.display = 'none';
+  }
   document.getElementById('modal').style.display = 'flex';
 }
 
-function closeModal(e) {
-  if (e.target === document.getElementById('modal')) document.getElementById('modal').style.display='none';
-}
+function closeModal() { document.getElementById('modal').style.display='none'; }
+function maybeClose(e) { if (e.target===document.getElementById('modal')) closeModal(); }
 
 loadCues();
 </script>
