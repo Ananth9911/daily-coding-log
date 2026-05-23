@@ -1,48 +1,62 @@
-name: ⚡ Webhook Instant Sync
+name: ⚡ Portfolio Auto-Sync
 
 on:
   repository_dispatch:
     types: [sheet_update]
   workflow_dispatch:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '0 */6 * * *'   # every 6 hours (was every 30 min — too aggressive, causes rate limits)
 
 jobs:
   update_portfolio:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      
+
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4      # upgraded from v3
+        with:
+          fetch-depth: 0               # full history needed for clean rebase
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5  # upgraded from v4
         with:
-          python-version: '3.9'
+          python-version: '3.11'       # 3.9 is deprecated on ubuntu-latest
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
 
       - name: Install Dependencies
-        run: pip install pandas matplotlib requests
+        run: pip install pandas matplotlib requests openpyxl
 
       - name: Run Python Engine
-        run: python scripts/update_portfolio.py
+        run: |
+          cd scripts
+          python update_portfolio.py
+        env:
+          PYTHONUNBUFFERED: "1"
 
       - name: Commit & Push Changes
         run: |
-          git config --global user.name "Ananth9911"
-          git config --global user.email "ananthj43@gmail.com"
-          
-          # Force Add all generated files
-          git add problems.json topic_breakdown.png README.md
-          
-          # SAFETY CHECK: Only commit if files actually changed
-          if [[ -n $(git status -s) ]]; then
-            git commit -m "⚡ Sync: Portfolio & Readme Updated"
-            
-            # THE FIX: Pull before Push to prevent conflicts
-            git pull --rebase origin main
-            git push origin main
+          git config --global user.name  "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Add all generated artefacts
+          git add problems.json README.md topic_breakdown.png || true
+          # Also add new files from v2 script if they exist
+          git add cues.json friction_stats.json mastery_chart.png 2>/dev/null || true
+
+          if git diff --cached --quiet; then
+            echo "✅ No changes to commit."
           else
-            echo "No changes detected. Skipping push."
+            git commit -m "⚡ Auto-sync: $(date -u '+%Y-%m-%d %H:%M UTC')"
+            # Pull with rebase first to avoid merge conflicts
+            git pull --rebase --autostash origin main
+            git push origin main
           fi
