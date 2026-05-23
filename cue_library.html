@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cue Library | Ananth</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050508;--card:#0d0d14;--border:#1a1a2e;--text:#e2e8f0;--muted:#546e7a;--green:#4ade80;--red:#f87171;--yellow:#fbbf24;--blue:#60a5fa;--purple:#a78bfa}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'JetBrains Mono',monospace;min-height:100vh;padding:40px 20px}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellipse 80% 40% at 50% -10%,rgba(167,139,250,.04),transparent);pointer-events:none}
+.container{max-width:1000px;margin:0 auto;position:relative}
+.sys-tag{font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--purple);margin-bottom:8px}
+h1{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;letter-spacing:-1px;color:#fff}
+.subtitle{color:var(--muted);font-size:.78rem;margin-top:6px}
+.header{margin-bottom:32px;border-bottom:1px solid var(--border);padding-bottom:24px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px}
+/* controls */
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px;align-items:center}
+input[type=text]{background:var(--card);border:1px solid var(--border);color:var(--text);padding:10px 16px;border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:.8rem;outline:none;transition:.2s;min-width:220px}
+input[type=text]:focus{border-color:var(--purple)}
+.topic-filter{display:flex;gap:6px;flex-wrap:wrap;flex:1}
+.topic-btn{background:var(--card);border:1px solid var(--border);color:var(--muted);padding:6px 12px;border-radius:6px;font-size:.68rem;font-family:'JetBrains Mono',monospace;cursor:pointer;transition:.2s}
+.topic-btn:hover,.topic-btn.active{border-color:var(--purple);color:var(--purple);background:rgba(167,139,250,.08)}
+.count-badge{font-size:.7rem;color:var(--muted);margin-left:auto;align-self:center}
+/* grid */
+.cue-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.cue-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;transition:all .25s ease;cursor:pointer;position:relative;overflow:hidden}
+.cue-card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(167,139,250,.07),transparent 60%);opacity:0;transition:opacity .3s}
+.cue-card:hover{border-color:rgba(167,139,250,.4);transform:translateY(-2px)}
+.cue-card:hover::before{opacity:1}
+.cue-card.struggled{border-left:3px solid var(--red)}
+.cue-card.smooth{border-left:3px solid var(--green)}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;gap:8px}
+.topic-tag{display:inline-block;padding:3px 9px;border-radius:5px;font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;background:rgba(167,139,250,.12);color:var(--purple);flex-shrink:0}
+.diff-badge{font-size:.65rem;font-weight:700;padding:2px 7px;border-radius:4px}
+.diff-H{background:rgba(248,113,113,.15);color:var(--red)}
+.diff-M{background:rgba(251,191,36,.15);color:var(--yellow)}
+.diff-L{background:rgba(74,222,128,.15);color:var(--green)}
+.cue-text{font-size:.78rem;color:var(--text);line-height:1.65;margin-bottom:12px}
+.one-liner{font-size:.7rem;color:var(--muted);font-style:italic;border-top:1px solid var(--border);padding-top:10px;line-height:1.5}
+.example-prob{font-size:.65rem;color:var(--blue);margin-top:8px}
+/* modal */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);backdrop-filter:blur(8px);z-index:100;align-items:center;justify-content:center}
+.modal{background:var(--card);border:1px solid rgba(167,139,250,.3);width:90%;max-width:560px;border-radius:16px;padding:32px;box-shadow:0 20px 60px rgba(0,0,0,.8),0 0 40px rgba(167,139,250,.05)}
+.modal-close{position:absolute;top:20px;right:20px;background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer}
+.modal-topic{font-size:.65rem;text-transform:uppercase;letter-spacing:2px;color:var(--purple);margin-bottom:8px}
+.modal-cue{font-size:1rem;color:#fff;line-height:1.7;margin-bottom:16px}
+.modal-one{font-size:.82rem;color:var(--muted);line-height:1.6;border-top:1px solid var(--border);padding-top:16px;margin-bottom:16px}
+.modal-example{font-size:.75rem;color:var(--blue)}
+.empty{text-align:center;padding:60px;color:var(--muted);font-size:.82rem}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.fade{animation:fadeIn .3s ease}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div>
+      <p class="sys-tag">● Auto-Generated from Problem Log</p>
+      <h1>Cue Library</h1>
+      <p class="subtitle">Every pattern extracted from your solved problems. Updates automatically when you solve new ones.</p>
+    </div>
+    <div id="total-cues" style="font-size:.78rem;color:var(--muted)">Loading…</div>
+  </div>
+
+  <div class="controls">
+    <input type="text" id="search" placeholder="Search cues, topics, patterns…" oninput="renderCues()">
+    <div class="topic-filter" id="topic-btns"></div>
+  </div>
+
+  <div class="cue-grid" id="cue-grid"><div class="empty">Loading cues from your problem log…</div></div>
+</div>
+
+<!-- DETAIL MODAL -->
+<div class="modal-overlay" id="modal" onclick="closeModal(event)">
+  <div class="modal" style="position:relative">
+    <button class="modal-close" onclick="document.getElementById('modal').style.display='none'">✕</button>
+    <div class="modal-topic" id="m-topic"></div>
+    <div class="modal-cue"   id="m-cue"></div>
+    <div class="modal-one"   id="m-one"></div>
+    <div class="modal-example" id="m-ex"></div>
+  </div>
+</div>
+
+<script>
+// Uses same SRS backend — action=cues
+const SRS_API = "https://script.google.com/macros/s/AKfycbzcAr2oVXOKjoSMPimm3a0ARrcBSAL8geTNR6WQ8y9aE9WA87U91qm13YKOzShZ1d-R/exec";
+
+let allCues = [], activeTopic = "all";
+
+async function loadCues() {
+  try {
+    const res = await fetch(SRS_API + "?action=cues&t=" + Date.now());
+    allCues = await res.json();
+  } catch(e) {
+    // Fallback: try cues.json (generated by Python script)
+    try {
+      const res2 = await fetch("https://raw.githubusercontent.com/Ananth9911/daily-coding-log/main/cues.json");
+      allCues = await res2.json();
+    } catch(e2) {
+      document.getElementById('cue-grid').innerHTML = '<div class="empty">Run update_portfolio.py to generate cues.json, or connect to GS backend.</div>';
+      return;
+    }
+  }
+  buildTopicFilters();
+  renderCues();
+}
+
+function buildTopicFilters() {
+  const topics = [...new Set(allCues.map(c=>c.topic))].sort();
+  const wrap = document.getElementById('topic-btns');
+  wrap.innerHTML = `<button class="topic-btn active" onclick="setTopic('all',this)">All</button>` +
+    topics.map(t=>`<button class="topic-btn" onclick="setTopic('${t}',this)">${t}</button>`).join('');
+}
+
+function setTopic(t, el) {
+  activeTopic = t;
+  document.querySelectorAll('.topic-btn').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  renderCues();
+}
+
+function renderCues() {
+  const q = document.getElementById('search').value.toLowerCase();
+  const filtered = allCues.filter(c =>
+    (activeTopic==='all' || c.topic===activeTopic) &&
+    (!q || c.cue.toLowerCase().includes(q) || c.topic.toLowerCase().includes(q) || (c.oneLiner||'').toLowerCase().includes(q) || (c.exampleProblem||'').toLowerCase().includes(q))
+  );
+  document.getElementById('total-cues').textContent = `${filtered.length} cues${activeTopic!=='all'?' in '+activeTopic:''} / ${allCues.length} total`;
+  const grid = document.getElementById('cue-grid');
+  if (!filtered.length) { grid.innerHTML='<div class="empty">No cues match. Try a different search.</div>'; return; }
+
+  grid.innerHTML = filtered.map((c,i) => {
+    const friClass = c.friction&&c.friction.toLowerCase().includes('struggled')?'struggled':'smooth';
+    const diffClass = 'diff-'+(c.difficulty||'M');
+    const shortCue = c.cue.length > 140 ? c.cue.substring(0,140)+'…' : c.cue;
+    return `<div class="cue-card ${friClass} fade" style="animation-delay:${Math.min(i*20,200)}ms" onclick="openModal(${i})"
+      onmousemove="this.style.setProperty('--mx',event.offsetX+'px');this.style.setProperty('--my',event.offsetY+'px')">
+      <div class="card-top">
+        <span class="topic-tag">${c.topic}</span>
+        <span class="diff-badge ${diffClass}">${c.difficulty||'M'}</span>
+      </div>
+      <div class="cue-text">${shortCue}</div>
+      ${c.oneLiner?`<div class="one-liner">${c.oneLiner.substring(0,100)}</div>`:''}
+      ${c.exampleProblem?`<div class="example-prob">↳ ${c.exampleProblem}</div>`:''}
+    </div>`;
+  }).join('');
+
+  // Store filtered for modal use
+  window._filteredCues = filtered;
+}
+
+function openModal(i) {
+  const c = window._filteredCues[i];
+  document.getElementById('m-topic').textContent = c.topic + (c.difficulty?' · '+c.difficulty:'');
+  document.getElementById('m-cue').textContent   = c.cue;
+  document.getElementById('m-one').textContent   = c.oneLiner || 'No one-liner recorded.';
+  document.getElementById('m-ex').textContent    = c.exampleProblem ? '↳ Example: ' + c.exampleProblem : '';
+  document.getElementById('modal').style.display = 'flex';
+}
+
+function closeModal(e) {
+  if (e.target === document.getElementById('modal')) document.getElementById('modal').style.display='none';
+}
+
+loadCues();
+</script>
+</body></html>

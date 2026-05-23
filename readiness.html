@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Readiness Engine | Ananth</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@600;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<style>
+:root{--bg:#050508;--card:#0d0d14;--border:#1a1a2e;--text:#e2e8f0;--muted:#546e7a;--green:#4ade80;--red:#f87171;--yellow:#fbbf24;--blue:#60a5fa;--purple:#a78bfa}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'JetBrains Mono',monospace;min-height:100vh;padding:40px 20px}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellipse 80% 40% at 50% -10%,rgba(74,222,128,.05),transparent);pointer-events:none}
+.container{max-width:900px;margin:0 auto;position:relative}
+.sys-tag{font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--green);margin-bottom:8px}
+h1{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;letter-spacing:-1px;color:#fff}
+.subtitle{color:var(--muted);font-size:.78rem;margin-top:6px}
+.header{margin-bottom:36px;border-bottom:1px solid var(--border);padding-bottom:24px}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:28px}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px}
+.stat-val{font-size:2rem;font-weight:700;color:var(--green);font-family:'Syne',sans-serif}
+.stat-val.warn{color:var(--yellow)}.stat-val.danger{color:var(--red)}
+.stat-label{font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:20px}
+.section-title{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:600;color:#fff;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+/* trend */
+.trend-row{display:flex;align-items:center;gap:12px;margin-bottom:10px;font-size:.72rem}
+.trend-lbl{width:110px;color:var(--muted);flex-shrink:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.trend-bar-bg{flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden}
+.trend-bar{height:100%;border-radius:3px;transition:width .7s ease}
+.trend-val{width:36px;text-align:right;color:var(--text);flex-shrink:0}
+/* form */
+.form-row{display:flex;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.form-group{flex:1;min-width:150px}
+label{display:block;font-size:.65rem;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:6px}
+input,select,textarea{width:100%;background:#07070f;border:1px solid var(--border);color:var(--text);padding:10px 14px;border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:.8rem;outline:none;transition:border-color .2s}
+input:focus,select:focus,textarea:focus{border-color:var(--green)}
+textarea{resize:vertical;min-height:56px}
+/* timers */
+.timer-section{display:flex;gap:12px;align-items:flex-end;margin-bottom:16px;flex-wrap:wrap}
+.timer-box{background:#07070f;border:1px solid var(--border);border-radius:8px;padding:12px 18px;text-align:center;min-width:110px}
+.tlbl{font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+.tval{font-size:1.8rem;font-weight:700;color:var(--green);font-family:'Syne',sans-serif}
+.tval.running{color:var(--yellow);animation:blink 1s step-end infinite}
+@keyframes blink{50%{opacity:.4}}
+/* buttons */
+.btn-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+button{font-family:'JetBrains Mono',monospace;font-size:.75rem;font-weight:700;padding:9px 16px;border-radius:8px;border:none;cursor:pointer;transition:.2s;letter-spacing:.3px}
+.btn-start{background:var(--blue);color:#000}.btn-stop{background:var(--yellow);color:#000}
+.btn-save{background:var(--green);color:#000;padding:11px 24px}
+.btn-save:hover{opacity:.85;box-shadow:0 0 20px rgba(74,222,128,.35)}
+button:disabled{opacity:.35;pointer-events:none}
+/* table */
+.session-wrap{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.session-head{padding:18px 24px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+table{width:100%;border-collapse:collapse}
+th{padding:11px 16px;font-size:.62rem;text-transform:uppercase;letter-spacing:1px;color:var(--muted);text-align:left;border-bottom:1px solid var(--border)}
+td{padding:13px 16px;font-size:.78rem;border-bottom:1px solid rgba(26,26,46,.5)}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:rgba(255,255,255,.015)}
+.pill{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.62rem;font-weight:700}
+.empty{text-align:center;padding:40px;color:var(--muted);font-size:.78rem}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.fade{animation:fadeIn .3s ease}
+/* lock banner */
+.lock-banner{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.2);border-radius:10px;padding:12px 16px;font-size:.75rem;color:var(--yellow);margin-bottom:20px;display:none}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <p class="sys-tag">● Interview Fitness Monitor</p>
+    <h1>Readiness Engine</h1>
+    <p class="subtitle">Track pattern-recognition speed &amp; solve rate — the real interview signal.</p>
+  </div>
+
+  <div class="lock-banner" id="lock-banner">🔒 READ-ONLY — You can view sessions but not log new ones.</div>
+
+  <div class="stat-grid">
+    <div class="stat-card"><div class="stat-val" id="s-total">—</div><div class="stat-label">Sessions</div></div>
+    <div class="stat-card"><div class="stat-val" id="s-rate">—</div><div class="stat-label">Solve Rate</div></div>
+    <div class="stat-card"><div class="stat-val" id="s-pattern">—</div><div class="stat-label">Avg Pattern (s)</div></div>
+    <div class="stat-card"><div class="stat-val" id="s-solve">—</div><div class="stat-label">Avg Solve (min)</div></div>
+  </div>
+
+  <div class="card" id="trend-card" style="display:none">
+    <div class="section-title">⚡ Pattern Speed by Topic (lower = better)</div>
+    <div id="trend-bars"></div>
+  </div>
+
+  <div class="card" id="log-section">
+    <div class="section-title">📝 Log New Session</div>
+    <div class="form-row">
+      <div class="form-group" style="flex:2"><label>Problem Name</label><input id="f-name" type="text" placeholder="e.g. Word Break — LC 139"></div>
+      <div class="form-group"><label>Topic</label><input id="f-topic" type="text" placeholder="DP, Graphs…"></div>
+    </div>
+    <div class="timer-section">
+      <div class="timer-box"><div class="tlbl">Pattern Timer</div><div class="tval" id="t-pattern">0:00</div></div>
+      <div class="timer-box"><div class="tlbl">Solve Timer</div><div class="tval" id="t-solve">0:00</div></div>
+      <div class="btn-row">
+        <button class="btn-start" id="btn-ps" onclick="startT('pattern')">▶ Pattern</button>
+        <button class="btn-stop"  id="btn-pp" onclick="stopT('pattern')" disabled>■ Named</button>
+        <button class="btn-start" id="btn-ss" onclick="startT('solve')" disabled>▶ Solve</button>
+        <button class="btn-stop"  id="btn-sp" onclick="stopT('solve')"  disabled>■ Done</button>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>Pattern Named</label><input id="f-pattern" type="text" placeholder="Sliding Window, KMP…"></div>
+      <div class="form-group"><label>Result</label>
+        <select id="f-solved">
+          <option value="Y">✅ Solved — Full Solution</option>
+          <option value="Partial">⚠️ Partial</option>
+          <option value="N">❌ Could not solve</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group" style="margin-bottom:16px"><label>Notes / What you missed</label><textarea id="f-notes" placeholder="What cue did you miss? What's the edge case pattern?"></textarea></div>
+    <button class="btn-save" id="btn-save" onclick="logSession()">💾 Log Session</button>
+  </div>
+
+  <div class="session-wrap">
+    <div class="session-head">
+      <div class="section-title" style="margin:0">📊 Session History</div>
+      <span id="sess-count" style="font-size:.72rem;color:var(--muted)">Loading…</span>
+    </div>
+    <div id="sess-body"><div class="empty">Loading…</div></div>
+  </div>
+</div>
+
+<script>
+// ── CONFIG ─────────────────────────────────────────────────────────
+// Same SRS backend URL — new action=readiness GET, action=log_readiness POST
+const SRS_API = "https://script.google.com/macros/s/AKfycbzcAr2oVXOKjoSMPimm3a0ARrcBSAL8geTNR6WQ8y9aE9WA87U91qm13YKOzShZ1d-R/exec";
+const isAdmin = () => localStorage.getItem("admin_key") === "scaler2026";
+// ────────────────────────────────────────────────────────────────────
+
+let elapsed = {pattern:0, solve:0}, running = {pattern:false, solve:false}, tIntervals = {};
+
+function startT(type) {
+  if (running[type]) return;
+  running[type] = true;
+  document.getElementById('t-'+type).classList.add('running');
+  tIntervals[type] = setInterval(() => {
+    elapsed[type]++;
+    const m = Math.floor(elapsed[type]/60), s = elapsed[type]%60;
+    document.getElementById('t-'+type).textContent = m+':'+String(s).padStart(2,'0');
+  }, 1000);
+  if (type==='pattern') { document.getElementById('btn-ps').disabled=true; document.getElementById('btn-pp').disabled=false; }
+  else { document.getElementById('btn-ss').disabled=true; document.getElementById('btn-sp').disabled=false; }
+}
+
+function stopT(type) {
+  clearInterval(tIntervals[type]); running[type]=false;
+  document.getElementById('t-'+type).classList.remove('running');
+  if (type==='pattern') { document.getElementById('btn-pp').disabled=true; document.getElementById('btn-ss').disabled=false; }
+  else { document.getElementById('btn-sp').disabled=true; }
+}
+
+async function logSession() {
+  if (!isAdmin()) { alert("🔒 READ-ONLY MODE"); return; }
+  const name = document.getElementById('f-name').value.trim();
+  if (!name) { alert("Problem name required."); return; }
+  const btn = document.getElementById('btn-save');
+  btn.textContent='Syncing…'; btn.disabled=true;
+  try {
+    const res = await fetch(SRS_API, { method:"POST", body: JSON.stringify({
+      action:"log_readiness", secret:localStorage.getItem("admin_key"),
+      problemName: name,
+      topic:        document.getElementById('f-topic').value.trim(),
+      patternNamed: document.getElementById('f-pattern').value.trim(),
+      timeToPatternS: elapsed.pattern,
+      timeToSolveM: Math.ceil(elapsed.solve/60),
+      solved: document.getElementById('f-solved').value,
+      notes:  document.getElementById('f-notes').value.trim(),
+    })});
+    const r = await res.json();
+    if (r.status === "Success") {
+      if (document.getElementById('f-solved').value === "Y") confetti({particleCount:80, spread:60});
+      resetForm();
+      loadData();
+    } else { alert("Error: " + (r.message || r.error)); }
+  } catch(e) { alert("Sync failed."); }
+  finally { btn.textContent='💾 Log Session'; btn.disabled=false; }
+}
+
+function resetForm() {
+  elapsed={pattern:0,solve:0};
+  ['pattern','solve'].forEach(t => { document.getElementById('t-'+t).textContent='0:00'; });
+  ['f-name','f-topic','f-pattern','f-notes'].forEach(id => document.getElementById(id).value='');
+  document.getElementById('btn-ps').disabled=false;
+  document.getElementById('btn-pp').disabled=true;
+  document.getElementById('btn-ss').disabled=true;
+  document.getElementById('btn-sp').disabled=true;
+}
+
+async function loadData() {
+  try {
+    const res = await fetch(SRS_API + "?action=readiness&t=" + Date.now());
+    const data = await res.json();
+    renderStats(data.stats||{});
+    renderTrend(data.sessions||[]);
+    renderTable(data.sessions||[]);
+  } catch(e) {
+    document.getElementById('sess-body').innerHTML = '<div class="empty">API not connected — see setup instructions.</div>';
+  }
+}
+
+function renderStats(s) {
+  document.getElementById('s-total').textContent = s.total||0;
+  const r = s.solveRate||0;
+  const re = document.getElementById('s-rate');
+  re.textContent=r+'%'; re.className='stat-val '+(r>=70?'':r>=40?'warn':'danger');
+  const p = s.avgPatternS||0;
+  const pe = document.getElementById('s-pattern');
+  pe.textContent=p+'s'; pe.className='stat-val '+(p<=60?'':p<=120?'warn':'danger');
+  const sl = s.avgSolveM||0;
+  const se = document.getElementById('s-solve');
+  se.textContent=sl+'m'; se.className='stat-val '+(sl<=25?'':sl<=40?'warn':'danger');
+  document.getElementById('sess-count').textContent = (s.total||0)+' sessions';
+}
+
+function renderTrend(sessions) {
+  if (!sessions.length) return;
+  const tm = {};
+  sessions.forEach(s => {
+    if (!s.topic) return;
+    if (!tm[s.topic]) tm[s.topic]={sum:0,n:0};
+    tm[s.topic].sum += s.timeToPatternS; tm[s.topic].n++;
+  });
+  const entries = Object.entries(tm).map(([t,v])=>({t,avg:Math.round(v.sum/v.n)})).sort((a,b)=>b.avg-a.avg).slice(0,8);
+  if (!entries.length) return;
+  const mx = Math.max(...entries.map(e=>e.avg));
+  document.getElementById('trend-bars').innerHTML = entries.map(e => {
+    const pct = Math.round((e.avg/mx)*100);
+    const col = e.avg<=60?'var(--green)':e.avg<=120?'var(--yellow)':'var(--red)';
+    return `<div class="trend-row"><div class="trend-lbl">${e.t}</div><div class="trend-bar-bg"><div class="trend-bar" style="width:${pct}%;background:${col}"></div></div><div class="trend-val">${e.avg}s</div></div>`;
+  }).join('');
+  document.getElementById('trend-card').style.display='block';
+}
+
+function renderTable(sessions) {
+  const body = document.getElementById('sess-body');
+  if (!sessions.length) { body.innerHTML='<div class="empty">No sessions yet. Log your first mock above.</div>'; return; }
+  body.innerHTML = '<table><thead><tr><th>Date</th><th>Problem</th><th>Topic</th><th>Pattern</th><th>Pattern Time</th><th>Solve Time</th><th>Result</th></tr></thead><tbody>' +
+    sessions.slice(0,40).map(s => {
+      const sc = s.solved==='Y'?'color:var(--green)':s.solved==='N'?'color:var(--red)':'color:var(--yellow)';
+      const ic = s.solved==='Y'?'✅':s.solved==='N'?'❌':'⚠️';
+      const pc = s.timeToPatternS<=60?'var(--green)':s.timeToPatternS<=120?'var(--yellow)':'var(--red)';
+      return `<tr class="fade"><td style="color:var(--muted)">${s.date}</td><td style="font-weight:600;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${s.problemName}</td><td><span class="pill" style="background:rgba(96,165,250,.12);color:var(--blue)">${s.topic||'—'}</span></td><td style="color:var(--muted);font-size:.7rem;max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${s.patternNamed||'—'}</td><td style="color:${pc}">${s.timeToPatternS}s</td><td>${s.timeToSolveM}m</td><td style="${sc}">${ic} ${s.solved}</td></tr>`;
+    }).join('') + '</tbody></table>';
+}
+
+// init
+if (!isAdmin()) {
+  document.getElementById('lock-banner').style.display='block';
+  document.getElementById('log-section').style.opacity='0.4';
+  document.getElementById('log-section').style.pointerEvents='none';
+}
+loadData();
+</script>
+</body></html>

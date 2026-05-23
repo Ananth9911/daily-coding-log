@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Outreach CRM | Ananth</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050508;--card:#0d0d14;--border:#1a1a2e;--text:#e2e8f0;--muted:#546e7a;--green:#4ade80;--red:#f87171;--yellow:#fbbf24;--blue:#60a5fa;--purple:#a78bfa;--orange:#fb923c}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'JetBrains Mono',monospace;min-height:100vh;padding:40px 20px}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellipse 70% 35% at 50% -5%,rgba(96,165,250,.05),transparent);pointer-events:none}
+.container{max-width:1100px;margin:0 auto;position:relative}
+.sys-tag{font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
+h1{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;letter-spacing:-1px;color:#fff}
+.subtitle{color:var(--muted);font-size:.78rem;margin-top:6px}
+.header{margin-bottom:32px;border-bottom:1px solid var(--border);padding-bottom:24px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px}
+/* stat row */
+.stat-row{display:flex;gap:12px;margin-bottom:24px;flex-wrap:wrap}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px 20px;flex:1;min-width:130px}
+.stat-val{font-size:1.7rem;font-weight:700;font-family:'Syne',sans-serif}
+.stat-lbl{font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-top:3px}
+/* today targets */
+.targets{background:var(--card);border:1px solid rgba(251,191,36,.25);border-radius:14px;padding:20px;margin-bottom:24px}
+.targets-title{font-family:'Syne',sans-serif;font-size:.9rem;font-weight:700;color:var(--yellow);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.target-item{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:rgba(251,191,36,.04);border:1px solid rgba(251,191,36,.1);border-radius:8px;margin-bottom:8px;gap:12px;flex-wrap:wrap}
+.target-name{font-weight:700;font-size:.82rem;color:#fff}
+.target-meta{font-size:.7rem;color:var(--muted)}
+.target-actions{display:flex;gap:8px;flex-shrink:0}
+/* script templates */
+.templates{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:24px}
+.tmpl-tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.tmpl-tab{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:6px 12px;font-size:.7rem;cursor:pointer;transition:.2s}
+.tmpl-tab.active{border-color:var(--blue);color:var(--blue);background:rgba(96,165,250,.08)}
+.tmpl-body{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px;font-size:.78rem;line-height:1.7;color:#c9d1d9;white-space:pre-wrap;position:relative}
+.copy-btn{position:absolute;top:10px;right:10px;background:var(--border);border:none;color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:.65rem;padding:5px 10px;border-radius:5px;cursor:pointer;transition:.2s}
+.copy-btn:hover{color:#fff;background:#2a2a3a}
+/* table */
+.table-wrap{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.table-head{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+input[type=text],select{background:var(--bg);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:7px;font-family:'JetBrains Mono',monospace;font-size:.75rem;outline:none;transition:.2s}
+input[type=text]:focus,select:focus{border-color:var(--blue)}
+table{width:100%;border-collapse:collapse}
+th{padding:10px 14px;font-size:.6rem;text-transform:uppercase;letter-spacing:1px;color:var(--muted);text-align:left;border-bottom:1px solid var(--border)}
+td{padding:12px 14px;font-size:.78rem;border-bottom:1px solid rgba(26,26,46,.5)}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:rgba(255,255,255,.015)}
+/* status pills */
+.pill{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.s-cold{background:rgba(84,110,122,.2);color:var(--muted)}
+.s-warm{background:rgba(251,191,36,.15);color:var(--yellow)}
+.s-asked{background:rgba(96,165,250,.15);color:var(--blue)}
+.s-referred{background:rgba(74,222,128,.15);color:var(--green)}
+.s-rejected{background:rgba(248,113,113,.15);color:var(--red)}
+.tier1{color:var(--green)}.tier2{color:var(--yellow)}.tier3{color:var(--muted)}
+/* buttons */
+button{font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:700;padding:7px 13px;border-radius:7px;border:1px solid;cursor:pointer;transition:.2s}
+.btn-msg{background:transparent;border-color:var(--blue);color:var(--blue)}
+.btn-msg:hover{background:rgba(96,165,250,.1)}
+.btn-refer{background:transparent;border-color:var(--green);color:var(--green)}
+.btn-refer:hover{background:rgba(74,222,128,.1)}
+.btn-add{background:var(--blue);color:#000;border-color:var(--blue);padding:9px 18px}
+.btn-add:hover{opacity:.85}
+button:disabled{opacity:.35;pointer-events:none}
+.section-title{font-family:'Syne',sans-serif;font-size:.9rem;font-weight:700;color:#fff;margin-bottom:0}
+.empty{text-align:center;padding:36px;color:var(--muted);font-size:.78rem}
+/* lock */
+.lock-banner{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.2);border-radius:10px;padding:12px 16px;font-size:.75rem;color:var(--yellow);margin-bottom:20px;display:none}
+/* modal */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(5px);z-index:100;align-items:center;justify-content:center}
+.modal{background:var(--card);border:1px solid var(--border);width:90%;max-width:480px;border-radius:14px;padding:28px;box-shadow:0 12px 40px rgba(0,0,0,.8)}
+.modal h2{font-family:'Syne',sans-serif;margin-bottom:20px;color:#fff}
+.form-group{margin-bottom:14px}
+.form-group label{display:block;font-size:.65rem;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:6px}
+.form-group input,.form-group select{width:100%}
+.modal-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:24px}
+.btn-cancel{background:transparent;border-color:var(--muted);color:var(--muted)}
+.btn-cancel:hover{color:#fff;border-color:#fff}
+.btn-save{background:var(--blue);color:#000;border-color:var(--blue);padding:10px 20px}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div>
+      <p class="sys-tag">● LinkedIn Outreach CRM</p>
+      <h1>Outreach Command</h1>
+      <p class="subtitle">5 DMs a day. Tier-1 first. Warm before asking.</p>
+    </div>
+    <button class="btn-add" onclick="openModal()">+ Add Contact</button>
+  </div>
+
+  <div class="lock-banner" id="lock-banner">🔒 READ-ONLY MODE — View only. Contact Ananth to get access.</div>
+
+  <div class="stat-row" id="stat-row">
+    <div class="stat-card"><div class="stat-val" id="s-total" style="color:var(--blue)">—</div><div class="stat-lbl">Total Contacts</div></div>
+    <div class="stat-card"><div class="stat-val" id="s-connected" style="color:var(--green)">—</div><div class="stat-lbl">Connected</div></div>
+    <div class="stat-card"><div class="stat-val" id="s-warm" style="color:var(--yellow)">—</div><div class="stat-lbl">Warm</div></div>
+    <div class="stat-card"><div class="stat-val" id="s-referred" style="color:var(--green)">—</div><div class="stat-lbl">Referred</div></div>
+    <div class="stat-card"><div class="stat-val" id="s-today" style="color:var(--orange)">—</div><div class="stat-lbl">DMs Due Today</div></div>
+  </div>
+
+  <div class="targets" id="targets-section" style="display:none">
+    <div class="targets-title">🎯 Today's 5 DMs — Do These Now</div>
+    <div id="targets-list"><div class="empty">No targets queued.</div></div>
+  </div>
+
+  <!-- MESSAGE TEMPLATES -->
+  <div class="templates">
+    <div class="section-title" style="margin-bottom:14px">💬 Script Templates</div>
+    <div class="tmpl-tabs">
+      <div class="tmpl-tab active" onclick="showTmpl(0,this)">A: Connection (Scaler Alumni)</div>
+      <div class="tmpl-tab" onclick="showTmpl(1,this)">B: Connection (Proof of Work)</div>
+      <div class="tmpl-tab" onclick="showTmpl(2,this)">C: The Ask (Post-Connect)</div>
+    </div>
+    <div class="tmpl-body" id="tmpl-body">
+Hi [Name], I noticed you're a Scaler alum now building at [Company]. I'm currently in the Intermediate batch, averaging 150+ problems in my log. I wanted to ask — did you find the HLD module relevant for the interview at [Company], or should I focus more on LLD? Thanks, Ananth.
+      <button class="copy-btn" onclick="copyTmpl()">COPY</button>
+    </div>
+  </div>
+
+  <!-- FULL TABLE -->
+  <div class="table-wrap">
+    <div class="table-head">
+      <div class="section-title">All Contacts</div>
+      <div class="filters">
+        <select id="filter-tier" onchange="applyFilters()">
+          <option value="all">All Tiers</option>
+          <option value="1">Tier 1</option>
+          <option value="2">Tier 2</option>
+          <option value="3">Tier 3</option>
+        </select>
+        <select id="filter-status" onchange="applyFilters()">
+          <option value="all">All Status</option>
+          <option value="Cold">Cold</option>
+          <option value="Warm">Warm</option>
+          <option value="Asked">Asked</option>
+          <option value="Referred">Referred</option>
+          <option value="Rejected">Rejected</option>
+        </select>
+        <input type="text" id="search-box" placeholder="Search company…" oninput="applyFilters()">
+      </div>
+    </div>
+    <div id="table-body"><div class="empty">Loading…</div></div>
+  </div>
+</div>
+
+<!-- ADD CONTACT MODAL -->
+<div class="modal-overlay" id="addModal">
+  <div class="modal">
+    <h2>Add Contact</h2>
+    <div class="form-group"><label>Company</label><input id="m-company" type="text" placeholder="Google"></div>
+    <div style="display:flex;gap:12px">
+      <div class="form-group" style="flex:1"><label>Tier</label>
+        <select id="m-tier"><option value="1">1 — Priority</option><option value="2" selected>2 — Medium</option><option value="3">3 — Long Shot</option></select>
+      </div>
+      <div class="form-group" style="flex:1"><label>Person Name</label><input id="m-person" type="text" placeholder="John Doe"></div>
+    </div>
+    <div class="form-group"><label>Title</label><input id="m-title" type="text" placeholder="Senior SDE / EM"></div>
+    <div class="form-group"><label>Notes</label><input id="m-notes" type="text" placeholder="SRM alum, works on data infra"></div>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+      <button class="btn-save" onclick="addContact()">Save Contact</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── CONFIG — replace with your Weekend GS URL (it can be a new endpoint in weekend.gs) ──
+// For now uses localStorage to simulate — replace API_URL when GS is set up
+const API_URL = "YOUR_OUTREACH_GS_URL_HERE"; // set up a new sheet tab
+const isAdmin = () => localStorage.getItem("admin_key") === "scaler2026";
+
+const TEMPLATES = [
+  `Hi [Name], I noticed you're a Scaler alum now building at [Company]. I'm currently in the Intermediate batch, averaging 150+ problems in my log. I wanted to ask — did you find the HLD module relevant for the interview at [Company], or should I focus more on LLD? Thanks, Ananth.`,
+  `Hi [Name], I've been following [Company]'s engineering blog — specifically the post on [Topic]. I'm a backend data engineer building a high-velocity prep system (ananth9911.github.io) and noticed we share a stack (Java/BigQuery). Would love to connect and follow your work. — Ananth`,
+  `Thanks for connecting, [Name]. I'm targeting the SDE-2 role at [Company]. I've solved 400+ DSA problems and have strong data pipeline experience — metrics at ananth9911.github.io. Since you're at [Company], would you be open to referring me? Happy to send my resume. — Ananth`
+];
+
+let allContacts = [];
+let currentTmpl = 0;
+
+function showTmpl(i, el) {
+  currentTmpl = i;
+  document.querySelectorAll('.tmpl-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('tmpl-body').childNodes[0].textContent = '\n' + TEMPLATES[i] + '\n      ';
+}
+
+function copyTmpl() {
+  navigator.clipboard.writeText(TEMPLATES[currentTmpl]);
+  const btn = document.querySelector('.copy-btn');
+  const orig = btn.textContent; btn.textContent='COPIED!'; btn.style.color='var(--green)';
+  setTimeout(()=>{ btn.textContent=orig; btn.style.color=''; }, 1500);
+}
+
+// Simulated data — replace with actual GS fetch when Outreach sheet is set up
+async function loadData() {
+  try {
+    if (API_URL === "YOUR_OUTREACH_GS_URL_HERE") {
+      // Demo mode with sample data
+      allContacts = getDemoContacts();
+    } else {
+      const res = await fetch(API_URL + "?action=outreach&t=" + Date.now());
+      const d   = await res.json();
+      allContacts = d.rows || [];
+    }
+    renderStats(); renderTargets(); renderTable(allContacts);
+  } catch(e) {
+    document.getElementById('table-body').innerHTML = '<div class="empty">Connect to GS backend to load live data.</div>';
+    allContacts = getDemoContacts();
+    renderStats(); renderTargets(); renderTable(allContacts);
+  }
+}
+
+function getDemoContacts() {
+  return [
+    {company:"Google",tier:"1",person:"Priya Sharma",title:"SWE III",connected:"Y",lastMsg:"2026-05-10",status:"Warm",notes:"SRM alum",daysSince:13},
+    {company:"Stripe",tier:"1",person:"Rahul Gupta",title:"SDE 2",connected:"Y",lastMsg:"2026-05-01",status:"Cold",notes:"",daysSince:22},
+    {company:"PhonePe",tier:"1",person:"Aditya Kumar",title:"SDE 2",connected:"Y",lastMsg:"2026-04-20",status:"Warm",notes:"",daysSince:33},
+    {company:"Zepto",tier:"2",person:"Meena R",title:"Senior SDE",connected:"N",lastMsg:"",status:"Cold",notes:"",daysSince:null},
+    {company:"Groww",tier:"2",person:"Vikram S",title:"EM",connected:"Y",lastMsg:"2026-05-18",status:"Asked",notes:"Sent request",daysSince:5},
+    {company:"Adobe",tier:"2",person:"Sana M",title:"CS2",connected:"Y",lastMsg:"2026-04-15",status:"Referred",notes:"Referred!",daysSince:38},
+  ];
+}
+
+function renderStats() {
+  document.getElementById('s-total').textContent     = allContacts.length;
+  document.getElementById('s-connected').textContent = allContacts.filter(c=>c.connected==="Y").length;
+  document.getElementById('s-warm').textContent      = allContacts.filter(c=>c.status==="Warm").length;
+  document.getElementById('s-referred').textContent  = allContacts.filter(c=>c.status==="Referred").length;
+  const targets = allContacts.filter(c=>c.connected==="Y"&&c.status!=="Referred"&&c.status!=="Rejected"&&(c.daysSince===null||c.daysSince>=14));
+  document.getElementById('s-today').textContent     = Math.min(targets.length, 5);
+}
+
+function renderTargets() {
+  const targets = allContacts.filter(c=>c.connected==="Y"&&c.status!=="Referred"&&c.status!=="Rejected"&&(c.daysSince===null||c.daysSince>=14)).slice(0,5);
+  const el = document.getElementById('targets-list');
+  if (!targets.length) { el.innerHTML='<div class="empty">No urgent outreach today. Keep connecting!</div>'; }
+  else {
+    el.innerHTML = targets.map(c=>`
+      <div class="target-item">
+        <div><div class="target-name">${c.person} — ${c.company}</div><div class="target-meta">${c.title} • ${c.daysSince?c.daysSince+'d since last msg':'Never messaged'}</div></div>
+        <div class="target-actions">
+          <button class="btn-msg" onclick="copyScriptFor('${c.status}','${c.company}','${c.person}')">📋 Copy Script</button>
+        </div>
+      </div>`).join('');
+  }
+  document.getElementById('targets-section').style.display='block';
+}
+
+function copyScriptFor(status, company, person) {
+  const tmplIdx = status==='Warm'?2:1;
+  const script = TEMPLATES[tmplIdx].replace(/\[Company\]/g,company).replace(/\[Name\]/g,person);
+  navigator.clipboard.writeText(script);
+  alert(`Script for ${person} at ${company} copied! Paste into LinkedIn.`);
+}
+
+function applyFilters() {
+  const tier   = document.getElementById('filter-tier').value;
+  const status = document.getElementById('filter-status').value;
+  const search = document.getElementById('search-box').value.toLowerCase();
+  const filtered = allContacts.filter(c =>
+    (tier==='all'   || c.tier===tier) &&
+    (status==='all' || c.status===status) &&
+    (c.company.toLowerCase().includes(search) || (c.person||'').toLowerCase().includes(search))
+  );
+  renderTable(filtered);
+}
+
+function renderTable(contacts) {
+  const el = document.getElementById('table-body');
+  if (!contacts.length) { el.innerHTML='<div class="empty">No contacts match.</div>'; return; }
+  el.innerHTML = '<table><thead><tr><th>Tier</th><th>Company</th><th>Person</th><th>Title</th><th>Connected</th><th>Last Msg</th><th>Status</th><th>Actions</th></tr></thead><tbody>' +
+    contacts.map((c,i) => {
+      const tc = c.tier==='1'?'tier1':c.tier==='2'?'tier2':'tier3';
+      const statusClass = 's-'+c.status.toLowerCase();
+      const connIcon = c.connected==='Y'?'<span style="color:var(--green)">✓ Yes</span>':'<span style="color:var(--muted)">— No</span>';
+      const lastMsg = c.lastMsg || '—';
+      const urgent = c.daysSince && c.daysSince>=14 ? 'style="background:rgba(251,191,36,.04)"':'';
+      return `<tr ${urgent}>
+        <td class="${tc}">T${c.tier}</td>
+        <td style="font-weight:700;color:#fff">${c.company}</td>
+        <td>${c.person||'—'}</td>
+        <td style="color:var(--muted);font-size:.72rem">${c.title||'—'}</td>
+        <td>${connIcon}</td>
+        <td style="color:var(--muted)">${lastMsg}${c.daysSince?` <span style="font-size:.65rem;color:${c.daysSince>=14?'var(--red)':'var(--muted)'}">(${c.daysSince}d)</span>`:''}</td>
+        <td><span class="pill ${statusClass}">${c.status}</span></td>
+        <td><button class="btn-msg" onclick="copyScriptFor('${c.status}','${c.company}','${c.person||''}')">📋</button></td>
+      </tr>`;
+    }).join('') + '</tbody></table>';
+}
+
+function openModal() {
+  if (!isAdmin()) { alert("🔒 READ-ONLY"); return; }
+  document.getElementById('addModal').style.display='flex';
+}
+function closeModal() { document.getElementById('addModal').style.display='none'; }
+
+async function addContact() {
+  const company = document.getElementById('m-company').value.trim();
+  if (!company) { alert("Company required"); return; }
+  if (API_URL !== "YOUR_OUTREACH_GS_URL_HERE") {
+    await fetch(API_URL, {method:"POST", body:JSON.stringify({
+      action:"add_outreach", secret:localStorage.getItem("admin_key"),
+      company, tier: document.getElementById('m-tier').value,
+      person: document.getElementById('m-person').value,
+      title:  document.getElementById('m-title').value,
+      notes:  document.getElementById('m-notes').value,
+    })});
+  }
+  closeModal(); loadData();
+}
+
+if (!isAdmin()) document.getElementById('lock-banner').style.display='block';
+loadData();
+</script>
+</body></html>
