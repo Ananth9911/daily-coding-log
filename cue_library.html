@@ -19,7 +19,6 @@ h1{font-size:1.7rem;font-weight:700;letter-spacing:-.5px}
 .count-pill{font-family:var(--fm);font-size:.7rem;color:var(--muted);background:var(--bg2);border:1px solid var(--border);padding:5px 12px;border-radius:14px}
 .nav-link{font-family:var(--fm);font-size:.7rem;color:var(--muted);text-decoration:none;padding:6px 12px;border:1px solid var(--border);border-radius:6px;transition:.18s}
 .nav-link:hover{color:var(--text);border-color:var(--border2)}
-
 /* PATTERN PERFORMANCE */
 .perf-section{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:24px}
 .perf-title{font-family:var(--fm);font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
@@ -34,7 +33,6 @@ h1{font-size:1.7rem;font-weight:700;letter-spacing:-.5px}
 .perf-bar{height:100%;border-radius:3px}
 .perf-pct{font-family:var(--fm);font-size:.6rem;width:28px;text-align:right;flex-shrink:0}
 .perf-count{font-family:var(--fm);font-size:.56rem;color:var(--muted);margin-top:2px}
-
 /* CONTROLS */
 .controls{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap;align-items:center}
 .search-input{font-family:var(--fd);background:var(--card);border:1px solid var(--border);color:var(--text);padding:9px 14px;border-radius:8px;font-size:.82rem;outline:none;min-width:220px;transition:.2s}
@@ -43,51 +41,36 @@ h1{font-size:1.7rem;font-weight:700;letter-spacing:-.5px}
 .tf{font-family:var(--fm);font-size:.62rem;padding:5px 11px;border-radius:6px;border:1px solid var(--border);background:var(--bg2);color:var(--muted);cursor:pointer;transition:.18s;white-space:nowrap}
 .tf:hover{color:var(--text);border-color:var(--border2)}
 .tf.active{border-color:var(--purple);color:var(--purple);background:rgba(168,85,247,.07)}
-
 /*
- CUE GRID — CSS MASONRY using column-count
- THE FIX: Cards use display:block (not flex/grid children)
- and break-inside:avoid to prevent splitting.
- Column-count handles the masonry layout.
+ CUE GRID — CSS Grid (3 columns, guaranteed cross-browser)
+ Replaces column-count which caused vertical stacking in Chrome
 */
 .cue-grid{
-  column-count:3;
-  column-gap:14px;
-  /* orphans/widows prevent single-line orphans */
-  orphans:1;
-  widows:1;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  align-items:start;
 }
-@media(max-width:1000px){.cue-grid{column-count:2}}
-@media(max-width:620px){.cue-grid{column-count:1}}
-
+@media(max-width:1000px){.cue-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.cue-grid{grid-template-columns:1fr}}
 .cue-card{
-  /* CRITICAL: break-inside:avoid prevents card splitting across columns */
-  break-inside:avoid;
-  -webkit-column-break-inside:avoid;
-  page-break-inside:avoid;
-  /* display:inline-block is required for column-count to work with break-inside */
-  display:inline-block;
+  display:block;
   width:100%;
   background:var(--card);
   border:1px solid var(--border);
   border-radius:12px;
   padding:16px;
-  margin-bottom:14px;
   cursor:pointer;
   transition:border-color .18s, transform .18s;
   border-left:3px solid transparent;
-  /* vertical-align top prevents gap at bottom of inline-block */
-  vertical-align:top;
 }
 .cue-card.struggled{border-left-color:var(--red)}
 .cue-card.smooth{border-left-color:var(--green)}
 .cue-card:hover{border-color:rgba(168,85,247,.3);transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,.4)}
-
 .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:6px;margin-bottom:8px}
 .topic-badge{font-family:var(--fm);font-size:.58rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;padding:2px 7px;border-radius:4px;background:rgba(168,85,247,.1);color:var(--purple);border:1px solid rgba(168,85,247,.2);flex-shrink:0}
 .diff-badge{font-family:var(--fm);font-size:.58rem;font-weight:700;padding:2px 6px;border-radius:4px;flex-shrink:0}
 .dH{background:rgba(239,68,68,.12);color:var(--red)}.dM{background:rgba(234,179,8,.12);color:var(--yellow)}.dL,.dE{background:rgba(57,211,83,.1);color:var(--green)}
-
 /* LIMIT card text height — this is the KEY fix for the vertical issue */
 .cue-text{
   font-size:.78rem;color:var(--text);line-height:1.6;margin-bottom:8px;
@@ -100,7 +83,6 @@ h1{font-size:1.7rem;font-weight:700;letter-spacing:-.5px}
 .cue-oneliner{font-family:var(--fm);font-size:.65rem;color:var(--blue);border-top:1px solid var(--border);padding-top:7px;margin-top:6px;
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .cue-example{font-family:var(--fm);font-size:.6rem;color:var(--muted);margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-
 /* MODAL */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(10px);z-index:100;align-items:center;justify-content:center;padding:20px}
 .modal{background:var(--card);border:1px solid rgba(168,85,247,.25);width:100%;max-width:580px;border-radius:16px;padding:28px;position:relative;max-height:88vh;overflow-y:auto}
@@ -132,24 +114,19 @@ h1{font-size:1.7rem;font-weight:700;letter-spacing:-.5px}
       <a href="dashboard.html" class="nav-link">← Hub</a>
     </div>
   </div>
-
   <div class="debug" id="debug"></div>
-
   <!-- PATTERN PERFORMANCE -->
   <div class="perf-section">
     <div class="perf-title">⚡ Pattern Performance — Struggle Rate</div>
     <span class="toggle-perf" id="perf-toggle" onclick="togglePerf()">▼ Show by pattern</span>
     <div class="perf-grid" id="perf-grid" style="display:none"></div>
   </div>
-
   <div class="controls">
     <input class="search-input" id="search" type="text" placeholder="Search patterns, topics, problems…" oninput="render()">
     <div class="topic-filters" id="topic-filters"></div>
   </div>
-
   <div class="cue-grid" id="cue-grid"><div class="empty">Loading cues…</div></div>
 </div>
-
 <div class="modal-overlay" id="modal" onclick="maybeClose(event)">
   <div class="modal">
     <button class="mc" onclick="closeModal()">✕</button>
@@ -169,13 +146,10 @@ h1{font-size:1.7rem;font-weight:700;letter-spacing:-.5px}
     </div>
   </div>
 </div>
-
 <script>
 const SRS_API  = "https://script.google.com/macros/s/AKfycbzcAr2oVXOKjoSMPimm3a0ARrcBSAL8geTNR6WQ8y9aE9WA87U91qm13YKOzShZ1d-R/exec";
 const CUES_RAW = "https://raw.githubusercontent.com/Ananth9911/daily-coding-log/main/cues.json";
-
 let allCues=[], activeTopic='all', _filtered=[];
-
 function buildPerf(cues){
   const pm={};
   cues.forEach(c=>{
@@ -202,28 +176,24 @@ function buildPerf(cues){
     </div>`;
   }).join('');
 }
-
 let perfOpen=false;
 function togglePerf(){
   perfOpen=!perfOpen;
   document.getElementById('perf-grid').style.display=perfOpen?'flex':'none';
   document.getElementById('perf-toggle').textContent=perfOpen?'▲ Hide':'▼ Show by pattern';
 }
-
 function buildTopicFilters(){
   const topics=[...new Set(allCues.map(c=>c.topic))].sort();
   document.getElementById('topic-filters').innerHTML=
     `<button class="tf active" onclick="setTopic('all',this)">All (${allCues.length})</button>`+
     topics.map(t=>`<button class="tf" onclick="setTopic('${t.replace(/'/g,"\\'")}',this)">${t} (${allCues.filter(c=>c.topic===t).length})</button>`).join('');
 }
-
 function setTopic(t,el){
   activeTopic=t;
   document.querySelectorAll('.tf').forEach(b=>b.classList.remove('active'));
   el.classList.add('active');
   render();
 }
-
 function render(){
   const q=document.getElementById('search').value.toLowerCase();
   _filtered=allCues.filter(c=>
@@ -233,7 +203,6 @@ function render(){
   document.getElementById('count-pill').textContent=`${_filtered.length} / ${allCues.length} cues`;
   const grid=document.getElementById('cue-grid');
   if(!_filtered.length){grid.innerHTML='<div class="empty">No cues match. Try a different search.</div>';return;}
-
   // Build HTML string — don't use innerHTML += in a loop (causes reflow per item)
   const html=_filtered.map((c,i)=>{
     const fri=c.friction&&c.friction.toLowerCase().includes('struggled')?'struggled':'smooth';
@@ -250,7 +219,6 @@ function render(){
   }).join('');
   grid.innerHTML=html;
 }
-
 function openModal(i){
   const c=_filtered[i];
   document.getElementById('m-topic').textContent=c.topic+(c.difficulty?' · '+c.difficulty:'');
@@ -264,7 +232,6 @@ function openModal(i){
 }
 function closeModal(){document.getElementById('modal').style.display='none';}
 function maybeClose(e){if(e.target===document.getElementById('modal'))closeModal();}
-
 async function loadCues(){
   let source='';
   try{
@@ -294,7 +261,6 @@ async function loadCues(){
   buildPerf(allCues);
   render();
 }
-
 loadCues();
 </script>
 </body></html>
