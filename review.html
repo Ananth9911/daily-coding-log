@@ -1,407 +1,449 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SRS Neural Engine | Ananth</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <style>
-        :root { --bg: #09090b; --card: #18181b; --border: #3f3f46; --primary: #39d353; --danger: #ef4444; --text: #f4f4f5; --muted: #a1a1aa; --accent: #3b82f6; }
-        body { background-color: var(--bg); background-image: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.03) 0%, transparent 50%); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; padding: 40px 20px; min-height: 100vh; }
-        .container { max-width: 800px; margin: 0 auto; }
-        .header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 30px; flex-wrap: wrap; gap: 15px; }
-        h1 { margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; letter-spacing: -0.5px; }
-        .date-chip { background: rgba(255,255,255,0.05); padding: 6px 14px; border-radius: 50px; font-size: 0.85rem; color: var(--muted); border: 1px solid var(--border); }
-        .problem-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; margin-bottom: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: all 0.3s ease; }
-        .problem-card:hover { border-color: #71717a; }
-        .problem-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
-        .problem-info h3 { margin: 0 0 10px 0; font-size: 1.2rem; font-weight: 600; }
-        .meta-tags { display: flex; gap: 8px; flex-wrap: wrap; }
-        .badge { padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
-        .b-topic { background: rgba(255, 255, 255, 0.1); color: #fff; border: 1px solid #555; }
-        .b-phase { background: rgba(255, 255, 255, 0.05); color: #d4d4d8; border: 1px solid var(--border); }
-        .b-attempt { background: rgba(255, 255, 255, 0.1); color: #fff; border: 1px solid #555; }
-        .b-date { background: rgba(59, 130, 246, 0.1); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.2); }
-        .actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
-        button { padding: 10px 18px; border-radius: 8px; font-weight: 600; font-size: 0.85rem; border: none; cursor: pointer; transition: 0.2s; font-family: 'Inter', sans-serif; }
-        .btn-hint { background: transparent; color: var(--muted); border: 1px solid var(--border); }
-        .btn-hint:hover { color: var(--text); border-color: #777; }
-        .btn-timer { background: var(--accent); color: #fff; }
-        .btn-timer:hover { opacity: 0.8; }
-        .timer-display { font-family: 'Space Grotesk', monospace; font-size: 1.1rem; font-weight: 700; display: none; width: 60px; text-align: center; }
-        .timer-danger { color: var(--danger); animation: pulse 1s infinite; }
-        .btn-struggled { background: transparent; color: #fff; border: 1px dashed #fff; margin-left: auto; }
-        .btn-struggled:hover { background: rgba(255,255,255,0.1); }
-        .btn-smooth { background: #fff; color: #000; border: 1px solid #fff; }
-        .btn-smooth:hover { opacity: 0.8; }
-        .btn-add { background: transparent; color: var(--primary); border: 1px solid var(--primary); }
-        .btn-add:hover { background: rgba(57, 211, 83, 0.1); box-shadow: 0 0 15px rgba(57,211,83,0.2); }
-        button:disabled { opacity: 0.5; pointer-events: none; }
-        .hint-box { display: none; background: rgba(59, 130, 246, 0.05); padding: 16px; border-radius: 8px; margin-top: 20px; font-size: 0.95rem; color: #cbd5e1; border-left: 3px solid var(--accent); line-height: 1.5; border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-        .empty-state { text-align: center; padding: 60px 20px; background: var(--card); border-radius: 16px; border: 1px dashed #3f3f46; }
-        
-        /* Modal Styles */
-        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); z-index: 100; align-items: center; justify-content: center; }
-        .modal { background: var(--card); border: 1px solid var(--border); width: 90%; max-width: 500px; border-radius: 16px; padding: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.8); }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; font-size: 0.85rem; color: var(--muted); margin-bottom: 8px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
-        .form-control { width: 100%; box-sizing: border-box; background: #0a0a0a; border: 1px solid var(--border); color: #fff; padding: 12px 15px; border-radius: 8px; font-family: 'Inter'; outline: none; transition: 0.2s; }
-        .form-control:focus { border-color: var(--accent); }
-        .modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 30px; }
-        .btn-cancel { background: transparent; border: 1px solid var(--muted); color: var(--muted); }
-        .btn-cancel:hover { color: #fff; border-color: #fff; }
-        
-        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
-    </style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SRS Engine | Ananth</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<style>
+:root{--bg:#030303;--bg2:#0a0a0a;--bg3:#111;--card:#0d0d0d;--border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.15);--text:#f4f4f5;--muted:#71717a;--dim:#3f3f46;--green:#39d353;--blue:#3b82f6;--yellow:#eab308;--red:#ef4444;--purple:#a855f7;--fd:'Space Grotesk',sans-serif;--fm:'IBM Plex Mono',monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--fd);min-height:100vh;padding:40px 20px;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse at 50% 0%,black 30%,transparent 80%);pointer-events:none;z-index:0}
+.wrap{max-width:820px;margin:0 auto;position:relative;z-index:1}
+
+/* HEADER */
+.hdr{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1px solid var(--border);padding-bottom:20px;margin-bottom:28px;flex-wrap:wrap;gap:14px}
+.hdr-left{display:flex;align-items:center;gap:12px}
+.sys-dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:pulse 2s ease infinite;flex-shrink:0}
+h1{font-size:1.7rem;font-weight:700;letter-spacing:-.5px}
+.sub{font-family:var(--fm);font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin-top:3px}
+.hdr-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.date-chip{font-family:var(--fm);font-size:.72rem;color:var(--muted);background:var(--bg2);border:1px solid var(--border);padding:6px 14px;border-radius:20px}
+
+/* PROPORTION BAR */
+.proportion-bar{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 20px;margin-bottom:20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.prop-label{font-family:var(--fm);font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;flex-shrink:0}
+.prop-segments{display:flex;gap:3px;flex:1;min-width:160px;height:6px;border-radius:3px;overflow:hidden}
+.prop-seg{height:100%;border-radius:3px;transition:width .6s ease}
+.prop-chips{display:flex;gap:10px;flex-wrap:wrap}
+.prop-chip{font-family:var(--fm);font-size:.65rem;padding:3px 9px;border-radius:4px;display:flex;align-items:center;gap:5px;white-space:nowrap}
+.pc-struggled{background:rgba(239,68,68,.12);color:var(--red);border:1px solid rgba(239,68,68,.2)}
+.pc-smooth{background:rgba(57,211,83,.1);color:var(--green);border:1px solid rgba(57,211,83,.2)}
+.pc-new{background:rgba(168,85,247,.1);color:var(--purple);border:1px solid rgba(168,85,247,.2)}
+.pc-total{background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--border)}
+
+/* FILTER BAR */
+.filter-bar{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;align-items:center}
+.filter-label{font-family:var(--fm);font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px}
+.filter-btn{font-family:var(--fm);font-size:.65rem;padding:5px 11px;border-radius:6px;border:1px solid var(--border);background:var(--bg2);color:var(--muted);cursor:pointer;transition:.18s;white-space:nowrap}
+.filter-btn:hover{color:var(--text);border-color:var(--border2)}
+.filter-btn.active{border-color:var(--green);color:var(--green);background:rgba(57,211,83,.07)}
+.filter-sep{width:1px;height:18px;background:var(--border);flex-shrink:0}
+
+/* CARDS */
+.problem-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;margin-bottom:14px;transition:border-color .2s;position:relative;overflow:hidden}
+.problem-card:hover{border-color:var(--border2)}
+.problem-card.card-struggled{border-left:3px solid var(--red)}
+.problem-card.card-smooth{border-left:3px solid var(--green)}
+.problem-card.card-new{border-left:3px solid var(--purple)}
+.card-header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.card-title{font-size:1.1rem;font-weight:600;color:var(--text);line-height:1.3;flex:1}
+.pattern-tag{font-family:var(--fm);font-size:.65rem;padding:4px 10px;border-radius:5px;background:rgba(59,130,246,.1);color:var(--blue);border:1px solid rgba(59,130,246,.2);white-space:nowrap;flex-shrink:0}
+.meta-row{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px}
+.badge{font-family:var(--fm);padding:3px 8px;border-radius:4px;font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.b-topic{background:rgba(255,255,255,.07);color:#d4d4d8;border:1px solid var(--border)}
+.b-phase-struggled{background:rgba(239,68,68,.1);color:var(--red);border:1px solid rgba(239,68,68,.2)}
+.b-phase-smooth{background:rgba(57,211,83,.08);color:var(--green);border:1px solid rgba(57,211,83,.18)}
+.b-phase-new{background:rgba(168,85,247,.1);color:var(--purple);border:1px solid rgba(168,85,247,.2)}
+.b-phase-mastered{background:rgba(168,85,247,.15);color:#c084fc;border:1px solid rgba(168,85,247,.3)}
+.b-attempt{background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--border)}
+.b-date{background:rgba(59,130,246,.08);color:#60a5fa;border:1px solid rgba(59,130,246,.15)}
+.actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+button{font-family:var(--fd);font-weight:600;font-size:.82rem;padding:9px 16px;border-radius:8px;border:none;cursor:pointer;transition:.18s}
+.btn-hint{background:transparent;color:var(--muted);border:1px solid var(--border)}
+.btn-hint:hover{color:var(--text);border-color:var(--border2)}
+.btn-timer{background:rgba(59,130,246,.15);color:var(--blue);border:1px solid rgba(59,130,246,.3)}
+.btn-timer:hover{background:rgba(59,130,246,.25)}
+.timer-display{font-family:var(--fm);font-size:1rem;font-weight:600;display:none;width:55px;text-align:center;color:var(--yellow)}
+.timer-danger{color:var(--red);animation:pulse 1s infinite}
+.btn-struggled{background:transparent;color:var(--red);border:1px dashed rgba(239,68,68,.5);margin-left:auto}
+.btn-struggled:hover{background:rgba(239,68,68,.08);border-color:var(--red)}
+.btn-smooth{background:var(--green);color:#000;border:1px solid var(--green)}
+.btn-smooth:hover{opacity:.85;box-shadow:0 0 16px rgba(57,211,83,.3)}
+.btn-add{background:transparent;color:var(--green);border:1px solid rgba(57,211,83,.4)}
+.btn-add:hover{background:rgba(57,211,83,.08)}
+button:disabled{opacity:.4;pointer-events:none}
+.hint-box{display:none;background:rgba(59,130,246,.05);padding:14px 16px;border-radius:8px;margin-top:16px;font-size:.88rem;color:#cbd5e1;border-left:3px solid var(--blue);line-height:1.65;border:1px solid rgba(59,130,246,.15);border-left-width:3px}
+
+/* EMPTY */
+.empty-state{text-align:center;padding:60px 20px;background:var(--card);border-radius:16px;border:1px dashed var(--border2)}
+.empty-state h2{color:var(--green);margin-bottom:8px}
+.empty-state p{color:var(--muted);font-family:var(--fm);font-size:.78rem}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);backdrop-filter:blur(8px);z-index:100;align-items:center;justify-content:center}
+.modal{background:var(--card);border:1px solid var(--border2);width:90%;max-width:500px;border-radius:16px;padding:28px;box-shadow:0 20px 60px rgba(0,0,0,.8)}
+.modal h2{font-size:1.2rem;margin-bottom:20px}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-family:var(--fm);font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.form-control{width:100%;background:var(--bg2);border:1px solid var(--border);color:var(--text);padding:10px 14px;border-radius:8px;font-family:var(--fd);font-size:.85rem;outline:none;transition:.2s}
+.form-control:focus{border-color:var(--green)}
+.modal-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:24px}
+.btn-cancel{background:transparent;border:1px solid var(--border2);color:var(--muted)}
+.btn-cancel:hover{color:var(--text)}
+.btn-save{background:var(--green);color:#000}
+.btn-save:hover{opacity:.85}
+.nav-link{font-family:var(--fm);font-size:.7rem;color:var(--muted);text-decoration:none;padding:6px 12px;border:1px solid var(--border);border-radius:6px;transition:.18s}
+.nav-link:hover{color:var(--text);border-color:var(--border2)}
+@keyframes pulse{50%{opacity:.4}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.fade{animation:fadeIn .3s ease}
+</style>
 </head>
 <body>
-
-<div class="container">
-    <div class="header">
-        <div>
-            <p style="margin: 0; color: #fff; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px;">• System Online</p>
-            <h1>Nightly Review Queue</h1>
-        </div>
-        <div style="display: flex; align-items: center; gap: 15px;">
-            <button class="btn-add" onclick="openModal()">+ Log Problem</button>
-            <div class="date-chip" id="date-display"></div>
-        </div>
+<div class="wrap">
+  <div class="hdr">
+    <div class="hdr-left">
+      <div class="sys-dot"></div>
+      <div>
+        <h1>SRS Engine</h1>
+        <div class="sub">Spaced Repetition · Struggled 4d · Smooth 8d</div>
+      </div>
     </div>
-    <div id="loading" class="empty-state"><h2 style="color: var(--muted); animation: pulse 1.5s infinite;">Syncing Neural Cache...</h2></div>
-    <div id="queue"></div>
+    <div class="hdr-right">
+      <button class="btn-add" onclick="openModal()">+ Log Problem</button>
+      <div class="date-chip" id="date-display"></div>
+      <a href="dashboard.html" class="nav-link">← Hub</a>
+    </div>
+  </div>
+
+  <!-- PROPORTION INDICATOR -->
+  <div class="proportion-bar" id="proportion-bar" style="display:none">
+    <div class="prop-label">Today's Mix</div>
+    <div class="prop-segments" id="prop-segs"></div>
+    <div class="prop-chips" id="prop-chips"></div>
+  </div>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar">
+    <span class="filter-label">Filter</span>
+    <button class="filter-btn active" onclick="setFilter('all',this)">All Due</button>
+    <button class="filter-btn" onclick="setFilter('Struggled',this)">⚠ Struggled</button>
+    <button class="filter-btn" onclick="setFilter('Smooth',this)">✓ Smooth</button>
+    <button class="filter-btn" onclick="setFilter('New',this)">★ New</button>
+    <div class="filter-sep"></div>
+    <span class="filter-label">Topic</span>
+    <div id="topic-filters" style="display:flex;gap:6px;flex-wrap:wrap"></div>
+  </div>
+
+  <div id="loading" class="empty-state"><h2 style="color:var(--muted);animation:pulse 1.5s infinite">Syncing…</h2></div>
+  <div id="queue"></div>
 </div>
 
 <div class="modal-overlay" id="addModal">
-    <div class="modal">
-        <h2 style="margin: 0 0 20px 0; font-family: 'Space Grotesk';">Log New Problem</h2>
-        
-        <div class="form-group">
-            <label>Problem Name</label>
-            <input type="text" id="p-name" class="form-control" placeholder="e.g. Morris Inorder Traversal">
-        </div>
-        
-        <div style="display: flex; gap: 15px;">
-            <div class="form-group" style="flex: 1;">
-                <label>Topic</label>
-                <input type="text" id="p-topic" class="form-control" placeholder="e.g. Trees">
-            </div>
-            <div class="form-group" style="flex: 1;">
-                <label>Source</label>
-                <select id="p-source" class="form-control">
-                    <option value="Scaler">Scaler</option>
-                    <option value="LeetCode">LeetCode</option>
-                    <option value="Other">Other</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label>Initial Status</label>
-            <select id="p-phase" class="form-control">
-                <option value="Smooth">🚀 Smooth (Review in 8 Days)</option>
-                <option value="Struggled">⚠️ Struggled (Review in 4 Days)</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label>Hint / Core Logic (Optional)</label>
-            <input type="text" id="p-hint" class="form-control" placeholder="What is the trick to solve this?">
-        </div>
-
-        <div class="modal-actions">
-            <button class="btn-cancel" onclick="closeModal()" id="btn-cancel">Cancel</button>
-            <button class="btn-smooth" onclick="submitProblem()" id="btn-save">Save & Sync</button>
-        </div>
+  <div class="modal">
+    <h2>Log New Problem</h2>
+    <div class="form-group"><label>Problem Name *</label><input class="form-control" id="p-name" type="text" placeholder="Two Sum"></div>
+    <div class="form-group"><label>Topic</label><input class="form-control" id="p-topic" type="text" placeholder="Array"></div>
+    <div class="form-group"><label>Pattern Tag (from cue library)</label><input class="form-control" id="p-pattern" type="text" placeholder="Two Pointer | HashMap"></div>
+    <div class="form-group"><label>Source</label>
+      <select class="form-control" id="p-source"><option value="Scaler">Scaler</option><option value="LeetCode">LeetCode</option><option value="NeetCode">NeetCode</option></select>
     </div>
+    <div class="form-group"><label>Initial Friction</label>
+      <select class="form-control" id="p-phase"><option value="Smooth">Smooth — 8d review</option><option value="Struggled">Struggled — 4d review</option></select>
+    </div>
+    <div class="form-group"><label>One-Line Hint</label><input class="form-control" id="p-hint" type="text" placeholder="Use hashmap for O(1) lookup…"></div>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+      <button class="btn-save" id="btn-save" onclick="submitProblem()">Save & Sync</button>
+    </div>
+  </div>
 </div>
 
 <script>
-    const API_URL = "https://script.google.com/macros/s/AKfycbzcAr2oVXOKjoSMPimm3a0ARrcBSAL8geTNR6WQ8y9aE9WA87U91qm13YKOzShZ1d-R/exec";
-    let activeTimers = {}; 
+const API_URL = "https://script.google.com/macros/s/AKfycbzcAr2oVXOKjoSMPimm3a0ARrcBSAL8geTNR6WQ8y9aE9WA87U91qm13YKOzShZ1d-R/exec";
+let activeTimers = {};
+let allData = [];
+let currentFilter = 'all';
+let currentTopicFilter = 'all';
 
-    document.getElementById('date-display').innerText = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+document.getElementById('date-display').innerText = new Date().toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'});
 
-    /* MODAL LOGIC */
-    function openModal() {
-        if (localStorage.getItem("admin_key") !== "scaler2026") {
-            alert("🔒 READ-ONLY MODE: You cannot inject data into Ananth's database.");
-            return;
-        }
-        document.getElementById('addModal').style.display = 'flex';
-    }
-    
-    function closeModal() {
-        document.getElementById('addModal').style.display = 'none';
-        document.getElementById('p-name').value = '';
-        document.getElementById('p-topic').value = '';
-        document.getElementById('p-hint').value = '';
-    }
+// ── MODAL ──────────────────────────────────────────────────────
+function openModal() {
+  if (localStorage.getItem("admin_key") !== "scaler2026") { alert("🔒 READ-ONLY MODE"); return; }
+  document.getElementById('addModal').style.display = 'flex';
+}
+function closeModal() {
+  document.getElementById('addModal').style.display = 'none';
+  ['p-name','p-topic','p-pattern','p-hint'].forEach(id => document.getElementById(id).value = '');
+}
 
-    async function submitProblem() {
-        const name = document.getElementById('p-name').value.trim();
-        if (!name) return alert("Problem Name is required.");
+async function submitProblem() {
+  const name = document.getElementById('p-name').value.trim();
+  if (!name) return alert("Problem Name is required.");
+  const btn = document.getElementById('btn-save');
+  btn.innerText = "Syncing…"; btn.disabled = true;
+  try {
+    const res = await fetch(API_URL, { method:"POST", body: JSON.stringify({
+      action:"add_problem", secret:localStorage.getItem("admin_key"),
+      name, topic: document.getElementById('p-topic').value.trim()||"Uncategorized",
+      source: document.getElementById('p-source').value,
+      phase: document.getElementById('p-phase').value,
+      hint: document.getElementById('p-hint').value.trim(),
+      notes: document.getElementById('p-pattern').value.trim(),
+    })});
+    const r = await res.json();
+    if (r.error||r.status==="Error") { alert("Error: "+(r.error||r.message)); return; }
+    closeModal(); loadQueue();
+  } catch(e) { alert("Sync failed."); }
+  finally { btn.innerText="Save & Sync"; btn.disabled=false; }
+}
 
-        const payload = {
-            action: "add_problem",
-            secret: localStorage.getItem("admin_key"),
-            name: name,
-            topic: document.getElementById('p-topic').value.trim() || "Uncategorized",
-            source: document.getElementById('p-source').value,
-            phase: document.getElementById('p-phase').value,
-            hint: document.getElementById('p-hint').value.trim()
-        };
+// ── SMART MIX (your existing logic, preserved exactly) ─────────
+function shuffle(a){let i=a.length,r;while(i!==0){r=Math.floor(Math.random()*i);i--;[a[i],a[r]]=[a[r],a[i]];}return a;}
+function smartMix(arr,n){
+  if(arr.length<=n)return arr;
+  arr.sort((a,b)=>new Date(a.initialDate)-new Date(b.initialDate));
+  let s=[];
+  if(n===1)s.push(arr[Math.floor(Math.random()*arr.length)]);
+  else if(n===2){s.push(arr[0]);s.push(arr[arr.length-1]);}
+  else{s.push(arr.shift());s.push(arr.pop());arr=shuffle(arr);s.push(...arr.slice(0,n-2));}
+  return s;
+}
 
-        document.getElementById('btn-save').innerText = "Syncing...";
-        document.getElementById('btn-save').disabled = true;
-        document.getElementById('btn-cancel').disabled = true;
+// ── FILTER CONTROLS ────────────────────────────────────────────
+function setFilter(f, el) {
+  currentFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    if (b.dataset.type === 'phase') b.classList.remove('active');
+    else if (!b.dataset.type && f === 'all') b.classList.toggle('active', b === el);
+    else if (!b.dataset.type) b.classList.toggle('active', b === el);
+  });
+  // Mark clicked btn active
+  document.querySelectorAll('.filter-btn:not([data-topic])').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  applyFilters();
+}
 
-        try {
-            const response = await fetch(API_URL, { method: "POST", body: JSON.stringify(payload) });
-            const result = await response.json(); // Reads the server's reply
-            
-            if (result.error || result.status === "Error") {
-                alert("SERVER REJECTED IT: " + (result.error || result.message));
-                document.getElementById('btn-save').innerText = "Save & Sync";
-                document.getElementById('btn-save').disabled = false;
-                document.getElementById('btn-cancel').disabled = false;
-                return; // Stops the confetti from firing!
-            }
+function setTopicFilter(t, el) {
+  currentTopicFilter = t;
+  document.querySelectorAll('[data-topic]').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  applyFilters();
+}
 
-            closeModal();
-            triggerSuccess();
-            loadQueue(); 
-        } catch (error) {
-            alert("Failed to inject data.");
-        } finally {
-            document.getElementById('btn-save').innerText = "Save & Sync";
-            document.getElementById('btn-save').disabled = false;
-            document.getElementById('btn-cancel').disabled = false;
-        }
-    }
+function buildTopicFilters(problems) {
+  const topics = [...new Set(problems.map(p=>p.topic).filter(Boolean))].sort();
+  const wrap = document.getElementById('topic-filters');
+  wrap.innerHTML = `<button class="filter-btn active" data-topic="all" onclick="setTopicFilter('all',this)">All</button>` +
+    topics.map(t=>`<button class="filter-btn" data-topic="${t}" onclick="setTopicFilter('${t.replace(/'/g,"\\'")}',this)">${t}</button>`).join('');
+}
 
-    /* EXISTING QUEUE LOGIC */
-    function shuffle(array) {
-        let currentIndex = array.length, randomIndex;
-        while (currentIndex !== 0) {
-            randomIndex = Math.floor(Math.random() * currentIndex);
-            currentIndex--;
-            [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-        }
-        return array;
-    }
+function applyFilters() {
+  const todayStr = new Date().toISOString().split('T')[0];
+  let filtered = allData.filter(p => {
+    if (p.phase === 'Completed' || p.reviewDate === 'Review-Not needed') return false;
+    const isDue = !p.reviewDate || p.reviewDate <= todayStr || p.phase === 'New';
+    if (!isDue) return false;
+    if (currentTopicFilter !== 'all' && p.topic !== currentTopicFilter) return false;
+    if (currentFilter === 'all') return true;
+    if (currentFilter === 'Struggled') return p.phase === 'Struggled';
+    if (currentFilter === 'Smooth') return p.phase !== 'Struggled' && p.phase !== 'New' && p.phase !== '';
+    if (currentFilter === 'New') return p.phase === 'New' || p.phase === '';
+    return true;
+  });
+  renderQueue(filtered);
+}
 
-    function smartMix(array, count) {
-        if (array.length <= count) return array;
-        array.sort((a, b) => new Date(a.initialDate) - new Date(b.initialDate));
-        let selected = [];
-        if (count === 1) selected.push(array[Math.floor(Math.random() * array.length)]);
-        else if (count === 2) { selected.push(array[0]); selected.push(array[array.length - 1]); } 
-        else {
-            selected.push(array.shift()); selected.push(array.pop()); array = shuffle(array);
-            selected.push(...array.slice(0, count - 2));
-        }
-        return selected;
-    }
+// ── LOAD ───────────────────────────────────────────────────────
+async function loadQueue() {
+  try {
+    const res = await fetch(API_URL + "?t=" + Date.now());
+    allData = await res.json();
+    const todayStr = new Date().toISOString().split('T')[0];
 
-    async function loadQueue() {
-        try {
-            const response = await fetch(API_URL + "?t=" + new Date().getTime());
-            const data = await response.json();
-            const todayDate = new Date();
-            const todayStr = todayDate.getFullYear() + "-" + String(todayDate.getMonth() + 1).padStart(2, '0') + "-" + String(todayDate.getDate()).padStart(2, '0');
-            
-            let dueStruggled = [], dueSmooth = [], newProblems = [];
-            
-            data.forEach(p => {
-                if (p.reviewDate === "Review-Not needed" || p.phase === "Completed") return;
-                if (p.phase === "New" || p.reviewDate === "") newProblems.push(p);
-                else if (p.reviewDate <= todayStr) {
-                    if (p.phase === "Struggled") dueStruggled.push(p);
-                    else dueSmooth.push(p); 
-                }
-            });
+    let dueStruggled=[], dueSmooth=[], newProblems=[];
+    allData.forEach(p => {
+      if (p.reviewDate==="Review-Not needed"||p.phase==="Completed") return;
+      if (p.phase==="New"||p.reviewDate==="") newProblems.push(p);
+      else if (p.reviewDate<=todayStr) {
+        if (p.phase==="Struggled") dueStruggled.push(p);
+        else dueSmooth.push(p);
+      }
+    });
 
-            let snapshotDate = localStorage.getItem("srs_date");
-            let snapshotNames = JSON.parse(localStorage.getItem("srs_queue_names") || "[]");
-
-            if (snapshotDate !== todayStr || snapshotNames.length === 0) {
-                let targetQueue = [];
-                targetQueue.push(...smartMix(dueStruggled, Math.min(2, dueStruggled.length)));
-                targetQueue.push(...smartMix(dueSmooth, Math.min(2, dueSmooth.length)));
-                targetQueue.push(...smartMix(newProblems, Math.min(1, newProblems.length)));
-
-                let remaining = 5 - targetQueue.length;
-                let pool = data.filter(p => !targetQueue.find(t => t.name === p.name) && p.reviewDate !== "Review-Not needed" && p.phase !== "Completed" && (p.reviewDate === "" || p.reviewDate <= todayStr));
-                if (remaining > 0 && pool.length > 0) targetQueue.push(...shuffle(pool).slice(0, remaining));
-
-                targetQueue = shuffle(targetQueue);
-                snapshotNames = targetQueue.map(p => p.name);
-                localStorage.setItem("srs_date", todayStr);
-                localStorage.setItem("srs_queue_names", JSON.stringify(snapshotNames));
-            }
-
-            let finalQueue = [];
-            snapshotNames.forEach(name => {
-                let found = data.find(p => p.name === name);
-                if (found) finalQueue.push(found);
-            });
-
-            renderQueue(finalQueue);
-        } catch (error) {
-            document.getElementById('loading').innerHTML = `<h2>Connection Failed</h2><p>Check the console for errors.</p>`;
-        }
+    // PROPORTION DISPLAY
+    const total = dueStruggled.length + dueSmooth.length + newProblems.length;
+    if (total > 0) {
+      const sp = Math.round((dueStruggled.length/total)*100);
+      const pp = Math.round((dueSmooth.length/total)*100);
+      const np = 100 - sp - pp;
+      document.getElementById('prop-segs').innerHTML =
+        `<div class="prop-seg" style="width:${sp}%;background:var(--red)"></div>` +
+        `<div class="prop-seg" style="width:${pp}%;background:var(--green)"></div>` +
+        `<div class="prop-seg" style="width:${np}%;background:var(--purple)"></div>`;
+      document.getElementById('prop-chips').innerHTML =
+        `<span class="prop-chip pc-struggled">⚠ ${dueStruggled.length} Struggled</span>` +
+        `<span class="prop-chip pc-smooth">✓ ${dueSmooth.length} Smooth</span>` +
+        `<span class="prop-chip pc-new">★ ${newProblems.length} New</span>` +
+        `<span class="prop-chip pc-total">${total} total due</span>`;
+      document.getElementById('proportion-bar').style.display = 'flex';
     }
 
-    function renderQueue(problems) {
-        const queueDiv = document.getElementById('queue');
-        document.getElementById('loading').style.display = "none";
-        queueDiv.innerHTML = "";
-
-        if (problems.length === 0) {
-            triggerSuccess();
-            queueDiv.innerHTML = `<div class="empty-state"><h2>Queue Cleared 🚀</h2><p>Your memory cache is optimized for today. Time for rest.</p></div>`;
-            return;
-        }
-
-        problems.forEach(p => {
-            const card = document.createElement('div');
-            card.className = "problem-card";
-            card.id = `card-${btoa(p.name).replace(/[^a-zA-Z0-9]/g, '')}`; 
-            
-            let prettyDate = "Unknown";
-            if(p.initialDate && p.initialDate !== "Unknown") {
-                try { prettyDate = new Date(p.initialDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }); } catch(e) {}
-            }
-
-            // Parse the new Last Solved date
-            let prettyLastSolved = "Never";
-            if(p.lastSolved && p.lastSolved !== "Never") {
-                try { prettyLastSolved = new Date(p.lastSolved).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }); } catch(e) {}
-            }
-
-            card.innerHTML = `
-                <div class="problem-header">
-                    <div class="problem-info">
-                        <h3>${p.name}</h3>
-                        <div class="meta-tags">
-                            <span class="badge b-topic">${p.topic}</span>
-                            <span class="badge b-phase">Phase: ${p.phase}</span>
-                            <span class="badge b-attempt">🔄 ${p.attempts}</span>
-                            <span class="badge b-date">📅 Added: ${prettyDate}</span>
-                            <span class="badge" style="background: rgba(168, 85, 247, 0.1); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.2);">✔️ Last Solved: ${prettyLastSolved}</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="actions">
-                    <button class="btn-hint" onclick="toggleHint('hint-${card.id}')">💡 Hint</button>
-                    <button class="btn-timer" id="btn-timer-${card.id}" onclick="startTimer('${card.id}')">▶ Start Focus</button>
-                    <span class="timer-display" id="timer-${card.id}">00:00</span>
-                    
-                    <button class="btn-struggled" onclick="updateProblem('${p.name}', 'Struggled', '${card.id}')">⚠️ Struggled</button>
-                    <button class="btn-smooth" onclick="updateProblem('${p.name}', 'Smooth', '${card.id}')">🚀 Smooth</button>
-                </div>
-                <div class="hint-box" id="hint-${card.id}">
-                    <strong style="color: var(--accent);">Algorithm Hint:</strong><br>
-                    ${p.hint}
-                </div>
-            `;
-            queueDiv.appendChild(card);
-        });
+    // Smart snapshot (your existing logic preserved)
+    let snapshotDate = localStorage.getItem("srs_date");
+    let snapshotNames = JSON.parse(localStorage.getItem("srs_queue_names")||"[]");
+    if (snapshotDate !== todayStr || snapshotNames.length === 0) {
+      let q=[];
+      q.push(...smartMix(dueStruggled, Math.min(2,dueStruggled.length)));
+      q.push(...smartMix(dueSmooth,    Math.min(2,dueSmooth.length)));
+      q.push(...smartMix(newProblems,  Math.min(1,newProblems.length)));
+      let remaining = 5-q.length;
+      let pool = allData.filter(p=>!q.find(t=>t.name===p.name)&&p.reviewDate!=="Review-Not needed"&&p.phase!=="Completed"&&(p.reviewDate===""||p.reviewDate<=todayStr));
+      if (remaining>0&&pool.length>0) q.push(...shuffle(pool).slice(0,remaining));
+      q = shuffle(q);
+      snapshotNames = q.map(p=>p.name);
+      localStorage.setItem("srs_date",todayStr);
+      localStorage.setItem("srs_queue_names",JSON.stringify(snapshotNames));
     }
+    // Rebuild from snapshot but keep full data for filters
+    let snapshotData = [];
+    snapshotNames.forEach(n=>{ let f=allData.find(p=>p.name===n); if(f)snapshotData.push(f); });
+    // Replace allData with snapshot for default view, but keep full for filters
+    window._snapshotData = snapshotData;
+    window._allDue = allData.filter(p=>p.reviewDate!=="Review-Not needed"&&p.phase!=="Completed"&&(!p.reviewDate||p.reviewDate<=todayStr||p.phase==="New"));
 
-    function toggleHint(id) {
-        // 🔒 SECURITY LOCK
-        if (localStorage.getItem("admin_key") !== "scaler2026") {
-            alert("🔒 READ-ONLY MODE: Hints are restricted.");
-            return;
-        }
-        const hintBox = document.getElementById(id);
-        hintBox.style.display = hintBox.style.display === 'block' ? 'none' : 'block';
+    buildTopicFilters(window._allDue);
+    renderQueue(snapshotData);
+  } catch(e) {
+    document.getElementById('loading').innerHTML = '<div class="empty-state"><h2>Connection Failed</h2><p style="color:var(--muted)">Check console for errors.</p></div>';
+  }
+}
+
+// When filter is 'all' with no topic, show snapshot. With any filter, show full due set.
+function applyFilters() {
+  const todayStr = new Date().toISOString().split('T')[0];
+  const source = (currentFilter==='all'&&currentTopicFilter==='all') ? window._snapshotData||[] : window._allDue||[];
+  let filtered = source.filter(p => {
+    if (currentTopicFilter!=='all'&&p.topic!==currentTopicFilter) return false;
+    if (currentFilter==='all') return true;
+    if (currentFilter==='Struggled') return p.phase==='Struggled';
+    if (currentFilter==='Smooth') return p.phase!=='Struggled'&&p.phase!=='New'&&p.phase!=='';
+    if (currentFilter==='New') return p.phase==='New'||p.phase==='';
+    return true;
+  });
+  renderQueue(filtered);
+}
+
+// ── RENDER ─────────────────────────────────────────────────────
+function renderQueue(problems) {
+  const qDiv = document.getElementById('queue');
+  document.getElementById('loading').style.display = 'none';
+  qDiv.innerHTML = '';
+
+  if (!problems.length) {
+    if (currentFilter==='all'&&currentTopicFilter==='all') {
+      triggerSuccess();
+      qDiv.innerHTML = `<div class="empty-state fade"><h2>Queue Clear 🚀</h2><p>Your memory cache is optimized for today.</p></div>`;
+    } else {
+      qDiv.innerHTML = `<div class="empty-state fade"><h2>No matches</h2><p>Try a different filter.</p></div>`;
     }
+    return;
+  }
 
-    function startTimer(cardId) {
-        // 🔒 SECURITY LOCK
-        if (localStorage.getItem("admin_key") !== "scaler2026") {
-            alert("🔒 READ-ONLY MODE: Focus timer is restricted.");
-            return;
-        }
-        if (activeTimers[cardId]) return; 
+  problems.forEach(p => {
+    const cardId = `card-${btoa(p.name).replace(/[^a-zA-Z0-9]/g,'')}`;
+    const phaseClass = p.phase==='Struggled'?'card-struggled':p.phase==='New'||!p.phase?'card-new':'card-smooth';
+    const badgeClass = p.phase==='Struggled'?'b-phase-struggled':p.phase==='New'||!p.phase?'b-phase-new':p.phase==='Mastered'?'b-phase-mastered':'b-phase-smooth';
+    const pattern = p.notes||'';
+    let prettyDate='?', prettyLast='Never';
+    try{prettyDate=new Date(p.initialDate).toLocaleDateString('en-GB',{day:'numeric',month:'short'});}catch(e){}
+    try{if(p.lastSolved&&p.lastSolved!=='Never')prettyLast=new Date(p.lastSolved).toLocaleDateString('en-GB',{day:'numeric',month:'short'});}catch(e){}
 
-        const btn = document.getElementById(`btn-timer-${cardId}`);
-        const display = document.getElementById(`timer-${cardId}`);
-        
-        btn.style.display = "none"; 
-        display.style.display = "inline-block";
+    const card = document.createElement('div');
+    card.className = `problem-card ${phaseClass} fade`;
+    card.id = cardId;
+    card.innerHTML = `
+      <div class="card-header">
+        <div class="card-title">${p.name}</div>
+        ${pattern?`<span class="pattern-tag">${pattern.split('|')[0].trim()}</span>`:''}
+      </div>
+      <div class="meta-row">
+        <span class="badge b-topic">${p.topic}</span>
+        <span class="badge ${badgeClass}">${p.phase||'New'}</span>
+        <span class="badge b-attempt">×${p.attempts||0}</span>
+        <span class="badge b-date">Added ${prettyDate}</span>
+        <span class="badge" style="background:rgba(168,85,247,.08);color:#c084fc;border:1px solid rgba(168,85,247,.18)">Last ${prettyLast}</span>
+        ${p.difficulty?`<span class="badge" style="background:${p.difficulty==='H'?'rgba(239,68,68,.1)':p.difficulty==='M'?'rgba(234,179,8,.1)':'rgba(57,211,83,.1)'};color:${p.difficulty==='H'?'var(--red)':p.difficulty==='M'?'var(--yellow)':'var(--green)'};border:1px solid transparent">${p.difficulty}</span>`:''}
+      </div>
+      <div class="actions">
+        <button class="btn-hint" onclick="toggleHint('hint-${cardId}')">💡 Hint</button>
+        <button class="btn-timer" id="btn-timer-${cardId}" onclick="startTimer('${cardId}')">▶ Focus</button>
+        <span class="timer-display" id="timer-${cardId}">00:00</span>
+        <button class="btn-struggled" onclick="updateProblem('${p.name}','Struggled','${cardId}')">⚠ Struggled</button>
+        <button class="btn-smooth" onclick="updateProblem('${p.name}','Smooth','${cardId}')">✓ Smooth</button>
+      </div>
+      <div class="hint-box" id="hint-${cardId}">
+        <strong style="color:var(--blue);font-family:var(--fm);font-size:.7rem;text-transform:uppercase;letter-spacing:1px">Algorithm Hint</strong><br><br>
+        ${p.hint||'No hint recorded.'}
+      </div>`;
+    qDiv.appendChild(card);
+  });
+}
 
-        let seconds = 0;
-        activeTimers[cardId] = setInterval(() => {
-            seconds++;
-            let m = Math.floor(seconds / 60).toString().padStart(2, '0');
-            let s = (seconds % 60).toString().padStart(2, '0');
-            display.innerText = `${m}:${s}`;
-            if (seconds >= 1800) display.classList.add('timer-danger');
-        }, 1000);
-    }
+function toggleHint(id) {
+  if (localStorage.getItem("admin_key")!=="scaler2026"){alert("🔒 READ-ONLY MODE");return;}
+  const el=document.getElementById(id);
+  el.style.display=el.style.display==='block'?'none':'block';
+}
 
-    async function updateProblem(name, action, cardId) {
-        if (localStorage.getItem("admin_key") !== "scaler2026") {
-            alert("🔒 READ-ONLY MODE: You are viewing a live demo. Database write-access is restricted.");
-            return;
-        }
+function startTimer(cardId) {
+  if (localStorage.getItem("admin_key")!=="scaler2026"){alert("🔒 READ-ONLY MODE");return;}
+  if (activeTimers[cardId]) return;
+  document.getElementById('btn-timer-'+cardId).style.display='none';
+  const disp=document.getElementById('timer-'+cardId);
+  disp.style.display='inline-block';
+  let s=0;
+  activeTimers[cardId]=setInterval(()=>{
+    s++;
+    let m=Math.floor(s/60).toString().padStart(2,'0');
+    let sc=(s%60).toString().padStart(2,'0');
+    disp.innerText=`${m}:${sc}`;
+    if(s>=1800)disp.classList.add('timer-danger');
+  },1000);
+}
 
-        const card = document.getElementById(cardId);
-        const buttons = card.querySelectorAll('button');
-        buttons.forEach(b => b.disabled = true);
-        
-        if (activeTimers[cardId]) clearInterval(activeTimers[cardId]);
+async function updateProblem(name,action,cardId) {
+  if (localStorage.getItem("admin_key")!=="scaler2026"){alert("🔒 READ-ONLY MODE");return;}
+  const card=document.getElementById(cardId);
+  card.querySelectorAll('button').forEach(b=>b.disabled=true);
+  if(activeTimers[cardId])clearInterval(activeTimers[cardId]);
+  try {
+    const res=await fetch(API_URL,{method:"POST",body:JSON.stringify({name,action,secret:localStorage.getItem("admin_key")})});
+    const r=await res.json();
+    if(r.error||r.status==="Error"){alert("Error: "+(r.error||r.message));card.querySelectorAll('button').forEach(b=>b.disabled=false);return;}
+    // Remove from snapshot
+    let snap=JSON.parse(localStorage.getItem("srs_queue_names")||"[]");
+    snap=snap.filter(n=>n!==name);
+    localStorage.setItem("srs_queue_names",JSON.stringify(snap));
+    card.style.opacity='0';card.style.transform='scale(0.96)';card.style.transition='.25s';
+    setTimeout(()=>{card.remove();if(!document.querySelectorAll('.problem-card').length)renderQueue([]);},280);
+    if(action==='Smooth'&&Math.random()<0.3)confetti({particleCount:40,spread:50,origin:{y:.8},colors:['#39d353','#fff']});
+  } catch(e){alert("Sync failed.");card.querySelectorAll('button').forEach(b=>b.disabled=false);}
+}
 
-        const targetBtn = action === 'Smooth' ? buttons[3] : buttons[2];
-        const originalText = targetBtn.innerText;
-        targetBtn.innerText = "Syncing...";
+function triggerSuccess(){
+  const end=Date.now()+2500;
+  (function f(){
+    confetti({particleCount:4,angle:60,spread:50,origin:{x:0},colors:['#39d353','#fff']});
+    confetti({particleCount:4,angle:120,spread:50,origin:{x:1},colors:['#39d353','#fff']});
+    if(Date.now()<end)requestAnimationFrame(f);
+  }());
+}
 
-        try {
-            const response = await fetch(API_URL, {
-                method: "POST",
-                body: JSON.stringify({ name: name, action: action, secret: localStorage.getItem("admin_key") })
-            });
-            const result = await response.json();
-            
-            if (result.error || result.status === "Error") {
-                alert("SERVER REJECTED IT: " + (result.error || result.message));
-                buttons.forEach(b => b.disabled = false);
-                targetBtn.innerText = originalText;
-                return; // Stops the card from disappearing!
-            }
-            
-            let currentSnapshot = JSON.parse(localStorage.getItem("srs_queue_names") || "[]");
-            currentSnapshot = currentSnapshot.filter(n => n !== name);
-            localStorage.setItem("srs_queue_names", JSON.stringify(currentSnapshot));
-
-            card.style.transform = "scale(0.95)";
-            card.style.opacity = 0;
-            setTimeout(() => {
-                card.remove();
-                if (document.querySelectorAll('.problem-card').length === 0) renderQueue([]); 
-            }, 300);
-        } catch (error) {
-            alert("Database Sync Failed.");
-            buttons.forEach(b => b.disabled = false);
-            targetBtn.innerText = originalText;
-        }
-    }
-
-    function triggerSuccess() {
-        var duration = 3 * 1000, end = Date.now() + duration;
-        (function frame() {
-            confetti({ particleCount: 5, angle: 60, spread: 55, origin: { x: 0 }, colors: ['#ffffff', '#888888'] });
-            confetti({ particleCount: 5, angle: 120, spread: 55, origin: { x: 1 }, colors: ['#ffffff', '#888888'] });
-            if (Date.now() < end) requestAnimationFrame(frame);
-        }());
-    }
-
-    loadQueue();
+loadQueue();
 </script>
-</body>
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="12f7783a-202a-41a3-b4d4-b8e61a3a575d"></script>
-</html>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="12f7783a-202a-41a3-b4d4-b8e61a3a575d"></script>
+</body></html>
