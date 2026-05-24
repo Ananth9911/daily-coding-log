@@ -20,6 +20,21 @@ h1{font-size:1.7rem;font-weight:700;letter-spacing:-.5px}
 .nav-link{font-family:var(--fm);font-size:.7rem;color:var(--muted);text-decoration:none;padding:6px 12px;border:1px solid var(--border);border-radius:6px;transition:.18s}
 .nav-link:hover{color:var(--text);border-color:var(--border2)}
 
+/* PATTERN PERFORMANCE */
+.perf-section{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:24px}
+.perf-title{font-family:var(--fm);font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
+.toggle-perf{font-family:var(--fm);font-size:.65rem;color:var(--purple);cursor:pointer;display:inline-block;margin-bottom:12px}
+.toggle-perf:hover{text-decoration:underline}
+/* Use flex-wrap for perf grid to avoid vertical stacking */
+.perf-grid{display:flex;flex-wrap:wrap;gap:8px}
+.perf-item{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:9px 13px;flex:1;min-width:200px;max-width:320px}
+.perf-row{display:flex;align-items:center;gap:10px}
+.perf-name{font-size:.73rem;font-weight:500;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.perf-bar-bg{width:70px;height:5px;background:var(--dim);border-radius:3px;overflow:hidden;flex-shrink:0}
+.perf-bar{height:100%;border-radius:3px}
+.perf-pct{font-family:var(--fm);font-size:.6rem;width:28px;text-align:right;flex-shrink:0}
+.perf-count{font-family:var(--fm);font-size:.56rem;color:var(--muted);margin-top:2px}
+
 /* CONTROLS */
 .controls{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap;align-items:center}
 .search-input{font-family:var(--fd);background:var(--card);border:1px solid var(--border);color:var(--text);padding:9px 14px;border-radius:8px;font-size:.82rem;outline:none;min-width:220px;transition:.2s}
@@ -29,43 +44,62 @@ h1{font-size:1.7rem;font-weight:700;letter-spacing:-.5px}
 .tf:hover{color:var(--text);border-color:var(--border2)}
 .tf.active{border-color:var(--purple);color:var(--purple);background:rgba(168,85,247,.07)}
 
-/* PATTERN PERFORMANCE SECTION */
-.perf-section{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:24px}
-.perf-title{font-size:.8rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;font-family:var(--fm);margin-bottom:16px}
-.perf-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
-.perf-item{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:10px 14px}
-.perf-row{display:flex;align-items:center;gap:10px}
-.perf-name{font-size:.75rem;font-weight:500;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.perf-bar-bg{width:80px;height:5px;background:var(--dim);border-radius:3px;overflow:hidden;flex-shrink:0}
-.perf-bar{height:100%;border-radius:3px}
-.perf-pct{font-family:var(--fm);font-size:.62rem;width:30px;text-align:right;flex-shrink:0}
-.perf-count{font-family:var(--fm);font-size:.58rem;color:var(--muted);margin-top:3px}
-.toggle-perf{font-family:var(--fm);font-size:.65rem;color:var(--purple);cursor:pointer;margin-bottom:12px;display:inline-block}
-.toggle-perf:hover{text-decoration:underline}
-
-/* CUE GRID — masonry-like with auto-fill */
+/*
+ CUE GRID — CSS MASONRY using column-count
+ THE FIX: Cards use display:block (not flex/grid children)
+ and break-inside:avoid to prevent splitting.
+ Column-count handles the masonry layout.
+*/
 .cue-grid{
-  columns: 3;
-  column-gap: 14px;
+  column-count:3;
+  column-gap:14px;
+  /* orphans/widows prevent single-line orphans */
+  orphans:1;
+  widows:1;
 }
-@media(max-width:900px){.cue-grid{columns:2}}
-@media(max-width:580px){.cue-grid{columns:1}}
+@media(max-width:1000px){.cue-grid{column-count:2}}
+@media(max-width:620px){.cue-grid{column-count:1}}
+
 .cue-card{
-  break-inside: avoid;
-  background:var(--card);border:1px solid var(--border);border-radius:12px;
-  padding:16px;margin-bottom:14px;cursor:pointer;transition:.18s;
-  border-left:3px solid transparent;display:inline-block;width:100%;
+  /* CRITICAL: break-inside:avoid prevents card splitting across columns */
+  break-inside:avoid;
+  -webkit-column-break-inside:avoid;
+  page-break-inside:avoid;
+  /* display:inline-block is required for column-count to work with break-inside */
+  display:inline-block;
+  width:100%;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:16px;
+  margin-bottom:14px;
+  cursor:pointer;
+  transition:border-color .18s, transform .18s;
+  border-left:3px solid transparent;
+  /* vertical-align top prevents gap at bottom of inline-block */
+  vertical-align:top;
 }
 .cue-card.struggled{border-left-color:var(--red)}
 .cue-card.smooth{border-left-color:var(--green)}
 .cue-card:hover{border-color:rgba(168,85,247,.3);transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,.4)}
+
 .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:6px;margin-bottom:8px}
 .topic-badge{font-family:var(--fm);font-size:.58rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;padding:2px 7px;border-radius:4px;background:rgba(168,85,247,.1);color:var(--purple);border:1px solid rgba(168,85,247,.2);flex-shrink:0}
-.diff-badge{font-family:var(--fm);font-size:.58rem;font-weight:700;padding:2px 6px;border-radius:4px}
+.diff-badge{font-family:var(--fm);font-size:.58rem;font-weight:700;padding:2px 6px;border-radius:4px;flex-shrink:0}
 .dH{background:rgba(239,68,68,.12);color:var(--red)}.dM{background:rgba(234,179,8,.12);color:var(--yellow)}.dL,.dE{background:rgba(57,211,83,.1);color:var(--green)}
-.cue-text{font-size:.78rem;color:var(--text);line-height:1.6;margin-bottom:8px}
-.cue-oneliner{font-family:var(--fm);font-size:.65rem;color:var(--blue);border-top:1px solid var(--border);padding-top:7px;margin-top:6px}
-.cue-example{font-family:var(--fm);font-size:.6rem;color:var(--muted);margin-top:4px}
+
+/* LIMIT card text height — this is the KEY fix for the vertical issue */
+.cue-text{
+  font-size:.78rem;color:var(--text);line-height:1.6;margin-bottom:8px;
+  /* MAX 5 lines — prevents any single card from being taller than ~100px */
+  display:-webkit-box;
+  -webkit-line-clamp:5;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.cue-oneliner{font-family:var(--fm);font-size:.65rem;color:var(--blue);border-top:1px solid var(--border);padding-top:7px;margin-top:6px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cue-example{font-family:var(--fm);font-size:.6rem;color:var(--muted);margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
 /* MODAL */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(10px);z-index:100;align-items:center;justify-content:center;padding:20px}
@@ -76,12 +110,11 @@ h1{font-size:1.7rem;font-weight:700;letter-spacing:-.5px}
 .mname{font-size:1.1rem;font-weight:700;margin-bottom:16px}
 .msec{margin-bottom:14px}
 .msec-label{font-family:var(--fm);font-size:.58rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:5px}
-.msec-body{font-size:.84rem;color:var(--text);background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:8px;padding:12px;line-height:1.65}
-.empty{text-align:center;padding:50px;color:var(--muted);font-family:var(--fm);font-size:.75rem}
+/* In modal, show full text — no clamp */
+.msec-body{font-size:.84rem;color:var(--text);background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:8px;padding:12px;line-height:1.7}
 .debug{background:rgba(234,179,8,.05);border:1px solid rgba(234,179,8,.15);border-radius:8px;padding:10px 14px;font-family:var(--fm);font-size:.68rem;color:var(--yellow);margin-bottom:18px;display:none}
+.empty{text-align:center;padding:50px;color:var(--muted);font-family:var(--fm);font-size:.75rem;line-height:1.7}
 @keyframes pulse{50%{opacity:.4}}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-.fade{animation:fadeIn .2s ease}
 </style>
 </head>
 <body>
@@ -91,7 +124,7 @@ h1{font-size:1.7rem;font-weight:700;letter-spacing:-.5px}
       <div class="sys-dot"></div>
       <div>
         <h1>Cue Library</h1>
-        <div class="sub">Auto-generated from problem log · Notes / Pattern Used column</div>
+        <div class="sub">Auto-generated from Notes / Pattern Used column</div>
       </div>
     </div>
     <div class="hdr-right">
@@ -102,10 +135,10 @@ h1{font-size:1.7rem;font-weight:700;letter-spacing:-.5px}
 
   <div class="debug" id="debug"></div>
 
-  <!-- PATTERN PERFORMANCE DASHBOARD -->
+  <!-- PATTERN PERFORMANCE -->
   <div class="perf-section">
-    <div class="perf-title">⚡ Pattern Performance — Struggle Rate (higher = needs more SRS)</div>
-    <span class="toggle-perf" id="perf-toggle" onclick="togglePerf()">▼ Show all patterns</span>
+    <div class="perf-title">⚡ Pattern Performance — Struggle Rate</div>
+    <span class="toggle-perf" id="perf-toggle" onclick="togglePerf()">▼ Show by pattern</span>
     <div class="perf-grid" id="perf-grid" style="display:none"></div>
   </div>
 
@@ -122,12 +155,12 @@ h1{font-size:1.7rem;font-weight:700;letter-spacing:-.5px}
     <button class="mc" onclick="closeModal()">✕</button>
     <div class="mlbl" id="m-topic"></div>
     <div class="mname" id="m-name"></div>
-    <div class="msec" id="m-cue-wrap">
-      <div class="msec-label">Core Pattern</div>
+    <div class="msec">
+      <div class="msec-label">Core Pattern / Logic</div>
       <div class="msec-body" id="m-cue"></div>
     </div>
     <div class="msec" id="m-one-wrap" style="display:none">
-      <div class="msec-label">One-Line Tag</div>
+      <div class="msec-label">Pattern Tag</div>
       <div class="msec-body" style="color:var(--blue)" id="m-one"></div>
     </div>
     <div class="msec">
@@ -143,22 +176,20 @@ const CUES_RAW = "https://raw.githubusercontent.com/Ananth9911/daily-coding-log/
 
 let allCues=[], activeTopic='all', _filtered=[];
 
-// ── PATTERN PERFORMANCE ────────────────────────────────────────
-function buildPerf(cues) {
-  // Group by oneLiner (the tag) and compute struggle count from SRS data
-  // Here we use friction field from cues
-  const pm = {};
-  cues.forEach(c => {
-    const pat = (c.oneLiner||c.cue.split('|')[0]||'').trim().substring(0,30);
-    if (!pat) return;
-    if (!pm[pat]) pm[pat]={total:0,struggled:0};
+function buildPerf(cues){
+  const pm={};
+  cues.forEach(c=>{
+    const pat=(c.oneLiner||c.cue.split('|')[0]||'').trim().substring(0,35);
+    if(!pat)return;
+    if(!pm[pat])pm[pat]={total:0,struggled:0};
     pm[pat].total++;
-    if (c.friction&&c.friction.toLowerCase().includes('struggled')) pm[pat].struggled++;
+    if(c.friction&&c.friction.toLowerCase().includes('struggled'))pm[pat].struggled++;
   });
   const entries=Object.entries(pm).filter(([,v])=>v.total>=2)
     .map(([k,v])=>({pat:k,total:v.total,pct:Math.round((v.struggled/v.total)*100)}))
     .sort((a,b)=>b.pct-a.pct);
   const grid=document.getElementById('perf-grid');
+  if(!entries.length){grid.innerHTML='<div style="color:var(--muted);font-family:var(--fm);font-size:.72rem">Not enough data yet.</div>';return;}
   grid.innerHTML=entries.map(e=>{
     const col=e.pct>=60?'var(--red)':e.pct>=30?'var(--yellow)':'var(--green)';
     return `<div class="perf-item">
@@ -167,24 +198,25 @@ function buildPerf(cues) {
         <div class="perf-bar-bg"><div class="perf-bar" style="width:${e.pct}%;background:${col}"></div></div>
         <div class="perf-pct" style="color:${col}">${e.pct}%</div>
       </div>
-      <div class="perf-count">${e.total} problems</div>
+      <div class="perf-count">${e.total} cues</div>
     </div>`;
-  }).join('') || '<div style="color:var(--muted);font-family:var(--fm);font-size:.72rem">Not enough data yet.</div>';
+  }).join('');
 }
+
 let perfOpen=false;
 function togglePerf(){
   perfOpen=!perfOpen;
-  document.getElementById('perf-grid').style.display=perfOpen?'grid':'none';
-  document.getElementById('perf-toggle').textContent=perfOpen?'▲ Hide':'▼ Show all patterns';
+  document.getElementById('perf-grid').style.display=perfOpen?'flex':'none';
+  document.getElementById('perf-toggle').textContent=perfOpen?'▲ Hide':'▼ Show by pattern';
 }
 
-// ── TOPIC FILTERS ──────────────────────────────────────────────
-function buildTopicFilters() {
+function buildTopicFilters(){
   const topics=[...new Set(allCues.map(c=>c.topic))].sort();
   document.getElementById('topic-filters').innerHTML=
     `<button class="tf active" onclick="setTopic('all',this)">All (${allCues.length})</button>`+
     topics.map(t=>`<button class="tf" onclick="setTopic('${t.replace(/'/g,"\\'")}',this)">${t} (${allCues.filter(c=>c.topic===t).length})</button>`).join('');
 }
+
 function setTopic(t,el){
   activeTopic=t;
   document.querySelectorAll('.tf').forEach(b=>b.classList.remove('active'));
@@ -192,8 +224,7 @@ function setTopic(t,el){
   render();
 }
 
-// ── RENDER ─────────────────────────────────────────────────────
-function render() {
+function render(){
   const q=document.getElementById('search').value.toLowerCase();
   _filtered=allCues.filter(c=>
     (activeTopic==='all'||c.topic===activeTopic)&&
@@ -201,22 +232,25 @@ function render() {
   );
   document.getElementById('count-pill').textContent=`${_filtered.length} / ${allCues.length} cues`;
   const grid=document.getElementById('cue-grid');
-  if(!_filtered.length){grid.innerHTML='<div class="empty">No cues match.</div>';return;}
-  grid.innerHTML=_filtered.map((c,i)=>{
+  if(!_filtered.length){grid.innerHTML='<div class="empty">No cues match. Try a different search.</div>';return;}
+
+  // Build HTML string — don't use innerHTML += in a loop (causes reflow per item)
+  const html=_filtered.map((c,i)=>{
     const fri=c.friction&&c.friction.toLowerCase().includes('struggled')?'struggled':'smooth';
     const dc='d'+(c.difficulty||'M');
-    // Truncate at ~200 chars max so cards don't become infinitely tall
-    const cueText = c.cue.length>200?c.cue.substring(0,197)+'…':c.cue;
-    return `<div class="cue-card ${fri} fade" onclick="openModal(${i})">
-      <div class="card-top"><span class="topic-badge">${c.topic}</span><span class="diff-badge ${dc}">${c.difficulty||'M'}</span></div>
-      <div class="cue-text">${cueText}</div>
+    return `<div class="cue-card ${fri}" onclick="openModal(${i})">
+      <div class="card-top">
+        <span class="topic-badge">${c.topic}</span>
+        <span class="diff-badge ${dc}">${c.difficulty||'M'}</span>
+      </div>
+      <div class="cue-text">${c.cue}</div>
       ${c.oneLiner?`<div class="cue-oneliner">→ ${c.oneLiner}</div>`:''}
       ${c.exampleProblem?`<div class="cue-example">↳ ${c.exampleProblem}</div>`:''}
     </div>`;
   }).join('');
+  grid.innerHTML=html;
 }
 
-// ── MODAL ──────────────────────────────────────────────────────
 function openModal(i){
   const c=_filtered[i];
   document.getElementById('m-topic').textContent=c.topic+(c.difficulty?' · '+c.difficulty:'');
@@ -231,29 +265,31 @@ function openModal(i){
 function closeModal(){document.getElementById('modal').style.display='none';}
 function maybeClose(e){if(e.target===document.getElementById('modal'))closeModal();}
 
-// ── LOAD ───────────────────────────────────────────────────────
-async function loadCues() {
+async function loadCues(){
   let source='';
-  try {
+  try{
     const res=await fetch(SRS_API+"?action=cues&t="+Date.now());
     const d=await res.json();
     if(d&&d.error)throw new Error(d.error);
     if(Array.isArray(d)&&d.length>0){allCues=d;source='Live GS';}
-    else throw new Error("empty");
-  } catch(e) {
-    try {
+    else throw new Error('empty GS response');
+  }catch(e){
+    try{
       const r2=await fetch(CUES_RAW+"?t="+Date.now());
       allCues=await r2.json();
       source='cues.json';
-    } catch(e2) {
-      document.getElementById('cue-grid').innerHTML=`<div class="empty">Could not load cues.<br>Make sure your GS script is deployed and Notes / Pattern Used column is filled.</div>`;
+      const db=document.getElementById('debug');
+      db.style.display='block';
+      db.textContent='⚠ Using cues.json ('+source+'). GS returned no cues — check Notes/Pattern Used column header matches exactly.';
+    }catch(e2){
+      document.getElementById('cue-grid').innerHTML='<div class="empty">Could not load cues.<br>Check GS deployment and Notes / Pattern Used column.</div>';
       return;
     }
-    const dbox=document.getElementById('debug');
-    dbox.style.display='block';
-    dbox.textContent='⚠ Using cached cues.json ('+source+'). Run update_portfolio.py to refresh, or deploy srs_backend_v3.gs.';
   }
-  if(!allCues.length){document.getElementById('cue-grid').innerHTML='<div class="empty">0 cues found. Fill the "Notes / Pattern Used" column in your sheet.</div>';return;}
+  if(!allCues.length){
+    document.getElementById('cue-grid').innerHTML='<div class="empty">0 cues found.<br>Fill the "Notes / Pattern Used" column in Master_Problems sheet.</div>';
+    return;
+  }
   buildTopicFilters();
   buildPerf(allCues);
   render();
