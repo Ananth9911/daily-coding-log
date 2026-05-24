@@ -11,7 +11,6 @@
 body{background:var(--bg);color:var(--text);font-family:var(--fd);min-height:100vh;padding:40px 20px;-webkit-font-smoothing:antialiased}
 body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse at 50% 0%,black 30%,transparent 80%);pointer-events:none;z-index:0}
 .wrap{max-width:820px;margin:0 auto;position:relative;z-index:1}
-
 /* HEADER */
 .hdr{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1px solid var(--border);padding-bottom:20px;margin-bottom:28px;flex-wrap:wrap;gap:14px}
 .hdr-left{display:flex;align-items:center;gap:12px}
@@ -20,9 +19,16 @@ h1{font-size:1.7rem;font-weight:700;letter-spacing:-.5px}
 .sub{font-family:var(--fm);font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin-top:3px}
 .hdr-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .date-chip{font-family:var(--fm);font-size:.72rem;color:var(--muted);background:var(--bg2);border:1px solid var(--border);padding:6px 14px;border-radius:20px}
-
+/* QUEUE INFO BAR */
+.queue-info{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 18px;margin-bottom:16px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.qi-label{font-family:var(--fm);font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;flex-shrink:0}
+.qi-blocks{display:flex;gap:8px;flex-wrap:wrap}
+.qi-chip{font-family:var(--fm);font-size:.63rem;padding:3px 10px;border-radius:5px;display:flex;align-items:center;gap:5px;white-space:nowrap}
+.qi-ret{background:rgba(59,130,246,.1);color:var(--blue);border:1px solid rgba(59,130,246,.2)}
+.qi-fresh{background:rgba(57,211,83,.1);color:var(--green);border:1px solid rgba(57,211,83,.2)}
+.qi-total{background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--border)}
 /* PROPORTION BAR */
-.proportion-bar{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 20px;margin-bottom:20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.proportion-bar{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 18px;margin-bottom:16px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .prop-label{font-family:var(--fm);font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;flex-shrink:0}
 .prop-segments{display:flex;gap:3px;flex:1;min-width:160px;height:6px;border-radius:3px;overflow:hidden}
 .prop-seg{height:100%;border-radius:3px;transition:width .6s ease}
@@ -32,7 +38,6 @@ h1{font-size:1.7rem;font-weight:700;letter-spacing:-.5px}
 .pc-smooth{background:rgba(57,211,83,.1);color:var(--green);border:1px solid rgba(57,211,83,.2)}
 .pc-new{background:rgba(168,85,247,.1);color:var(--purple);border:1px solid rgba(168,85,247,.2)}
 .pc-total{background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--border)}
-
 /* FILTER BAR */
 .filter-bar{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;align-items:center}
 .filter-label{font-family:var(--fm);font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px}
@@ -40,13 +45,19 @@ h1{font-size:1.7rem;font-weight:700;letter-spacing:-.5px}
 .filter-btn:hover{color:var(--text);border-color:var(--border2)}
 .filter-btn.active{border-color:var(--green);color:var(--green);background:rgba(57,211,83,.07)}
 .filter-sep{width:1px;height:18px;background:var(--border);flex-shrink:0}
-
+/* BLOCK DIVIDER */
+.block-divider{display:flex;align-items:center;gap:12px;margin:20px 0 12px}
+.block-label{font-family:var(--fm);font-size:.6rem;text-transform:uppercase;letter-spacing:2px;padding:3px 10px;border-radius:4px;white-space:nowrap}
+.bl-retention{color:var(--blue);background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2)}
+.bl-fresh{color:var(--green);background:rgba(57,211,83,.1);border:1px solid rgba(57,211,83,.2)}
+.block-line{flex:1;height:1px;background:var(--border)}
 /* CARDS */
 .problem-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;margin-bottom:14px;transition:border-color .2s;position:relative;overflow:hidden}
 .problem-card:hover{border-color:var(--border2)}
 .problem-card.card-struggled{border-left:3px solid var(--red)}
 .problem-card.card-smooth{border-left:3px solid var(--green)}
 .problem-card.card-new{border-left:3px solid var(--purple)}
+.problem-card.card-fresh{border-left:3px solid var(--orange);background:rgba(249,115,22,.02)}
 .card-header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px;flex-wrap:wrap}
 .card-title{font-size:1.1rem;font-weight:600;color:var(--text);line-height:1.3;flex:1}
 .pattern-tag{font-family:var(--fm);font-size:.65rem;padding:4px 10px;border-radius:5px;background:rgba(59,130,246,.1);color:var(--blue);border:1px solid rgba(59,130,246,.2);white-space:nowrap;flex-shrink:0}
@@ -59,6 +70,9 @@ h1{font-size:1.7rem;font-weight:700;letter-spacing:-.5px}
 .b-phase-mastered{background:rgba(168,85,247,.15);color:#c084fc;border:1px solid rgba(168,85,247,.3)}
 .b-attempt{background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--border)}
 .b-date{background:rgba(59,130,246,.08);color:#60a5fa;border:1px solid rgba(59,130,246,.15)}
+.b-ef{background:rgba(234,179,8,.08);color:var(--yellow);border:1px solid rgba(234,179,8,.15)}
+.b-fresh{background:rgba(249,115,22,.1);color:var(--orange);border:1px solid rgba(249,115,22,.2)}
+/* ACTION BUTTONS */
 .actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 button{font-family:var(--fd);font-weight:600;font-size:.82rem;padding:9px 16px;border-radius:8px;border:none;cursor:pointer;transition:.18s}
 .btn-hint{background:transparent;color:var(--muted);border:1px solid var(--border)}
@@ -67,20 +81,25 @@ button{font-family:var(--fd);font-weight:600;font-size:.82rem;padding:9px 16px;b
 .btn-timer:hover{background:rgba(59,130,246,.25)}
 .timer-display{font-family:var(--fm);font-size:1rem;font-weight:600;display:none;width:55px;text-align:center;color:var(--yellow)}
 .timer-danger{color:var(--red);animation:pulse 1s infinite}
-.btn-struggled{background:transparent;color:var(--red);border:1px dashed rgba(239,68,68,.5);margin-left:auto}
+.btn-struggled{background:transparent;color:var(--red);border:1px dashed rgba(239,68,68,.5);margin-left:auto;font-size:.78rem}
 .btn-struggled:hover{background:rgba(239,68,68,.08);border-color:var(--red)}
-.btn-smooth{background:var(--green);color:#000;border:1px solid var(--green)}
+.btn-smooth{background:var(--green);color:#000;border:1px solid var(--green);font-size:.78rem}
 .btn-smooth:hover{opacity:.85;box-shadow:0 0 16px rgba(57,211,83,.3)}
+.btn-refresh{background:transparent;color:var(--muted);border:1px solid var(--border);font-size:.72rem}
+.btn-refresh:hover{color:var(--text);border-color:var(--border2)}
 .btn-add{background:transparent;color:var(--green);border:1px solid rgba(57,211,83,.4)}
 .btn-add:hover{background:rgba(57,211,83,.08)}
 button:disabled{opacity:.4;pointer-events:none}
 .hint-box{display:none;background:rgba(59,130,246,.05);padding:14px 16px;border-radius:8px;margin-top:16px;font-size:.88rem;color:#cbd5e1;border-left:3px solid var(--blue);line-height:1.65;border:1px solid rgba(59,130,246,.15);border-left-width:3px}
-
+/* SM-2 PREVIEW */
+.sm2-preview{display:flex;gap:8px;margin-top:10px;padding:10px 12px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:8px;align-items:center;flex-wrap:wrap}
+.sm2-label{font-family:var(--fm);font-size:.58rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;flex-shrink:0}
+.sm2-smooth{font-family:var(--fm);font-size:.7rem;color:var(--green);background:rgba(57,211,83,.08);padding:3px 9px;border-radius:4px;border:1px solid rgba(57,211,83,.2)}
+.sm2-struggled{font-family:var(--fm);font-size:.7rem;color:var(--red);background:rgba(239,68,68,.06);padding:3px 9px;border-radius:4px;border:1px solid rgba(239,68,68,.15)}
 /* EMPTY */
 .empty-state{text-align:center;padding:60px 20px;background:var(--card);border-radius:16px;border:1px dashed var(--border2)}
 .empty-state h2{color:var(--green);margin-bottom:8px}
 .empty-state p{color:var(--muted);font-family:var(--fm);font-size:.78rem}
-
 /* MODAL */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);backdrop-filter:blur(8px);z-index:100;align-items:center;justify-content:center}
 .modal{background:var(--card);border:1px solid var(--border2);width:90%;max-width:500px;border-radius:16px;padding:28px;box-shadow:0 20px 60px rgba(0,0,0,.8)}
@@ -108,50 +127,60 @@ button:disabled{opacity:.4;pointer-events:none}
       <div class="sys-dot"></div>
       <div>
         <h1>SRS Engine</h1>
-        <div class="sub">Spaced Repetition · Struggled 4d · Smooth 8d</div>
+        <div class="sub">SM-2 Adaptive · 5 Retention + 3 Fresh daily</div>
       </div>
     </div>
     <div class="hdr-right">
+      <button class="btn-refresh" onclick="refreshQueue()">↺ New Queue</button>
       <button class="btn-add" onclick="openModal()">+ Log Problem</button>
       <div class="date-chip" id="date-display"></div>
       <a href="dashboard.html" class="nav-link">← Hub</a>
     </div>
   </div>
-
-  <!-- PROPORTION INDICATOR -->
+  <!-- QUEUE INFO BAR -->
+  <div class="queue-info" id="queue-info" style="display:none">
+    <div class="qi-label">Today's Mix</div>
+    <div class="qi-blocks" id="qi-blocks"></div>
+  </div>
+  <!-- PROPORTION BAR -->
   <div class="proportion-bar" id="proportion-bar" style="display:none">
-    <div class="prop-label">Today's Mix</div>
+    <div class="prop-label">Due Pool</div>
     <div class="prop-segments" id="prop-segs"></div>
     <div class="prop-chips" id="prop-chips"></div>
   </div>
-
   <!-- FILTER BAR -->
   <div class="filter-bar">
     <span class="filter-label">Filter</span>
     <button class="filter-btn active" onclick="setFilter('all',this)">All Due</button>
     <button class="filter-btn" onclick="setFilter('Struggled',this)">⚠ Struggled</button>
-    <button class="filter-btn" onclick="setFilter('Smooth',this)">✓ Smooth</button>
-    <button class="filter-btn" onclick="setFilter('New',this)">★ New</button>
+    <button class="filter-btn" onclick="setFilter('Smooth',this)">✓ In Review</button>
+    <button class="filter-btn" onclick="setFilter('New',this)">★ New/Fresh</button>
     <div class="filter-sep"></div>
     <span class="filter-label">Topic</span>
     <div id="topic-filters" style="display:flex;gap:6px;flex-wrap:wrap"></div>
   </div>
-
   <div id="loading" class="empty-state"><h2 style="color:var(--muted);animation:pulse 1.5s infinite">Syncing…</h2></div>
   <div id="queue"></div>
 </div>
-
+<!-- ADD PROBLEM MODAL -->
 <div class="modal-overlay" id="addModal">
   <div class="modal">
     <h2>Log New Problem</h2>
     <div class="form-group"><label>Problem Name *</label><input class="form-control" id="p-name" type="text" placeholder="Two Sum"></div>
     <div class="form-group"><label>Topic</label><input class="form-control" id="p-topic" type="text" placeholder="Array"></div>
-    <div class="form-group"><label>Pattern Tag (from cue library)</label><input class="form-control" id="p-pattern" type="text" placeholder="Two Pointer | HashMap"></div>
+    <div class="form-group"><label>Pattern Tag</label><input class="form-control" id="p-pattern" type="text" placeholder="Two Pointer | HashMap"></div>
+    <div class="form-group"><label>Difficulty</label>
+      <select class="form-control" id="p-diff">
+        <option value="M">Medium (EF 2.5 — standard intervals)</option>
+        <option value="H">Hard (EF 2.0 — reviewed more often)</option>
+        <option value="L">Easy (EF 3.0 — intervals grow faster)</option>
+      </select>
+    </div>
     <div class="form-group"><label>Source</label>
       <select class="form-control" id="p-source"><option value="Scaler">Scaler</option><option value="LeetCode">LeetCode</option><option value="NeetCode">NeetCode</option></select>
     </div>
-    <div class="form-group"><label>Initial Friction</label>
-      <select class="form-control" id="p-phase"><option value="Smooth">Smooth — 8d review</option><option value="Struggled">Struggled — 4d review</option></select>
+    <div class="form-group"><label>How did it go?</label>
+      <select class="form-control" id="p-phase"><option value="Smooth">Solved it ✓ — Review in 3 days</option><option value="Struggled">Struggled ⚠ — Review in 1 day</option></select>
     </div>
     <div class="form-group"><label>One-Line Hint</label><input class="form-control" id="p-hint" type="text" placeholder="Use hashmap for O(1) lookup…"></div>
     <div class="modal-actions">
@@ -160,214 +189,246 @@ button:disabled{opacity:.4;pointer-events:none}
     </div>
   </div>
 </div>
-
 <script>
 const API_URL = "https://script.google.com/macros/s/AKfycbzcAr2oVXOKjoSMPimm3a0ARrcBSAL8geTNR6WQ8y9aE9WA87U91qm13YKOzShZ1d-R/exec";
 let activeTimers = {};
 let allData = [];
 let currentFilter = 'all';
 let currentTopicFilter = 'all';
-
-document.getElementById('date-display').innerText = new Date().toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'});
-
-// ── MODAL ──────────────────────────────────────────────────────
-function openModal() {
-  if (localStorage.getItem("admin_key") !== "scaler2026") { alert("🔒 READ-ONLY MODE"); return; }
-  document.getElementById('addModal').style.display = 'flex';
+let _snapshotData = [];
+let _allDue = [];
+document.getElementById('date-display').innerText = new Date().toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
+// ── MODAL ────────────────────────────────────────────────────
+function openModal(){
+  if(localStorage.getItem("admin_key")!=="scaler2026"){alert("🔒 READ-ONLY MODE");return;}
+  document.getElementById('addModal').style.display='flex';
 }
-function closeModal() {
-  document.getElementById('addModal').style.display = 'none';
-  ['p-name','p-topic','p-pattern','p-hint'].forEach(id => document.getElementById(id).value = '');
+function closeModal(){
+  document.getElementById('addModal').style.display='none';
+  ['p-name','p-topic','p-pattern','p-hint'].forEach(id=>document.getElementById(id).value='');
 }
-
-async function submitProblem() {
-  const name = document.getElementById('p-name').value.trim();
-  if (!name) return alert("Problem Name is required.");
-  const btn = document.getElementById('btn-save');
-  btn.innerText = "Syncing…"; btn.disabled = true;
-  try {
-    const res = await fetch(API_URL, { method:"POST", body: JSON.stringify({
-      action:"add_problem", secret:localStorage.getItem("admin_key"),
-      name, topic: document.getElementById('p-topic').value.trim()||"Uncategorized",
-      source: document.getElementById('p-source').value,
-      phase: document.getElementById('p-phase').value,
-      hint: document.getElementById('p-hint').value.trim(),
-      notes: document.getElementById('p-pattern').value.trim(),
+async function submitProblem(){
+  const name=document.getElementById('p-name').value.trim();
+  if(!name)return alert("Problem Name is required.");
+  const btn=document.getElementById('btn-save');
+  btn.innerText="Syncing…";btn.disabled=true;
+  try{
+    const res=await fetch(API_URL,{method:"POST",body:JSON.stringify({
+      action:"add_problem",secret:localStorage.getItem("admin_key"),
+      name,
+      topic:document.getElementById('p-topic').value.trim()||"Uncategorized",
+      source:document.getElementById('p-source').value,
+      phase:document.getElementById('p-phase').value,
+      difficulty:document.getElementById('p-diff').value,
+      hint:document.getElementById('p-hint').value.trim(),
+      notes:document.getElementById('p-pattern').value.trim(),
     })});
-    const r = await res.json();
-    if (r.error||r.status==="Error") { alert("Error: "+(r.error||r.message)); return; }
-    closeModal(); loadQueue();
-  } catch(e) { alert("Sync failed."); }
-  finally { btn.innerText="Save & Sync"; btn.disabled=false; }
+    const r=await res.json();
+    if(r.error||r.status==="Error"){alert("Error: "+(r.error||r.message));return;}
+    closeModal();loadQueue();
+  }catch(e){alert("Sync failed.");}
+  finally{btn.innerText="Save & Sync";btn.disabled=false;}
 }
-
-// ── SMART MIX (your existing logic, preserved exactly) ─────────
+// ── SM-2 PREVIEW — compute next interval client-side ─────────
+function previewInterval(p, action){
+  const ef=p.ef||2.5;
+  const interval=p.interval||7;
+  if(action==='Struggled'){
+    return Math.max(1,Math.round(interval*0.5));
+  } else {
+    const newEF=Math.min(4.0,ef+0.1);
+    return Math.max(3,Math.round(interval*newEF));
+  }
+}
+// ── SMART QUEUE BUILDER (8 problems: 5 retention + 3 fresh) ──
 function shuffle(a){let i=a.length,r;while(i!==0){r=Math.floor(Math.random()*i);i--;[a[i],a[r]]=[a[r],a[i]];}return a;}
-function smartMix(arr,n){
-  if(arr.length<=n)return arr;
-  arr.sort((a,b)=>new Date(a.initialDate)-new Date(b.initialDate));
-  let s=[];
-  if(n===1)s.push(arr[Math.floor(Math.random()*arr.length)]);
-  else if(n===2){s.push(arr[0]);s.push(arr[arr.length-1]);}
-  else{s.push(arr.shift());s.push(arr.pop());arr=shuffle(arr);s.push(...arr.slice(0,n-2));}
-  return s;
+function parseDMY(str){
+  if(!str)return null;
+  if(str.includes('/')){const p=str.split('/');if(p.length===3)return new Date(`${p[2]}-${p[1].padStart(2,'0')}-${p[0].padStart(2,'0')}`);}
+  if(str.includes('-'))return new Date(str);
+  return null;
 }
-
-// ── FILTER CONTROLS ────────────────────────────────────────────
-function setFilter(f, el) {
-  currentFilter = f;
-  document.querySelectorAll('.filter-btn').forEach(b => {
-    if (b.dataset.type === 'phase') b.classList.remove('active');
-    else if (!b.dataset.type && f === 'all') b.classList.toggle('active', b === el);
-    else if (!b.dataset.type) b.classList.toggle('active', b === el);
-  });
-  // Mark clicked btn active
+function buildSmartQueue(data, todayStr){
+  const isDue=p=>{
+    if(!p.reviewDate||p.reviewDate==='')return p.phase==='New'||!p.phase||p.phase==='';
+    return p.reviewDate<=todayStr;
+  };
+  // BLOCK A: RETENTION (up to 5)
+  const struggled=data.filter(p=>isDue(p)&&p.phase==='Struggled');
+  const smoothDue=data.filter(p=>isDue(p)&&p.phase!=='Struggled'&&p.phase!=='New'&&p.phase!=='');
+  const newDue   =data.filter(p=>isDue(p)&&(p.phase==='New'||p.phase===''));
+  let blockA=[];
+  // Up to 2 Struggled (most urgent)
+  blockA.push(...shuffle([...struggled]).slice(0,2));
+  // Up to 2 smooth due (oldest review date first)
+  const smoothSorted=[...smoothDue].filter(p=>!blockA.find(q=>q.name===p.name))
+    .sort((a,b)=>new Date(a.reviewDate)-new Date(b.reviewDate));
+  blockA.push(...smoothSorted.slice(0,2));
+  // 1 wildcard
+  const wildPool=data.filter(p=>isDue(p)&&!blockA.find(q=>q.name===p.name));
+  if(wildPool.length)blockA.push(shuffle([...wildPool])[0]);
+  // BLOCK B: FRESH (up to 3 — from New/unseen problems)
+  const freshPool=data.filter(p=>(p.phase==='New'||!p.phase||p.phase==='')&&!blockA.find(q=>q.name===p.name));
+  let blockB=[];
+  // 1. Topic rotation
+  const topics=[...new Set(freshPool.map(p=>p.topic).filter(Boolean))].sort();
+  if(topics.length>0){
+    let tidx=(parseInt(localStorage.getItem('srs_topic_idx')||'0'))%topics.length;
+    const rotTopic=topics[tidx];
+    localStorage.setItem('srs_topic_idx',String((tidx+1)%topics.length));
+    const fromTopic=freshPool.filter(p=>p.topic===rotTopic);
+    if(fromTopic.length)blockB.push(shuffle([...fromTopic])[0]);
+  }
+  // 2. Hard problem from fresh pool
+  const hardFresh=freshPool.filter(p=>p.difficulty==='H'&&!blockB.find(q=>q.name===p.name));
+  if(hardFresh.length)blockB.push(shuffle([...hardFresh])[0]);
+  // 3. Oldest unseen (longest waiting in backlog)
+  const oldest=[...freshPool].filter(p=>!blockB.find(q=>q.name===p.name))
+    .sort((a,b)=>{const da=parseDMY(a.initialDate),db=parseDMY(b.initialDate);return (da||new Date(0))-(db||new Date(0));});
+  if(oldest.length)blockB.push(oldest[0]);
+  return {blockA, blockB, all:[...blockA,...blockB]};
+}
+// ── FILTER CONTROLS ──────────────────────────────────────────
+function setFilter(f,el){
+  currentFilter=f;
   document.querySelectorAll('.filter-btn:not([data-topic])').forEach(b=>b.classList.remove('active'));
   el.classList.add('active');
   applyFilters();
 }
-
-function setTopicFilter(t, el) {
-  currentTopicFilter = t;
+function setTopicFilter(t,el){
+  currentTopicFilter=t;
   document.querySelectorAll('[data-topic]').forEach(b=>b.classList.remove('active'));
   el.classList.add('active');
   applyFilters();
 }
-
-function buildTopicFilters(problems) {
-  const topics = [...new Set(problems.map(p=>p.topic).filter(Boolean))].sort();
-  const wrap = document.getElementById('topic-filters');
-  wrap.innerHTML = `<button class="filter-btn active" data-topic="all" onclick="setTopicFilter('all',this)">All</button>` +
+function buildTopicFilters(problems){
+  const topics=[...new Set(problems.map(p=>p.topic).filter(Boolean))].sort();
+  const wrap=document.getElementById('topic-filters');
+  wrap.innerHTML=`<button class="filter-btn active" data-topic="all" onclick="setTopicFilter('all',this)">All</button>`+
     topics.map(t=>`<button class="filter-btn" data-topic="${t}" onclick="setTopicFilter('${t.replace(/'/g,"\\'")}',this)">${t}</button>`).join('');
 }
-
-function applyFilters() {
-  const todayStr = new Date().toISOString().split('T')[0];
-  let filtered = allData.filter(p => {
-    if (p.phase === 'Completed' || p.reviewDate === 'Review-Not needed') return false;
-    const isDue = !p.reviewDate || p.reviewDate <= todayStr || p.phase === 'New';
-    if (!isDue) return false;
-    if (currentTopicFilter !== 'all' && p.topic !== currentTopicFilter) return false;
-    if (currentFilter === 'all') return true;
-    if (currentFilter === 'Struggled') return p.phase === 'Struggled';
-    if (currentFilter === 'Smooth') return p.phase !== 'Struggled' && p.phase !== 'New' && p.phase !== '';
-    if (currentFilter === 'New') return p.phase === 'New' || p.phase === '';
+function applyFilters(){
+  const todayStr=new Date().toISOString().split('T')[0];
+  const source=(currentFilter==='all'&&currentTopicFilter==='all')?_snapshotData:_allDue;
+  const filtered=source.filter(p=>{
+    if(currentTopicFilter!=='all'&&p.topic!==currentTopicFilter)return false;
+    if(currentFilter==='all')return true;
+    if(currentFilter==='Struggled')return p.phase==='Struggled';
+    if(currentFilter==='Smooth')return p.phase!=='Struggled'&&p.phase!=='New'&&p.phase!=='';
+    if(currentFilter==='New')return p.phase==='New'||p.phase===''||!p.phase;
     return true;
   });
-  renderQueue(filtered);
+  renderQueue(filtered,false);
 }
-
-// ── LOAD ───────────────────────────────────────────────────────
-async function loadQueue() {
-  try {
-    const res = await fetch(API_URL + "?t=" + Date.now());
-    allData = await res.json();
-    const todayStr = new Date().toISOString().split('T')[0];
-
-    let dueStruggled=[], dueSmooth=[], newProblems=[];
-    allData.forEach(p => {
-      if (p.reviewDate==="Review-Not needed"||p.phase==="Completed") return;
-      if (p.phase==="New"||p.reviewDate==="") newProblems.push(p);
-      else if (p.reviewDate<=todayStr) {
-        if (p.phase==="Struggled") dueStruggled.push(p);
-        else dueSmooth.push(p);
-      }
-    });
-
-    // PROPORTION DISPLAY
-    const total = dueStruggled.length + dueSmooth.length + newProblems.length;
-    if (total > 0) {
-      const sp = Math.round((dueStruggled.length/total)*100);
-      const pp = Math.round((dueSmooth.length/total)*100);
-      const np = 100 - sp - pp;
-      document.getElementById('prop-segs').innerHTML =
-        `<div class="prop-seg" style="width:${sp}%;background:var(--red)"></div>` +
-        `<div class="prop-seg" style="width:${pp}%;background:var(--green)"></div>` +
-        `<div class="prop-seg" style="width:${np}%;background:var(--purple)"></div>`;
-      document.getElementById('prop-chips').innerHTML =
-        `<span class="prop-chip pc-struggled">⚠ ${dueStruggled.length} Struggled</span>` +
-        `<span class="prop-chip pc-smooth">✓ ${dueSmooth.length} Smooth</span>` +
-        `<span class="prop-chip pc-new">★ ${newProblems.length} New</span>` +
-        `<span class="prop-chip pc-total">${total} total due</span>`;
-      document.getElementById('proportion-bar').style.display = 'flex';
+// ── LOAD ─────────────────────────────────────────────────────
+async function loadQueue(){
+  try{
+    const res=await fetch(API_URL+"?t="+Date.now());
+    allData=await res.json();
+    const todayStr=new Date().toISOString().split('T')[0];
+    // Proportion display
+    const dueStruggled=allData.filter(p=>!p.completed&&(p.reviewDate<=todayStr)&&p.phase==='Struggled');
+    const dueSmooth=allData.filter(p=>!p.completed&&p.reviewDate&&p.reviewDate<=todayStr&&p.phase!=='Struggled'&&p.phase!=='New'&&p.phase!=='');
+    const newProbs=allData.filter(p=>p.phase==='New'||!p.phase||p.phase==='');
+    const total=dueStruggled.length+dueSmooth.length;
+    if(total>0){
+      const sp=Math.round((dueStruggled.length/total)*100);
+      const pp=100-sp;
+      document.getElementById('prop-segs').innerHTML=
+        `<div class="prop-seg" style="width:${sp}%;background:var(--red)"></div>`+
+        `<div class="prop-seg" style="width:${pp}%;background:var(--green)"></div>`;
+      document.getElementById('prop-chips').innerHTML=
+        `<span class="prop-chip pc-struggled">⚠ ${dueStruggled.length} Struggled</span>`+
+        `<span class="prop-chip pc-smooth">✓ ${dueSmooth.length} In Review</span>`+
+        `<span class="prop-chip pc-new">★ ${newProbs.length} New/Fresh</span>`+
+        `<span class="prop-chip pc-total">${allData.length} total problems</span>`;
+      document.getElementById('proportion-bar').style.display='flex';
     }
-
-    // Smart snapshot (your existing logic preserved)
-    let snapshotDate = localStorage.getItem("srs_date");
-    let snapshotNames = JSON.parse(localStorage.getItem("srs_queue_names")||"[]");
-    if (snapshotDate !== todayStr || snapshotNames.length === 0) {
-      let q=[];
-      q.push(...smartMix(dueStruggled, Math.min(2,dueStruggled.length)));
-      q.push(...smartMix(dueSmooth,    Math.min(2,dueSmooth.length)));
-      q.push(...smartMix(newProblems,  Math.min(1,newProblems.length)));
-      let remaining = 5-q.length;
-      let pool = allData.filter(p=>!q.find(t=>t.name===p.name)&&p.reviewDate!=="Review-Not needed"&&p.phase!=="Completed"&&(p.reviewDate===""||p.reviewDate<=todayStr));
-      if (remaining>0&&pool.length>0) q.push(...shuffle(pool).slice(0,remaining));
-      q = shuffle(q);
-      snapshotNames = q.map(p=>p.name);
+    // Build or restore daily snapshot
+    let snapshotDate=localStorage.getItem("srs_date");
+    let snapshotNames=JSON.parse(localStorage.getItem("srs_queue_names")||"[]");
+    if(snapshotDate!==todayStr||snapshotNames.length===0){
+      const built=buildSmartQueue(allData,todayStr);
+      const queue=built.all;
+      snapshotNames=queue.map(p=>p.name);
       localStorage.setItem("srs_date",todayStr);
       localStorage.setItem("srs_queue_names",JSON.stringify(snapshotNames));
+      localStorage.setItem("srs_queue_split",JSON.stringify({
+        retentionCount:built.blockA.length,
+        freshCount:built.blockB.length
+      }));
     }
-    // Rebuild from snapshot but keep full data for filters
-    let snapshotData = [];
-    snapshotNames.forEach(n=>{ let f=allData.find(p=>p.name===n); if(f)snapshotData.push(f); });
-    // Replace allData with snapshot for default view, but keep full for filters
-    window._snapshotData = snapshotData;
-    window._allDue = allData.filter(p=>p.reviewDate!=="Review-Not needed"&&p.phase!=="Completed"&&(!p.reviewDate||p.reviewDate<=todayStr||p.phase==="New"));
-
-    buildTopicFilters(window._allDue);
-    renderQueue(snapshotData);
-  } catch(e) {
-    document.getElementById('loading').innerHTML = '<div class="empty-state"><h2>Connection Failed</h2><p style="color:var(--muted)">Check console for errors.</p></div>';
+    const split=JSON.parse(localStorage.getItem("srs_queue_split")||'{"retentionCount":5,"freshCount":3}');
+    // Rebuild from snapshot
+    _snapshotData=[];
+    snapshotNames.forEach(n=>{const f=allData.find(p=>p.name===n);if(f)_snapshotData.push(f);});
+    _allDue=allData.filter(p=>{
+      if(!p.reviewDate||p.reviewDate==='')return p.phase==='New'||!p.phase;
+      return p.reviewDate<=todayStr;
+    });
+    // Queue info bar
+    document.getElementById('qi-blocks').innerHTML=
+      `<span class="qi-chip qi-ret">📚 ${split.retentionCount} Retention</span>`+
+      `<span class="qi-chip qi-fresh">🌱 ${split.freshCount} Fresh Solving</span>`+
+      `<span class="qi-chip qi-total">${_snapshotData.length} total today</span>`;
+    document.getElementById('queue-info').style.display='flex';
+    buildTopicFilters(_allDue);
+    renderQueue(_snapshotData,true,split.retentionCount);
+  }catch(e){
+    document.getElementById('loading').innerHTML='<div class="empty-state"><h2>Connection Failed</h2><p style="color:var(--muted)">Check console for errors.</p></div>';
+    console.error(e);
   }
 }
-
-// When filter is 'all' with no topic, show snapshot. With any filter, show full due set.
-function applyFilters() {
-  const todayStr = new Date().toISOString().split('T')[0];
-  const source = (currentFilter==='all'&&currentTopicFilter==='all') ? window._snapshotData||[] : window._allDue||[];
-  let filtered = source.filter(p => {
-    if (currentTopicFilter!=='all'&&p.topic!==currentTopicFilter) return false;
-    if (currentFilter==='all') return true;
-    if (currentFilter==='Struggled') return p.phase==='Struggled';
-    if (currentFilter==='Smooth') return p.phase!=='Struggled'&&p.phase!=='New'&&p.phase!=='';
-    if (currentFilter==='New') return p.phase==='New'||p.phase==='';
-    return true;
-  });
-  renderQueue(filtered);
+function refreshQueue(){
+  if(localStorage.getItem("admin_key")!=="scaler2026"){alert("🔒 READ-ONLY MODE");return;}
+  localStorage.removeItem("srs_date");
+  localStorage.removeItem("srs_queue_names");
+  localStorage.removeItem("srs_queue_split");
+  loadQueue();
 }
-
-// ── RENDER ─────────────────────────────────────────────────────
-function renderQueue(problems) {
-  const qDiv = document.getElementById('queue');
-  document.getElementById('loading').style.display = 'none';
-  qDiv.innerHTML = '';
-
-  if (!problems.length) {
-    if (currentFilter==='all'&&currentTopicFilter==='all') {
+// ── RENDER ────────────────────────────────────────────────────
+function renderQueue(problems, showBlocks, retentionCount){
+  const qDiv=document.getElementById('queue');
+  document.getElementById('loading').style.display='none';
+  qDiv.innerHTML='';
+  if(!problems.length){
+    if(currentFilter==='all'&&currentTopicFilter==='all'){
       triggerSuccess();
-      qDiv.innerHTML = `<div class="empty-state fade"><h2>Queue Clear 🚀</h2><p>Your memory cache is optimized for today.</p></div>`;
+      qDiv.innerHTML=`<div class="empty-state fade"><h2>Queue Clear 🚀</h2><p>All done for today. Great work!</p></div>`;
     } else {
-      qDiv.innerHTML = `<div class="empty-state fade"><h2>No matches</h2><p>Try a different filter.</p></div>`;
+      qDiv.innerHTML=`<div class="empty-state fade"><h2>No matches</h2><p>Try a different filter.</p></div>`;
     }
     return;
   }
-
-  problems.forEach(p => {
-    const cardId = `card-${btoa(p.name).replace(/[^a-zA-Z0-9]/g,'')}`;
-    const phaseClass = p.phase==='Struggled'?'card-struggled':p.phase==='New'||!p.phase?'card-new':'card-smooth';
-    const badgeClass = p.phase==='Struggled'?'b-phase-struggled':p.phase==='New'||!p.phase?'b-phase-new':p.phase==='Mastered'?'b-phase-mastered':'b-phase-smooth';
-    const pattern = p.notes||'';
-    let prettyDate='?', prettyLast='Never';
+  problems.forEach((p,idx)=>{
+    // Dividers between retention and fresh blocks
+    if(showBlocks&&retentionCount){
+      if(idx===0){
+        qDiv.insertAdjacentHTML('beforeend',`<div class="block-divider"><span class="block-label bl-retention">📚 Retention Block</span><div class="block-line"></div></div>`);
+      }
+      if(idx===retentionCount){
+        qDiv.insertAdjacentHTML('beforeend',`<div class="block-divider"><span class="block-label bl-fresh">🌱 Fresh Solving Block</span><div class="block-line"></div></div>`);
+      }
+    }
+    const cardId=`card-${btoa(p.name).replace(/[^a-zA-Z0-9]/g,'')}`;
+    const isFresh=showBlocks&&retentionCount&&idx>=retentionCount;
+    const phaseClass=p.phase==='Struggled'?'card-struggled':p.phase==='New'||!p.phase?'card-new':isFresh?'card-fresh':'card-smooth';
+    const badgeClass=p.phase==='Struggled'?'b-phase-struggled':p.phase==='New'||!p.phase?'b-phase-new':p.phase==='Mastered'?'b-phase-mastered':'b-phase-smooth';
+    const pattern=p.notes||'';
+    let prettyDate='?',prettyLast='Never';
     try{prettyDate=new Date(p.initialDate).toLocaleDateString('en-GB',{day:'numeric',month:'short'});}catch(e){}
     try{if(p.lastSolved&&p.lastSolved!=='Never')prettyLast=new Date(p.lastSolved).toLocaleDateString('en-GB',{day:'numeric',month:'short'});}catch(e){}
-
-    const card = document.createElement('div');
-    card.className = `problem-card ${phaseClass} fade`;
-    card.id = cardId;
-    card.innerHTML = `
+    // SM-2 preview intervals
+    const nextSmooth=previewInterval(p,'Smooth');
+    const nextStruggled=previewInterval(p,'Struggled');
+    const ef=p.ef||2.5;
+    const interval=p.interval||7;
+    const card=document.createElement('div');
+    card.className=`problem-card ${phaseClass} fade`;
+    card.id=cardId;
+    card.innerHTML=`
       <div class="card-header">
-        <div class="card-title">${p.name}</div>
+        <div class="card-title">${p.name}${isFresh?'<span style="font-family:var(--fm);font-size:.58rem;color:var(--orange);margin-left:8px;font-weight:400">NEW</span>':''}</div>
         ${pattern?`<span class="pattern-tag">${pattern.split('|')[0].trim()}</span>`:''}
       </div>
       <div class="meta-row">
@@ -377,13 +438,20 @@ function renderQueue(problems) {
         <span class="badge b-date">Added ${prettyDate}</span>
         <span class="badge" style="background:rgba(168,85,247,.08);color:#c084fc;border:1px solid rgba(168,85,247,.18)">Last ${prettyLast}</span>
         ${p.difficulty?`<span class="badge" style="background:${p.difficulty==='H'?'rgba(239,68,68,.1)':p.difficulty==='M'?'rgba(234,179,8,.1)':'rgba(57,211,83,.1)'};color:${p.difficulty==='H'?'var(--red)':p.difficulty==='M'?'var(--yellow)':'var(--green)'};border:1px solid transparent">${p.difficulty}</span>`:''}
+        <span class="badge b-ef">EF ${ef.toFixed(2)}</span>
+        <span class="badge" style="background:rgba(255,255,255,.04);color:var(--muted);border:1px solid var(--border)">Now: ${interval}d</span>
       </div>
       <div class="actions">
         <button class="btn-hint" onclick="toggleHint('hint-${cardId}')">💡 Hint</button>
         <button class="btn-timer" id="btn-timer-${cardId}" onclick="startTimer('${cardId}')">▶ Focus</button>
         <span class="timer-display" id="timer-${cardId}">00:00</span>
-        <button class="btn-struggled" onclick="updateProblem('${p.name}','Struggled','${cardId}')">⚠ Struggled</button>
-        <button class="btn-smooth" onclick="updateProblem('${p.name}','Smooth','${cardId}')">✓ Smooth</button>
+        <button class="btn-struggled" onclick="updateProblem('${p.name}','Struggled','${cardId}')">⚠ Struggled → ${nextStruggled}d</button>
+        <button class="btn-smooth" onclick="updateProblem('${p.name}','Smooth','${cardId}')">✓ Smooth → ${nextSmooth}d</button>
+      </div>
+      <div class="sm2-preview">
+        <span class="sm2-label">SM-2 Preview:</span>
+        <span class="sm2-smooth">✓ Smooth: next in ${nextSmooth}d (EF ${Math.min(4.0,ef+0.1).toFixed(2)})</span>
+        <span class="sm2-struggled">⚠ Struggled: next in ${nextStruggled}d (EF ${Math.max(1.3,ef-0.3).toFixed(2)})</span>
       </div>
       <div class="hint-box" id="hint-${cardId}">
         <strong style="color:var(--blue);font-family:var(--fm);font-size:.7rem;text-transform:uppercase;letter-spacing:1px">Algorithm Hint</strong><br><br>
@@ -392,48 +460,54 @@ function renderQueue(problems) {
     qDiv.appendChild(card);
   });
 }
-
-function toggleHint(id) {
-  if (localStorage.getItem("admin_key")!=="scaler2026"){alert("🔒 READ-ONLY MODE");return;}
+function toggleHint(id){
+  if(localStorage.getItem("admin_key")!=="scaler2026"){alert("🔒 READ-ONLY MODE");return;}
   const el=document.getElementById(id);
   el.style.display=el.style.display==='block'?'none':'block';
 }
-
-function startTimer(cardId) {
-  if (localStorage.getItem("admin_key")!=="scaler2026"){alert("🔒 READ-ONLY MODE");return;}
-  if (activeTimers[cardId]) return;
+function startTimer(cardId){
+  if(localStorage.getItem("admin_key")!=="scaler2026"){alert("🔒 READ-ONLY MODE");return;}
+  if(activeTimers[cardId])return;
   document.getElementById('btn-timer-'+cardId).style.display='none';
   const disp=document.getElementById('timer-'+cardId);
   disp.style.display='inline-block';
   let s=0;
   activeTimers[cardId]=setInterval(()=>{
     s++;
-    let m=Math.floor(s/60).toString().padStart(2,'0');
-    let sc=(s%60).toString().padStart(2,'0');
+    const m=Math.floor(s/60).toString().padStart(2,'0');
+    const sc=(s%60).toString().padStart(2,'0');
     disp.innerText=`${m}:${sc}`;
     if(s>=1800)disp.classList.add('timer-danger');
   },1000);
 }
-
-async function updateProblem(name,action,cardId) {
-  if (localStorage.getItem("admin_key")!=="scaler2026"){alert("🔒 READ-ONLY MODE");return;}
+async function updateProblem(name,action,cardId){
+  if(localStorage.getItem("admin_key")!=="scaler2026"){alert("🔒 READ-ONLY MODE");return;}
   const card=document.getElementById(cardId);
   card.querySelectorAll('button').forEach(b=>b.disabled=true);
   if(activeTimers[cardId])clearInterval(activeTimers[cardId]);
-  try {
+  try{
     const res=await fetch(API_URL,{method:"POST",body:JSON.stringify({name,action,secret:localStorage.getItem("admin_key")})});
     const r=await res.json();
     if(r.error||r.status==="Error"){alert("Error: "+(r.error||r.message));card.querySelectorAll('button').forEach(b=>b.disabled=false);return;}
+    // Graduation celebration
+    if(r.graduated){
+      confetti({particleCount:80,spread:70,origin:{y:.6},colors:['#a855f7','#fff','#39d353']});
+      setTimeout(()=>confetti({particleCount:40,spread:50,origin:{y:.5},colors:['#a855f7','#fff']}),400);
+    }
     // Remove from snapshot
     let snap=JSON.parse(localStorage.getItem("srs_queue_names")||"[]");
     snap=snap.filter(n=>n!==name);
     localStorage.setItem("srs_queue_names",JSON.stringify(snap));
+    // Show next interval on card before removing
+    if(r.newInterval){
+      const preview=card.querySelector('.sm2-preview');
+      if(preview)preview.innerHTML=`<span style="font-family:var(--fm);font-size:.7rem;color:${action==='Smooth'?'var(--green)':'var(--red)'}">${action==='Smooth'?'✓':'⚠'} Next review: ${r.newInterval} days (${r.newPhase}) · EF: ${r.newEF}</span>`;
+    }
     card.style.opacity='0';card.style.transform='scale(0.96)';card.style.transition='.25s';
-    setTimeout(()=>{card.remove();if(!document.querySelectorAll('.problem-card').length)renderQueue([]);},280);
+    setTimeout(()=>{card.remove();if(!document.querySelectorAll('.problem-card').length)renderQueue([],false);},280);
     if(action==='Smooth'&&Math.random()<0.3)confetti({particleCount:40,spread:50,origin:{y:.8},colors:['#39d353','#fff']});
-  } catch(e){alert("Sync failed.");card.querySelectorAll('button').forEach(b=>b.disabled=false);}
+  }catch(e){alert("Sync failed.");card.querySelectorAll('button').forEach(b=>b.disabled=false);}
 }
-
 function triggerSuccess(){
   const end=Date.now()+2500;
   (function f(){
@@ -442,7 +516,6 @@ function triggerSuccess(){
     if(Date.now()<end)requestAnimationFrame(f);
   }());
 }
-
 loadQueue();
 </script>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="12f7783a-202a-41a3-b4d4-b8e61a3a575d"></script>
