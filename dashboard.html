@@ -18,10 +18,12 @@ body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(
 .topbar-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .chip{font-family:var(--fm);font-size:.7rem;padding:5px 13px;border-radius:16px;background:var(--bg2);border:1px solid var(--border)}
 .phase-chip{color:var(--green);background:rgba(57,211,83,.07);border-color:rgba(57,211,83,.2)}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:20px}
+/* STATS GRID — 7 cards */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:20px}
 .stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
-.stat-v{font-size:1.9rem;font-weight:700;line-height:1}
-.stat-l{font-family:var(--fm);font-size:.56rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-top:5px}
+.stat-v{font-size:1.75rem;font-weight:700;line-height:1}
+.stat-l{font-family:var(--fm);font-size:.52rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-top:5px}
+.stat-sub{font-family:var(--fm);font-size:.5rem;color:var(--dim);margin-top:2px}
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
 .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px}
 @media(max-width:900px){.g2,.g3{grid-template-columns:1fr}}
@@ -69,10 +71,8 @@ body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(
 .sched-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
 .sched-time{font-family:var(--fm);font-size:.62rem;color:var(--muted);width:68px;flex-shrink:0}
 .sched-act{font-size:.78rem}
-/* INFO BOX */
 .info-box{background:rgba(59,130,246,.05);border:1px solid rgba(59,130,246,.15);border-radius:10px;padding:12px 16px;margin-bottom:14px;font-size:.78rem;line-height:1.6;color:#a0aec0}
 .info-box strong{color:var(--blue)}
-/* WEEKLY REVIEW */
 .review-section{background:rgba(57,211,83,.04);border:1px solid rgba(57,211,83,.12);border-radius:12px;padding:18px;margin-bottom:14px;display:none}
 .review-title{font-size:.85rem;font-weight:700;margin-bottom:12px;color:var(--green)}
 .review-rows{display:flex;flex-direction:column;gap:8px}
@@ -98,26 +98,21 @@ body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(
       <div class="chip phase-chip" id="phase-chip">Loading…</div>
     </div>
   </div>
-
-  <!-- EXPLAINER — what each section means -->
   <div class="info-box" id="info-box">
     <strong>How to read this dashboard:</strong>
-    SRS Due = problems whose review date is today or past (includes all phases except Completed).
-    Total = all problems in your sheet.
-    Smooth Rate = % of problems where you clicked "Smooth" (needs SRS sessions to populate).
-    Streak = consecutive days you clicked Smooth/Struggled in the SRS engine.
-    Pattern Gaps = struggle % per pattern tag (needs friction data from SRS reviews).
-    This Week = SRS reviews done this week (not additional problems — that's the weekend queue).
+    Problems Solved = ALL problems including Completed ones (your full count).
+    Main Streak = consecutive days you solved/added problems (from Date column).
+    SRS Streak = consecutive days you clicked Smooth/Struggled in the SRS engine.
+    Smooth Rate = % of all problems marked Smooth.
+    Mastered = problems in Mastered or Completed phase.
     <span onclick="this.parentElement.style.display='none'" style="cursor:pointer;color:var(--blue);margin-left:8px">Got it ✕</span>
   </div>
-
   <!-- WEEKLY REVIEW -->
   <div class="review-section" id="review-section">
     <div class="review-title">📋 Weekly Review</div>
     <div class="review-rows" id="review-rows"></div>
   </div>
-
-  <!-- STATS — correct labels -->
+  <!-- STATS — 7 cards -->
   <div class="stats">
     <div class="stat">
       <div class="stat-v" id="sv-due" style="color:var(--yellow)">—</div>
@@ -125,26 +120,31 @@ body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(
     </div>
     <div class="stat">
       <div class="stat-v" id="sv-total" style="color:var(--text)">—</div>
-      <div class="stat-l">Problems in Sheet</div>
+      <div class="stat-l">Problems Solved</div>
     </div>
     <div class="stat">
       <div class="stat-v" id="sv-mastery" style="color:var(--green)">—</div>
-      <div class="stat-l">Smooth Reviews</div>
+      <div class="stat-l">Smooth Rate</div>
     </div>
     <div class="stat">
-      <div class="stat-v" id="sv-streak" style="color:var(--orange)">—</div>
+      <div class="stat-v" id="sv-main-streak" style="color:var(--orange)">—</div>
+      <div class="stat-l">🔥 Main Streak</div>
+      <div class="stat-sub">Daily solving</div>
+    </div>
+    <div class="stat">
+      <div class="stat-v" id="sv-streak" style="color:var(--yellow)">—</div>
       <div class="stat-l">SRS Streak</div>
+      <div class="stat-sub">Daily reviews</div>
     </div>
     <div class="stat">
       <div class="stat-v" id="sv-mastered" style="color:var(--purple)">—</div>
-      <div class="stat-l">Mastered (S4+)</div>
+      <div class="stat-l">Mastered</div>
     </div>
     <div class="stat">
       <div class="stat-v" id="sv-lectures" style="color:var(--blue)">—</div>
       <div class="stat-l">Lectures Done</div>
     </div>
   </div>
-
   <!-- ROW 1 -->
   <div class="g2">
     <div class="card">
@@ -157,19 +157,18 @@ body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(
       <div class="sched-rows">
         <div class="sched-row"><div class="sched-dot" style="background:var(--dim)"></div><div class="sched-time">11:15 AM</div><div class="sched-act">Wake · Supplements</div></div>
         <div class="sched-row"><div class="sched-dot" style="background:var(--dim)"></div><div class="sched-time">11:30 AM</div><div class="sched-act">Office</div></div>
-        <div class="sched-row"><div class="sched-dot" style="background:var(--yellow)"></div><div class="sched-time">8:45 PM</div><div class="sched-act">SRS Block · 5 problems</div></div>
+        <div class="sched-row"><div class="sched-dot" style="background:var(--yellow)"></div><div class="sched-time">8:45 PM</div><div class="sched-act">SRS Block · 8 problems</div></div>
         <div class="sched-row"><div class="sched-dot" style="background:var(--green)"></div><div class="sched-time">10:00 PM</div><div class="sched-act" id="class-label">Class — <span style="color:var(--muted)">Loading…</span></div></div>
         <div class="sched-row"><div class="sched-dot" style="background:var(--blue)"></div><div class="sched-time">12:30 AM</div><div class="sched-act">Assignment + 1 Warm IDE</div></div>
         <div class="sched-row"><div class="sched-dot" style="background:var(--dim)"></div><div class="sched-time">2:30 AM</div><div class="sched-act">Wind down · Sleep</div></div>
       </div>
     </div>
   </div>
-
   <!-- ROW 2 -->
   <div class="g3">
     <div class="card">
-      <div class="card-title">⚠ Pattern Gaps — <b>Struggle % (from SRS sessions)</b></div>
-      <div class="gap-rows" id="gap-rows"><div class="empty">Populates after SRS reviews build up. Click Smooth/Struggled in review.html to feed this.</div></div>
+      <div class="card-title">⚠ Pattern Gaps — <b>Struggle % by pattern</b></div>
+      <div class="gap-rows" id="gap-rows"><div class="empty">Populates after SRS reviews. Click Smooth/Struggled in review.html.</div></div>
       <a href="cue_library.html" class="btn-link">Cue Library →</a>
     </div>
     <div class="card">
@@ -191,13 +190,13 @@ body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(
           <div class="meter-val" id="mv-plan" style="color:var(--blue)">—</div>
         </div>
         <div class="meter-row">
-          <div class="meter-lbl">Smooth Reviews</div>
+          <div class="meter-lbl">Smooth Rate</div>
           <div class="meter-bg"><div class="meter-fill" id="m-mastery" style="width:0%;background:var(--green)"></div></div>
           <div class="meter-val" id="mv-mastery" style="color:var(--green)">—</div>
         </div>
       </div>
       <div style="font-family:var(--fm);font-size:.6rem;color:var(--muted);margin-top:14px;line-height:1.6">
-        Readiness grows as you do SRS sessions. S3/S4/Mastered = problems you've reviewed 3+ times successfully.
+        SM-2 adaptive intervals. EF grows as you consistently Smooth problems.
       </div>
       <a href="readiness.html" class="btn-link">Mock Sessions →</a>
     </div>
@@ -205,12 +204,11 @@ body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(
       <div class="card-title">📈 SRS Reviews This Week</div>
       <div class="week-row" id="week-row"><div class="empty">Loading…</div></div>
       <div style="font-family:var(--fm);font-size:.62rem;color:var(--muted);margin-top:10px">
-        This counts SRS reviews (Smooth/Struggled clicks), not additional problems.<br>
-        Target: 5 reviews/day × 5 days = 25/week.
+        Counts SRS reviews (Smooth/Struggled clicks) per day.<br>
+        Target: 8 problems/day (5 retention + 3 fresh).
       </div>
     </div>
   </div>
-
   <!-- ROW 3 -->
   <div class="g2">
     <div class="card">
@@ -221,7 +219,7 @@ body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(
     <div class="card">
       <div class="card-title">🛠 All Systems</div>
       <div class="tools-grid">
-        <a href="review.html" class="tool-a"><div class="tool-icon">🧠</div><div><div class="tool-name">SRS Engine</div><div class="tool-desc">Daily review · Struggled 4d · Smooth 8d</div></div><div class="tool-badge tb-live">LIVE</div></a>
+        <a href="review.html" class="tool-a"><div class="tool-icon">🧠</div><div><div class="tool-name">SRS Engine</div><div class="tool-desc">SM-2 Adaptive · 8 problems/day</div></div><div class="tool-badge tb-live">LIVE</div></a>
         <a href="plan.html" class="tool-a"><div class="tool-icon">📅</div><div><div class="tool-name">Plan Timeline</div><div class="tool-desc">Lecture schedule</div></div><div class="tool-badge tb-live">LIVE</div></a>
         <a href="weekend.html" class="tool-a"><div class="tool-icon">⚡</div><div><div class="tool-name">Weekend Queue</div><div class="tool-desc">Additional problems</div></div><div class="tool-badge tb-live">LIVE</div></a>
         <a href="cue_library.html" class="tool-a"><div class="tool-icon">🗃</div><div><div class="tool-name">Cue Library</div><div class="tool-desc">Pattern tags</div></div><div class="tool-badge tb-new">NEW</div></a>
@@ -231,100 +229,92 @@ body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(
     </div>
   </div>
 </div>
-
 <script>
-// ── CONFIG ──────────────────────────────────────────────────
-// SRS API — your code.gs (srs-backend)
 const SRS_API  = "https://script.google.com/macros/s/AKfycbzcAr2oVXOKjoSMPimm3a0ARrcBSAL8geTNR6WQ8y9aE9WA87U91qm13YKOzShZ1d-R/exec";
-// PLAN API — your scheduling.gs
 const PLAN_API = "https://script.google.com/macros/s/AKfycbziO7UXoTfbgegAbdoRksCxy3OI0Nn_p8vDJnQ1VboVjVhE1SsJFwnIjtK4kzz2-kDzkA/exec";
-// ───────────────────────────────────────────────────────────
-
 function todayStr(){const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
-
+// Parse dd/MM/yyyy → yyyy-MM-dd (same as heatmap)
+function parseDMY(str){
+  if(!str)return'';
+  if(str.includes('/')){const p=str.split('/');if(p.length===3)return`${p[2]}-${p[1].padStart(2,'0')}-${p[0].padStart(2,'0')}`;}
+  return str; // already yyyy-MM-dd
+}
 function setDate(){
   const d=new Date();
   const days=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
   const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   document.getElementById('date-chip').textContent=days[d.getDay()]+' '+d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear();
   const m=d.getMonth()+1,dy=d.getDate();
-  let phase='Phase 1 · Muscle Memory · LLD';
+  let phase='Phase 1 · Muscle Memory';
   if(m<5||(m===5&&dy<24))phase='Phase 0 · Runway';
   else if(m>=5&&m<7)phase='Phase 1 · Muscle Memory';
   else if(m>=7&&m<10)phase='Phase 2 · HLD + Mocks';
   else phase='Phase 3 · Pipeline';
   document.getElementById('phase-chip').textContent=phase;
 }
-
 async function loadSRS(){
   try{
     const res=await fetch(SRS_API+"?t="+Date.now());
     const all=await res.json();
     const ts=todayStr();
-
-    // TOTAL — all problems in sheet regardless of phase
-    const total=all.length;
-    document.getElementById('sv-total').textContent=total;
-
-    // DUE TODAY — problems with reviewDate <= today, not Completed
-    // Excludes "Review-Not needed" which means Completed cycle
+    // ── TOTAL — ALL problems including Completed
+    document.getElementById('sv-total').textContent=all.length;
+    // ── DUE TODAY — reviewDate <= today, exclude truly Completed with future date
     const due=all.filter(p=>{
-      const ph=(p.phase||'').trim();
-      if(ph==='Completed'||p.reviewDate==='Review-Not needed')return false;
-      if(!p.reviewDate||p.reviewDate==='')return true; // New, no date yet
+      if(!p.reviewDate||p.reviewDate==='')return p.phase==='New'||!p.phase;
       return p.reviewDate<=ts;
     });
     document.getElementById('sv-due').textContent=due.length;
-
-    // SMOOTH REVIEWS — only count problems that have been REVIEWED (have lastSolved set)
-    // and where the friction field shows Smooth
-    const reviewed=all.filter(p=>p.lastSolved&&p.lastSolved!=='Never'&&p.lastSolved!=='');
-    const smoothReviewed=reviewed.filter(p=>p.friction&&p.friction.toLowerCase().includes('smooth'));
-    const smoothRate=reviewed.length>0?Math.round((smoothReviewed.length/reviewed.length)*100):0;
-
-    // Display as count if rate is 0 (not enough data)
-    if(reviewed.length<10){
-      document.getElementById('sv-mastery').textContent=smoothReviewed.length+' so far';
-      document.getElementById('sv-mastery').style.fontSize='1.2rem';
-    } else {
-      document.getElementById('sv-mastery').textContent=smoothRate+'%';
-    }
-
-    // MASTERED — phase is S3, S4, or Mastered or Completed
-    const advanced=all.filter(p=>{
-      const ph=(p.phase||'').trim();
-      return ['S3','S4','Mastered','Completed'].includes(ph);
+    // ── SMOOTH RATE — across ALL problems that have friction set
+    const withFriction=all.filter(p=>p.friction&&p.friction!=='');
+    const smoothCount=withFriction.filter(p=>p.friction.toLowerCase().includes('smooth')).length;
+    // Fallback: use phase if friction column is empty (many existing problems)
+    const smoothByPhase=all.filter(p=>p.phase&&['S1','S2','S3','S4','Mastered','Completed'].includes(p.phase)).length;
+    const smoothDenom=withFriction.length>20?withFriction.length:all.length;
+    const smoothNum=withFriction.length>20?smoothCount:smoothByPhase;
+    const smoothRate=smoothDenom>0?Math.round((smoothNum/smoothDenom)*100):0;
+    document.getElementById('sv-mastery').textContent=smoothRate+'%';
+    // ── MASTERED — only Mastered + Completed phases
+    const mastered=all.filter(p=>p.phase==='Mastered'||p.phase==='Completed');
+    document.getElementById('sv-mastered').textContent=mastered.length;
+    // ── MAIN STREAK — from initialDate (Date column = day you solved it)
+    // This is your TRUE daily solving streak, same source as heatmap
+    const mainDateSet=new Set();
+    all.forEach(p=>{
+      const iso=parseDMY(p.initialDate);
+      if(iso)mainDateSet.add(iso);
     });
-    document.getElementById('sv-mastered').textContent=advanced.length;
-
-    // STREAK — count consecutive days in lastSolved dates
-    // Build a set of all dates where ANY problem was reviewed
-    const dateSet=new Set(all.map(p=>p.lastSolved).filter(d=>d&&d!=='Never'&&d!==''));
-    let streak=0;
-    const ref=new Date();
-    for(let i=0;i<365;i++){
-      const d=new Date(ref);d.setDate(ref.getDate()-i);
-      const k=d.toISOString().split('T')[0];
-      if(dateSet.has(k))streak++;
-      else if(i>0)break; // first day is today — if today not in set, streak is 0
+    let mainStreak=0;
+    const mainRef=new Date();
+    for(let i=0;i<730;i++){
+      const d=new Date(mainRef);d.setDate(mainRef.getDate()-i);
+      const k=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+      if(mainDateSet.has(k))mainStreak++;
+      else if(i>0)break;
     }
-    document.getElementById('sv-streak').textContent=streak+'d';
-
-    // READINESS METERS — meaningful values
+    document.getElementById('sv-main-streak').textContent=mainStreak+'d';
+    // ── SRS STREAK — from lastSolved (days you clicked Smooth/Struggled)
+    const srsDateSet=new Set(all.map(p=>p.lastSolved).filter(d=>d&&d!=='Never'&&d!==''));
+    let srsStreak=0;
+    const srsRef=new Date();
+    for(let i=0;i<365;i++){
+      const d=new Date(srsRef);d.setDate(srsRef.getDate()-i);
+      const k=d.toISOString().split('T')[0];
+      if(srsDateSet.has(k))srsStreak++;
+      else if(i>0)break;
+    }
+    document.getElementById('sv-streak').textContent=srsStreak+'d';
+    // ── READINESS METERS
     const hard=all.filter(p=>p.difficulty==='H').length;
-    const hardPct=Math.min(Math.round((hard/Math.max(total,1))*100*2),100); // scale: 50% hard = 100% bar
+    const hardPct=Math.min(Math.round((hard/Math.max(all.length,1))*200),100);
     document.getElementById('m-hard').style.width=hardPct+'%';
     document.getElementById('mv-hard').textContent=hard+' Hard';
-
-    const advPct=Math.min(Math.round((advanced.length/Math.max(total,1))*100*5),100); // scale: 20% advanced = 100% bar
+    const advPct=Math.min(Math.round((mastered.length/Math.max(all.length,1))*500),100);
     document.getElementById('m-srs').style.width=advPct+'%';
-    document.getElementById('mv-srs').textContent=advanced.length;
-
-    const masteryPct=reviewed.length>0?smoothRate:0;
-    document.getElementById('m-mastery').style.width=masteryPct+'%';
-    document.getElementById('mv-mastery').textContent=reviewed.length<10?reviewed.length+' rev':masteryPct+'%';
-
-    // SRS QUEUE DISPLAY
+    document.getElementById('mv-srs').textContent=mastered.length;
+    document.getElementById('m-mastery').style.width=smoothRate+'%';
+    document.getElementById('mv-mastery').textContent=smoothRate+'%';
+    // ── SRS QUEUE DISPLAY
     const snapshot=JSON.parse(localStorage.getItem('srs_queue_names')||'[]');
     const snapshotDate=localStorage.getItem('srs_date');
     let displayQueue=[];
@@ -333,12 +323,11 @@ async function loadSRS(){
     } else {
       displayQueue=due.slice(0,8);
     }
-
     if(!displayQueue.length){
       document.getElementById('srs-badge').textContent='All caught up ✓';
       document.getElementById('srs-list').innerHTML='<div class="empty" style="color:var(--green)">✅ Queue clear today!</div>';
     } else {
-      document.getElementById('srs-badge').textContent=due.length+' due (showing '+(displayQueue.length<due.length?'snapshot':'all')+')';
+      document.getElementById('srs-badge').textContent=due.length+' due today';
       document.getElementById('srs-list').innerHTML=displayQueue.slice(0,8).map(p=>{
         const ph=(p.phase||'new').trim();
         const phCls=ph==='Struggled'?'ph-st':ph==='New'||!ph?'ph-n':'ph-s';
@@ -350,10 +339,9 @@ async function loadSRS(){
         </div>`;
       }).join('');
     }
-
-    // PATTERN GAPS — only from problems that have been REVIEWED (have friction set)
+    // ── PATTERN GAPS
     const pm={};
-    reviewed.forEach(p=>{
+    all.filter(p=>p.lastSolved&&p.lastSolved!=='Never').forEach(p=>{
       const pat=(p.notes||'').split('|')[0].trim();
       if(!pat||pat.length<3)return;
       if(!pm[pat])pm[pat]={total:0,struggled:0};
@@ -363,7 +351,6 @@ async function loadSRS(){
     const gaps=Object.entries(pm).filter(([,v])=>v.total>=2)
       .map(([n,v])=>({n,pct:Math.round((v.struggled/v.total)*100),total:v.total}))
       .sort((a,b)=>b.pct-a.pct).slice(0,7);
-
     if(gaps.length){
       document.getElementById('gap-rows').innerHTML=gaps.map(g=>{
         const col=g.pct>=60?'var(--red)':g.pct>=30?'var(--yellow)':'var(--green)';
@@ -374,18 +361,17 @@ async function loadSRS(){
         </div>`;
       }).join('');
     } else {
-      document.getElementById('gap-rows').innerHTML='<div class="empty">Pattern gaps appear after ~10 SRS review sessions. Keep reviewing!</div>';
+      document.getElementById('gap-rows').innerHTML='<div class="empty">Pattern gaps appear after ~10 SRS review sessions.</div>';
     }
-
-    // WEEKLY ACTIVITY — SRS reviews this week (lastSolved dates)
+    // ── WEEKLY ACTIVITY (from lastSolved)
     const dnames=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
     const today=new Date();
-    const days=[];
-    for(let i=6;i>=0;i--){const d=new Date(today);d.setDate(today.getDate()-i);const k=d.toISOString().split('T')[0];days.push({k,nm:dnames[d.getDay()],isToday:i===0});}
+    const weekDays=[];
+    for(let i=6;i>=0;i--){const d=new Date(today);d.setDate(today.getDate()-i);const k=d.toISOString().split('T')[0];weekDays.push({k,nm:dnames[d.getDay()],isToday:i===0});}
     const revCnt={};
     all.forEach(p=>{if(p.lastSolved&&p.lastSolved!=='Never')revCnt[p.lastSolved]=(revCnt[p.lastSolved]||0)+1;});
-    const weekTotal=days.reduce((s,d)=>s+(revCnt[d.k]||0),0);
-    document.getElementById('week-row').innerHTML=days.map(d=>`
+    const weekTotal=weekDays.reduce((s,d)=>s+(revCnt[d.k]||0),0);
+    document.getElementById('week-row').innerHTML=weekDays.map(d=>`
       <div class="day-box ${revCnt[d.k]?'has-data':''}">
         <div class="day-nm">${d.nm}</div>
         <div class="day-ct" style="color:${revCnt[d.k]?'var(--green)':'var(--dim)'}">${revCnt[d.k]||0}</div>
@@ -394,22 +380,20 @@ async function loadSRS(){
         <div class="day-nm">Total</div>
         <div class="day-ct" style="color:var(--green)">${weekTotal}</div>
       </div>`;
-
-    // WEEKLY REVIEW
+    // ── WEEKLY REVIEW
     const weakPats=gaps.filter(g=>g.pct>=40).map(g=>g.n).slice(0,2);
     document.getElementById('review-rows').innerHTML=`
-      <div class="review-row"><div class="rr-l">SRS reviews this week</div><div class="rr-v ${weekTotal>=25?'good':weekTotal>=15?'warn':'bad'}">${weekTotal} reviews</div></div>
-      <div class="review-row"><div class="rr-l">Current SRS streak</div><div class="rr-v ${streak>=7?'good':streak>=3?'warn':'bad'}">${streak} days</div></div>
-      <div class="review-row"><div class="rr-l">Advanced problems (S3+)</div><div class="rr-v ${advanced.length>=50?'good':advanced.length>=20?'warn':'bad'}">${advanced.length} problems</div></div>
-      <div class="review-row"><div class="rr-l">Patterns to focus next week</div><div class="rr-v" style="color:var(--yellow);font-size:.75rem">${weakPats.length?weakPats.join(', '):'Not enough review data yet'}</div></div>`;
+      <div class="review-row"><div class="rr-l">SRS reviews this week</div><div class="rr-v ${weekTotal>=40?'good':weekTotal>=20?'warn':'bad'}">${weekTotal} reviews</div></div>
+      <div class="review-row"><div class="rr-l">🔥 Main Streak</div><div class="rr-v ${mainStreak>=90?'good':mainStreak>=30?'warn':'bad'}">${mainStreak} days</div></div>
+      <div class="review-row"><div class="rr-l">SRS Review Streak</div><div class="rr-v ${srsStreak>=7?'good':srsStreak>=3?'warn':'bad'}">${srsStreak} days</div></div>
+      <div class="review-row"><div class="rr-l">Mastered problems</div><div class="rr-v ${mastered.length>=50?'good':mastered.length>=20?'warn':'bad'}">${mastered.length} problems</div></div>
+      <div class="review-row"><div class="rr-l">Patterns to focus</div><div class="rr-v" style="color:var(--yellow);font-size:.75rem">${weakPats.length?weakPats.join(', '):'Not enough review data yet'}</div></div>`;
     document.getElementById('review-section').style.display='block';
-
   }catch(e){
-    document.getElementById('srs-list').innerHTML='<div class="empty">SRS API connection failed. Check your GS deployment.</div>';
-    console.error('SRS load error:', e);
+    document.getElementById('srs-list').innerHTML='<div class="empty">SRS API connection failed. Check GS deployment.</div>';
+    console.error('SRS load error:',e);
   }
 }
-
 async function loadPlan(){
   try{
     const res=await fetch(PLAN_API+"?t="+Date.now());
@@ -421,14 +405,12 @@ async function loadPlan(){
     document.getElementById('sv-lectures').textContent=done;
     document.getElementById('m-plan').style.width=pct+'%';
     document.getElementById('mv-plan').textContent=pct+'%';
-
     const todayClass=all.find(p=>p.date===ts&&p.status!=='Done'&&p.lecture);
     if(todayClass){
       document.getElementById('class-label').innerHTML='Class — <span style="color:var(--text)">'+(todayClass.lecture||'').substring(0,42)+'</span>';
     } else {
       document.getElementById('class-label').innerHTML='Class — <span style="color:var(--muted)">None today / check plan</span>';
     }
-
     const upcoming=all.filter(p=>p.status!=='Done'&&p.status!=='NA'&&p.lecture).slice(0,5);
     document.getElementById('plan-list').innerHTML=upcoming.map(p=>{
       const cls=p.date<ts?'pi-ov':p.date===ts?'pi-td':'pi-up';
@@ -439,10 +421,9 @@ async function loadPlan(){
     }).join('')||'<div class="empty">No upcoming lectures found.</div>';
   }catch(e){
     document.getElementById('plan-list').innerHTML='<div class="empty">Plan API not connected.</div>';
-    console.error('Plan load error:', e);
+    console.error('Plan load error:',e);
   }
 }
-
 setDate();
 loadSRS();
 loadPlan();
