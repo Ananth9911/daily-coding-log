@@ -3,262 +3,261 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cue Library | Ananth</title>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#050508;--card:#0d0d14;--border:#1a1a2e;--text:#e2e8f0;--muted:#546e7a;--green:#4ade80;--red:#f87171;--yellow:#fbbf24;--blue:#60a5fa;--purple:#a78bfa}
+:root{--bg:#030303;--bg2:#0a0a0a;--card:#0d0d0d;--border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.15);--text:#f4f4f5;--muted:#71717a;--dim:#3f3f46;--green:#39d353;--blue:#3b82f6;--yellow:#eab308;--red:#ef4444;--purple:#a855f7;--fd:'Space Grotesk',sans-serif;--fm:'IBM Plex Mono',monospace}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:'JetBrains Mono',monospace;min-height:100vh;padding:40px 20px}
-body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellipse 80% 40% at 50% -10%,rgba(167,139,250,.04),transparent);pointer-events:none}
-.container{max-width:1000px;margin:0 auto;position:relative}
-.sys-tag{font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--purple);margin-bottom:8px}
-h1{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;letter-spacing:-1px;color:#fff}
-.subtitle{color:var(--muted);font-size:.78rem;margin-top:6px}
-.header{margin-bottom:28px;border-bottom:1px solid var(--border);padding-bottom:22px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:14px}
-/* controls */
-.controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;align-items:center}
-input[type=text]{background:var(--card);border:1px solid var(--border);color:var(--text);padding:10px 16px;border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:.78rem;outline:none;transition:.2s;min-width:240px}
-input[type=text]:focus{border-color:var(--purple)}
-.topic-filter{display:flex;gap:6px;flex-wrap:wrap}
-.topic-btn{background:var(--card);border:1px solid var(--border);color:var(--muted);padding:5px 11px;border-radius:6px;font-size:.65rem;font-family:'JetBrains Mono',monospace;cursor:pointer;transition:.2s}
-.topic-btn:hover,.topic-btn.active{border-color:var(--purple);color:var(--purple);background:rgba(167,139,250,.08)}
-/* stats row */
-.stats-row{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
-.stat-chip{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px 16px;font-size:.72rem}
-.stat-chip span{color:#fff;font-weight:700}
-/* grid */
-.cue-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
-.cue-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;transition:all .2s ease;cursor:pointer;position:relative;overflow:hidden;border-left:3px solid transparent}
+body{background:var(--bg);color:var(--text);font-family:var(--fd);min-height:100vh;padding:40px 20px;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse at 50% 0%,black 30%,transparent 80%);pointer-events:none;z-index:0}
+.wrap{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.hdr{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1px solid var(--border);padding-bottom:20px;margin-bottom:28px;flex-wrap:wrap;gap:14px}
+.hdr-left{display:flex;align-items:center;gap:12px}
+.sys-dot{width:8px;height:8px;border-radius:50%;background:var(--purple);box-shadow:0 0 10px var(--purple);animation:pulse 2s ease infinite;flex-shrink:0}
+h1{font-size:1.7rem;font-weight:700;letter-spacing:-.5px}
+.sub{font-family:var(--fm);font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin-top:3px}
+.hdr-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.count-pill{font-family:var(--fm);font-size:.7rem;color:var(--muted);background:var(--bg2);border:1px solid var(--border);padding:5px 12px;border-radius:14px}
+.nav-link{font-family:var(--fm);font-size:.7rem;color:var(--muted);text-decoration:none;padding:6px 12px;border:1px solid var(--border);border-radius:6px;transition:.18s}
+.nav-link:hover{color:var(--text);border-color:var(--border2)}
+
+/* CONTROLS */
+.controls{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap;align-items:center}
+.search-input{font-family:var(--fd);background:var(--card);border:1px solid var(--border);color:var(--text);padding:9px 14px;border-radius:8px;font-size:.82rem;outline:none;min-width:220px;transition:.2s}
+.search-input:focus{border-color:var(--purple)}
+.topic-filters{display:flex;gap:6px;flex-wrap:wrap}
+.tf{font-family:var(--fm);font-size:.62rem;padding:5px 11px;border-radius:6px;border:1px solid var(--border);background:var(--bg2);color:var(--muted);cursor:pointer;transition:.18s;white-space:nowrap}
+.tf:hover{color:var(--text);border-color:var(--border2)}
+.tf.active{border-color:var(--purple);color:var(--purple);background:rgba(168,85,247,.07)}
+
+/* PATTERN PERFORMANCE SECTION */
+.perf-section{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:24px}
+.perf-title{font-size:.8rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;font-family:var(--fm);margin-bottom:16px}
+.perf-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.perf-item{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:10px 14px}
+.perf-row{display:flex;align-items:center;gap:10px}
+.perf-name{font-size:.75rem;font-weight:500;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.perf-bar-bg{width:80px;height:5px;background:var(--dim);border-radius:3px;overflow:hidden;flex-shrink:0}
+.perf-bar{height:100%;border-radius:3px}
+.perf-pct{font-family:var(--fm);font-size:.62rem;width:30px;text-align:right;flex-shrink:0}
+.perf-count{font-family:var(--fm);font-size:.58rem;color:var(--muted);margin-top:3px}
+.toggle-perf{font-family:var(--fm);font-size:.65rem;color:var(--purple);cursor:pointer;margin-bottom:12px;display:inline-block}
+.toggle-perf:hover{text-decoration:underline}
+
+/* CUE GRID — masonry-like with auto-fill */
+.cue-grid{
+  columns: 3;
+  column-gap: 14px;
+}
+@media(max-width:900px){.cue-grid{columns:2}}
+@media(max-width:580px){.cue-grid{columns:1}}
+.cue-card{
+  break-inside: avoid;
+  background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:16px;margin-bottom:14px;cursor:pointer;transition:.18s;
+  border-left:3px solid transparent;display:inline-block;width:100%;
+}
 .cue-card.struggled{border-left-color:var(--red)}
 .cue-card.smooth{border-left-color:var(--green)}
-.cue-card.mastered{border-left-color:var(--purple)}
-.cue-card:hover{border-color:rgba(167,139,250,.35);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.4)}
-.card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;gap:6px}
-.topic-tag{display:inline-block;padding:3px 8px;border-radius:4px;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;background:rgba(167,139,250,.12);color:var(--purple);flex-shrink:0}
-.diff-badge{font-size:.62rem;font-weight:700;padding:2px 7px;border-radius:4px;flex-shrink:0}
-.diff-H{background:rgba(248,113,113,.15);color:var(--red)}
-.diff-M{background:rgba(251,191,36,.15);color:var(--yellow)}
-.diff-L,.diff-E{background:rgba(74,222,128,.15);color:var(--green)}
-.cue-text{font-size:.76rem;color:var(--text);line-height:1.65;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
-.one-liner{font-size:.68rem;color:var(--blue);margin-bottom:6px;font-weight:600}
-.example-prob{font-size:.63rem;color:var(--muted)}
-/* modal */
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.82);backdrop-filter:blur(10px);z-index:100;align-items:center;justify-content:center;padding:20px}
-.modal{background:var(--card);border:1px solid rgba(167,139,250,.25);width:100%;max-width:600px;border-radius:16px;padding:32px;box-shadow:0 20px 60px rgba(0,0,0,.8);position:relative;max-height:85vh;overflow-y:auto}
-.modal-close{position:absolute;top:16px;right:16px;background:none;border:none;color:var(--muted);font-size:1.1rem;cursor:pointer;font-family:'JetBrains Mono',monospace}
-.modal-close:hover{color:#fff}
-.modal-topic{font-size:.62rem;text-transform:uppercase;letter-spacing:2px;color:var(--purple);margin-bottom:6px}
-.modal-name{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:16px}
-.modal-section{margin-bottom:16px}
-.modal-label{font-size:.6rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:6px}
-.modal-cue{font-size:.85rem;color:var(--text);line-height:1.7;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:8px;padding:14px}
-.modal-one{font-size:.82rem;color:var(--blue);font-weight:600}
-.modal-example{font-size:.75rem;color:var(--muted)}
-.empty{text-align:center;padding:60px;color:var(--muted);font-size:.82rem;line-height:1.7}
-.debug-box{background:rgba(251,191,36,.05);border:1px solid rgba(251,191,36,.2);border-radius:8px;padding:14px;margin-bottom:20px;font-size:.72rem;color:var(--yellow);display:none}
-@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-.fade{animation:fadeIn .25s ease}
+.cue-card:hover{border-color:rgba(168,85,247,.3);transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,.4)}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:6px;margin-bottom:8px}
+.topic-badge{font-family:var(--fm);font-size:.58rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;padding:2px 7px;border-radius:4px;background:rgba(168,85,247,.1);color:var(--purple);border:1px solid rgba(168,85,247,.2);flex-shrink:0}
+.diff-badge{font-family:var(--fm);font-size:.58rem;font-weight:700;padding:2px 6px;border-radius:4px}
+.dH{background:rgba(239,68,68,.12);color:var(--red)}.dM{background:rgba(234,179,8,.12);color:var(--yellow)}.dL,.dE{background:rgba(57,211,83,.1);color:var(--green)}
+.cue-text{font-size:.78rem;color:var(--text);line-height:1.6;margin-bottom:8px}
+.cue-oneliner{font-family:var(--fm);font-size:.65rem;color:var(--blue);border-top:1px solid var(--border);padding-top:7px;margin-top:6px}
+.cue-example{font-family:var(--fm);font-size:.6rem;color:var(--muted);margin-top:4px}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(10px);z-index:100;align-items:center;justify-content:center;padding:20px}
+.modal{background:var(--card);border:1px solid rgba(168,85,247,.25);width:100%;max-width:580px;border-radius:16px;padding:28px;position:relative;max-height:88vh;overflow-y:auto}
+.mc{position:absolute;top:14px;right:16px;background:none;border:none;color:var(--muted);font-size:1rem;cursor:pointer;font-family:var(--fm)}
+.mc:hover{color:var(--text)}
+.mlbl{font-family:var(--fm);font-size:.6rem;text-transform:uppercase;letter-spacing:2px;color:var(--purple);margin-bottom:6px}
+.mname{font-size:1.1rem;font-weight:700;margin-bottom:16px}
+.msec{margin-bottom:14px}
+.msec-label{font-family:var(--fm);font-size:.58rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:5px}
+.msec-body{font-size:.84rem;color:var(--text);background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:8px;padding:12px;line-height:1.65}
+.empty{text-align:center;padding:50px;color:var(--muted);font-family:var(--fm);font-size:.75rem}
+.debug{background:rgba(234,179,8,.05);border:1px solid rgba(234,179,8,.15);border-radius:8px;padding:10px 14px;font-family:var(--fm);font-size:.68rem;color:var(--yellow);margin-bottom:18px;display:none}
+@keyframes pulse{50%{opacity:.4}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.fade{animation:fadeIn .2s ease}
 </style>
 </head>
 <body>
-<div class="container">
-  <div class="header">
-    <div>
-      <p class="sys-tag">● Auto-Generated from Problem Log</p>
-      <h1>Cue Library</h1>
-      <p class="subtitle">Every pattern extracted from my Notes column. Populate the <code style="color:var(--purple)">Notes / Pattern Used</code> column in my sheet — it auto-appears here.</p>
+<div class="wrap">
+  <div class="hdr">
+    <div class="hdr-left">
+      <div class="sys-dot"></div>
+      <div>
+        <h1>Cue Library</h1>
+        <div class="sub">Auto-generated from problem log · Notes / Pattern Used column</div>
+      </div>
     </div>
-    <div id="total-cues" style="font-size:.75rem;color:var(--muted)">Loading…</div>
+    <div class="hdr-right">
+      <span class="count-pill" id="count-pill">Loading…</span>
+      <a href="dashboard.html" class="nav-link">← Hub</a>
+    </div>
   </div>
 
-  <div class="debug-box" id="debug-box"></div>
+  <div class="debug" id="debug"></div>
 
-  <div class="stats-row" id="stats-row" style="display:none">
-    <div class="stat-chip">Total Cues: <span id="sc-total">—</span></div>
-    <div class="stat-chip">Topics: <span id="sc-topics">—</span></div>
-    <div class="stat-chip">Hard Cues: <span id="sc-hard">—</span></div>
-    <div class="stat-chip">Struggled Cues: <span id="sc-struggled">—</span></div>
+  <!-- PATTERN PERFORMANCE DASHBOARD -->
+  <div class="perf-section">
+    <div class="perf-title">⚡ Pattern Performance — Struggle Rate (higher = needs more SRS)</div>
+    <span class="toggle-perf" id="perf-toggle" onclick="togglePerf()">▼ Show all patterns</span>
+    <div class="perf-grid" id="perf-grid" style="display:none"></div>
   </div>
 
   <div class="controls">
-    <input type="text" id="search" placeholder="Search cues, topics, patterns…" oninput="renderCues()">
-    <div class="topic-filter" id="topic-btns"></div>
+    <input class="search-input" id="search" type="text" placeholder="Search patterns, topics, problems…" oninput="render()">
+    <div class="topic-filters" id="topic-filters"></div>
   </div>
 
-  <div class="cue-grid" id="cue-grid">
-    <div class="empty">Loading cues from your sheet…</div>
-  </div>
+  <div class="cue-grid" id="cue-grid"><div class="empty">Loading cues…</div></div>
 </div>
 
-<!-- DETAIL MODAL -->
 <div class="modal-overlay" id="modal" onclick="maybeClose(event)">
   <div class="modal">
-    <button class="modal-close" onclick="closeModal()">✕ close</button>
-    <div class="modal-topic" id="m-topic"></div>
-    <div class="modal-name"  id="m-name"></div>
-    <div class="modal-section">
-      <div class="modal-label">Core Pattern / Logic</div>
-      <div class="modal-cue" id="m-cue"></div>
+    <button class="mc" onclick="closeModal()">✕</button>
+    <div class="mlbl" id="m-topic"></div>
+    <div class="mname" id="m-name"></div>
+    <div class="msec" id="m-cue-wrap">
+      <div class="msec-label">Core Pattern</div>
+      <div class="msec-body" id="m-cue"></div>
     </div>
-    <div class="modal-section" id="m-one-wrap" style="display:none">
-      <div class="modal-label">One-Line Summary</div>
-      <div class="modal-one" id="m-one"></div>
+    <div class="msec" id="m-one-wrap" style="display:none">
+      <div class="msec-label">One-Line Tag</div>
+      <div class="msec-body" style="color:var(--blue)" id="m-one"></div>
     </div>
-    <div class="modal-section">
-      <div class="modal-label">Example Problem</div>
-      <div class="modal-example" id="m-ex"></div>
+    <div class="msec">
+      <div class="msec-label">Example Problem</div>
+      <div class="msec-body" style="color:var(--muted)" id="m-ex"></div>
     </div>
   </div>
 </div>
 
 <script>
-// ── CONFIG ────────────────────────────────────────────────────
-// Same SRS GS URL — action=cues hits the new getCues() function
 const SRS_API  = "https://script.google.com/macros/s/AKfycbzcAr2oVXOKjoSMPimm3a0ARrcBSAL8geTNR6WQ8y9aE9WA87U91qm13YKOzShZ1d-R/exec";
-// Fallback: cues.json generated by update_portfolio.py
-const CUES_JSON = "https://raw.githubusercontent.com/Ananth9911/daily-coding-log/main/cues.json";
-// ─────────────────────────────────────────────────────────────
+const CUES_RAW = "https://raw.githubusercontent.com/Ananth9911/daily-coding-log/main/cues.json";
 
-let allCues = [], activeTopic = "all";
-let _filtered = [];
+let allCues=[], activeTopic='all', _filtered=[];
 
-async function loadCues() {
-  let source = "";
-  try {
-    // Primary: live GS data
-    const res = await fetch(SRS_API + "?action=cues&t=" + Date.now());
-    const d   = await res.json();
-
-    if (d && d.error) {
-      showDebug("GS error: " + d.error + " — falling back to cues.json");
-      throw new Error(d.error);
-    }
-    if (Array.isArray(d) && d.length > 0) {
-      allCues = d; source = "Live GS Sheet";
-    } else {
-      showDebug("GS returned 0 cues. Your 'Notes / Pattern Used' column may be empty or column header doesn't match exactly. Trying cues.json fallback.");
-      throw new Error("Empty GS response");
-    }
-  } catch(e) {
-    // Fallback: cues.json
-    try {
-      const res2 = await fetch(CUES_JSON + "?t=" + Date.now());
-      allCues = await res2.json();
-      source = "cues.json (run update_portfolio.py to refresh)";
-    } catch(e2) {
-      document.getElementById('cue-grid').innerHTML =
-        `<div class="empty">Could not load cues.<br><br>
-        Fix: Make sure your Google Sheet has a column called <code>Notes / Pattern Used</code> (exact spelling).<br>
-        Then redeploy the GS script and refresh this page.<br><br>
-        Or run <code>update_portfolio.py</code> locally to generate cues.json.</div>`;
-      return;
-    }
-  }
-
-  if (allCues.length === 0) {
-    document.getElementById('cue-grid').innerHTML =
-      `<div class="empty">0 cues found from your problem log.<br><br>
-      This page reads your <code>Notes / Pattern Used</code> column in Master_Problems.<br>
-      Start filling that column when you solve problems — notes like<br>
-      <em>"Use sliding window: expand right, shrink left when invalid"</em><br>
-      will appear here automatically as searchable cue cards.</div>`;
-    return;
-  }
-
-  document.getElementById('total-cues').textContent = `${allCues.length} cues · ${source}`;
-  buildStats();
-  buildTopicFilters();
-  renderCues();
-}
-
-function showDebug(msg) {
-  const el = document.getElementById('debug-box');
-  el.style.display = 'block';
-  el.textContent = '⚠ ' + msg;
-}
-
-function buildStats() {
-  const topics     = new Set(allCues.map(c=>c.topic)).size;
-  const hard       = allCues.filter(c=>c.difficulty==='H').length;
-  const struggled  = allCues.filter(c=>c.friction&&c.friction.toLowerCase().includes('struggled')).length;
-  document.getElementById('sc-total').textContent     = allCues.length;
-  document.getElementById('sc-topics').textContent    = topics;
-  document.getElementById('sc-hard').textContent      = hard;
-  document.getElementById('sc-struggled').textContent = struggled;
-  document.getElementById('stats-row').style.display  = 'flex';
-}
-
-function buildTopicFilters() {
-  const topics = [...new Set(allCues.map(c=>c.topic))].sort();
-  const wrap   = document.getElementById('topic-btns');
-  wrap.innerHTML = `<button class="topic-btn active" onclick="setTopic('all',this)">All (${allCues.length})</button>` +
-    topics.map(t => {
-      const cnt = allCues.filter(c=>c.topic===t).length;
-      return `<button class="topic-btn" onclick="setTopic('${t.replace(/'/g,"\\'")}',this)">${t} (${cnt})</button>`;
-    }).join('');
-}
-
-function setTopic(t, el) {
-  activeTopic = t;
-  document.querySelectorAll('.topic-btn').forEach(b=>b.classList.remove('active'));
-  el.classList.add('active');
-  renderCues();
-}
-
-function renderCues() {
-  const q = document.getElementById('search').value.toLowerCase();
-  _filtered = allCues.filter(c =>
-    (activeTopic==='all' || c.topic===activeTopic) &&
-    (!q ||
-      c.cue.toLowerCase().includes(q) ||
-      c.topic.toLowerCase().includes(q) ||
-      (c.oneLiner||'').toLowerCase().includes(q) ||
-      (c.exampleProblem||'').toLowerCase().includes(q)
-    )
-  );
-
-  document.getElementById('total-cues').textContent =
-    `${_filtered.length} cues${activeTopic!=='all'?' in '+activeTopic:''} / ${allCues.length} total`;
-
-  const grid = document.getElementById('cue-grid');
-  if (!_filtered.length) {
-    grid.innerHTML = '<div class="empty">No cues match. Try a different search or topic.</div>';
-    return;
-  }
-
-  grid.innerHTML = _filtered.map((c,i) => {
-    const fri   = c.friction&&c.friction.toLowerCase().includes('struggled') ? 'struggled' : 'smooth';
-    const diff  = 'diff-'+(c.difficulty||'M');
-    const short = c.cue.length>160 ? c.cue.substring(0,157)+'…' : c.cue;
-    return `<div class="cue-card ${fri} fade" style="animation-delay:${Math.min(i*15,250)}ms" onclick="openModal(${i})">
-      <div class="card-top">
-        <span class="topic-tag">${c.topic}</span>
-        <span class="diff-badge ${diff}">${c.difficulty||'M'}</span>
+// ── PATTERN PERFORMANCE ────────────────────────────────────────
+function buildPerf(cues) {
+  // Group by oneLiner (the tag) and compute struggle count from SRS data
+  // Here we use friction field from cues
+  const pm = {};
+  cues.forEach(c => {
+    const pat = (c.oneLiner||c.cue.split('|')[0]||'').trim().substring(0,30);
+    if (!pat) return;
+    if (!pm[pat]) pm[pat]={total:0,struggled:0};
+    pm[pat].total++;
+    if (c.friction&&c.friction.toLowerCase().includes('struggled')) pm[pat].struggled++;
+  });
+  const entries=Object.entries(pm).filter(([,v])=>v.total>=2)
+    .map(([k,v])=>({pat:k,total:v.total,pct:Math.round((v.struggled/v.total)*100)}))
+    .sort((a,b)=>b.pct-a.pct);
+  const grid=document.getElementById('perf-grid');
+  grid.innerHTML=entries.map(e=>{
+    const col=e.pct>=60?'var(--red)':e.pct>=30?'var(--yellow)':'var(--green)';
+    return `<div class="perf-item">
+      <div class="perf-row">
+        <div class="perf-name">${e.pat}</div>
+        <div class="perf-bar-bg"><div class="perf-bar" style="width:${e.pct}%;background:${col}"></div></div>
+        <div class="perf-pct" style="color:${col}">${e.pct}%</div>
       </div>
-      <div class="cue-text">${short}</div>
-      ${c.oneLiner?`<div class="one-liner">→ ${c.oneLiner.substring(0,80)}</div>`:''}
-      ${c.exampleProblem?`<div class="example-prob">↳ ${c.exampleProblem}</div>`:''}
+      <div class="perf-count">${e.total} problems</div>
+    </div>`;
+  }).join('') || '<div style="color:var(--muted);font-family:var(--fm);font-size:.72rem">Not enough data yet.</div>';
+}
+let perfOpen=false;
+function togglePerf(){
+  perfOpen=!perfOpen;
+  document.getElementById('perf-grid').style.display=perfOpen?'grid':'none';
+  document.getElementById('perf-toggle').textContent=perfOpen?'▲ Hide':'▼ Show all patterns';
+}
+
+// ── TOPIC FILTERS ──────────────────────────────────────────────
+function buildTopicFilters() {
+  const topics=[...new Set(allCues.map(c=>c.topic))].sort();
+  document.getElementById('topic-filters').innerHTML=
+    `<button class="tf active" onclick="setTopic('all',this)">All (${allCues.length})</button>`+
+    topics.map(t=>`<button class="tf" onclick="setTopic('${t.replace(/'/g,"\\'")}',this)">${t} (${allCues.filter(c=>c.topic===t).length})</button>`).join('');
+}
+function setTopic(t,el){
+  activeTopic=t;
+  document.querySelectorAll('.tf').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  render();
+}
+
+// ── RENDER ─────────────────────────────────────────────────────
+function render() {
+  const q=document.getElementById('search').value.toLowerCase();
+  _filtered=allCues.filter(c=>
+    (activeTopic==='all'||c.topic===activeTopic)&&
+    (!q||c.cue.toLowerCase().includes(q)||c.topic.toLowerCase().includes(q)||(c.oneLiner||'').toLowerCase().includes(q)||(c.exampleProblem||'').toLowerCase().includes(q))
+  );
+  document.getElementById('count-pill').textContent=`${_filtered.length} / ${allCues.length} cues`;
+  const grid=document.getElementById('cue-grid');
+  if(!_filtered.length){grid.innerHTML='<div class="empty">No cues match.</div>';return;}
+  grid.innerHTML=_filtered.map((c,i)=>{
+    const fri=c.friction&&c.friction.toLowerCase().includes('struggled')?'struggled':'smooth';
+    const dc='d'+(c.difficulty||'M');
+    // Truncate at ~200 chars max so cards don't become infinitely tall
+    const cueText = c.cue.length>200?c.cue.substring(0,197)+'…':c.cue;
+    return `<div class="cue-card ${fri} fade" onclick="openModal(${i})">
+      <div class="card-top"><span class="topic-badge">${c.topic}</span><span class="diff-badge ${dc}">${c.difficulty||'M'}</span></div>
+      <div class="cue-text">${cueText}</div>
+      ${c.oneLiner?`<div class="cue-oneliner">→ ${c.oneLiner}</div>`:''}
+      ${c.exampleProblem?`<div class="cue-example">↳ ${c.exampleProblem}</div>`:''}
     </div>`;
   }).join('');
 }
 
-function openModal(i) {
-  const c = _filtered[i];
-  document.getElementById('m-topic').textContent   = c.topic + (c.difficulty ? ' · ' + c.difficulty : '');
-  document.getElementById('m-name').textContent    = c.exampleProblem || 'Unknown Problem';
-  document.getElementById('m-cue').textContent     = c.cue;
-  document.getElementById('m-ex').textContent      = '↳ ' + (c.exampleProblem || '—');
-  const oneWrap = document.getElementById('m-one-wrap');
-  if (c.oneLiner) {
-    document.getElementById('m-one').textContent = c.oneLiner;
-    oneWrap.style.display = 'block';
-  } else {
-    oneWrap.style.display = 'none';
-  }
-  document.getElementById('modal').style.display = 'flex';
+// ── MODAL ──────────────────────────────────────────────────────
+function openModal(i){
+  const c=_filtered[i];
+  document.getElementById('m-topic').textContent=c.topic+(c.difficulty?' · '+c.difficulty:'');
+  document.getElementById('m-name').textContent=c.exampleProblem||'—';
+  document.getElementById('m-cue').textContent=c.cue;
+  document.getElementById('m-ex').textContent='↳ '+(c.exampleProblem||'—');
+  const ow=document.getElementById('m-one-wrap');
+  if(c.oneLiner){document.getElementById('m-one').textContent=c.oneLiner;ow.style.display='block';}
+  else ow.style.display='none';
+  document.getElementById('modal').style.display='flex';
 }
+function closeModal(){document.getElementById('modal').style.display='none';}
+function maybeClose(e){if(e.target===document.getElementById('modal'))closeModal();}
 
-function closeModal() { document.getElementById('modal').style.display='none'; }
-function maybeClose(e) { if (e.target===document.getElementById('modal')) closeModal(); }
+// ── LOAD ───────────────────────────────────────────────────────
+async function loadCues() {
+  let source='';
+  try {
+    const res=await fetch(SRS_API+"?action=cues&t="+Date.now());
+    const d=await res.json();
+    if(d&&d.error)throw new Error(d.error);
+    if(Array.isArray(d)&&d.length>0){allCues=d;source='Live GS';}
+    else throw new Error("empty");
+  } catch(e) {
+    try {
+      const r2=await fetch(CUES_RAW+"?t="+Date.now());
+      allCues=await r2.json();
+      source='cues.json';
+    } catch(e2) {
+      document.getElementById('cue-grid').innerHTML=`<div class="empty">Could not load cues.<br>Make sure your GS script is deployed and Notes / Pattern Used column is filled.</div>`;
+      return;
+    }
+    const dbox=document.getElementById('debug');
+    dbox.style.display='block';
+    dbox.textContent='⚠ Using cached cues.json ('+source+'). Run update_portfolio.py to refresh, or deploy srs_backend_v3.gs.';
+  }
+  if(!allCues.length){document.getElementById('cue-grid').innerHTML='<div class="empty">0 cues found. Fill the "Notes / Pattern Used" column in your sheet.</div>';return;}
+  buildTopicFilters();
+  buildPerf(allCues);
+  render();
+}
 
 loadCues();
 </script>
