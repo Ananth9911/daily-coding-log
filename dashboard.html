@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mission Control | Ananth</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#030303;--bg2:#0a0a0a;--bg3:#111;--card:#0d0d0d;--border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.14);--text:#f4f4f5;--muted:#71717a;--dim:#3f3f46;--green:#39d353;--blue:#3b82f6;--yellow:#eab308;--red:#ef4444;--purple:#a855f7;--orange:#f97316;--fd:'Space Grotesk',sans-serif;--fm:'IBM Plex Mono',monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--fd);min-height:100vh;padding:40px 24px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse at 50% 0%,black 30%,transparent 80%);pointer-events:none;z-index:0}
+.wrap{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+
+/* TOPBAR */
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;flex-wrap:wrap;gap:14px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-dot{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green);animation:pulse 2s ease infinite}
+.brand-name{font-size:1.1rem;font-weight:700;letter-spacing:-.3px}
+.brand-sub{font-family:var(--fm);font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin-top:2px}
+.topbar-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.chip{font-family:var(--fm);font-size:.7rem;padding:5px 13px;border-radius:16px;background:var(--bg2);border:1px solid var(--border)}
+.phase-chip{color:var(--green);background:rgba(57,211,83,.07);border-color:rgba(57,211,83,.2)}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:20px}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+.stat-v{font-size:1.9rem;font-weight:700;line-height:1}
+.stat-l{font-family:var(--fm);font-size:.58rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-top:5px}
+
+/* GRID */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px}
+@media(max-width:900px){.g2,.g3{grid-template-columns:1fr}}
+
+/* CARD */
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px}
+.card-title{font-family:var(--fm);font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.card-title b{color:var(--text)}
+
+/* WEEK GRID */
+.week-row{display:flex;gap:7px;flex-wrap:wrap}
+.day-box{flex:1;min-width:48px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:10px;text-align:center}
+.day-nm{font-family:var(--fm);font-size:.55rem;color:var(--muted);text-transform:uppercase;margin-bottom:5px}
+.day-ct{font-size:1.4rem;font-weight:700}
+.day-box.has-data{border-color:rgba(57,211,83,.25);background:rgba(57,211,83,.04)}
+.day-box.today-box{border-color:rgba(57,211,83,.4)}
+
+/* SRS QUEUE */
+.srs-list{display:flex;flex-direction:column;gap:7px;max-height:260px;overflow-y:auto}
+.srs-item{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:9px 12px;display:flex;justify-content:space-between;align-items:center;gap:8px;transition:.15s}
+.srs-item:hover{border-color:var(--border2)}
+.srs-name{font-size:.8rem;font-weight:600;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.srs-pat{font-family:var(--fm);font-size:.58rem;color:var(--blue);background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.15);padding:2px 6px;border-radius:4px;white-space:nowrap;flex-shrink:0}
+.srs-ph{font-family:var(--fm);font-size:.58rem;padding:2px 6px;border-radius:4px;flex-shrink:0}
+.ph-s{background:rgba(57,211,83,.1);color:var(--green)}.ph-st{background:rgba(239,68,68,.1);color:var(--red)}.ph-n{background:rgba(168,85,247,.1);color:var(--purple)}
+
+/* PATTERN GAPS */
+.gap-rows{display:flex;flex-direction:column;gap:8px}
+.gap-row{display:flex;align-items:center;gap:10px}
+.gap-lbl{font-family:var(--fm);font-size:.65rem;color:var(--muted);width:130px;flex-shrink:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gap-bg{flex:1;height:5px;background:var(--bg3);border-radius:3px;overflow:hidden}
+.gap-fill{height:100%;border-radius:3px;transition:width .7s ease}
+.gap-pct{font-family:var(--fm);font-size:.6rem;width:32px;text-align:right;flex-shrink:0}
+
+/* READINESS METERS */
+.meter-rows{display:flex;flex-direction:column;gap:12px}
+.meter-row{display:flex;align-items:center;gap:10px}
+.meter-lbl{font-family:var(--fm);font-size:.65rem;color:var(--muted);width:110px;flex-shrink:0}
+.meter-bg{flex:1;height:7px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.meter-fill{height:100%;border-radius:4px;transition:width .8s ease}
+.meter-val{font-family:var(--fm);font-size:.65rem;width:36px;text-align:right;flex-shrink:0}
+
+/* PLAN */
+.plan-list{display:flex;flex-direction:column;gap:7px;max-height:240px;overflow-y:auto}
+.plan-item{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:9px 12px;border-left:3px solid var(--border)}
+.plan-item.pi-ov{border-left-color:var(--red)}.plan-item.pi-td{border-left-color:var(--green)}.plan-item.pi-up{border-left-color:var(--blue)}
+.pi-name{font-size:.78rem;font-weight:600;margin-bottom:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pi-meta{font-family:var(--fm);font-size:.6rem;color:var(--muted)}
+
+/* TOOLS */
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:9px}
+.tool-a{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:13px 14px;text-decoration:none;color:var(--text);display:flex;align-items:center;gap:10px;transition:.18s;position:relative}
+.tool-a:hover{border-color:var(--border2);background:var(--bg3);transform:translateY(-1px)}
+.tool-icon{font-size:1.05rem;flex-shrink:0}
+.tool-name{font-size:.78rem;font-weight:600}
+.tool-desc{font-family:var(--fm);font-size:.57rem;color:var(--muted);margin-top:2px}
+.tool-badge{position:absolute;top:7px;right:9px;font-family:var(--fm);font-size:.53rem;padding:1px 5px;border-radius:3px}
+.tb-live{background:rgba(57,211,83,.12);color:var(--green)}.tb-new{background:rgba(234,179,8,.12);color:var(--yellow)}
+
+/* SCHEDULE */
+.sched-rows{display:flex;flex-direction:column;gap:5px}
+.sched-row{display:flex;align-items:center;gap:10px;padding:6px 8px;border-radius:6px}
+.sched-row.now{background:rgba(57,211,83,.06);border:1px solid rgba(57,211,83,.14)}
+.sched-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.sched-time{font-family:var(--fm);font-size:.63rem;color:var(--muted);width:68px;flex-shrink:0}
+.sched-act{font-size:.78rem}
+
+/* WEEKLY REVIEW */
+.review-section{background:rgba(57,211,83,.04);border:1px solid rgba(57,211,83,.12);border-radius:12px;padding:18px;margin-bottom:14px}
+.review-title{font-size:.85rem;font-weight:700;margin-bottom:12px;color:var(--green)}
+.review-rows{display:flex;flex-direction:column;gap:8px}
+.review-row{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(0,0,0,.3);border-radius:7px}
+.rr-label{font-family:var(--fm);font-size:.68rem;color:var(--muted)}
+.rr-val{font-size:.85rem;font-weight:700}
+.rr-val.good{color:var(--green)}.rr-val.warn{color:var(--yellow)}.rr-val.bad{color:var(--red)}
+
+.btn-link{font-family:var(--fm);font-size:.68rem;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:6px 12px;border-radius:6px;transition:.18s;display:inline-block;margin-top:12px}
+.btn-link:hover{color:var(--text);border-color:var(--border2)}
+.empty{text-align:center;padding:24px;color:var(--muted);font-family:var(--fm);font-size:.72rem}
+
+@keyframes pulse{50%{opacity:.5}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="brand">
+      <div class="brand-dot"></div>
+      <div><div class="brand-name">Mission Control</div><div class="brand-sub">FAANG Sprint 2026</div></div>
+    </div>
+    <div class="topbar-right">
+      <div class="chip" id="date-chip">—</div>
+      <div class="chip phase-chip" id="phase-chip">Loading…</div>
+    </div>
+  </div>
+
+  <!-- WEEKLY REVIEW (auto-generated) -->
+  <div class="review-section" id="review-section" style="display:none">
+    <div class="review-title">📋 Weekly Review — Auto-Generated</div>
+    <div class="review-rows" id="review-rows"></div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat"><div class="stat-v" id="sv-due" style="color:var(--yellow)">—</div><div class="stat-l">SRS Due Today</div></div>
+    <div class="stat"><div class="stat-v" id="sv-total" style="color:var(--text)">—</div><div class="stat-l">Total Problems</div></div>
+    <div class="stat"><div class="stat-v" id="sv-mastery" style="color:var(--green)">—</div><div class="stat-l">Smooth Rate</div></div>
+    <div class="stat"><div class="stat-v" id="sv-streak" style="color:var(--orange)">—</div><div class="stat-l">Day Streak</div></div>
+    <div class="stat"><div class="stat-v" id="sv-mastered" style="color:var(--purple)">—</div><div class="stat-l">Mastered</div></div>
+    <div class="stat"><div class="stat-v" id="sv-lectures" style="color:var(--blue)">—</div><div class="stat-l">Lectures Done</div></div>
+  </div>
+
+  <!-- ROW 1: SRS + SCHEDULE -->
+  <div class="g2">
+    <div class="card">
+      <div class="card-title">🧠 SRS Queue — <b id="srs-badge">Loading…</b></div>
+      <div class="srs-list" id="srs-list"><div class="empty">Connecting…</div></div>
+      <a href="review.html" class="btn-link">Open Full SRS Engine →</a>
+    </div>
+    <div class="card">
+      <div class="card-title">📅 Today's Schedule</div>
+      <div class="sched-rows">
+        <div class="sched-row"><div class="sched-dot" style="background:var(--dim)"></div><div class="sched-time">11:15 AM</div><div class="sched-act">Wake · Supplements</div></div>
+        <div class="sched-row"><div class="sched-dot" style="background:var(--dim)"></div><div class="sched-time">11:30 AM</div><div class="sched-act">Office work</div></div>
+        <div class="sched-row"><div class="sched-dot" style="background:var(--yellow)"></div><div class="sched-time">8:45 PM</div><div class="sched-act">SRS Block · 5 problems target</div></div>
+        <div class="sched-row"><div class="sched-dot" style="background:var(--green)"></div><div class="sched-time">10:00 PM</div><div class="sched-act" id="class-label">Class — <span style="color:var(--muted)">Loading…</span></div></div>
+        <div class="sched-row"><div class="sched-dot" style="background:var(--blue)"></div><div class="sched-time">12:30 AM</div><div class="sched-act">Assignment + 1 Warm IDE</div></div>
+        <div class="sched-row"><div class="sched-dot" style="background:var(--dim)"></div><div class="sched-time">2:30 AM</div><div class="sched-act">Wind down · Sleep</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROW 2: PATTERN GAPS + READINESS + WEEKLY ACTIVITY -->
+  <div class="g3">
+    <div class="card">
+      <div class="card-title">⚠ Pattern Gaps — <b>Struggle %</b></div>
+      <div class="gap-rows" id="gap-rows"><div class="empty">Loading…</div></div>
+      <a href="cue_library.html" class="btn-link">Cue Library →</a>
+    </div>
+    <div class="card">
+      <div class="card-title">🎯 Readiness Signal</div>
+      <div class="meter-rows">
+        <div class="meter-row"><div class="meter-lbl">DSA Mastery</div><div class="meter-bg"><div class="meter-fill" id="m-mastery" style="width:0%;background:var(--green)"></div></div><div class="meter-val" id="mv-mastery" style="color:var(--green)">—</div></div>
+        <div class="meter-row"><div class="meter-lbl">Hard Solved</div><div class="meter-bg"><div class="meter-fill" id="m-hard" style="width:0%;background:var(--yellow)"></div></div><div class="meter-val" id="mv-hard" style="color:var(--yellow)">—</div></div>
+        <div class="meter-row"><div class="meter-lbl">SRS Mastered</div><div class="meter-bg"><div class="meter-fill" id="m-srs" style="width:0%;background:var(--purple)"></div></div><div class="meter-val" id="mv-srs" style="color:var(--purple)">—</div></div>
+        <div class="meter-row"><div class="meter-lbl">Plan Progress</div><div class="meter-bg"><div class="meter-fill" id="m-plan" style="width:0%;background:var(--blue)"></div></div><div class="meter-val" id="mv-plan" style="color:var(--blue)">—</div></div>
+      </div>
+      <a href="readiness.html" class="btn-link">Mock Session Tracker →</a>
+    </div>
+    <div class="card">
+      <div class="card-title">📈 This Week</div>
+      <div class="week-row" id="week-row"><div class="empty">Loading…</div></div>
+      <div style="font-family:var(--fm);font-size:.65rem;color:var(--muted);margin-top:10px">Target: 13 problems/week</div>
+    </div>
+  </div>
+
+  <!-- ROW 3: PLAN + TOOLS -->
+  <div class="g2">
+    <div class="card">
+      <div class="card-title">📚 Upcoming Lectures</div>
+      <div class="plan-list" id="plan-list"><div class="empty">Loading plan…</div></div>
+      <a href="plan.html" class="btn-link">Full Timeline →</a>
+    </div>
+    <div class="card">
+      <div class="card-title">🛠 All Systems</div>
+      <div class="tools-grid">
+        <a href="review.html" class="tool-a"><div class="tool-icon">🧠</div><div><div class="tool-name">SRS Engine</div><div class="tool-desc">Daily review queue</div></div><div class="tool-badge tb-live">LIVE</div></a>
+        <a href="plan.html" class="tool-a"><div class="tool-icon">📅</div><div><div class="tool-name">Plan Timeline</div><div class="tool-desc">Lecture schedule</div></div><div class="tool-badge tb-live">LIVE</div></a>
+        <a href="weekend.html" class="tool-a"><div class="tool-icon">⚡</div><div><div class="tool-name">Weekend Queue</div><div class="tool-desc">Additional problems</div></div><div class="tool-badge tb-live">LIVE</div></a>
+        <a href="cue_library.html" class="tool-a"><div class="tool-icon">🗃</div><div><div class="tool-name">Cue Library</div><div class="tool-desc">Pattern tags · perf</div></div><div class="tool-badge tb-new">NEW</div></a>
+        <a href="readiness.html" class="tool-a"><div class="tool-icon">🎯</div><div><div class="tool-name">Readiness</div><div class="tool-desc">Mock session tracker</div></div><div class="tool-badge tb-new">NEW</div></a>
+        <a href="https://ananth9911.github.io/Ananth-Porfolio/" target="_blank" class="tool-a"><div class="tool-icon">🌐</div><div><div class="tool-name">Portfolio</div><div class="tool-desc">Public profile</div></div></a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const SRS_API  = "https://script.google.com/macros/s/AKfycbzcAr2oVXOKjoSMPimm3a0ARrcBSAL8geTNR6WQ8y9aE9WA87U91qm13YKOzShZ1d-R/exec";
+const PLAN_API = "https://script.google.com/macros/s/AKfycbziO7UXoTfbgegAbdoRksCxy3OI0Nn_p8vDJnQ1VboVjVhE1SsJFwnIjtK4kzz2-kDzkA/exec";
+
+function todayStr(){const d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,'0')+"-"+String(d.getDate()).padStart(2,'0');}
+
+function setDate(){
+  const d=new Date();
+  const days=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  document.getElementById('date-chip').textContent=days[d.getDay()]+' '+d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear();
+  // Phase detection based on date
+  const m=d.getMonth()+1,dy=d.getDate();
+  let phase='Phase 1 · LLD Muscle Memory';
+  if(m<5||(m===5&&dy<24))phase='Phase 0 · Runway';
+  else if(m<7||(m===7&&dy<15))phase='Phase 1 · Muscle Memory';
+  else if(m<10)phase='Phase 2 · HLD + Mocks';
+  else phase='Phase 3 · Pipeline';
+  document.getElementById('phase-chip').textContent=phase;
+}
+
+async function loadSRS(){
+  try{
+    const res=await fetch(SRS_API+"?t="+Date.now());
+    const all=await res.json();
+    const ts=todayStr();
+    const due=all.filter(p=>{
+      if(['Completed'].includes(p.phase))return false;
+      if(!p.reviewDate||p.reviewDate==='Review-Not needed')return false;
+      return p.reviewDate<=ts||p.phase==='New'||!p.phase;
+    });
+
+    // Stats
+    const smooth=all.filter(p=>p.friction&&p.friction.toLowerCase().includes('smooth')).length;
+    const mastery=all.length>0?Math.round((smooth/all.length)*100):0;
+    const mastered=all.filter(p=>['mastered','completed'].includes((p.phase||'').toLowerCase())).length;
+    const hard=all.filter(p=>p.difficulty==='H').length;
+    document.getElementById('sv-due').textContent=due.length;
+    document.getElementById('sv-total').textContent=all.length;
+    document.getElementById('sv-mastery').textContent=mastery+'%';
+    document.getElementById('sv-mastered').textContent=mastered;
+
+    // Streak
+    const dates=new Set(all.map(p=>p.lastSolved).filter(Boolean));
+    let streak=0;const ref=new Date();
+    for(let i=0;i<365;i++){const d=new Date(ref);d.setDate(ref.getDate()-i);const k=d.toISOString().split('T')[0];if(dates.has(k))streak++;else if(i>0)break;}
+    document.getElementById('sv-streak').textContent=streak+'d';
+
+    // Readiness bars
+    document.getElementById('m-mastery').style.width=mastery+'%';document.getElementById('mv-mastery').textContent=mastery+'%';
+    const hp=Math.min(Math.round((hard/Math.max(all.length,1))*100),100);
+    document.getElementById('m-hard').style.width=hp+'%';document.getElementById('mv-hard').textContent=hard;
+    const mp=Math.min(Math.round((mastered/Math.max(all.length,1))*100),100);
+    document.getElementById('m-srs').style.width=mp+'%';document.getElementById('mv-srs').textContent=mp+'%';
+
+    // SRS queue display
+    document.getElementById('srs-badge').textContent=due.length?due.length+' due today':'All clear ✓';
+    if(!due.length){document.getElementById('srs-list').innerHTML='<div class="empty" style="color:var(--green)">✅ Queue clear — great work!</div>';}
+    else{
+      document.getElementById('srs-list').innerHTML=due.slice(0,8).map(p=>{
+        const ph=(p.phase||'new').toLowerCase();
+        const phCls=ph==='struggled'?'ph-st':ph==='new'||!ph?'ph-n':'ph-s';
+        const pat=(p.notes||'').split('|')[0].trim()||p.topic||'—';
+        return `<div class="srs-item"><div class="srs-name">${p.name}</div><span class="srs-pat">${pat.substring(0,20)}</span><span class="srs-ph ${phCls}">${p.phase||'New'}</span></div>`;
+      }).join('');
+    }
+
+    // Pattern gaps
+    const pm={};
+    all.forEach(p=>{
+      const pat=(p.notes||'').split('|')[0].trim()||p.topic||'Unknown';
+      if(!pm[pat])pm[pat]={total:0,struggled:0};
+      pm[pat].total++;
+      if(p.friction&&p.friction.toLowerCase().includes('struggled'))pm[pat].struggled++;
+    });
+    const gaps=Object.entries(pm).filter(([,v])=>v.total>=3).map(([n,v])=>({n,pct:Math.round((v.struggled/v.total)*100),total:v.total})).sort((a,b)=>b.pct-a.pct).slice(0,7);
+    document.getElementById('gap-rows').innerHTML=gaps.map(g=>{
+      const col=g.pct>=60?'var(--red)':g.pct>=30?'var(--yellow)':'var(--green)';
+      return `<div class="gap-row"><div class="gap-lbl">${g.n}</div><div class="gap-bg"><div class="gap-fill" style="width:${g.pct}%;background:${col}"></div></div><div class="gap-pct" style="color:${col}">${g.pct}%</div></div>`;
+    }).join('')||'<div class="empty">Need more data.</div>';
+
+    // Weekly activity
+    const dnames=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    const today=new Date(),todayK=todayStr();
+    const days=[];
+    for(let i=6;i>=0;i--){const d=new Date(today);d.setDate(today.getDate()-i);const k=d.toISOString().split('T')[0];days.push({k,nm:dnames[d.getDay()],isToday:i===0});}
+    const cnt={};all.forEach(p=>{if(p.lastSolved&&cnt[p.lastSolved]!==undefined)cnt[p.lastSolved]++;else if(p.lastSolved)cnt[p.lastSolved]=1;});
+    const weekTotal=days.reduce((s,d)=>s+(cnt[d.k]||0),0);
+    document.getElementById('week-row').innerHTML=days.map(d=>`<div class="day-box ${cnt[d.k]?'has-data':''} ${d.isToday?'today-box':''}"><div class="day-nm">${d.nm}</div><div class="day-ct" style="color:${cnt[d.k]?'var(--green)':'var(--dim)'}">${cnt[d.k]||0}</div></div>`).join('')+`<div class="day-box" style="border-color:rgba(57,211,83,.25)"><div class="day-nm">Total</div><div class="day-ct" style="color:var(--green)">${weekTotal}</div></div>`;
+
+    // Weekly review
+    const streak2=streak;
+    const weakPatterns=gaps.filter(g=>g.pct>=40).map(g=>g.n).slice(0,2);
+    document.getElementById('review-rows').innerHTML=`
+      <div class="review-row"><div class="rr-label">Problems this week</div><div class="rr-val ${weekTotal>=13?'good':weekTotal>=7?'warn':'bad'}">${weekTotal} / 13 target</div></div>
+      <div class="review-row"><div class="rr-label">Current streak</div><div class="rr-val ${streak2>=7?'good':streak2>=3?'warn':'bad'}">${streak2} days</div></div>
+      <div class="review-row"><div class="rr-label">Smooth mastery</div><div class="rr-val ${mastery>=70?'good':mastery>=50?'warn':'bad'}">${mastery}%</div></div>
+      <div class="review-row"><div class="rr-label">Focus next week</div><div class="rr-val" style="color:var(--yellow)">${weakPatterns.length?weakPatterns.join(', '):'Looking good across all patterns'}</div></div>`;
+    document.getElementById('review-section').style.display='block';
+
+  }catch(e){document.getElementById('srs-list').innerHTML='<div class="empty">SRS API not connected.</div>';}
+}
+
+async function loadPlan(){
+  try{
+    const res=await fetch(PLAN_API+"?t="+Date.now());
+    const all=await res.json();
+    const ts=todayStr();
+    const done=all.filter(p=>p.status==='Done').length;
+    const total=all.filter(p=>p.status!=='NA').length;
+    const pct=total>0?Math.round((done/total)*100):0;
+    document.getElementById('sv-lectures').textContent=done;
+    document.getElementById('m-plan').style.width=pct+'%';document.getElementById('mv-plan').textContent=pct+'%';
+
+    const todayClass=all.find(p=>p.date===ts&&p.status!=='Done'&&p.lecture);
+    if(todayClass)document.getElementById('class-label').innerHTML='Class — <span style="color:var(--text)">'+todayClass.lecture.substring(0,45)+'</span>';
+    else document.getElementById('class-label').innerHTML='Class — <span style="color:var(--muted)">None today / check plan</span>';
+
+    const upcoming=all.filter(p=>p.status!=='Done'&&p.status!=='NA'&&p.lecture).slice(0,5);
+    document.getElementById('plan-list').innerHTML=upcoming.map(p=>{
+      const cls=p.date<ts?'pi-ov':p.date===ts?'pi-td':'pi-up';
+      return `<div class="plan-item ${cls}"><div class="pi-name">${p.lecture.substring(0,55)}${p.lecture.length>55?'…':''}</div><div class="pi-meta">${p.date} · ${p.module||'—'}</div></div>`;
+    }).join('')||'<div class="empty">No upcoming lectures.</div>';
+  }catch(e){document.getElementById('plan-list').innerHTML='<div class="empty">Plan API not connected.</div>';}
+}
+
+setDate();
+loadSRS();
+loadPlan();
+</script>
+</body></html>
