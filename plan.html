@@ -1,350 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Master Plan Timeline | Ananth</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <style>
-        :root { --bg: #09090b; --card: #18181b; --border: #3f3f46; --primary: #39d353; --danger: #ef4444; --text: #f4f4f5; --muted: #a1a1aa; --accent: #3b82f6; --warning: #eab308; --done: #2ea44f; --purple: #a855f7; --weekend: rgba(168, 85, 247, 0.1); }
-        body { background-color: var(--bg); background-image: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.05) 0%, transparent 50%); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; padding: 40px 20px; min-height: 100vh; }
-        .container { max-width: 800px; margin: 0 auto; }
-        .header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 20px; flex-wrap: wrap; gap: 15px;}
-        h1 { margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; letter-spacing: -0.5px; }
-        .progress-hud { display: flex; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
-        .hud-item { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 10px 15px; flex: 1; min-width: 110px; text-align: center; display: flex; flex-direction: column; justify-content: center;}
-        .hud-val { font-family: 'Space Grotesk'; font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 2px;}
-        .hud-label { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px;}
-        .section-title { font-family: 'Space Grotesk'; font-size: 1.2rem; margin: 30px 0 15px 0; display: flex; align-items: center; justify-content: space-between;}
-        .overdue-title { color: var(--danger); }
-        .today-title { color: var(--primary); }
-        .upcoming-title { color: var(--muted); }
-        .timeline-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; transition: all 0.3s ease; border-left: 4px solid var(--border); position: relative; overflow: hidden; }
-        .card-done { border-left-color: var(--done); background: rgba(46, 164, 79, 0.05); opacity: 0.7;}
-        .card-overdue { border-left-color: var(--danger); background: rgba(239, 68, 68, 0.05); }
-        .card-today { border-left-color: var(--primary); background: rgba(57, 211, 83, 0.05); box-shadow: 0 0 20px rgba(57,211,83,0.1);}
-        .card-upcoming { border-left-color: var(--accent); opacity: 0.9;}
-        .card-weekend { border-left-color: var(--purple); background: var(--weekend); }
-        .timeline-card:hover { transform: translateX(5px); border-color: #71717a; }
-        .class-info h3 { margin: 0 0 8px 0; font-size: 1.1rem; font-weight: 600; }
-        .meta-tags { display: flex; gap: 8px; flex-wrap: wrap; font-size: 0.8rem; color: var(--muted);}
-        .badge { padding: 3px 8px; border-radius: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; font-size: 0.7rem;}
-        .b-track { background: rgba(255, 255, 255, 0.1); color: #fff; border: 1px solid #555; }
-        .b-module { background: rgba(59, 130, 246, 0.1); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.2); }
-        .actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
-        button { padding: 8px 16px; border-radius: 6px; font-weight: 600; font-size: 0.85rem; border: none; cursor: pointer; transition: 0.2s; font-family: 'Inter', sans-serif; }
-        .btn-pull { background: transparent; color: var(--purple); border: 1px solid var(--purple); }
-        .btn-pull:hover { background: rgba(168, 85, 247, 0.1); }
-        .btn-shift { background: transparent; color: var(--warning); border: 1px solid var(--warning); }
-        .btn-shift:hover { background: rgba(234, 179, 8, 0.1); }
-        .btn-done { background: var(--primary); color: #000; }
-        .btn-done:hover { opacity: 0.8; box-shadow: 0 0 15px rgba(57,211,83,0.4);}
-        .btn-toggle { background: #27272a; color: #fff; padding: 6px 12px; font-size: 0.75rem; border: 1px solid #3f3f46;}
-        .btn-toggle:hover { background: #3f3f46; }
-        .btn-sync { background: rgba(57, 211, 83, 0.1); color: var(--primary); border: 1px solid var(--primary); font-size: 0.8rem;}
-        .btn-sync:hover { background: rgba(57, 211, 83, 0.2); box-shadow: 0 0 15px rgba(57,211,83,0.2); }
-        .btn-revision { background: transparent; color: #c084fc; border: 1px solid #c084fc; font-size: 0.8rem;}
-        .btn-revision:hover { background: rgba(168, 85, 247, 0.1); }
-        .btn-timer { background: var(--accent); color: #fff; }
-        .btn-timer:hover { opacity: 0.8; }
-        .timer-display { font-family: 'Space Grotesk', monospace; font-size: 1.1rem; font-weight: 700; display: none; width: 60px; text-align: center; color: var(--primary); }
-        .timer-danger { color: var(--danger); animation: pulse 1s infinite; }
-        button:disabled { opacity: 0.5; pointer-events: none; }
-        .empty-state { color: var(--muted); font-style: italic; font-size: 0.9rem; padding: 10px; background: var(--card); border-radius: 8px; border: 1px dashed var(--border);}
-        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
-    </style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan Timeline | Ananth</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<style>
+:root{--bg:#030303;--bg2:#0a0a0a;--card:#0d0d0d;--border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.15);--text:#f4f4f5;--muted:#71717a;--dim:#3f3f46;--green:#39d353;--blue:#3b82f6;--yellow:#eab308;--red:#ef4444;--purple:#a855f7;--fd:'Space Grotesk',sans-serif;--fm:'IBM Plex Mono',monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--fd);min-height:100vh;padding:40px 20px;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse at 50% 0%,black 30%,transparent 80%);pointer-events:none;z-index:0}
+.wrap{max-width:840px;margin:0 auto;position:relative;z-index:1}
+.hdr{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1px solid var(--border);padding-bottom:20px;margin-bottom:24px;flex-wrap:wrap;gap:14px}
+.hdr-left{display:flex;align-items:center;gap:12px}
+.sys-dot{width:8px;height:8px;border-radius:50%;background:var(--blue);box-shadow:0 0 10px var(--blue);animation:pulse 2s ease infinite;flex-shrink:0}
+h1{font-size:1.7rem;font-weight:700;letter-spacing:-.5px}
+.sub{font-family:var(--fm);font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin-top:3px}
+.hdr-right{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.nav-link{font-family:var(--fm);font-size:.7rem;color:var(--muted);text-decoration:none;padding:6px 12px;border:1px solid var(--border);border-radius:6px;transition:.18s}
+.nav-link:hover{color:var(--text);border-color:var(--border2)}
+button{font-family:var(--fd);font-weight:600;font-size:.8rem;padding:8px 15px;border-radius:7px;border:none;cursor:pointer;transition:.18s}
+.btn-sync{background:rgba(57,211,83,.12);color:var(--green);border:1px solid rgba(57,211,83,.3)}
+.btn-sync:hover{background:rgba(57,211,83,.22)}
+.btn-rev{background:transparent;color:var(--purple);border:1px solid rgba(168,85,247,.4)}
+.btn-rev:hover{background:rgba(168,85,247,.1)}
+button:disabled{opacity:.4;pointer-events:none}
+
+/* HUD */
+.hud{display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap}
+.hud-item{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 16px;flex:1;min-width:100px;text-align:center}
+.hud-val{font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:2px}
+.hud-label{font-family:var(--fm);font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+
+/* SECTION TITLES */
+.sec-title{font-size:1rem;font-weight:700;margin:28px 0 14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.title-overdue{color:var(--red)}.title-today{color:var(--green)}.title-upcoming{color:var(--muted)}
+
+/* TIMELINE CARDS */
+.tl-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;transition:.2s;border-left:4px solid var(--border);gap:14px;flex-wrap:wrap}
+.tl-card:hover{border-color:rgba(255,255,255,.15)}
+.card-done{border-left-color:#2ea44f;background:rgba(46,164,79,.04);opacity:.65}
+.card-overdue{border-left-color:var(--red);background:rgba(239,68,68,.04)}
+.card-today{border-left-color:var(--green);background:rgba(57,211,83,.04);box-shadow:0 0 18px rgba(57,211,83,.07)}
+.card-upcoming{border-left-color:var(--blue);opacity:.9}
+.card-upcoming.card-weekend{border-left-color:var(--purple);background:rgba(168,85,247,.04)}
+.card-info{flex:1;min-width:0}
+.card-meta{font-family:var(--fm);font-size:.65rem;color:var(--muted);margin-bottom:5px}
+.card-info h3{font-size:1rem;font-weight:600;margin-bottom:8px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.meta-tags{display:flex;gap:6px;flex-wrap:wrap}
+.badge{font-family:var(--fm);padding:2px 7px;border-radius:4px;font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.4px}
+.b-track{background:rgba(255,255,255,.07);color:#d4d4d8;border:1px solid var(--border)}
+.b-module{background:rgba(59,130,246,.1);color:#60a5fa;border:1px solid rgba(59,130,246,.2)}
+.actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;flex-shrink:0}
+.btn-pull{background:transparent;color:var(--purple);border:1px solid rgba(168,85,247,.4);font-size:.75rem;padding:6px 11px}
+.btn-pull:hover{background:rgba(168,85,247,.1)}
+.btn-shift{background:transparent;color:var(--yellow);border:1px solid rgba(234,179,8,.4);font-size:.75rem;padding:6px 11px}
+.btn-shift:hover{background:rgba(234,179,8,.1)}
+.btn-done{background:var(--green);color:#000;font-size:.78rem;padding:7px 13px}
+.btn-done:hover{opacity:.85;box-shadow:0 0 14px rgba(57,211,83,.3)}
+.btn-focus{background:rgba(59,130,246,.12);color:var(--blue);border:1px solid rgba(59,130,246,.3);font-size:.75rem;padding:6px 11px}
+.btn-focus:hover{background:rgba(59,130,246,.22)}
+.btn-toggle{background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--border);font-size:.72rem;padding:5px 12px}
+.btn-toggle:hover{color:var(--text)}
+.timer-display{font-family:var(--fm);font-size:.9rem;font-weight:600;display:none;width:50px;text-align:center;color:var(--yellow)}
+.timer-danger{color:var(--red);animation:pulse 1s infinite}
+.empty-state{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:20px;color:var(--muted);font-family:var(--fm);font-size:.75rem;text-align:center}
+.loading-state{text-align:center;padding:30px;color:var(--muted);font-family:var(--fm);font-size:.78rem;animation:pulse 1.5s infinite}
+@keyframes pulse{50%{opacity:.4}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+</style>
 </head>
 <body>
+<div class="wrap">
+  <div class="hdr">
+    <div class="hdr-left">
+      <div class="sys-dot"></div>
+      <div><h1>Plan Timeline</h1><div class="sub">Scaler Curriculum · Dynamic Scheduler</div></div>
+    </div>
+    <div class="hdr-right">
+      <button class="btn-sync" onclick="smartSync(this)">⚡ Smart Sync</button>
+      <button class="btn-rev" onclick="startRevisionPhase(this)">🎓 Revision Mode</button>
+      <a href="dashboard.html" class="nav-link">← Hub</a>
+    </div>
+  </div>
 
-<div class="container">
-    <div class="header">
-        <div>
-            <p style="margin: 0; color: var(--accent); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px;">• Dual-Track Engine V8</p>
-            <h1>Master Schedule</h1>
-        </div>
-        <div style="display: flex; gap: 10px;">
-            <button class="btn-sync" onclick="smartSync(this)">⚡ Smart Sync</button>
-            <button class="btn-revision" onclick="startRevisionPhase(this)">🎓 Final Revision Mode</button>
-        </div>
-    </div>
-    <div class="progress-hud" id="hud-stats"></div>
-    <div id="loading" style="color: var(--muted); margin-bottom: 20px; animation: pulse 1s infinite; display: none;">Syncing Timeline...</div>
-    <div style="margin-bottom: 30px;">
-        <span style="font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px;">Checkpoint: Last Completed</span>
-        <div id="last-completed"><div class="empty-state">No classes completed yet.</div></div>
-    </div>
-    <h2 class="section-title overdue-title">⚠️ Action Required (Overdue)</h2>
-    <div id="overdue-queue"><div class="empty-state">No overdue classes. You are perfectly on schedule!</div></div>
-    <h2 class="section-title today-title">🔥 Today's Mission</h2>
-    <div id="today-queue"><div class="empty-state">No classes scheduled for today. Rest or revise.</div></div>
-    <h2 class="section-title upcoming-title">
-        📅 Upcoming Timeline
-        <button id="btn-toggle" class="btn-toggle" onclick="toggleUpcoming()">View Full Schedule</button>
-    </h2>
-    <div id="upcoming-queue"><div class="empty-state">Loading future timeline...</div></div>
+  <div class="hud" id="hud-stats"></div>
+  <div class="loading-state" id="loading">Syncing Timeline…</div>
+
+  <div class="sec-title title-overdue" id="overdue-title" style="display:none">⚠ Overdue</div>
+  <div id="overdue-queue"></div>
+
+  <div class="sec-title title-today" id="today-title" style="display:none">📌 Today</div>
+  <div id="today-queue"><div class="empty-state">No classes scheduled for today.</div></div>
+
+  <div class="sec-title title-upcoming">
+    📅 Upcoming
+    <button class="btn-toggle" id="btn-toggle" onclick="toggleUpcoming()">View Full Schedule</button>
+  </div>
+  <div id="upcoming-queue"><div class="empty-state">Loading…</div></div>
 </div>
 
 <script>
-    const API_URL = "https://script.google.com/macros/s/AKfycbziO7UXoTfbgegAbdoRksCxy3OI0Nn_p8vDJnQ1VboVjVhE1SsJFwnIjtK4kzz2-kDzkA/exec";
-    
-    let allUpcoming = []; 
-    let showingAll = false; 
-    let activeTimers = {};
+const API_URL = "https://script.google.com/macros/s/AKfycbziO7UXoTfbgegAbdoRksCxy3OI0Nn_p8vDJnQ1VboVjVhE1SsJFwnIjtK4kzz2-kDzkA/exec";
+let allUpcoming=[], showingAll=false, activeTimers={};
 
-    function getStreak(todayStr) {
-        let lastDate = localStorage.getItem('srs_last_done');
-        let currentStreak = parseInt(localStorage.getItem('srs_streak')) || 0;
-        let today = new Date(todayStr);
-        let yesterday = new Date(today);
-        yesterday.setDate(yesterday.getDate() - 1);
-        let yesterdayStr = yesterday.toISOString().split('T')[0];
+function getTodayStr(){const d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,'0')+"-"+String(d.getDate()).padStart(2,'0');}
 
-        if (lastDate !== todayStr && lastDate !== yesterdayStr && lastDate !== null) {
-            currentStreak = 0;
-            localStorage.setItem('srs_streak', 0);
-        }
-        return currentStreak;
+function getStreak(todayStr){
+  let lastDate=localStorage.getItem('srs_last_done');
+  let s=parseInt(localStorage.getItem('srs_streak'))||0;
+  let yd=new Date(todayStr);yd.setDate(yd.getDate()-1);
+  let ydStr=yd.toISOString().split('T')[0];
+  if(lastDate!==todayStr&&lastDate!==ydStr&&lastDate!==null){s=0;localStorage.setItem('srs_streak',0);}
+  return s;
+}
+
+async function loadTimeline(){
+  document.getElementById('loading').style.display='block';
+  try{
+    const res=await fetch(API_URL+"?t="+Date.now());
+    let data=await res.json();
+    data.sort((a,b)=>new Date(a.date)-new Date(b.date));
+    const todayStr=getTodayStr();
+    calculateHUD(data,todayStr);
+    let lastCompleted=null,highestRow=-1,overdue=[],today=[];
+    allUpcoming=[];
+    data.forEach(item=>{
+      if(item.status==="Done"){if(item.rowIndex>highestRow){highestRow=item.rowIndex;lastCompleted=item;}return;}
+      if(item.date<todayStr)overdue.push(item);
+      else if(item.date===todayStr)today.push(item);
+      else allUpcoming.push(item);
+    });
+    if(lastCompleted)renderSection('last-completed',[lastCompleted],'card-done',false,todayStr,false);
+    if(overdue.length){document.getElementById('overdue-title').style.display='flex';}
+    renderSection('overdue-queue',overdue,'card-overdue',true,todayStr,true);
+    if(today.length){document.getElementById('today-title').style.display='flex';}
+    renderSection('today-queue',today,'card-today',true,todayStr,true);
+    renderUpcoming(todayStr);
+    document.getElementById('loading').style.display='none';
+  }catch(e){document.getElementById('loading').textContent='Connection Failed.';}
+}
+
+function calculateHUD(data,todayStr){
+  let stats={"DSA":{d:0,t:0},"LLD/HLD":{d:0,t:0},"Core":{d:0,t:0}};
+  data.forEach(p=>{
+    let mod=(p.module||'').toLowerCase();
+    let k=null;
+    if(mod.includes('dsa')||mod.includes('intro'))k='DSA';
+    else if(mod.includes('hld')||mod.includes('system')||mod.includes('lld')||mod.includes('backend'))k='LLD/HLD';
+    else if(mod.includes('sql')||mod.includes('database')||mod.includes('network')||mod.includes('cs fund'))k='Core';
+    if(k){stats[k].t++;if(p.status==='Done')stats[k].d++;}
+  });
+  let pending=data.filter(d=>d.status!=='Done'&&d.status!=='NA'&&!d.track.includes('Practice'));
+  let eta=pending.length>0?new Date(pending[pending.length-1].date).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}):'Done 🚀';
+  let streak=getStreak(todayStr);
+  const hud=document.getElementById('hud-stats');
+  hud.innerHTML='';
+  for(const[k,v]of Object.entries(stats)){
+    if(v.t===0)continue;
+    let pct=Math.round((v.d/v.t)*100);
+    hud.innerHTML+=`<div class="hud-item"><div class="hud-val" style="color:${pct===100?'var(--green)':'#fff'}">${pct}%</div><div class="hud-label">${k}</div></div>`;
+  }
+  hud.innerHTML+=`<div class="hud-item" style="border-color:rgba(234,179,8,.3);background:rgba(234,179,8,.04)"><div class="hud-val" style="color:var(--yellow)">🔥 ${streak}</div><div class="hud-label">Streak</div></div>`;
+  hud.innerHTML+=`<div class="hud-item" style="flex:1.5;border-color:rgba(59,130,246,.3);background:rgba(59,130,246,.04)"><div class="hud-val" style="color:var(--blue);font-size:.9rem">${eta}</div><div class="hud-label">ETA</div></div>`;
+}
+
+function toggleUpcoming(){
+  showingAll=!showingAll;
+  document.getElementById('btn-toggle').innerText=showingAll?'Collapse':'View Full Schedule';
+  renderUpcoming(getTodayStr());
+}
+
+function renderUpcoming(todayStr){renderSection('upcoming-queue',allUpcoming.slice(0,showingAll?allUpcoming.length:5),'card-upcoming',true,todayStr,false);}
+
+function startTimer(cardId){
+  if(activeTimers[cardId])return;
+  document.getElementById('btn-timer-'+cardId).style.display='none';
+  const disp=document.getElementById('timer-'+cardId);disp.style.display='inline-block';
+  let s=0;
+  activeTimers[cardId]=setInterval(()=>{s++;let m=Math.floor(s/60).toString().padStart(2,'0');let sc=(s%60).toString().padStart(2,'0');disp.innerText=`${m}:${sc}`;if(s>=1800)disp.classList.add('timer-danger');},1000);
+}
+
+function renderSection(elId,items,cardClass,showBtns,todayStr,allowTimer){
+  const div=document.getElementById(elId);
+  if(!div)return;
+  if(!items.length){
+    if(elId==='overdue-queue')div.innerHTML='<div class="empty-state">No overdue classes. On schedule ✓</div>';
+    else if(elId==='today-queue')div.innerHTML='<div class="empty-state">No classes scheduled for today.</div>';
+    else div.innerHTML='';
+    return;
+  }
+  div.innerHTML='';
+  items.forEach(item=>{
+    const prettyDate=new Date(item.date).toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short'});
+    const card=document.createElement('div');
+    let cls=cardClass;
+    if(cardClass==='card-upcoming'&&(item.track.includes('Weekend')||item.track.includes('Practice')))cls+=' card-weekend';
+    card.className=`tl-card ${cls}`;card.id=`row-${item.rowIndex}`;
+    let btns=showBtns?`
+      <div class="actions">
+        ${allowTimer?`<button class="btn-focus" id="btn-timer-${card.id}" onclick="startTimer('${card.id}')">▶</button><span class="timer-display" id="timer-${card.id}">00:00</span>`:''}
+        ${item.date>todayStr?`<button class="btn-pull" onclick="processAction('pull_to_today',${item.rowIndex},'${item.track}','${card.id}')">⏬ Today</button>`:''}
+        <button class="btn-shift" onclick="processAction('shift',${item.rowIndex},'${item.track}','${card.id}')">⏩ Shift</button>
+        <button class="btn-done" onclick="processAction('done',${item.rowIndex},'${item.track}','${card.id}')">✓ Done</button>
+      </div>`:`<div style="color:var(--green);font-family:var(--fm);font-size:.72rem;font-weight:600">✓ Done</div>`;
+    card.innerHTML=`
+      <div class="card-info">
+        <div class="card-meta">${prettyDate} · ${item.instructor||'—'}</div>
+        <h3>${item.lecture}</h3>
+        <div class="meta-tags">
+          <span class="badge b-track">${item.track}</span>
+          <span class="badge b-module">${item.module||item.phase||'—'}</span>
+        </div>
+      </div>${btns}`;
+    div.appendChild(card);
+  });
+}
+
+async function processAction(action,rowIndex,track,cardId){
+  if(localStorage.getItem("admin_key")!=="scaler2026"){alert("🔒 READ-ONLY MODE");return;}
+  const card=document.getElementById(cardId);
+  card.querySelectorAll('button').forEach(b=>b.disabled=true);
+  if(activeTimers[cardId])clearInterval(activeTimers[cardId]);
+  document.getElementById('loading').style.display='block';
+  document.getElementById('loading').textContent='Syncing…';
+  try{
+    await fetch(API_URL,{method:"POST",body:JSON.stringify({action,rowIndex,track,secret:localStorage.getItem("admin_key")})});
+    if(action==='done'){
+      confetti({particleCount:80,spread:65,origin:{y:.6},colors:['#39d353','#fff']});
+      const ts=getTodayStr();
+      if(localStorage.getItem('srs_last_done')!==ts){let s=parseInt(localStorage.getItem('srs_streak'))||0;localStorage.setItem('srs_streak',s+1);localStorage.setItem('srs_last_done',ts);}
     }
+    setTimeout(loadTimeline,800);
+  }catch(e){alert("Sync Failed.");card.querySelectorAll('button').forEach(b=>b.disabled=false);document.getElementById('loading').style.display='none';}
+}
 
-    async function loadTimeline() {
-        document.getElementById('loading').style.display = "block";
-        document.getElementById('loading').innerText = "Syncing Timeline...";
-        try {
-            const response = await fetch(API_URL + "?t=" + new Date().getTime());
-            let data = await response.json();
-            data.sort((a, b) => new Date(a.date) - new Date(b.date));
-            const todayDate = new Date();
-            const todayStr = todayDate.getFullYear() + "-" + String(todayDate.getMonth() + 1).padStart(2, '0') + "-" + String(todayDate.getDate()).padStart(2, '0');
-            
-            calculateHUD(data, todayStr);
+async function smartSync(btn){
+  if(localStorage.getItem("admin_key")!=="scaler2026"){alert("🔒 READ-ONLY MODE");return;}
+  if(!confirm("Auto-align remaining curriculum to next valid weekday/weekend dates. Continue?"))return;
+  btn.disabled=true;btn.innerText="Syncing…";
+  try{await fetch(API_URL,{method:"POST",body:JSON.stringify({action:"smart_sync",secret:localStorage.getItem("admin_key")})});loadTimeline();}
+  catch(e){alert("Failed.");}
+  finally{btn.disabled=false;btn.innerText="⚡ Smart Sync";}
+}
 
-            let lastCompletedItem = null;
-            let highestRowIndex = -1; 
-            let overdue = [], today = [];
-            allUpcoming = []; 
-            
-            data.forEach(item => {
-                if (item.status === "Done") { 
-                    if (item.rowIndex > highestRowIndex) {
-                        highestRowIndex = item.rowIndex;
-                        lastCompletedItem = item;
-                    }
-                    return; 
-                }
-                if (item.date < todayStr) overdue.push(item);
-                else if (item.date === todayStr) today.push(item);
-                else allUpcoming.push(item);
-            });
+async function startRevisionPhase(btn){
+  if(localStorage.getItem("admin_key")!=="scaler2026"){alert("🔒 READ-ONLY MODE");return;}
+  if(!confirm("⚠ Only run this when you've finished Lec 234! Converts all remaining rows to Daily Revision. Ready?"))return;
+  btn.disabled=true;btn.innerText="Processing…";
+  try{await fetch(API_URL,{method:"POST",body:JSON.stringify({action:"revision_mode",secret:localStorage.getItem("admin_key")})});loadTimeline();}
+  catch(e){alert("Failed.");}
+  finally{btn.disabled=false;btn.innerText="🎓 Revision Mode";}
+}
 
-            if (lastCompletedItem) renderSection('last-completed', [lastCompletedItem], 'card-done', false, todayStr, false);
-            renderSection('overdue-queue', overdue, 'card-overdue', true, todayStr, true); 
-            renderSection('today-queue', today, 'card-today', true, todayStr, true); 
-            renderUpcoming(todayStr); 
-            document.getElementById('loading').style.display = "none";
-        } catch (error) {
-            document.getElementById('loading').innerText = "Connection Failed.";
-        }
-    }
-
-    function calculateHUD(data, todayStr) {
-        let stats = { "DSA": {d:0, t:0}, "HLD": {d:0, t:0}, "Core": {d:0, t:0} };
-        data.forEach(p => {
-            let mod = p.module.toLowerCase();
-            let key = null;
-            if (mod.includes("dsa") || mod.includes("intro")) key = "DSA";
-            else if (mod.includes("hld") || mod.includes("system design")) key = "HLD";
-            else if (mod.includes("sql") || mod.includes("database") || mod.includes("network") || mod.includes("cs fund")) key = "Core";
-            if (key) {
-                stats[key].t++;
-                if (p.status === "Done") stats[key].d++;
-            }
-        });
-
-        let pending = data.filter(d => d.status !== "Done" && d.status !== "NA" && !d.track.includes("Practice"));
-        let etaString = pending.length > 0 ? new Date(pending[pending.length - 1].date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) : "Completed 🚀";
-        let streak = getStreak(todayStr);
-        const hud = document.getElementById('hud-stats');
-        hud.innerHTML = "";
-        
-        for (const [key, val] of Object.entries(stats)) {
-            if (val.t === 0) continue;
-            let pct = Math.round((val.d / val.t) * 100);
-            hud.innerHTML += `<div class="hud-item"><div class="hud-val" style="color: ${pct === 100 ? 'var(--primary)' : '#fff'}">${pct}%</div><div class="hud-label">${key}</div></div>`;
-        }
-
-        hud.innerHTML += `<div class="hud-item" style="border-color: rgba(234, 179, 8, 0.4); background: rgba(234, 179, 8, 0.05);"><div class="hud-val" style="color: var(--warning);">🔥 ${streak}</div><div class="hud-label">Day Streak</div></div>`;
-        hud.innerHTML += `<div class="hud-item" style="flex: 1.5; border-color: rgba(59, 130, 246, 0.4); background: rgba(59, 130, 246, 0.05);"><div class="hud-val" style="color: var(--accent);">${etaString}</div><div class="hud-label">🎯 Goal Target</div></div>`;
-    }
-
-    function toggleUpcoming() {
-        showingAll = !showingAll;
-        document.getElementById('btn-toggle').innerText = showingAll ? "Collapse Schedule" : "View Full Schedule";
-        const todayDate = new Date();
-        const todayStr = todayDate.getFullYear() + "-" + String(todayDate.getMonth() + 1).padStart(2, '0') + "-" + String(todayDate.getDate()).padStart(2, '0');
-        renderUpcoming(todayStr);
-    }
-
-    function renderUpcoming(todayStr) {
-        const limit = showingAll ? allUpcoming.length : 5;
-        renderSection('upcoming-queue', allUpcoming.slice(0, limit), 'card-upcoming', true, todayStr, false);
-    }
-
-    function startTimer(cardId) {
-        if (activeTimers[cardId]) return; 
-        const btn = document.getElementById(`btn-timer-${cardId}`);
-        const display = document.getElementById(`timer-${cardId}`);
-        btn.style.display = "none"; 
-        display.style.display = "inline-block";
-        let seconds = 0;
-        activeTimers[cardId] = setInterval(() => {
-            seconds++;
-            let m = Math.floor(seconds / 60).toString().padStart(2, '0');
-            let s = (seconds % 60).toString().padStart(2, '0');
-            display.innerText = `${m}:${s}`;
-            if (seconds >= 1800) display.classList.add('timer-danger');
-        }, 1000);
-    }
-
-    function renderSection(elementId, items, cardClass, showButtons, todayStr, allowTimer) {
-        const div = document.getElementById(elementId);
-        if (items.length === 0) {
-            if (elementId === 'last-completed') div.innerHTML = `<div class="empty-state">No classes completed yet.</div>`;
-            else if (elementId === 'overdue-queue') div.innerHTML = `<div class="empty-state">No overdue classes. You are perfectly on schedule!</div>`;
-            else if (elementId === 'today-queue') div.innerHTML = `<div class="empty-state">No classes scheduled for today. Rest or revise.</div>`;
-            return;
-        }
-        
-        div.innerHTML = "";
-        items.forEach(item => {
-            const prettyDate = new Date(item.date).toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
-            const card = document.createElement('div');
-            
-            let finalCardClass = cardClass;
-            if (cardClass === 'card-upcoming' && (item.track.includes("Weekend") || item.track.includes("Practice"))) finalCardClass += ' card-weekend';
-            
-            card.className = `timeline-card ${finalCardClass}`;
-            card.id = `row-${item.rowIndex}`;
-
-            let buttonHTML = showButtons ? `
-                <div class="actions">
-                    ${allowTimer ? `<button class="btn-timer" id="btn-timer-${card.id}" onclick="startTimer('${card.id}')">▶ Focus</button><span class="timer-display" id="timer-${card.id}">00:00</span>` : ''}
-                    ${item.date > todayStr ? `<button class="btn-pull" onclick="processAction('pull_to_today', ${item.rowIndex}, '${item.track}', '${card.id}')">⏬ Do Today</button>` : ''}
-                    <button class="btn-shift" onclick="processAction('shift', ${item.rowIndex}, '${item.track}', '${card.id}')">⏩ Shift</button>
-                    <button class="btn-done" onclick="processAction('done', ${item.rowIndex}, '${item.track}', '${card.id}')">✅ Done</button>
-                </div>
-            ` : `<div style="color: var(--done); font-weight: 600; font-size: 0.9rem;">✓ Completed</div>`;
-
-            card.innerHTML = `
-                <div class="class-info">
-                    <div style="color: #a1a1aa; font-size: 0.8rem; margin-bottom: 5px; font-family: monospace;">
-                        ${prettyDate} • ${item.instructor}
-                    </div>
-                    <h3>${item.lecture}</h3>
-                    <div class="meta-tags">
-                        <span class="badge b-track">${item.track}</span>
-                        <span class="badge b-module">${item.module}</span>
-                    </div>
-                </div>
-                ${buttonHTML}
-            `;
-            div.appendChild(card);
-        });
-    }
-
-    async function processAction(action, rowIndex, track, cardId) {
-        // 🔒 LAYER 1: READ-ONLY LOCK
-        if (localStorage.getItem("admin_key") !== "scaler2026") {
-            alert("🔒 READ-ONLY MODE: You are viewing a live demo of Ananth's Scheduling Engine. Database write-access is restricted.");
-            return;
-        }
-
-        const card = document.getElementById(cardId);
-        const buttons = card.querySelectorAll('button');
-        buttons.forEach(b => b.disabled = true); 
-        
-        if (activeTimers[cardId]) clearInterval(activeTimers[cardId]);
-
-        document.getElementById('loading').style.display = "block";
-        document.getElementById('loading').innerText = "Syncing with Database...";
-
-        try {
-            await fetch(API_URL, {
-                method: "POST",
-                body: JSON.stringify({ 
-                    action: action, 
-                    rowIndex: rowIndex, 
-                    track: track,
-                    secret: localStorage.getItem("admin_key") // Sends the key!
-                })
-            });
-
-            if (action === 'done') {
-                confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
-                const todayDate = new Date();
-                const todayStr = todayDate.getFullYear() + "-" + String(todayDate.getMonth() + 1).padStart(2, '0') + "-" + String(todayDate.getDate()).padStart(2, '0');
-                let lastDone = localStorage.getItem('srs_last_done');
-                if (lastDone !== todayStr) {
-                    let streak = parseInt(localStorage.getItem('srs_streak')) || 0;
-                    localStorage.setItem('srs_streak', streak + 1);
-                    localStorage.setItem('srs_last_done', todayStr);
-                }
-            }
-            
-            setTimeout(() => loadTimeline(), 800); 
-        } catch (error) {
-            alert("Sync Failed.");
-            buttons.forEach(b => b.disabled = false);
-            document.getElementById('loading').style.display = "none";
-        }
-    }
-
-    async function smartSync(btn) {
-        if (localStorage.getItem("admin_key") !== "scaler2026") {
-            alert("🔒 READ-ONLY MODE: You are viewing a live demo of Ananth's Scheduling Engine. Database write-access is restricted.");
-            return;
-        }
-        if (!confirm("This will perfectly align your remaining curriculum chronologically without breaking Weekday/Weekend rules. Continue?")) return;
-        
-        btn.disabled = true; 
-        btn.innerText = "Syncing...";
-        document.getElementById('loading').style.display = "block";
-        document.getElementById('loading').innerText = "Auto-Healing Schedule Boundaries...";
-        try {
-            await fetch(API_URL, { 
-                method: "POST", 
-                body: JSON.stringify({ action: "smart_sync", secret: localStorage.getItem("admin_key") }) 
-            });
-            btn.disabled = false;
-            btn.innerText = "⚡ Smart Sync";
-            loadTimeline();
-        } catch (e) { alert("Failed to sync."); btn.disabled = false; btn.innerText = "⚡ Smart Sync";}
-    }
-
-    async function startRevisionPhase(btn) {
-        if (localStorage.getItem("admin_key") !== "scaler2026") {
-            alert("🔒 READ-ONLY MODE: You are viewing a live demo of Ananth's Scheduling Engine. Database write-access is restricted.");
-            return;
-        }
-        if (!confirm("🎓 Only click this when you have finished Lec 234! This will convert all remaining blank rows into Daily Revision Practice. Are you ready?")) return;
-        
-        btn.disabled = true; 
-        btn.innerText = "Processing...";
-        document.getElementById('loading').style.display = "block";
-        document.getElementById('loading').innerText = "Entering Final Revision Phase...";
-        try {
-            await fetch(API_URL, { 
-                method: "POST", 
-                body: JSON.stringify({ action: "revision_mode", secret: localStorage.getItem("admin_key") }) 
-            });
-            btn.disabled = false;
-            btn.innerText = "🎓 Final Revision Mode";
-            loadTimeline();
-        } catch (e) { alert("Failed to activate revision mode."); btn.disabled = false; btn.innerText = "🎓 Final Revision Mode";}
-    }
-
-    loadTimeline();
+loadTimeline();
 </script>
-</body>
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="12f7783a-202a-41a3-b4d4-b8e61a3a575d"></script>
-</html>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="12f7783a-202a-41a3-b4d4-b8e61a3a575d"></script>
+</body></html>
