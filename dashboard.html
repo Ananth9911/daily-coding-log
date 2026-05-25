@@ -18,7 +18,6 @@ body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(
 .topbar-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .chip{font-family:var(--fm);font-size:.7rem;padding:5px 13px;border-radius:16px;background:var(--bg2);border:1px solid var(--border)}
 .phase-chip{color:var(--green);background:rgba(57,211,83,.07);border-color:rgba(57,211,83,.2)}
-/* STATS GRID — 7 cards */
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:20px}
 .stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
 .stat-v{font-size:1.75rem;font-weight:700;line-height:1}
@@ -100,52 +99,26 @@ body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(
   </div>
   <div class="info-box" id="info-box">
     <strong>How to read this dashboard:</strong>
-    Problems Solved = ALL problems including Completed ones (your full count).
-    Main Streak = consecutive days you solved/added problems (from Date column).
-    SRS Streak = consecutive days you clicked Smooth/Struggled in the SRS engine.
-    Smooth Rate = % of all problems marked Smooth.
+    Problems Solved = ALL problems (Completed included).
+    Main Streak = consecutive days you added/solved problems (from Date column, tolerates 1-day sync lag).
+    SRS Streak = consecutive days you clicked Smooth/Struggled.
+    Smooth Rate = % of problems in any solved phase (Smooth/S1-S4/Mastered/Completed).
     Mastered = problems in Mastered or Completed phase.
     <span onclick="this.parentElement.style.display='none'" style="cursor:pointer;color:var(--blue);margin-left:8px">Got it ✕</span>
   </div>
-  <!-- WEEKLY REVIEW -->
   <div class="review-section" id="review-section">
     <div class="review-title">📋 Weekly Review</div>
     <div class="review-rows" id="review-rows"></div>
   </div>
-  <!-- STATS — 7 cards -->
   <div class="stats">
-    <div class="stat">
-      <div class="stat-v" id="sv-due" style="color:var(--yellow)">—</div>
-      <div class="stat-l">SRS Due Today</div>
-    </div>
-    <div class="stat">
-      <div class="stat-v" id="sv-total" style="color:var(--text)">—</div>
-      <div class="stat-l">Problems Solved</div>
-    </div>
-    <div class="stat">
-      <div class="stat-v" id="sv-mastery" style="color:var(--green)">—</div>
-      <div class="stat-l">Smooth Rate</div>
-    </div>
-    <div class="stat">
-      <div class="stat-v" id="sv-main-streak" style="color:var(--orange)">—</div>
-      <div class="stat-l">🔥 Main Streak</div>
-      <div class="stat-sub">Daily solving</div>
-    </div>
-    <div class="stat">
-      <div class="stat-v" id="sv-streak" style="color:var(--yellow)">—</div>
-      <div class="stat-l">SRS Streak</div>
-      <div class="stat-sub">Daily reviews</div>
-    </div>
-    <div class="stat">
-      <div class="stat-v" id="sv-mastered" style="color:var(--purple)">—</div>
-      <div class="stat-l">Mastered</div>
-    </div>
-    <div class="stat">
-      <div class="stat-v" id="sv-lectures" style="color:var(--blue)">—</div>
-      <div class="stat-l">Lectures Done</div>
-    </div>
+    <div class="stat"><div class="stat-v" id="sv-due" style="color:var(--yellow)">—</div><div class="stat-l">SRS Due Today</div></div>
+    <div class="stat"><div class="stat-v" id="sv-total" style="color:var(--text)">—</div><div class="stat-l">Problems Solved</div></div>
+    <div class="stat"><div class="stat-v" id="sv-mastery" style="color:var(--green)">—</div><div class="stat-l">Smooth Rate</div></div>
+    <div class="stat"><div class="stat-v" id="sv-main-streak" style="color:var(--orange)">—</div><div class="stat-l">🔥 Main Streak</div><div class="stat-sub">Daily solving</div></div>
+    <div class="stat"><div class="stat-v" id="sv-streak" style="color:var(--yellow)">—</div><div class="stat-l">SRS Streak</div><div class="stat-sub">Daily reviews</div></div>
+    <div class="stat"><div class="stat-v" id="sv-mastered" style="color:var(--purple)">—</div><div class="stat-l">Mastered</div></div>
+    <div class="stat"><div class="stat-v" id="sv-lectures" style="color:var(--blue)">—</div><div class="stat-l">Lectures Done</div></div>
   </div>
-  <!-- ROW 1 -->
   <div class="g2">
     <div class="card">
       <div class="card-title">🧠 SRS Queue — <b id="srs-badge">Loading…</b></div>
@@ -164,52 +137,29 @@ body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(
       </div>
     </div>
   </div>
-  <!-- ROW 2 -->
   <div class="g3">
     <div class="card">
       <div class="card-title">⚠ Pattern Gaps — <b>Struggle % by pattern</b></div>
-      <div class="gap-rows" id="gap-rows"><div class="empty">Populates after SRS reviews. Click Smooth/Struggled in review.html.</div></div>
+      <div class="gap-rows" id="gap-rows"><div class="empty">Populates after SRS reviews.</div></div>
       <a href="cue_library.html" class="btn-link">Cue Library →</a>
     </div>
     <div class="card">
       <div class="card-title">🎯 Readiness Signal</div>
       <div class="meter-rows">
-        <div class="meter-row">
-          <div class="meter-lbl">Hard Problems</div>
-          <div class="meter-bg"><div class="meter-fill" id="m-hard" style="width:0%;background:var(--yellow)"></div></div>
-          <div class="meter-val" id="mv-hard" style="color:var(--yellow)">—</div>
-        </div>
-        <div class="meter-row">
-          <div class="meter-lbl">S3/S4/Mastered</div>
-          <div class="meter-bg"><div class="meter-fill" id="m-srs" style="width:0%;background:var(--purple)"></div></div>
-          <div class="meter-val" id="mv-srs" style="color:var(--purple)">—</div>
-        </div>
-        <div class="meter-row">
-          <div class="meter-lbl">Plan Progress</div>
-          <div class="meter-bg"><div class="meter-fill" id="m-plan" style="width:0%;background:var(--blue)"></div></div>
-          <div class="meter-val" id="mv-plan" style="color:var(--blue)">—</div>
-        </div>
-        <div class="meter-row">
-          <div class="meter-lbl">Smooth Rate</div>
-          <div class="meter-bg"><div class="meter-fill" id="m-mastery" style="width:0%;background:var(--green)"></div></div>
-          <div class="meter-val" id="mv-mastery" style="color:var(--green)">—</div>
-        </div>
+        <div class="meter-row"><div class="meter-lbl">Hard Problems</div><div class="meter-bg"><div class="meter-fill" id="m-hard" style="width:0%;background:var(--yellow)"></div></div><div class="meter-val" id="mv-hard" style="color:var(--yellow)">—</div></div>
+        <div class="meter-row"><div class="meter-lbl">S3/S4/Mastered</div><div class="meter-bg"><div class="meter-fill" id="m-srs" style="width:0%;background:var(--purple)"></div></div><div class="meter-val" id="mv-srs" style="color:var(--purple)">—</div></div>
+        <div class="meter-row"><div class="meter-lbl">Plan Progress</div><div class="meter-bg"><div class="meter-fill" id="m-plan" style="width:0%;background:var(--blue)"></div></div><div class="meter-val" id="mv-plan" style="color:var(--blue)">—</div></div>
+        <div class="meter-row"><div class="meter-lbl">Smooth Rate</div><div class="meter-bg"><div class="meter-fill" id="m-mastery" style="width:0%;background:var(--green)"></div></div><div class="meter-val" id="mv-mastery" style="color:var(--green)">—</div></div>
       </div>
-      <div style="font-family:var(--fm);font-size:.6rem;color:var(--muted);margin-top:14px;line-height:1.6">
-        SM-2 adaptive intervals. EF grows as you consistently Smooth problems.
-      </div>
+      <div style="font-family:var(--fm);font-size:.6rem;color:var(--muted);margin-top:14px;line-height:1.6">SM-2 adaptive intervals. EF grows as you consistently Smooth problems.</div>
       <a href="readiness.html" class="btn-link">Mock Sessions →</a>
     </div>
     <div class="card">
       <div class="card-title">📈 SRS Reviews This Week</div>
       <div class="week-row" id="week-row"><div class="empty">Loading…</div></div>
-      <div style="font-family:var(--fm);font-size:.62rem;color:var(--muted);margin-top:10px">
-        Counts SRS reviews (Smooth/Struggled clicks) per day.<br>
-        Target: 8 problems/day (5 retention + 3 fresh).
-      </div>
+      <div style="font-family:var(--fm);font-size:.62rem;color:var(--muted);margin-top:10px">Counts SRS reviews per day.<br>Target: 8 problems/day (5 retention + 3 fresh).</div>
     </div>
   </div>
-  <!-- ROW 3 -->
   <div class="g2">
     <div class="card">
       <div class="card-title">📚 Upcoming Lectures</div>
@@ -219,11 +169,12 @@ body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(
     <div class="card">
       <div class="card-title">🛠 All Systems</div>
       <div class="tools-grid">
-        <a href="review.html" class="tool-a"><div class="tool-icon">🧠</div><div><div class="tool-name">SRS Engine</div><div class="tool-desc">SM-2 Adaptive · 8 problems/day</div></div><div class="tool-badge tb-live">LIVE</div></a>
+        <a href="review.html" class="tool-a"><div class="tool-icon">🧠</div><div><div class="tool-name">SRS Engine</div><div class="tool-desc">SM-2 Adaptive · 8/day</div></div><div class="tool-badge tb-live">LIVE</div></a>
         <a href="plan.html" class="tool-a"><div class="tool-icon">📅</div><div><div class="tool-name">Plan Timeline</div><div class="tool-desc">Lecture schedule</div></div><div class="tool-badge tb-live">LIVE</div></a>
         <a href="weekend.html" class="tool-a"><div class="tool-icon">⚡</div><div><div class="tool-name">Weekend Queue</div><div class="tool-desc">Additional problems</div></div><div class="tool-badge tb-live">LIVE</div></a>
         <a href="cue_library.html" class="tool-a"><div class="tool-icon">🗃</div><div><div class="tool-name">Cue Library</div><div class="tool-desc">Pattern tags</div></div><div class="tool-badge tb-new">NEW</div></a>
         <a href="readiness.html" class="tool-a"><div class="tool-icon">🎯</div><div><div class="tool-name">Readiness</div><div class="tool-desc">Mock session tracker</div></div><div class="tool-badge tb-new">NEW</div></a>
+        <a href="lld_tracker.html" class="tool-a"><div class="tool-icon">🏗</div><div><div class="tool-name">LLD/HLD Log</div><div class="tool-desc">Schema & design sessions</div></div><div class="tool-badge tb-new">NEW</div></a>
         <a href="https://ananth9911.github.io/Ananth-Porfolio/" target="_blank" class="tool-a"><div class="tool-icon">🌐</div><div><div class="tool-name">Portfolio</div><div class="tool-desc">Public profile</div></div></a>
       </div>
     </div>
@@ -232,13 +183,43 @@ body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(
 <script>
 const SRS_API  = "https://script.google.com/macros/s/AKfycbzcAr2oVXOKjoSMPimm3a0ARrcBSAL8geTNR6WQ8y9aE9WA87U91qm13YKOzShZ1d-R/exec";
 const PLAN_API = "https://script.google.com/macros/s/AKfycbziO7UXoTfbgegAbdoRksCxy3OI0Nn_p8vDJnQ1VboVjVhE1SsJFwnIjtK4kzz2-kDzkA/exec";
+
 function todayStr(){const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
-// Parse dd/MM/yyyy → yyyy-MM-dd (same as heatmap)
+
+// ── FIX 1: Parse dd/MM/yyyy → yyyy-MM-dd ────────────────────
 function parseDMY(str){
   if(!str)return'';
   if(str.includes('/')){const p=str.split('/');if(p.length===3)return`${p[2]}-${p[1].padStart(2,'0')}-${p[0].padStart(2,'0')}`;}
-  return str; // already yyyy-MM-dd
+  return str;
 }
+
+// ── FIX 2: Streak that tolerates 1-day sync lag ──────────────
+// Counts backward from LATEST date in dataset, not from today.
+// This prevents the streak breaking just because sync hasn't run yet today.
+function computeStreak(dateSet){
+  if(!dateSet.size)return 0;
+  const today=new Date();
+  const todayK=today.getFullYear()+'-'+String(today.getMonth()+1).padStart(2,'0')+'-'+String(today.getDate()).padStart(2,'0');
+  const yest=new Date(today);yest.setDate(yest.getDate()-1);
+  const yestK=yest.getFullYear()+'-'+String(yest.getMonth()+1).padStart(2,'0')+'-'+String(yest.getDate()).padStart(2,'0');
+  // Start counting from today; if today absent, allow starting from yesterday (sync lag)
+  let startDate=new Date();
+  if(!dateSet.has(todayK)&&!dateSet.has(yestK))return 0;
+  if(!dateSet.has(todayK))startDate=yest;
+  let streak=0;
+  for(let i=0;i<730;i++){
+    const d=new Date(startDate);d.setDate(startDate.getDate()-i);
+    const k=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+    if(dateSet.has(k))streak++;
+    else if(i>0)break;
+  }
+  return streak;
+}
+
+// ── FIX 3: Smooth rate — count solved phases, not friction field ─
+// Phases indicating "solved at least once": Smooth, S1, S2, S3, S4, Mastered, Completed
+const SOLVED_PHASES=new Set(['Smooth','S1','S2','S3','S4','Mastered','Completed']);
+
 function setDate(){
   const d=new Date();
   const days=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
@@ -252,68 +233,55 @@ function setDate(){
   else phase='Phase 3 · Pipeline';
   document.getElementById('phase-chip').textContent=phase;
 }
+
 async function loadSRS(){
   try{
     const res=await fetch(SRS_API+"?t="+Date.now());
     const all=await res.json();
     const ts=todayStr();
-    // ── TOTAL — ALL problems including Completed
+
+    // ── TOTAL — all problems
     document.getElementById('sv-total').textContent=all.length;
-    // ── DUE TODAY — reviewDate <= today, exclude truly Completed with future date
+
+    // ── DUE TODAY
     const due=all.filter(p=>{
       if(!p.reviewDate||p.reviewDate==='')return p.phase==='New'||!p.phase;
       return p.reviewDate<=ts;
     });
     document.getElementById('sv-due').textContent=due.length;
-    // ── SMOOTH RATE — across ALL problems that have friction set
-    const withFriction=all.filter(p=>p.friction&&p.friction!=='');
-    const smoothCount=withFriction.filter(p=>p.friction.toLowerCase().includes('smooth')).length;
-    // Fallback: use phase if friction column is empty (many existing problems)
-    const smoothByPhase=all.filter(p=>p.phase&&['S1','S2','S3','S4','Mastered','Completed'].includes(p.phase)).length;
-    const smoothDenom=withFriction.length>20?withFriction.length:all.length;
-    const smoothNum=withFriction.length>20?smoothCount:smoothByPhase;
-    const smoothRate=smoothDenom>0?Math.round((smoothNum/smoothDenom)*100):0;
+
+    // ── FIX 3: SMOOTH RATE — by phase, not friction field
+    const smoothCount=all.filter(p=>SOLVED_PHASES.has(p.phase)).length;
+    const smoothRate=all.length>0?Math.round((smoothCount/all.length)*100):0;
     document.getElementById('sv-mastery').textContent=smoothRate+'%';
-    // ── MASTERED — only Mastered + Completed phases
+
+    // ── FIX 4: MASTERED — only Mastered + Completed (NOT S3/S4)
     const mastered=all.filter(p=>p.phase==='Mastered'||p.phase==='Completed');
     document.getElementById('sv-mastered').textContent=mastered.length;
-    // ── MAIN STREAK — from initialDate (Date column = day you solved it)
-    // This is your TRUE daily solving streak, same source as heatmap
+
+    // ── FIX 2: MAIN STREAK — from initialDate (Date column = day you solved it)
     const mainDateSet=new Set();
-    all.forEach(p=>{
-      const iso=parseDMY(p.initialDate);
-      if(iso)mainDateSet.add(iso);
-    });
-    let mainStreak=0;
-    const mainRef=new Date();
-    for(let i=0;i<730;i++){
-      const d=new Date(mainRef);d.setDate(mainRef.getDate()-i);
-      const k=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
-      if(mainDateSet.has(k))mainStreak++;
-      else if(i>0)break;
-    }
+    all.forEach(p=>{const iso=parseDMY(p.initialDate);if(iso)mainDateSet.add(iso);});
+    const mainStreak=computeStreak(mainDateSet);
     document.getElementById('sv-main-streak').textContent=mainStreak+'d';
+
     // ── SRS STREAK — from lastSolved (days you clicked Smooth/Struggled)
     const srsDateSet=new Set(all.map(p=>p.lastSolved).filter(d=>d&&d!=='Never'&&d!==''));
-    let srsStreak=0;
-    const srsRef=new Date();
-    for(let i=0;i<365;i++){
-      const d=new Date(srsRef);d.setDate(srsRef.getDate()-i);
-      const k=d.toISOString().split('T')[0];
-      if(srsDateSet.has(k))srsStreak++;
-      else if(i>0)break;
-    }
+    const srsStreak=computeStreak(srsDateSet);
     document.getElementById('sv-streak').textContent=srsStreak+'d';
+
     // ── READINESS METERS
     const hard=all.filter(p=>p.difficulty==='H').length;
     const hardPct=Math.min(Math.round((hard/Math.max(all.length,1))*200),100);
     document.getElementById('m-hard').style.width=hardPct+'%';
     document.getElementById('mv-hard').textContent=hard+' Hard';
-    const advPct=Math.min(Math.round((mastered.length/Math.max(all.length,1))*500),100);
+    const advPhases=all.filter(p=>['S3','S4','Mastered','Completed'].includes(p.phase)).length;
+    const advPct=Math.min(Math.round((advPhases/Math.max(all.length,1))*300),100);
     document.getElementById('m-srs').style.width=advPct+'%';
-    document.getElementById('mv-srs').textContent=mastered.length;
+    document.getElementById('mv-srs').textContent=advPhases;
     document.getElementById('m-mastery').style.width=smoothRate+'%';
     document.getElementById('mv-mastery').textContent=smoothRate+'%';
+
     // ── SRS QUEUE DISPLAY
     const snapshot=JSON.parse(localStorage.getItem('srs_queue_names')||'[]');
     const snapshotDate=localStorage.getItem('srs_date');
@@ -339,7 +307,8 @@ async function loadSRS(){
         </div>`;
       }).join('');
     }
-    // ── PATTERN GAPS
+
+    // ── PATTERN GAPS — using friction field (from SRS reviews)
     const pm={};
     all.filter(p=>p.lastSolved&&p.lastSolved!=='Never').forEach(p=>{
       const pat=(p.notes||'').split('|')[0].trim();
@@ -363,7 +332,8 @@ async function loadSRS(){
     } else {
       document.getElementById('gap-rows').innerHTML='<div class="empty">Pattern gaps appear after ~10 SRS review sessions.</div>';
     }
-    // ── WEEKLY ACTIVITY (from lastSolved)
+
+    // ── WEEKLY ACTIVITY
     const dnames=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
     const today=new Date();
     const weekDays=[];
@@ -380,6 +350,7 @@ async function loadSRS(){
         <div class="day-nm">Total</div>
         <div class="day-ct" style="color:var(--green)">${weekTotal}</div>
       </div>`;
+
     // ── WEEKLY REVIEW
     const weakPats=gaps.filter(g=>g.pct>=40).map(g=>g.n).slice(0,2);
     document.getElementById('review-rows').innerHTML=`
@@ -390,10 +361,11 @@ async function loadSRS(){
       <div class="review-row"><div class="rr-l">Patterns to focus</div><div class="rr-v" style="color:var(--yellow);font-size:.75rem">${weakPats.length?weakPats.join(', '):'Not enough review data yet'}</div></div>`;
     document.getElementById('review-section').style.display='block';
   }catch(e){
-    document.getElementById('srs-list').innerHTML='<div class="empty">SRS API connection failed. Check GS deployment.</div>';
+    document.getElementById('srs-list').innerHTML='<div class="empty">SRS API connection failed.</div>';
     console.error('SRS load error:',e);
   }
 }
+
 async function loadPlan(){
   try{
     const res=await fetch(PLAN_API+"?t="+Date.now());
@@ -424,6 +396,7 @@ async function loadPlan(){
     console.error('Plan load error:',e);
   }
 }
+
 setDate();
 loadSRS();
 loadPlan();
