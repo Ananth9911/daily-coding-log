@@ -184,7 +184,16 @@ body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(
 const SRS_API  = "https://script.google.com/macros/s/AKfycbzcAr2oVXOKjoSMPimm3a0ARrcBSAL8geTNR6WQ8y9aE9WA87U91qm13YKOzShZ1d-R/exec";
 const PLAN_API = "https://script.google.com/macros/s/AKfycbziO7UXoTfbgegAbdoRksCxy3OI0Nn_p8vDJnQ1VboVjVhE1SsJFwnIjtK4kzz2-kDzkA/exec";
 
-function todayStr(){const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+// Day boundary = 4 AM. Anything before 4 AM belongs to the previous calendar day.
+// This means working at 1:30 AM on May 26 still counts as "May 25" in your system.
+function todayStr(){
+  const n=new Date();
+  n.setHours(n.getHours()-4); // shift back 4 hours
+  return n.getFullYear()+'-'+String(n.getMonth()+1).padStart(2,'0')+'-'+String(n.getDate()).padStart(2,'0');
+}
+function logicalNow(){
+  const n=new Date(); n.setHours(n.getHours()-4); return n;
+}
 
 // ── FIX 1: Parse dd/MM/yyyy → yyyy-MM-dd ────────────────────
 function parseDMY(str){
@@ -198,12 +207,12 @@ function parseDMY(str){
 // This prevents the streak breaking just because sync hasn't run yet today.
 function computeStreak(dateSet){
   if(!dateSet.size)return 0;
-  const today=new Date();
+  const today=logicalNow(); // 4 AM boundary: pre-4 AM = still yesterday
   const todayK=today.getFullYear()+'-'+String(today.getMonth()+1).padStart(2,'0')+'-'+String(today.getDate()).padStart(2,'0');
   const yest=new Date(today);yest.setDate(yest.getDate()-1);
   const yestK=yest.getFullYear()+'-'+String(yest.getMonth()+1).padStart(2,'0')+'-'+String(yest.getDate()).padStart(2,'0');
   // Start counting from today; if today absent, allow starting from yesterday (sync lag)
-  let startDate=new Date();
+  let startDate=logicalNow();
   if(!dateSet.has(todayK)&&!dateSet.has(yestK))return 0;
   if(!dateSet.has(todayK))startDate=yest;
   let streak=0;
@@ -221,7 +230,7 @@ function computeStreak(dateSet){
 const SOLVED_PHASES=new Set(['Smooth','S1','S2','S3','S4','Mastered','Completed']);
 
 function setDate(){
-  const d=new Date();
+  const d=logicalNow(); // show logical day (4 AM boundary)
   const days=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
   const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   document.getElementById('date-chip').textContent=days[d.getDay()]+' '+d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear();
@@ -335,9 +344,18 @@ async function loadSRS(){
 
     // ── WEEKLY ACTIVITY
     const dnames=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-    const today=new Date();
+    // Week display uses REAL calendar dates (matches lastSolved in sheet)
+    // Only streak + "today" SRS checks use logicalNow()
+    const calToday=new Date();
     const weekDays=[];
-    for(let i=6;i>=0;i--){const d=new Date(today);d.setDate(today.getDate()-i);const k=d.toISOString().split('T')[0];weekDays.push({k,nm:dnames[d.getDay()],isToday:i===0});}
+    for(let i=6;i>=0;i--){
+      const d=new Date(calToday);d.setDate(calToday.getDate()-i);
+      const k=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+      // isToday = logical today OR logical today+1 if before 4AM (sheet stores calendar date)
+      const logToday=todayStr();
+      const isToday=(k===logToday)||(k===new Date(calToday).toISOString().split('T')[0]&&logToday===new Date(calToday-86400000).toISOString().split('T')[0]);
+      weekDays.push({k,nm:dnames[d.getDay()],isToday:i===0});
+    }
     const revCnt={};
     all.forEach(p=>{if(p.lastSolved&&p.lastSolved!=='Never')revCnt[p.lastSolved]=(revCnt[p.lastSolved]||0)+1;});
     const weekTotal=weekDays.reduce((s,d)=>s+(revCnt[d.k]||0),0);
