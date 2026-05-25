@@ -749,7 +749,7 @@
     "exampleProblem": "Commutable Islands",
     "oneLiner": "Convert the Edge List into an Adjacency List first. Use a Min-Heap (Priority Queue) to greedily pick the minimum weight edge that connects an unvisited node to the growing tree. Always maintain a visited array to prevent cycles, and ensure the Priority Queue is initialized with a custom comparator for the weights",
     "difficulty": "H",
-    "friction": ""
+    "friction": "Struggled"
   },
   {
     "topic": "Graph",
