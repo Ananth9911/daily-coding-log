@@ -3893,23 +3893,6 @@
     "interval": "3.0"
   },
   {
-    "date": "11/02/2026",
-    "name": "Matrix sum",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "L",
-    "friction": "Smooth",
-    "notes": "Matrix Traversal",
-    "oneLiner": "Simple matrix traversal",
-    "attempts": "1",
-    "phase": "",
-    "reviewDate": "",
-    "lastSolved": "",
-    "url": "",
-    "ef": "",
-    "interval": ""
-  },
-  {
     "date": "10/02/2026",
     "name": "Column Sum",
     "topic": "Array",
