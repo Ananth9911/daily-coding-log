@@ -1,6 +1,6 @@
 [
   {
-    "date": "24/05/2026",
+    "date": "25/05/2026",
     "name": "Palindrome Partitioning II",
     "topic": "DP",
     "source": "Scaler",
@@ -17,14 +17,14 @@
     "interval": "1"
   },
   {
-    "date": "23/05/2026",
-    "name": "Russian Doll Envelopes",
+    "date": "24/05/2026",
+    "name": "Palindromic Substrings Count",
     "topic": "DP",
     "source": "Scaler",
     "difficulty": "H",
     "friction": "",
-    "notes": "DP | LIS | Sorting Trick",
-    "oneLiner": "The Object Mapping: You cannot separate heights and widths. Always map the 2D array into a custom Pair or Envelope object array so they travel together during sorting.  The Timeline Sort: To reduce the 2D problem into a 1D LIS problem, sort the array by one of the dimensions (e.g., Height ascending). This guarantees that any envelope j before envelope i is at least short enough to potentially fit inside i.  The Strict 2D LIS Check: Run the exact LIS nested loops, but your inner if condition must strictly check both dimensions. Equal sizes do not fit inside each other! if (env[j].w < env[i].w && env[j].h < env[i].h)  The Global Max: Just like standard LIS, the biggest nested doll doesn't necessarily end with the very last envelope in the array. Track ans = Math.max(ans, dp[i])",
+    "notes": "DP | 2D Palindrome",
+    "oneLiner": "The State Definition: dp[i][j] is a boolean representing whether the exact substring starting at index i and ending at index j is a palindrome.The Gap Traversal: You cannot traverse row-by-row or column-by-column. You must traverse by length (gap) because a string of length 5 relies on the pre-calculated string of length 3 inside it.The Base Cases: * gap == 0 (Length 1): Single letters are always palindromes (true).gap == 1 (Length 2): Palindrome only if A[i] == A[j].The Recursive Transition: For any length $\\ge 3$, the substring is a palindrome ONLY IF the outer characters match (A[i] == A[j]) AND the inner substring is also a palindrome (dp[i+1][j-1] == true).",
     "attempts": "1",
     "phase": "Smooth",
     "reviewDate": "2026-05-31",
@@ -35,13 +35,13 @@
   },
   {
     "date": "23/05/2026",
-    "name": "Palindromic Substrings Count",
+    "name": "Russian Doll Envelopes",
     "topic": "DP",
     "source": "Scaler",
     "difficulty": "H",
     "friction": "",
-    "notes": "DP | 2D Palindrome",
-    "oneLiner": "The State Definition: dp[i][j] is a boolean representing whether the exact substring starting at index i and ending at index j is a palindrome.The Gap Traversal: You cannot traverse row-by-row or column-by-column. You must traverse by length (gap) because a string of length 5 relies on the pre-calculated string of length 3 inside it.The Base Cases: * gap == 0 (Length 1): Single letters are always palindromes (true).gap == 1 (Length 2): Palindrome only if A[i] == A[j].The Recursive Transition: For any length $\\ge 3$, the substring is a palindrome ONLY IF the outer characters match (A[i] == A[j]) AND the inner substring is also a palindrome (dp[i+1][j-1] == true).",
+    "notes": "DP | LIS | Sorting Trick",
+    "oneLiner": "The Object Mapping: You cannot separate heights and widths. Always map the 2D array into a custom Pair or Envelope object array so they travel together during sorting.  The Timeline Sort: To reduce the 2D problem into a 1D LIS problem, sort the array by one of the dimensions (e.g., Height ascending). This guarantees that any envelope j before envelope i is at least short enough to potentially fit inside i.  The Strict 2D LIS Check: Run the exact LIS nested loops, but your inner if condition must strictly check both dimensions. Equal sizes do not fit inside each other! if (env[j].w < env[i].w && env[j].h < env[i].h)  The Global Max: Just like standard LIS, the biggest nested doll doesn't necessarily end with the very last envelope in the array. Track ans = Math.max(ans, dp[i])",
     "attempts": "1",
     "phase": "Smooth",
     "reviewDate": "2026-05-31",
