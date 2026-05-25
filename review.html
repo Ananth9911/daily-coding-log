@@ -416,8 +416,19 @@ function renderQueue(problems, showBlocks, retentionCount){
     const badgeClass=p.phase==='Struggled'?'b-phase-struggled':p.phase==='New'||!p.phase?'b-phase-new':p.phase==='Mastered'?'b-phase-mastered':'b-phase-smooth';
     const pattern=p.notes||'';
     let prettyDate='?',prettyLast='Never';
-    try{prettyDate=new Date(p.initialDate).toLocaleDateString('en-GB',{day:'numeric',month:'short'});}catch(e){}
-    try{if(p.lastSolved&&p.lastSolved!=='Never')prettyLast=new Date(p.lastSolved).toLocaleDateString('en-GB',{day:'numeric',month:'short'});}catch(e){}
+    // FIX: guard empty/undefined initialDate; append T00:00:00 to prevent UTC timezone shift
+    try{
+      if(p.initialDate&&p.initialDate!==''){
+        const ds=p.initialDate.includes('T')?p.initialDate:p.initialDate+'T00:00:00';
+        prettyDate=new Date(ds).toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+      } else { prettyDate='—'; }
+    }catch(e){prettyDate='—';}
+    try{
+      if(p.lastSolved&&p.lastSolved!=='Never'&&p.lastSolved!==''){
+        const ls=p.lastSolved.includes('T')?p.lastSolved:p.lastSolved+'T00:00:00';
+        prettyLast=new Date(ls).toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+      }
+    }catch(e){}
     // SM-2 preview intervals
     const nextSmooth=previewInterval(p,'Smooth');
     const nextStruggled=previewInterval(p,'Struggled');
