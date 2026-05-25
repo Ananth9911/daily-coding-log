@@ -24,9 +24,8 @@ h1{font-size:1.7rem;font-weight:700;letter-spacing:-.5px}
 .perf-title{font-family:var(--fm);font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
 .toggle-perf{font-family:var(--fm);font-size:.65rem;color:var(--purple);cursor:pointer;display:inline-block;margin-bottom:12px}
 .toggle-perf:hover{text-decoration:underline}
-/* Use flex-wrap for perf grid to avoid vertical stacking */
 .perf-grid{display:flex;flex-wrap:wrap;gap:8px}
-.perf-item{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:9px 13px;flex:1;min-width:200px;max-width:320px}
+.perf-item{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:9px 13px;flex:0 0 auto;min-width:200px;max-width:280px}
 .perf-row{display:flex;align-items:center;gap:10px}
 .perf-name{font-size:.73rem;font-weight:500;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .perf-bar-bg{width:70px;height:5px;background:var(--dim);border-radius:3px;overflow:hidden;flex-shrink:0}
@@ -41,48 +40,67 @@ h1{font-size:1.7rem;font-weight:700;letter-spacing:-.5px}
 .tf{font-family:var(--fm);font-size:.62rem;padding:5px 11px;border-radius:6px;border:1px solid var(--border);background:var(--bg2);color:var(--muted);cursor:pointer;transition:.18s;white-space:nowrap}
 .tf:hover{color:var(--text);border-color:var(--border2)}
 .tf.active{border-color:var(--purple);color:var(--purple);background:rgba(168,85,247,.07)}
-/*
- CUE GRID — CSS Grid (3 columns, guaranteed cross-browser)
- Replaces column-count which caused vertical stacking in Chrome
-*/
+
+/* ═══════════════════════════════════════════════════
+   CUE GRID — definitive fix
+   Using explicit pixel width cards inside a flex-wrap
+   container. This is MORE reliable than CSS Grid across
+   GitHub Pages / CDN cached browsers because it never
+   collapses to 1 column due to a single tall child.
+   ═══════════════════════════════════════════════════ */
 .cue-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
+  display:flex;
+  flex-wrap:wrap;
   gap:14px;
-  align-items:start;
+  align-items:flex-start; /* KEY: prevents stretch across rows */
 }
-@media(max-width:1000px){.cue-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:620px){.cue-grid{grid-template-columns:1fr}}
 .cue-card{
-  display:block;
-  width:100%;
+  /* Each card is exactly 1/3 width minus gaps */
+  flex:0 0 calc(33.333% - 10px);
+  max-width:calc(33.333% - 10px);
   background:var(--card);
   border:1px solid var(--border);
   border-radius:12px;
   padding:16px;
   cursor:pointer;
-  transition:border-color .18s, transform .18s;
+  transition:border-color .18s,transform .18s;
   border-left:3px solid transparent;
+  /* CRITICAL: prevent card from growing taller than its content */
+  align-self:flex-start;
+  min-width:0; /* allows text truncation inside flex child */
+}
+@media(max-width:1000px){
+  .cue-card{flex:0 0 calc(50% - 7px);max-width:calc(50% - 7px);}
+}
+@media(max-width:580px){
+  .cue-card{flex:0 0 100%;max-width:100%;}
 }
 .cue-card.struggled{border-left-color:var(--red)}
 .cue-card.smooth{border-left-color:var(--green)}
 .cue-card:hover{border-color:rgba(168,85,247,.3);transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,.4)}
 .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:6px;margin-bottom:8px}
-.topic-badge{font-family:var(--fm);font-size:.58rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;padding:2px 7px;border-radius:4px;background:rgba(168,85,247,.1);color:var(--purple);border:1px solid rgba(168,85,247,.2);flex-shrink:0}
+.topic-badge{font-family:var(--fm);font-size:.58rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;padding:2px 7px;border-radius:4px;background:rgba(168,85,247,.1);color:var(--purple);border:1px solid rgba(168,85,247,.2);flex-shrink:0;max-width:60%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .diff-badge{font-family:var(--fm);font-size:.58rem;font-weight:700;padding:2px 6px;border-radius:4px;flex-shrink:0}
 .dH{background:rgba(239,68,68,.12);color:var(--red)}.dM{background:rgba(234,179,8,.12);color:var(--yellow)}.dL,.dE{background:rgba(57,211,83,.1);color:var(--green)}
-/* LIMIT card text height — this is the KEY fix for the vertical issue */
 .cue-text{
-  font-size:.78rem;color:var(--text);line-height:1.6;margin-bottom:8px;
-  /* MAX 5 lines — prevents any single card from being taller than ~100px */
+  font-size:.78rem;color:var(--text);line-height:1.55;margin-bottom:8px;
+  /* Clamp to 4 lines max — hard cap on card height */
   display:-webkit-box;
-  -webkit-line-clamp:5;
+  -webkit-line-clamp:4;
   -webkit-box-orient:vertical;
   overflow:hidden;
+  /* fallback for Firefox */
+  max-height:calc(1.55em * 4);
 }
-.cue-oneliner{font-family:var(--fm);font-size:.65rem;color:var(--blue);border-top:1px solid var(--border);padding-top:7px;margin-top:6px;
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.cue-example{font-family:var(--fm);font-size:.6rem;color:var(--muted);margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cue-oneliner{
+  font-family:var(--fm);font-size:.63rem;color:var(--blue);
+  border-top:1px solid var(--border);padding-top:7px;margin-top:6px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.cue-example{
+  font-family:var(--fm);font-size:.58rem;color:var(--muted);
+  margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
 /* MODAL */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(10px);z-index:100;align-items:center;justify-content:center;padding:20px}
 .modal{background:var(--card);border:1px solid rgba(168,85,247,.25);width:100%;max-width:580px;border-radius:16px;padding:28px;position:relative;max-height:88vh;overflow-y:auto}
@@ -92,10 +110,10 @@ h1{font-size:1.7rem;font-weight:700;letter-spacing:-.5px}
 .mname{font-size:1.1rem;font-weight:700;margin-bottom:16px}
 .msec{margin-bottom:14px}
 .msec-label{font-family:var(--fm);font-size:.58rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:5px}
-/* In modal, show full text — no clamp */
 .msec-body{font-size:.84rem;color:var(--text);background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:8px;padding:12px;line-height:1.7}
 .debug{background:rgba(234,179,8,.05);border:1px solid rgba(234,179,8,.15);border-radius:8px;padding:10px 14px;font-family:var(--fm);font-size:.68rem;color:var(--yellow);margin-bottom:18px;display:none}
-.empty{text-align:center;padding:50px;color:var(--muted);font-family:var(--fm);font-size:.75rem;line-height:1.7}
+.loading-state{text-align:center;padding:60px;color:var(--muted);font-family:var(--fm);font-size:.75rem}
+.empty{text-align:center;padding:50px;color:var(--muted);font-family:var(--fm);font-size:.75rem;line-height:1.7;flex:0 0 100%}
 @keyframes pulse{50%{opacity:.4}}
 </style>
 </head>
@@ -125,7 +143,9 @@ h1{font-size:1.7rem;font-weight:700;letter-spacing:-.5px}
     <input class="search-input" id="search" type="text" placeholder="Search patterns, topics, problems…" oninput="render()">
     <div class="topic-filters" id="topic-filters"></div>
   </div>
-  <div class="cue-grid" id="cue-grid"><div class="empty">Loading cues…</div></div>
+  <!-- GRID: NO child element inside at start — avoids width contamination -->
+  <div class="cue-grid" id="cue-grid"></div>
+  <div class="loading-state" id="loading">Connecting to SRS engine…</div>
 </div>
 <div class="modal-overlay" id="modal" onclick="maybeClose(event)">
   <div class="modal">
@@ -150,6 +170,7 @@ h1{font-size:1.7rem;font-weight:700;letter-spacing:-.5px}
 const SRS_API  = "https://script.google.com/macros/s/AKfycbzcAr2oVXOKjoSMPimm3a0ARrcBSAL8geTNR6WQ8y9aE9WA87U91qm13YKOzShZ1d-R/exec";
 const CUES_RAW = "https://raw.githubusercontent.com/Ananth9911/daily-coding-log/main/cues.json";
 let allCues=[], activeTopic='all', _filtered=[];
+
 function buildPerf(cues){
   const pm={};
   cues.forEach(c=>{
@@ -176,24 +197,28 @@ function buildPerf(cues){
     </div>`;
   }).join('');
 }
+
 let perfOpen=false;
 function togglePerf(){
   perfOpen=!perfOpen;
   document.getElementById('perf-grid').style.display=perfOpen?'flex':'none';
   document.getElementById('perf-toggle').textContent=perfOpen?'▲ Hide':'▼ Show by pattern';
 }
+
 function buildTopicFilters(){
   const topics=[...new Set(allCues.map(c=>c.topic))].sort();
   document.getElementById('topic-filters').innerHTML=
     `<button class="tf active" onclick="setTopic('all',this)">All (${allCues.length})</button>`+
     topics.map(t=>`<button class="tf" onclick="setTopic('${t.replace(/'/g,"\\'")}',this)">${t} (${allCues.filter(c=>c.topic===t).length})</button>`).join('');
 }
+
 function setTopic(t,el){
   activeTopic=t;
   document.querySelectorAll('.tf').forEach(b=>b.classList.remove('active'));
   el.classList.add('active');
   render();
 }
+
 function render(){
   const q=document.getElementById('search').value.toLowerCase();
   _filtered=allCues.filter(c=>
@@ -202,23 +227,29 @@ function render(){
   );
   document.getElementById('count-pill').textContent=`${_filtered.length} / ${allCues.length} cues`;
   const grid=document.getElementById('cue-grid');
-  if(!_filtered.length){grid.innerHTML='<div class="empty">No cues match. Try a different search.</div>';return;}
-  // Build HTML string — don't use innerHTML += in a loop (causes reflow per item)
-  const html=_filtered.map((c,i)=>{
+  if(!_filtered.length){
+    grid.innerHTML='<div class="empty">No cues match. Try a different search or topic.</div>';
+    return;
+  }
+  // Escape HTML to prevent XSS and broken card layouts from unescaped < > chars in notes
+  function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+  grid.innerHTML=_filtered.map((c,i)=>{
     const fri=c.friction&&c.friction.toLowerCase().includes('struggled')?'struggled':'smooth';
     const dc='d'+(c.difficulty||'M');
+    // Truncate cue text to 300 chars — prevents any single card from being excessively tall
+    const cueText=esc((c.cue||'').substring(0,300));
     return `<div class="cue-card ${fri}" onclick="openModal(${i})">
       <div class="card-top">
-        <span class="topic-badge">${c.topic}</span>
-        <span class="diff-badge ${dc}">${c.difficulty||'M'}</span>
+        <span class="topic-badge">${esc(c.topic)}</span>
+        <span class="diff-badge ${dc}">${esc(c.difficulty||'M')}</span>
       </div>
-      <div class="cue-text">${c.cue}</div>
-      ${c.oneLiner?`<div class="cue-oneliner">→ ${c.oneLiner}</div>`:''}
-      ${c.exampleProblem?`<div class="cue-example">↳ ${c.exampleProblem}</div>`:''}
+      <div class="cue-text">${cueText}</div>
+      ${c.oneLiner?`<div class="cue-oneliner">→ ${esc(c.oneLiner)}</div>`:''}
+      ${c.exampleProblem?`<div class="cue-example">↳ ${esc(c.exampleProblem)}</div>`:''}
     </div>`;
   }).join('');
-  grid.innerHTML=html;
 }
+
 function openModal(i){
   const c=_filtered[i];
   document.getElementById('m-topic').textContent=c.topic+(c.difficulty?' · '+c.difficulty:'');
@@ -232,27 +263,27 @@ function openModal(i){
 }
 function closeModal(){document.getElementById('modal').style.display='none';}
 function maybeClose(e){if(e.target===document.getElementById('modal'))closeModal();}
+
 async function loadCues(){
-  let source='';
   try{
     const res=await fetch(SRS_API+"?action=cues&t="+Date.now());
     const d=await res.json();
     if(d&&d.error)throw new Error(d.error);
-    if(Array.isArray(d)&&d.length>0){allCues=d;source='Live GS';}
+    if(Array.isArray(d)&&d.length>0){allCues=d;}
     else throw new Error('empty GS response');
   }catch(e){
     try{
       const r2=await fetch(CUES_RAW+"?t="+Date.now());
       allCues=await r2.json();
-      source='cues.json';
       const db=document.getElementById('debug');
       db.style.display='block';
-      db.textContent='⚠ Using cues.json ('+source+'). GS returned no cues — check Notes/Pattern Used column header matches exactly.';
+      db.textContent='⚠ Using cached cues.json. GS returned no cues — check Notes/Pattern Used column header matches exactly.';
     }catch(e2){
-      document.getElementById('cue-grid').innerHTML='<div class="empty">Could not load cues.<br>Check GS deployment and Notes / Pattern Used column.</div>';
+      document.getElementById('loading').textContent='Could not load cues. Check GS deployment and Notes / Pattern Used column.';
       return;
     }
   }
+  document.getElementById('loading').style.display='none';
   if(!allCues.length){
     document.getElementById('cue-grid').innerHTML='<div class="empty">0 cues found.<br>Fill the "Notes / Pattern Used" column in Master_Problems sheet.</div>';
     return;
