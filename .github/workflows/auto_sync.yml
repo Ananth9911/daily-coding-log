@@ -2,10 +2,10 @@ name: ⚡ Portfolio Auto-Sync
 
 on:
   repository_dispatch:
-    types: [sheet_update]
-  workflow_dispatch:
+    types: [sheet_update]   # triggered by Apps Script triggerGitHub()
+  workflow_dispatch:         # manual trigger from GitHub Actions tab
   schedule:
-    - cron: '0 */6 * * *'   # every 6 hours (was every 30 min — too aggressive, causes rate limits)
+    - cron: '0 */4 * * *'  # every 4 hours as safety net
 
 jobs:
   update_portfolio:
@@ -15,20 +15,20 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4      # upgraded from v3
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 0               # full history needed for clean rebase
+          fetch-depth: 0
 
       - name: Set up Python
-        uses: actions/setup-python@v5  # upgraded from v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.11'       # 3.9 is deprecated on ubuntu-latest
+          python-version: '3.11'
 
       - name: Cache pip
         uses: actions/cache@v4
         with:
           path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          key: ${{ runner.os }}-pip-pandas-matplotlib
           restore-keys: |
             ${{ runner.os }}-pip-
 
@@ -36,9 +36,11 @@ jobs:
         run: pip install pandas matplotlib requests openpyxl
 
       - name: Run Python Engine
-        run: |
-          cd scripts
-          python update_portfolio.py
+        # FIX: Run from repo root, NOT from scripts/ subfolder.
+        # The old `cd scripts && python update_portfolio.py` wrote all output
+        # files (problems.json, README.md etc) into scripts/ subfolder,
+        # then `git add problems.json` at repo root found nothing → no commits.
+        run: python scripts/update_portfolio.py
         env:
           PYTHONUNBUFFERED: "1"
 
@@ -47,16 +49,15 @@ jobs:
           git config --global user.name  "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Add all generated artefacts
-          git add problems.json README.md topic_breakdown.png || true
-          # Also add new files from v2 script if they exist
+          # Stage all generated artefacts (at repo root now)
+          git add problems.json README.md topic_breakdown.png 2>/dev/null || true
           git add cues.json friction_stats.json mastery_chart.png 2>/dev/null || true
 
           if git diff --cached --quiet; then
-            echo "✅ No changes to commit."
+            echo "✅ No changes to commit — sheet unchanged since last sync."
           else
             git commit -m "⚡ Auto-sync: $(date -u '+%Y-%m-%d %H:%M UTC')"
-            # Pull with rebase first to avoid merge conflicts
             git pull --rebase --autostash origin main
             git push origin main
+            echo "✅ Pushed updated problems.json and README.md"
           fi
