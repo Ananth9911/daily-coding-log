@@ -197,7 +197,16 @@ let currentFilter = 'all';
 let currentTopicFilter = 'all';
 let _snapshotData = [];
 let _allDue = [];
-document.getElementById('date-display').innerText = new Date().toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
+// ── 4 AM DAY BOUNDARY ────────────────────────────────────────
+// Your day runs 11:30 AM → 2:30 AM. Anything before 4 AM belongs
+// to the previous calendar day so SRS queue never resets mid-session.
+function logicalNow(){const n=new Date();n.setHours(n.getHours()-4);return n;}
+function todayLogical(){
+  const n=logicalNow();
+  return n.getFullYear()+'-'+String(n.getMonth()+1).padStart(2,'0')+'-'+String(n.getDate()).padStart(2,'0');
+}
+// Show logical date in header (before 4 AM still shows previous day)
+document.getElementById('date-display').innerText = logicalNow().toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
 // ── MODAL ────────────────────────────────────────────────────
 function openModal(){
   if(localStorage.getItem("admin_key")!=="scaler2026"){alert("🔒 READ-ONLY MODE");return;}
@@ -308,7 +317,7 @@ function buildTopicFilters(problems){
     topics.map(t=>`<button class="filter-btn" data-topic="${t}" onclick="setTopicFilter('${t.replace(/'/g,"\\'")}',this)">${t}</button>`).join('');
 }
 function applyFilters(){
-  const todayStr=new Date().toISOString().split('T')[0];
+  const todayStr=todayLogical(); // 4 AM boundary
   const source=(currentFilter==='all'&&currentTopicFilter==='all')?_snapshotData:_allDue;
   const filtered=source.filter(p=>{
     if(currentTopicFilter!=='all'&&p.topic!==currentTopicFilter)return false;
@@ -325,7 +334,7 @@ async function loadQueue(){
   try{
     const res=await fetch(API_URL+"?t="+Date.now());
     allData=await res.json();
-    const todayStr=new Date().toISOString().split('T')[0];
+    const todayStr=todayLogical(); // 4 AM boundary
     // Proportion display
     const dueStruggled=allData.filter(p=>!p.completed&&(p.reviewDate<=todayStr)&&p.phase==='Struggled');
     const dueSmooth=allData.filter(p=>!p.completed&&p.reviewDate&&p.reviewDate<=todayStr&&p.phase!=='Struggled'&&p.phase!=='New'&&p.phase!=='');
@@ -416,7 +425,6 @@ function renderQueue(problems, showBlocks, retentionCount){
     const badgeClass=p.phase==='Struggled'?'b-phase-struggled':p.phase==='New'||!p.phase?'b-phase-new':p.phase==='Mastered'?'b-phase-mastered':'b-phase-smooth';
     const pattern=p.notes||'';
     let prettyDate='?',prettyLast='Never';
-    // FIX: guard empty/undefined initialDate; append T00:00:00 to prevent UTC timezone shift
     try{
       if(p.initialDate&&p.initialDate!==''){
         const ds=p.initialDate.includes('T')?p.initialDate:p.initialDate+'T00:00:00';
