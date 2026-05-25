@@ -154,7 +154,8 @@ def update_portfolio():
 
     # ── README ────────────────────────────────────────────────
     total   = len(problems)
-    smooth  = sum(1 for p in problems if 'smooth' in p['friction'].lower())
+    SOLVED_PHASES = {"Smooth","S1","S2","S3","S4","Mastered","Completed"}
+    smooth  = sum(1 for p in problems if p.get("phase","") in SOLVED_PHASES)
     mastery = round((smooth/total)*100) if total else 0
     hard_c  = sum(1 for p in problems if p['difficulty']=='H')
     med_c   = sum(1 for p in problems if p['difficulty']=='M')
