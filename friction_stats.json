@@ -1,0 +1,146 @@
+[
+  {
+    "smooth": 40,
+    "struggled": 13,
+    "hard": 23,
+    "total": 117,
+    "topic": "Array",
+    "mastery": 34
+  },
+  {
+    "smooth": 91,
+    "struggled": 5,
+    "hard": 0,
+    "total": 114,
+    "topic": "Basic",
+    "mastery": 80
+  },
+  {
+    "smooth": 13,
+    "struggled": 19,
+    "hard": 15,
+    "total": 35,
+    "topic": "Tree",
+    "mastery": 37
+  },
+  {
+    "smooth": 6,
+    "struggled": 2,
+    "hard": 9,
+    "total": 25,
+    "topic": "String",
+    "mastery": 24
+  },
+  {
+    "smooth": 16,
+    "struggled": 2,
+    "hard": 21,
+    "total": 21,
+    "topic": "DP",
+    "mastery": 76
+  },
+  {
+    "smooth": 7,
+    "struggled": 0,
+    "hard": 5,
+    "total": 17,
+    "topic": "Hashing",
+    "mastery": 41
+  },
+  {
+    "smooth": 2,
+    "struggled": 8,
+    "hard": 6,
+    "total": 14,
+    "topic": "Maths",
+    "mastery": 14
+  },
+  {
+    "smooth": 2,
+    "struggled": 2,
+    "hard": 6,
+    "total": 13,
+    "topic": "LinkedList",
+    "mastery": 15
+  },
+  {
+    "smooth": 5,
+    "struggled": 2,
+    "hard": 12,
+    "total": 12,
+    "topic": "Graph",
+    "mastery": 42
+  },
+  {
+    "smooth": 1,
+    "struggled": 0,
+    "hard": 5,
+    "total": 11,
+    "topic": "Bit",
+    "mastery": 9
+  },
+  {
+    "smooth": 1,
+    "struggled": 0,
+    "hard": 8,
+    "total": 8,
+    "topic": "Math",
+    "mastery": 12
+  },
+  {
+    "smooth": 1,
+    "struggled": 1,
+    "hard": 2,
+    "total": 8,
+    "topic": "Sorting",
+    "mastery": 12
+  },
+  {
+    "smooth": 1,
+    "struggled": 6,
+    "hard": 8,
+    "total": 8,
+    "topic": "Backtracking",
+    "mastery": 12
+  },
+  {
+    "smooth": 8,
+    "struggled": 0,
+    "hard": 4,
+    "total": 8,
+    "topic": "Heap",
+    "mastery": 100
+  },
+  {
+    "smooth": 5,
+    "struggled": 3,
+    "hard": 8,
+    "total": 8,
+    "topic": "Tries",
+    "mastery": 62
+  },
+  {
+    "smooth": 1,
+    "struggled": 4,
+    "hard": 3,
+    "total": 7,
+    "topic": "Stack",
+    "mastery": 14
+  },
+  {
+    "smooth": 5,
+    "struggled": 0,
+    "hard": 5,
+    "total": 5,
+    "topic": "Greedy",
+    "mastery": 100
+  },
+  {
+    "smooth": 0,
+    "struggled": 2,
+    "hard": 3,
+    "total": 3,
+    "topic": "Queue",
+    "mastery": 0
+  }
+]

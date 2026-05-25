@@ -1,0 +1,890 @@
+[
+  {
+    "topic": "Basic",
+    "cue": "Nested Loops | Pattern Printing",
+    "exampleProblem": "Manual pattern printing - 1",
+    "oneLiner": "Basic maths",
+    "difficulty": "L",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Basic",
+    "cue": "Two Pointer | Simulation",
+    "exampleProblem": "Check Palindrome for T numbers",
+    "oneLiner": "Variation of reverse , just need to check if reverse and original number same or not",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Basic",
+    "cue": "Sieve of Eratosthenes",
+    "exampleProblem": "Count of primes",
+    "oneLiner": "Prime number check",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Basic",
+    "cue": "Binary Search on Answer",
+    "exampleProblem": "Square root of a number",
+    "oneLiner": "i*i==n?",
+    "difficulty": "L",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "String",
+    "cue": "Nested Loops | ASCII Arithmetic",
+    "exampleProblem": "Character Pattern",
+    "oneLiner": "Just figure out loop ranges and make ct= 'A and increment",
+    "difficulty": "L",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "HashMap | Brute Force",
+    "exampleProblem": "Pair Count",
+    "oneLiner": "Brute Force Two loops and Optimised is HashMap",
+    "difficulty": "L",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "String Parsing | Matrix Traversal",
+    "exampleProblem": "Return vowels from every row",
+    "oneLiner": "Main crux vowel.indexOf(strings.get(i).charAt(j))!=-1",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Brute Force | Frequency Count",
+    "exampleProblem": "Unique elements from every row",
+    "oneLiner": "Three loops and have count variable",
+    "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "In-Place Matrix | Two Pointer",
+    "exampleProblem": "Square Matrix Transpose",
+    "oneLiner": "In transpose , when i==j do nothing when i!+j swap A[i][j] and A[j][i]",
+    "difficulty": "L",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "In-Place Matrix | Transpose + Reverse",
+    "exampleProblem": "Rotate Matrix",
+    "oneLiner": "First Tranpose and then reverse each",
+    "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Contribution Technique",
+    "exampleProblem": "Sum of All Subarrays",
+    "oneLiner": "Think about contrubtion of each element of array in all subarray",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Sliding Window | Fixed Window",
+    "exampleProblem": "Subarray with given sum and length",
+    "oneLiner": "Calculate the first window's sum, then slide it forward by tracking the start index i, dynamically updating the sum by subtracting the left element A[i-1] and adding the right element A[i+B-1] (while strictly verifying bounds) to find the target.",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Carry Forward | Two Pointer",
+    "exampleProblem": "Closest MinMax",
+    "oneLiner": "Find the array's min and max values, then iterate through the array updating their latest seen indices (initialized to -1), calculating the minimum subarray length only when both values have been encountered.",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Carry Forward | Greedy",
+    "exampleProblem": "Best Time to Buy and Sell Stocks",
+    "oneLiner": "have lowest variable and for each iteration check if current element is lower or not and update and then calculate A.get(i)-lowest and then update ans for max",
+    "difficulty": "M",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Array",
+    "cue": "Sorting | QuickSelect",
+    "exampleProblem": "Kth Smallest Element",
+    "oneLiner": "Sort it and find it",
+    "difficulty": "L",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Sorting | Observation",
+    "exampleProblem": "Arithmetic Progression?",
+    "oneLiner": "find d difference and check for every consecutive parit till n-2 , if d is sanswer , and then count ==n-2 , we have it",
+    "difficulty": "L",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Sorting | Binary Search",
+    "exampleProblem": "Noble Integer",
+    "oneLiner": "Sort and then for each i check if A.get(I) and n-i-1 equal or not",
+    "difficulty": "L",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Brute Force | Simulation",
+    "exampleProblem": "Elements Removal",
+    "oneLiner": "Run two loops and then inner loop calucalte suum and outer loop remove",
+    "difficulty": "L",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Carry Forward (Right to Left)",
+    "exampleProblem": "Leaders in an array",
+    "oneLiner": "Loop from right to left , add last eelemnt to ans and then compare each element to it and if greater then update the value , so that in next iteration we can get new comparision",
+    "difficulty": "L",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Sliding Window | Prefix Sum",
+    "exampleProblem": "Pick from both sides!",
+    "oneLiner": "The algo here is to have currsum and then do for each iteration remove b-1-i elemtn and add N-I-i elemnt and then compare and get max",
+    "difficulty": "L",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Sliding Window | Two Pointer",
+    "exampleProblem": "Counting Subarrays Easy",
+    "oneLiner": "Use a sliding window to maintain a valid sum < B; for every valid window ending at e, there are exactly e - s + 1 valid subarrays ending at that position, which you add to a running total.",
+    "difficulty": "M",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Array",
+    "cue": "Brute Force | Carry Forward",
+    "exampleProblem": "Good Subarrays",
+    "oneLiner": "Run two loops and find count",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "String",
+    "cue": "Bit Manipulation | ASCII Arithmetic",
+    "exampleProblem": "Toggle Case",
+    "oneLiner": "Approach 1 (ASCII Math):\nIterate through the string, check if each character falls in the uppercase or lowercase ASCII range, and mathematically add or subtract 32 to toggle its case.\n\nApproach 2 (Bitwise XOR):\nIterate through the string and apply the bitwise XOR operator (^ 32) to each character to instantly flip its 6th bit, automatically swapping its case.",
+    "difficulty": "L",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "String",
+    "cue": "String Parsing | Two Pointer",
+    "exampleProblem": "Reverse the String",
+    "oneLiner": "Main crux  A.trim().split(\"\\\\s+\") , post this i will reverse each word in string and then just read",
+    "difficulty": "L",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Sorting | Interval Merge",
+    "exampleProblem": "Merge Sorted Overlapping Intervals - 2",
+    "oneLiner": "Need to redo",
+    "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Two Pointer on Matrix",
+    "exampleProblem": "Search in a row wise and column wise sorted matrix",
+    "oneLiner": "Need to redo",
+    "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Bit",
+    "cue": "XOR | Bit Partitioning",
+    "exampleProblem": "Single Number III",
+    "oneLiner": "XOR all array elements to find the combined XOR of the two unique numbers, locate any set bit in that result to identify where they differ, and use that bit to partition the array into two groups that you XOR separately to isolate each unique number.",
+    "difficulty": "L",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Prefix Max | Suffix Max",
+    "exampleProblem": "Rain Water Trapped",
+    "oneLiner": "For every position, the trapped water is the difference between the lowest of its tallest surrounding boundaries (the roof) and its own physical height (the floor).Calcualate prefix left and suffix left",
+    "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Bit",
+    "cue": "Bit Manipulation | Complement Counting",
+    "exampleProblem": "Subarrays with OR 1",
+    "oneLiner": "Calculate bad subarrays and then remove it from total",
+    "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Math",
+    "cue": "Recursion | Memoization",
+    "exampleProblem": "Recursion - Fibonacci",
+    "oneLiner": "Do recursion",
+    "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Math",
+    "cue": "Fast Power | Recursion",
+    "exampleProblem": "Fast Power",
+    "oneLiner": "Do recursion",
+    "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Math",
+    "cue": "Recursion | Euclidean GCD",
+    "exampleProblem": "Recursive - GCD",
+    "oneLiner": "Do recursion",
+    "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "HashMap | Frequency Count",
+    "exampleProblem": "Pair Sum divisible by M",
+    "oneLiner": "Do recursion",
+    "difficulty": "H",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Hashing",
+    "cue": "HashSet | Two Sum Pattern",
+    "exampleProblem": "Check Pair Sum",
+    "oneLiner": "Using hashset , we need to check sum-A.get(i) in hashset",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Hashing",
+    "cue": "HashMap | Two Sum Pattern",
+    "exampleProblem": "Count Pair Sum",
+    "oneLiner": "Using Hashmap , no need of prefix sum , as we need to find pair of sum",
+    "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Hashing",
+    "cue": "HashMap | Frequency Count",
+    "exampleProblem": "Frequency of element query",
+    "oneLiner": "Using hashmap , build freq map and then another loop and find freq for second array and push it in new array",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Hashing",
+    "cue": "Sliding Window | HashSet",
+    "exampleProblem": "Longest Substring Without Repeat",
+    "oneLiner": "The logic is to maintian i then loop thorugh string with j , if we find duplcaites , then remove it from i to till duplicate is present . Post that  i will that element in hashset, at last i will calulate temp = j-i+1,ans=max(ans,temp)",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Sorting",
+    "cue": "Dutch National Flag | Count Sort",
+    "exampleProblem": "Sort by Color",
+    "oneLiner": "Count sort Algo, find freq array and then insert i val times into A\n\nThis can also done by Dutch National Flag algorithm , simple three pointer mid ,low, high and do swapping",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Sorting",
+    "cue": "Custom Comparator | Sorting",
+    "exampleProblem": "Factors sort",
+    "oneLiner": "Sorting",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Maths",
+    "cue": "Binary Search on Answer",
+    "exampleProblem": "Square Root of Integer",
+    "oneLiner": "Sorting",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Binary Search on Answer",
+    "exampleProblem": "Painter's Partition Problem",
+    "oneLiner": "Binary search algo , have l and r and then find mid , need to write function check if mid is valid , and for that we loop through array and then find appropriate thing",
+    "difficulty": "H",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Array",
+    "cue": "Binary Search | Partition",
+    "exampleProblem": "Median of two sorted arrays",
+    "oneLiner": "Sorting",
+    "difficulty": "H",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Hashing",
+    "cue": "Two Pointer | Sorting",
+    "exampleProblem": "Count Pair Difference",
+    "oneLiner": "To find pairs with a specific difference, I must check my history for BOTH the number that is B smaller than me AND the number that is B larger than me, unless B is 0",
+    "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "LinkedList",
+    "cue": "Linked List Traversal",
+    "exampleProblem": "Print Linked List",
+    "oneLiner": "here temp is object , we check if temp exists , if yes print temp.val and then temp = temp.next",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "LinkedList",
+    "cue": "Linked List Insertion",
+    "exampleProblem": "Insert in Linked List",
+    "oneLiner": "Insert Linked List",
+    "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "LinkedList",
+    "cue": "Iterative Reversal | Three Pointers",
+    "exampleProblem": "Reverse Linked List",
+    "oneLiner": "Revesering , so we need to keep two three pointers curr , prev and next",
+    "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Stack",
+    "cue": "Stack | Expression Evaluation",
+    "exampleProblem": "Evaluate Expression",
+    "oneLiner": "Use Stack of Integers and then simply loop and if else comparise with equals and when pushing Integer.parseInt",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Stack",
+    "cue": "Stack | Bracket Matching",
+    "exampleProblem": "Balanced Paranthesis",
+    "oneLiner": "Use stack and then push opening brack into stack and when we encounter closing brackets do pop and store element and then compare",
+    "difficulty": "M",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Stack",
+    "cue": "Monotonic Stack | Contribution Technique",
+    "exampleProblem": "Subarray(MAX - MIN)",
+    "oneLiner": "Find LSE_L,LSE_R,LGE_L,LGE_R and then from there using contrubtion tecnhqie find count and then find contribution and then find difference",
+    "difficulty": "H",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Queue",
+    "cue": "Two Stacks | Amortized O(1)",
+    "exampleProblem": "Queue Using Stacks",
+    "oneLiner": "Using stack functions , implementing queue , do with two stacks",
+    "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Queue",
+    "cue": "Monotonic Deque | Sliding Window Max",
+    "exampleProblem": "Parking Ice Cream Truck",
+    "oneLiner": "Using Deque , we need tohave and two condition a 0 b-1 and b to n-1 then basic idea if maximum element should be front, if max element occures remove all smaller elments than it and then push and for window always check i-B",
+    "difficulty": "H",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Queue",
+    "cue": "Deque | Frequency Count",
+    "exampleProblem": "Unique Letter",
+    "oneLiner": "Have freq array to know duplicates and also use queues",
+    "difficulty": "H",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Tree",
+    "cue": "Divide and Conquer | Recursion",
+    "exampleProblem": "Sorted Array To Balanced BST",
+    "oneLiner": "\"The exact middle is always the root; divide the rest in half.",
+    "difficulty": "H",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Tree",
+    "cue": "BST | Inorder Successor",
+    "exampleProblem": "Delete a node in BST",
+    "oneLiner": "Recursion automatically reconnects the tree pointers for you; for a two-child node, simply overwrite its value with the left-side maximum and recursively delete that duplicate.",
+    "difficulty": "H",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Tree",
+    "cue": "Inorder Traversal | Two Pointer",
+    "exampleProblem": "Two Sum BST",
+    "oneLiner": "Two approaches , 1) Get inorder travesal and then have hashing , you know the apprach\n2) Get inorder travesal , then as it is sorted do two pointer apporach from first and end",
+    "difficulty": "M",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Maths",
+    "cue": "Legendre's Formula | Sieve",
+    "exampleProblem": "Compute nCr % m(Legendre's + Sieve)",
+    "oneLiner": "Use the Sieve of Eratosthenes to find all primes up to n, then apply Legendre's formula to count and subtract each prime's occurrences in the denominators from the numerator to completely bypass division. Finally, take the surviving primes and multiply them together using binary exponentiation, applying the modulo at every step to safely prevent integer overflow",
+    "difficulty": "H",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Maths",
+    "cue": "Sieve of Eratosthenes",
+    "exampleProblem": "Sieve of Eratosthenes",
+    "oneLiner": "Sieve of Eratosthenes",
+    "difficulty": "H",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Maths",
+    "cue": "Two Pointer | Sorting",
+    "exampleProblem": "Pairs with given sum II",
+    "oneLiner": "We need to handle duplicates here",
+    "difficulty": "M",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Maths",
+    "cue": "Math | Base Conversion",
+    "exampleProblem": "Excel Column Title",
+    "oneLiner": "Logic is do modulo and dive by 26 just like binary number finding and then prpend to ans string",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Two Pointer | Sorting",
+    "exampleProblem": "Pairs with Given Difference",
+    "oneLiner": "Sort the array and use two left-to-right pointers (i=0, j=1) to track the difference, using inner while loops to aggressively skip identical values after every match to guarantee only distinct pairs are counted.",
+    "difficulty": "M",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Backtracking",
+    "cue": "Backtracking | String Builder",
+    "exampleProblem": "Generate all Parentheses II",
+    "oneLiner": "Recursively explore adding valid opening and closing parentheses to a single shared StringBuilder, ensuring you delete the last appended character after every recursive return to cleanly backtrack and try the alternative branch.",
+    "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Backtracking",
+    "cue": "Backtracking | Include-Exclude",
+    "exampleProblem": "Generate Subsets",
+    "oneLiner": "Recursively build subsets by making a \"take it\" choice (add the element, explore, then erase it) and a \"leave it\" choice (just explore) at each index, ensuring you save a deep copy of the shared list when you reach the end of the array.",
+    "difficulty": "H",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Backtracking",
+    "cue": "Backtracking | Visited Array",
+    "exampleProblem": "Permutations",
+    "oneLiner": "Recursively build permutations by looping through the original array, using a boolean \"visited\" array to skip already-used numbers, and applying the \"add, recurse, remove\" pattern to explore all sequences.",
+    "difficulty": "H",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Backtracking",
+    "cue": "Backtracking | Recursion",
+    "exampleProblem": "Print paths in Staircase",
+    "oneLiner": "Recursively branch the 1-step choice before the 2-step choice to guarantee lexicographical order, making sure to undo the choice after exploring and saving a deep copy of the path when the remaining steps hit zero",
+    "difficulty": "H",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Backtracking",
+    "cue": "Backtracking | Grid DFS",
+    "exampleProblem": "Print All Maze Paths",
+    "oneLiner": "Recursively traverse the grid by exploring the Down ('D') branch before the Right ('R') branch to guarantee lexicographical order, using string concatenation to implicitly manage the backtracking state until reaching the bottom-right corner",
+    "difficulty": "H",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Backtracking",
+    "cue": "Backtracking | DFS + Pruning",
+    "exampleProblem": "Shortest path in a Binary Maze with Hurdles",
+    "oneLiner": "Exhaustively explore all valid 4-directional paths using DFS backtracking\u2014safeguarded by matrix boundaries and a visited array to prevent cycles\u2014while maintaining a global minimum length that prunes any branches already exceeding the best found path",
+    "difficulty": "H",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "LinkedList",
+    "cue": "Merge Sort on Linked List",
+    "exampleProblem": "Sort List",
+    "oneLiner": "merge sort in Linkedlist",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "LinkedList",
+    "cue": "Slow Fast Pointer | Reverse Half",
+    "exampleProblem": "Palindrome List",
+    "oneLiner": "Find middle , reverse and then compare each",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "LinkedList",
+    "cue": "Two Pointer | Length Equalization",
+    "exampleProblem": "Intersection of Linked Lists",
+    "oneLiner": "Have two pointer and move each one step , when ever one reaches null , then assign that pointer to head of another LL, by this we will reach somepoint wher both match , it can be node or null",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "LinkedList",
+    "cue": "Floyd's Cycle Detection",
+    "exampleProblem": "Remove Loop from Linked List",
+    "oneLiner": "Use fast and slow pointers to find the cycle's collision point, then advance one pointer from the head and one from the collision point at equal speeds until their next pointers match, placing you exactly one step before the start of the loop so you can safely sever it by setting next to null.",
+    "difficulty": "M",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "LinkedList",
+    "cue": "HashMap | Doubly Linked List",
+    "exampleProblem": "LRU Cache",
+    "oneLiner": "Maintain a HashMap for O(1) lookups paired with a Doubly Linked List of nodes (storing both key and value) to track recency, extracting and reinserting nodes at the MRU position on every get or set, and using the node's stored key to safely delete the LRU item from both structures when capacity is breached",
+    "difficulty": "H",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Tree",
+    "cue": "Inorder Traversal | Counter",
+    "exampleProblem": "Kth Smallest Element In BST",
+    "oneLiner": "find inorder and do count++ ,if count==k return that node",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Tree",
+    "cue": "Morris Traversal | O(1) Space",
+    "exampleProblem": "Morris Inorder Traversal",
+    "oneLiner": "if left node is empty , then add to our arraylist ,else find left subtree right most node and make connection to curr node and move to left , if we visited 2nd time then remove connection and add to our arrray list and move right",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Tree",
+    "cue": "Inorder Traversal | Swap Detection",
+    "exampleProblem": "Recover Binary Search Tree",
+    "oneLiner": "Find inorder then have 3 variables to track first , middle(in case of adjacent swaps) , last for 2 cases",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Hashing",
+    "cue": "HashMap | Frequency String Key",
+    "exampleProblem": "Group Anagrams 1",
+    "oneLiner": "Use a HashMap where the key is a delimited character frequency string (e.g., 1#0...) and the value is the list of matching anagrams.",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Heap",
+    "cue": "Min Heap | Simulation",
+    "exampleProblem": "Heap Queries",
+    "oneLiner": "Heap problem based on queries",
+    "difficulty": "M",
+    "friction": ""
+  },
+  {
+    "topic": "Heap",
+    "cue": "Two Heaps | Max Heap + Min Heap",
+    "exampleProblem": "Running Median",
+    "oneLiner": "Maintain a Max Heap for the smaller half of the stream and a Min Heap for the larger half, rebalancing immediately if their size difference exceeds 1. To find the median, return the top of the larger heap. If sizes are equal, return the top of the Max Heap (Do not take the average!)",
+    "difficulty": "M",
+    "friction": ""
+  },
+  {
+    "topic": "Greedy",
+    "cue": "Greedy | Sort by End Time",
+    "exampleProblem": "Finish Maximum Jobs",
+    "oneLiner": "Bundle the start and end times into a custom object and sort the array in ascending order strictly by their end times. Iterate through the sorted list, incrementing your count and updating your lastEndTime tracker only when a job's start time is greater than or equal to the previous job's end time",
+    "difficulty": "H",
+    "friction": ""
+  },
+  {
+    "topic": "Heap",
+    "cue": "Min Heap | K-way Merge",
+    "exampleProblem": "Merge K Sorted Lists",
+    "oneLiner": "To merge K sorted linked lists, push the head of each list into a Min Heap using a custom value comparator. Pop the smallest node, attach it to your dummy tail, and if poppedNode.next exists, push it into the heap",
+    "difficulty": "H",
+    "friction": ""
+  },
+  {
+    "topic": "Heap",
+    "cue": "Min Heap | K-size Heap",
+    "exampleProblem": "Ath largest element",
+    "oneLiner": "To find the A-th largest element, first pad the answer array with A-1 negative ones and build an initial Min Heap using the first A elements. Then, iterate the rest of the array: if the incoming element is greater than heap.peek(), poll() the root and add the new element, appending heap.peek() to your answer array at every step",
+    "difficulty": "H",
+    "friction": ""
+  },
+  {
+    "topic": "Array",
+    "cue": "Matrix Traversal | Diagonal",
+    "exampleProblem": "Anti Diagonals",
+    "oneLiner": "To find all anti-diagonals, trace from two sets of starting points: the top row (col 0 to N-1) and the rightmost column (row 1 to N-1). From each starting point (r, c), collect elements by moving down-left (r+1, c-1) and place them into the current row of the output matrix. Java's default initialization handles the trailing zeros automatically",
+    "difficulty": "L",
+    "friction": ""
+  },
+  {
+    "topic": "Array",
+    "cue": "In-Place Matrix | Flag Array",
+    "exampleProblem": "Row to Column Zero",
+    "oneLiner": "To set matrix zeroes in O(1) space, use Row 0 and Col 0 as flag arrays. First, check if Row 0 or Col 0 inherently contain zeros and store this in two booleans. Next, iterate from i=1, j=1; if A[i][j]==0, set A[i][0]=0 and A[0][j]=0. Iterate from 1,1 again and apply the zeros based on the flags. Finally, update Row 0 and Col 0 based on the saved booleans",
+    "difficulty": "L",
+    "friction": ""
+  },
+  {
+    "topic": "Tree",
+    "cue": "DFS | Simultaneous Recursion",
+    "exampleProblem": "Identical Binary Trees",
+    "oneLiner": "To check if two trees are identical, do not flatten them into arrays. Use simultaneous recursion: if both nodes are null, return 1; if only one is null or values differ, return 0. Recursively check if isSameTree(A.left, B.left) AND isSameTree(A.right, B.right) both return 1",
+    "difficulty": "H",
+    "friction": ""
+  },
+  {
+    "topic": "Hashing",
+    "cue": "HashMap | Last Seen Index",
+    "exampleProblem": "Shaggy and distances",
+    "oneLiner": "Use a HashMap to store the last_seen_index of each element. Execution: Iterate through the array. If the current element exists in the map, calculate the distance: current_index - map.get(element), and update the global minimum distance. Regardless of whether it was found or not, always update the map with the current_index so future matches use the closest possible index. If the global minimum is never updated, return -1",
+    "difficulty": "H",
+    "friction": ""
+  },
+  {
+    "topic": "Greedy",
+    "cue": "Greedy | Two Sorted Arrays",
+    "exampleProblem": "Meeting Rooms II",
+    "oneLiner": "Extract all start times into one array and end times into another. Sort both arrays. Use two pointers (i for start, j for end). If start[i] < end[j], a meeting is starting, increment current rooms and move i. Else, a meeting is ending, decrement current rooms and move j. Keep tracking the global maximum",
+    "difficulty": "H",
+    "friction": ""
+  },
+  {
+    "topic": "String",
+    "cue": "Sliding Window | Two Pointer",
+    "exampleProblem": "Minimum Window Substring",
+    "oneLiner": "Use an int[128] for ASCII safety. Count frequencies required by T. Expand window by moving e. If a collected character helps meet T's requirement, increment formed. while (formed == required), record the minimum length, decrement the frequency of character at s, and move s forward. If you drop a required character, decrement formed to break the shrink loop and go back to expanding.",
+    "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "DP",
+    "cue": "DP | Fibonacci Pattern",
+    "exampleProblem": "Stairs",
+    "oneLiner": "Execution: > 1. The Core Relation: To reach step N, you either came from step N-1 or N-2. Therefore: ways(N) = (ways(N-1) + ways(N-2)) % 1000000007. 2. Top-Down (Memoization): Init array with -1. Base cases: if (N == 0 || N == 1) return 1;. Check cache: if (dp[N] != -1) return dp[N];. Recurse, modulo, and save. (Time: O(N), Space: O(N)). 3. Bottom-Up (Tabulation): Base cases dp[0]=1, dp[1]=1. Loop i = 2 to N: dp[i] = (dp[i-1] + dp[i-2]) % 1000000007. 4. Senior Optimization (Slider): We only need the last two steps. Use a=1, b=1. Loop from 2 to N: c = (a + b) % 1000000007, then shift a = b and b = c. Return c. (Time: O(N), Space: O(1))",
+    "difficulty": "H",
+    "friction": ""
+  },
+  {
+    "topic": "Array",
+    "cue": "Prefix Count | Suffix Count",
+    "exampleProblem": "Count Increasing Triplets",
+    "oneLiner": "Fix the middle element j, then count all strictly smaller elements to its left (left_smaller) and strictly greater elements to its right (right_larger). For each $j$, the number of valid triplets is simply left_smaller * right_larger, bringing the O(N^3) brute force down to an optimal O(N^2) time complexity",
+    "difficulty": "L",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Hashing",
+    "cue": "Brute Force | HashSet",
+    "exampleProblem": "Colorful Number",
+    "oneLiner": "Convert the integer to a string and use an $O(N^2)$ nested loop to generate all contiguous subarrays, maintaining a running product inside the inner loop. Check each running product against a HashSet, returning 0 immediately if a duplicate is found, or 1 if all loops finish successfully.",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "DP",
+    "cue": "DP | Unbounded Knapsack",
+    "exampleProblem": "Unbounded Knapsack",
+    "oneLiner": "The implementation is nearly identical to 0/1 Knapsack, but when you pick an item, you stay on the current row i instead of moving back to i-1 so the same item can be selected again. Calculate dp[i][j] as the maximum of either skipping the item completely (dp[i-1][j]) or taking it if capacity allows (value[i] + dp[i][j - weight[i]])",
+    "difficulty": "H",
+    "friction": ""
+  },
+  {
+    "topic": "DP",
+    "cue": "DP | 1D Space Optimization",
+    "exampleProblem": "0-1 Knapsack II - Optimised",
+    "oneLiner": "Treat the outer loop i as introducing a \"new item\" and the inner loop j as testing every possible \"bag size,\" where the array index always represents the capacity. Read the transition equation as a physical choice for the current bag size j: you either skip the item and keep yesterday's best profit (prev[j]), or pack it by adding its value to yesterday's best profit for the leftover space (prev[j - weight])",
+    "difficulty": "H",
+    "friction": ""
+  },
+  {
+    "topic": "Graph",
+    "cue": "DFS | Path Visited Array",
+    "exampleProblem": "Cycle in Directed Graph",
+    "oneLiner": "Use two boolean arrays: visited (global memory to avoid redundant work) and pathVisited (active path memory to detect cycles). When entering a node, mark both as true; if you ever encounter a neighbor where pathVisited is already true, you have found a cycle! When backtracking out of a node, set pathVisited to false (picking up your breadcrumb), but leave visited as true to ensure you never process that node again.",
+    "difficulty": "H",
+    "friction": ""
+  },
+  {
+    "topic": "Graph",
+    "cue": "Minimum Spanning Tree | Prim's",
+    "exampleProblem": "Construction Cost",
+    "oneLiner": "Convert the Edge List into an Adjacency List first. Use a Min-Heap (Priority Queue) to greedily pick the minimum weight edge that connects an unvisited node to the growing tree. Always maintain a visited array to prevent cycles, and ensure the Priority Queue is initialized with a custom comparator for the weights",
+    "difficulty": "H",
+    "friction": ""
+  },
+  {
+    "topic": "Graph",
+    "cue": "Minimum Spanning Tree | Kruskal's",
+    "exampleProblem": "Commutable Islands",
+    "oneLiner": "Convert the Edge List into an Adjacency List first. Use a Min-Heap (Priority Queue) to greedily pick the minimum weight edge that connects an unvisited node to the growing tree. Always maintain a visited array to prevent cycles, and ensure the Priority Queue is initialized with a custom comparator for the weights",
+    "difficulty": "H",
+    "friction": ""
+  },
+  {
+    "topic": "Graph",
+    "cue": "BFS | Dummy Node Trick",
+    "exampleProblem": "Another BFS",
+    "oneLiner": "To handle weight-2 edges, insert a dummy node in the middle of each to convert them into two weight-1 edges. Then, run a standard BFS from the source and return the distance the moment you reach the destination.",
+    "difficulty": "H",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Graph",
+    "cue": "Topological Sort | Cycle Detection",
+    "exampleProblem": "Possibility of Finishing",
+    "oneLiner": "It is simple cycle detection using DFS, if cycle is present , then not possible or else it is possible",
+    "difficulty": "H",
+    "friction": ""
+  },
+  {
+    "topic": "Graph",
+    "cue": "Topological Sort | Kahn's BFS",
+    "exampleProblem": "Topological Sort - Kahn's Algorithm",
+    "oneLiner": "Calculate the in-degree for all nodes and push those with an in-degree of 0 into a Queue (use a PriorityQueue if you need the lexicographically smallest order). Pop nodes, add them to your answer array, and decrement their neighbors' in-degrees\u2014pushing any neighbor that drops to 0 into the queue\u2014and finally check if the answer size matches the total nodes to ensure no cycles exist",
+    "difficulty": "H",
+    "friction": ""
+  },
+  {
+    "topic": "Greedy",
+    "cue": "Greedy | Collect Every Gain",
+    "exampleProblem": "Best Time to Buy and Sell Stocks II",
+    "oneLiner": "Don't manually track peaks and valleys. Use a Greedy approach: loop from index 1 to N, and anytime A[i] > A[i-1], simply add A[i] - A[i-1] to your total profit. Every upward daily step contributes to the total",
+    "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Maths",
+    "cue": "Math | Prime Factorization",
+    "exampleProblem": "Trailing Zeros in Factorial",
+    "oneLiner": "Don't calculate the factorial (overflow). Count the pairs of (2, 5). 2s are abundant, so just count the 5s using a loop: count += n / i where i multiplies by 5 each step.",
+    "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Maths",
+    "cue": "Fermat's Little Theorem | Fast Power",
+    "exampleProblem": "Compute nCr % p",
+    "oneLiner": "You cannot divide under a modulo! To compute (A / B) mod M, turn division into multiplication using Fermat's formula: (A * B^{M-2})mod M",
+    "difficulty": "H",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Backtracking",
+    "cue": "Backtracking | Constraint Checking",
+    "exampleProblem": "NQueens",
+    "oneLiner": "If a problem asks if ANY valid state exists (e.g., Sudoku), return boolean from your recursive calls to instantly kill the search once found. If a problem asks to generate ALL valid states (e.g., N-Queens), keep the return type void. Let the recursion naturally unfold and save the state only inside your base case",
+    "difficulty": "H",
+    "friction": ""
+  },
+  {
+    "topic": "Tries",
+    "cue": "Trie | Last Safe Node",
+    "exampleProblem": "Trie Deletion",
+    "oneLiner": "The secret to deletion is finding the \"Last Safe Node\" so you don't accidentally delete nodes shared by other words. As you traverse down the target word, constantly update a temp pointer and reference character (rc) whenever the current node has more than 1 child or its eow is true (indicating an overlap). Once you reach the end of the target word, immediately set its eow to false. Finally, if that last node has 0 children, go back to your temp node and sever the dead branch by setting temp.children[rc - 'a'] = null",
+    "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Tries",
+    "cue": "Trie | Frequency Count",
+    "exampleProblem": "Shortest Unique Prefix",
+    "oneLiner": "To find the shortest unique prefix, upgrade your standard Trie node to include an int freq counter. During the insertion phase, increment this frequency for every single node you step on to track exactly how many words share that specific path. Then, to find the unique prefix for a word, traverse the Trie again and stop the exact moment you land on a node where curr.freq == 1. The substring from the root down to that specific node is mathematically guaranteed to be your shortest unique prefix.",
+    "difficulty": "H",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Tries",
+    "cue": "Bitwise Trie | Greedy XOR",
+    "exampleProblem": "Maximum XOR",
+    "oneLiner": "the core engine is treating integers as 32-bit paths (MSB to LSB) in an empty Bitwise Trie, allowing you to make the \"Greedy Choice\" by always searching for the opposite bit (1 - bit) to guarantee the highest possible value",
+    "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Tries",
+    "cue": "Bitwise Trie | Prefix XOR",
+    "exampleProblem": "Maximum XOR Subarray",
+    "oneLiner": "you don't invent new logic; you capitalize on the rule that XOR is its own inverse by building a prefixXOR array and feeding it directly into your first Trie, with the vital upgrade of dropping \"index anchors\" at the leaf nodes. When a match is found, you pull those two indices to define your subarray boundaries (Left = min + 1, Right = max), which immediately allows you to filter the results through Scaler's strict three-tier tie-breaker: highest XOR first, then shortest length, and finally the earliest starting index.",
+    "difficulty": "H",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Tree",
+    "cue": "DFS | Return Head-Tail",
+    "exampleProblem": "Flatten Binary Tree to Linked List",
+    "oneLiner": "The Architecture: Use a recursive function returning a (head, tail) pair to flatten subtrees bottom-up.  The Wiring: Connect them by setting root.right = left_head, then left_tail.right = right_head.  The Trap: Always explicitly sever the left pointer (root.left = null) to prevent invalid tree cycles.  The Edge Case: If a node only has a left child, the true end of that list is the left_tail, not the left_head",
+    "difficulty": "H",
+    "friction": ""
+  },
+  {
+    "topic": "String",
+    "cue": "ASCII Arithmetic | Observation",
+    "exampleProblem": "Boring substring",
+    "oneLiner": "The Core Secret (The Bridge): Odd ASCII characters are never adjacent to each other. Evens are never adjacent. If you separate them into two halves, you just need to find one valid pair (a bridge) to connect the Odd half to the Even half.The Trap (Brute Force - $O(N^2)$): Iterating through every single Odd character and comparing it against every single Even character will cause a Time Limit Exceeded (TLE) on massive strings.The HashSet Pivot ($O(N)$ Time, $O(1)$ Space): Since there are only 26 letters, dump characters into two HashSets (Odds and Evens). This reduces the nested loop to a maximum of $13 \\times 13 = 169$ constant-time checks.The Masterpiece ($O(N)$ Time, $O(1)$ Space): Ditch the sets. Traverse the string once to find four extremes: minOdd, maxOdd, minEven, and maxEven. Test the 4 cross-combinations. If the absolute difference of any pair is != 1, return true. Otherwise, return false.",
+    "difficulty": "H",
+    "friction": ""
+  },
+  {
+    "topic": "String",
+    "cue": "Sliding Window | Fixed Window",
+    "exampleProblem": "Permutations of A in B",
+    "oneLiner": "The Architecture (Fixed Size): Because any valid permutation of A must be exactly the length of A, the window size never changes. You do not need a while loop to shrink it.The Initial Setup: Create freq_A and freq_B arrays (size 26). Fully populate freq_A, but only populate freq_B with the first A.length() characters of string B. Check if they match using Arrays.equals(); if yes, count++.The Slide ($O(N)$): Loop from i = A.length() to the end of B. Slide the rigid frame by doing exactly two operations:Add Right: Increment the frequency of the new character entering the window: B.charAt(i).Drop Left: Decrement the frequency of the old character falling out of the window: B.charAt(i - A.length()).The Array Index Trap: When dropping the left character, do not accidentally use the raw index math (i - A.length()) inside the frequency array. You must fetch the actual character from string B first, then subtract 'a' to get the correct frequency bucket.",
+    "difficulty": "H",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "DP",
+    "cue": "DP | 2D Edit Distance",
+    "exampleProblem": "Edit Distance",
+    "oneLiner": "That base case bounds swap is the final boss of Edit Distance. Now that you have navigated the 1-indexed string shift and the unique Row 0 / Col 0 initializations, this architecture is fully yours.  Here is your 4-step SRS cheat sheet for the Edit Distance problem. Drop this directly into your notes:  The \"Edit Distance Tabulation\" SRS Cheat Sheet The State Definition: dp[i][j] represents the minimum number of operations required to convert the first i characters of String A into the first j characters of String B.  The Base Case Trap: Size your table as new int[N+1][M+1]. Unlike LCS, Row 0 and Column 0 cannot be 0.  Row 0: Converting an empty string to String B takes j inserts (dp[0][j] = j).  Col 0: Converting String A to an empty string takes i deletes (dp[i][0] = i).  The Match Transition: Shift your string indices back by one (A.charAt(i-1) == B.charAt(j-1)). If the characters match, no operation is needed. Inherit the cost from the diagonal: dp[i][j] = dp[i-1][j-1]  The Mismatch Transition: If the characters do not match, you must perform exactly 1 operation. Take the minimum cost of the three possible paths and add 1:  Insert: Look Left (dp[i][j-1])  Delete: Look Up (dp[i-1][j])  Replace: Look Diagonal (dp[i-1][j-1])  dp[i][j] = 1 + Math.min(Replace, Math.min(Insert, Delete))",
+    "difficulty": "H",
+    "friction": ""
+  },
+  {
+    "topic": "DP",
+    "cue": "DP | LIS | Sorting Trick",
+    "exampleProblem": "Russian Doll Envelopes",
+    "oneLiner": "The Object Mapping: You cannot separate heights and widths. Always map the 2D array into a custom Pair or Envelope object array so they travel together during sorting.  The Timeline Sort: To reduce the 2D problem into a 1D LIS problem, sort the array by one of the dimensions (e.g., Height ascending). This guarantees that any envelope j before envelope i is at least short enough to potentially fit inside i.  The Strict 2D LIS Check: Run the exact LIS nested loops, but your inner if condition must strictly check both dimensions. Equal sizes do not fit inside each other! if (env[j].w < env[i].w && env[j].h < env[i].h)  The Global Max: Just like standard LIS, the biggest nested doll doesn't necessarily end with the very last envelope in the array. Track ans = Math.max(ans, dp[i])",
+    "difficulty": "H",
+    "friction": ""
+  },
+  {
+    "topic": "DP",
+    "cue": "DP | 2D Palindrome | Cuts",
+    "exampleProblem": "Palindrome Partitioning II",
+    "oneLiner": "The FAANG Trap: Do not write a 1D recursive function that uses a while loop to check if a string is a palindrome. That creates an $O(N^3)$ algorithm that will hit TLE. You must split the problem into two distinct DP phases to achieve $O(N^2)$.Phase 1: The 2D Palindrome Cache (The Lookup Table): * Use the \"Gap Strategy\" (diagonal traversal) to build a boolean[][] isPal table.isPal[i][j] is true if the substring from i to j is a palindrome. This gives you $O(1)$ lookups for Phase 2.Phase 2: The 1D Cuts Array (The State Definition): * cuts[i] represents the minimum number of cuts needed to perfectly partition the prefix string from index 0 to i.The Partition Transition:Base Case: If isPal[0][i] == true, the whole prefix is a palindrome. It needs 0 cuts! (cuts[i] = 0).The Cut Loop: If it's not a palindrome, try placing a cut at every index j (from 1 to i).If the right side of the cut is a palindrome (isPal[j][i] == true), then the total cuts = the cuts needed for the left side plus one new cut.cuts[i] = Math.min(cuts[i], cuts[j-1] + 1)",
+    "difficulty": "H",
+    "friction": ""
+  }
+]
