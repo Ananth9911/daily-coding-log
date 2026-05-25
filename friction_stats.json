@@ -8,12 +8,12 @@
     "mastery": 38
   },
   {
-    "smooth": 91,
+    "smooth": 92,
     "struggled": 5,
     "hard": 0,
     "total": 114,
     "topic": "Basic",
-    "mastery": 80
+    "mastery": 81
   },
   {
     "smooth": 13,
@@ -41,7 +41,7 @@
   },
   {
     "smooth": 7,
-    "struggled": 0,
+    "struggled": 1,
     "hard": 5,
     "total": 17,
     "topic": "Hashing",
@@ -88,20 +88,20 @@
     "mastery": 12
   },
   {
-    "smooth": 1,
-    "struggled": 1,
+    "smooth": 2,
+    "struggled": 0,
     "hard": 2,
     "total": 8,
     "topic": "Sorting",
-    "mastery": 12
+    "mastery": 25
   },
   {
-    "smooth": 1,
-    "struggled": 6,
+    "smooth": 2,
+    "struggled": 5,
     "hard": 8,
     "total": 8,
     "topic": "Backtracking",
-    "mastery": 12
+    "mastery": 25
   },
   {
     "smooth": 8,
@@ -112,12 +112,12 @@
     "mastery": 100
   },
   {
-    "smooth": 5,
-    "struggled": 3,
+    "smooth": 6,
+    "struggled": 2,
     "hard": 8,
     "total": 8,
     "topic": "Tries",
-    "mastery": 62
+    "mastery": 75
   },
   {
     "smooth": 1,

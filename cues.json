@@ -525,7 +525,7 @@
     "exampleProblem": "Shortest path in a Binary Maze with Hurdles",
     "oneLiner": "Exhaustively explore all valid 4-directional paths using DFS backtracking\u2014safeguarded by matrix boundaries and a visited array to prevent cycles\u2014while maintaining a global minimum length that prunes any branches already exceeding the best found path",
     "difficulty": "H",
-    "friction": "Struggled"
+    "friction": "Smooth"
   },
   {
     "topic": "LinkedList",
@@ -597,7 +597,7 @@
     "exampleProblem": "Group Anagrams 1",
     "oneLiner": "Use a HashMap where the key is a delimited character frequency string (e.g., 1#0...) and the value is the list of matching anagrams.",
     "difficulty": "M",
-    "friction": "Smooth"
+    "friction": "Struggled"
   },
   {
     "topic": "Heap",
@@ -821,7 +821,7 @@
     "exampleProblem": "Shortest Unique Prefix",
     "oneLiner": "To find the shortest unique prefix, upgrade your standard Trie node to include an int freq counter. During the insertion phase, increment this frequency for every single node you step on to track exactly how many words share that specific path. Then, to find the unique prefix for a word, traverse the Trie again and stop the exact moment you land on a node where curr.freq == 1. The substring from the root down to that specific node is mathematically guaranteed to be your shortest unique prefix.",
     "difficulty": "H",
-    "friction": "Struggled"
+    "friction": "Smooth"
   },
   {
     "topic": "Tries",
