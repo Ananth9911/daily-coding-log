@@ -894,5 +894,13 @@
     "oneLiner": "Create a color[] array initialized to -1. 2. Loop through all nodes (to handle disconnected components). If unvisited, paint it 0 and start DFS. 3. The Core Trick: In DFS, paint unvisited neighbors with the opposite color using 1 - col[src]. 4. If a neighbor is already visited and has the same color as the current node (col[nbr] == col[src]), return false!",
     "difficulty": "M",
     "friction": "Smooth"
+  },
+  {
+    "topic": "Graph",
+    "cue": "Graph Properties | Math",
+    "exampleProblem": "Coloring a Cycle Graph",
+    "oneLiner": "Cycle Graph Chromatic Number: Even nodes = perfect alternating bipartite (2 colors). Odd nodes = collision at the end (3 colors). return 2 + (A % 2);",
+    "difficulty": "L",
+    "friction": "Smooth"
   }
 ]

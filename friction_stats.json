@@ -56,20 +56,20 @@
     "mastery": 21
   },
   {
+    "smooth": 8,
+    "struggled": 3,
+    "hard": 12,
+    "total": 14,
+    "topic": "Graph",
+    "mastery": 57
+  },
+  {
     "smooth": 2,
     "struggled": 2,
     "hard": 6,
     "total": 13,
     "topic": "LinkedList",
     "mastery": 15
-  },
-  {
-    "smooth": 7,
-    "struggled": 3,
-    "hard": 12,
-    "total": 13,
-    "topic": "Graph",
-    "mastery": 54
   },
   {
     "smooth": 1,
@@ -142,5 +142,13 @@
     "total": 3,
     "topic": "Queue",
     "mastery": 0
+  },
+  {
+    "smooth": 1,
+    "struggled": 0,
+    "hard": 0,
+    "total": 1,
+    "topic": "Disjoint Set Union",
+    "mastery": 100
   }
 ]
