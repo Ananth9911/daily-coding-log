@@ -1,23 +1,23 @@
 [
   {
-    "smooth": 48,
+    "smooth": 49,
     "struggled": 13,
     "hard": 23,
     "total": 125,
     "topic": "Array",
-    "mastery": 38
+    "mastery": 39
   },
   {
-    "smooth": 92,
+    "smooth": 94,
     "struggled": 5,
     "hard": 0,
     "total": 114,
     "topic": "Basic",
-    "mastery": 81
+    "mastery": 82
   },
   {
     "smooth": 13,
-    "struggled": 19,
+    "struggled": 20,
     "hard": 15,
     "total": 35,
     "topic": "Tree",
@@ -48,12 +48,12 @@
     "mastery": 41
   },
   {
-    "smooth": 2,
-    "struggled": 8,
+    "smooth": 3,
+    "struggled": 7,
     "hard": 6,
     "total": 14,
     "topic": "Maths",
-    "mastery": 14
+    "mastery": 21
   },
   {
     "smooth": 2,
@@ -96,12 +96,12 @@
     "mastery": 25
   },
   {
-    "smooth": 2,
+    "smooth": 3,
     "struggled": 5,
     "hard": 8,
     "total": 8,
     "topic": "Backtracking",
-    "mastery": 25
+    "mastery": 38
   },
   {
     "smooth": 8,

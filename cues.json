@@ -797,7 +797,7 @@
     "exampleProblem": "Compute nCr % p",
     "oneLiner": "You cannot divide under a modulo! To compute (A / B) mod M, turn division into multiplication using Fermat's formula: (A * B^{M-2})mod M",
     "difficulty": "H",
-    "friction": "Struggled"
+    "friction": "Smooth"
   },
   {
     "topic": "Backtracking",
