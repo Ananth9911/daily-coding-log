@@ -2793,16 +2793,16 @@
     "topic": "Array",
     "source": "Scaler",
     "difficulty": "H",
-    "friction": "Struggled",
+    "friction": "Smooth",
     "notes": "Binary Search",
     "oneLiner": "Have lo and hi and do mid and then compare if B is present between lo and mid or hi and mid",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-06-02",
+    "lastSolved": "2026-05-27",
     "url": "",
-    "ef": "2.0",
-    "interval": "3"
+    "ef": "2.1",
+    "interval": "6"
   },
   {
     "date": "12/03/2026",
@@ -3476,13 +3476,13 @@
     "friction": "Smooth",
     "notes": "XOR | Bit Partitioning",
     "oneLiner": "XOR all array elements to find the combined XOR of the two unique numbers, locate any set bit in that result to identify where they differ, and use that bit to partition the array into two groups that you XOR separately to isolate each unique number.",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S2",
+    "reviewDate": "2026-06-05",
+    "lastSolved": "2026-05-27",
     "url": "",
-    "ef": "3.0",
-    "interval": "3"
+    "ef": "3.1",
+    "interval": "9"
   },
   {
     "date": "01/03/2026",
@@ -6366,13 +6366,13 @@
     "friction": "Smooth",
     "notes": "Nested Loops | Pattern Printing",
     "oneLiner": "Pattern printing",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S2",
+    "reviewDate": "2026-06-05",
+    "lastSolved": "2026-05-27",
     "url": "",
-    "ef": "3.0",
-    "interval": "3"
+    "ef": "3.1",
+    "interval": "9"
   },
   {
     "date": "03/01/2026",
