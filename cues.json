@@ -837,7 +837,7 @@
     "exampleProblem": "Maximum XOR Subarray",
     "oneLiner": "you don't invent new logic; you capitalize on the rule that XOR is its own inverse by building a prefixXOR array and feeding it directly into your first Trie, with the vital upgrade of dropping \"index anchors\" at the leaf nodes. When a match is found, you pull those two indices to define your subarray boundaries (Left = min + 1, Right = max), which immediately allows you to filter the results through Scaler's strict three-tier tie-breaker: highest XOR first, then shortest length, and finally the earliest starting index.",
     "difficulty": "H",
-    "friction": "Struggled"
+    "friction": "Smooth"
   },
   {
     "topic": "Tree",

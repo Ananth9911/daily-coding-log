@@ -17,7 +17,7 @@
   },
   {
     "smooth": 13,
-    "struggled": 20,
+    "struggled": 21,
     "hard": 15,
     "total": 35,
     "topic": "Tree",
@@ -56,12 +56,12 @@
     "mastery": 21
   },
   {
-    "smooth": 8,
-    "struggled": 3,
+    "smooth": 9,
+    "struggled": 4,
     "hard": 12,
     "total": 14,
     "topic": "Graph",
-    "mastery": 57
+    "mastery": 64
   },
   {
     "smooth": 2,
@@ -80,12 +80,12 @@
     "mastery": 18
   },
   {
-    "smooth": 1,
+    "smooth": 2,
     "struggled": 0,
     "hard": 8,
     "total": 8,
     "topic": "Math",
-    "mastery": 12
+    "mastery": 25
   },
   {
     "smooth": 2,
@@ -112,12 +112,12 @@
     "mastery": 100
   },
   {
-    "smooth": 6,
-    "struggled": 2,
+    "smooth": 7,
+    "struggled": 1,
     "hard": 8,
     "total": 8,
     "topic": "Tries",
-    "mastery": 75
+    "mastery": 88
   },
   {
     "smooth": 1,
