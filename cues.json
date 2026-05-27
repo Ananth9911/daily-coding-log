@@ -902,5 +902,13 @@
     "oneLiner": "Cycle Graph Chromatic Number: Even nodes = perfect alternating bipartite (2 colors). Odd nodes = collision at the end (3 colors). return 2 + (A % 2);",
     "difficulty": "L",
     "friction": "Smooth"
+  },
+  {
+    "topic": "Graph",
+    "cue": "Bipartite | Colour Grading",
+    "exampleProblem": "Construct Roads",
+    "oneLiner": "Use Colour Grading Bipartite technique using DFS",
+    "difficulty": "L",
+    "friction": "Smooth"
   }
 ]

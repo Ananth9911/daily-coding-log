@@ -48,20 +48,20 @@
     "mastery": 41
   },
   {
+    "smooth": 11,
+    "struggled": 4,
+    "hard": 12,
+    "total": 16,
+    "topic": "Graph",
+    "mastery": 69
+  },
+  {
     "smooth": 3,
     "struggled": 7,
     "hard": 6,
     "total": 14,
     "topic": "Maths",
     "mastery": 21
-  },
-  {
-    "smooth": 9,
-    "struggled": 4,
-    "hard": 12,
-    "total": 14,
-    "topic": "Graph",
-    "mastery": 64
   },
   {
     "smooth": 2,
