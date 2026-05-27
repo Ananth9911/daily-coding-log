@@ -145,6 +145,9 @@ function calculateHUD(data,todayStr){
   let stats={"DSA":{d:0,t:0},"LLD/HLD":{d:0,t:0},"Core":{d:0,t:0}};
   data.forEach(p=>{
     let mod=(p.module||'').toLowerCase();
+    let lec=(p.lecture||'').toLowerCase();
+    // Skip revision/self-practice slots — not real lectures, shouldn't count in %
+    if(mod.includes('revision')||lec.includes('self practice')||lec.includes('revision'))return;
     let k=null;
     if(mod.includes('dsa')||mod.includes('intro'))k='DSA';
     else if(mod.includes('hld')||mod.includes('system')||mod.includes('lld')||mod.includes('backend'))k='LLD/HLD';
