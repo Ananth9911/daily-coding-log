@@ -1,11 +1,11 @@
 [
   {
-    "smooth": 50,
-    "struggled": 12,
+    "smooth": 51,
+    "struggled": 11,
     "hard": 23,
     "total": 125,
     "topic": "Array",
-    "mastery": 40
+    "mastery": 41
   },
   {
     "smooth": 96,
@@ -120,12 +120,12 @@
     "mastery": 88
   },
   {
-    "smooth": 1,
-    "struggled": 4,
+    "smooth": 2,
+    "struggled": 3,
     "hard": 3,
     "total": 7,
     "topic": "Stack",
-    "mastery": 14
+    "mastery": 29
   },
   {
     "smooth": 5,
