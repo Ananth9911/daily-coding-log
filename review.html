@@ -86,6 +86,18 @@ button{font-family:var(--fd);font-weight:600;font-size:.82rem;padding:9px 16px;b
 .btn-smooth{background:var(--green);color:#000;border:1px solid var(--green);font-size:.78rem}
 .btn-smooth:hover{opacity:.85;box-shadow:0 0 16px rgba(57,211,83,.3)}
 .btn-refresh{background:transparent;color:var(--muted);border:1px solid var(--border);font-size:.72rem}
+.split-toggle{display:flex;gap:4px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:3px}
+.split-opt{font-family:var(--fm);font-size:.66rem;padding:5px 10px;border-radius:6px;border:none;background:transparent;color:var(--muted);cursor:pointer;transition:.15s;white-space:nowrap}
+.split-opt:hover{color:var(--text)}
+.split-opt.active{background:rgba(168,85,247,.15);color:#c084fc;font-weight:600}
+.drain-meter{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 18px;margin-bottom:16px}
+.drain-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px;flex-wrap:wrap;gap:6px}
+.drain-label{font-family:var(--fm);font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px}
+.drain-nums{font-family:var(--fm);font-size:.72rem;color:var(--text)}
+.drain-bar{height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.drain-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--green),#22c55e);transition:width .8s ease}
+.btn-complete{background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.35);font-size:.78rem;padding:7px 13px}
+.btn-complete:hover{background:rgba(168,85,247,.2);box-shadow:0 0 14px rgba(168,85,247,.25)}
 .btn-refresh:hover{color:var(--text);border-color:var(--border2)}
 .btn-add{background:transparent;color:var(--green);border:1px solid rgba(57,211,83,.4)}
 .btn-add:hover{background:rgba(57,211,83,.08)}
@@ -127,10 +139,15 @@ button:disabled{opacity:.4;pointer-events:none}
       <div class="sys-dot"></div>
       <div>
         <h1>SRS Engine</h1>
-        <div class="sub">SM-2 Adaptive · 5 Retention + 3 Fresh daily</div>
+        <div class="sub" id="split-sub">SM-2 Adaptive · 5 Retention + 3 Fresh daily</div>
       </div>
     </div>
     <div class="hdr-right">
+      <div class="split-toggle" id="split-toggle">
+        <button class="split-opt" data-split="7,1" onclick="setSplit(7,1,this)">Drain 7+1</button>
+        <button class="split-opt" data-split="6,2" onclick="setSplit(6,2,this)">Lean 6+2</button>
+        <button class="split-opt" data-split="5,3" onclick="setSplit(5,3,this)">Balanced 5+3</button>
+      </div>
       <button class="btn-refresh" onclick="refreshQueue()">↺ New Queue</button>
       <button class="btn-add" onclick="openModal()">+ Log Problem</button>
       <div class="date-chip" id="date-display"></div>
@@ -141,6 +158,14 @@ button:disabled{opacity:.4;pointer-events:none}
   <div class="queue-info" id="queue-info" style="display:none">
     <div class="qi-label">Today's Mix</div>
     <div class="qi-blocks" id="qi-blocks"></div>
+  </div>
+  <!-- DRAIN PROGRESS METER -->
+  <div class="drain-meter" id="drain-meter" style="display:none">
+    <div class="drain-top">
+      <span class="drain-label">📉 First-Review Progress</span>
+      <span class="drain-nums" id="drain-nums">—</span>
+    </div>
+    <div class="drain-bar"><div class="drain-fill" id="drain-fill" style="width:0%"></div></div>
   </div>
   <!-- PROPORTION BAR -->
   <div class="proportion-bar" id="proportion-bar" style="display:none">
@@ -180,7 +205,7 @@ button:disabled{opacity:.4;pointer-events:none}
       <select class="form-control" id="p-source"><option value="Scaler">Scaler</option><option value="LeetCode">LeetCode</option><option value="NeetCode">NeetCode</option></select>
     </div>
     <div class="form-group"><label>How did it go?</label>
-      <select class="form-control" id="p-phase"><option value="Smooth">Solved it ✓ — Review in 3 days</option><option value="Struggled">Struggled ⚠ — Review in 1 day</option></select>
+      <select class="form-control" id="p-phase"><option value="Smooth">Solved it ✓ — Review in 3 days</option><option value="Struggled">Struggled ⚠ — Review in 1 day</option><option value="Completed">Knew it cold ★ — Skip rotation (6-month check)</option></select>
     </div>
     <div class="form-group"><label>One-Line Hint</label><input class="form-control" id="p-hint" type="text" placeholder="Use hashmap for O(1) lookup…"></div>
     <div class="modal-actions">
@@ -257,7 +282,13 @@ function parseDMY(str){
   if(str.includes('-'))return new Date(str);
   return null;
 }
+function getSplit(){
+  var s=JSON.parse(localStorage.getItem('srs_split_pref')||'{"r":5,"f":3}');
+  return s;
+}
 function buildSmartQueue(data, todayStr){
+  const SPLIT=getSplit();
+  const RET=SPLIT.r, FRESH=SPLIT.f;
   const isDue=p=>{
     if(!p.reviewDate||p.reviewDate==='')return p.phase==='New'||!p.phase||p.phase==='';
     return p.reviewDate<=todayStr;
@@ -267,15 +298,17 @@ function buildSmartQueue(data, todayStr){
   const smoothDue=data.filter(p=>isDue(p)&&p.phase!=='Struggled'&&p.phase!=='New'&&p.phase!=='');
   const newDue   =data.filter(p=>isDue(p)&&(p.phase==='New'||p.phase===''));
   let blockA=[];
-  // Up to 2 Struggled (most urgent)
-  blockA.push(...shuffle([...struggled]).slice(0,2));
-  // Up to 2 smooth due (oldest review date first)
+  // Struggled first — up to ~40% of retention slots, min 1
+  const strugCap=Math.max(1,Math.ceil(RET*0.4));
+  blockA.push(...shuffle([...struggled]).slice(0,strugCap));
+  // Smooth/S1/S2 due next — oldest reviewDate first — fill toward RET
   const smoothSorted=[...smoothDue].filter(p=>!blockA.find(q=>q.name===p.name))
     .sort((a,b)=>new Date(a.reviewDate)-new Date(b.reviewDate));
-  blockA.push(...smoothSorted.slice(0,2));
-  // 1 wildcard
-  const wildPool=data.filter(p=>isDue(p)&&!blockA.find(q=>q.name===p.name));
-  if(wildPool.length)blockA.push(shuffle([...wildPool])[0]);
+  const smoothCap=Math.max(0,RET-blockA.length-1); // leave 1 for wildcard
+  blockA.push(...smoothSorted.slice(0,smoothCap));
+  // Wildcard fill — top up to RET with anything else due
+  const wildPool=shuffle(data.filter(p=>isDue(p)&&!blockA.find(q=>q.name===p.name)));
+  while(blockA.length<RET&&wildPool.length){blockA.push(wildPool.shift());}
   // BLOCK B: FRESH (up to 3 — from New/unseen problems)
   const freshPool=data.filter(p=>(p.phase==='New'||!p.phase||p.phase==='')&&!blockA.find(q=>q.name===p.name));
   let blockB=[];
@@ -295,6 +328,12 @@ function buildSmartQueue(data, todayStr){
   const oldest=[...freshPool].filter(p=>!blockB.find(q=>q.name===p.name))
     .sort((a,b)=>{const da=parseDMY(a.initialDate),db=parseDMY(b.initialDate);return (da||new Date(0))-(db||new Date(0));});
   if(oldest.length)blockB.push(oldest[0]);
+  // Trim/extend blockB to exactly FRESH count
+  blockB=blockB.slice(0,FRESH);
+  while(blockB.length<FRESH&&freshPool.length){
+    const extra=freshPool.find(p=>!blockB.find(q=>q.name===p.name));
+    if(!extra)break; blockB.push(extra);
+  }
   return {blockA, blockB, all:[...blockA,...blockB]};
 }
 // ── FILTER CONTROLS ──────────────────────────────────────────
@@ -335,6 +374,7 @@ async function loadQueue(){
     const res=await fetch(API_URL+"?t="+Date.now());
     allData=await res.json();
     const todayStr=todayLogical(); // 4 AM boundary
+    updateDrainMeter(allData);
     // Proportion display
     const dueStruggled=allData.filter(p=>!p.completed&&(p.reviewDate<=todayStr)&&p.phase==='Struggled');
     const dueSmooth=allData.filter(p=>!p.completed&&p.reviewDate&&p.reviewDate<=todayStr&&p.phase!=='Struggled'&&p.phase!=='New'&&p.phase!=='');
@@ -394,6 +434,44 @@ function refreshQueue(){
   localStorage.removeItem("srs_queue_names");
   localStorage.removeItem("srs_queue_split");
   loadQueue();
+}
+// ── SPLIT TOGGLE — choose retention/fresh mix per day ──
+function setSplit(r,f,el){
+  localStorage.setItem('srs_split_pref',JSON.stringify({r:r,f:f}));
+  document.querySelectorAll('.split-opt').forEach(b=>b.classList.remove('active'));
+  if(el)el.classList.add('active');
+  const sub=document.getElementById('split-sub');
+  if(sub)sub.textContent=`SM-2 Adaptive · ${r} Retention + ${f} Fresh daily`;
+  // Rebuild today's queue with new split
+  localStorage.removeItem("srs_date");
+  localStorage.removeItem("srs_queue_names");
+  localStorage.removeItem("srs_queue_split");
+  loadQueue();
+}
+function initSplitToggle(){
+  const s=getSplit();
+  document.querySelectorAll('.split-opt').forEach(b=>{
+    const[r,f]=b.dataset.split.split(',').map(Number);
+    if(r===s.r&&f===s.f)b.classList.add('active');else b.classList.remove('active');
+  });
+  const sub=document.getElementById('split-sub');
+  if(sub)sub.textContent=`SM-2 Adaptive · ${s.r} Retention + ${s.f} Fresh daily`;
+}
+// ── DRAIN METER — how many problems still await their FIRST review ──
+function updateDrainMeter(allData){
+  // "Awaiting first review" = phase New (solved once, never SRS-reviewed)
+  const awaiting=allData.filter(p=>p.phase==='New'||!p.phase||p.phase==='').length;
+  const total=allData.length;
+  const reviewed=total-awaiting;
+  const pct=total>0?Math.round((reviewed/total)*100):0;
+  const meter=document.getElementById('drain-meter');
+  const fill=document.getElementById('drain-fill');
+  const nums=document.getElementById('drain-nums');
+  if(meter&&fill&&nums){
+    meter.style.display='block';
+    fill.style.width=pct+'%';
+    nums.textContent=`${reviewed} reviewed · ${awaiting} awaiting first review · ${pct}% done`;
+  }
 }
 // ── RENDER ────────────────────────────────────────────────────
 function renderQueue(problems, showBlocks, retentionCount){
@@ -466,6 +544,7 @@ function renderQueue(problems, showBlocks, retentionCount){
         <span class="timer-display" id="timer-${cardId}">00:00</span>
         <button class="btn-struggled" onclick="updateProblem('${p.name}','Struggled','${cardId}')">⚠ Struggled → ${nextStruggled}d</button>
         <button class="btn-smooth" onclick="updateProblem('${p.name}','Smooth','${cardId}')">✓ Smooth → ${nextSmooth}d</button>
+        <button class="btn-complete" onclick="completeProblem('${p.name}','${cardId}')" title="I know this cold — pull it out of rotation (6-month health check only)">★ Complete</button>
       </div>
       <div class="sm2-preview">
         <span class="sm2-label">SM-2 Preview:</span>
@@ -527,6 +606,25 @@ async function updateProblem(name,action,cardId){
     if(action==='Smooth'&&Math.random()<0.3)confetti({particleCount:40,spread:50,origin:{y:.8},colors:['#39d353','#fff']});
   }catch(e){alert("Sync failed.");card.querySelectorAll('button').forEach(b=>b.disabled=false);}
 }
+// ── COMPLETE — mark known-cold, pull out of rotation ──
+async function completeProblem(name,cardId){
+  if(localStorage.getItem("admin_key")!=="scaler2026"){alert("🔒 READ-ONLY MODE");return;}
+  if(!confirm("Mark \""+name+"\" as Complete?\n\nIt leaves daily rotation and only returns for a health-check in 6 months. Use this only when you know it cold.")){return;}
+  const card=document.getElementById(cardId);
+  card.querySelectorAll('button').forEach(b=>b.disabled=true);
+  if(activeTimers[cardId])clearInterval(activeTimers[cardId]);
+  try{
+    const res=await fetch(API_URL,{method:"POST",body:JSON.stringify({name,action:"Complete",secret:localStorage.getItem("admin_key")})});
+    const r=await res.json();
+    if(r.error||r.status==="Error"){alert("Error: "+(r.error||r.message));card.querySelectorAll('button').forEach(b=>b.disabled=false);return;}
+    confetti({particleCount:100,spread:80,origin:{y:.6},colors:['#a855f7','#c084fc','#fff']});
+    let snap=JSON.parse(localStorage.getItem("srs_queue_names")||"[]");
+    snap=snap.filter(n=>n!==name);
+    localStorage.setItem("srs_queue_names",JSON.stringify(snap));
+    card.style.opacity='0';card.style.transform='scale(0.96)';card.style.transition='.25s';
+    setTimeout(()=>{card.remove();if(!document.querySelectorAll('.problem-card').length)renderQueue([],false);},280);
+  }catch(e){alert("Sync failed.");card.querySelectorAll('button').forEach(b=>b.disabled=false);}
+}
 function triggerSuccess(){
   const end=Date.now()+2500;
   (function f(){
@@ -535,6 +633,7 @@ function triggerSuccess(){
     if(Date.now()<end)requestAnimationFrame(f);
   }());
 }
+initSplitToggle();
 loadQueue();
 </script>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="12f7783a-202a-41a3-b4d4-b8e61a3a575d"></script>
