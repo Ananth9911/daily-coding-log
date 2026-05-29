@@ -1691,13 +1691,13 @@
     "friction": "Struggled",
     "notes": "DFS | Path Tracking",
     "oneLiner": "Find path to node and store it in arraylist and then compare both arraylist",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-05-30",
+    "lastSolved": "2026-05-29",
     "url": "",
-    "ef": "2.0",
-    "interval": "3"
+    "ef": "1.7",
+    "interval": "1"
   },
   {
     "date": "10/04/2026",
