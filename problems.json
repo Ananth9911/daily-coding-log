@@ -2524,13 +2524,13 @@
     "friction": "Smooth",
     "notes": "Two Stacks | Amortized O(1)",
     "oneLiner": "Using stack functions , implementing queue , do with two stacks",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-06-04",
+    "lastSolved": "2026-05-29",
     "url": "",
-    "ef": "2.0",
-    "interval": "3"
+    "ef": "2.1",
+    "interval": "6"
   },
   {
     "date": "19/03/2026",
@@ -6434,13 +6434,13 @@
     "friction": "Smooth",
     "notes": "Nested Loops | Pattern Printing",
     "oneLiner": "Pattern printing",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "Completed",
+    "reviewDate": "2026-11-25",
+    "lastSolved": "2026-05-29",
     "url": "",
     "ef": "3.0",
-    "interval": "3"
+    "interval": "180"
   },
   {
     "date": "02/01/2026",
