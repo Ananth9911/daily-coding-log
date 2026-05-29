@@ -1,6 +1,6 @@
 [
   {
-    "date": "29/05/2026",
+    "date": "30/05/2026",
     "name": "Construct Roads",
     "topic": "Graph",
     "source": "Scaler",
@@ -17,7 +17,7 @@
     "interval": "3"
   },
   {
-    "date": "28/05/2026",
+    "date": "29/05/2026",
     "name": "Floyd Warshall Algorithm",
     "topic": "Graph",
     "source": "Scaler",
@@ -31,6 +31,23 @@
     "lastSolved": "2026-05-28",
     "url": "",
     "ef": "3.0",
+    "interval": "3"
+  },
+  {
+    "date": "28/05/2026",
+    "name": "Batches",
+    "topic": "Disjoint Set Union",
+    "source": "Scaler",
+    "difficulty": "M",
+    "friction": "Smooth",
+    "notes": "Connected Components",
+    "oneLiner": "1. \"Knows each other\" = DSU. 2. Instead of a size[] array, create a strength[] array. Initialize it in the constructor (Watch out: Students are 1-indexed, but the given array is 0-indexed!). 3. The Core Trick: In the Union method, when you attach the smaller component to the larger root (ulp_v), add their strengths: strength[ulp_v] += strength[ulp_u]. 4. The Final Count: Loop 1 to N. A node is the boss of a batch if parent[i] == i. If it is the boss, check if strength[i] >= D and increment your answer",
+    "attempts": "1",
+    "phase": "Smooth",
+    "reviewDate": "2026-05-30",
+    "lastSolved": "2026-05-27",
+    "url": "",
+    "ef": "2.5",
     "interval": "3"
   },
   {
@@ -48,23 +65,6 @@
     "lastSolved": "2026-05-27",
     "url": "",
     "ef": "3.0",
-    "interval": "3"
-  },
-  {
-    "date": "27/05/2026",
-    "name": "Batches",
-    "topic": "Disjoint Set Union",
-    "source": "Scaler",
-    "difficulty": "M",
-    "friction": "Smooth",
-    "notes": "Connected Components",
-    "oneLiner": "1. \"Knows each other\" = DSU. 2. Instead of a size[] array, create a strength[] array. Initialize it in the constructor (Watch out: Students are 1-indexed, but the given array is 0-indexed!). 3. The Core Trick: In the Union method, when you attach the smaller component to the larger root (ulp_v), add their strengths: strength[ulp_v] += strength[ulp_u]. 4. The Final Count: Loop 1 to N. A node is the boss of a batch if parent[i] == i. If it is the boss, check if strength[i] >= D and increment your answer",
-    "attempts": "1",
-    "phase": "Smooth",
-    "reviewDate": "2026-05-30",
-    "lastSolved": "2026-05-27",
-    "url": "",
-    "ef": "2.5",
     "interval": "3"
   },
   {
@@ -195,12 +195,12 @@
     "friction": "Struggled",
     "notes": "Sliding Window | Fixed Window",
     "oneLiner": "The Architecture (Fixed Size): Because any valid permutation of A must be exactly the length of A, the window size never changes. You do not need a while loop to shrink it.The Initial Setup: Create freq_A and freq_B arrays (size 26). Fully populate freq_A, but only populate freq_B with the first A.length() characters of string B. Check if they match using Arrays.equals(); if yes, count++.The Slide ($O(N)$): Loop from i = A.length() to the end of B. Slide the rigid frame by doing exactly two operations:Add Right: Increment the frequency of the new character entering the window: B.charAt(i).Drop Left: Decrement the frequency of the old character falling out of the window: B.charAt(i - A.length()).The Array Index Trap: When dropping the left character, do not accidentally use the raw index math (i - A.length()) inside the frequency array. You must fetch the actual character from string B first, then subtract 'a' to get the correct frequency bucket.",
-    "attempts": "2",
-    "phase": "Struggled",
-    "reviewDate": "2026-05-27",
-    "lastSolved": "2026-05-23",
+    "attempts": "3",
+    "phase": "S1",
+    "reviewDate": "2026-05-31",
+    "lastSolved": "2026-05-30",
     "url": "",
-    "ef": "2.0",
+    "ef": "1.7",
     "interval": "1"
   },
   {
@@ -328,16 +328,16 @@
     "topic": "Tries",
     "source": "Scaler",
     "difficulty": "H",
-    "friction": "Struggled",
+    "friction": "Smooth",
     "notes": "Trie | Top-K",
     "oneLiner": "To build an optimized Autocomplete system, upgrade the standard Trie node to store an ArrayList of the \"Top 5\" heavily weighted words. During insertion, at every single character node you step on, add the current word and its weight to that node's list, sort the list by weight descending, and remove the 6th element if the size exceeds 5. During the search phase, traverse down the prefix. If the path breaks, return -1. If you reach the end of the prefix, simply print the cached Top 5 list sitting inside that final node, completely avoiding the need for a costly DFS traversal.",
-    "attempts": "2",
-    "phase": "Struggled",
-    "reviewDate": "2026-05-22",
-    "lastSolved": "2026-05-18",
+    "attempts": "3",
+    "phase": "S1",
+    "reviewDate": "2026-06-02",
+    "lastSolved": "2026-05-30",
     "url": "",
-    "ef": "2.0",
-    "interval": "1"
+    "ef": "2.1",
+    "interval": "3"
   },
   {
     "date": "13/05/2026",
@@ -1433,16 +1433,16 @@
     "topic": "Heap",
     "source": "Scaler",
     "difficulty": "M",
-    "friction": "",
+    "friction": "Smooth",
     "notes": "Min Heap | Greedy",
     "oneLiner": "Insert all rope lengths into a Min Heap (PriorityQueue). While the heap has more than one element, extract the two smallest ropes, add their sum to a running total cost, and insert that combined sum back into the heap.",
-    "attempts": "1",
-    "phase": "Smooth",
-    "reviewDate": "2026-04-24",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S2",
+    "reviewDate": "2026-06-07",
+    "lastSolved": "2026-05-30",
     "url": "",
-    "ef": "2.5",
-    "interval": "3"
+    "ef": "2.6",
+    "interval": "8"
   },
   {
     "date": "16/04/2026",
@@ -1640,13 +1640,13 @@
     "friction": "Smooth",
     "notes": "BST Traversal",
     "oneLiner": "compare each integer with root and move accordingly",
-    "attempts": "2",
-    "phase": "S1",
-    "reviewDate": "2026-04-24",
-    "lastSolved": "",
+    "attempts": "3",
+    "phase": "S2",
+    "reviewDate": "2026-06-17",
+    "lastSolved": "2026-05-30",
     "url": "",
-    "ef": "2.5",
-    "interval": "7"
+    "ef": "2.6",
+    "interval": "18"
   },
   {
     "date": "11/04/2026",
@@ -2113,16 +2113,16 @@
     "topic": "Maths",
     "source": "Scaler",
     "difficulty": "H",
-    "friction": "Struggled",
+    "friction": "Smooth",
     "notes": "Sieve of Eratosthenes",
     "oneLiner": "Sieve of Eratosthenes",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-06-05",
+    "lastSolved": "2026-05-30",
     "url": "",
-    "ef": "2.0",
-    "interval": "3"
+    "ef": "2.1",
+    "interval": "6"
   },
   {
     "date": "29/03/2026",
