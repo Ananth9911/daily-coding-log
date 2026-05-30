@@ -1,19 +1,19 @@
 [
   {
-    "smooth": 51,
+    "smooth": 52,
     "struggled": 11,
     "hard": 23,
     "total": 125,
     "topic": "Array",
-    "mastery": 41
+    "mastery": 42
   },
   {
-    "smooth": 97,
+    "smooth": 98,
     "struggled": 5,
     "hard": 0,
     "total": 114,
     "topic": "Basic",
-    "mastery": 85
+    "mastery": 86
   },
   {
     "smooth": 14,
@@ -96,12 +96,12 @@
     "mastery": 25
   },
   {
-    "smooth": 3,
-    "struggled": 5,
+    "smooth": 4,
+    "struggled": 4,
     "hard": 8,
     "total": 8,
     "topic": "Backtracking",
-    "mastery": 38
+    "mastery": 50
   },
   {
     "smooth": 8,

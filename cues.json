@@ -493,7 +493,7 @@
     "exampleProblem": "Generate Subsets",
     "oneLiner": "Recursively build subsets by making a \"take it\" choice (add the element, explore, then erase it) and a \"leave it\" choice (just explore) at each index, ensuring you save a deep copy of the shared list when you reach the end of the array.",
     "difficulty": "H",
-    "friction": "Struggled"
+    "friction": "Smooth"
   },
   {
     "topic": "Backtracking",
@@ -605,7 +605,7 @@
     "exampleProblem": "Heap Queries",
     "oneLiner": "Heap problem based on queries",
     "difficulty": "M",
-    "friction": ""
+    "friction": "Smooth"
   },
   {
     "topic": "Heap",
