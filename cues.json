@@ -725,7 +725,7 @@
     "exampleProblem": "0-1 Knapsack II - Optimised",
     "oneLiner": "Treat the outer loop i as introducing a \"new item\" and the inner loop j as testing every possible \"bag size,\" where the array index always represents the capacity. Read the transition equation as a physical choice for the current bag size j: you either skip the item and keep yesterday's best profit (prev[j]), or pack it by adding its value to yesterday's best profit for the leftover space (prev[j - weight])",
     "difficulty": "H",
-    "friction": ""
+    "friction": "Struggled"
   },
   {
     "topic": "Graph",
@@ -741,7 +741,7 @@
     "exampleProblem": "Construction Cost",
     "oneLiner": "Convert the Edge List into an Adjacency List first. Use a Min-Heap (Priority Queue) to greedily pick the minimum weight edge that connects an unvisited node to the growing tree. Always maintain a visited array to prevent cycles, and ensure the Priority Queue is initialized with a custom comparator for the weights",
     "difficulty": "H",
-    "friction": ""
+    "friction": "Smooth"
   },
   {
     "topic": "Graph",

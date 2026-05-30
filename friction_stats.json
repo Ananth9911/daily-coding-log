@@ -32,12 +32,12 @@
     "mastery": 32
   },
   {
-    "smooth": 16,
-    "struggled": 2,
+    "smooth": 17,
+    "struggled": 3,
     "hard": 21,
     "total": 21,
     "topic": "DP",
-    "mastery": 76
+    "mastery": 81
   },
   {
     "smooth": 7,
@@ -48,12 +48,12 @@
     "mastery": 41
   },
   {
-    "smooth": 11,
+    "smooth": 12,
     "struggled": 4,
     "hard": 12,
     "total": 16,
     "topic": "Graph",
-    "mastery": 69
+    "mastery": 75
   },
   {
     "smooth": 4,
