@@ -1,6 +1,6 @@
 [
   {
-    "date": "30/05/2026",
+    "date": "31/05/2026",
     "name": "Construct Roads",
     "topic": "Graph",
     "source": "Scaler",
@@ -17,7 +17,7 @@
     "interval": "3"
   },
   {
-    "date": "29/05/2026",
+    "date": "30/05/2026",
     "name": "Floyd Warshall Algorithm",
     "topic": "Graph",
     "source": "Scaler",
@@ -34,7 +34,7 @@
     "interval": "3"
   },
   {
-    "date": "28/05/2026",
+    "date": "29/05/2026",
     "name": "Batches",
     "topic": "Disjoint Set Union",
     "source": "Scaler",
@@ -51,7 +51,7 @@
     "interval": "3"
   },
   {
-    "date": "27/05/2026",
+    "date": "28/05/2026",
     "name": "Coloring a Cycle Graph",
     "topic": "Graph",
     "source": "Scaler",
@@ -68,7 +68,7 @@
     "interval": "3"
   },
   {
-    "date": "26/05/2026",
+    "date": "27/05/2026",
     "name": "Check Bipartite Graph",
     "topic": "Graph",
     "source": "Scaler",
@@ -85,7 +85,7 @@
     "interval": "3"
   },
   {
-    "date": "25/05/2026",
+    "date": "26/05/2026",
     "name": "Palindrome Partitioning II",
     "topic": "DP",
     "source": "Scaler",
@@ -102,7 +102,7 @@
     "interval": "1"
   },
   {
-    "date": "24/05/2026",
+    "date": "25/05/2026",
     "name": "Palindromic Substrings Count",
     "topic": "DP",
     "source": "Scaler",
@@ -119,7 +119,7 @@
     "interval": "3"
   },
   {
-    "date": "23/05/2026",
+    "date": "24/05/2026",
     "name": "Russian Doll Envelopes",
     "topic": "DP",
     "source": "Scaler",
@@ -136,7 +136,7 @@
     "interval": "3"
   },
   {
-    "date": "22/05/2026",
+    "date": "23/05/2026",
     "name": "Longest Increasing Subsequence",
     "topic": "DP",
     "source": "Scaler",
@@ -153,7 +153,7 @@
     "interval": "3"
   },
   {
-    "date": "21/05/2026",
+    "date": "22/05/2026",
     "name": "Edit Distance",
     "topic": "DP",
     "source": "Scaler",
@@ -170,7 +170,7 @@
     "interval": "3"
   },
   {
-    "date": "20/05/2026",
+    "date": "21/05/2026",
     "name": "Longest Common Subsequence",
     "topic": "DP",
     "source": "Scaler",
@@ -182,6 +182,23 @@
     "phase": "Smooth",
     "reviewDate": "2026-05-29",
     "lastSolved": "2026-05-21",
+    "url": "",
+    "ef": "2.0",
+    "interval": "3"
+  },
+  {
+    "date": "20/05/2026",
+    "name": "Period of a string (KMP-LPS)",
+    "topic": "String",
+    "source": "Scaler",
+    "difficulty": "H",
+    "friction": "",
+    "notes": "KMP Failure Function",
+    "oneLiner": "The Core Concept: The \"Period\" of a string is the minimum distance k between repeating characters, where $A[i] == A[i \\% k]$.The LPS Secret: The last value of the LPS array (LPS[N-1]) tells you the length of the longest prefix that perfectly overlaps with the suffix of the entire string.The Visual Overlap: If a prefix of length $L$ perfectly matches a suffix of length $L$, it means every character in the overlap is exactly $N - L$ steps away from its identical twin.The Golden Formula ($O(N)$): Run KMP to generate the LPS array for the string. The minimum period is always strictly mathematically defined as: $k = N - LPS[N-1]$",
+    "attempts": "1",
+    "phase": "Smooth",
+    "reviewDate": "2026-05-27",
+    "lastSolved": "2026-05-19",
     "url": "",
     "ef": "2.0",
     "interval": "3"
@@ -212,23 +229,6 @@
     "friction": "",
     "notes": "KMP Pattern Matching",
     "oneLiner": "The \"Cyclic Shift = KMP\" SRS Cheat SheetThe XOR Decoy: X ^ Y = 0 mathematically guarantees that X == Y. The problem is simply asking: \"How many cyclic shifts of B are exactly identical to A?\"The Cyclic Trick (B + B): Never use Frequency Maps for cyclic shifts, as they ignore relative character order. To instantly generate every possible cyclic shift of a string, concatenate it to itself. Your new search space is Text = (B + B).substring(0, 2 * N - 1).The Architecture Shift: The problem has now been cleanly converted from a bit-manipulation/permutation disguise into a classic String Pattern Matching problem: Find how many times Pattern A appears inside Text.The KMP Execution ($O(N)$): Create the master string S = A + \"#\" + Text. Generate the LPS array for S. Iterate through the LPS array, and every time lps[i] == A.length(), increment your count.",
-    "attempts": "1",
-    "phase": "Smooth",
-    "reviewDate": "2026-05-27",
-    "lastSolved": "2026-05-19",
-    "url": "",
-    "ef": "2.0",
-    "interval": "3"
-  },
-  {
-    "date": "19/05/2026",
-    "name": "Period of a string (KMP-LPS)",
-    "topic": "String",
-    "source": "Scaler",
-    "difficulty": "H",
-    "friction": "",
-    "notes": "KMP Failure Function",
-    "oneLiner": "The Core Concept: The \"Period\" of a string is the minimum distance k between repeating characters, where $A[i] == A[i \\% k]$.The LPS Secret: The last value of the LPS array (LPS[N-1]) tells you the length of the longest prefix that perfectly overlaps with the suffix of the entire string.The Visual Overlap: If a prefix of length $L$ perfectly matches a suffix of length $L$, it means every character in the overlap is exactly $N - L$ steps away from its identical twin.The Golden Formula ($O(N)$): Run KMP to generate the LPS array for the string. The minimum period is always strictly mathematically defined as: $k = N - LPS[N-1]$",
     "attempts": "1",
     "phase": "Smooth",
     "reviewDate": "2026-05-27",
@@ -447,16 +447,16 @@
     "topic": "DP",
     "source": "Scaler",
     "difficulty": "H",
-    "friction": "Struggled",
+    "friction": "Smooth",
     "notes": "DP | HashSet",
     "oneLiner": "The Architecture: Convert the dictionary to a HashSet for $O(1)$ lookups. Use a Boolean[] dp array of the same length as the string to store whether a breakdown is possible from a specific index. The Logic: Loop i from idx + 1 to A.length(). If dict.contains(A.substring(idx, i)) AND the recursive call canBreak(i) is true, return true. State Cleanup: Remember, because we are passing a new index i into the recursive function and not modifying a global string/array, there is no \"undo\" backtracking required!",
-    "attempts": "2",
-    "phase": "Struggled",
-    "reviewDate": "2026-05-19",
-    "lastSolved": "2026-05-15",
+    "attempts": "3",
+    "phase": "S1",
+    "reviewDate": "2026-06-02",
+    "lastSolved": "2026-05-30",
     "url": "",
-    "ef": "2.0",
-    "interval": "1"
+    "ef": "2.1",
+    "interval": "3"
   },
   {
     "date": "08/05/2026",
