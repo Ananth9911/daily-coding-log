@@ -613,7 +613,7 @@
     "exampleProblem": "Running Median",
     "oneLiner": "Maintain a Max Heap for the smaller half of the stream and a Min Heap for the larger half, rebalancing immediately if their size difference exceeds 1. To find the median, return the top of the larger heap. If sizes are equal, return the top of the Max Heap (Do not take the average!)",
     "difficulty": "M",
-    "friction": ""
+    "friction": "Smooth"
   },
   {
     "topic": "Greedy",
@@ -733,7 +733,7 @@
     "exampleProblem": "Cycle in Directed Graph",
     "oneLiner": "Use two boolean arrays: visited (global memory to avoid redundant work) and pathVisited (active path memory to detect cycles). When entering a node, mark both as true; if you ever encounter a neighbor where pathVisited is already true, you have found a cycle! When backtracking out of a node, set pathVisited to false (picking up your breadcrumb), but leave visited as true to ensure you never process that node again.",
     "difficulty": "H",
-    "friction": ""
+    "friction": "Struggled"
   },
   {
     "topic": "Graph",
@@ -916,6 +916,14 @@
     "cue": "Tree | LinkedList Restructuring",
     "exampleProblem": "Flatten Binary Tree to Linked List",
     "oneLiner": "State Passing: Use a custom Pair(head, tail) to pass the start and end of flattened subtrees upwards.  Traversal: Do a Post-Order traversal (lp = getanswer(left), rp = getanswer(right)).  The Rewire (4 Cases):  Leaf: Return (root, root).  No Left Child: Return (root, right.tail).  No Right Child: Move left to right (root.left = null; root.right = left.head), return (root, left.tail).  Both Children: Connect them! root.left = null, root.right = left.head, left.tail.right = right.head. Return (root, right.tail)",
+    "difficulty": "L",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Backtracking",
+    "cue": "Backtracking | Subset Partitioning",
+    "exampleProblem": "Partition to K Equal Sum Subsets",
+    "oneLiner": "Prerequisite Check: Total sum must be perfectly divisible by $K$. Each subset target is totalSum / k.Base Case 1 (Global Success): If k == 1, return true. (If $K-1$ buckets are perfectly filled, the remaining unused numbers must naturally sum to the target).Base Case 2 (Bucket Filled): If currsum == targetsum, transition to the next bucket by recursing with idx = 0, currsum = 0, and k - 1.Branching & Pruning: Loop from idx to the end of the array. Only process if visited[i] == false AND currsum + nums[i] <= targetsum.State Reset (Backtrack): Mark visited[i] = true and recurse with idx = i + 1. If the path returns false, undo the choice by setting visited[i] = false and continue the loop",
     "difficulty": "L",
     "friction": "Smooth"
   }

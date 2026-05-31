@@ -1,19 +1,19 @@
 [
   {
-    "smooth": 52,
-    "struggled": 11,
+    "smooth": 53,
+    "struggled": 10,
     "hard": 23,
     "total": 125,
     "topic": "Array",
     "mastery": 42
   },
   {
-    "smooth": 98,
+    "smooth": 99,
     "struggled": 5,
     "hard": 0,
     "total": 114,
     "topic": "Basic",
-    "mastery": 86
+    "mastery": 87
   },
   {
     "smooth": 15,
@@ -48,20 +48,20 @@
     "mastery": 41
   },
   {
-    "smooth": 12,
-    "struggled": 4,
+    "smooth": 13,
+    "struggled": 5,
     "hard": 12,
     "total": 16,
     "topic": "Graph",
-    "mastery": 75
+    "mastery": 81
   },
   {
-    "smooth": 4,
-    "struggled": 6,
+    "smooth": 5,
+    "struggled": 5,
     "hard": 6,
     "total": 14,
     "topic": "Maths",
-    "mastery": 29
+    "mastery": 36
   },
   {
     "smooth": 4,
@@ -72,12 +72,20 @@
     "mastery": 31
   },
   {
-    "smooth": 2,
+    "smooth": 3,
     "struggled": 0,
     "hard": 5,
     "total": 11,
     "topic": "Bit",
-    "mastery": 18
+    "mastery": 27
+  },
+  {
+    "smooth": 5,
+    "struggled": 4,
+    "hard": 8,
+    "total": 9,
+    "topic": "Backtracking",
+    "mastery": 56
   },
   {
     "smooth": 2,
@@ -94,14 +102,6 @@
     "total": 8,
     "topic": "Sorting",
     "mastery": 25
-  },
-  {
-    "smooth": 4,
-    "struggled": 4,
-    "hard": 8,
-    "total": 8,
-    "topic": "Backtracking",
-    "mastery": 50
   },
   {
     "smooth": 8,
