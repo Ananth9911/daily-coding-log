@@ -910,5 +910,13 @@
     "oneLiner": "Use Colour Grading Bipartite technique using DFS",
     "difficulty": "L",
     "friction": "Smooth"
+  },
+  {
+    "topic": "Tree",
+    "cue": "Tree | LinkedList Restructuring",
+    "exampleProblem": "Flatten Binary Tree to Linked List",
+    "oneLiner": "State Passing: Use a custom Pair(head, tail) to pass the start and end of flattened subtrees upwards.  Traversal: Do a Post-Order traversal (lp = getanswer(left), rp = getanswer(right)).  The Rewire (4 Cases):  Leaf: Return (root, root).  No Left Child: Return (root, right.tail).  No Right Child: Move left to right (root.left = null; root.right = left.head), return (root, left.tail).  Both Children: Connect them! root.left = null, root.right = left.head, left.tail.right = right.head. Return (root, right.tail)",
+    "difficulty": "L",
+    "friction": "Smooth"
   }
 ]
