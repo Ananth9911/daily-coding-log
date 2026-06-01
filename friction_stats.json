@@ -1,11 +1,11 @@
 [
   {
-    "smooth": 53,
-    "struggled": 10,
+    "smooth": 54,
+    "struggled": 11,
     "hard": 23,
     "total": 125,
     "topic": "Array",
-    "mastery": 42
+    "mastery": 43
   },
   {
     "smooth": 100,
@@ -48,12 +48,12 @@
     "mastery": 41
   },
   {
-    "smooth": 14,
+    "smooth": 15,
     "struggled": 4,
     "hard": 12,
     "total": 16,
     "topic": "Graph",
-    "mastery": 88
+    "mastery": 94
   },
   {
     "smooth": 5,
@@ -64,12 +64,12 @@
     "mastery": 36
   },
   {
-    "smooth": 4,
+    "smooth": 5,
     "struggled": 3,
     "hard": 6,
     "total": 13,
     "topic": "LinkedList",
-    "mastery": 31
+    "mastery": 38
   },
   {
     "smooth": 3,
