@@ -6315,13 +6315,13 @@
     "friction": "Smooth",
     "notes": "Nested Loops | Pattern Printing",
     "oneLiner": "Pattern printing",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "Completed",
+    "reviewDate": "2026-11-28",
+    "lastSolved": "2026-06-01",
     "url": "",
-    "ef": "2.5",
-    "interval": "3"
+    "ef": "3.0",
+    "interval": "180"
   },
   {
     "date": "04/01/2026",
