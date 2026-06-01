@@ -621,7 +621,7 @@
     "exampleProblem": "Finish Maximum Jobs",
     "oneLiner": "Bundle the start and end times into a custom object and sort the array in ascending order strictly by their end times. Iterate through the sorted list, incrementing your count and updating your lastEndTime tracker only when a job's start time is greater than or equal to the previous job's end time",
     "difficulty": "H",
-    "friction": ""
+    "friction": "Smooth"
   },
   {
     "topic": "Heap",
