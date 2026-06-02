@@ -1,5 +1,22 @@
 [
   {
+    "date": "02/06/2026",
+    "name": "Two Sum",
+    "topic": "HashMap",
+    "source": "Scaler",
+    "difficulty": "L",
+    "friction": "Smooth",
+    "notes": "HashMap",
+    "oneLiner": "Initialize a HashMap<Integer, Integer>.  Loop through nums. Calculate complement = target - nums[i].  Check: Does map contain complement?  If yes, return new int[] {map.get(complement), i}.  If no, map.put(nums[i], i)",
+    "attempts": "1",
+    "phase": "Smooth",
+    "reviewDate": "2026-06-05",
+    "lastSolved": "2026-06-02",
+    "url": "",
+    "ef": "3.0",
+    "interval": "3"
+  },
+  {
     "date": "01/06/2026",
     "name": "Best Time to Buy and Sell Stock III",
     "topic": "DP",
@@ -1059,16 +1076,16 @@
     "topic": "DP",
     "source": "Scaler",
     "difficulty": "H",
-    "friction": "Struggled",
+    "friction": "Smooth",
     "notes": "DP | Digit DP",
     "oneLiner": "To find the number of ways to make sum j using i digits, test every possible last digit d (from 0 to 9) and add the valid combinations from the previous length: dp[i][j] = (dp[i][j] + dp[i-1][j-d]) % MOD. For your 1-digit base case, ensure you initialize dp[1][i] = 1 only up to Math.min(9, B) to prevent index out of bounds when the target sum is extremely small.",
-    "attempts": "3",
-    "phase": "Struggled",
-    "reviewDate": "2026-05-25",
-    "lastSolved": "2026-05-21",
+    "attempts": "4",
+    "phase": "S1",
+    "reviewDate": "2026-06-05",
+    "lastSolved": "2026-06-02",
     "url": "",
-    "ef": "2.0",
-    "interval": "1"
+    "ef": "2.1",
+    "interval": "3"
   },
   {
     "date": "22/04/2026",
