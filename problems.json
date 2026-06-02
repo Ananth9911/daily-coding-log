@@ -3340,13 +3340,13 @@
     "friction": "Smooth",
     "notes": "Fast Power | Recursion",
     "oneLiner": "Do recursion",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-06-08",
+    "lastSolved": "2026-06-02",
     "url": "",
-    "ef": "2.0",
-    "interval": "3"
+    "ef": "2.1",
+    "interval": "6"
   },
   {
     "date": "05/03/2026",
@@ -6366,13 +6366,13 @@
     "friction": "Smooth",
     "notes": "Nested Loops | Pattern Printing",
     "oneLiner": "Figure out loop and ranges",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S2",
+    "reviewDate": "2026-06-10",
+    "lastSolved": "2026-06-02",
     "url": "",
-    "ef": "2.5",
-    "interval": "3"
+    "ef": "2.6",
+    "interval": "8"
   },
   {
     "date": "04/01/2026",

@@ -8,12 +8,12 @@
     "mastery": 43
   },
   {
-    "smooth": 100,
+    "smooth": 101,
     "struggled": 5,
     "hard": 0,
     "total": 114,
     "topic": "Basic",
-    "mastery": 88
+    "mastery": 89
   },
   {
     "smooth": 15,
@@ -88,12 +88,12 @@
     "mastery": 56
   },
   {
-    "smooth": 2,
+    "smooth": 3,
     "struggled": 0,
     "hard": 8,
     "total": 8,
     "topic": "Math",
-    "mastery": 25
+    "mastery": 38
   },
   {
     "smooth": 2,
