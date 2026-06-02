@@ -32,12 +32,12 @@
     "mastery": 32
   },
   {
-    "smooth": 20,
-    "struggled": 1,
+    "smooth": 21,
+    "struggled": 2,
     "hard": 21,
     "total": 22,
     "topic": "DP",
-    "mastery": 91
+    "mastery": 95
   },
   {
     "smooth": 7,
@@ -48,20 +48,20 @@
     "mastery": 41
   },
   {
-    "smooth": 15,
+    "smooth": 16,
     "struggled": 4,
     "hard": 12,
     "total": 16,
     "topic": "Graph",
-    "mastery": 94
+    "mastery": 100
   },
   {
-    "smooth": 5,
+    "smooth": 6,
     "struggled": 5,
     "hard": 6,
     "total": 14,
     "topic": "Maths",
-    "mastery": 36
+    "mastery": 43
   },
   {
     "smooth": 5,
@@ -88,12 +88,12 @@
     "mastery": 56
   },
   {
-    "smooth": 3,
-    "struggled": 0,
+    "smooth": 4,
+    "struggled": 1,
     "hard": 8,
     "total": 8,
     "topic": "Math",
-    "mastery": 38
+    "mastery": 50
   },
   {
     "smooth": 2,
@@ -105,7 +105,7 @@
   },
   {
     "smooth": 8,
-    "struggled": 0,
+    "struggled": 1,
     "hard": 4,
     "total": 8,
     "topic": "Heap",

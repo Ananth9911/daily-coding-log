@@ -629,7 +629,7 @@
     "exampleProblem": "Merge K Sorted Lists",
     "oneLiner": "To merge K sorted linked lists, push the head of each list into a Min Heap using a custom value comparator. Pop the smallest node, attach it to your dummy tail, and if poppedNode.next exists, push it into the heap",
     "difficulty": "H",
-    "friction": ""
+    "friction": "Struggled"
   },
   {
     "topic": "Heap",
@@ -637,7 +637,7 @@
     "exampleProblem": "Ath largest element",
     "oneLiner": "To find the A-th largest element, first pad the answer array with A-1 negative ones and build an initial Min Heap using the first A elements. Then, iterate the rest of the array: if the incoming element is greater than heap.peek(), poll() the root and add the new element, appending heap.peek() to your answer array at every step",
     "difficulty": "H",
-    "friction": ""
+    "friction": "Smooth"
   },
   {
     "topic": "Array",
