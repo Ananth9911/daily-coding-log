@@ -8,7 +8,7 @@
     "mastery": 43
   },
   {
-    "smooth": 101,
+    "smooth": 102,
     "struggled": 5,
     "hard": 0,
     "total": 114,
@@ -40,12 +40,12 @@
     "mastery": 95
   },
   {
-    "smooth": 7,
+    "smooth": 8,
     "struggled": 1,
     "hard": 5,
     "total": 17,
     "topic": "Hashing",
-    "mastery": 41
+    "mastery": 47
   },
   {
     "smooth": 16,
@@ -96,12 +96,12 @@
     "mastery": 50
   },
   {
-    "smooth": 2,
+    "smooth": 3,
     "struggled": 0,
     "hard": 2,
     "total": 8,
     "topic": "Sorting",
-    "mastery": 25
+    "mastery": 38
   },
   {
     "smooth": 8,

@@ -1297,16 +1297,16 @@
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
-    "friction": "",
+    "friction": "Smooth",
     "notes": "Simulation",
     "oneLiner": "Extract each digital and decide",
-    "attempts": "1",
-    "phase": "Smooth",
-    "reviewDate": "2026-04-27",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "Completed",
+    "reviewDate": "2026-11-30",
+    "lastSolved": "2026-06-03",
     "url": "",
     "ef": "3.0",
-    "interval": "3"
+    "interval": "180"
   },
   {
     "date": "19/04/2026",
@@ -1463,7 +1463,7 @@
   },
   {
     "date": "18/04/2026",
-    "name": "Flipkart's Challenge in Effective Inventory Management",
+    "name": "Flipkart's Challenge",
     "topic": "Heap",
     "source": "Scaler",
     "difficulty": "H",
@@ -2881,13 +2881,13 @@
     "friction": "Smooth",
     "notes": "Two Pointer | Sorting",
     "oneLiner": "To find pairs with a specific difference, I must check my history for BOTH the number that is B smaller than me AND the number that is B larger than me, unless B is 0",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-06-09",
+    "lastSolved": "2026-06-03",
     "url": "",
-    "ef": "2.0",
-    "interval": "3"
+    "ef": "2.1",
+    "interval": "6"
   },
   {
     "date": "13/03/2026",
@@ -3085,13 +3085,13 @@
     "friction": "Smooth",
     "notes": "Dutch National Flag | Count Sort",
     "oneLiner": "Count sort Algo, find freq array and then insert i val times into A\n\nThis can also done by Dutch National Flag algorithm , simple three pointer mid ,low, high and do swapping",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S2",
+    "reviewDate": "2026-06-11",
+    "lastSolved": "2026-06-03",
     "url": "",
-    "ef": "2.5",
-    "interval": "3"
+    "ef": "2.6",
+    "interval": "8"
   },
   {
     "date": "09/03/2026",
@@ -6383,13 +6383,13 @@
     "friction": "Smooth",
     "notes": "Simulation",
     "oneLiner": "It is armstrong number",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S2",
+    "reviewDate": "2026-06-12",
+    "lastSolved": "2026-06-03",
     "url": "",
-    "ef": "3.0",
-    "interval": "3"
+    "ef": "3.1",
+    "interval": "9"
   },
   {
     "date": "03/01/2026",
