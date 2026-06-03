@@ -1,6 +1,6 @@
 [
   {
-    "date": "02/06/2026",
+    "date": "04/06/2026",
     "name": "Two Sum",
     "topic": "HashMap",
     "source": "LeetCode",
@@ -17,7 +17,7 @@
     "interval": "3"
   },
   {
-    "date": "01/06/2026",
+    "date": "03/06/2026",
     "name": "Best Time to Buy and Sell Stock III",
     "topic": "DP",
     "source": "LeetCode",
@@ -34,14 +34,14 @@
     "interval": "3"
   },
   {
-    "date": "31/05/2026",
-    "name": "Flatten Binary Tree to Linked List",
-    "topic": "Tree",
+    "date": "02/06/2026",
+    "name": "Partition to K Equal Sum Subsets",
+    "topic": "Backtracking",
     "source": "LeetCode",
     "difficulty": "L",
     "friction": "Smooth",
-    "notes": "Tree | LinkedList Restructuring",
-    "oneLiner": "State Passing: Use a custom Pair(head, tail) to pass the start and end of flattened subtrees upwards.  Traversal: Do a Post-Order traversal (lp = getanswer(left), rp = getanswer(right)).  The Rewire (4 Cases):  Leaf: Return (root, root).  No Left Child: Return (root, right.tail).  No Right Child: Move left to right (root.left = null; root.right = left.head), return (root, left.tail).  Both Children: Connect them! root.left = null, root.right = left.head, left.tail.right = right.head. Return (root, right.tail)",
+    "notes": "Backtracking | Subset Partitioning",
+    "oneLiner": "Prerequisite Check: Total sum must be perfectly divisible by $K$. Each subset target is totalSum / k.Base Case 1 (Global Success): If k == 1, return true. (If $K-1$ buckets are perfectly filled, the remaining unused numbers must naturally sum to the target).Base Case 2 (Bucket Filled): If currsum == targetsum, transition to the next bucket by recursing with idx = 0, currsum = 0, and k - 1.Branching & Pruning: Loop from idx to the end of the array. Only process if visited[i] == false AND currsum + nums[i] <= targetsum.State Reset (Backtrack): Mark visited[i] = true and recurse with idx = i + 1. If the path returns false, undo the choice by setting visited[i] = false and continue the loop",
     "attempts": "1",
     "phase": "Smooth",
     "reviewDate": "2026-06-03",
@@ -51,7 +51,7 @@
     "interval": "3"
   },
   {
-    "date": "31/05/2026",
+    "date": "01/06/2026",
     "name": "Insert Delete GetRandom",
     "topic": "HashMap",
     "source": "LeetCode",
@@ -69,13 +69,13 @@
   },
   {
     "date": "31/05/2026",
-    "name": "Partition to K Equal Sum Subsets",
-    "topic": "Backtracking",
+    "name": "Flatten Binary Tree to Linked List",
+    "topic": "Tree",
     "source": "LeetCode",
     "difficulty": "L",
     "friction": "Smooth",
-    "notes": "Backtracking | Subset Partitioning",
-    "oneLiner": "Prerequisite Check: Total sum must be perfectly divisible by $K$. Each subset target is totalSum / k.Base Case 1 (Global Success): If k == 1, return true. (If $K-1$ buckets are perfectly filled, the remaining unused numbers must naturally sum to the target).Base Case 2 (Bucket Filled): If currsum == targetsum, transition to the next bucket by recursing with idx = 0, currsum = 0, and k - 1.Branching & Pruning: Loop from idx to the end of the array. Only process if visited[i] == false AND currsum + nums[i] <= targetsum.State Reset (Backtrack): Mark visited[i] = true and recurse with idx = i + 1. If the path returns false, undo the choice by setting visited[i] = false and continue the loop",
+    "notes": "Tree | LinkedList Restructuring",
+    "oneLiner": "State Passing: Use a custom Pair(head, tail) to pass the start and end of flattened subtrees upwards.  Traversal: Do a Post-Order traversal (lp = getanswer(left), rp = getanswer(right)).  The Rewire (4 Cases):  Leaf: Return (root, root).  No Left Child: Return (root, right.tail).  No Right Child: Move left to right (root.left = null; root.right = left.head), return (root, left.tail).  Both Children: Connect them! root.left = null, root.right = left.head, left.tail.right = right.head. Return (root, right.tail)",
     "attempts": "1",
     "phase": "Smooth",
     "reviewDate": "2026-06-03",
