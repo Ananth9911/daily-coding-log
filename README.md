@@ -1,7 +1,7 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker — FAANG Sprint 2026
 - **Total Problems Solved:** 452 🔥
-- **Overall Mastery:** 61% Smooth | Hard: 143 | Medium: 108
+- **Overall Mastery:** 62% Smooth | Hard: 143 | Medium: 108
 - **System Status:** Online 🟢
 
 ### 🎓 Curriculum Progress
@@ -16,7 +16,7 @@
 | 31/05/2026 | Flatten Binary Tree to Linked List | Tree | 🟢 | Smooth |
 | 31/05/2026 | Insert Delete GetRandom | HashMap | 🟢 | Smooth |
 | 31/05/2026 | Partition to K Equal Sum Subsets | Backtracking | 🟢 | Smooth |
-| 30/05/2026 | Floyd Warshall Algorithm | Graph | 🟢 | Smooth |
+| 30/05/2026 | Floyd Warshall Algorithm | Graph | 🟢 | S1 |
 | 30/05/2026 | Construct Roads | Graph | 🟢 | Smooth |
 | 29/05/2026 | Batches | Disjoint Set Union | 🟡 | Smooth |
 | 28/05/2026 | Coloring a Cycle Graph | Graph | 🟢 | Smooth |

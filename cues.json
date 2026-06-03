@@ -885,7 +885,7 @@
     "exampleProblem": "Palindrome Partitioning II",
     "oneLiner": "The FAANG Trap: Do not write a 1D recursive function that uses a while loop to check if a string is a palindrome. That creates an $O(N^3)$ algorithm that will hit TLE. You must split the problem into two distinct DP phases to achieve $O(N^2)$.Phase 1: The 2D Palindrome Cache (The Lookup Table): * Use the \"Gap Strategy\" (diagonal traversal) to build a boolean[][] isPal table.isPal[i][j] is true if the substring from i to j is a palindrome. This gives you $O(1)$ lookups for Phase 2.Phase 2: The 1D Cuts Array (The State Definition): * cuts[i] represents the minimum number of cuts needed to perfectly partition the prefix string from index 0 to i.The Partition Transition:Base Case: If isPal[0][i] == true, the whole prefix is a palindrome. It needs 0 cuts! (cuts[i] = 0).The Cut Loop: If it's not a palindrome, try placing a cut at every index j (from 1 to i).If the right side of the cut is a palindrome (isPal[j][i] == true), then the total cuts = the cuts needed for the left side plus one new cut.cuts[i] = Math.min(cuts[i], cuts[j-1] + 1)",
     "difficulty": "H",
-    "friction": ""
+    "friction": "Struggled"
   },
   {
     "topic": "Graph",

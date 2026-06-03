@@ -16,12 +16,12 @@
     "mastery": 89
   },
   {
-    "smooth": 15,
+    "smooth": 16,
     "struggled": 21,
     "hard": 15,
     "total": 36,
     "topic": "Tree",
-    "mastery": 42
+    "mastery": 44
   },
   {
     "smooth": 8,
@@ -32,12 +32,12 @@
     "mastery": 32
   },
   {
-    "smooth": 21,
-    "struggled": 2,
+    "smooth": 22,
+    "struggled": 3,
     "hard": 21,
     "total": 22,
     "topic": "DP",
-    "mastery": 95
+    "mastery": 100
   },
   {
     "smooth": 8,
@@ -49,7 +49,7 @@
   },
   {
     "smooth": 16,
-    "struggled": 4,
+    "struggled": 5,
     "hard": 12,
     "total": 16,
     "topic": "Graph",
