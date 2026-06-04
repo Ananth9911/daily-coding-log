@@ -1470,13 +1470,13 @@
     "friction": "Smooth",
     "notes": "Greedy | Min Heap",
     "oneLiner": "Pair the deadlines with profits and sort them ascending by deadline. Iterate through the pairs, adding profits to a Min Heap; whenever heap.size() > current_deadline, pop the smallest profit out, leaving the heap with only the optimal items to sum",
-    "attempts": "2",
-    "phase": "S1",
-    "reviewDate": "2026-06-10",
+    "attempts": "4",
+    "phase": "S3",
+    "reviewDate": "2026-07-04",
     "lastSolved": "2026-06-04",
     "url": "",
-    "ef": "2.1",
-    "interval": "6"
+    "ef": "2.3",
+    "interval": "30"
   },
   {
     "date": "17/04/2026",
@@ -2371,13 +2371,13 @@
     "friction": "Struggled",
     "notes": "DFS | Backtracking",
     "oneLiner": "handle the edge case and base and the calcualte left subtree path sum and right sub tree path sum , with remaining debt with each node recursion",
-    "attempts": "2",
-    "phase": "Struggled",
-    "reviewDate": "2026-05-25",
-    "lastSolved": "2026-05-21",
+    "attempts": "4",
+    "phase": "S1",
+    "reviewDate": "2026-06-06",
+    "lastSolved": "2026-06-04",
     "url": "",
-    "ef": "2.0",
-    "interval": "1"
+    "ef": "1.8",
+    "interval": "2"
   },
   {
     "date": "26/03/2026",
