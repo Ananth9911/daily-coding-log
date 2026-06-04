@@ -805,7 +805,7 @@
     "exampleProblem": "NQueens",
     "oneLiner": "If a problem asks if ANY valid state exists (e.g., Sudoku), return boolean from your recursive calls to instantly kill the search once found. If a problem asks to generate ALL valid states (e.g., N-Queens), keep the return type void. Let the recursion naturally unfold and save the state only inside your base case",
     "difficulty": "H",
-    "friction": ""
+    "friction": "Struggled"
   },
   {
     "topic": "Tries",
