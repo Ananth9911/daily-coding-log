@@ -421,7 +421,7 @@
     "exampleProblem": "Sorted Array To Balanced BST",
     "oneLiner": "\"The exact middle is always the root; divide the rest in half.",
     "difficulty": "H",
-    "friction": "Struggled"
+    "friction": "Smooth"
   },
   {
     "topic": "Tree",
@@ -645,7 +645,7 @@
     "exampleProblem": "Anti Diagonals",
     "oneLiner": "To find all anti-diagonals, trace from two sets of starting points: the top row (col 0 to N-1) and the rightmost column (row 1 to N-1). From each starting point (r, c), collect elements by moving down-left (r+1, c-1) and place them into the current row of the output matrix. Java's default initialization handles the trailing zeros automatically",
     "difficulty": "L",
-    "friction": ""
+    "friction": "Struggled"
   },
   {
     "topic": "Array",

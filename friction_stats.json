@@ -1,27 +1,27 @@
 [
   {
     "smooth": 54,
-    "struggled": 11,
+    "struggled": 12,
     "hard": 23,
     "total": 125,
     "topic": "Array",
     "mastery": 43
   },
   {
-    "smooth": 102,
-    "struggled": 5,
+    "smooth": 103,
+    "struggled": 4,
     "hard": 0,
     "total": 114,
     "topic": "Basic",
-    "mastery": 89
+    "mastery": 90
   },
   {
-    "smooth": 16,
-    "struggled": 21,
+    "smooth": 17,
+    "struggled": 20,
     "hard": 15,
     "total": 36,
     "topic": "Tree",
-    "mastery": 44
+    "mastery": 47
   },
   {
     "smooth": 8,
@@ -120,12 +120,12 @@
     "mastery": 100
   },
   {
-    "smooth": 2,
+    "smooth": 3,
     "struggled": 3,
     "hard": 3,
     "total": 7,
     "topic": "Stack",
-    "mastery": 29
+    "mastery": 43
   },
   {
     "smooth": 5,
