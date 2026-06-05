@@ -2388,13 +2388,13 @@
     "friction": "Struggled",
     "notes": "DFS | Tree Sum",
     "oneLiner": "Have sum function to calcualte sum and then for each node find left sum and right sum if it equal",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-06-06",
+    "lastSolved": "2026-06-05",
     "url": "",
-    "ef": "2.0",
-    "interval": "3"
+    "ef": "1.7",
+    "interval": "1"
   },
   {
     "date": "25/03/2026",
@@ -3833,13 +3833,13 @@
     "friction": "Smooth",
     "notes": "Two Pointer",
     "oneLiner": "Have two pointers and then do swap",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S2",
+    "reviewDate": "2026-06-14",
+    "lastSolved": "2026-06-05",
     "url": "",
-    "ef": "3.0",
-    "interval": "3"
+    "ef": "3.1",
+    "interval": "9"
   },
   {
     "date": "24/02/2026",
@@ -6176,16 +6176,16 @@
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "M",
-    "friction": "Struggled",
+    "friction": "Smooth",
     "notes": "Nested Loops | Pattern Printing",
     "oneLiner": "Nested loop , for space it is same till 2(n-i) , for starts til n-i+1",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "Completed",
+    "reviewDate": "2026-12-02",
+    "lastSolved": "2026-06-05",
     "url": "",
-    "ef": "2.5",
-    "interval": "3"
+    "ef": "3.0",
+    "interval": "180"
   },
   {
     "date": "05/01/2026",

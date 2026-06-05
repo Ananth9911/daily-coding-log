@@ -8,28 +8,28 @@
     "mastery": 43
   },
   {
-    "smooth": 103,
-    "struggled": 4,
+    "smooth": 104,
+    "struggled": 3,
     "hard": 0,
     "total": 114,
     "topic": "Basic",
-    "mastery": 90
+    "mastery": 91
   },
   {
-    "smooth": 18,
+    "smooth": 19,
     "struggled": 20,
     "hard": 15,
     "total": 36,
     "topic": "Tree",
-    "mastery": 50
+    "mastery": 53
   },
   {
-    "smooth": 8,
+    "smooth": 9,
     "struggled": 3,
     "hard": 9,
     "total": 25,
     "topic": "String",
-    "mastery": 32
+    "mastery": 36
   },
   {
     "smooth": 22,
