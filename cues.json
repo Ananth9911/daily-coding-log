@@ -653,7 +653,7 @@
     "exampleProblem": "Row to Column Zero",
     "oneLiner": "To set matrix zeroes in O(1) space, use Row 0 and Col 0 as flag arrays. First, check if Row 0 or Col 0 inherently contain zeros and store this in two booleans. Next, iterate from i=1, j=1; if A[i][j]==0, set A[i][0]=0 and A[0][j]=0. Iterate from 1,1 again and apply the zeros based on the flags. Finally, update Row 0 and Col 0 based on the saved booleans",
     "difficulty": "L",
-    "friction": ""
+    "friction": "Struggled"
   },
   {
     "topic": "Tree",
@@ -661,7 +661,7 @@
     "exampleProblem": "Identical Binary Trees",
     "oneLiner": "To check if two trees are identical, do not flatten them into arrays. Use simultaneous recursion: if both nodes are null, return 1; if only one is null or values differ, return 0. Recursively check if isSameTree(A.left, B.left) AND isSameTree(A.right, B.right) both return 1",
     "difficulty": "H",
-    "friction": ""
+    "friction": "Struggled"
   },
   {
     "topic": "Hashing",

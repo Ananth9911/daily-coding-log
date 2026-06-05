@@ -1,7 +1,7 @@
 [
   {
     "smooth": 54,
-    "struggled": 12,
+    "struggled": 13,
     "hard": 23,
     "total": 125,
     "topic": "Array",
@@ -17,7 +17,7 @@
   },
   {
     "smooth": 19,
-    "struggled": 20,
+    "struggled": 22,
     "hard": 15,
     "total": 36,
     "topic": "Tree",
