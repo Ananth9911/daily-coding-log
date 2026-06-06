@@ -1,6 +1,6 @@
 [
   {
-    "date": "04/06/2026",
+    "date": "07/06/2026",
     "name": "Two Sum",
     "topic": "HashMap",
     "source": "LeetCode",
@@ -17,7 +17,7 @@
     "interval": "3"
   },
   {
-    "date": "03/06/2026",
+    "date": "06/06/2026",
     "name": "Best Time to Buy and Sell Stock III",
     "topic": "DP",
     "source": "LeetCode",
@@ -34,7 +34,7 @@
     "interval": "3"
   },
   {
-    "date": "02/06/2026",
+    "date": "05/06/2026",
     "name": "Partition to K Equal Sum Subsets",
     "topic": "Backtracking",
     "source": "LeetCode",
@@ -51,7 +51,7 @@
     "interval": "3"
   },
   {
-    "date": "01/06/2026",
+    "date": "04/06/2026",
     "name": "Insert Delete GetRandom",
     "topic": "HashMap",
     "source": "LeetCode",
@@ -68,7 +68,7 @@
     "interval": "3"
   },
   {
-    "date": "31/05/2026",
+    "date": "03/06/2026",
     "name": "Flatten Binary Tree to Linked List",
     "topic": "Tree",
     "source": "LeetCode",
@@ -85,24 +85,7 @@
     "interval": "3"
   },
   {
-    "date": "30/05/2026",
-    "name": "Floyd Warshall Algorithm",
-    "topic": "Graph",
-    "source": "Scaler",
-    "difficulty": "L",
-    "friction": "Struggled",
-    "notes": "Floyd-Warshall",
-    "oneLiner": "The 3 Loops: $K$ (intermediate), then $I$ (source), then $J$ (destination).The Core Logic: Try to route $I \\rightarrow J$ through $K$.The Update: matrix[i][j] = min(matrix[i][j], matrix[i][k] + matrix[k][j]).\ud83d\udea8 THE INFINITY TRAP: If the problem uses -1 to mean \"unreachable\", never add to it directly.Check: if (matrix[i][k] != -1 && matrix[k][j] != -1) before you calculate the new distance.Update if the current matrix[i][j] == -1 OR if your new distance is smaller.",
-    "attempts": "2",
-    "phase": "S1",
-    "reviewDate": "2026-06-05",
-    "lastSolved": "2026-06-04",
-    "url": "",
-    "ef": "2.7",
-    "interval": "1"
-  },
-  {
-    "date": "30/05/2026",
+    "date": "02/06/2026",
     "name": "Construct Roads",
     "topic": "Graph",
     "source": "Scaler",
@@ -119,7 +102,24 @@
     "interval": "3"
   },
   {
-    "date": "29/05/2026",
+    "date": "01/06/2026",
+    "name": "Floyd Warshall Algorithm",
+    "topic": "Graph",
+    "source": "Scaler",
+    "difficulty": "L",
+    "friction": "Struggled",
+    "notes": "Floyd-Warshall",
+    "oneLiner": "The 3 Loops: $K$ (intermediate), then $I$ (source), then $J$ (destination).The Core Logic: Try to route $I \\rightarrow J$ through $K$.The Update: matrix[i][j] = min(matrix[i][j], matrix[i][k] + matrix[k][j]).\ud83d\udea8 THE INFINITY TRAP: If the problem uses -1 to mean \"unreachable\", never add to it directly.Check: if (matrix[i][k] != -1 && matrix[k][j] != -1) before you calculate the new distance.Update if the current matrix[i][j] == -1 OR if your new distance is smaller.",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-06-05",
+    "lastSolved": "2026-06-04",
+    "url": "",
+    "ef": "2.7",
+    "interval": "1"
+  },
+  {
+    "date": "31/05/2026",
     "name": "Batches",
     "topic": "Disjoint Set Union",
     "source": "Scaler",
@@ -136,7 +136,7 @@
     "interval": "3"
   },
   {
-    "date": "28/05/2026",
+    "date": "30/05/2026",
     "name": "Coloring a Cycle Graph",
     "topic": "Graph",
     "source": "Scaler",
@@ -153,7 +153,7 @@
     "interval": "3"
   },
   {
-    "date": "27/05/2026",
+    "date": "29/05/2026",
     "name": "Check Bipartite Graph",
     "topic": "Graph",
     "source": "Scaler",
@@ -170,7 +170,7 @@
     "interval": "3"
   },
   {
-    "date": "26/05/2026",
+    "date": "28/05/2026",
     "name": "Palindrome Partitioning II",
     "topic": "DP",
     "source": "Scaler",
@@ -187,7 +187,7 @@
     "interval": "1"
   },
   {
-    "date": "25/05/2026",
+    "date": "27/05/2026",
     "name": "Palindromic Substrings Count",
     "topic": "DP",
     "source": "Scaler",
@@ -204,7 +204,7 @@
     "interval": "3"
   },
   {
-    "date": "24/05/2026",
+    "date": "26/05/2026",
     "name": "Russian Doll Envelopes",
     "topic": "DP",
     "source": "Scaler",
@@ -221,7 +221,7 @@
     "interval": "3"
   },
   {
-    "date": "23/05/2026",
+    "date": "25/05/2026",
     "name": "Longest Increasing Subsequence",
     "topic": "DP",
     "source": "Scaler",
@@ -238,7 +238,7 @@
     "interval": "3"
   },
   {
-    "date": "22/05/2026",
+    "date": "24/05/2026",
     "name": "Edit Distance",
     "topic": "DP",
     "source": "Scaler",
@@ -255,7 +255,7 @@
     "interval": "3"
   },
   {
-    "date": "21/05/2026",
+    "date": "23/05/2026",
     "name": "Longest Common Subsequence",
     "topic": "DP",
     "source": "Scaler",
@@ -272,7 +272,7 @@
     "interval": "3"
   },
   {
-    "date": "20/05/2026",
+    "date": "22/05/2026",
     "name": "Period of a string (KMP-LPS)",
     "topic": "String",
     "source": "Scaler",
@@ -289,7 +289,24 @@
     "interval": "3"
   },
   {
-    "date": "19/05/2026",
+    "date": "21/05/2026",
+    "name": "Cyclic Permutations -KMP",
+    "topic": "String",
+    "source": "Scaler",
+    "difficulty": "H",
+    "friction": "",
+    "notes": "KMP Pattern Matching",
+    "oneLiner": "The \"Cyclic Shift = KMP\" SRS Cheat SheetThe XOR Decoy: X ^ Y = 0 mathematically guarantees that X == Y. The problem is simply asking: \"How many cyclic shifts of B are exactly identical to A?\"The Cyclic Trick (B + B): Never use Frequency Maps for cyclic shifts, as they ignore relative character order. To instantly generate every possible cyclic shift of a string, concatenate it to itself. Your new search space is Text = (B + B).substring(0, 2 * N - 1).The Architecture Shift: The problem has now been cleanly converted from a bit-manipulation/permutation disguise into a classic String Pattern Matching problem: Find how many times Pattern A appears inside Text.The KMP Execution ($O(N)$): Create the master string S = A + \"#\" + Text. Generate the LPS array for S. Iterate through the LPS array, and every time lps[i] == A.length(), increment your count.",
+    "attempts": "1",
+    "phase": "Smooth",
+    "reviewDate": "2026-05-27",
+    "lastSolved": "2026-05-19",
+    "url": "",
+    "ef": "2.0",
+    "interval": "3"
+  },
+  {
+    "date": "20/05/2026",
     "name": "Permutations of A in B",
     "topic": "String",
     "source": "Scaler",
@@ -307,13 +324,13 @@
   },
   {
     "date": "19/05/2026",
-    "name": "Cyclic Permutations -KMP",
+    "name": "Boring substring",
     "topic": "String",
     "source": "Scaler",
     "difficulty": "H",
     "friction": "",
-    "notes": "KMP Pattern Matching",
-    "oneLiner": "The \"Cyclic Shift = KMP\" SRS Cheat SheetThe XOR Decoy: X ^ Y = 0 mathematically guarantees that X == Y. The problem is simply asking: \"How many cyclic shifts of B are exactly identical to A?\"The Cyclic Trick (B + B): Never use Frequency Maps for cyclic shifts, as they ignore relative character order. To instantly generate every possible cyclic shift of a string, concatenate it to itself. Your new search space is Text = (B + B).substring(0, 2 * N - 1).The Architecture Shift: The problem has now been cleanly converted from a bit-manipulation/permutation disguise into a classic String Pattern Matching problem: Find how many times Pattern A appears inside Text.The KMP Execution ($O(N)$): Create the master string S = A + \"#\" + Text. Generate the LPS array for S. Iterate through the LPS array, and every time lps[i] == A.length(), increment your count.",
+    "notes": "ASCII Arithmetic | Observation",
+    "oneLiner": "The Core Secret (The Bridge): Odd ASCII characters are never adjacent to each other. Evens are never adjacent. If you separate them into two halves, you just need to find one valid pair (a bridge) to connect the Odd half to the Even half.The Trap (Brute Force - $O(N^2)$): Iterating through every single Odd character and comparing it against every single Even character will cause a Time Limit Exceeded (TLE) on massive strings.The HashSet Pivot ($O(N)$ Time, $O(1)$ Space): Since there are only 26 letters, dump characters into two HashSets (Odds and Evens). This reduces the nested loop to a maximum of $13 \\times 13 = 169$ constant-time checks.The Masterpiece ($O(N)$ Time, $O(1)$ Space): Ditch the sets. Traverse the string once to find four extremes: minOdd, maxOdd, minEven, and maxEven. Test the 4 cross-combinations. If the absolute difference of any pair is != 1, return true. Otherwise, return false.",
     "attempts": "1",
     "phase": "Smooth",
     "reviewDate": "2026-05-27",
@@ -338,23 +355,6 @@
     "url": "",
     "ef": "1.7",
     "interval": "1"
-  },
-  {
-    "date": "18/05/2026",
-    "name": "Boring substring",
-    "topic": "String",
-    "source": "Scaler",
-    "difficulty": "H",
-    "friction": "",
-    "notes": "ASCII Arithmetic | Observation",
-    "oneLiner": "The Core Secret (The Bridge): Odd ASCII characters are never adjacent to each other. Evens are never adjacent. If you separate them into two halves, you just need to find one valid pair (a bridge) to connect the Odd half to the Even half.The Trap (Brute Force - $O(N^2)$): Iterating through every single Odd character and comparing it against every single Even character will cause a Time Limit Exceeded (TLE) on massive strings.The HashSet Pivot ($O(N)$ Time, $O(1)$ Space): Since there are only 26 letters, dump characters into two HashSets (Odds and Evens). This reduces the nested loop to a maximum of $13 \\times 13 = 169$ constant-time checks.The Masterpiece ($O(N)$ Time, $O(1)$ Space): Ditch the sets. Traverse the string once to find four extremes: minOdd, maxOdd, minEven, and maxEven. Test the 4 cross-combinations. If the absolute difference of any pair is != 1, return true. Otherwise, return false.",
-    "attempts": "1",
-    "phase": "Smooth",
-    "reviewDate": "2026-05-27",
-    "lastSolved": "2026-05-19",
-    "url": "",
-    "ef": "2.0",
-    "interval": "3"
   },
   {
     "date": "17/05/2026",
@@ -3425,13 +3425,13 @@
     "friction": "Smooth",
     "notes": "Recursion | Memoization",
     "oneLiner": "Do recursion",
-    "attempts": "2",
-    "phase": "S1",
-    "reviewDate": "2026-04-29",
-    "lastSolved": "",
+    "attempts": "3",
+    "phase": "S2",
+    "reviewDate": "2026-06-22",
+    "lastSolved": "2026-06-07",
     "url": "",
-    "ef": "2.0",
-    "interval": "7"
+    "ef": "2.1",
+    "interval": "15"
   },
   {
     "date": "04/03/2026",
@@ -4207,13 +4207,13 @@
     "friction": "Smooth",
     "notes": "Matrix Traversal",
     "oneLiner": "It is simple column wise sum",
-    "attempts": "2",
-    "phase": "S1",
-    "reviewDate": "2026-04-29",
-    "lastSolved": "",
+    "attempts": "3",
+    "phase": "S3",
+    "reviewDate": "2026-06-29",
+    "lastSolved": "2026-06-07",
     "url": "",
-    "ef": "3.0",
-    "interval": "7"
+    "ef": "3.1",
+    "interval": "22"
   },
   {
     "date": "09/02/2026",
