@@ -71,6 +71,7 @@ select{background:var(--panel2);color:var(--txt);border:1px solid var(--line);bo
 <body>
 <h1>Problem Engine</h1>
 <div class="sub">standalone daily feed &middot; arrays-first &middot; auto-synced &middot; separate from SRS <span id="syncdot" style="color:var(--mut)">&middot; connecting…</span></div>
+<div style="margin-top:10px"><button class="btn-ghost" id="lockbtn" style="font-size:12px;padding:6px 14px">🔒 View-only — tap to unlock editing</button></div>
 
 <div class="card">
   <div class="row between">
@@ -131,8 +132,12 @@ const KEY='problemEngine_v1';
 //  Leave it as '' to run purely local (browser-only).
 // ============================================================
 const API_URL='https://script.google.com/macros/s/AKfycbxBL-fDlOwouLJnujm1_v4lbDfyRjMACdhAbV_KtYUyAJnQYK_qnwsoHC5NBqwztMx4Bw/exec';                 // <-- PASTE YOUR /exec URL HERE
-const API_KEY='scaler2026';       // admin key, matches Engine_Sync.gs
-let canEdit=true;                 // personal tool: always editable
+const EDIT_PW='scaler2026';       // password to unlock editing on a device
+const API_KEY=EDIT_PW;            // same value sent to the backend on writes
+const UNLOCK_FLAG='problemEngine_unlocked';
+// Editing is LOCKED by default (view-only). Unlock per-device by entering the
+// password once; we store only a boolean flag, never the password itself.
+let canEdit = (localStorage.getItem(UNLOCK_FLAG)==='1');
 let state=load();
 function load(){try{return JSON.parse(localStorage.getItem(KEY))||fresh()}catch(e){return fresh()}}
 function fresh(){return{done:{},lastDay:null,streak:0,todayCount:0,todayDate:null,todaySet:[]}}
@@ -227,6 +232,7 @@ function generate(reroll){
 }
 
 function toggle(i){
+  if(!canEdit){ unlockPrompt(); return; }
   let on;
   if(state.done[i]){delete state.done[i]; state.todayCount=Math.max(0,state.todayCount-1); on=false;}
   else{
@@ -290,16 +296,32 @@ function render(){
 window.toggle=toggle;
 $('gen').onclick=()=>generate(false);
 $('reroll').onclick=()=>generate(true);
+function refreshLock(){
+  const b=document.getElementById('lockbtn'); if(!b)return;
+  if(canEdit){ b.textContent='🔓 Editing unlocked — tap to lock'; b.style.borderColor='var(--ok)'; }
+  else{ b.textContent='🔒 View-only — tap to unlock editing'; b.style.borderColor='var(--line)'; }
+}
+function unlockPrompt(){
+  const pw=prompt('Enter password to enable editing on this device:');
+  if(pw===null) return;
+  if(pw===EDIT_PW){ canEdit=true; localStorage.setItem(UNLOCK_FLAG,'1'); refreshLock(); render(); }
+  else{ alert('Incorrect password. Still view-only.'); }
+}
+function lock(){ canEdit=false; localStorage.removeItem(UNLOCK_FLAG); refreshLock(); render(); }
+document.getElementById('lockbtn').onclick=()=>{ canEdit ? lock() : unlockPrompt(); };
+
 $('scope').onchange=render; $('solvedmode').onchange=render; $('mode').onchange=render;
 
 $('reset').onclick=()=>{
+  if(!canEdit){ unlockPrompt(); return; }
   if(confirm('Reset all pool progress?')){
     state=fresh(); save(); render();
     if(API_URL){ pushMeta(); } // note: row data on the sheet is left as-is
   }
 };
 (async function boot(){
-  await pullRemote();   // auto-sync on load; no buttons, no URL prompt
+  refreshLock();
+  await pullRemote();   // auto-sync on load
   render();
 })();
 </script>
