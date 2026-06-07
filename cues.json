@@ -669,7 +669,7 @@
     "exampleProblem": "Shaggy and distances",
     "oneLiner": "Use a HashMap to store the last_seen_index of each element. Execution: Iterate through the array. If the current element exists in the map, calculate the distance: current_index - map.get(element), and update the global minimum distance. Regardless of whether it was found or not, always update the map with the current_index so future matches use the closest possible index. If the global minimum is never updated, return -1",
     "difficulty": "H",
-    "friction": ""
+    "friction": "Smooth"
   },
   {
     "topic": "Greedy",
@@ -677,7 +677,7 @@
     "exampleProblem": "Meeting Rooms II",
     "oneLiner": "Extract all start times into one array and end times into another. Sort both arrays. Use two pointers (i for start, j for end). If start[i] < end[j], a meeting is starting, increment current rooms and move i. Else, a meeting is ending, decrement current rooms and move j. Keep tracking the global maximum",
     "difficulty": "H",
-    "friction": ""
+    "friction": "Smooth"
   },
   {
     "topic": "String",
