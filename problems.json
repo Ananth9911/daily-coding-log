@@ -4326,13 +4326,13 @@
     "friction": "Smooth",
     "notes": "Sorting | QuickSelect",
     "oneLiner": "Sort it and find it",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S2",
+    "reviewDate": "2026-06-16",
+    "lastSolved": "2026-06-07",
     "url": "",
-    "ef": "3.0",
-    "interval": "3"
+    "ef": "3.1",
+    "interval": "9"
   },
   {
     "date": "05/02/2026",
@@ -4870,13 +4870,13 @@
     "friction": "Smooth",
     "notes": "Vertical Scanning",
     "oneLiner": "Use the first word as a template, scanning column-by-column across all other words, and chop off the prefix the exact moment you hit a mismatched letter or a shorter word",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-06-13",
+    "lastSolved": "2026-06-07",
     "url": "",
-    "ef": "2.0",
-    "interval": "3"
+    "ef": "2.1",
+    "interval": "6"
   },
   {
     "date": "25/01/2026",
@@ -6196,13 +6196,13 @@
     "friction": "Smooth",
     "notes": "Simulation",
     "oneLiner": "rev= rev *10 +id , here id is n%10",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S2",
+    "reviewDate": "2026-06-15",
+    "lastSolved": "2026-06-07",
     "url": "",
-    "ef": "2.5",
-    "interval": "3"
+    "ef": "2.6",
+    "interval": "8"
   },
   {
     "date": "05/01/2026",
