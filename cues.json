@@ -693,7 +693,7 @@
     "exampleProblem": "Stairs",
     "oneLiner": "Execution: > 1. The Core Relation: To reach step N, you either came from step N-1 or N-2. Therefore: ways(N) = (ways(N-1) + ways(N-2)) % 1000000007. 2. Top-Down (Memoization): Init array with -1. Base cases: if (N == 0 || N == 1) return 1;. Check cache: if (dp[N] != -1) return dp[N];. Recurse, modulo, and save. (Time: O(N), Space: O(N)). 3. Bottom-Up (Tabulation): Base cases dp[0]=1, dp[1]=1. Loop i = 2 to N: dp[i] = (dp[i-1] + dp[i-2]) % 1000000007. 4. Senior Optimization (Slider): We only need the last two steps. Use a=1, b=1. Loop from 2 to N: c = (a + b) % 1000000007, then shift a = b and b = c. Return c. (Time: O(N), Space: O(1))",
     "difficulty": "H",
-    "friction": ""
+    "friction": "Struggled"
   },
   {
     "topic": "Array",

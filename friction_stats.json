@@ -8,12 +8,12 @@
     "mastery": 45
   },
   {
-    "smooth": 105,
+    "smooth": 107,
     "struggled": 3,
     "hard": 0,
     "total": 114,
     "topic": "Basic",
-    "mastery": 92
+    "mastery": 94
   },
   {
     "smooth": 19,
@@ -33,19 +33,19 @@
   },
   {
     "smooth": 22,
-    "struggled": 3,
+    "struggled": 4,
     "hard": 21,
     "total": 22,
     "topic": "DP",
     "mastery": 100
   },
   {
-    "smooth": 8,
+    "smooth": 9,
     "struggled": 1,
     "hard": 5,
     "total": 17,
     "topic": "Hashing",
-    "mastery": 47
+    "mastery": 53
   },
   {
     "smooth": 16,
@@ -136,12 +136,12 @@
     "mastery": 100
   },
   {
-    "smooth": 1,
+    "smooth": 2,
     "struggled": 2,
     "hard": 3,
     "total": 3,
     "topic": "Queue",
-    "mastery": 33
+    "mastery": 67
   },
   {
     "smooth": 2,
