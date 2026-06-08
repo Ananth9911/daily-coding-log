@@ -1195,16 +1195,16 @@
     "topic": "DP",
     "source": "Scaler",
     "difficulty": "H",
-    "friction": "",
+    "friction": "Smooth",
     "notes": "DP | Memoization",
     "oneLiner": "Execution: > 1. The Core Relation: State(N) = State(N-1) + State(N-2). 2. Top-Down (Memoization): Init array with -1. Base cases if (N <= 1) return N. Check cache if (dp[N] != -1). Recurse and save. Time: O(N), Space: O(N). 3. Bottom-Up (Tabulation): Base cases dp[0]=0, dp[1]=1. for(i=2 to N) dp[i] = dp[i-1] + dp[i-2]. 4. Senior Optimization (Slider): We only ever need the last two states. Drop the array. Use a=0, b=1. Loop c = a + b, then shift a = b and b = c. Return c. Time: O(N), Space: O(1)",
-    "attempts": "1",
-    "phase": "Smooth",
-    "reviewDate": "2026-04-29",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-06-15",
+    "lastSolved": "2026-06-09",
     "url": "",
-    "ef": "2.0",
-    "interval": "3"
+    "ef": "2.1",
+    "interval": "6"
   },
   {
     "date": "21/04/2026",
