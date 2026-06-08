@@ -1,5 +1,22 @@
 [
   {
+    "date": "08/06/2026",
+    "name": "Valid Palindrome",
+    "topic": "String",
+    "source": "LeetCode",
+    "difficulty": "L",
+    "friction": "Smooth",
+    "notes": "String | ASCII Manipulation",
+    "oneLiner": "Use Two Pointers (i = 0, j = s.length() - 1).  Skip garbage: Use a while loop with !Character.isLetterOrDigit(char) to advance i or decrement j until they hit valid characters.  Compare case-insensitive: Character.toLowerCase(left) != Character.toLowerCase(right).  The Trap to Avoid: Never use s.replaceAll() or s.toLowerCase() on the whole string, as it wastes O(N) space.",
+    "attempts": "1",
+    "phase": "Smooth",
+    "reviewDate": "2026-06-11",
+    "lastSolved": "2026-06-08",
+    "url": "",
+    "ef": "3.0",
+    "interval": "3"
+  },
+  {
     "date": "07/06/2026",
     "name": "Two Sum",
     "topic": "HashMap",

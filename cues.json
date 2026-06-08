@@ -926,5 +926,13 @@
     "oneLiner": "Prerequisite Check: Total sum must be perfectly divisible by $K$. Each subset target is totalSum / k.Base Case 1 (Global Success): If k == 1, return true. (If $K-1$ buckets are perfectly filled, the remaining unused numbers must naturally sum to the target).Base Case 2 (Bucket Filled): If currsum == targetsum, transition to the next bucket by recursing with idx = 0, currsum = 0, and k - 1.Branching & Pruning: Loop from idx to the end of the array. Only process if visited[i] == false AND currsum + nums[i] <= targetsum.State Reset (Backtrack): Mark visited[i] = true and recurse with idx = i + 1. If the path returns false, undo the choice by setting visited[i] = false and continue the loop",
     "difficulty": "L",
     "friction": "Smooth"
+  },
+  {
+    "topic": "String",
+    "cue": "String | ASCII Manipulation",
+    "exampleProblem": "Valid Palindrome",
+    "oneLiner": "Use Two Pointers (i = 0, j = s.length() - 1).  Skip garbage: Use a while loop with !Character.isLetterOrDigit(char) to advance i or decrement j until they hit valid characters.  Compare case-insensitive: Character.toLowerCase(left) != Character.toLowerCase(right).  The Trap to Avoid: Never use s.replaceAll() or s.toLowerCase() on the whole string, as it wastes O(N) space.",
+    "difficulty": "L",
+    "friction": "Smooth"
   }
 ]
