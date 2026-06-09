@@ -2354,13 +2354,13 @@
     "friction": "Smooth",
     "notes": "Three-Phase Copy",
     "oneLiner": "First create new node and make connectcions wirh it and then make randome pointer connection and then detach both lists",
-    "attempts": "3",
-    "phase": "S1",
-    "reviewDate": "2026-05-01",
-    "lastSolved": "",
+    "attempts": "4",
+    "phase": "S2",
+    "reviewDate": "2026-06-24",
+    "lastSolved": "2026-06-09",
     "url": "",
-    "ef": "2.0",
-    "interval": "7"
+    "ef": "2.1",
+    "interval": "15"
   },
   {
     "date": "27/03/2026",
@@ -3238,13 +3238,13 @@
     "friction": "Smooth",
     "notes": "HashMap | Frequency Count",
     "oneLiner": "Logic is to use hashmap and fill frequency map and then travel again and find repeating by freq>1",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S2",
+    "reviewDate": "2026-06-17",
+    "lastSolved": "2026-06-09",
     "url": "",
-    "ef": "2.5",
-    "interval": "3"
+    "ef": "2.6",
+    "interval": "8"
   },
   {
     "date": "08/03/2026",
@@ -3595,13 +3595,13 @@
     "friction": "Smooth",
     "notes": "Prefix Max | Suffix Max",
     "oneLiner": "For every position, the trapped water is the difference between the lowest of its tallest surrounding boundaries (the roof) and its own physical height (the floor).Calcualate prefix left and suffix left",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-06-15",
+    "lastSolved": "2026-06-09",
     "url": "",
-    "ef": "2.0",
-    "interval": "3"
+    "ef": "2.1",
+    "interval": "6"
   },
   {
     "date": "02/03/2026",
@@ -4462,13 +4462,13 @@
     "friction": "Smooth",
     "notes": "Prefix Sum",
     "oneLiner": "In place",
-    "attempts": "2",
-    "phase": "S1",
-    "reviewDate": "2026-05-01",
-    "lastSolved": "",
+    "attempts": "3",
+    "phase": "Completed",
+    "reviewDate": "2026-12-06",
+    "lastSolved": "2026-06-09",
     "url": "",
-    "ef": "2.5",
-    "interval": "7"
+    "ef": "3.0",
+    "interval": "180"
   },
   {
     "date": "03/02/2026",
@@ -5703,13 +5703,13 @@
     "friction": "Smooth",
     "notes": "HashSet Lookup",
     "oneLiner": "Run two loops and then match",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "Completed",
+    "reviewDate": "2026-12-06",
+    "lastSolved": "2026-06-09",
     "url": "",
     "ef": "3.0",
-    "interval": "3"
+    "interval": "180"
   },
   {
     "date": "15/01/2026",
@@ -6329,16 +6329,16 @@
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "M",
-    "friction": "Struggled",
+    "friction": "Smooth",
     "notes": "Nested Loops | Pattern Printing",
     "oneLiner": "So here we need to fgure out ranges of loops ,and it will depend on i",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S2",
+    "reviewDate": "2026-06-17",
+    "lastSolved": "2026-06-09",
     "url": "",
-    "ef": "2.5",
-    "interval": "3"
+    "ef": "2.6",
+    "interval": "8"
   },
   {
     "date": "04/01/2026",

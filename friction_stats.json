@@ -1,6 +1,6 @@
 [
   {
-    "smooth": 58,
+    "smooth": 59,
     "struggled": 13,
     "hard": 23,
     "total": 127,
@@ -8,12 +8,12 @@
     "mastery": 46
   },
   {
-    "smooth": 107,
-    "struggled": 3,
+    "smooth": 108,
+    "struggled": 2,
     "hard": 0,
     "total": 114,
     "topic": "Basic",
-    "mastery": 94
+    "mastery": 95
   },
   {
     "smooth": 19,
@@ -24,12 +24,12 @@
     "mastery": 53
   },
   {
-    "smooth": 11,
+    "smooth": 12,
     "struggled": 3,
     "hard": 9,
     "total": 26,
     "topic": "String",
-    "mastery": 42
+    "mastery": 46
   },
   {
     "smooth": 22,
@@ -40,12 +40,12 @@
     "mastery": 100
   },
   {
-    "smooth": 9,
+    "smooth": 10,
     "struggled": 1,
     "hard": 5,
     "total": 17,
     "topic": "Hashing",
-    "mastery": 53
+    "mastery": 59
   },
   {
     "smooth": 16,
