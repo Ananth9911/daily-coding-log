@@ -717,7 +717,7 @@
     "exampleProblem": "Unbounded Knapsack",
     "oneLiner": "The implementation is nearly identical to 0/1 Knapsack, but when you pick an item, you stay on the current row i instead of moving back to i-1 so the same item can be selected again. Calculate dp[i][j] as the maximum of either skipping the item completely (dp[i-1][j]) or taking it if capacity allows (value[i] + dp[i][j - weight[i]])",
     "difficulty": "H",
-    "friction": ""
+    "friction": "Smooth"
   },
   {
     "topic": "DP",
