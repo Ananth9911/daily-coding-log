@@ -13,7 +13,7 @@
 | :--- | :--- | :--- | :---: | :---: |
 | 10/06/2026 | Backspace String Compare | String | 🟢 | Smooth |
 | 10/06/2026 | Check If Two String Arrays are Equivalent | Array | 🟢 | Completed |
-| 10/06/2026 | 3Sum | Array | 🟢 | Struggled |
+| 10/06/2026 | 3Sum | Array | 🟢 | S1 |
 | 09/06/2026 | Apply Operations to an Array | Array | 🟢 | Completed |
 | 09/06/2026 | Assign Cookies | Array | 🟢 | Smooth |
 | 08/06/2026 | Valid Palindrome | String | 🟢 | Smooth |
