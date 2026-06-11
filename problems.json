@@ -1,5 +1,22 @@
 [
   {
+    "date": "11/06/2026",
+    "name": "3Sum",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "L",
+    "friction": "Struggled",
+    "notes": "Array | Two Pointer",
+    "oneLiner": "The Setup: Sort the array.  The Anchor: Loop i from 0 to n-2.  Anchor Duplicate Check: if(i > 0 && nums[i] == nums[i-1]) continue;  The Pinch: Set left = i + 1 and right = n - 1. If sum < 0, left++. If sum > 0, right--.  The Trap (Pointer Duplicates): When sum == 0, record the triplet. Then, you must advance both pointers, and use two inner while loops to fast-forward left and right past any identical consecutive numbers.",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-06-13",
+    "lastSolved": "2026-06-12",
+    "url": "",
+    "ef": "2.7",
+    "interval": "1"
+  },
+  {
     "date": "10/06/2026",
     "name": "Backspace String Compare",
     "topic": "String",
@@ -32,23 +49,6 @@
     "url": "",
     "ef": "3.0",
     "interval": "180"
-  },
-  {
-    "date": "10/06/2026",
-    "name": "3Sum",
-    "topic": "Array",
-    "source": "LeetCode",
-    "difficulty": "L",
-    "friction": "Struggled",
-    "notes": "Array | Two Pointer",
-    "oneLiner": "The Setup: Sort the array.  The Anchor: Loop i from 0 to n-2.  Anchor Duplicate Check: if(i > 0 && nums[i] == nums[i-1]) continue;  The Pinch: Set left = i + 1 and right = n - 1. If sum < 0, left++. If sum > 0, right--.  The Trap (Pointer Duplicates): When sum == 0, record the triplet. Then, you must advance both pointers, and use two inner while loops to fast-forward left and right past any identical consecutive numbers.",
-    "attempts": "2",
-    "phase": "S1",
-    "reviewDate": "2026-06-13",
-    "lastSolved": "2026-06-12",
-    "url": "",
-    "ef": "2.7",
-    "interval": "1"
   },
   {
     "date": "09/06/2026",
