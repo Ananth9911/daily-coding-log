@@ -8,7 +8,7 @@
     "mastery": 47
   },
   {
-    "smooth": 109,
+    "smooth": 110,
     "struggled": 1,
     "hard": 0,
     "total": 114,
@@ -120,12 +120,12 @@
     "mastery": 100
   },
   {
-    "smooth": 3,
+    "smooth": 4,
     "struggled": 3,
     "hard": 3,
     "total": 7,
     "topic": "Stack",
-    "mastery": 43
+    "mastery": 57
   },
   {
     "smooth": 5,
@@ -136,12 +136,12 @@
     "mastery": 100
   },
   {
-    "smooth": 2,
+    "smooth": 3,
     "struggled": 2,
     "hard": 3,
     "total": 3,
     "topic": "Queue",
-    "mastery": 67
+    "mastery": 100
   },
   {
     "smooth": 2,
