@@ -1,5 +1,22 @@
 [
   {
+    "date": "12/06/2026",
+    "name": "Contains Duplicate II",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "L",
+    "friction": "Smooth",
+    "notes": "Array | Hashset | Sliding Window",
+    "oneLiner": "The club has a strict maximum capacity of k people.  As you loop through the array, the current number tries to enter the club.  The Check: If the number is already inside the club, you found a duplicate within distance k! Return true.  The Add: Let the number into the club (set.add(nums[i])).  The Kick: If the club is now over capacity (size > k), the bouncer kicks out the person who has been there the longest (nums[i - k]).",
+    "attempts": "1",
+    "phase": "Smooth",
+    "reviewDate": "2026-06-16",
+    "lastSolved": "2026-06-13",
+    "url": "",
+    "ef": "3.0",
+    "interval": "3"
+  },
+  {
     "date": "11/06/2026",
     "name": "3Sum",
     "topic": "Array",

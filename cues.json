@@ -934,5 +934,13 @@
     "oneLiner": "Use Two Pointers (i = 0, j = s.length() - 1).  Skip garbage: Use a while loop with !Character.isLetterOrDigit(char) to advance i or decrement j until they hit valid characters.  Compare case-insensitive: Character.toLowerCase(left) != Character.toLowerCase(right).  The Trap to Avoid: Never use s.replaceAll() or s.toLowerCase() on the whole string, as it wastes O(N) space.",
     "difficulty": "L",
     "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Array | Hashset | Sliding Window",
+    "exampleProblem": "Contains Duplicate II",
+    "oneLiner": "The club has a strict maximum capacity of k people.  As you loop through the array, the current number tries to enter the club.  The Check: If the number is already inside the club, you found a duplicate within distance k! Return true.  The Add: Let the number into the club (set.add(nums[i])).  The Kick: If the club is now over capacity (size > k), the bouncer kicks out the person who has been there the longest (nums[i - k]).",
+    "difficulty": "L",
+    "friction": "Smooth"
   }
 ]
