@@ -1912,13 +1912,13 @@
     "friction": "Smooth",
     "notes": "Two Pointer | Length Equalization",
     "oneLiner": "Have two pointer and move each one step , when ever one reaches null , then assign that pointer to head of another LL, by this we will reach somepoint wher both match , it can be node or null",
-    "attempts": "3",
-    "phase": "S1",
-    "reviewDate": "2026-05-06",
-    "lastSolved": "",
+    "attempts": "4",
+    "phase": "S2",
+    "reviewDate": "2026-07-01",
+    "lastSolved": "2026-06-13",
     "url": "",
-    "ef": "2.5",
-    "interval": "7"
+    "ef": "2.6",
+    "interval": "18"
   },
   {
     "date": "09/04/2026",
@@ -2419,16 +2419,16 @@
     "topic": "Tree",
     "source": "Scaler",
     "difficulty": "H",
-    "friction": "Smooth",
+    "friction": "Struggled",
     "notes": "Divide and Conquer | Recursion",
     "oneLiner": "create root node and then search for that root node in inorder and the find position , and then we need to figgure exxact left tree and right tree in both postorder and inorder array",
-    "attempts": "2",
+    "attempts": "3",
     "phase": "S1",
-    "reviewDate": "2026-05-06",
-    "lastSolved": "",
+    "reviewDate": "2026-06-17",
+    "lastSolved": "2026-06-13",
     "url": "",
-    "ef": "2.0",
-    "interval": "7"
+    "ef": "1.7",
+    "interval": "4"
   },
   {
     "date": "27/03/2026",
