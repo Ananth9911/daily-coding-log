@@ -1,5 +1,22 @@
 [
   {
+    "date": "14/06/2026",
+    "name": "Find First Palindromic String in the Array",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "L",
+    "friction": "Smooth",
+    "notes": "Two Pointer",
+    "oneLiner": "Just two pointers with for loop",
+    "attempts": "1",
+    "phase": "Completed",
+    "reviewDate": "2026-12-12",
+    "lastSolved": "2026-06-15",
+    "url": "",
+    "ef": "3.0",
+    "interval": "180"
+  },
+  {
     "date": "13/06/2026",
     "name": "Minimum Time To Make Rope Colorful",
     "topic": "Array",
