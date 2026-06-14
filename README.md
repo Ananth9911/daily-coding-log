@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker — FAANG Sprint 2026
-- **Total Problems Solved:** 459 🔥
+- **Total Problems Solved:** 460 🔥
 - **Overall Mastery:** 70% Smooth | Hard: 143 | Medium: 108
 - **System Status:** Online 🟢
 
@@ -11,6 +11,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem | Topic | Difficulty | Phase |
 | :--- | :--- | :--- | :---: | :---: |
+| 13/06/2026 | Minimum Time To Make Rope Colorful | Array | 🟢 | Smooth |
 | 12/06/2026 | Contains Duplicate II | Array | 🟢 | Smooth |
 | 11/06/2026 | 3Sum | Array | 🟢 | S1 |
 | 10/06/2026 | Backspace String Compare | String | 🟢 | Smooth |
@@ -20,6 +21,5 @@
 | 08/06/2026 | Valid Palindrome | String | 🟢 | Smooth |
 | 07/06/2026 | Two Sum | HashMap | 🟢 | Smooth |
 | 06/06/2026 | Best Time to Buy and Sell Stock III | DP | 🟢 | Smooth |
-| 05/06/2026 | Partition to K Equal Sum Subsets | Backtracking | 🟢 | Smooth |
 
 [→ View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
