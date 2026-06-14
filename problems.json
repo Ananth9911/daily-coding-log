@@ -1,5 +1,22 @@
 [
   {
+    "date": "15/06/2026",
+    "name": "Merge Strings Alternately",
+    "topic": "String",
+    "source": "LeetCode",
+    "difficulty": "L",
+    "friction": "Smooth",
+    "notes": "Two Pointer",
+    "oneLiner": "The Optimized Pattern: Use a single pointer i to track the current index for both strings simultaneously.  The Bound: Let the while loop run as long as i is less than the length of either string (i < word1.length() || i < word2.length()).  The Execution: Inside the loop, use two independent if statements to check if i is still a valid index for word1, and then for word2. If it is, append the character. This seamlessly handles the alternating phase and automatically processes the \"leftover\" tail of the longer string.",
+    "attempts": "1",
+    "phase": "Completed",
+    "reviewDate": "2026-12-12",
+    "lastSolved": "2026-06-15",
+    "url": "",
+    "ef": "3.0",
+    "interval": "180"
+  },
+  {
     "date": "14/06/2026",
     "name": "Find First Palindromic String in the Array",
     "topic": "Array",
