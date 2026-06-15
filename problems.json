@@ -1,5 +1,22 @@
 [
   {
+    "date": "16/06/2026",
+    "name": "Merge Two 2D Arrays by Summing Values",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "L",
+    "friction": "Smooth",
+    "notes": "Two Pointer",
+    "oneLiner": "The Trap: Trying to merge directly into a primitive int[][] ans array. Since you don't know the final size (some IDs overlap, some don't), you'll either have to do a pre-computation pass to count unique IDs, or you'll leave empty gaps in your array.  The Optimized Pattern: Treat this exactly like the merge step in Merge Sort using Two Pointers (i and j).  The Execution: Use a dynamic ArrayList<int[]> as your working memory. Compare id1 and id2, .add() the smaller one (or the sum if they match) and advance the respective pointer(s).  The Finisher: At the very end, use Java's built-in .toArray() method to convert your dynamic list back into the required primitive 2D array.",
+    "attempts": "1",
+    "phase": "Completed",
+    "reviewDate": "2026-12-13",
+    "lastSolved": "2026-06-16",
+    "url": "",
+    "ef": "3.0",
+    "interval": "180"
+  },
+  {
     "date": "15/06/2026",
     "name": "Merge Strings Alternately",
     "topic": "String",
