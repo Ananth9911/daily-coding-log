@@ -322,7 +322,7 @@
   {
     "topic": "Array",
     "cue": "Binary Search on Answer",
-    "exampleProblem": "Painter's Partition Problem",
+    "exampleProblem": "Painters Partition Problem",
     "oneLiner": "Binary search algo , have l and r and then find mid , need to write function check if mid is valid , and for that we loop through array and then find appropriate thing",
     "difficulty": "H",
     "friction": "Struggled"
