@@ -1,19 +1,19 @@
 [
   {
-    "smooth": 69,
-    "struggled": 15,
+    "smooth": 70,
+    "struggled": 17,
     "hard": 23,
     "total": 132,
     "topic": "Array",
-    "mastery": 52
+    "mastery": 53
   },
   {
-    "smooth": 113,
+    "smooth": 114,
     "struggled": 1,
     "hard": 0,
     "total": 114,
     "topic": "Basic",
-    "mastery": 99
+    "mastery": 100
   },
   {
     "smooth": 20,
@@ -41,7 +41,7 @@
   },
   {
     "smooth": 10,
-    "struggled": 2,
+    "struggled": 3,
     "hard": 5,
     "total": 17,
     "topic": "Hashing",

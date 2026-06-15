@@ -701,7 +701,7 @@
     "exampleProblem": "Count Increasing Triplets",
     "oneLiner": "Fix the middle element j, then count all strictly smaller elements to its left (left_smaller) and strictly greater elements to its right (right_larger). For each $j$, the number of valid triplets is simply left_smaller * right_larger, bringing the O(N^3) brute force down to an optimal O(N^2) time complexity",
     "difficulty": "L",
-    "friction": "Smooth"
+    "friction": "Struggled"
   },
   {
     "topic": "Hashing",
