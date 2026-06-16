@@ -1,5 +1,22 @@
 [
   {
+    "date": "17/06/2026",
+    "name": "Move Zeroes",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "L",
+    "friction": "Smooth",
+    "notes": "Two Pointer",
+    "oneLiner": "Start BOTH i and j at 0.  Let j scan through the array.  Whenever j finds a non-zero number, swap it with the number at i.  Only after you do a swap, increment i.  If j finds a zero, it just ignores it and keeps walking.",
+    "attempts": "1",
+    "phase": "Completed",
+    "reviewDate": "2026-12-14",
+    "lastSolved": "2026-06-17",
+    "url": "",
+    "ef": "3.0",
+    "interval": "180"
+  },
+  {
     "date": "16/06/2026",
     "name": "Merge Two 2D Arrays by Summing Values",
     "topic": "Array",
