@@ -765,7 +765,7 @@
     "exampleProblem": "Possibility of Finishing",
     "oneLiner": "It is simple cycle detection using DFS, if cycle is present , then not possible or else it is possible",
     "difficulty": "H",
-    "friction": ""
+    "friction": "Smooth"
   },
   {
     "topic": "Graph",
