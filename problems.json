@@ -5873,13 +5873,13 @@
     "friction": "Smooth",
     "notes": "ASCII Arithmetic",
     "oneLiner": "check with ASCII and have count , last check count and length",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "Completed",
+    "reviewDate": "2026-12-14",
+    "lastSolved": "2026-06-17",
     "url": "",
     "ef": "3.0",
-    "interval": "3"
+    "interval": "180"
   },
   {
     "date": "15/01/2026",
