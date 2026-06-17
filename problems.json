@@ -824,13 +824,13 @@
     "friction": "Smooth",
     "notes": "Fermat's Little Theorem | Fast Power",
     "oneLiner": "To handle a massive exponent like $B!$, first shrink the exponent by calculating it modulo $P-1$ (k = fact(B, P - 1)). Then, apply standard binary exponentiation to the base using the new shrunken exponent: power(A, k, P)",
-    "attempts": "2",
-    "phase": "S1",
-    "reviewDate": "2026-05-23",
-    "lastSolved": "2026-05-15",
+    "attempts": "3",
+    "phase": "S2",
+    "reviewDate": "2026-07-03",
+    "lastSolved": "2026-06-18",
     "url": "",
-    "ef": "2.0",
-    "interval": "7"
+    "ef": "2.1",
+    "interval": "15"
   },
   {
     "date": "06/05/2026",
@@ -892,13 +892,13 @@
     "friction": "Smooth",
     "notes": "DFS | Flood Fill",
     "oneLiner": "Iterate through the grid. Only increment your island count and trigger a DFS when you find a cell that is both unvisited AND equals 1 (land). Inside the DFS, immediately return if out of bounds, if it's water, or if already visited, then crucially mark the current cell as visited before recursively calling all 8 directions.",
-    "attempts": "2",
-    "phase": "S1",
-    "reviewDate": "2026-05-21",
-    "lastSolved": "2026-05-13",
+    "attempts": "3",
+    "phase": "S2",
+    "reviewDate": "2026-07-03",
+    "lastSolved": "2026-06-18",
     "url": "",
-    "ef": "2.0",
-    "interval": "7"
+    "ef": "2.1",
+    "interval": "15"
   },
   {
     "date": "03/05/2026",
@@ -2286,13 +2286,13 @@
     "friction": "Struggled",
     "notes": "Two Pointer | Sorting",
     "oneLiner": "Sort the array and use two left-to-right pointers (i=0, j=1) to track the difference, using inner while loops to aggressively skip identical values after every match to guarantee only distinct pairs are counted.",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-06-19",
+    "lastSolved": "2026-06-18",
     "url": "",
-    "ef": "2.5",
-    "interval": "3"
+    "ef": "2.2",
+    "interval": "1"
   },
   {
     "date": "02/04/2026",
@@ -2881,13 +2881,13 @@
     "friction": "Smooth",
     "notes": "Stack | Expression Evaluation",
     "oneLiner": "Use Stack of Integers and then simply loop and if else comparise with equals and when pushing Integer.parseInt",
-    "attempts": "2",
-    "phase": "S1",
-    "reviewDate": "2026-05-24",
-    "lastSolved": "2026-05-16",
+    "attempts": "3",
+    "phase": "Completed",
+    "reviewDate": "2026-12-15",
+    "lastSolved": "2026-06-18",
     "url": "",
-    "ef": "2.5",
-    "interval": "7"
+    "ef": "3.0",
+    "interval": "180"
   },
   {
     "date": "18/03/2026",
@@ -3490,16 +3490,16 @@
     "topic": "Math",
     "source": "Scaler",
     "difficulty": "H",
-    "friction": "Smooth",
+    "friction": "Struggled",
     "notes": "Recursion | Math",
     "oneLiner": "Do recursion",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-06-19",
+    "lastSolved": "2026-06-18",
     "url": "",
-    "ef": "2.0",
-    "interval": "3"
+    "ef": "1.7",
+    "interval": "1"
   },
   {
     "date": "06/03/2026",
@@ -3952,13 +3952,13 @@
     "friction": "Smooth",
     "notes": "Two Pointer on Matrix",
     "oneLiner": "Need to redo",
-    "attempts": "3",
-    "phase": "S1",
-    "reviewDate": "2026-05-24",
-    "lastSolved": "2026-05-16",
+    "attempts": "4",
+    "phase": "Completed",
+    "reviewDate": "2026-12-15",
+    "lastSolved": "2026-06-18",
     "url": "",
-    "ef": "2.0",
-    "interval": "7"
+    "ef": "3.0",
+    "interval": "180"
   },
   {
     "date": "25/02/2026",
@@ -5788,13 +5788,13 @@
     "friction": "Smooth",
     "notes": "Simulation",
     "oneLiner": "Run loop from backside and store last element and then shift elements",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "Completed",
+    "reviewDate": "2026-12-14",
+    "lastSolved": "2026-06-17",
     "url": "",
-    "ef": "2.0",
-    "interval": "3"
+    "ef": "3.0",
+    "interval": "180"
   },
   {
     "date": "16/01/2026",
