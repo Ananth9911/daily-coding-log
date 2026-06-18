@@ -1,9 +1,26 @@
 [
   {
+    "date": "18/06/2026",
+    "name": "Remove Duplicates from Sorted Array",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "L",
+    "friction": "Smooth",
+    "notes": "Two Pointer",
+    "oneLiner": "Use two pointer i=0 ,j=1 and move pointers and swap at last return i+1",
+    "attempts": "1",
+    "phase": "Completed",
+    "reviewDate": "2026-12-16",
+    "lastSolved": "2026-06-19",
+    "url": "",
+    "ef": "3.0",
+    "interval": "180"
+  },
+  {
     "date": "17/06/2026",
     "name": "Move Zeroes",
     "topic": "Array",
-    "source": "Scaler",
+    "source": "LeetCode",
     "difficulty": "L",
     "friction": "Smooth",
     "notes": "Two Pointer",
