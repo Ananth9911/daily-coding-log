@@ -709,7 +709,7 @@
     "exampleProblem": "Colorful Number",
     "oneLiner": "Convert the integer to a string and use an $O(N^2)$ nested loop to generate all contiguous subarrays, maintaining a running product inside the inner loop. Check each running product against a HashSet, returning 0 immediately if a duplicate is found, or 1 if all loops finish successfully.",
     "difficulty": "M",
-    "friction": "Smooth"
+    "friction": "Struggled"
   },
   {
     "topic": "DP",
@@ -845,7 +845,7 @@
     "exampleProblem": "Flatten Binary Tree to Linked List",
     "oneLiner": "The Architecture: Use a recursive function returning a (head, tail) pair to flatten subtrees bottom-up.  The Wiring: Connect them by setting root.right = left_head, then left_tail.right = right_head.  The Trap: Always explicitly sever the left pointer (root.left = null) to prevent invalid tree cycles.  The Edge Case: If a node only has a left child, the true end of that list is the left_tail, not the left_head",
     "difficulty": "H",
-    "friction": ""
+    "friction": "Smooth"
   },
   {
     "topic": "String",
