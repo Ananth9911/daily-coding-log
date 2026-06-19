@@ -926,13 +926,13 @@
     "friction": "Smooth",
     "notes": "Greedy | Collect Every Gain",
     "oneLiner": "Don't manually track peaks and valleys. Use a Greedy approach: loop from index 1 to N, and anytime A[i] > A[i-1], simply add A[i] - A[i-1] to your total profit. Every upward daily step contributes to the total",
-    "attempts": "2",
-    "phase": "S1",
-    "reviewDate": "2026-05-26",
-    "lastSolved": "2026-05-18",
+    "attempts": "3",
+    "phase": "S2",
+    "reviewDate": "2026-07-05",
+    "lastSolved": "2026-06-20",
     "url": "",
-    "ef": "2.0",
-    "interval": "7"
+    "ef": "2.1",
+    "interval": "15"
   },
   {
     "date": "02/05/2026",
@@ -1045,12 +1045,12 @@
     "friction": "Struggled",
     "notes": "Minimum Spanning Tree | Kruskal's",
     "oneLiner": "Convert the Edge List into an Adjacency List first. Use a Min-Heap (Priority Queue) to greedily pick the minimum weight edge that connects an unvisited node to the growing tree. Always maintain a visited array to prevent cycles, and ensure the Priority Queue is initialized with a custom comparator for the weights",
-    "attempts": "2",
+    "attempts": "3",
     "phase": "S1",
-    "reviewDate": "2026-05-26",
-    "lastSolved": "2026-05-25",
+    "reviewDate": "2026-06-21",
+    "lastSolved": "2026-06-20",
     "url": "",
-    "ef": "1.7",
+    "ef": "1.4",
     "interval": "1"
   },
   {
@@ -1909,16 +1909,16 @@
     "topic": "Tree",
     "source": "Scaler",
     "difficulty": "M",
-    "friction": "Struggled",
+    "friction": "Smooth",
     "notes": "BFS | Level Order",
     "oneLiner": "Use a dummy node to anchor the start of the next level, and a temp pointer to stitch the children together. When curr reaches the end of the current level, move curr down to dummy.next and reset dummy",
-    "attempts": "2",
+    "attempts": "3",
     "phase": "S1",
-    "reviewDate": "2026-05-27",
-    "lastSolved": "2026-05-26",
+    "reviewDate": "2026-06-23",
+    "lastSolved": "2026-06-20",
     "url": "",
-    "ef": "2.2",
-    "interval": "1"
+    "ef": "2.3",
+    "interval": "3"
   },
   {
     "date": "12/04/2026",
@@ -2422,13 +2422,13 @@
     "friction": "Smooth",
     "notes": "Sieve of Eratosthenes",
     "oneLiner": "Sieve of Eratosthenes",
-    "attempts": "2",
-    "phase": "S1",
-    "reviewDate": "2026-06-05",
-    "lastSolved": "2026-05-30",
+    "attempts": "3",
+    "phase": "Completed",
+    "reviewDate": "2026-12-16",
+    "lastSolved": "2026-06-19",
     "url": "",
-    "ef": "2.1",
-    "interval": "6"
+    "ef": "3.0",
+    "interval": "180"
   },
   {
     "date": "29/03/2026",
@@ -3255,13 +3255,13 @@
     "friction": "Smooth",
     "notes": "Custom Comparator | Sorting",
     "oneLiner": "Sorting",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S2",
+    "reviewDate": "2026-06-27",
+    "lastSolved": "2026-06-19",
     "url": "",
-    "ef": "2.5",
-    "interval": "3"
+    "ef": "2.6",
+    "interval": "8"
   },
   {
     "date": "10/03/2026",
@@ -4224,13 +4224,13 @@
     "friction": "Smooth",
     "notes": "Sliding Window | Fixed Window",
     "oneLiner": "Calculate the sum of the first window and set it as the minimum, then slide the window across the array, updating the minimum sum and its starting index only when a strictly smaller sum is found.",
-    "attempts": "3",
-    "phase": "S1",
-    "reviewDate": "2026-05-26",
-    "lastSolved": "2026-05-18",
+    "attempts": "4",
+    "phase": "Completed",
+    "reviewDate": "2026-12-17",
+    "lastSolved": "2026-06-20",
     "url": "",
     "ef": "3.0",
-    "interval": "7"
+    "interval": "180"
   },
   {
     "date": "20/02/2026",

@@ -17,7 +17,7 @@
   },
   {
     "smooth": 22,
-    "struggled": 23,
+    "struggled": 22,
     "hard": 15,
     "total": 36,
     "topic": "Tree",
@@ -96,12 +96,12 @@
     "mastery": 75
   },
   {
-    "smooth": 4,
+    "smooth": 5,
     "struggled": 0,
     "hard": 2,
     "total": 8,
     "topic": "Sorting",
-    "mastery": 50
+    "mastery": 62
   },
   {
     "smooth": 8,
