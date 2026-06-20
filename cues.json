@@ -853,7 +853,7 @@
     "exampleProblem": "Boring substring",
     "oneLiner": "The Core Secret (The Bridge): Odd ASCII characters are never adjacent to each other. Evens are never adjacent. If you separate them into two halves, you just need to find one valid pair (a bridge) to connect the Odd half to the Even half.The Trap (Brute Force - $O(N^2)$): Iterating through every single Odd character and comparing it against every single Even character will cause a Time Limit Exceeded (TLE) on massive strings.The HashSet Pivot ($O(N)$ Time, $O(1)$ Space): Since there are only 26 letters, dump characters into two HashSets (Odds and Evens). This reduces the nested loop to a maximum of $13 \\times 13 = 169$ constant-time checks.The Masterpiece ($O(N)$ Time, $O(1)$ Space): Ditch the sets. Traverse the string once to find four extremes: minOdd, maxOdd, minEven, and maxEven. Test the 4 cross-combinations. If the absolute difference of any pair is != 1, return true. Otherwise, return false.",
     "difficulty": "H",
-    "friction": ""
+    "friction": "Smooth"
   },
   {
     "topic": "String",

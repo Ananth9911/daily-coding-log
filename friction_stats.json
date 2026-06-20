@@ -1,11 +1,11 @@
 [
   {
-    "smooth": 77,
+    "smooth": 79,
     "struggled": 18,
     "hard": 23,
-    "total": 135,
+    "total": 136,
     "topic": "Array",
-    "mastery": 57
+    "mastery": 58
   },
   {
     "smooth": 114,
@@ -24,12 +24,12 @@
     "mastery": 61
   },
   {
-    "smooth": 18,
+    "smooth": 19,
     "struggled": 3,
     "hard": 9,
-    "total": 28,
+    "total": 29,
     "topic": "String",
-    "mastery": 64
+    "mastery": 66
   },
   {
     "smooth": 22,
@@ -81,19 +81,19 @@
   },
   {
     "smooth": 6,
-    "struggled": 5,
+    "struggled": 4,
     "hard": 8,
     "total": 9,
     "topic": "Backtracking",
     "mastery": 67
   },
   {
-    "smooth": 6,
+    "smooth": 7,
     "struggled": 2,
     "hard": 8,
     "total": 8,
     "topic": "Math",
-    "mastery": 75
+    "mastery": 88
   },
   {
     "smooth": 5,

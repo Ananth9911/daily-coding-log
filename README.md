@@ -1,7 +1,7 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker — FAANG Sprint 2026
-- **Total Problems Solved:** 465 🔥
-- **Overall Mastery:** 74% Smooth | Hard: 143 | Medium: 108
+- **Total Problems Solved:** 467 🔥
+- **Overall Mastery:** 75% Smooth | Hard: 143 | Medium: 108
 - **System Status:** Online 🟢
 
 ### 🎓 Curriculum Progress
@@ -11,6 +11,8 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem | Topic | Difficulty | Phase |
 | :--- | :--- | :--- | :---: | :---: |
+| 20/06/2026 | Sort Array By Parity | Array | 🟢 | Completed |
+| 19/06/2026 | Reverse Words in a String III | String | 🟢 | Completed |
 | 18/06/2026 | Remove Duplicates from Sorted Array | Array | 🟢 | Completed |
 | 17/06/2026 | Move Zeroes | Array | 🟢 | Completed |
 | 16/06/2026 | Merge Two 2D Arrays by Summing Values | Array | 🟢 | Completed |
@@ -19,7 +21,5 @@
 | 13/06/2026 | Minimum Time To Make Rope Colorful | Array | 🟢 | Smooth |
 | 12/06/2026 | Contains Duplicate II | Array | 🟢 | Smooth |
 | 11/06/2026 | 3Sum | Array | 🟢 | S1 |
-| 10/06/2026 | Backspace String Compare | String | 🟢 | Smooth |
-| 10/06/2026 | Check If Two String Arrays are Equivalent | Array | 🟢 | Completed |
 
 [→ View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
