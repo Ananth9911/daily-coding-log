@@ -1,5 +1,22 @@
 [
   {
+    "date": "21/06/2026",
+    "name": "Squares of a Sorted Array",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "L",
+    "friction": "Smooth",
+    "notes": "Two Pointer",
+    "oneLiner": "Two pointer , calculate left square  , right square compare and put it in index of new result array . We start index from n-1 and left is from 0 and right from n-1.",
+    "attempts": "1",
+    "phase": "Completed",
+    "reviewDate": "2026-12-18",
+    "lastSolved": "2026-06-21",
+    "url": "",
+    "ef": "3.0",
+    "interval": "180"
+  },
+  {
     "date": "20/06/2026",
     "name": "Sort Array By Parity",
     "topic": "Array",
