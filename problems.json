@@ -5329,13 +5329,13 @@
     "friction": "Smooth",
     "notes": "Matrix Traversal",
     "oneLiner": "simple one loop with fixed B row moving column j and finding max by comparing",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "Completed",
+    "reviewDate": "2026-12-19",
+    "lastSolved": "2026-06-22",
     "url": "",
     "ef": "3.0",
-    "interval": "3"
+    "interval": "180"
   },
   {
     "date": "23/01/2026",
@@ -5567,13 +5567,13 @@
     "friction": "Smooth",
     "notes": "Simulation",
     "oneLiner": "Run loop from backside and store last element and then shift elements",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "Completed",
+    "reviewDate": "2026-12-19",
+    "lastSolved": "2026-06-22",
     "url": "",
     "ef": "3.0",
-    "interval": "3"
+    "interval": "180"
   },
   {
     "date": "22/01/2026",
