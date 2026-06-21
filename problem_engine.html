@@ -9,6 +9,7 @@
     --ink:#11141a; --paper:#f7f5f0; --card:#ffffff; --line:#e4e0d6;
     --muted:#6b7280; --accent:#c2410c; --accent-soft:#fdebe0;
     --easy:#2f7d4f; --medium:#b07d12; --hard:#b23b3b;
+    --easy-bg:#eef8f1; --medium-bg:#fbf3df; --hard-bg:#fbeeee;
     --done:#2f7d4f; --shadow:0 1px 2px rgba(17,20,26,.06),0 8px 24px rgba(17,20,26,.06);
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -17,78 +18,100 @@
     background:var(--paper); color:var(--ink); min-height:100vh;
     display:flex; align-items:flex-start; justify-content:center; padding:32px 18px 64px;
   }
-  .wrap{width:100%; max-width:560px}
+  .wrap{width:100%; max-width:580px}
   .top{display:flex; align-items:baseline; justify-content:space-between; margin-bottom:22px}
   .title{font-size:15px; font-weight:700; letter-spacing:.04em}
   .title b{color:var(--accent)}
   .count{font-size:12px; color:var(--muted)}
 
-  .card{
-    background:var(--card); border:1px solid var(--line); border-radius:14px;
-    box-shadow:var(--shadow); padding:26px 24px; margin-bottom:16px;
-  }
+  .card{background:var(--card); border:1px solid var(--line); border-radius:14px;
+    box-shadow:var(--shadow); padding:26px 24px; margin-bottom:16px;}
   .eyebrow{display:flex; gap:8px; align-items:center; font-size:11px;
     color:var(--muted); letter-spacing:.06em; text-transform:uppercase; margin-bottom:14px}
   .eyebrow .dot{width:5px;height:5px;border-radius:50%;background:var(--accent)}
-  .vname{color:var(--ink); font-weight:700}
+  .vrow{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:14px}
+  .vname{color:var(--ink); font-weight:700; font-size:13px; letter-spacing:.02em; display:flex; align-items:center; gap:7px}
+  .cold-badge{font-size:10px; color:var(--done); border:1px solid #bfe3cd; background:var(--easy-bg);
+    padding:2px 7px; border-radius:999px; letter-spacing:.03em}
 
   .pname{font-size:23px; line-height:1.25; font-weight:700; letter-spacing:-.01em; margin-bottom:14px}
   .meta{display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom:22px}
   .pill{font-size:11px; padding:4px 9px; border-radius:999px; border:1px solid var(--line);
     letter-spacing:.04em; text-transform:uppercase}
-  .pill.easy{color:var(--easy); border-color:#bfe3cd; background:#eef8f1}
-  .pill.medium{color:var(--medium); border-color:#e8d9b0; background:#fbf3df}
-  .pill.hard{color:var(--hard); border-color:#ecc9c9; background:#fbeeee}
+  .pill.easy{color:var(--easy); border-color:#bfe3cd; background:var(--easy-bg)}
+  .pill.medium{color:var(--medium); border-color:#e8d9b0; background:var(--medium-bg)}
+  .pill.hard{color:var(--hard); border-color:#ecc9c9; background:var(--hard-bg)}
   .pill.tier{color:var(--muted)}
 
   .actions{display:flex; gap:10px; flex-wrap:wrap}
-  a.btn,button.btn{
-    font:inherit; font-size:13px; font-weight:600; letter-spacing:.02em;
+  a.btn,button.btn{font:inherit; font-size:13px; font-weight:600; letter-spacing:.02em;
     border-radius:10px; padding:11px 16px; cursor:pointer; border:1px solid var(--line);
     background:var(--card); color:var(--ink); text-decoration:none; display:inline-flex;
-    align-items:center; gap:7px; transition:transform .04s ease, background .15s ease, border-color .15s ease;
-  }
+    align-items:center; gap:7px; transition:transform .04s ease, background .15s ease;}
   a.btn:active,button.btn:active{transform:translateY(1px)}
   .btn.solve{background:var(--ink); color:#fff; border-color:var(--ink)}
   .btn.done{background:var(--accent); color:#fff; border-color:var(--accent)}
   .btn.ghost{color:var(--muted)}
   .btn:disabled{opacity:.5; cursor:not-allowed}
 
-  .coldrow{display:flex; align-items:center; gap:9px; margin-top:18px;
-    font-size:12px; color:var(--muted)}
+  .coldrow{display:flex; align-items:center; gap:9px; margin-top:18px; font-size:12px; color:var(--muted)}
   .coldrow input{accent-color:var(--accent); width:15px; height:15px}
 
-  .vbar{margin-top:18px}
-  .vbar .track{height:6px; background:#efece4; border-radius:999px; overflow:hidden}
-  .vbar .fill{height:100%; background:var(--accent); border-radius:999px; transition:width .3s ease}
-  .vbar .lbl{display:flex; justify-content:space-between; font-size:11px; color:var(--muted); margin-top:7px}
+  /* segmented mastery bar */
+  .mbar{margin-top:20px}
+  .mbar .seg-track{display:flex; gap:3px; height:9px}
+  .mbar .seg{flex:1; background:#efece4; border-radius:3px; position:relative; overflow:hidden}
+  .mbar .seg .fill{position:absolute; inset:0; transform-origin:left; border-radius:3px}
+  .seg.easy .fill{background:var(--easy)} .seg.medium .fill{background:var(--medium)} .seg.hard .fill{background:var(--hard)}
+  .mbar .legend{display:flex; gap:14px; margin-top:9px; font-size:11px; color:var(--muted); flex-wrap:wrap}
+  .mbar .legend span b{font-weight:700}
+  .mbar .legend .e b{color:var(--easy)} .mbar .legend .m b{color:var(--medium)} .mbar .legend .h b{color:var(--hard)}
+  .mbar .summary{font-size:11px; color:var(--muted); margin-top:3px}
 
-  .sub{display:flex; gap:10px; align-items:center; justify-content:space-between; margin-top:4px}
-  .more{font-size:12px; color:var(--accent); background:none; border:none; cursor:pointer; padding:6px 0}
-  .more:hover{text-decoration:underline}
-
-  .gate{background:var(--card); border:1px solid var(--line); border-radius:14px;
-    box-shadow:var(--shadow); padding:20px 22px; margin-bottom:16px}
-  .gate label{font-size:11px; color:var(--muted); letter-spacing:.05em; text-transform:uppercase}
-  .gate-row{display:flex; gap:10px; margin-top:9px}
-  .gate input{flex:1; font:inherit; font-size:13px; padding:9px 12px; border:1px solid var(--line);
-    border-radius:9px; background:var(--paper)}
-  .gate .state{font-size:11px; margin-top:8px; color:var(--muted)}
-  .gate .state.ok{color:var(--done)}
-
-  .overflow{margin-top:14px; border-top:1px dashed var(--line); padding-top:14px; display:none}
-  .overflow.show{display:block}
-  .overflow h4{font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.05em; margin-bottom:10px}
-  .ov-item{display:flex; justify-content:space-between; align-items:center; padding:7px 0; font-size:13px; border-bottom:1px solid #f1eee7}
-  .ov-item a{color:var(--ink); text-decoration:none}
-  .ov-item a:hover{color:var(--accent)}
-
-  .msg{font-size:13px; color:var(--muted); text-align:center; padding:30px 0}
-  .done-state{text-align:center; padding:34px 10px}
-  .done-state .big{font-size:30px; margin-bottom:8px}
-  .foot{text-align:center; font-size:11px; color:var(--muted); margin-top:24px; line-height:1.6}
   .target-edit{font-size:11px;color:var(--accent);background:none;border:none;cursor:pointer}
   .target-edit:hover{text-decoration:underline}
+
+  /* overflow + mix selector */
+  .overflow{margin-top:16px; border-top:1px dashed var(--line); padding-top:14px; display:none}
+  .overflow.show{display:block}
+  .overflow h4{font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.05em; margin-bottom:10px}
+  .mixsel{display:flex; gap:6px; margin-bottom:12px; flex-wrap:wrap}
+  .mixsel button{font:inherit; font-size:11px; padding:5px 11px; border-radius:999px; border:1px solid var(--line);
+    background:var(--card); color:var(--muted); cursor:pointer}
+  .mixsel button.on{background:var(--accent-soft); color:var(--accent); border-color:#f0c4ad; font-weight:700}
+  .ov-item{display:flex; justify-content:space-between; align-items:center; padding:7px 0; font-size:13px; border-bottom:1px solid #f1eee7}
+  .ov-item a{color:var(--ink); text-decoration:none} .ov-item a:hover{color:var(--accent)}
+
+  /* topic overview */
+  .panel{background:var(--card); border:1px solid var(--line); border-radius:14px; box-shadow:var(--shadow); margin-bottom:16px; overflow:hidden}
+  .panel .head{display:flex; justify-content:space-between; align-items:center; padding:16px 20px; cursor:pointer; user-select:none}
+  .panel .head h3{font-size:12px; letter-spacing:.05em; text-transform:uppercase; color:var(--muted)}
+  .panel .head .chev{color:var(--muted); transition:transform .2s ease}
+  .panel.open .head .chev{transform:rotate(90deg)}
+  .panel .body{display:none; padding:0 20px 16px}
+  .panel.open .body{display:block}
+  .vov{padding:11px 0; border-top:1px solid #f1eee7}
+  .vov:first-child{border-top:none}
+  .vov .vh{display:flex; justify-content:space-between; align-items:center; font-size:12px; margin-bottom:6px}
+  .vov .vh .nm{font-weight:700; color:var(--ink); display:flex; align-items:center; gap:6px}
+  .vov .vh .ct{color:var(--muted)}
+  .vov.complete .nm{color:var(--done)}
+  .tinybar{display:flex; gap:2px; height:6px}
+  .tinybar .s{flex:1; background:#efece4; border-radius:2px; position:relative; overflow:hidden}
+  .tinybar .s .f{position:absolute; inset:0}
+  .tinybar .s.easy .f{background:var(--easy)} .tinybar .s.medium .f{background:var(--medium)} .tinybar .s.hard .f{background:var(--hard)}
+  .dotrow{display:inline-flex; gap:3px; margin-left:4px}
+  .dotrow i{width:6px;height:6px;border-radius:50%;display:inline-block;background:#dcd8cd}
+  .dotrow i.easy{background:var(--easy)} .dotrow i.medium{background:var(--medium)} .dotrow i.hard{background:var(--hard)}
+
+  .msg{font-size:13px; color:var(--muted); text-align:center; padding:30px 0}
+  .done-state{text-align:center; padding:34px 10px} .done-state .big{font-size:30px; margin-bottom:8px}
+  .gate{background:var(--card); border:1px solid var(--line); border-radius:14px; box-shadow:var(--shadow); padding:20px 22px; margin-bottom:16px}
+  .gate label{font-size:11px; color:var(--muted); letter-spacing:.05em; text-transform:uppercase}
+  .gate-row{display:flex; gap:10px; margin-top:9px}
+  .gate input{flex:1; font:inherit; font-size:13px; padding:9px 12px; border:1px solid var(--line); border-radius:9px; background:var(--paper)}
+  .gate .state{font-size:11px; margin-top:8px; color:var(--muted)}
+  .foot{text-align:center; font-size:11px; color:var(--muted); margin-top:24px; line-height:1.6}
   @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -99,7 +122,6 @@
     <div class="count" id="count">—</div>
   </div>
 
-  <!-- admin gate: paste key to unlock write actions -->
   <div class="gate" id="gate">
     <label for="key">Admin key — unlock to mark progress</label>
     <div class="gate-row">
@@ -111,158 +133,194 @@
 
   <div id="main"><div class="msg">Loading your next problem…</div></div>
 
+  <div class="panel" id="topicPanel" style="display:none">
+    <div class="head" onclick="toggleTopic()">
+      <h3 id="topicTitle">This topic</h3>
+      <span class="chev">▸</span>
+    </div>
+    <div class="body" id="topicBody"></div>
+  </div>
+
   <div class="foot">
-    Auto-picks the next problem: current topic → current variation → easiest unsolved.<br>
-    Marking done is recorded in the sheet. Solved problems also go in your SRS log as usual.
+    Each variation is served as a FAANG-style mix — easy, medium, and hard interleaved, not all-easy-first.<br>
+    Bars show mastery by difficulty. Solved problems also go in your SRS log as usual.
   </div>
 </div>
 
 <script>
-/* ====== CONFIG: paste your Apps Script /exec URL here ====== */
 const API = 'https://script.google.com/macros/s/AKfycbxBL-fDlOwouLJnujm1_v4lbDfyRjMACdhAbV_KtYUyAJnQYK_qnwsoHC5NBqwztMx4Bw/exec';
 
-let ADMIN_KEY = '';            // set on unlock
-let COLD_GATE = true;          // require cold-test checkbox before advancing a variation
-let current = null;            // current problem payload
+let ADMIN_KEY=''; let current=null; let progress=null; let overflowMix='balanced';
 
 function unlock(){
-  const k = document.getElementById('key').value.trim();
-  if(!k){ return; }
-  ADMIN_KEY = k;
-  document.getElementById('gate').style.display='none';
-  render(); // re-render so buttons enable
+  const k=document.getElementById('key').value.trim(); if(!k) return;
+  ADMIN_KEY=k; document.getElementById('gate').style.display='none'; render();
 }
-
 async function call(action, params={}){
-  const u = new URL(API);
-  u.searchParams.set('action', action);
-  Object.keys(params).forEach(k=>u.searchParams.set(k, params[k]));
-  const res = await fetch(u.toString());
-  return res.json();
+  const u=new URL(API); u.searchParams.set('action',action);
+  Object.keys(params).forEach(k=>u.searchParams.set(k,params[k]));
+  const res=await fetch(u.toString()); const txt=await res.text(); return JSON.parse(txt);
 }
-
 async function load(){
   try{
-    const data = await call('getNext');
-    current = data;
-    render();
-    refreshCount();
+    current=await call('getNext'); render();
+    progress=await call('getProgress'); refreshCount(); renderTopic();
   }catch(e){
-    document.getElementById('main').innerHTML =
-      '<div class="card"><div class="msg">Could not reach the engine. Check the API URL.</div></div>';
+    document.getElementById('main').innerHTML='<div class="card"><div class="msg">Could not reach the engine. Check the API URL.</div></div>';
   }
 }
-
-async function refreshCount(){
-  try{
-    const p = await call('getProgress');
-    if(p && p.ok){
-      document.getElementById('count').textContent =
-        p.totalDone + ' / ' + p.totalProblems + ' done';
-    }
-  }catch(e){}
+function refreshCount(){
+  if(progress&&progress.ok)
+    document.getElementById('count').textContent=progress.totalDone+' / '+progress.totalProblems+' done';
 }
+function diffClass(d){return (d||'').toLowerCase();}
+function esc(s){return String(s).replace(/'/g,"\\'");}
 
-function diffClass(d){ return (d||'').toLowerCase(); }
+// segmented mastery bar from a diff object {Easy:{done,total},...}
+function masteryBar(diff, target){
+  const segs=[];
+  ['Easy','Medium','Hard'].forEach(d=>{
+    const o=diff[d]||{done:0,total:0};
+    const cls=d.toLowerCase();
+    const pct=o.total>0?Math.round(o.done/o.total*100):0;
+    // render up to a few segments per difficulty proportional to how many exist (cap visual at 6)
+    const n=Math.min(o.total,6)||1;
+    for(let i=0;i<n;i++){
+      const filled = i < Math.round(o.done/Math.max(o.total,1)*n);
+      segs.push(`<div class="seg ${cls}"><div class="fill" style="transform:scaleX(${filled?1:0})"></div></div>`);
+    }
+  });
+  return `<div class="seg-track">${segs.join('')}</div>`;
+}
+function legend(diff){
+  const g=d=>{const o=diff[d]||{done:0,total:0};return `${o.done}/${o.total}`;};
+  return `<div class="legend">
+    <span class="e">Easy <b>${g('Easy')}</b></span>
+    <span class="m">Medium <b>${g('Medium')}</b></span>
+    <span class="h">Hard <b>${g('Hard')}</b></span></div>`;
+}
 
 function render(){
-  const main = document.getElementById('main');
-  if(!current){ return; }
-
+  const main=document.getElementById('main'); if(!current) return;
   if(current.done){
-    main.innerHTML =
-      '<div class="card"><div class="done-state"><div class="big">✓</div>'+
-      '<div>'+ (current.message||'All targets met.') +'</div></div></div>';
+    main.innerHTML='<div class="card"><div class="done-state"><div class="big">✓</div><div>'+(current.message||'All targets met.')+'</div></div></div>';
     return;
   }
-
-  const p = current.problem, v = current.variation;
-  const locked = !ADMIN_KEY;
-  const pct = Math.round((v.done / Math.max(v.target,1))*100);
-
-  main.innerHTML = `
+  const p=current.problem, v=current.variation, locked=!ADMIN_KEY;
+  const cold = v.coldTest ? '<span class="cold-badge">✓ cold-test passed</span>' : '';
+  main.innerHTML=`
     <div class="card">
-      <div class="eyebrow">
-        <span class="dot"></span>
-        <span>${p.category}</span>
-      </div>
-      <div class="eyebrow" style="margin-top:-6px">
-        <span class="vname">${v.name}</span>
+      <div class="eyebrow"><span class="dot"></span><span>${p.category}</span></div>
+      <div class="vrow">
+        <span class="vname">${v.name} ${cold}</span>
         <button class="target-edit" onclick="editTarget('${esc(v.category)}','${esc(v.name)}',${v.target})">target ${v.target} ✎</button>
       </div>
-
       <div class="pname">${p.name}</div>
       <div class="meta">
         <span class="pill ${diffClass(p.difficulty)}">${p.difficulty||'—'}</span>
-        ${p.tier && p.tier!=='Extended' ? '<span class="pill tier">'+p.tier+'</span>' : ''}
+        ${p.tier&&p.tier!=='Extended'?'<span class="pill tier">'+p.tier+'</span>':''}
       </div>
-
       <div class="actions">
         <a class="btn solve" href="${p.url||'#'}" target="_blank" rel="noopener">Open on LeetCode ↗</a>
-        <button class="btn done" id="doneBtn" ${locked?'disabled title="Unlock to mark progress"':''}
-          onclick="markDone()">Mark done</button>
+        <button class="btn done" id="doneBtn" ${locked?'disabled title="Unlock to mark progress"':''} onclick="markDone()">Mark done</button>
         <button class="btn ghost" onclick="toggleOverflow()">+ more of this variation</button>
       </div>
-
       <div class="coldrow">
         <input type="checkbox" id="cold" ${locked?'disabled':''}>
         <label for="cold">Cold-test passed (solved a fresh one without hints)</label>
       </div>
-
-      <div class="vbar">
-        <div class="track"><div class="fill" style="width:${Math.min(pct,100)}%"></div></div>
-        <div class="lbl"><span>${v.done} of ${v.target} in this variation</span><span>${v.total} available</span></div>
+      <div class="mbar">
+        ${masteryBar(v.diff, v.target)}
+        ${legend(v.diff)}
+        <div class="summary">${v.done} of ${v.target} done in this variation · ${v.total} available</div>
       </div>
-
-      <div class="overflow" id="overflow"><h4>More in “${v.name}”</h4><div id="ovlist"></div></div>
+      <div class="overflow" id="overflow">
+        <h4>More in “${v.name}”</h4>
+        <div class="mixsel">
+          <button data-mix="balanced" class="on" onclick="setMix('balanced')">Balanced 2·6·2</button>
+          <button data-mix="harder" onclick="setMix('harder')">Harder</button>
+          <button data-mix="mediums" onclick="setMix('mediums')">Mediums only</button>
+        </div>
+        <div id="ovlist"></div>
+      </div>
     </div>`;
 }
 
-function esc(s){ return String(s).replace(/'/g,"\\'"); }
-
 async function markDone(){
-  if(!ADMIN_KEY || !current || !current.problem) return;
-  const btn = document.getElementById('doneBtn');
-  btn.disabled = true; btn.textContent = 'Saving…';
-  const cold = document.getElementById('cold');
-  const params = { key:ADMIN_KEY, row: current.problem.row };
-  if(cold && cold.checked) params.coldTest = 'pass';
+  if(!ADMIN_KEY||!current||!current.problem) return;
+  const btn=document.getElementById('doneBtn'); btn.disabled=true; btn.textContent='Saving…';
+  const cold=document.getElementById('cold');
+  const params={key:ADMIN_KEY,row:current.problem.row};
+  if(cold&&cold.checked) params.coldTest='pass';
   try{
-    const data = await call('markDone', params);
-    current = data;
-    render();
-    refreshCount();
-  }catch(e){
-    btn.disabled=false; btn.textContent='Mark done';
-  }
+    current=await call('markDone',params); render();
+    progress=await call('getProgress'); refreshCount(); renderTopic();
+  }catch(e){ btn.disabled=false; btn.textContent='Mark done'; }
 }
-
-async function editTarget(category, variation, cur){
-  if(!ADMIN_KEY){ alert('Unlock with the admin key first.'); return; }
-  const n = prompt('Problems to do in “'+variation+'” before moving on:', cur);
-  if(n===null) return;
-  const num = parseInt(n,10);
-  if(!num || num<1) return;
-  await call('setTarget', {key:ADMIN_KEY, category, variation, target:num});
-  load();
+async function editTarget(category,variation,cur){
+  if(!ADMIN_KEY){alert('Unlock with the admin key first.');return;}
+  const n=prompt('Problems to do in “'+variation+'” before moving on:',cur);
+  if(n===null) return; const num=parseInt(n,10); if(!num||num<1) return;
+  await call('setTarget',{key:ADMIN_KEY,category,variation,target:num}); load();
 }
-
+function setMix(m){
+  overflowMix=m;
+  document.querySelectorAll('.mixsel button').forEach(b=>b.classList.toggle('on',b.dataset.mix===m));
+  loadOverflow();
+}
 async function toggleOverflow(){
-  const box = document.getElementById('overflow');
-  if(box.classList.contains('show')){ box.classList.remove('show'); return; }
-  if(!current || !current.variation) return;
-  const v = current.variation;
-  const data = await call('moreOfVariation', {category:v.category, variation:v.name});
-  const list = document.getElementById('ovlist');
-  if(data && data.items && data.items.length){
-    list.innerHTML = data.items.map(it =>
+  const box=document.getElementById('overflow');
+  if(box.classList.contains('show')){box.classList.remove('show');return;}
+  box.classList.add('show'); loadOverflow();
+}
+async function loadOverflow(){
+  if(!current||!current.variation) return;
+  const v=current.variation;
+  const data=await call('moreOfVariation',{category:v.category,variation:v.name,mix:overflowMix});
+  const list=document.getElementById('ovlist');
+  if(data&&data.items&&data.items.length){
+    list.innerHTML=data.items.map(it=>
       `<div class="ov-item"><a href="${it.url||'#'}" target="_blank" rel="noopener">${it.name}</a>`+
       `<span class="pill ${diffClass(it.difficulty)}">${it.difficulty}</span></div>`).join('');
-  } else {
-    list.innerHTML = '<div class="msg" style="padding:10px 0">Nothing left here.</div>';
-  }
-  box.classList.add('show');
+  } else { list.innerHTML='<div class="msg" style="padding:10px 0">Nothing left here.</div>'; }
 }
+
+// ---- topic overview panel ----
+function renderTopic(){
+  if(!progress||!current||current.done){document.getElementById('topicPanel').style.display='none';return;}
+  const cat=current.problem.category;
+  const vs=progress.variations.filter(v=>v.category===cat);
+  if(!vs.length){document.getElementById('topicPanel').style.display='none';return;}
+  document.getElementById('topicPanel').style.display='block';
+  document.getElementById('topicTitle').textContent=cat;
+  const body=document.getElementById('topicBody');
+  body.innerHTML=vs.map(v=>{
+    const dots=['Easy','Medium','Hard'].map(d=>{
+      const o=v.diff[d]||{done:0,total:0};
+      return o.total>0 ? `<i class="${d.toLowerCase()}" title="${d} ${o.done}/${o.total}"></i>` : '';
+    }).join('');
+    return `<div class="vov ${v.complete?'complete':''}">
+      <div class="vh">
+        <span class="nm">${v.complete?'✓ ':''}${v.variation}${v.coldTest?' <span class="cold-badge" style="margin-left:4px">cold ✓</span>':''}<span class="dotrow">${dots}</span></span>
+        <span class="ct">${v.done}/${v.target}</span>
+      </div>
+      ${tinybar(v.diff)}
+    </div>`;
+  }).join('');
+}
+function tinybar(diff){
+  const segs=[];
+  ['Easy','Medium','Hard'].forEach(d=>{
+    const o=diff[d]||{done:0,total:0}; if(o.total===0) return;
+    const n=Math.min(o.total,5), cls=d.toLowerCase();
+    for(let i=0;i<n;i++){
+      const filled=i<Math.round(o.done/Math.max(o.total,1)*n);
+      segs.push(`<div class="s ${cls}"><div class="f" style="transform:scaleX(${filled?1:0});transform-origin:left"></div></div>`);
+    }
+  });
+  return `<div class="tinybar">${segs.join('')||'<div class="s"><div class="f"></div></div>'}</div>`;
+}
+function toggleTopic(){ document.getElementById('topicPanel').classList.toggle('open'); }
 
 load();
 </script>
