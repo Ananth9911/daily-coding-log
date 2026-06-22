@@ -1,5 +1,22 @@
 [
   {
+    "date": "22/06/2026",
+    "name": "3Sum Smaller",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "L",
+    "friction": "Smooth",
+    "notes": "Two Pointer",
+    "oneLiner": "Similar to 3sum , just to count triplets we need to do count+=right-left",
+    "attempts": "1",
+    "phase": "Completed",
+    "reviewDate": "2026-12-20",
+    "lastSolved": "2026-06-23",
+    "url": "",
+    "ef": "3.0",
+    "interval": "180"
+  },
+  {
     "date": "21/06/2026",
     "name": "Squares of a Sorted Array",
     "topic": "Array",
