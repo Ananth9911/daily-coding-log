@@ -1,11 +1,11 @@
 [
   {
-    "smooth": 82,
+    "smooth": 83,
     "struggled": 18,
     "hard": 23,
     "total": 137,
     "topic": "Array",
-    "mastery": 60
+    "mastery": 61
   },
   {
     "smooth": 114,
@@ -16,12 +16,12 @@
     "mastery": 100
   },
   {
-    "smooth": 22,
-    "struggled": 22,
+    "smooth": 23,
+    "struggled": 20,
     "hard": 15,
     "total": 36,
     "topic": "Tree",
-    "mastery": 61
+    "mastery": 64
   },
   {
     "smooth": 19,
@@ -40,16 +40,16 @@
     "mastery": 100
   },
   {
-    "smooth": 11,
+    "smooth": 12,
     "struggled": 4,
     "hard": 5,
     "total": 17,
     "topic": "Hashing",
-    "mastery": 65
+    "mastery": 71
   },
   {
     "smooth": 16,
-    "struggled": 6,
+    "struggled": 5,
     "hard": 12,
     "total": 16,
     "topic": "Graph",
@@ -80,12 +80,12 @@
     "mastery": 27
   },
   {
-    "smooth": 6,
-    "struggled": 4,
+    "smooth": 7,
+    "struggled": 3,
     "hard": 8,
     "total": 9,
     "topic": "Backtracking",
-    "mastery": 67
+    "mastery": 78
   },
   {
     "smooth": 7,

@@ -509,7 +509,7 @@
     "exampleProblem": "Print paths in Staircase",
     "oneLiner": "Recursively branch the 1-step choice before the 2-step choice to guarantee lexicographical order, making sure to undo the choice after exploring and saving a deep copy of the path when the remaining steps hit zero",
     "difficulty": "H",
-    "friction": "Struggled"
+    "friction": "Smooth"
   },
   {
     "topic": "Backtracking",
