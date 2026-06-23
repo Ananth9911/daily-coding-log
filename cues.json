@@ -445,7 +445,7 @@
     "exampleProblem": "Compute nCr % m",
     "oneLiner": "Use the Sieve of Eratosthenes to find all primes up to n, then apply Legendre's formula to count and subtract each prime's occurrences in the denominators from the numerator to completely bypass division. Finally, take the surviving primes and multiply them together using binary exponentiation, applying the modulo at every step to safely prevent integer overflow",
     "difficulty": "H",
-    "friction": "Struggled"
+    "friction": "Smooth"
   },
   {
     "topic": "Maths",

@@ -1283,13 +1283,13 @@
     "friction": "Struggled",
     "notes": "Boyer-Moore Voting",
     "oneLiner": "Use the Extended Boyer-Moore Voting Algorithm by maintaining two candidates and their counts; increment counts for matches, assign new candidates when counts are zero, and decrement both counts when a third distinct element is encountered. Always verify the final surviving candidates with a second pass to ensure their true frequency is strictly > N/3",
-    "attempts": "3",
+    "attempts": "4",
     "phase": "S1",
-    "reviewDate": "2026-06-20",
-    "lastSolved": "2026-06-16",
+    "reviewDate": "2026-06-25",
+    "lastSolved": "2026-06-23",
     "url": "",
-    "ef": "2.7",
-    "interval": "4"
+    "ef": "2.4",
+    "interval": "2"
   },
   {
     "date": "24/04/2026",
@@ -2470,16 +2470,16 @@
     "topic": "Maths",
     "source": "Scaler",
     "difficulty": "H",
-    "friction": "Struggled",
+    "friction": "Smooth",
     "notes": "Legendre's Formula | Sieve",
     "oneLiner": "Use the Sieve of Eratosthenes to find all primes up to n, then apply Legendre's formula to count and subtract each prime's occurrences in the denominators from the numerator to completely bypass division. Finally, take the surviving primes and multiply them together using binary exponentiation, applying the modulo at every step to safely prevent integer overflow",
-    "attempts": "1",
-    "phase": "Completed",
-    "reviewDate": "2026-05-29",
-    "lastSolved": "2026-05-26",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-06-29",
+    "lastSolved": "2026-06-23",
     "url": "",
-    "ef": "2.0",
-    "interval": "3"
+    "ef": "2.1",
+    "interval": "6"
   },
   {
     "date": "30/03/2026",
@@ -2796,13 +2796,13 @@
     "friction": "Struggled",
     "notes": "DFS | Postorder",
     "oneLiner": "Logic is post order and trackign sum of left and right and having base of leaf node",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-06-24",
+    "lastSolved": "2026-06-23",
     "url": "",
-    "ef": "2.0",
-    "interval": "3"
+    "ef": "1.7",
+    "interval": "1"
   },
   {
     "date": "23/03/2026",
@@ -3561,13 +3561,13 @@
     "friction": "Smooth",
     "notes": "HashMap | Frequency Count",
     "oneLiner": "Using hashmap , build freq map and then another loop and find freq for second array and push it in new array",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S2",
+    "reviewDate": "2026-07-01",
+    "lastSolved": "2026-06-23",
     "url": "",
-    "ef": "2.5",
-    "interval": "3"
+    "ef": "2.6",
+    "interval": "8"
   },
   {
     "date": "06/03/2026",
@@ -5669,13 +5669,13 @@
     "friction": "Smooth",
     "notes": "HashMap | Brute Force",
     "oneLiner": "Brute Force Two loops and Optimised is HashMap",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "Completed",
+    "reviewDate": "2026-12-20",
+    "lastSolved": "2026-06-23",
     "url": "",
     "ef": "3.0",
-    "interval": "3"
+    "interval": "180"
   },
   {
     "date": "22/01/2026",
