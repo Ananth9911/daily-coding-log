@@ -1,5 +1,22 @@
 [
   {
+    "date": "23/06/2026",
+    "name": "4Sum",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "L",
+    "friction": "Smooth",
+    "notes": "Two Pointers",
+    "oneLiner": "Similar to 3sum",
+    "attempts": "1",
+    "phase": "Smooth",
+    "reviewDate": "2026-06-27",
+    "lastSolved": "2026-06-24",
+    "url": "",
+    "ef": "3.0",
+    "interval": "3"
+  },
+  {
     "date": "22/06/2026",
     "name": "3Sum Smaller",
     "topic": "Array",
