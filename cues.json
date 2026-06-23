@@ -773,7 +773,7 @@
     "exampleProblem": "Topological Sort - Kahn's Algorithm",
     "oneLiner": "Calculate the in-degree for all nodes and push those with an in-degree of 0 into a Queue (use a PriorityQueue if you need the lexicographically smallest order). Pop nodes, add them to your answer array, and decrement their neighbors' in-degrees\u2014pushing any neighbor that drops to 0 into the queue\u2014and finally check if the answer size matches the total nodes to ensure no cycles exist",
     "difficulty": "H",
-    "friction": ""
+    "friction": "Smooth"
   },
   {
     "topic": "Greedy",
