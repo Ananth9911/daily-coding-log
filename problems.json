@@ -1,5 +1,22 @@
 [
   {
+    "date": "25/06/2026",
+    "name": "Bag of Tokens",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "L",
+    "friction": "Struggled",
+    "notes": "Greedy | Two Pointer",
+    "oneLiner": "Mutually Exclusive Moves (if / else if / else break): You can only make one move per turn. If you use separate if statements, the code might buy a point and instantly sell it back in the exact same loop. The else break is mandatory to stop infinite spinning when you are broke.  The Fluctuating Max: Because you are actively spending your score to buy power, your score will fluctuate up and down. The score you hold at the end of the loop is not always your highest score. Always track maxScore = Math.max(maxScore, currentScore) every time you gain a point.  The Final Token (i <= j): If both pointers land on the exact same token, you can still buy it! Using i < j leaves that final point sitting on the table",
+    "attempts": "1",
+    "phase": "Struggled",
+    "reviewDate": "2026-06-27",
+    "lastSolved": "2026-06-26",
+    "url": "",
+    "ef": "3.0",
+    "interval": "1"
+  },
+  {
     "date": "24/06/2026",
     "name": "Adding Spaces to a String",
     "topic": "Array",
