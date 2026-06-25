@@ -1,11 +1,11 @@
 [
   {
-    "smooth": 88,
+    "smooth": 90,
     "struggled": 18,
     "hard": 23,
     "total": 139,
     "topic": "Array",
-    "mastery": 63
+    "mastery": 65
   },
   {
     "smooth": 114,
@@ -56,12 +56,12 @@
     "mastery": 100
   },
   {
-    "smooth": 8,
+    "smooth": 9,
     "struggled": 4,
     "hard": 6,
     "total": 14,
     "topic": "Maths",
-    "mastery": 57
+    "mastery": 64
   },
   {
     "smooth": 6,
@@ -88,12 +88,12 @@
     "mastery": 78
   },
   {
-    "smooth": 7,
+    "smooth": 8,
     "struggled": 2,
     "hard": 8,
     "total": 8,
     "topic": "Math",
-    "mastery": 88
+    "mastery": 100
   },
   {
     "smooth": 5,
