@@ -1,5 +1,22 @@
 [
   {
+    "date": "26/06/2026",
+    "name": "Boats to Save People",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "L",
+    "friction": "Smooth",
+    "notes": "Greedy | Two Pointer",
+    "oneLiner": "The \"Doomed\" Principle: If the Heaviest person + the Lightest person > limit, the Heaviest person is doomed to ride alone. Do not search for another match. Just put them in a boat (boats++, j--).  The Shared Move: Whether they ride together or the heaviest rides alone, the Heavy pointer (j) always moves down, and you always use exactly 1 boat.  The Final Person Trap: Always use while (i <= j). If i == j, there is exactly one person left standing on the beach. They still need a boat to get home.",
+    "attempts": "1",
+    "phase": "Completed",
+    "reviewDate": "2026-12-23",
+    "lastSolved": "2026-06-26",
+    "url": "",
+    "ef": "3.0",
+    "interval": "180"
+  },
+  {
     "date": "25/06/2026",
     "name": "Bag of Tokens",
     "topic": "Array",
