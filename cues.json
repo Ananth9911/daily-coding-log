@@ -381,7 +381,7 @@
     "exampleProblem": "Balanced Paranthesis",
     "oneLiner": "Use stack and then push opening brack into stack and when we encounter closing brackets do pop and store element and then compare",
     "difficulty": "M",
-    "friction": "Struggled"
+    "friction": "Smooth"
   },
   {
     "topic": "Stack",
@@ -597,7 +597,7 @@
     "exampleProblem": "Group Anagrams 1",
     "oneLiner": "Use a HashMap where the key is a delimited character frequency string (e.g., 1#0...) and the value is the list of matching anagrams.",
     "difficulty": "M",
-    "friction": "Struggled"
+    "friction": "Smooth"
   },
   {
     "topic": "Heap",
