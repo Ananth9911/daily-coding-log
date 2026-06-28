@@ -3918,13 +3918,13 @@
     "friction": "Smooth",
     "notes": "Matrix Simulation",
     "oneLiner": "Inside while loop have 4 four loops running j++,i++,j--,i--",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-07-04",
+    "lastSolved": "2026-06-28",
     "url": "",
-    "ef": "2.0",
-    "interval": "3"
+    "ef": "2.1",
+    "interval": "6"
   },
   {
     "date": "02/03/2026",
@@ -5380,13 +5380,13 @@
     "friction": "Smooth",
     "notes": "Matrix Traversal",
     "oneLiner": "Simple matrix problem with even checking",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "Completed",
+    "reviewDate": "2026-12-25",
+    "lastSolved": "2026-06-27",
     "url": "",
-    "ef": "2.5",
-    "interval": "3"
+    "ef": "3.0",
+    "interval": "180"
   },
   {
     "date": "23/01/2026",
@@ -6026,10 +6026,10 @@
     "friction": "Smooth",
     "notes": "ASCII Arithmetic",
     "oneLiner": "check with ASCII and have count , last check count and length",
-    "attempts": "2",
+    "attempts": "3",
     "phase": "Completed",
-    "reviewDate": "2026-12-14",
-    "lastSolved": "2026-06-17",
+    "reviewDate": "2026-12-25",
+    "lastSolved": "2026-06-28",
     "url": "",
     "ef": "3.0",
     "interval": "180"
