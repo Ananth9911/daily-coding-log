@@ -518,13 +518,13 @@
     "friction": "Smooth",
     "notes": "DFS | Connected Components",
     "oneLiner": "Create a color[] array initialized to -1. 2. Loop through all nodes (to handle disconnected components). If unvisited, paint it 0 and start DFS. 3. The Core Trick: In DFS, paint unvisited neighbors with the opposite color using 1 - col[src]. 4. If a neighbor is already visited and has the same color as the current node (col[nbr] == col[src]), return false!",
-    "attempts": "1",
-    "phase": "Smooth",
-    "reviewDate": "2026-05-30",
-    "lastSolved": "2026-05-26",
+    "attempts": "2",
+    "phase": "S2",
+    "reviewDate": "2026-07-06",
+    "lastSolved": "2026-06-28",
     "url": "",
-    "ef": "2.5",
-    "interval": "3"
+    "ef": "2.6",
+    "interval": "8"
   },
   {
     "date": "28/05/2026",
@@ -739,13 +739,13 @@
     "friction": "Smooth",
     "notes": "Bitwise Trie | Prefix XOR",
     "oneLiner": "you don't invent new logic; you capitalize on the rule that XOR is its own inverse by building a prefixXOR array and feeding it directly into your first Trie, with the vital upgrade of dropping \"index anchors\" at the leaf nodes. When a match is found, you pull those two indices to define your subarray boundaries (Left = min + 1, Right = max), which immediately allows you to filter the results through Scaler's strict three-tier tie-breaker: highest XOR first, then shortest length, and finally the earliest starting index.",
-    "attempts": "3",
+    "attempts": "4",
     "phase": "S1",
-    "reviewDate": "2026-05-30",
-    "lastSolved": "2026-05-27",
+    "reviewDate": "2026-07-05",
+    "lastSolved": "2026-06-28",
     "url": "",
-    "ef": "2.1",
-    "interval": "3"
+    "ef": "2.2",
+    "interval": "7"
   },
   {
     "date": "15/05/2026",
