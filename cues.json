@@ -517,7 +517,7 @@
     "exampleProblem": "Print All Maze Paths",
     "oneLiner": "Recursively traverse the grid by exploring the Down ('D') branch before the Right ('R') branch to guarantee lexicographical order, using string concatenation to implicitly manage the backtracking state until reaching the bottom-right corner",
     "difficulty": "H",
-    "friction": "Struggled"
+    "friction": "Smooth"
   },
   {
     "topic": "Backtracking",
@@ -685,7 +685,7 @@
     "exampleProblem": "Minimum Window Substring",
     "oneLiner": "Use an int[128] for ASCII safety. Count frequencies required by T. Expand window by moving e. If a collected character helps meet T's requirement, increment formed. while (formed == required), record the minimum length, decrement the frequency of character at s, and move s forward. If you drop a required character, decrement formed to break the shrink loop and go back to expanding.",
     "difficulty": "H",
-    "friction": "Smooth"
+    "friction": "Struggled"
   },
   {
     "topic": "DP",
