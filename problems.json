@@ -1,5 +1,22 @@
 [
   {
+    "date": "01/07/2026",
+    "name": "Number of Subsequences That Satisfy the Given Sum Condition",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "M",
+    "friction": "Smooth",
+    "notes": "Two Pointer",
+    "oneLiner": "Two Pointer",
+    "attempts": "1",
+    "phase": "Completed",
+    "reviewDate": "2026-12-28",
+    "lastSolved": "2026-07-01",
+    "url": "",
+    "ef": "3.0",
+    "interval": "180"
+  },
+  {
     "date": "30/06/2026",
     "name": "Minimum Length of String after Deleting Similar Ends",
     "topic": "String",
@@ -549,16 +566,16 @@
     "topic": "Disjoint Set Union",
     "source": "Scaler",
     "difficulty": "M",
-    "friction": "Smooth",
+    "friction": "Struggled",
     "notes": "Connected Components",
     "oneLiner": "1. \"Knows each other\" = DSU. 2. Instead of a size[] array, create a strength[] array. Initialize it in the constructor (Watch out: Students are 1-indexed, but the given array is 0-indexed!). 3. The Core Trick: In the Union method, when you attach the smaller component to the larger root (ulp_v), add their strengths: strength[ulp_v] += strength[ulp_u]. 4. The Final Count: Loop 1 to N. A node is the boss of a batch if parent[i] == i. If it is the boss, check if strength[i] >= D and increment your answer",
-    "attempts": "1",
-    "phase": "Smooth",
-    "reviewDate": "2026-05-30",
-    "lastSolved": "2026-05-27",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-07-02",
+    "lastSolved": "2026-07-01",
     "url": "",
-    "ef": "2.5",
-    "interval": "3"
+    "ef": "2.2",
+    "interval": "1"
   },
   {
     "date": "30/05/2026",

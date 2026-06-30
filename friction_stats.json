@@ -1,9 +1,9 @@
 [
   {
-    "smooth": 103,
+    "smooth": 104,
     "struggled": 17,
     "hard": 23,
-    "total": 145,
+    "total": 146,
     "topic": "Array",
     "mastery": 71
   },
@@ -153,7 +153,7 @@
   },
   {
     "smooth": 1,
-    "struggled": 0,
+    "struggled": 1,
     "hard": 0,
     "total": 1,
     "topic": "Disjoint Set Union",
