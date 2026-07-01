@@ -829,7 +829,7 @@
     "exampleProblem": "Maximum XOR",
     "oneLiner": "the core engine is treating integers as 32-bit paths (MSB to LSB) in an empty Bitwise Trie, allowing you to make the \"Greedy Choice\" by always searching for the opposite bit (1 - bit) to guarantee the highest possible value",
     "difficulty": "H",
-    "friction": "Smooth"
+    "friction": "Struggled"
   },
   {
     "topic": "Tries",
