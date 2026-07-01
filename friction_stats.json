@@ -1,11 +1,11 @@
 [
   {
-    "smooth": 104,
+    "smooth": 106,
     "struggled": 17,
     "hard": 23,
     "total": 146,
     "topic": "Array",
-    "mastery": 71
+    "mastery": 73
   },
   {
     "smooth": 114,
@@ -24,12 +24,12 @@
     "mastery": 67
   },
   {
-    "smooth": 20,
-    "struggled": 4,
+    "smooth": 21,
+    "struggled": 5,
     "hard": 9,
     "total": 30,
     "topic": "String",
-    "mastery": 67
+    "mastery": 70
   },
   {
     "smooth": 22,
@@ -40,12 +40,12 @@
     "mastery": 100
   },
   {
-    "smooth": 13,
+    "smooth": 14,
     "struggled": 3,
     "hard": 5,
     "total": 17,
     "topic": "Hashing",
-    "mastery": 76
+    "mastery": 82
   },
   {
     "smooth": 16,

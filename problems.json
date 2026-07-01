@@ -3680,13 +3680,13 @@
     "friction": "Smooth",
     "notes": "HashSet",
     "oneLiner": "Using hashset , we can fill elelments and get unique elements",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "Completed",
+    "reviewDate": "2026-12-28",
+    "lastSolved": "2026-07-01",
     "url": "",
-    "ef": "2.5",
-    "interval": "3"
+    "ef": "3.0",
+    "interval": "180"
   },
   {
     "date": "07/03/2026",
@@ -4340,16 +4340,16 @@
     "topic": "String",
     "source": "Scaler",
     "difficulty": "H",
-    "friction": "Smooth",
+    "friction": "Struggled",
     "notes": "Expand Around Center",
     "oneLiner": "Iterate through every character in the string, treating it as both an odd-length and even-length center, and use two pointers to expand outward as long as the characters match, keeping track of the longest valid start index and length",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-07-02",
+    "lastSolved": "2026-07-01",
     "url": "",
-    "ef": "2.0",
-    "interval": "3"
+    "ef": "1.7",
+    "interval": "1"
   },
   {
     "date": "23/02/2026",
@@ -4887,13 +4887,13 @@
     "friction": "Smooth",
     "notes": "Sliding Window | Fixed Window",
     "oneLiner": "Calculate the first window's sum, then slide it forward by tracking the start index i, dynamically updating the sum by subtracting the left element A[i-1] and adding the right element A[i+B-1] (while strictly verifying bounds) to find the target.",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S2",
+    "reviewDate": "2026-07-09",
+    "lastSolved": "2026-07-01",
     "url": "",
-    "ef": "2.5",
-    "interval": "3"
+    "ef": "2.6",
+    "interval": "8"
   },
   {
     "date": "01/02/2026",
@@ -5533,13 +5533,13 @@
     "friction": "Smooth",
     "notes": "Matrix Traversal",
     "oneLiner": "We do two loops and print A[j][i]",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "Completed",
+    "reviewDate": "2026-12-28",
+    "lastSolved": "2026-07-01",
     "url": "",
     "ef": "3.0",
-    "interval": "3"
+    "interval": "180"
   },
   {
     "date": "23/01/2026",
