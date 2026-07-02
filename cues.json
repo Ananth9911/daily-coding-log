@@ -877,7 +877,7 @@
     "exampleProblem": "Russian Doll Envelopes",
     "oneLiner": "The Object Mapping: You cannot separate heights and widths. Always map the 2D array into a custom Pair or Envelope object array so they travel together during sorting.  The Timeline Sort: To reduce the 2D problem into a 1D LIS problem, sort the array by one of the dimensions (e.g., Height ascending). This guarantees that any envelope j before envelope i is at least short enough to potentially fit inside i.  The Strict 2D LIS Check: Run the exact LIS nested loops, but your inner if condition must strictly check both dimensions. Equal sizes do not fit inside each other! if (env[j].w < env[i].w && env[j].h < env[i].h)  The Global Max: Just like standard LIS, the biggest nested doll doesn't necessarily end with the very last envelope in the array. Track ans = Math.max(ans, dp[i])",
     "difficulty": "H",
-    "friction": ""
+    "friction": "Struggled"
   },
   {
     "topic": "DP",

@@ -1,6 +1,6 @@
 [
   {
-    "smooth": 106,
+    "smooth": 107,
     "struggled": 17,
     "hard": 23,
     "total": 146,
@@ -33,7 +33,7 @@
   },
   {
     "smooth": 22,
-    "struggled": 9,
+    "struggled": 11,
     "hard": 21,
     "total": 22,
     "topic": "DP",
@@ -56,28 +56,28 @@
     "mastery": 100
   },
   {
-    "smooth": 9,
-    "struggled": 4,
+    "smooth": 10,
+    "struggled": 3,
     "hard": 6,
     "total": 14,
     "topic": "Maths",
-    "mastery": 64
+    "mastery": 71
   },
   {
-    "smooth": 6,
+    "smooth": 7,
     "struggled": 2,
     "hard": 6,
     "total": 13,
     "topic": "LinkedList",
-    "mastery": 46
+    "mastery": 54
   },
   {
-    "smooth": 4,
-    "struggled": 0,
+    "smooth": 5,
+    "struggled": 1,
     "hard": 5,
     "total": 11,
     "topic": "Bit",
-    "mastery": 36
+    "mastery": 45
   },
   {
     "smooth": 8,
