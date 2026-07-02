@@ -1,5 +1,22 @@
 [
   {
+    "date": "02/07/2026",
+    "name": "Valid Word Abbreviation",
+    "topic": "String",
+    "source": "LeetCode",
+    "difficulty": "L",
+    "friction": "Smooth",
+    "notes": "Two Pointer",
+    "oneLiner": "Two Pointers: i (word) and j (abbr). If letters match, i++; j++;. If they mismatch, return false.  Parse & Jump: If abbr[j] is '1'-'9', build the number mathematically (num = num * 10 + (c - '0')) and jump i += num.  The '0' Trap: Immediately return false if you hit a leading '0'.  Final Check: Both pointers must exactly reach the end: return i == word.length() && j == abbr.length().",
+    "attempts": "1",
+    "phase": "Completed",
+    "reviewDate": "2026-12-30",
+    "lastSolved": "2026-07-03",
+    "url": "",
+    "ef": "3.0",
+    "interval": "180"
+  },
+  {
     "date": "01/07/2026",
     "name": "Number of Subsequences That Satisfy the Given Sum Condition",
     "topic": "Array",
