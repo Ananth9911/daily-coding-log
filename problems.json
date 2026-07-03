@@ -3170,13 +3170,13 @@
     "friction": "Smooth",
     "notes": "Stack",
     "oneLiner": "Using slack , push id and if we enocunter 0 pop atlast return peek",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "Completed",
+    "reviewDate": "2026-12-30",
+    "lastSolved": "2026-07-03",
     "url": "",
     "ef": "3.0",
-    "interval": "3"
+    "interval": "180"
   },
   {
     "date": "17/03/2026",
@@ -3507,16 +3507,16 @@
     "topic": "Sorting",
     "source": "Scaler",
     "difficulty": "H",
-    "friction": "Smooth",
+    "friction": "Struggled",
     "notes": "Quick Sort Partition",
     "oneLiner": "compare it with pivot and do swapping if pivot greater than current element and have vaiable m=0 and do increment , else do nothing",
-    "attempts": "2",
+    "attempts": "3",
     "phase": "S1",
-    "reviewDate": "2026-06-01",
-    "lastSolved": "2026-05-25",
+    "reviewDate": "2026-07-06",
+    "lastSolved": "2026-07-03",
     "url": "",
-    "ef": "2.1",
-    "interval": "6"
+    "ef": "1.8",
+    "interval": "3"
   },
   {
     "date": "09/03/2026",
@@ -5431,13 +5431,13 @@
     "friction": "Smooth",
     "notes": "Brute Force | Frequency Count",
     "oneLiner": "Three loops and have count variable",
-    "attempts": "2",
-    "phase": "S1",
-    "reviewDate": "2026-06-01",
-    "lastSolved": "2026-05-26",
+    "attempts": "4",
+    "phase": "S3",
+    "reviewDate": "2026-08-02",
+    "lastSolved": "2026-07-03",
     "url": "",
-    "ef": "2.1",
-    "interval": "6"
+    "ef": "2.3",
+    "interval": "30"
   },
   {
     "date": "23/01/2026",
@@ -5601,13 +5601,13 @@
     "friction": "Smooth",
     "notes": "Matrix Traversal",
     "oneLiner": "Run two loops and calculate sum of column and add it in array",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "Completed",
+    "reviewDate": "2026-12-30",
+    "lastSolved": "2026-07-03",
     "url": "",
     "ef": "3.0",
-    "interval": "3"
+    "interval": "180"
   },
   {
     "date": "23/01/2026",

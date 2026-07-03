@@ -1,11 +1,11 @@
 [
   {
-    "smooth": 107,
+    "smooth": 108,
     "struggled": 17,
     "hard": 23,
     "total": 146,
     "topic": "Array",
-    "mastery": 73
+    "mastery": 74
   },
   {
     "smooth": 114,
@@ -97,7 +97,7 @@
   },
   {
     "smooth": 5,
-    "struggled": 0,
+    "struggled": 1,
     "hard": 2,
     "total": 8,
     "topic": "Sorting",
@@ -120,12 +120,12 @@
     "mastery": 100
   },
   {
-    "smooth": 6,
+    "smooth": 7,
     "struggled": 2,
     "hard": 3,
     "total": 7,
     "topic": "Stack",
-    "mastery": 86
+    "mastery": 100
   },
   {
     "smooth": 5,
