@@ -333,7 +333,7 @@
     "exampleProblem": "Median of two sorted arrays",
     "oneLiner": "Sorting",
     "difficulty": "H",
-    "friction": "Struggled"
+    "friction": "Smooth"
   },
   {
     "topic": "Hashing",
@@ -525,7 +525,7 @@
     "exampleProblem": "Shortest path in a Binary Maze with Hurdles",
     "oneLiner": "Exhaustively explore all valid 4-directional paths using DFS backtracking\u2014safeguarded by matrix boundaries and a visited array to prevent cycles\u2014while maintaining a global minimum length that prunes any branches already exceeding the best found path",
     "difficulty": "H",
-    "friction": "Smooth"
+    "friction": "Struggled"
   },
   {
     "topic": "LinkedList",
