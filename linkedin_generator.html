@@ -156,51 +156,64 @@ function setRole(r, el){
 }
 
 // ── TEMPLATE BANKS ────────────────────────────────────────────
-// Each returns an array of variants. {n}=name {c}=company {area}=title-derived
+// Hardcoded templates (no AI). Name/company/title slotted in.
+// Each returns an array of genuinely different variants so cycling matters.
 function areaPhrase(title){
   if(!title) return '';
   const t = title.toLowerCase();
-  if(t.includes('payment')) return ' the payments side';
-  if(t.includes('infra')||t.includes('platform')) return ' platform/infra work';
-  if(t.includes('data')||t.includes('ml')||t.includes('ai')) return ' the data/ML work';
-  if(t.includes('backend')||t.includes('distributed')) return ' backend systems there';
-  if(t.includes('front')) return ' the frontend work';
-  if(t.includes('search')) return ' the search work';
-  return ' the engineering work';
+  if(t.includes('payment')) return 'payments';
+  if(t.includes('infra')||t.includes('platform')) return 'platform/infra';
+  if(t.includes('data')||t.includes('ml')||t.includes('ai')) return 'data/ML';
+  if(t.includes('backend')||t.includes('distributed')) return 'backend systems';
+  if(t.includes('front')) return 'frontend';
+  if(t.includes('search')) return 'search';
+  if(t.includes('security')) return 'security';
+  if(t.includes('mobile')||t.includes('ios')||t.includes('android')) return 'mobile';
+  return '';
 }
 
 function templates(role, name, company, title, angle){
-  const area = areaPhrase(title);
+  const area = areaPhrase(title);         // '' if no title
+  const areaBit = area ? ` — especially the ${area} side` : '';
+  const areaShort = area ? `${area} ` : '';
   const n = name, c = company;
+
   if(role==='sde'){
     if(angle==='referral') return [
-`Hi ${n}, I'm a data/backend engineer (2+ yrs) deep in interview prep and targeting teams like ${c}. Following your path and hoping to learn how you found the eng culture there. Would value connecting.`,
-`Hi ${n} — I've been sharpening my DSA + system design toward roles at places like ${c}. Came across your profile and${area} caught my eye. Would be great to connect and follow your work.`,
-`Hi ${n}, reaching out as a backend engineer actively prepping for SDE roles. ${c} is high on my list and I'd love to connect, learn from your experience, and keep an eye out as things open up.`
+`Hi ${n}, I'm a engineer (2+ yrs) prepping seriously for SDE roles, and ${c} is high on my list${areaBit}. Would love to connect and learn from your experience there.`,
+`Hi ${n} — I've been deep in DSA and system design aiming for teams like ${c}. Your profile stood out and I'd value connecting, following your work, and keeping ${c} on my radar as roles open.`,
+`Hi ${n}, connecting as a backend engineer who's targeting ${c} specifically. I'd rather build a genuine connection than cold-ask — happy to connect and learn how you're finding the ${areaShort}work there.`,
+`Hi ${n}, ${c} is one of the few places I'm really focused on for my next SDE move. Would be great to connect, hear your honest take on the eng culture, and stay in touch.`
     ];
     if(angle==='learn') return [
-`Hi ${n}, I'm a backend/data engineer curious about${area} at ${c}. Prepping seriously for SDE interviews and would love to connect and understand what the team values.`,
-`Hi ${n} — building toward SDE roles and trying to understand${area} at ${c} beyond the JD. Would appreciate connecting and any perspective you're open to sharing.`,
-`Hi ${n}, following ${c}'s engineering closely as I prep for interviews. Would love to connect and learn what day-to-day${area} actually looks like.`
+`Hi ${n}, I'm a engineer curious about how ${c} approaches ${areaShort}engineering beyond the job description. Prepping hard for SDE interviews — would love to connect and learn.`,
+`Hi ${n} — trying to understand what the ${areaShort}work at ${c} actually looks like day to day as I prep for SDE roles. Would appreciate connecting and any perspective you're open to sharing.`,
+`Hi ${n}, following ${c}'s engineering closely while I sharpen my fundamentals. Would value connecting to understand what your team really cares about in the people it hires.`,
+`Hi ${n}, I'm early in my prep-to-switch journey and ${c} keeps coming up as somewhere I'd want to be. Would love to connect and learn from how you got there.`
     ];
     return [ // admire
-`Hi ${n}, your journey into${area} at ${c} is exactly the kind of path I'm working toward as a backend engineer. Prepping hard right now — would be great to connect and follow along.`,
-`Hi ${n} — genuinely admire the work you're doing at ${c}. I'm a data/backend engineer deep in prep for similar roles and would love to connect.`,
-`Hi ${n}, came across your profile and${area} at ${c} stood out. As someone prepping for SDE roles, I'd value connecting and learning from how you got there.`
+`Hi ${n}, your path into ${areaShort}engineering at ${c} is close to what I'm working toward as a backend engineer. Deep in prep right now — would be great to connect and follow along.`,
+`Hi ${n} — I've been impressed by the work coming out of ${c}${areaBit}. As a data/backend engineer prepping for similar roles, I'd love to connect.`,
+`Hi ${n}, came across your profile and the ${areaShort}work at ${c} genuinely caught my attention. Targeting SDE roles myself — would value connecting and learning how you built your path.`,
+`Hi ${n}, real respect for what you've built at ${c}. I'm a backend engineer in serious prep mode and would be glad to connect and learn from your journey.`
     ];
   }
+
   if(role==='em'){
     return [
-`Hi ${n}, I'm a backend/data engineer (2+ yrs) prepping for SDE-2 roles and drawn to how ${c} builds its teams. Would love to connect and learn what you look for in engineers you hire.`,
-`Hi ${n} — I lead with fundamentals (DSA, LLD, system design) and am targeting teams like yours at ${c}. Would value connecting and understanding what makes engineers succeed on your team.`,
-`Hi ${n}, following ${c}'s engineering org as I prep seriously for my next SDE role. As a hiring leader there, I'd be grateful to connect and hear what strong candidates get right.`
+`Hi ${n}, I'm a engineer (2+ yrs) prepping for SDE roles and drawn to how ${c} builds its teams. Would love to connect and learn what you look for in the engineers you hire.`,
+`Hi ${n} — I lead with fundamentals (DSA, LLD, system design) and am targeting teams like yours at ${c}. Would value connecting and hearing what makes engineers succeed under you.`,
+`Hi ${n}, following ${c}'s org as I prep for my next SDE role. As someone who builds teams there, I'd be grateful to connect and understand what strong candidates tend to get right.`,
+`Hi ${n}, I'm working hard toward an SDE-2 move and ${c} is a team I'd genuinely want to join. Would love to connect and learn what you value most when growing your engineers.`
     ];
   }
+
   // recruiter
   return [
-`Hi ${n}, I'm a backend/data engineer with 2+ yrs (GCP-certified), actively interviewing and very interested in SDE roles at ${c}. Would love to connect and stay on your radar for relevant openings.`,
-`Hi ${n} — reaching out as a backend engineer targeting ${c}. Strong on DSA, LLD and system design, prepping full-time right now. Would value connecting for any current or upcoming SDE roles.`,
-`Hi ${n}, I'd love to connect. Backend/data engineer, 2+ yrs, deep in interview prep and keen on ${c}. Happy to share my resume if any SDE roles fit — thanks for considering.`
+`Hi ${n}, I'm a engineer with 2+ yrs , actively interviewing and very interested in SDE roles at ${c}. Would love to connect and stay on your radar for relevant openings.`,
+`Hi ${n} — reaching out as a backend engineer targeting ${c}. Strong on DSA, LLD and system design, prepping full-time. Would value connecting for any current or upcoming SDE roles.`,
+`Hi ${n}, I'd love to connect — backend/data engineer, 2+ yrs, deep in interview prep and keen on ${c}. Happy to share my resume if any SDE roles fit. Thanks for considering.`,
+`Hi ${n}, connecting as an SDE candidate focused on ${c}. 2+ yrs backend/data, GCP-certified, and interview-ready. Would appreciate being considered as roles come up on your side.`
   ];
 }
 
