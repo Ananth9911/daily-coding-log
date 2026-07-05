@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LinkedIn Outreach Engine | Ananth</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#030303;--bg2:#0a0a0a;--bg3:#111;--card:#0d0d0d;--border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.15);--text:#f4f4f5;--muted:#71717a;--dim:#3f3f46;--green:#39d353;--blue:#3b82f6;--yellow:#eab308;--red:#ef4444;--purple:#a855f7;--orange:#f97316;--fd:'Space Grotesk',sans-serif;--fm:'IBM Plex Mono',monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--fd);min-height:100vh;padding:40px 20px;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse at 50% 0%,black 30%,transparent 80%);pointer-events:none;z-index:0}
+.wrap{max-width:760px;margin:0 auto;position:relative;z-index:1}
+.hdr{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1px solid var(--border);padding-bottom:20px;margin-bottom:28px;flex-wrap:wrap;gap:14px}
+.hdr-left{display:flex;align-items:center;gap:12px}
+.sys-dot{width:8px;height:8px;border-radius:50%;background:var(--orange);box-shadow:0 0 10px var(--orange);animation:pulse 2s ease infinite;flex-shrink:0}
+h1{font-size:1.7rem;font-weight:700;letter-spacing:-.5px}
+.sub{font-family:var(--fm);font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin-top:3px}
+.count-pill{font-family:var(--fm);font-size:.7rem;color:var(--muted);background:var(--bg2);border:1px solid var(--border);padding:5px 12px;border-radius:14px}
+
+/* INPUT PANEL */
+.panel{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;margin-bottom:20px}
+.panel-title{font-family:var(--fm);font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px}
+.row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.field{flex:1;min-width:150px}
+.field label{display:block;font-family:var(--fm);font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.field input,.field select{width:100%;background:var(--bg2);border:1px solid var(--border);color:var(--text);padding:10px 14px;border-radius:8px;font-family:var(--fd);font-size:.85rem;outline:none;transition:.2s}
+.field input:focus,.field select:focus{border-color:var(--orange)}
+.hint-txt{font-family:var(--fm);font-size:.6rem;color:var(--dim);margin-top:5px}
+
+/* ROLE TABS */
+.role-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.role-tab{font-family:var(--fm);font-size:.68rem;padding:8px 14px;border-radius:8px;border:1px solid var(--border);background:var(--bg2);color:var(--muted);cursor:pointer;transition:.18s}
+.role-tab:hover{color:var(--text);border-color:var(--border2)}
+.role-tab.active{border-color:var(--orange);color:var(--orange);background:rgba(249,115,22,.08)}
+
+.btn-gen{width:100%;font-family:var(--fd);font-weight:700;font-size:.9rem;padding:13px;border-radius:10px;background:var(--orange);color:#000;border:none;cursor:pointer;transition:.18s;margin-top:4px}
+.btn-gen:hover{opacity:.9;box-shadow:0 0 18px rgba(249,115,22,.35)}
+
+/* OUTPUT */
+.output{display:none}
+.out-card{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--orange);border-radius:14px;padding:20px;margin-bottom:14px}
+.out-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px}
+.out-label{font-family:var(--fm);font-size:.62rem;color:var(--orange);text-transform:uppercase;letter-spacing:1.5px}
+.char-count{font-family:var(--fm);font-size:.65rem;padding:3px 10px;border-radius:5px}
+.cc-ok{background:rgba(57,211,83,.1);color:var(--green);border:1px solid rgba(57,211,83,.2)}
+.cc-warn{background:rgba(234,179,8,.1);color:var(--yellow);border:1px solid rgba(234,179,8,.2)}
+.cc-over{background:rgba(239,68,68,.12);color:var(--red);border:1px solid rgba(239,68,68,.25)}
+.note-text{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px;font-size:.9rem;line-height:1.6;color:#e4e4e7;white-space:pre-wrap;min-height:60px}
+.out-actions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.btn-copy{font-family:var(--fd);font-weight:600;font-size:.78rem;padding:9px 18px;border-radius:8px;background:var(--green);color:#000;border:none;cursor:pointer;transition:.18s}
+.btn-copy:hover{opacity:.85}
+.btn-alt{font-family:var(--fd);font-weight:600;font-size:.78rem;padding:9px 16px;border-radius:8px;background:transparent;color:var(--muted);border:1px solid var(--border);cursor:pointer;transition:.18s}
+.btn-alt:hover{color:var(--text);border-color:var(--border2)}
+.copied{background:var(--blue)!important;color:#fff!important}
+
+/* SENT LOG */
+.log-section{margin-top:28px}
+.log-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.log-title{font-family:var(--fm);font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px}
+.log-item{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:9px 14px;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:.78rem}
+.log-name{font-weight:600}
+.log-meta{font-family:var(--fm);font-size:.6rem;color:var(--muted)}
+.log-del{background:none;border:none;color:var(--dim);cursor:pointer;font-size:.9rem;transition:.15s}
+.log-del:hover{color:var(--red)}
+.empty{text-align:center;padding:20px;color:var(--dim);font-family:var(--fm);font-size:.7rem}
+@keyframes pulse{50%{opacity:.4}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.fade{animation:fadeIn .3s ease}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hdr">
+    <div class="hdr-left">
+      <div class="sys-dot"></div>
+      <div>
+        <h1>Outreach Engine</h1>
+        <div class="sub">LinkedIn Connection Notes · 300-char aware</div>
+      </div>
+    </div>
+    <span class="count-pill" id="sent-pill">0 logged today</span>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">Target — paste 3 fields from the profile you're viewing</div>
+    <div class="role-tabs" id="role-tabs">
+      <button class="role-tab active" data-role="sde" onclick="setRole('sde',this)">SDE-2 / SDE-3</button>
+      <button class="role-tab" data-role="em" onclick="setRole('em',this)">Engineering Manager</button>
+      <button class="role-tab" data-role="recruiter" onclick="setRole('recruiter',this)">Recruiter</button>
+    </div>
+    <div class="row">
+      <div class="field">
+        <label>First Name *</label>
+        <input id="in-name" type="text" placeholder="Priya" autocomplete="off">
+      </div>
+      <div class="field">
+        <label>Company *</label>
+        <input id="in-company" type="text" placeholder="Stripe" autocomplete="off">
+      </div>
+    </div>
+    <div class="row">
+      <div class="field">
+        <label>Exact Title (optional — sharpens the note)</label>
+        <input id="in-title" type="text" placeholder="Senior Software Engineer, Payments" autocomplete="off">
+        <div class="hint-txt">If given, the note references their specific area.</div>
+      </div>
+    </div>
+    <div class="row" id="variant-row">
+      <div class="field">
+        <label>Angle</label>
+        <select id="in-angle">
+          <option value="referral">Soft referral intent (warm, not asking yet)</option>
+          <option value="learn">Learn about team / role</option>
+          <option value="admire">Admire their work / path</option>
+        </select>
+      </div>
+    </div>
+    <button class="btn-gen" onclick="generate()">⚡ Generate Note</button>
+  </div>
+
+  <div class="output" id="output">
+    <div class="out-card fade">
+      <div class="out-top">
+        <span class="out-label">Personalized Note</span>
+        <span class="char-count" id="char-count">0 / 300</span>
+      </div>
+      <div class="note-text" id="note-text" contenteditable="true"></div>
+      <div class="out-actions">
+        <button class="btn-copy" id="btn-copy" onclick="copyNote()">📋 Copy</button>
+        <button class="btn-alt" onclick="cycleVariant()">↻ Different wording</button>
+        <button class="btn-alt" onclick="logSent()">✓ Log as sent</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="log-section">
+    <div class="log-hdr">
+      <span class="log-title">Sent Log (this session — clears on refresh)</span>
+      <span class="log-title" id="log-count"></span>
+    </div>
+    <div id="sent-log"><div class="empty">Nothing logged yet. Generate → copy into LinkedIn → log it here so you don't double-message.</div></div>
+  </div>
+</div>
+
+<script>
+let currentRole = 'sde';
+let variantIdx = 0;
+let sentLog = [];
+
+function setRole(r, el){
+  currentRole = r;
+  document.querySelectorAll('.role-tab').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  // Recruiters don't need an "angle" the same way
+  document.getElementById('variant-row').style.display = r==='recruiter' ? 'none' : 'flex';
+}
+
+// ── TEMPLATE BANKS ────────────────────────────────────────────
+// Each returns an array of variants. {n}=name {c}=company {area}=title-derived
+function areaPhrase(title){
+  if(!title) return '';
+  const t = title.toLowerCase();
+  if(t.includes('payment')) return ' the payments side';
+  if(t.includes('infra')||t.includes('platform')) return ' platform/infra work';
+  if(t.includes('data')||t.includes('ml')||t.includes('ai')) return ' the data/ML work';
+  if(t.includes('backend')||t.includes('distributed')) return ' backend systems there';
+  if(t.includes('front')) return ' the frontend work';
+  if(t.includes('search')) return ' the search work';
+  return ' the engineering work';
+}
+
+function templates(role, name, company, title, angle){
+  const area = areaPhrase(title);
+  const n = name, c = company;
+  if(role==='sde'){
+    if(angle==='referral') return [
+`Hi ${n}, I'm a data/backend engineer (2+ yrs) deep in interview prep and targeting teams like ${c}. Following your path and hoping to learn how you found the eng culture there. Would value connecting.`,
+`Hi ${n} — I've been sharpening my DSA + system design toward roles at places like ${c}. Came across your profile and${area} caught my eye. Would be great to connect and follow your work.`,
+`Hi ${n}, reaching out as a backend engineer actively prepping for SDE roles. ${c} is high on my list and I'd love to connect, learn from your experience, and keep an eye out as things open up.`
+    ];
+    if(angle==='learn') return [
+`Hi ${n}, I'm a backend/data engineer curious about${area} at ${c}. Prepping seriously for SDE interviews and would love to connect and understand what the team values.`,
+`Hi ${n} — building toward SDE roles and trying to understand${area} at ${c} beyond the JD. Would appreciate connecting and any perspective you're open to sharing.`,
+`Hi ${n}, following ${c}'s engineering closely as I prep for interviews. Would love to connect and learn what day-to-day${area} actually looks like.`
+    ];
+    return [ // admire
+`Hi ${n}, your journey into${area} at ${c} is exactly the kind of path I'm working toward as a backend engineer. Prepping hard right now — would be great to connect and follow along.`,
+`Hi ${n} — genuinely admire the work you're doing at ${c}. I'm a data/backend engineer deep in prep for similar roles and would love to connect.`,
+`Hi ${n}, came across your profile and${area} at ${c} stood out. As someone prepping for SDE roles, I'd value connecting and learning from how you got there.`
+    ];
+  }
+  if(role==='em'){
+    return [
+`Hi ${n}, I'm a backend/data engineer (2+ yrs) prepping for SDE-2 roles and drawn to how ${c} builds its teams. Would love to connect and learn what you look for in engineers you hire.`,
+`Hi ${n} — I lead with fundamentals (DSA, LLD, system design) and am targeting teams like yours at ${c}. Would value connecting and understanding what makes engineers succeed on your team.`,
+`Hi ${n}, following ${c}'s engineering org as I prep seriously for my next SDE role. As a hiring leader there, I'd be grateful to connect and hear what strong candidates get right.`
+    ];
+  }
+  // recruiter
+  return [
+`Hi ${n}, I'm a backend/data engineer with 2+ yrs (GCP-certified), actively interviewing and very interested in SDE roles at ${c}. Would love to connect and stay on your radar for relevant openings.`,
+`Hi ${n} — reaching out as a backend engineer targeting ${c}. Strong on DSA, LLD and system design, prepping full-time right now. Would value connecting for any current or upcoming SDE roles.`,
+`Hi ${n}, I'd love to connect. Backend/data engineer, 2+ yrs, deep in interview prep and keen on ${c}. Happy to share my resume if any SDE roles fit — thanks for considering.`
+  ];
+}
+
+function generate(){
+  const name = document.getElementById('in-name').value.trim();
+  const company = document.getElementById('in-company').value.trim();
+  const title = document.getElementById('in-title').value.trim();
+  const angle = document.getElementById('in-angle').value;
+  if(!name || !company){ alert('First name and company are required.'); return; }
+  variantIdx = 0;
+  window._ctx = {name, company, title, angle, role:currentRole};
+  renderNote();
+  document.getElementById('output').style.display='block';
+}
+
+function renderNote(){
+  const {name, company, title, angle, role} = window._ctx;
+  const variants = templates(role, name, company, title, angle);
+  const note = variants[variantIdx % variants.length];
+  const box = document.getElementById('note-text');
+  box.innerText = note;
+  updateCharCount();
+}
+
+function cycleVariant(){ variantIdx++; renderNote(); }
+
+function updateCharCount(){
+  const len = document.getElementById('note-text').innerText.length;
+  const cc = document.getElementById('char-count');
+  cc.textContent = `${len} / 300`;
+  cc.className = 'char-count ' + (len<=280?'cc-ok':len<=300?'cc-warn':'cc-over');
+}
+document.getElementById('note-text').addEventListener('input', updateCharCount);
+
+function copyNote(){
+  const txt = document.getElementById('note-text').innerText;
+  navigator.clipboard.writeText(txt).then(()=>{
+    const b=document.getElementById('btn-copy');
+    b.textContent='✓ Copied'; b.classList.add('copied');
+    setTimeout(()=>{b.textContent='📋 Copy';b.classList.remove('copied');},1400);
+  });
+}
+
+function logSent(){
+  if(!window._ctx) return;
+  const {name, company, role} = window._ctx;
+  sentLog.unshift({name, company, role, time:new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'})});
+  renderLog();
+  // clear inputs for next
+  document.getElementById('in-name').value='';
+  document.getElementById('in-company').value='';
+  document.getElementById('in-title').value='';
+  document.getElementById('output').style.display='none';
+  document.getElementById('in-name').focus();
+}
+
+function renderLog(){
+  const wrap=document.getElementById('sent-log');
+  document.getElementById('sent-pill').textContent = `${sentLog.length} logged today`;
+  document.getElementById('log-count').textContent = sentLog.length ? `${sentLog.length} sent` : '';
+  if(!sentLog.length){ wrap.innerHTML='<div class="empty">Nothing logged yet. Generate → copy into LinkedIn → log it here so you don\'t double-message.</div>'; return; }
+  const roleLabel={sde:'SDE',em:'EM',recruiter:'Recruiter'};
+  wrap.innerHTML = sentLog.map((l,i)=>`
+    <div class="log-item fade">
+      <span class="log-name">${l.name} <span class="log-meta">· ${l.company}</span></span>
+      <span style="display:flex;align-items:center;gap:10px">
+        <span class="log-meta">${roleLabel[l.role]} · ${l.time}</span>
+        <button class="log-del" onclick="delLog(${i})" title="Remove">✕</button>
+      </span>
+    </div>`).join('');
+}
+function delLog(i){ sentLog.splice(i,1); renderLog(); }
+
+// Enter key in company field triggers generate
+document.getElementById('in-company').addEventListener('keydown',e=>{if(e.key==='Enter')generate();});
+document.getElementById('in-name').focus();
+</script>
+</body></html>
