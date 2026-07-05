@@ -1,7 +1,7 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker — FAANG Sprint 2026
 - **Total Problems Solved:** 481 🔥
-- **Overall Mastery:** 83% Smooth | Hard: 144 | Medium: 110
+- **Overall Mastery:** 84% Smooth | Hard: 144 | Medium: 110
 - **System Status:** Online 🟢
 
 ### 🎓 Curriculum Progress
@@ -11,7 +11,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem | Topic | Difficulty | Phase |
 | :--- | :--- | :--- | :---: | :---: |
-| 04/07/2026 | Subarrays with K Different Integers | Array | 🔴 | Struggled |
+| 04/07/2026 | Subarrays with K Different Integers | Array | 🔴 | S1 |
 | 03/07/2026 | Alternating Groups II | Array | 🟡 | Smooth |
 | 02/07/2026 | Valid Word Abbreviation | String | 🟢 | Completed |
 | 01/07/2026 | Number of Subsequences That Satisfy the Given Sum Condition | Array | 🟡 | Completed |

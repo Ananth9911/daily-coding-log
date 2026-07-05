@@ -301,7 +301,7 @@
     "exampleProblem": "Sort by Color",
     "oneLiner": "Count sort Algo, find freq array and then insert i val times into A\n\nThis can also done by Dutch National Flag algorithm , simple three pointer mid ,low, high and do swapping",
     "difficulty": "M",
-    "friction": "Smooth"
+    "friction": "Struggled"
   },
   {
     "topic": "Sorting",
@@ -501,7 +501,7 @@
     "exampleProblem": "Permutations",
     "oneLiner": "Recursively build permutations by looping through the original array, using a boolean \"visited\" array to skip already-used numbers, and applying the \"add, recurse, remove\" pattern to explore all sequences.",
     "difficulty": "H",
-    "friction": "Struggled"
+    "friction": "Smooth"
   },
   {
     "topic": "Backtracking",

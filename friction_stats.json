@@ -1,11 +1,11 @@
 [
   {
-    "smooth": 110,
+    "smooth": 112,
     "struggled": 18,
     "hard": 24,
     "total": 148,
     "topic": "Array",
-    "mastery": 74
+    "mastery": 76
   },
   {
     "smooth": 114,
@@ -72,20 +72,20 @@
     "mastery": 54
   },
   {
-    "smooth": 5,
+    "smooth": 6,
     "struggled": 1,
     "hard": 5,
     "total": 11,
     "topic": "Bit",
-    "mastery": 45
+    "mastery": 55
   },
   {
-    "smooth": 8,
-    "struggled": 3,
+    "smooth": 9,
+    "struggled": 2,
     "hard": 8,
     "total": 9,
     "topic": "Backtracking",
-    "mastery": 89
+    "mastery": 100
   },
   {
     "smooth": 8,
@@ -97,7 +97,7 @@
   },
   {
     "smooth": 5,
-    "struggled": 1,
+    "struggled": 2,
     "hard": 2,
     "total": 8,
     "topic": "Sorting",
