@@ -134,9 +134,8 @@ h1{font-size:1.7rem;font-weight:700;letter-spacing:-.5px}
 <script>
 // ── WIRED TO YOUR EXISTING BACKENDS ──────────────────────────
 const SRS_API = "https://script.google.com/macros/s/AKfycby8l7EkNbMy19gfCuvUYefTArdaY7yMW2qSZLh2mI9-mbRikkjTJ0jYO9B8rgUO3Ic/exec";
-// Problem Engine getProgress — same deployment as ProblemEngine.gs (uses ?action=getProgress)
-// If your Problem Engine is a SEPARATE deployment, replace this URL. Left same-project by default.
-const PE_API  = "https://script.google.com/macros/s/AKfycby8l7EkNbMy19gfCuvUYefTArdaY7yMW2qSZLh2mI9-mbRikkjTJ0jYO9B8rgUO3Ic/exec";
+// Problem Engine getProgress — its OWN deployment (from problem_engine.html)
+const PE_API  = "https://script.google.com/macros/s/AKfycbxBL-fDlOwouLJnujm1_v4lbDfyRjMACdhAbV_KtYUyAJnQYK_qnwsoHC5NBqwztMx4Bw/exec";
 
 // State (session-only, no localStorage per artifact constraints)
 let state = { day:'sat', checks:{}, counters:{}, targets:{} };
