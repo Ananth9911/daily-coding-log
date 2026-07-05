@@ -114,6 +114,19 @@ button:disabled{opacity:.4;pointer-events:none}
 .tm-empty{color:var(--dim);font-style:italic;font-size:.76rem}
 .tm-reveal{cursor:pointer;filter:blur(5px);transition:filter .2s;user-select:none}
 .tm-reveal.shown{filter:none}
+/* TM EDIT */
+.btn-tm-edit{background:transparent;color:var(--orange);border:1px dashed rgba(249,115,22,.4);font-size:.72rem;padding:6px 12px}
+.btn-tm-edit:hover{background:rgba(249,115,22,.08);border-color:var(--orange)}
+.tm-editor{display:none;margin-top:12px;background:rgba(249,115,22,.03);border:1px solid rgba(249,115,22,.2);border-radius:10px;padding:14px}
+.tm-editor.open{display:block}
+.tm-field{margin-bottom:10px}
+.tm-field label{display:block;font-family:var(--fm);font-size:.56rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.tm-field input{width:100%;background:var(--bg2);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:7px;font-family:var(--fd);font-size:.82rem;outline:none;transition:.2s}
+.tm-field input:focus{border-color:var(--orange)}
+.tm-edit-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:6px}
+.btn-tm-save{background:var(--orange);color:#000;border:none;font-size:.74rem;padding:7px 15px}
+.btn-tm-save:hover{opacity:.85}
+.btn-tm-cancel{background:transparent;color:var(--muted);border:1px solid var(--border);font-size:.74rem;padding:7px 13px}
 .hint-box{display:none;background:rgba(59,130,246,.05);padding:14px 16px;border-radius:8px;margin-top:16px;font-size:.88rem;color:#cbd5e1;border-left:3px solid var(--blue);line-height:1.65;border:1px solid rgba(59,130,246,.15);border-left-width:3px}
 /* SM-2 PREVIEW */
 .sm2-preview{display:flex;gap:8px;margin-top:10px;padding:10px 12px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:8px;align-items:center;flex-wrap:wrap}
@@ -566,6 +579,11 @@ function renderQueue(problems, showBlocks, retentionCount){
     const card=document.createElement('div');
     card.className=`problem-card ${phaseClass} fade`;
     card.id=cardId;
+    card.dataset.pname=p.name;
+    card.dataset.ppattern=parsed.pattern||'';
+    card.dataset.ptrigger=parsed.trigger||'';
+    card.dataset.pmove=parsed.move||'';
+    card.dataset.phint=p.hint||'';
     card.innerHTML=`
       <div class="card-header">
         <div class="card-title">${p.name}${isFresh?'<span style="font-family:var(--fm);font-size:.58rem;color:var(--orange);margin-left:8px;font-weight:400">NEW</span>':''}</div>
@@ -583,6 +601,7 @@ function renderQueue(problems, showBlocks, retentionCount){
       </div>
       <div class="actions">
         <button class="btn-hint" onclick="toggleHint('hint-${cardId}')">💡 Hint</button>
+        <button class="btn-tm-edit" onclick="openTMEditor('${cardId}')">✎ Trigger/Move</button>
         <button class="btn-timer" id="btn-timer-${cardId}" onclick="startTimer('${cardId}')">▶ Focus</button>
         <span class="timer-display" id="timer-${cardId}">00:00</span>
         <button class="btn-struggled" onclick="updateProblem('${p.name}','Struggled','${cardId}')">⚠ Struggled → ${nextStruggled}d</button>
@@ -597,6 +616,15 @@ function renderQueue(problems, showBlocks, retentionCount){
         <div class="tm-cell tm-move">
           <div class="tm-label">♟ Move — recall before revealing</div>
           ${parsed.move?`<div class="tm-text tm-reveal" onclick="this.classList.add('shown')" title="tap to reveal">${parsed.move}</div>`:'<div class="tm-text tm-empty">Not recorded — add on next log</div>'}
+        </div>
+      </div>
+      <div class="tm-editor" id="tmed-${cardId}">
+        <div class="tm-field"><label>Pattern</label><input type="text" id="tmpat-${cardId}" placeholder="Sliding Window"></div>
+        <div class="tm-field"><label>🎯 Trigger — what signals the pattern</label><input type="text" id="tmtrg-${cardId}" placeholder="longest subarray with ≤ K distinct"></div>
+        <div class="tm-field"><label>♟ Move — the mechanical action</label><input type="text" id="tmmov-${cardId}" placeholder="expand right, shrink left on violation"></div>
+        <div class="tm-edit-actions">
+          <button class="btn-tm-cancel" onclick="closeTMEditor('${cardId}')">Cancel</button>
+          <button class="btn-tm-save" id="tmsave-${cardId}" onclick="saveTM('${cardId}')">Save to sheet</button>
         </div>
       </div>
       <div class="sm2-preview">
@@ -615,6 +643,60 @@ function toggleHint(id){
   if(localStorage.getItem("admin_key")!=="scaler2026"){alert("🔒 READ-ONLY MODE");return;}
   const el=document.getElementById(id);
   el.style.display=el.style.display==='block'?'none':'block';
+}
+// ── TRIGGER/MOVE INLINE EDITOR ───────────────────────────────
+function openTMEditor(cardId){
+  if(localStorage.getItem("admin_key")!=="scaler2026"){alert("🔒 READ-ONLY MODE — set admin key to edit");return;}
+  const card=document.getElementById(cardId);
+  const ed=document.getElementById('tmed-'+cardId);
+  if(!card||!ed)return;
+  // prefill from data-attributes
+  document.getElementById('tmpat-'+cardId).value=card.dataset.ppattern||'';
+  document.getElementById('tmtrg-'+cardId).value=card.dataset.ptrigger||'';
+  document.getElementById('tmmov-'+cardId).value=card.dataset.pmove||'';
+  ed.classList.toggle('open');
+  if(ed.classList.contains('open'))document.getElementById('tmtrg-'+cardId).focus();
+}
+function closeTMEditor(cardId){
+  const ed=document.getElementById('tmed-'+cardId);
+  if(ed)ed.classList.remove('open');
+}
+async function saveTM(cardId){
+  if(localStorage.getItem("admin_key")!=="scaler2026"){alert("🔒 READ-ONLY MODE");return;}
+  const card=document.getElementById(cardId);
+  const name=card.dataset.pname;
+  const pattern=document.getElementById('tmpat-'+cardId).value.trim();
+  const trigger=document.getElementById('tmtrg-'+cardId).value.trim();
+  const move=document.getElementById('tmmov-'+cardId).value.trim();
+  const btn=document.getElementById('tmsave-'+cardId);
+  btn.innerText='Saving…';btn.disabled=true;
+  try{
+    const res=await fetch(API_URL,{method:"POST",body:JSON.stringify({
+      action:"update_notes",secret:localStorage.getItem("admin_key"),
+      name,pattern,trigger,move
+    })});
+    const r=await res.json();
+    if(r.error||r.status==="Error"){alert("Error: "+(r.error||r.message));btn.innerText='Save to sheet';btn.disabled=false;return;}
+    // update in-memory + data-attrs + live DOM so it shows without reload
+    card.dataset.ppattern=pattern;card.dataset.ptrigger=trigger;card.dataset.pmove=move;
+    const trgCell=card.querySelector('.tm-trigger');
+    const movCell=card.querySelector('.tm-move');
+    if(trgCell)trgCell.innerHTML=`<div class="tm-label">🎯 Trigger — recognise it</div>`+
+      (trigger?`<div class="tm-text">${trigger}</div>`:'<div class="tm-text tm-empty">Not recorded — add on next log</div>');
+    if(movCell)movCell.innerHTML=`<div class="tm-label">♟ Move — recall before revealing</div>`+
+      (move?`<div class="tm-text tm-reveal" onclick="this.classList.add('shown')" title="tap to reveal">${move}</div>`:'<div class="tm-text tm-empty">Not recorded — add on next log</div>');
+    // update pattern tag in header
+    const ptag=card.querySelector('.pattern-tag');
+    if(pattern){
+      if(ptag)ptag.textContent=pattern.split('|')[0].trim();
+    }
+    // also update the copy held in allData so re-render keeps it
+    const src=allData.find(x=>x.name===name);
+    if(src){let enc=pattern;if(trigger)enc+=' ⟩T: '+trigger;if(move)enc+=' ⟩M: '+move;src.notes=enc.trim();}
+    closeTMEditor(cardId);
+    if(typeof confetti==='function')confetti({particleCount:30,spread:45,origin:{y:.8},colors:['#f97316','#fff']});
+  }catch(e){alert("Sync failed.");}
+  finally{btn.innerText='Save to sheet';btn.disabled=false;}
 }
 function startTimer(cardId){
   if(localStorage.getItem("admin_key")!=="scaler2026"){alert("🔒 READ-ONLY MODE");return;}
