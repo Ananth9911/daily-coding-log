@@ -102,6 +102,18 @@ button{font-family:var(--fd);font-weight:600;font-size:.82rem;padding:9px 16px;b
 .btn-add{background:transparent;color:var(--green);border:1px solid rgba(57,211,83,.4)}
 .btn-add:hover{background:rgba(57,211,83,.08)}
 button:disabled{opacity:.4;pointer-events:none}
+/* TRIGGER / MOVE BLOCK */
+.tm-block{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.tm-cell{flex:1;min-width:200px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:10px;padding:11px 14px}
+.tm-cell.tm-trigger{border-left:3px solid var(--orange)}
+.tm-cell.tm-move{border-left:3px solid var(--green)}
+.tm-label{font-family:var(--fm);font-size:.56rem;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:5px;display:flex;align-items:center;gap:5px}
+.tm-trigger .tm-label{color:var(--orange)}
+.tm-move .tm-label{color:var(--green)}
+.tm-text{font-size:.82rem;color:#d4d4d8;line-height:1.5}
+.tm-empty{color:var(--dim);font-style:italic;font-size:.76rem}
+.tm-reveal{cursor:pointer;filter:blur(5px);transition:filter .2s;user-select:none}
+.tm-reveal.shown{filter:none}
 .hint-box{display:none;background:rgba(59,130,246,.05);padding:14px 16px;border-radius:8px;margin-top:16px;font-size:.88rem;color:#cbd5e1;border-left:3px solid var(--blue);line-height:1.65;border:1px solid rgba(59,130,246,.15);border-left-width:3px}
 /* SM-2 PREVIEW */
 .sm2-preview{display:flex;gap:8px;margin-top:10px;padding:10px 12px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:8px;align-items:center;flex-wrap:wrap}
@@ -194,6 +206,8 @@ button:disabled{opacity:.4;pointer-events:none}
     <div class="form-group"><label>Problem Name *</label><input class="form-control" id="p-name" type="text" placeholder="Two Sum"></div>
     <div class="form-group"><label>Topic</label><input class="form-control" id="p-topic" type="text" placeholder="Array"></div>
     <div class="form-group"><label>Pattern Tag</label><input class="form-control" id="p-pattern" type="text" placeholder="Two Pointer | HashMap"></div>
+    <div class="form-group"><label>🎯 Trigger — what in the statement signals the pattern</label><input class="form-control" id="p-trigger" type="text" placeholder="longest subarray with ≤ K distinct"></div>
+    <div class="form-group"><label>♟ Move — the mechanical action</label><input class="form-control" id="p-move" type="text" placeholder="expand right, shrink left on violation"></div>
     <div class="form-group"><label>Difficulty</label>
       <select class="form-control" id="p-diff">
         <option value="M">Medium (EF 2.5 — standard intervals)</option>
@@ -239,7 +253,35 @@ function openModal(){
 }
 function closeModal(){
   document.getElementById('addModal').style.display='none';
-  ['p-name','p-topic','p-pattern','p-hint'].forEach(id=>document.getElementById(id).value='');
+  ['p-name','p-topic','p-pattern','p-hint','p-trigger','p-move'].forEach(id=>document.getElementById(id).value='');
+}
+// ── TRIGGER/MOVE encoding ────────────────────────────────────
+// Stored inside the existing "Notes / Pattern Used" column so no backend
+// redeploy is needed. Format:  <pattern> ⟩T: <trigger> ⟩M: <move>
+// Pattern stays first so the card's pattern-tag (notes.split('|')[0]) still works.
+function buildNotes(){
+  const pat=document.getElementById('p-pattern').value.trim();
+  const trg=document.getElementById('p-trigger').value.trim();
+  const mov=document.getElementById('p-move').value.trim();
+  let out=pat;
+  if(trg) out+=' ⟩T: '+trg;
+  if(mov) out+=' ⟩M: '+mov;
+  return out.trim();
+}
+// Parse a notes string back into {pattern, trigger, move}
+function parseNotes(notes){
+  const s=String(notes||'');
+  let pattern=s, trigger='', move='';
+  const tIdx=s.indexOf('⟩T:'), mIdx=s.indexOf('⟩M:');
+  if(tIdx>=0){
+    pattern=s.slice(0,tIdx).trim();
+    trigger=(mIdx>=0? s.slice(tIdx+3,mIdx): s.slice(tIdx+3)).trim();
+  }
+  if(mIdx>=0){
+    if(tIdx<0)pattern=s.slice(0,mIdx).trim();
+    move=s.slice(mIdx+3).trim();
+  }
+  return {pattern, trigger, move};
 }
 async function submitProblem(){
   const name=document.getElementById('p-name').value.trim();
@@ -255,7 +297,7 @@ async function submitProblem(){
       phase:document.getElementById('p-phase').value,
       difficulty:document.getElementById('p-diff').value,
       hint:document.getElementById('p-hint').value.trim(),
-      notes:document.getElementById('p-pattern').value.trim(),
+      notes:buildNotes(),
     })});
     const r=await res.json();
     if(r.error||r.status==="Error"){alert("Error: "+(r.error||r.message));return;}
@@ -501,7 +543,8 @@ function renderQueue(problems, showBlocks, retentionCount){
     const isFresh=showBlocks&&retentionCount&&idx>=retentionCount;
     const phaseClass=p.phase==='Struggled'?'card-struggled':p.phase==='New'||!p.phase?'card-new':isFresh?'card-fresh':'card-smooth';
     const badgeClass=p.phase==='Struggled'?'b-phase-struggled':p.phase==='New'||!p.phase?'b-phase-new':p.phase==='Mastered'?'b-phase-mastered':'b-phase-smooth';
-    const pattern=p.notes||'';
+    const parsed=parseNotes(p.notes||'');
+    const pattern=parsed.pattern||'';
     let prettyDate='?',prettyLast='Never';
     try{
       if(p.initialDate&&p.initialDate!==''){
@@ -545,6 +588,16 @@ function renderQueue(problems, showBlocks, retentionCount){
         <button class="btn-struggled" onclick="updateProblem('${p.name}','Struggled','${cardId}')">⚠ Struggled → ${nextStruggled}d</button>
         <button class="btn-smooth" onclick="updateProblem('${p.name}','Smooth','${cardId}')">✓ Smooth → ${nextSmooth}d</button>
         <button class="btn-complete" onclick="completeProblem('${p.name}','${cardId}')" title="I know this cold — pull it out of rotation (6-month health check only)">★ Complete</button>
+      </div>
+      <div class="tm-block">
+        <div class="tm-cell tm-trigger">
+          <div class="tm-label">🎯 Trigger — recognise it</div>
+          ${parsed.trigger?`<div class="tm-text">${parsed.trigger}</div>`:'<div class="tm-text tm-empty">Not recorded — add on next log</div>'}
+        </div>
+        <div class="tm-cell tm-move">
+          <div class="tm-label">♟ Move — recall before revealing</div>
+          ${parsed.move?`<div class="tm-text tm-reveal" onclick="this.classList.add('shown')" title="tap to reveal">${parsed.move}</div>`:'<div class="tm-text tm-empty">Not recorded — add on next log</div>'}
+        </div>
       </div>
       <div class="sm2-preview">
         <span class="sm2-label">SM-2 Preview:</span>
