@@ -3440,7 +3440,7 @@
     "source": "Scaler",
     "difficulty": "H",
     "friction": "Smooth",
-    "notes": "Binary Search",
+    "notes": "Binary Search \u27e9T: Sorted array that's been rotated + need O(log n) search \u2192 binary search where one half is always sorted \u27e9M: Find mid; check which half is sorted (compare A[mid] vs A[lo]); if target lies inside that sorted half's range, search it, else search the other half",
     "oneLiner": "Have lo and hi and do mid and then compare if B is present between lo and mid or hi and mid",
     "attempts": "2",
     "phase": "S1",
@@ -5703,13 +5703,13 @@
     "friction": "Smooth",
     "notes": "Simulation",
     "oneLiner": "just we need to add element after the required operation",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S2",
+    "reviewDate": "2026-07-15",
+    "lastSolved": "2026-07-06",
     "url": "",
-    "ef": "3.0",
-    "interval": "3"
+    "ef": "3.1",
+    "interval": "9"
   },
   {
     "date": "23/01/2026",

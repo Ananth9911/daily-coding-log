@@ -329,6 +329,14 @@
   },
   {
     "topic": "Array",
+    "cue": "Binary Search \u27e9T: Sorted array that's been rotated + need O(log n) search \u2192 binary search where one half is always sorted \u27e9M: Find mid; check which half is sorted (compare A[mid] vs A[lo]); if target ",
+    "exampleProblem": "Rotated Sorted Array Search",
+    "oneLiner": "Have lo and hi and do mid and then compare if B is present between lo and mid or hi and mid",
+    "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
     "cue": "Binary Search | Partition",
     "exampleProblem": "Median of two sorted arrays",
     "oneLiner": "Sorting",
