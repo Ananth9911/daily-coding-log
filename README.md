@@ -12,7 +12,7 @@
 | Date | Problem | Topic | Difficulty | Phase |
 | :--- | :--- | :--- | :---: | :---: |
 | 06/07/2026 | Defuse the Bomb | Array | 🟡 | Struggled |
-| 05/07/2026 | Binary Subarrays With Sum | Array | 🟡 | Struggled |
+| 05/07/2026 | Binary Subarrays With Sum | Array | 🟡 | S1 |
 | 04/07/2026 | Subarrays with K Different Integers | Array | 🔴 | S1 |
 | 03/07/2026 | Alternating Groups II | Array | 🟡 | Smooth |
 | 02/07/2026 | Valid Word Abbreviation | String | 🟢 | Completed |

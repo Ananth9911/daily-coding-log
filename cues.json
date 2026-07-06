@@ -737,6 +737,14 @@
   },
   {
     "topic": "DP",
+    "cue": "DP | Catalan Number \u27e9T: Count structurally unique BSTs (or any \"count all valid structures from a smaller count of parts\") \u2192 Catalan number DP, root-split recurrence \u27e9M: Fix k as root \u2192 left subtree u",
+    "exampleProblem": "Unique Binary Search Trees II",
+    "oneLiner": "To find the total unique BSTs for i nodes, pick one node as the root. The remaining i-1 nodes must be split between the left and right subtrees. If j nodes go left, i-1-j nodes must go right. The total combinations for that specific root is the product of the subtrees: dp[j] * dp[i-1-j]. Sum this product for all possible root splits (j from 0 to i-1) to get dp[i]",
+    "difficulty": "H",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "DP",
     "cue": "DP | Unbounded Knapsack",
     "exampleProblem": "Unbounded Knapsack",
     "oneLiner": "The implementation is nearly identical to 0/1 Knapsack, but when you pick an item, you stay on the current row i instead of moving back to i-1 so the same item can be selected again. Calculate dp[i][j] as the maximum of either skipping the item completely (dp[i-1][j]) or taking it if capacity allows (value[i] + dp[i][j - weight[i]])",
@@ -753,15 +761,15 @@
   },
   {
     "topic": "Graph",
-    "cue": "DFS | Path Visited Array",
+    "cue": "DFS | Path Visited Array \u27e9T: Detect cycle in a directed graph \u2192 DFS with visited + pathVisited (recursion-stack) arrays \u27e9M: For each unvisited node, DFS marking both visited[idx]=true (global, never u",
     "exampleProblem": "Cycle in Directed Graph",
     "oneLiner": "Use two boolean arrays: visited (global memory to avoid redundant work) and pathVisited (active path memory to detect cycles). When entering a node, mark both as true; if you ever encounter a neighbor where pathVisited is already true, you have found a cycle! When backtracking out of a node, set pathVisited to false (picking up your breadcrumb), but leave visited as true to ensure you never process that node again.",
     "difficulty": "H",
-    "friction": "Struggled"
+    "friction": "Smooth"
   },
   {
     "topic": "Graph",
-    "cue": "Minimum Spanning Tree | Prim's",
+    "cue": "Minimum Spanning Tree | Prim's \u27e9T: Minimum cost to connect all nodes with edges (given edge list, weighted, undirected) \u2192 Minimum Spanning Tree \u27e9M: Build adjacency list from edge list (add both direct",
     "exampleProblem": "Construction Cost",
     "oneLiner": "Convert the Edge List into an Adjacency List first. Use a Min-Heap (Priority Queue) to greedily pick the minimum weight edge that connects an unvisited node to the growing tree. Always maintain a visited array to prevent cycles, and ensure the Priority Queue is initialized with a custom comparator for the weights",
     "difficulty": "H",
@@ -965,6 +973,14 @@
     "exampleProblem": "Contains Duplicate II",
     "oneLiner": "The club has a strict maximum capacity of k people.  As you loop through the array, the current number tries to enter the club.  The Check: If the number is already inside the club, you found a duplicate within distance k! Return true.  The Add: Let the number into the club (set.add(nums[i])).  The Kick: If the club is now over capacity (size > k), the bouncer kicks out the person who has been there the longest (nums[i - k]).",
     "difficulty": "L",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Sliding Window \u27e9T: Count subarrays with sum/count exactly equal to a target \u2192 exactly(K) = atMost(K) - atMost(K-1), sliding window inside the helper \u27e9M: Write atMost(goal) as a standard sliding window",
+    "exampleProblem": "Binary Subarrays With Sum",
+    "oneLiner": "Sliding window Exactly K = Atmost(k) - Atmost(k-1)",
+    "difficulty": "M",
     "friction": "Smooth"
   }
 ]
