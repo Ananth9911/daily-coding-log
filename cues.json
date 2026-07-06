@@ -49,6 +49,14 @@
   },
   {
     "topic": "Array",
+    "cue": "Matrix Traversal \u27e9T: Just simple matrix travarsal \u27e9M: Calculate max for each",
+    "exampleProblem": "Max Element In Matrix",
+    "oneLiner": "Justneed to maintain max and then find it using two loops",
+    "difficulty": "L",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
     "cue": "String Parsing | Matrix Traversal",
     "exampleProblem": "Return vowels from every row",
     "oneLiner": "Main crux vowel.indexOf(strings.get(i).charAt(j))!=-1",
@@ -333,7 +341,7 @@
     "exampleProblem": "Rotated Sorted Array Search",
     "oneLiner": "Have lo and hi and do mid and then compare if B is present between lo and mid or hi and mid",
     "difficulty": "H",
-    "friction": "Smooth"
+    "friction": "Struggled"
   },
   {
     "topic": "Array",
@@ -369,7 +377,7 @@
   },
   {
     "topic": "LinkedList",
-    "cue": "Iterative Reversal | Three Pointers",
+    "cue": "Iterative Reversal | Three Pointers \u27e9T: Reverse a singly linked list in-place, O(1) space \u2192 iterative pointer-reversal, three-pointer walk \u27e9M: Maintain prev/curr/next; at each node save next, redirect",
     "exampleProblem": "Reverse Linked List",
     "oneLiner": "Revesering , so we need to keep two three pointers curr , prev and next",
     "difficulty": "H",
@@ -534,6 +542,14 @@
     "oneLiner": "Exhaustively explore all valid 4-directional paths using DFS backtracking\u2014safeguarded by matrix boundaries and a visited array to prevent cycles\u2014while maintaining a global minimum length that prunes any branches already exceeding the best found path",
     "difficulty": "H",
     "friction": "Struggled"
+  },
+  {
+    "topic": "LinkedList",
+    "cue": "Slow Fast Pointer \u27e9T: Find middle of linked list in one pass, O(1) space \u2192 slow/fast (tortoise-hare) pointers \u27e9M: slow moves 1 step, fast moves 2 steps per iteration; loop while fast != null && fast.n",
+    "exampleProblem": "Middle element of linked list",
+    "oneLiner": "Do with slow and fast pointer",
+    "difficulty": "M",
+    "friction": "Smooth"
   },
   {
     "topic": "LinkedList",
