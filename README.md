@@ -1,7 +1,7 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker — FAANG Sprint 2026
 - **Total Problems Solved:** 484 🔥
-- **Overall Mastery:** 85% Smooth | Hard: 144 | Medium: 112
+- **Overall Mastery:** 86% Smooth | Hard: 144 | Medium: 112
 - **System Status:** Online 🟢
 
 ### 🎓 Curriculum Progress
@@ -12,7 +12,7 @@
 | Date | Problem | Topic | Difficulty | Phase |
 | :--- | :--- | :--- | :---: | :---: |
 | 07/07/2026 | Count Number of Nice Subarrays | Array | 🟢 | Completed |
-| 06/07/2026 | Defuse the Bomb | Array | 🟡 | Struggled |
+| 06/07/2026 | Defuse the Bomb | Array | 🟡 | S1 |
 | 05/07/2026 | Binary Subarrays With Sum | Array | 🟡 | S1 |
 | 04/07/2026 | Subarrays with K Different Integers | Array | 🔴 | S1 |
 | 03/07/2026 | Alternating Groups II | Array | 🟡 | Smooth |
