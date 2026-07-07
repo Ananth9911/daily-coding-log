@@ -313,6 +313,14 @@
   },
   {
     "topic": "Sorting",
+    "cue": "Count Sort \u27e9T: Sort an array with a known, limited value range \u2192 Counting Sort (not comparison-based, O(n+k) instead of O(n log n)) \u27e9M: Build a frequency array sized to the max possible value; for eac",
+    "exampleProblem": "Count Sort",
+    "oneLiner": "Count sort Algo, find freq array and then insert i val times into A",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Sorting",
     "cue": "Custom Comparator | Sorting",
     "exampleProblem": "Factors sort",
     "oneLiner": "Sorting",
@@ -380,6 +388,14 @@
     "cue": "Iterative Reversal | Three Pointers \u27e9T: Reverse a singly linked list in-place, O(1) space \u2192 iterative pointer-reversal, three-pointer walk \u27e9M: Maintain prev/curr/next; at each node save next, redirect",
     "exampleProblem": "Reverse Linked List",
     "oneLiner": "Revesering , so we need to keep two three pointers curr , prev and next",
+    "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "LinkedList",
+    "cue": "Linked List Deletion \u27e9T: Delete the node at a given (0-based) index in a singly linked list \u27e9M: Handle B==0 as a special case \u2014 return A.next directly, since the head has no predecessor to rewire. Oth",
+    "exampleProblem": "Delete in Linked List",
+    "oneLiner": "Given bth index node , so run the loop til i<B-1 and once we found node do temp.next.next",
     "difficulty": "H",
     "friction": "Smooth"
   },
@@ -469,6 +485,14 @@
     "exampleProblem": "Sieve of Eratosthenes",
     "oneLiner": "Sieve of Eratosthenes",
     "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Maths",
+    "cue": "DP | Math \u27e9T: Generate Pascal's Triangle up to A rows \u27e9M: Build an A\u00d7A grid, set column 0 of every row to 1 (base case: nCr(i,0)=1), then fill dp[i][j] = dp[i-1][j] + dp[i-1][j-1] for i,j \u2265 1 \u2014 Pascal",
+    "exampleProblem": "Pascal Triangle",
+    "oneLiner": "Pascal triagnle basic logic is when j=0 or j==i  then it will be 1 remaining parts it will be P[i-1][j-1] +P[i-1][j]",
+    "difficulty": "M",
     "friction": "Smooth"
   },
   {
@@ -981,6 +1005,14 @@
     "exampleProblem": "Binary Subarrays With Sum",
     "oneLiner": "Sliding window Exactly K = Atmost(k) - Atmost(k-1)",
     "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Sliding Window \u27e9T: You see a problem asking for subarrays with \"exactly \\(K\\) odd/specific items\", which tells you to transform it into finding \"at most \\(K\\)\" minus \"at most \\(K-1\\)\" \u27e9M: You immediat",
+    "exampleProblem": "Count Number of Nice Subarrays",
+    "oneLiner": "You immediately run a sliding window where the right pointer expands to count items, and the left pointer shrinks the window the moment your count exceeds \\(K\\)",
+    "difficulty": "L",
     "friction": "Smooth"
   }
 ]
