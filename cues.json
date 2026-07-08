@@ -72,6 +72,14 @@
     "friction": "Smooth"
   },
   {
+    "topic": "String",
+    "cue": "String Parsing \u27e9T: Extract and sum all numbers embedded within a string (digits mixed with other characters) \u2192 single-pass scan with an inner digit-consuming loop \u27e9M: Scan the string once. Whenever yo",
+    "exampleProblem": "Extracting Numbers",
+    "oneLiner": "In this problem we loop through string , and find if given char is number if yes we while loop as we need to know the number is consecutve , so we do that and then we convert from ascii to long and then add it to temp",
+    "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
     "topic": "Array",
     "cue": "In-Place Matrix | Two Pointer",
     "exampleProblem": "Square Matrix Transpose",
