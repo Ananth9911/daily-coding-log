@@ -72,12 +72,12 @@
     "mastery": 77
   },
   {
-    "smooth": 6,
-    "struggled": 1,
+    "smooth": 7,
+    "struggled": 2,
     "hard": 5,
     "total": 11,
     "topic": "Bit",
-    "mastery": 55
+    "mastery": 64
   },
   {
     "smooth": 9,
@@ -89,7 +89,7 @@
   },
   {
     "smooth": 8,
-    "struggled": 2,
+    "struggled": 1,
     "hard": 8,
     "total": 8,
     "topic": "Math",
@@ -105,7 +105,7 @@
   },
   {
     "smooth": 8,
-    "struggled": 1,
+    "struggled": 0,
     "hard": 4,
     "total": 8,
     "topic": "Heap",
