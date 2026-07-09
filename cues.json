@@ -80,6 +80,14 @@
     "friction": "Smooth"
   },
   {
+    "topic": "String",
+    "cue": "String Manipulation \u27e9T: Replace every occurrence of a specific character in a string with another character \u2192 single-pass scan with in-place mutation via StringBuilder \u27e9M: Wrap the string in a StringB",
+    "exampleProblem": "Conditional Replacement",
+    "oneLiner": "Use setCharAt",
+    "difficulty": "L",
+    "friction": "Smooth"
+  },
+  {
     "topic": "Array",
     "cue": "In-Place Matrix | Two Pointer",
     "exampleProblem": "Square Matrix Transpose",
@@ -118,6 +126,14 @@
     "oneLiner": "Find the array's min and max values, then iterate through the array updating their latest seen indices (initialized to -1), calculating the minimum subarray length only when both values have been encountered.",
     "difficulty": "M",
     "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Prefix Sum \u27e9T: \"Remove one element; does the remaining array split evenly by index-parity sum\" \u2192 prefix/suffix sums with a parity-flip on one side \u27e9M: Precompute total even-index sum and total odd-ind",
+    "exampleProblem": "Special Index",
+    "oneLiner": "Precompute the total even and odd sums, then iterate through the array maintaining running left sums, calculating the new sums by adding the left side to the \"swapped\" right side to account for the index shift.",
+    "difficulty": "M",
+    "friction": "Struggled"
   },
   {
     "topic": "Array",
@@ -409,7 +425,7 @@
   },
   {
     "topic": "LinkedList",
-    "cue": "Linked List Insertion",
+    "cue": "Linked List Insertion \u27e9T: Insert a new node at a given index in a linked list \u2192 walk to the node just before the target index, then splice in \u27e9M: Handle index 0 (insert at head) as a special case up f",
     "exampleProblem": "Insert in Linked List",
     "oneLiner": "Insert Linked List",
     "difficulty": "H",

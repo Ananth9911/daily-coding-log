@@ -1,11 +1,11 @@
 [
   {
-    "smooth": 118,
+    "smooth": 119,
     "struggled": 19,
     "hard": 24,
     "total": 151,
     "topic": "Array",
-    "mastery": 78
+    "mastery": 79
   },
   {
     "smooth": 114,
@@ -24,12 +24,12 @@
     "mastery": 67
   },
   {
-    "smooth": 23,
+    "smooth": 24,
     "struggled": 4,
     "hard": 9,
     "total": 31,
     "topic": "String",
-    "mastery": 74
+    "mastery": 77
   },
   {
     "smooth": 22,
@@ -64,12 +64,12 @@
     "mastery": 79
   },
   {
-    "smooth": 10,
+    "smooth": 11,
     "struggled": 2,
     "hard": 6,
     "total": 13,
     "topic": "LinkedList",
-    "mastery": 77
+    "mastery": 85
   },
   {
     "smooth": 7,
