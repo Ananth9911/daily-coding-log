@@ -973,7 +973,7 @@
     "exampleProblem": "Flatten Binary Tree to Linked List",
     "oneLiner": "The Architecture: Use a recursive function returning a (head, tail) pair to flatten subtrees bottom-up.  The Wiring: Connect them by setting root.right = left_head, then left_tail.right = right_head.  The Trap: Always explicitly sever the left pointer (root.left = null) to prevent invalid tree cycles.  The Edge Case: If a node only has a left child, the true end of that list is the left_tail, not the left_head",
     "difficulty": "H",
-    "friction": "Smooth"
+    "friction": "Struggled"
   },
   {
     "topic": "String",
@@ -988,6 +988,14 @@
     "cue": "Sliding Window | Fixed Window",
     "exampleProblem": "Permutations of A in B",
     "oneLiner": "The Architecture (Fixed Size): Because any valid permutation of A must be exactly the length of A, the window size never changes. You do not need a while loop to shrink it.The Initial Setup: Create freq_A and freq_B arrays (size 26). Fully populate freq_A, but only populate freq_B with the first A.length() characters of string B. Check if they match using Arrays.equals(); if yes, count++.The Slide ($O(N)$): Loop from i = A.length() to the end of B. Slide the rigid frame by doing exactly two operations:Add Right: Increment the frequency of the new character entering the window: B.charAt(i).Drop Left: Decrement the frequency of the old character falling out of the window: B.charAt(i - A.length()).The Array Index Trap: When dropping the left character, do not accidentally use the raw index math (i - A.length()) inside the frequency array. You must fetch the actual character from string B first, then subtract 'a' to get the correct frequency bucket.",
+    "difficulty": "H",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "String",
+    "cue": "KMP Failure Function \u27e9T: Find the period of a string (smallest k such that the string repeats with cycle length k) \u2192 build the LPS array on the whole string, then period = length - lps[length-1] \u27e9M: B",
+    "exampleProblem": "Period of a string (KMP-LPS)",
+    "oneLiner": "The Core Concept: The \"Period\" of a string is the minimum distance k between repeating characters, where $A[i] == A[i \\% k]$.The LPS Secret: The last value of the LPS array (LPS[N-1]) tells you the length of the longest prefix that perfectly overlaps with the suffix of the entire string.The Visual Overlap: If a prefix of length $L$ perfectly matches a suffix of length $L$, it means every character in the overlap is exactly $N - L$ steps away from its identical twin.The Golden Formula ($O(N)$): Run KMP to generate the LPS array for the string. The minimum period is always strictly mathematically defined as: $k = N - LPS[N-1]$",
     "difficulty": "H",
     "friction": "Struggled"
   },
@@ -1048,12 +1056,20 @@
     "friction": "Smooth"
   },
   {
+    "topic": "HashMap",
+    "cue": "HashMap | ArrayList \u27e9T: Design a data structure supporting O(1) insert, remove, and getRandom \u2192 HashMap (value \u2192 index) + ArrayList (for random access), with swap-to-end-then-pop for removal \u27e9M: Maint",
+    "exampleProblem": "Insert Delete GetRandom",
+    "oneLiner": "Data Structures: You need a HashMap<Value, Index> for $O(1)$ lookup and an ArrayList<Value> for $O(1)$ random access.Insert: Add value to ArrayList, add (Value, ArrayList.size() - 1) to HashMap.The Remove Trick (Swap & Pop): >    * Get the target's index from the HashMap.Overwrite the target's position in the ArrayList with the last element in the ArrayList (list.set(index, lastElement)).Update the HashMap to reflect the last element's new index.Remove the last element from the ArrayList ($O(1)$ time).Remove the target from the HashMap.Random: Use Random.nextInt(list.size()) to pick an index.",
+    "difficulty": "L",
+    "friction": "Smooth"
+  },
+  {
     "topic": "Backtracking",
-    "cue": "Backtracking | Subset Partitioning",
+    "cue": "Backtracking | Subset Partitioning \u27e9T: Partition an array into K subsets, each with equal sum \u2192 backtracking, filling one subset completely before moving to the next \u27e9M: First check sum % k == 0 \u2014 if ",
     "exampleProblem": "Partition to K Equal Sum Subsets",
     "oneLiner": "Prerequisite Check: Total sum must be perfectly divisible by $K$. Each subset target is totalSum / k.Base Case 1 (Global Success): If k == 1, return true. (If $K-1$ buckets are perfectly filled, the remaining unused numbers must naturally sum to the target).Base Case 2 (Bucket Filled): If currsum == targetsum, transition to the next bucket by recursing with idx = 0, currsum = 0, and k - 1.Branching & Pruning: Loop from idx to the end of the array. Only process if visited[i] == false AND currsum + nums[i] <= targetsum.State Reset (Backtrack): Mark visited[i] = true and recurse with idx = i + 1. If the path returns false, undo the choice by setting visited[i] = false and continue the loop",
     "difficulty": "L",
-    "friction": "Smooth"
+    "friction": "Struggled"
   },
   {
     "topic": "String",
@@ -1093,6 +1109,22 @@
     "exampleProblem": "Count Number of Nice Subarrays",
     "oneLiner": "You immediately run a sliding window where the right pointer expands to count items, and the left pointer shrinks the window the moment your count exceeds \\(K\\)",
     "difficulty": "L",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Sliding Window \u27e9T: You need to count how many existing unique numbers fit inside the range [L, L + n - 1]. \u27e9M: Deduplicate and sort the array, then use a sliding window to find the densest cluster of ",
+    "exampleProblem": "Minimum Number of Operations to Make Array Continuous",
+    "oneLiner": "To make an array continuous, first remove all duplicates and sort the remaining unique elements in ascending order, keeping track of the original array length (n). Next, use a sliding window to treat each unique number as the starting element (L) of a target range that must end at L + n - 1. By expanding a right pointer to count how many existing unique numbers fit inside this valid window, you determine how many elements you can keep; subtracting this count from the original length (n) gives the operations needed, and the minimum value found across all windows is your final answer.",
+    "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "String",
+    "cue": "Sliding Window \u27e9T: Tracking substrings containing at least 5 unique vowels and at least \\(k\\) consonants. \u27e9M: Use a sliding window. Whenever the current window from left to right satisfies the rule, e",
+    "exampleProblem": "Count of Substrings Containing Every Vowel and K Consonants II",
+    "oneLiner": "Sliding Window",
+    "difficulty": "H",
     "friction": "Smooth"
   }
 ]
