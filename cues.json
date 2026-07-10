@@ -88,6 +88,14 @@
     "friction": "Smooth"
   },
   {
+    "topic": "String",
+    "cue": "Simulation \u27e9T: \"Find longest/last word in a string\" \u2192 need word boundaries without split() \u27e9M: Two-pointer scan with an inner while-loop that only advances on non-space chars; track max via a running ",
+    "exampleProblem": "Length of the Longest word",
+    "oneLiner": "Have the count and use the logic of count till we encounter space",
+    "difficulty": "L",
+    "friction": "Smooth"
+  },
+  {
     "topic": "Array",
     "cue": "In-Place Matrix | Two Pointer",
     "exampleProblem": "Square Matrix Transpose",
@@ -401,6 +409,14 @@
   },
   {
     "topic": "Hashing",
+    "cue": "HashMap | Frequency Count \u27e9T: \"Count elements that appear exactly once / find unique elements in array\" \u2192 need frequency lookup before deciding \u27e9M: Two-pass HashMap \u2014 first pass builds frequency count",
+    "exampleProblem": "Count unique elements",
+    "oneLiner": "Logic is to use hashmap , insert elements of A in hashmap and then run another loop to find freq",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Hashing",
     "cue": "Two Pointer | Sorting",
     "exampleProblem": "Count Pair Difference",
     "oneLiner": "To find pairs with a specific difference, I must check my history for BOTH the number that is B smaller than me AND the number that is B larger than me, unless B is 0",
@@ -473,7 +489,7 @@
   },
   {
     "topic": "Queue",
-    "cue": "Two Stacks | Amortized O(1)",
+    "cue": "Two Stacks | Amortized O(1) \u27e9T: \"Implement a Queue using two Stacks\" \u2192 need FIFO behavior from LIFO structures \u27e9M: Two stacks, split by role \u2014 st1 is the \"in-stack\" (all pushes land here), st2 is the ",
     "exampleProblem": "Queue Using Stacks",
     "oneLiner": "Using stack functions , implementing queue , do with two stacks",
     "difficulty": "H",
@@ -737,7 +753,7 @@
   },
   {
     "topic": "Array",
-    "cue": "Matrix Traversal | Diagonal",
+    "cue": "Matrix Traversal | Diagonal \u27e9T: \"Print/collect all anti-diagonals of a matrix\" \u2192 need to group elements where row + col is constant \u27e9M: Anti-diagonals share the invariant r + c = constant. Start from ",
     "exampleProblem": "Anti Diagonals",
     "oneLiner": "To find all anti-diagonals, trace from two sets of starting points: the top row (col 0 to N-1) and the rightmost column (row 1 to N-1). From each starting point (r, c), collect elements by moving down-left (r+1, c-1) and place them into the current row of the output matrix. Java's default initialization handles the trailing zeros automatically",
     "difficulty": "L",
@@ -790,6 +806,14 @@
     "oneLiner": "Execution: > 1. The Core Relation: To reach step N, you either came from step N-1 or N-2. Therefore: ways(N) = (ways(N-1) + ways(N-2)) % 1000000007. 2. Top-Down (Memoization): Init array with -1. Base cases: if (N == 0 || N == 1) return 1;. Check cache: if (dp[N] != -1) return dp[N];. Recurse, modulo, and save. (Time: O(N), Space: O(N)). 3. Bottom-Up (Tabulation): Base cases dp[0]=1, dp[1]=1. Loop i = 2 to N: dp[i] = (dp[i-1] + dp[i-2]) % 1000000007. 4. Senior Optimization (Slider): We only need the last two steps. Use a=1, b=1. Loop from 2 to N: c = (a + b) % 1000000007, then shift a = b and b = c. Return c. (Time: O(N), Space: O(1))",
     "difficulty": "H",
     "friction": "Struggled"
+  },
+  {
+    "topic": "Array",
+    "cue": "Matrix Traversal | Diagonal",
+    "exampleProblem": "Minor Diagonal Sum",
+    "oneLiner": "Find Anti diagonal sum",
+    "difficulty": "L",
+    "friction": "Smooth"
   },
   {
     "topic": "Array",

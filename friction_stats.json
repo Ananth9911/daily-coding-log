@@ -24,12 +24,12 @@
     "mastery": 67
   },
   {
-    "smooth": 25,
+    "smooth": 26,
     "struggled": 5,
     "hard": 10,
     "total": 32,
     "topic": "String",
-    "mastery": 78
+    "mastery": 81
   },
   {
     "smooth": 22,
@@ -40,12 +40,12 @@
     "mastery": 100
   },
   {
-    "smooth": 14,
+    "smooth": 15,
     "struggled": 3,
     "hard": 5,
     "total": 17,
     "topic": "Hashing",
-    "mastery": 82
+    "mastery": 88
   },
   {
     "smooth": 16,
