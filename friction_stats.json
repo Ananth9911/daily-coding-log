@@ -1,11 +1,11 @@
 [
   {
-    "smooth": 120,
-    "struggled": 19,
+    "smooth": 122,
+    "struggled": 18,
     "hard": 25,
-    "total": 152,
+    "total": 153,
     "topic": "Array",
-    "mastery": 79
+    "mastery": 80
   },
   {
     "smooth": 114,
@@ -17,7 +17,7 @@
   },
   {
     "smooth": 24,
-    "struggled": 20,
+    "struggled": 19,
     "hard": 15,
     "total": 36,
     "topic": "Tree",

@@ -393,6 +393,14 @@
   },
   {
     "topic": "Array",
+    "cue": "Binary Search on Answer \u27e9T: \"Maximize the minimum distance/gap between K placed items on a sorted line\" (Aggressive Cows / SPOJ-style) \u2192 binary search on the answer \u27e9M: Sort positions. Binary search o",
+    "exampleProblem": "Aggressive cows",
+    "oneLiner": "Binary search algo , have l and r and then find mid , need to write function check if mid is valid , and for that we loop through array and then find appropriate thing",
+    "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
     "cue": "Binary Search \u27e9T: Sorted array that's been rotated + need O(log n) search \u2192 binary search where one half is always sorted \u27e9M: Find mid; check which half is sorted (compare A[mid] vs A[lo]); if target ",
     "exampleProblem": "Rotated Sorted Array Search",
     "oneLiner": "Have lo and hi and do mid and then compare if B is present between lo and mid or hi and mid",
@@ -997,7 +1005,7 @@
     "exampleProblem": "Flatten Binary Tree to Linked List",
     "oneLiner": "The Architecture: Use a recursive function returning a (head, tail) pair to flatten subtrees bottom-up.  The Wiring: Connect them by setting root.right = left_head, then left_tail.right = right_head.  The Trap: Always explicitly sever the left pointer (root.left = null) to prevent invalid tree cycles.  The Edge Case: If a node only has a left child, the true end of that list is the left_tail, not the left_head",
     "difficulty": "H",
-    "friction": "Struggled"
+    "friction": "Smooth"
   },
   {
     "topic": "String",
@@ -1149,6 +1157,14 @@
     "exampleProblem": "Count of Substrings Containing Every Vowel and K Consonants II",
     "oneLiner": "Sliding Window",
     "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Sliding Window \u27e9T: \"Count subarrays where the max element of the array appears exactly K times\" \u2192 sliding window with shrink-and-count, not standard fixed window \u27e9M: Find maxVal globally first (it's f",
+    "exampleProblem": "Count Subarrays Where Max Element Appears at Least K Times",
+    "oneLiner": "Sliding Window",
+    "difficulty": "L",
     "friction": "Smooth"
   }
 ]
