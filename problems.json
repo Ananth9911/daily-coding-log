@@ -1,5 +1,22 @@
 [
   {
+    "date": "12/07/2026",
+    "name": "K-th Symbol in Grammar",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "H",
+    "friction": "Smooth",
+    "notes": "Bits \u27e9T: The trigger checks if K is odd or even to determine its position relative to its parent in the previous row \u27e9M: The move moves up to the parent element at position \\(\\lceil K / 2 \\rceil\\) (or (K + 1) / 2) while flipping the bit if K is even. This recursion moves up row by row until it reaches the base case (N=1, K=1), which always returns 0",
+    "oneLiner": "Bits",
+    "attempts": "1",
+    "phase": "Completed",
+    "reviewDate": "2027-01-09",
+    "lastSolved": "2026-07-13",
+    "url": "",
+    "ef": "3.0",
+    "interval": "180"
+  },
+  {
     "date": "11/07/2026",
     "name": "Array With Elements Not Equal to Average of Neighbors",
     "topic": "Array",
@@ -977,13 +994,13 @@
     "friction": "Smooth",
     "notes": "DFS | Return Head-Tail",
     "oneLiner": "The Architecture: Use a recursive function returning a (head, tail) pair to flatten subtrees bottom-up.  The Wiring: Connect them by setting root.right = left_head, then left_tail.right = right_head.  The Trap: Always explicitly sever the left pointer (root.left = null) to prevent invalid tree cycles.  The Edge Case: If a node only has a left child, the true end of that list is the left_tail, not the left_head",
-    "attempts": "4",
-    "phase": "S1",
-    "reviewDate": "2026-07-16",
-    "lastSolved": "2026-07-10",
+    "attempts": "5",
+    "phase": "S2",
+    "reviewDate": "2026-07-25",
+    "lastSolved": "2026-07-11",
     "url": "",
-    "ef": "1.9",
-    "interval": "6"
+    "ef": "2.0",
+    "interval": "12"
   },
   {
     "date": "16/05/2026",
@@ -2320,13 +2337,13 @@
     "friction": "Smooth",
     "notes": "Simulation",
     "oneLiner": "",
-    "attempts": "4",
-    "phase": "S2",
-    "reviewDate": "2026-06-04",
-    "lastSolved": "2026-05-25",
+    "attempts": "5",
+    "phase": "Completed",
+    "reviewDate": "2027-01-09",
+    "lastSolved": "2026-07-12",
     "url": "",
-    "ef": "3.1",
-    "interval": "9"
+    "ef": "3.0",
+    "interval": "180"
   },
   {
     "date": "11/04/2026",
@@ -7097,13 +7114,13 @@
     "friction": "Smooth",
     "notes": "Nested Loops | Pattern Printing",
     "oneLiner": "Pattern printing",
-    "attempts": "2",
-    "phase": "S2",
-    "reviewDate": "2026-06-05",
-    "lastSolved": "2026-05-27",
+    "attempts": "3",
+    "phase": "S3",
+    "reviewDate": "2026-08-11",
+    "lastSolved": "2026-07-13",
     "url": "",
-    "ef": "3.1",
-    "interval": "9"
+    "ef": "3.2",
+    "interval": "29"
   },
   {
     "date": "03/01/2026",

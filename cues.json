@@ -1166,5 +1166,13 @@
     "oneLiner": "Sliding Window",
     "difficulty": "L",
     "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Bits \u27e9T: The trigger checks if K is odd or even to determine its position relative to its parent in the previous row \u27e9M: The move moves up to the parent element at position \\(\\lceil K / 2 \\rceil\\) (or",
+    "exampleProblem": "K-th Symbol in Grammar",
+    "oneLiner": "Bits",
+    "difficulty": "H",
+    "friction": "Smooth"
   }
 ]
