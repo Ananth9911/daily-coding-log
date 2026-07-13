@@ -96,6 +96,14 @@
     "friction": "Smooth"
   },
   {
+    "topic": "String",
+    "cue": "ASCII Arithmetic \u27e9T: Filtering characters by class from a string \u2014 wrong instinct is to mutate/delete in place on the original (O(n\u00b2) shifting or index invalidation). \u27e9M: Build a fresh StringBuilder a",
+    "exampleProblem": "Lowercase letters only",
+    "oneLiner": "Using ASCII logic",
+    "difficulty": "L",
+    "friction": "Smooth"
+  },
+  {
     "topic": "Array",
     "cue": "In-Place Matrix | Two Pointer",
     "exampleProblem": "Square Matrix Transpose",
@@ -245,6 +253,14 @@
     "exampleProblem": "Search in a row wise and column wise sorted matrix",
     "oneLiner": "Need to redo",
     "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Bit",
+    "cue": "Bit Manipulation \u27e9T: Counting set bits in an int \u2014 wrong instinct is repeated A % 2 / A /= 2, which breaks on negative numbers (sign issues) and doesn't generalize \u27e9M: Loop i from 0 to 31 and test (A ",
+    "exampleProblem": "Number of 1 Bits",
+    "oneLiner": "Check ith bit",
+    "difficulty": "L",
     "friction": "Smooth"
   },
   {
