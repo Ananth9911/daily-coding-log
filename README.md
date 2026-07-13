@@ -1,5 +1,5 @@
 # 🚀 Ananth's Engineering Log
-### ⚡ Automated Career Tracker — Sprint 2026
+### ⚡ Automated Career Tracker — FAANG Sprint 2026
 - **Total Problems Solved:** 489 🔥
 - **Overall Mastery:** 88% Smooth | Hard: 147 | Medium: 113
 - **System Status:** Online 🟢
