@@ -1,11 +1,11 @@
 [
   {
-    "smooth": 124,
+    "smooth": 125,
     "struggled": 18,
     "hard": 26,
     "total": 155,
     "topic": "Array",
-    "mastery": 80
+    "mastery": 81
   },
   {
     "smooth": 114,
@@ -17,7 +17,7 @@
   },
   {
     "smooth": 24,
-    "struggled": 19,
+    "struggled": 21,
     "hard": 15,
     "total": 36,
     "topic": "Tree",
@@ -33,7 +33,7 @@
   },
   {
     "smooth": 22,
-    "struggled": 12,
+    "struggled": 13,
     "hard": 21,
     "total": 22,
     "topic": "DP",
@@ -96,12 +96,12 @@
     "mastery": 100
   },
   {
-    "smooth": 6,
+    "smooth": 7,
     "struggled": 2,
     "hard": 2,
     "total": 8,
     "topic": "Sorting",
-    "mastery": 75
+    "mastery": 88
   },
   {
     "smooth": 8,

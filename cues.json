@@ -377,6 +377,14 @@
   },
   {
     "topic": "Sorting",
+    "cue": "Divide and Conquer \u27e9T: Merge sort from scratch \u2014 wrong instinct is a recursive call on an empty/invalid range (lo > hi) or forgetting the two drain loops after the main merge, which silently truncates",
+    "exampleProblem": "Merge Sort",
+    "oneLiner": "Logic is it is recursive with dividing array and and sort both the dided array and then merge both divided array with sorting",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Sorting",
     "cue": "Count Sort \u27e9T: Sort an array with a known, limited value range \u2192 Counting Sort (not comparison-based, O(n+k) instead of O(n log n)) \u27e9M: Build a frequency array sized to the max possible value; for eac",
     "exampleProblem": "Count Sort",
     "oneLiner": "Count sort Algo, find freq array and then insert i val times into A",
@@ -1021,7 +1029,7 @@
     "exampleProblem": "Flatten Binary Tree to Linked List",
     "oneLiner": "The Architecture: Use a recursive function returning a (head, tail) pair to flatten subtrees bottom-up.  The Wiring: Connect them by setting root.right = left_head, then left_tail.right = right_head.  The Trap: Always explicitly sever the left pointer (root.left = null) to prevent invalid tree cycles.  The Edge Case: If a node only has a left child, the true end of that list is the left_tail, not the left_head",
     "difficulty": "H",
-    "friction": "Smooth"
+    "friction": "Struggled"
   },
   {
     "topic": "String",
@@ -1116,6 +1124,14 @@
     "cue": "Backtracking | Subset Partitioning \u27e9T: Partition an array into K subsets, each with equal sum \u2192 backtracking, filling one subset completely before moving to the next \u27e9M: First check sum % k == 0 \u2014 if ",
     "exampleProblem": "Partition to K Equal Sum Subsets",
     "oneLiner": "Prerequisite Check: Total sum must be perfectly divisible by $K$. Each subset target is totalSum / k.Base Case 1 (Global Success): If k == 1, return true. (If $K-1$ buckets are perfectly filled, the remaining unused numbers must naturally sum to the target).Base Case 2 (Bucket Filled): If currsum == targetsum, transition to the next bucket by recursing with idx = 0, currsum = 0, and k - 1.Branching & Pruning: Loop from idx to the end of the array. Only process if visited[i] == false AND currsum + nums[i] <= targetsum.State Reset (Backtrack): Mark visited[i] = true and recurse with idx = i + 1. If the path returns false, undo the choice by setting visited[i] = false and continue the loop",
+    "difficulty": "L",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "DP",
+    "cue": "State Machine DP \u27e9T: Best Time to Buy and Sell Stock III (at most 2 transactions) \u2014 wrong instinct is to split the array at every index and combine best-left + best-right prefix/suffix DP (O(n) space,",
+    "exampleProblem": "Best Time to Buy and Sell Stock III",
+    "oneLiner": "The 4 States: Track firstbuy, firstsell, secondbuy, secondsell.  Initial Values: firstbuy and secondbuy start at -prices[0] (or Integer.MIN_VALUE). Sells start at 0.  The Transitions (Max of doing nothing vs. acting today):  firstbuy = max(firstbuy, -prices[i])  firstsell = max(firstsell, firstbuy + prices[i])  secondbuy = max(secondbuy, firstsell - prices[i])  secondsell = max(secondsell, secondbuy + prices[i])  Pro-Tip: If you update them in reverse order inside the loop (secondsell first, down to firstbuy), you don't even need temporary variables!",
     "difficulty": "L",
     "friction": "Struggled"
   },
