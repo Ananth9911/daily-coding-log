@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Skeleton | Ananth</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<style>
+:root{--bg:#030303;--bg2:#0a0a0a;--bg3:#111;--card:#0d0d0d;--border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.15);
+--text:#f4f4f5;--muted:#71717a;--dim:#3f3f46;--green:#39d353;--blue:#3b82f6;--yellow:#eab308;--red:#ef4444;
+--purple:#a855f7;--orange:#f97316;--cyan:#22d3ee;--fd:'Space Grotesk',sans-serif;--fm:'IBM Plex Mono',monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--fd);min-height:100vh;padding:32px 18px;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse at 50% 0%,black 30%,transparent 80%);pointer-events:none;z-index:0}
+.wrap{max-width:1000px;margin:0 auto;position:relative;z-index:1}
+
+.hdr{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1px solid var(--border);padding-bottom:16px;margin-bottom:16px;flex-wrap:wrap;gap:12px}
+.hdr-left{display:flex;align-items:center;gap:12px}
+.sys-dot{width:8px;height:8px;border-radius:50%;background:var(--orange);box-shadow:0 0 10px var(--orange);animation:pulse 2s ease infinite;flex-shrink:0}
+h1{font-size:1.6rem;font-weight:700;letter-spacing:-.5px}
+.sub{font-family:var(--fm);font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin-top:3px}
+.hdr-right{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.nav-link{font-family:var(--fm);font-size:.68rem;color:var(--muted);text-decoration:none;padding:6px 11px;border:1px solid var(--border);border-radius:6px;transition:.18s}
+.nav-link:hover{color:var(--text);border-color:var(--border2)}
+.date-chip{font-family:var(--fm);font-size:.7rem;color:var(--muted);background:var(--bg2);border:1px solid var(--border);padding:6px 13px;border-radius:20px}
+
+/* PHASE */
+.phase-bar{display:flex;align-items:center;gap:10px;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:9px 14px;margin-bottom:14px;flex-wrap:wrap}
+.phase-label{font-family:var(--fm);font-size:.58rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px}
+.phase-opts{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+.phase-btn{font-family:var(--fm);font-size:.66rem;padding:6px 12px;border-radius:7px;border:1px solid var(--border);background:var(--bg3);color:var(--muted);cursor:pointer;transition:.15s}
+.phase-btn:hover{color:var(--text);border-color:var(--border2)}
+.phase-btn.on{background:rgba(168,85,247,.15);color:var(--purple);border-color:rgba(168,85,247,.35)}
+.phase-note{font-family:var(--fm);font-size:.6rem;color:var(--dim);width:100%;line-height:1.5}
+
+/* DAY STRIP */
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-bottom:14px}
+.day-btn{font-family:var(--fm);font-size:.72rem;font-weight:600;padding:11px 4px;border-radius:9px;border:1px solid var(--border);background:var(--bg2);color:var(--muted);cursor:pointer;transition:.15s;text-align:center}
+.day-btn:hover{border-color:var(--border2);color:var(--text)}
+.day-btn.on{background:rgba(249,115,22,.15);color:var(--orange);border-color:rgba(249,115,22,.35)}
+.day-btn.today{box-shadow:0 0 0 1px var(--green) inset}
+.day-btn .dtype{display:block;font-size:.5rem;font-weight:400;margin-top:3px;letter-spacing:.5px;opacity:.7}
+
+/* NOW */
+.nowbar{display:flex;align-items:center;gap:12px;background:linear-gradient(90deg,rgba(249,115,22,.12),transparent);border:1px solid rgba(249,115,22,.25);border-radius:12px;padding:12px 16px;margin-bottom:14px}
+.now-label{font-family:var(--fm);font-size:.58rem;color:var(--orange);text-transform:uppercase;letter-spacing:1.5px}
+.now-task{font-size:.95rem;font-weight:600;flex:1}
+.now-time{font-family:var(--fm);font-size:.72rem;color:var(--muted)}
+
+.day-progress{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:13px 17px;margin-bottom:14px}
+.dp-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;flex-wrap:wrap;gap:6px}
+.dp-label{font-family:var(--fm);font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px}
+.dp-nums{font-family:var(--fm);font-size:.72rem;color:var(--text)}
+.dp-bar{height:7px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.dp-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--orange),#fb923c);transition:width .6s ease;width:0%}
+
+/* WEEK STREAK */
+.streak{display:flex;gap:6px;align-items:center;background:var(--card);border:1px solid var(--border);border-radius:11px;padding:11px 15px;margin-bottom:14px;flex-wrap:wrap}
+.streak-lb{font-family:var(--fm);font-size:.58rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.4px;margin-right:4px}
+.sdot{width:26px;height:26px;border-radius:7px;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--fm);font-size:.58rem;color:var(--dim)}
+.sdot.hit{background:rgba(57,211,83,.15);border-color:rgba(57,211,83,.35);color:var(--green)}
+.streak-note{font-family:var(--fm);font-size:.58rem;color:var(--dim);margin-left:auto}
+
+/* SLOT */
+.slot{background:var(--card);border:1px solid var(--border);border-radius:13px;padding:14px 16px;margin-bottom:10px;transition:.2s;display:flex;gap:12px;align-items:flex-start}
+.slot.done{border-color:rgba(57,211,83,.3);background:rgba(57,211,83,.02)}
+.slot.current{border-color:rgba(249,115,22,.45);box-shadow:0 0 0 1px rgba(249,115,22,.15)}
+.slot-time{font-family:var(--fm);font-size:.68rem;color:var(--muted);min-width:96px;padding-top:2px;line-height:1.45}
+.slot-time b{color:var(--text);display:block;font-size:.75rem}
+.slot-time .dur{color:var(--dim);font-size:.58rem}
+.slot-check{width:23px;height:23px;border-radius:7px;border:2px solid var(--border2);background:var(--bg2);cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:.18s;font-size:.8rem;color:transparent;margin-top:2px}
+.slot-check:hover{border-color:var(--green)}
+.slot-check.checked{background:var(--green);border-color:var(--green);color:#000}
+.slot-body{flex:1;min-width:0}
+.slot-title{font-size:.95rem;font-weight:700;margin-bottom:3px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.slot-desc{font-size:.78rem;color:var(--muted);line-height:1.55}
+.pill{font-family:var(--fm);font-size:.55rem;padding:2px 7px;border-radius:5px;letter-spacing:.5px;text-transform:uppercase}
+.p-core{background:rgba(239,68,68,.12);color:var(--red);border:1px solid rgba(239,68,68,.25)}
+.p-iris{background:rgba(34,211,238,.12);color:var(--cyan);border:1px solid rgba(34,211,238,.25)}
+.p-lld{background:rgba(168,85,247,.12);color:var(--purple);border:1px solid rgba(168,85,247,.25)}
+.p-hld{background:rgba(59,130,246,.12);color:var(--blue);border:1px solid rgba(59,130,246,.25)}
+.p-lc{background:rgba(249,115,22,.12);color:var(--orange);border:1px solid rgba(249,115,22,.25)}
+.p-flex{background:var(--bg3);color:var(--muted);border:1px solid var(--border)}
+.a-core{border-left:3px solid var(--red)}
+.a-iris{border-left:3px solid var(--cyan)}
+.a-lld{border-left:3px solid var(--purple)}
+.a-hld{border-left:3px solid var(--blue)}
+.a-lc{border-left:3px solid var(--orange)}
+.a-flex{border-left:3px solid var(--dim)}
+.a-contest{border-left:3px solid var(--yellow)}
+
+.live-stat{display:inline-flex;align-items:center;gap:5px;font-family:var(--fm);font-size:.58rem;padding:2px 8px;border-radius:5px;background:rgba(59,130,246,.1);color:var(--blue);border:1px solid rgba(59,130,246,.2)}
+.live-stat.ls-orange{background:rgba(249,115,22,.1);color:var(--orange);border-color:rgba(249,115,22,.2)}
+
+.counter{display:flex;align-items:center;gap:10px;margin-top:10px;background:var(--bg2);border:1px solid var(--border);border-radius:9px;padding:8px 12px;flex-wrap:wrap}
+.counter-label{font-family:var(--fm);font-size:.58rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+.counter-controls{display:flex;align-items:center;gap:7px;margin-left:auto}
+.cnt-btn{width:26px;height:26px;border-radius:7px;border:1px solid var(--border);background:var(--bg3);color:var(--text);font-size:.95rem;cursor:pointer;transition:.15s}
+.cnt-btn:hover{border-color:var(--orange);color:var(--orange)}
+.cnt-val{font-family:var(--fm);font-size:.95rem;font-weight:600;min-width:44px;text-align:center}
+.cnt-target{color:var(--muted);font-size:.8rem}
+
+.timer-wrap{display:flex;align-items:center;gap:9px;margin-top:10px;background:var(--bg2);border:1px solid var(--border);border-radius:9px;padding:8px 12px;flex-wrap:wrap}
+.timer-clock{font-family:var(--fm);font-size:1.15rem;font-weight:600;color:var(--yellow);min-width:76px}
+.timer-clock.danger{color:var(--red);animation:pulse 1s infinite}
+.timer-clock.over{color:var(--green)}
+.tbtn{font-family:var(--fd);font-weight:600;font-size:.7rem;padding:6px 11px;border-radius:7px;border:1px solid var(--border);background:var(--bg3);color:var(--text);cursor:pointer;transition:.15s}
+.tbtn:hover{border-color:var(--border2)}
+.tbtn.primary{background:rgba(168,85,247,.15);color:var(--purple);border-color:rgba(168,85,247,.3)}
+
+.targets{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.target-chip{font-family:var(--fm);font-size:.64rem;padding:5px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--muted);display:flex;align-items:center;gap:6px;cursor:pointer;transition:.15s;user-select:none}
+.target-chip:hover{border-color:var(--border2);color:var(--text)}
+.target-chip.hit{background:rgba(57,211,83,.1);border-color:rgba(57,211,83,.25);color:var(--green)}
+.target-chip .tc-box{width:12px;height:12px;border-radius:4px;border:1.5px solid currentColor;display:flex;align-items:center;justify-content:center;font-size:.5rem}
+
+.score-row{display:flex;align-items:center;gap:9px;margin-top:10px;background:rgba(34,211,238,.05);border:1px solid rgba(34,211,238,.2);border-radius:9px;padding:8px 12px;flex-wrap:wrap}
+.score-row label{font-family:var(--fm);font-size:.58rem;color:var(--cyan);text-transform:uppercase;letter-spacing:1px}
+.score-in{width:60px;font-family:var(--fm);font-size:.85rem;background:var(--bg3);border:1px solid var(--border);border-radius:7px;color:var(--text);padding:5px 8px;text-align:center}
+.score-in:focus{outline:none;border-color:var(--cyan)}
+.hint{font-family:var(--fm);font-size:.58rem;color:var(--dim)}
+
+.cs-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.cs-chip{font-family:var(--fm);font-size:.63rem;padding:5px 10px;border-radius:14px;background:var(--bg2);border:1px solid var(--border);color:var(--muted);cursor:pointer;transition:.15s;user-select:none}
+.cs-chip:hover{border-color:var(--purple);color:var(--text)}
+.cs-chip.sel{background:rgba(168,85,247,.15);border-color:rgba(168,85,247,.4);color:var(--purple)}
+
+.triage{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,68,.2);border-radius:11px;padding:12px 16px;margin-top:16px}
+.triage b{color:var(--red);font-family:var(--fm);font-size:.62rem;text-transform:uppercase;letter-spacing:1.4px}
+.triage p{font-size:.78rem;color:var(--muted);margin-top:5px;line-height:1.6}
+
+.reset-row{text-align:center;margin-top:18px}
+.btn-reset{font-family:var(--fm);font-size:.66rem;color:var(--muted);background:transparent;border:1px solid var(--border);border-radius:8px;padding:8px 15px;cursor:pointer;transition:.15s}
+.btn-reset:hover{color:var(--red);border-color:rgba(239,68,68,.3)}
+.note{font-family:var(--fm);font-size:.6rem;color:var(--dim);text-align:center;margin-top:9px;line-height:1.6}
+@keyframes pulse{50%{opacity:.4}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.fade{animation:fadeIn .3s ease}
+@media(max-width:700px){.days{grid-template-columns:repeat(4,1fr)}.slot{flex-wrap:wrap}.slot-time{min-width:100%;display:flex;gap:8px;align-items:baseline}.slot-time b{display:inline}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hdr">
+    <div class="hdr-left">
+      <div class="sys-dot"></div>
+      <div>
+        <h1>Daily Skeleton</h1>
+        <div class="sub">7-day system · time-boxed · SRS is sacred</div>
+      </div>
+    </div>
+    <div class="hdr-right">
+      <div class="date-chip" id="date-display"></div>
+      <a href="dashboard.html" class="nav-link">← Hub</a>
+    </div>
+  </div>
+
+  <div class="phase-bar">
+    <span class="phase-label">Phase</span>
+    <div class="phase-opts">
+      <button class="phase-btn" id="ph-lld" onclick="setPhase('lld')">LLD 3 · till 7 Aug</button>
+      <button class="phase-btn" id="ph-hld" onclick="setPhase('hld')">HLD · from 10 Aug</button>
+    </div>
+    <div class="phase-note" id="phase-note"></div>
+  </div>
+
+  <div class="days" id="days"></div>
+
+  <div class="nowbar" id="nowbar" style="display:none">
+    <span class="now-label">Now</span>
+    <span class="now-task" id="now-task">—</span>
+    <span class="now-time" id="now-time"></span>
+  </div>
+
+  <div class="streak">
+    <span class="streak-lb">This week</span>
+    <div id="streak-dots" style="display:flex;gap:6px"></div>
+    <span class="streak-note" id="streak-note">green = all slots done</span>
+  </div>
+
+  <div class="day-progress">
+    <div class="dp-top">
+      <span class="dp-label" id="dp-label">Progress</span>
+      <span class="dp-nums" id="dp-nums">0 / 0 slots</span>
+    </div>
+    <div class="dp-bar"><div class="dp-fill" id="dp-fill"></div></div>
+  </div>
+
+  <div id="blocks"></div>
+
+  <div class="triage">
+    <b>⚠ Triage rule — if the night collapses</b>
+    <p>Protect in this order: <b style="color:var(--red)">SRS</b> → <b style="color:var(--cyan)">Iris</b> (Sat) → <b style="color:var(--purple)">LLD/HLD drill</b>. Drop LeetCode volume, SQL, LinkedIn before you ever drop SRS. A missed SRS day compounds; a missed LeetCode problem doesn't.</p>
+  </div>
+
+  <div class="reset-row">
+    <button class="btn-reset" onclick="resetDay()">↺ Reset this day</button>
+    <div class="note">Session-only state. SRS + Problem Engine counts are live from your backends.<br>
+      Weekday 9:30 PM–2:30 AM · Weekend 5:00 PM–2:30 AM</div>
+  </div>
+</div>
+
+<script>
+const SRS_API="https://script.google.com/macros/s/AKfycby8l7EkNbMy19gfCuvUYefTArdaY7yMW2qSZLh2mI9-mbRikkjTJ0jYO9B8rgUO3Ic/exec";
+const PE_API ="https://script.google.com/macros/s/AKfycbxBL-fDlOwouLJnujm1_v4lbDfyRjMACdhAbV_KtYUyAJnQYK_qnwsoHC5NBqwztMx4Bw/exec";
+
+const DAYS=['mon','tue','wed','thu','fri','sat','sun'];
+const DAYLBL={mon:'Mon',tue:'Tue',wed:'Wed',thu:'Thu',fri:'Fri',sat:'Sat',sun:'Sun'};
+const EXTRA_CS=['Snake & Ladder','Elevator System','Vending Machine','ATM','Chess','Cab Booking',
+'Food Delivery','Library Mgmt','Car Rental','Logging Framework','Rate Limiter','Auction'];
+const HLD_DRILLS=['URL Shortener','Twitter Feed','Rate Limiter','WhatsApp','YouTube','Uber',
+'Dropbox','Ticketmaster','Instagram','Notification Service'];
+
+let state={phase:'lld',day:'mon',checks:{},counters:{},targets:{},cs:{},hd:{},iris:''};
+
+// weekday starts 21:30 (9:30 PM). weekend starts 17:00 (5 PM).
+const isWk=d=>d==='sat'||d==='sun';
+
+function wkday(phase){
+  const study = phase==='lld'
+    ? {id:'wd-class',accent:'a-lld',pill:['LLD 3 · CLASS','p-lld'],icon:'🎓',start:120,dur:90,
+       title:'Scaler class — LLD 3 (machine coding)',
+       desc:'Watch the lecture. Take design notes, not code notes — the code you will write yourself on Saturday, from a blank file.',
+       targets:['Watched','Design notes written']}
+    : {id:'wd-class',accent:'a-hld',pill:['HLD · CLASS','p-hld'],icon:'🎓',start:120,dur:90,
+       title:'Scaler class — HLD (system design)',
+       desc:'Concept-heavy. Capture the TRADEOFF in every decision (why cache here, why NoSQL there) — that is what interviews test, not the diagram.',
+       targets:['Watched','Tradeoffs noted']};
+  return [
+    {id:'wd-srs',accent:'a-core',pill:['SACRED','p-core'],icon:'🔁',start:0,dur:120,
+     title:'SRS — daily queue (blind re-solve)',
+     desc:'Non-negotiable, every single day. Never re-read — attempt from a blank file. Hard cap ~8 min per card, then look. This is your compounding asset.',
+     liveSrs:true},
+    study,
+    {id:'wd-lc',accent:'a-lc',pill:['LEETCODE','p-lc'],icon:'⚡',start:210,dur:75,
+     title:'LeetCode — 1–2 new problems',
+     desc:'Breadth-first across patterns. 2–3 reps per pattern until one is solved COLD, then move on. Do not exhaust a topic.',
+     counter:{default:1,label:'Problems solved'},livePe:true},
+    {id:'wd-li',accent:'a-flex',pill:['2 MIN','p-flex'],icon:'💬',start:285,dur:10,
+     title:'LinkedIn — send 4 connection requests',
+     desc:'Notes were batched on Sunday. This is pure send-on-autopilot. 4/day × 5 = 20/week. Do not write here, just send.',
+     counter:{default:4,label:'Requests sent'}},
+    {id:'wd-log',accent:'a-flex',pill:['WRAP','p-flex'],icon:'📓',start:295,dur:5,
+     title:'Log the day',
+     desc:'Update the tracker. Any problem that fought you → write an SRS card with Trigger/Move before you close the laptop.',
+     targets:['Tracker updated','SRS cards added']}
+  ];
+}
+
+function saturday(phase){
+  const build = phase==='lld'
+    ? {id:'sa-lld',accent:'a-lld',pill:['LLD · TIMED SOLO','p-lld'],icon:'🏗',start:255,dur:150,
+       title:'LLD case study — timed solo, then diff',
+       desc:'The Scaler case whose design + first code class are done. CLOSE THE VIDEO. Implement from a blank file with the clock running. Then watch Kasera and diff your design against his. This IS the learning — the lecture was only the setup.',
+       timer:{preset:90},
+       targets:['Implemented from blank','Diffed vs Kasera','Wrote what I got wrong']}
+    : {id:'sa-cs',accent:'a-lld',pill:['EXTRA CASE STUDY','p-lld'],icon:'🧩',start:255,dur:150,
+       title:'Extra case study — design + code (self-picked)',
+       desc:'LLD 3 taught you the METHOD (requirements → entities → relationships → patterns → code). Now apply it to a case Scaler never covered. Design cold, then implement the core. One per weekend ≈ 8 extra cases by end of Sept.',
+       timer:{preset:120},casestudy:true,
+       targets:['Class diagram done','Core implemented','Named the patterns used']};
+  const arr=[
+    {id:'sa-srs',accent:'a-core',pill:['SACRED','p-core'],icon:'🔁',start:0,dur:120,
+     title:'SRS — daily queue',
+     desc:'Non-negotiable. Blind re-solve. Same as every day.',liveSrs:true},
+    {id:'sa-iris',accent:'a-iris',pill:['IRIS · MOCK','p-iris'],icon:'🎤',start:120,dur:90,
+     title:'Iris — full interview session (4 rounds)',
+     desc:'Saturday ONLY. Understand → Debug → Build → Optimize. Read an unfamiliar codebase, fix the bug, add the feature without breaking existing code. This is the ONLY thing that trains performing while watched — your single biggest gap. Log the score.',
+     timer:{preset:90},iris:true,
+     targets:['All 4 rounds done','Scorecard saved']},
+    {id:'sa-break',accent:'a-flex',pill:['BREAK','p-flex'],icon:'🍽',start:210,dur:45,
+     title:'Dinner / reset',
+     desc:'Actually stop. A real break at the midpoint is why a 2:30 AM finish is sustainable instead of a crash.'},
+    build,
+    {id:'sa-lc',accent:'a-lc',pill:['LEETCODE','p-lc'],icon:'⚡',start:405,dur:120,
+     title:'LeetCode — targeted (breadth-first)',
+     desc:'Hit the number. Weekend is where volume lives.',
+     counter:{default:4,label:'Problems solved'},livePe:true},
+    {id:'sa-sql',accent:'a-flex',pill:['ANCHOR','p-flex'],icon:'🗄',start:525,dur:45,
+     title:'SQL — 1 problem',
+     desc:'The one you skip on weekdays. Anchored here so the week never hits zero.',
+     targets:['1 SQL problem']}
+  ];
+  return arr;
+}
+
+function sunday(phase){
+  const consolidate = phase==='lld'
+    ? {id:'su-review',accent:'a-lld',pill:['LLD · REVIEW','p-lld'],icon:'📐',start:495,dur:45,
+       title:'LLD review — what did I get wrong?',
+       desc:'Open Saturday\'s diff. Which SOLID principle did you violate? Which pattern would have made it cleaner? Write it as an SRS card. This is how the next case study gets faster.',
+       targets:['Reviewed diff','SRS card written']}
+    : {id:'su-hld',accent:'a-hld',pill:['HLD · DESIGN DRILL','p-hld'],icon:'📊',start:495,dur:45,
+       title:'HLD design drill — solo, timed, whiteboard',
+       desc:'Pick a system below. Design it COLD in 45 min — requirements, estimates, API, schema, scale, tradeoffs. Then compare to the lecture. Watching Kasera design Uber teaches you nothing about designing under pressure. Only this does.',
+       hldrill:true,
+       targets:['Designed cold','Compared vs lecture']};
+  return [
+    {id:'su-srs',accent:'a-core',pill:['SACRED','p-core'],icon:'🔁',start:0,dur:120,
+     title:'SRS — daily queue',
+     desc:'Non-negotiable. Consistency is your one proven strength — protect it.',liveSrs:true},
+    {id:'su-contest',accent:'a-contest',pill:['CONTEST','p-core'],icon:'🏆',start:120,dur:90,
+     title:'LC Contest (live or virtual)',
+     desc:'Full contest conditions, clock running, no hints. Your on-the-spot-solving training — the thing calm solo practice never touches.',
+     timer:{preset:90},targets:['Attempted contest']},
+    {id:'su-break',accent:'a-flex',pill:['BREAK','p-flex'],icon:'🍽',start:210,dur:45,
+     title:'Dinner / reset',desc:'Non-optional. Protect the back half of the night.'},
+    {id:'su-upsolve',accent:'a-contest',pill:['THE REAL VALUE','p-core'],icon:'🔬',start:255,dur:90,
+     title:'Upsolve — the ones you could NOT finish',
+     desc:'The problems you cleared taught you nothing. The ones that beat you are the entire point. Solve them properly now, then write an SRS card with the Trigger/Move for each.',
+     targets:['Upsolved all','SRS cards written']},
+    {id:'su-iris-rev',accent:'a-iris',pill:['IRIS · REVIEW','p-iris'],icon:'📋',start:345,dur:30,
+     title:'Iris scorecard — drill the weakest round',
+     desc:'Open Saturday\'s scorecard. Find the lowest round (usually Optimize — naming complexity out loud). Drill exactly that for 30 min. Scorecard → fix → retest next Saturday. THAT loop is what moves 70s → 85+.',
+     targets:['Found weakest round','Drilled it']},
+    {id:'su-lc',accent:'a-lc',pill:['LEETCODE · COLD','p-lc'],icon:'❄️',start:375,dur:90,
+     title:'LeetCode — untagged / cold',
+     desc:'Pull problems WITHOUT the pattern label showing. Deciding cold that it IS sliding window is the skill — not executing it once told.',
+     counter:{default:3,label:'Cold problems solved'},livePe:true},
+    {id:'su-li',accent:'a-flex',pill:['BATCH','p-flex'],icon:'💬',start:465,dur:30,
+     title:'LinkedIn — batch 20 connection notes',
+     desc:'Write the whole week\'s notes in one sitting, so weekdays are pure send-on-autopilot (4/day). Use the Outreach Engine.',
+     counter:{default:20,label:'Notes written'}},
+    consolidate,
+    {id:'su-plan',accent:'a-flex',pill:['WEEKLY','p-flex'],icon:'🧭',start:540,dur:30,
+     title:'Weekly review + plan next week',
+     desc:'What moved? What slipped? Update the master plan. Pick next week\'s case study / HLD drill. 30 min that saves 5 hours of drift.',
+     targets:['Master plan updated','Next week picked']}
+  ];
+}
+
+function getSlots(){
+  const d=state.day;
+  if(d==='sat')return saturday(state.phase);
+  if(d==='sun')return sunday(state.phase);
+  return wkday(state.phase);
+}
+function startHour(){ return isWk(state.day)?17:21.5; }
+function fmtTime(min){
+  const base=startHour()*60;
+  let t=base+min;
+  let h=Math.floor(t/60), m=Math.round(t%60);
+  const ampm=(h%24)>=12&&(h%24)<24?'PM':'AM';
+  let hh=h%24; const ap=hh>=12?'PM':'AM';
+  if(hh===0)hh=12; else if(hh>12)hh-=12;
+  return `${hh}:${String(m).padStart(2,'0')} ${ap}`;
+}
+function todayKey(){ const d=new Date().getDay(); return DAYS[(d+6)%7]; }
+
+function initDay(){
+  const now=new Date();
+  state.phase = now < new Date(2026,7,10) ? 'lld' : 'hld';
+  state.day = todayKey();
+  document.getElementById('date-display').innerText=
+    now.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'short'});
+  renderDays(); setPhase(state.phase,true); setInterval(updateNow,30000);
+}
+function setPhase(p){
+  state.phase=p;
+  document.getElementById('ph-lld').classList.toggle('on',p==='lld');
+  document.getElementById('ph-hld').classList.toggle('on',p==='hld');
+  document.getElementById('phase-note').innerText = p==='lld'
+    ? 'LLD 3 running (20 Jul–7 Aug). Weekday = class. Saturday = implement the Scaler case timed & solo. NO extra case studies yet — you are still learning the method.'
+    : 'HLD running (from 10 Aug). Weekday = class. Saturday = extra case study (you now know the method). Sunday = solo HLD design drill.';
+  render(); fetchLive(); updateNow(); renderStreak();
+}
+function setDay(d){ state.day=d; renderDays(); render(); fetchLive(); updateNow(); }
+function renderDays(){
+  const el=document.getElementById('days'); const tk=todayKey();
+  el.innerHTML=DAYS.map(d=>`<button class="day-btn ${state.day===d?'on':''} ${tk===d?'today':''}" onclick="setDay('${d}')">
+    ${DAYLBL[d]}<span class="dtype">${isWk(d)?(d==='sat'?'BUILD':'CONTEST'):'CLASS'}</span></button>`).join('');
+}
+function currentSlotId(){
+  if(todayKey()!==state.day) return null;
+  const n=new Date();
+  let mins=(n.getHours()*60+n.getMinutes())-(startHour()*60);
+  if(mins<0) mins+=1440;
+  const list=getSlots();
+  const total=list[list.length-1].start+list[list.length-1].dur;
+  if(mins>total) return null;
+  for(const b of list) if(mins>=b.start&&mins<b.start+b.dur) return b.id;
+  return null;
+}
+function updateNow(){
+  const id=currentSlotId(); const bar=document.getElementById('nowbar');
+  if(!id){ bar.style.display='none'; return; }
+  const b=getSlots().find(x=>x.id===id);
+  bar.style.display='flex';
+  document.getElementById('now-task').innerText=b.icon+'  '+b.title;
+  document.getElementById('now-time').innerText=fmtTime(b.start)+' – '+fmtTime(b.start+b.dur);
+  render();
+}
+function render(){
+  const wrap=document.getElementById('blocks'); const list=getSlots();
+  const cur=currentSlotId();
+  document.getElementById('dp-label').innerText=DAYLBL[state.day]+' Progress';
+  wrap.innerHTML='';
+  list.forEach(b=>{
+    const ck=state.checks[b.id];
+    const card=document.createElement('div');
+    card.className=`slot ${b.accent} fade ${ck?'done':''} ${b.id===cur?'current':''}`;
+    let h=`<div class="slot-time"><b>${fmtTime(b.start)}</b>${fmtTime(b.start+b.dur)}<span class="dur">${b.dur}m</span></div>
+      <div class="slot-check ${ck?'checked':''}" onclick="toggleCheck('${b.id}')">${ck?'✓':''}</div>
+      <div class="slot-body">
+        <div class="slot-title"><span>${b.icon}</span>${b.title}
+          ${b.pill?`<span class="pill ${b.pill[1]}">${b.pill[0]}</span>`:''}
+          ${b.liveSrs?`<span class="live-stat" id="live-${b.id}">SRS due: …</span>`:''}
+          ${b.livePe?`<span class="live-stat ls-orange" id="livepe-${b.id}">engine: …</span>`:''}
+        </div>
+        <div class="slot-desc">${b.desc}</div>`;
+    if(b.iris) h+=`<div class="score-row"><label>Iris score</label>
+      <input class="score-in" type="number" min="0" max="100" placeholder="—" value="${state.iris}" oninput="state.iris=this.value">
+      <span class="hint">/100 · 70s now → 85+ by Oct · track the TREND, not one night</span></div>`;
+    if(b.casestudy) h+=`<div class="cs-row">`+EXTRA_CS.map(c=>
+      `<span class="cs-chip ${state.cs[c]?'sel':''}" onclick="pick('cs','${c}')">${c}</span>`).join('')+`</div>`;
+    if(b.hldrill) h+=`<div class="cs-row">`+HLD_DRILLS.map(c=>
+      `<span class="cs-chip ${state.hd[c]?'sel':''}" onclick="pick('hd','${c}')">${c}</span>`).join('')+`</div>`;
+    if(b.timer) h+=`<div class="timer-wrap">
+      <span class="timer-clock" id="clock-${b.id}">${String(b.timer.preset).padStart(2,'0')}:00</span>
+      <button class="tbtn primary" id="tbtn-${b.id}" onclick="startTimer('${b.id}',${b.timer.preset})">▶ Start</button>
+      <button class="tbtn" onclick="stopTimer('${b.id}')">⏸</button>
+      <button class="tbtn" onclick="resetTimer('${b.id}',${b.timer.preset})">↺</button>
+      <span class="hint">counts down, then UP in green</span></div>`;
+    if(b.counter){
+      const v=state.counters[b.id]??0, t=state.targets[b.id]??b.counter.default;
+      h+=`<div class="counter"><span class="counter-label">${b.counter.label}</span>
+        <div class="counter-controls">
+          <button class="cnt-btn" onclick="bumpTarget('${b.id}',-1)">–</button>
+          <span class="cnt-val" id="cval-${b.id}">${v}<span class="cnt-target"> / <span id="ctgt-${b.id}">${t}</span></span></span>
+          <button class="cnt-btn" onclick="bumpTarget('${b.id}',1)">+</button>
+          <button class="cnt-btn" style="margin-left:5px;border-color:var(--green);color:var(--green)" onclick="bumpCount('${b.id}',1)">✓</button>
+        </div></div>`;
+    }
+    if(b.targets) h+=`<div class="targets">`+b.targets.map((t,i)=>{
+      const k=b.id+'-t'+i, hit=state.checks[k];
+      return `<span class="target-chip ${hit?'hit':''}" onclick="toggleCheck('${k}')">
+        <span class="tc-box">${hit?'✓':''}</span>${t}</span>`;}).join('')+`</div>`;
+    h+=`</div>`;
+    card.innerHTML=h; wrap.appendChild(card);
+  });
+  updateProgress(); renderStreak();
+}
+function pick(kind,c){ if(kind==='cs'){state.cs={};state.cs[c]=true;} else {state.hd={};state.hd[c]=true;} render(); }
+function toggleCheck(id){
+  state.checks[id]=!state.checks[id]; render();
+  if(getSlots().every(b=>state.checks[b.id])) celebrate();
+}
+function updateProgress(){
+  const l=getSlots(), d=l.filter(b=>state.checks[b.id]).length;
+  document.getElementById('dp-nums').innerText=`${d} / ${l.length} slots`;
+  document.getElementById('dp-fill').style.width=(l.length?d/l.length*100:0)+'%';
+}
+function renderStreak(){
+  const el=document.getElementById('streak-dots'); if(!el)return;
+  el.innerHTML=DAYS.map(d=>{
+    const save=state.day; state.day=d;
+    const l=getSlots(); const done=l.length&&l.every(b=>state.checks[b.id]);
+    state.day=save;
+    return `<div class="sdot ${done?'hit':''}">${DAYLBL[d][0]}</div>`;}).join('');
+}
+function bumpCount(id,dl){
+  state.counters[id]=Math.max(0,(state.counters[id]??0)+dl);
+  const b=getSlots().find(x=>x.id===id);
+  const t=state.targets[id]??b.counter.default;
+  const el=document.getElementById('cval-'+id);
+  if(el)el.childNodes[0].nodeValue=state.counters[id];
+  if(state.counters[id]>=t&&!state.checks[id]){state.checks[id]=true;render();small();}
+}
+function bumpTarget(id,dl){
+  const b=getSlots().find(x=>x.id===id);
+  state.targets[id]=Math.max(1,(state.targets[id]??b.counter.default)+dl);
+  const el=document.getElementById('ctgt-'+id); if(el)el.innerText=state.targets[id];
+}
+let T={};
+function startTimer(id,m){ if(T[id])return;
+  const b=document.getElementById('tbtn-'+id); if(b)b.innerText='● Running';
+  if(T[id+'_s']===undefined)T[id+'_s']=m*60;
+  T[id]=setInterval(()=>{T[id+'_s']--;clock(id);},1000);}
+function stopTimer(id){if(T[id]){clearInterval(T[id]);T[id]=null;const b=document.getElementById('tbtn-'+id);if(b)b.innerText='▶ Resume';}}
+function resetTimer(id,m){if(T[id])clearInterval(T[id]);T[id]=null;T[id+'_s']=m*60;const b=document.getElementById('tbtn-'+id);if(b)b.innerText='▶ Start';clock(id);}
+function clock(id){const s=T[id+'_s'],c=document.getElementById('clock-'+id);if(!c)return;
+  const a=Math.abs(s);c.innerText=(s<0?'+':'')+String(Math.floor(a/60)).padStart(2,'0')+':'+String(a%60).padStart(2,'0');
+  c.classList.toggle('danger',s<=300&&s>0);c.classList.toggle('over',s<0);if(s===0)small();}
+async function fetchLive(){
+  getSlots().filter(b=>b.liveSrs).forEach(async b=>{
+    const el=document.getElementById('live-'+b.id); if(!el)return;
+    try{const r=await fetch(SRS_API+'?action=srs&t='+Date.now());const data=await r.json();
+      const t=new Date();t.setHours(t.getHours()-4);
+      const ts=t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0');
+      const due=(Array.isArray(data)?data:[]).filter(p=>{if(p.completed)return false;
+        if(!p.reviewDate||p.reviewDate==='')return p.phase==='New'||!p.phase;
+        return p.reviewDate<=ts;}).length;
+      el.innerText=`SRS due: ${due}`;}catch(e){el.innerText='SRS: offline';}
+  });
+  getSlots().filter(b=>b.livePe).forEach(async b=>{
+    const el=document.getElementById('livepe-'+b.id); if(!el)return;
+    try{const r=await fetch(PE_API+'?action=getProgress&t='+Date.now());const d=await r.json();
+      el.innerText=(d&&d.ok)?`${d.totalDone}/${d.totalProblems} done · ${(d.variations||[]).filter(v=>!v.complete).length} open`:'engine: n/a';
+    }catch(e){el.innerText='engine: offline';}
+  });
+}
+function celebrate(){confetti({particleCount:110,spread:85,origin:{y:.6},colors:['#f97316','#fb923c','#fff','#39d353']});}
+function small(){confetti({particleCount:40,spread:50,origin:{y:.7},colors:['#f97316','#fff']});}
+function resetDay(){
+  getSlots().forEach(b=>{delete state.checks[b.id];delete state.counters[b.id];
+    if(b.targets)b.targets.forEach((t,i)=>delete state.checks[b.id+'-t'+i]);});
+  state.iris=''; render();
+}
+initDay();
+</script>
+</body></html>
