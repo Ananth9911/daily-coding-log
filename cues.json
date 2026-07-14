@@ -1230,5 +1230,13 @@
     "oneLiner": "ame skeleton solves \"longest run of 0s\", \"max consecutive ones with at most K flips\" (\u2192 that one does become sliding window \u2014 worth a separate card as the contrast)maxone as Integer.MIN_VALUE works here but returns a garbage-adjacent value on an all-zeros array only by luck (it gets flushed to 0). Initialize to 0 instead \u2014 cleaner and correct by construction.",
     "difficulty": "L",
     "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Deque \u27e9T: Longest subarray constrained by max - min of the whole window \u2014 wrong instinct is comparing only the two endpoints |nums[left] - nums[right]|, or tracking length with a separate counter that",
+    "exampleProblem": "Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit",
+    "oneLiner": "Topic: Sliding Window + Monotonic Deque Sibling cards: LC 239 (Sliding Window Maximum \u2014 one deque, fixed window) \u2192 LC 1438 (two deques, variable window). 239 is the prerequisite; if 1438 feels hard, the gap is 239. Contrast card: LC 485 (Max Consecutive Ones) \u2014 looks similar, is not a window; that's the \"running counter\" pattern. The tell: 485 has no shrink condition. Trap: stale windowmax/windowmin locals computed before the shrink loop \u2192 infinite loop. Always read the deque front inside the while condition. Alt approach worth one line in notes: two TreeMaps (or a multiset) gives the same O(n log n) \u2014 deque is the O(n) answer and the one interviewers want.",
+    "difficulty": "L",
+    "friction": "Struggled"
   }
 ]
