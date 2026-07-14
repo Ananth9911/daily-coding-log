@@ -265,11 +265,11 @@
   },
   {
     "topic": "Bit",
-    "cue": "XOR | Bit Partitioning",
+    "cue": "XOR | Bit Partitioning \u27e9T: Array where every element appears twice except two singles \u2014 wrong instinct is to XOR everything and then stare at the combined result trying to split it arithmetically, or ",
     "exampleProblem": "Single Number III",
     "oneLiner": "XOR all array elements to find the combined XOR of the two unique numbers, locate any set bit in that result to identify where they differ, and use that bit to partition the array into two groups that you XOR separately to isolate each unique number.",
     "difficulty": "L",
-    "friction": "Smooth"
+    "friction": "Struggled"
   },
   {
     "topic": "Bit",
@@ -449,7 +449,7 @@
   },
   {
     "topic": "Hashing",
-    "cue": "Two Pointer | Sorting",
+    "cue": "Two Pointer | Sorting \u27e9T: Count pairs (i<j) with a fixed difference B \u2014 wrong instinct is nested loops, or handling only x-B and then double-counting by also scanning x+B over the whole array \u27e9M: Sing",
     "exampleProblem": "Count Pair Difference",
     "oneLiner": "To find pairs with a specific difference, I must check my history for BOTH the number that is B smaller than me AND the number that is B larger than me, unless B is 0",
     "difficulty": "H",
@@ -513,6 +513,14 @@
   },
   {
     "topic": "Stack",
+    "cue": "Monotonic Stack \u27e9T: Histogram / \"largest rectangle\" where each bar's rectangle is limited by how far it can stretch before hitting a shorter bar \u2014 wrong instinct is O(n\u00b2) expanding outward from each b",
+    "exampleProblem": "Largest Rectangle in Histogram",
+    "oneLiner": "Find LSE_L and LSE_R and then find width and height and maitain max-area , you will figure it out",
+    "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Stack",
     "cue": "Monotonic Stack | Contribution Technique",
     "exampleProblem": "Subarray(MAX - MIN)",
     "oneLiner": "Find LSE_L,LSE_R,LGE_L,LGE_R and then from there using contrubtion tecnhqie find count and then find contribution and then find difference",
@@ -542,6 +550,14 @@
     "oneLiner": "Have freq array to know duplicates and also use queues",
     "difficulty": "H",
     "friction": "Struggled"
+  },
+  {
+    "topic": "Tree",
+    "cue": "DFS | Inorder \u27e9T: Binary tree \"return nodes in sorted/BST order\" or any traversal-order question \u2014 wrong instinct is to reach for a stack/iterative machinery or to touch the node before recursing \u27e9M: ",
+    "exampleProblem": "Inorder Traversal",
+    "oneLiner": "inorder travesal , left root pritn , right , only logic you need to create separate funtion for main recursive calls as we do not want multiple arraylist confusion in memory",
+    "difficulty": "M",
+    "friction": "Smooth"
   },
   {
     "topic": "Tree",
@@ -1205,6 +1221,14 @@
     "exampleProblem": "K-th Symbol in Grammar",
     "oneLiner": "Bits",
     "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Linear Scan \u27e9T: \"Longest run of X in a linear scan\" \u2014 wrong instinct is a sliding window with two pointers, or forgetting the final flush so a run ending at the last index gets dropped. \u27e9M: Single pas",
+    "exampleProblem": "Max Consecutive Ones II",
+    "oneLiner": "ame skeleton solves \"longest run of 0s\", \"max consecutive ones with at most K flips\" (\u2192 that one does become sliding window \u2014 worth a separate card as the contrast)maxone as Integer.MIN_VALUE works here but returns a garbage-adjacent value on an all-zeros array only by luck (it gets flushed to 0). Initialize to 0 instead \u2014 cleaner and correct by construction.",
+    "difficulty": "L",
     "friction": "Smooth"
   }
 ]
