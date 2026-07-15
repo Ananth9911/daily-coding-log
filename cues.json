@@ -273,6 +273,14 @@
   },
   {
     "topic": "Bit",
+    "cue": "Bit Manipulation \u27e9T: \u27e9T: Build a number with bits set at positions A and B; the edge case that bites is A == B \u2014 blindly toggling both with XOR would flip the same bit twice and cancel it to 0. Guard ",
+    "exampleProblem": "Set Bit",
+    "oneLiner": "we assume C=0 and then we do toggle A th and Bth bit, if both are different or else toggle A",
+    "difficulty": "L",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Bit",
     "cue": "Bit Masking \u27e9T: \"Numbers expressible as sums of unique powers of X\" ranked in order \u2192 treat the index A in binary; each bit position represents whether that power of X is included \u27e9M: The key insight:",
     "exampleProblem": "Find nth Magic Number",
     "oneLiner": "Treat the binary representation of the integer A as a sequence of ON/OFF flags, where every set bit (1) at index i adds 5^{i+1} to the total sum.",
@@ -577,6 +585,14 @@
   },
   {
     "topic": "Tree",
+    "cue": "Divide and Conquer | Recursion \u27e9T: Reconstruct tree from preorder + inorder; wrong instinct is splitting preorder by position (it has no left/right marker) or forgetting the inorder search must be inc",
+    "exampleProblem": "Binary Tree From Inorder And Preorder",
+    "oneLiner": "create root node and then search for that root node in inorder and the find position , and then we need to figgure exxact left tree and right tree in both preorder and inorder array",
+    "difficulty": "H",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Tree",
     "cue": "Inorder Traversal | Two Pointer",
     "exampleProblem": "Two Sum BST",
     "oneLiner": "Two approaches , 1) Get inorder travesal and then have hashing , you know the apprach\n2) Get inorder travesal , then as it is sorted do two pointer apporach from first and end",
@@ -633,15 +649,15 @@
   },
   {
     "topic": "Backtracking",
-    "cue": "Backtracking | String Builder",
+    "cue": "Backtracking | String Builder \u27e9T: Backtracking to generate all balanced parens; the wrong instinct is pruning only on total count and forgetting the ordering rule \u2014 a ) is illegal whenever closes woul",
     "exampleProblem": "Generate all Parentheses II",
     "oneLiner": "Recursively explore adding valid opening and closing parentheses to a single shared StringBuilder, ensuring you delete the last appended character after every recursive return to cleanly backtrack and try the alternative branch.",
     "difficulty": "H",
-    "friction": "Smooth"
+    "friction": "Struggled"
   },
   {
     "topic": "Backtracking",
-    "cue": "Backtracking | Include-Exclude",
+    "cue": "Backtracking | Include-Exclude \u27e9T: Generate every subset; the pick/skip recursion is the clean pattern, and the easy-to-forget step is undoing the add (temp.remove) between the two recursive branches ",
     "exampleProblem": "Generate Subsets",
     "oneLiner": "Recursively build subsets by making a \"take it\" choice (add the element, explore, then erase it) and a \"leave it\" choice (just explore) at each index, ensuring you save a deep copy of the shared list when you reach the end of the array.",
     "difficulty": "H",
@@ -908,6 +924,14 @@
     "cue": "DFS | Path Visited Array \u27e9T: Detect cycle in a directed graph \u2192 DFS with visited + pathVisited (recursion-stack) arrays \u27e9M: For each unvisited node, DFS marking both visited[idx]=true (global, never u",
     "exampleProblem": "Cycle in Directed Graph",
     "oneLiner": "Use two boolean arrays: visited (global memory to avoid redundant work) and pathVisited (active path memory to detect cycles). When entering a node, mark both as true; if you ever encounter a neighbor where pathVisited is already true, you have found a cycle! When backtracking out of a node, set pathVisited to false (picking up your breadcrumb), but leave visited as true to ensure you never process that node again.",
+    "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Graph",
+    "cue": "DFS \u27e9T: eachability from source to target in a directed graph; the trap is 1-indexed nodes (size arrays/lists as A+1, not A) and treating a directed edge as bidirectional. Build adjacency list, DFS fr",
+    "exampleProblem": "Path in Directed Graph",
+    "oneLiner": "To find if a path exists from node $X$ to node $Y$, you do not need complex return logic. Simply initialize a global visited array, run a standard void DFS starting exclusively from node $X$, and afterward, check if visited[Y] == true. If it is, a path exists.",
     "difficulty": "H",
     "friction": "Smooth"
   },
@@ -1237,6 +1261,14 @@
     "exampleProblem": "Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit",
     "oneLiner": "Topic: Sliding Window + Monotonic Deque Sibling cards: LC 239 (Sliding Window Maximum \u2014 one deque, fixed window) \u2192 LC 1438 (two deques, variable window). 239 is the prerequisite; if 1438 feels hard, the gap is 239. Contrast card: LC 485 (Max Consecutive Ones) \u2014 looks similar, is not a window; that's the \"running counter\" pattern. The tell: 485 has no shrink condition. Trap: stale windowmax/windowmin locals computed before the shrink loop \u2192 infinite loop. Always read the deque front inside the while condition. Alt approach worth one line in notes: two TreeMaps (or a multiset) gives the same O(n log n) \u2014 deque is the O(n) answer and the one interviewers want.",
     "difficulty": "L",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Array",
+    "cue": "Monotonic Queue (Deque) \u27e9T: Window-max over all size-k windows; wrong instinct is a max-heap (O(n log n) and you can't cheaply evict the element that slid out). Reach for a monotonic decreasing deque ",
+    "exampleProblem": "Sliding Window Maximum",
+    "oneLiner": "Use a Deque<Integer> storing indices, kept monotonic decreasing by value (front = largest, back = smallest). Iterate i from 0 to nums.length - 1:  Evict expired front: if deque.peekFirst() == i - k, that index has slid out of the window \u2192 pollFirst(). (Front can only ever be one element too old, so an if suffices, not a while.) Maintain monotonicity: while the deque isn't empty and nums[deque.peekLast()] <= nums[i], pollLast(). Those smaller-or-equal older elements can never be the max while i is in the window. Add current: deque.offerLast(i). Record answer: once i >= k - 1 (first full window complete), the max is nums[deque.peekFirst()] \u2192 write to ans[i - k + 1].  Sizing: ans = new int[nums.length - k + 1].",
+    "difficulty": "M",
     "friction": "Struggled"
   }
 ]

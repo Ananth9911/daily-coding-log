@@ -1,7 +1,7 @@
 # 🚀 Ananth's Engineering Log
 ### ⚡ Automated Career Tracker — FAANG Sprint 2026
-- **Total Problems Solved:** 491 🔥
-- **Overall Mastery:** 88% Smooth | Hard: 147 | Medium: 113
+- **Total Problems Solved:** 492 🔥
+- **Overall Mastery:** 89% Smooth | Hard: 147 | Medium: 114
 - **System Status:** Online 🟢
 
 ### 🎓 Curriculum Progress
@@ -11,6 +11,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem | Topic | Difficulty | Phase |
 | :--- | :--- | :--- | :---: | :---: |
+| 15/07/2026 | Sliding Window Maximum | Array | 🟡 | Struggled |
 | 14/07/2026 | Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit | Array | 🟢 | Struggled |
 | 13/07/2026 | Max Consecutive Ones II | Array | 🟢 | Completed |
 | 12/07/2026 | K-th Symbol in Grammar | Array | 🔴 | Completed |
@@ -20,6 +21,5 @@
 | 08/07/2026 | Minimum Number of Operations to Make Array Continuous | Array | 🔴 | Completed |
 | 07/07/2026 | Count Number of Nice Subarrays | Array | 🟢 | Completed |
 | 06/07/2026 | Defuse the Bomb | Array | 🟡 | S1 |
-| 05/07/2026 | Binary Subarrays With Sum | Array | 🟡 | S1 |
 
 [→ View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)

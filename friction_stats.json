@@ -1,9 +1,9 @@
 [
   {
-    "smooth": 127,
-    "struggled": 19,
+    "smooth": 128,
+    "struggled": 20,
     "hard": 26,
-    "total": 157,
+    "total": 158,
     "topic": "Array",
     "mastery": 81
   },
@@ -16,12 +16,12 @@
     "mastery": 100
   },
   {
-    "smooth": 25,
+    "smooth": 26,
     "struggled": 20,
     "hard": 15,
     "total": 36,
     "topic": "Tree",
-    "mastery": 69
+    "mastery": 72
   },
   {
     "smooth": 27,
@@ -33,7 +33,7 @@
   },
   {
     "smooth": 22,
-    "struggled": 13,
+    "struggled": 14,
     "hard": 21,
     "total": 22,
     "topic": "DP",
@@ -72,16 +72,16 @@
     "mastery": 85
   },
   {
-    "smooth": 7,
-    "struggled": 3,
+    "smooth": 8,
+    "struggled": 4,
     "hard": 5,
     "total": 11,
     "topic": "Bit",
-    "mastery": 64
+    "mastery": 73
   },
   {
     "smooth": 9,
-    "struggled": 3,
+    "struggled": 4,
     "hard": 8,
     "total": 9,
     "topic": "Backtracking",
