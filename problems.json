@@ -1,5 +1,22 @@
 [
   {
+    "date": "16/07/2026",
+    "name": "Trapping Rain Water",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "M",
+    "friction": "Smooth",
+    "notes": "Monotonic Queue",
+    "oneLiner": "",
+    "attempts": "1",
+    "phase": "Completed",
+    "reviewDate": "2027-01-13",
+    "lastSolved": "2026-07-17",
+    "url": "",
+    "ef": "3.0",
+    "interval": "180"
+  },
+  {
     "date": "15/07/2026",
     "name": "Sliding Window Maximum",
     "topic": "Array",
@@ -1045,13 +1062,13 @@
     "friction": "Struggled",
     "notes": "DFS | Return Head-Tail",
     "oneLiner": "The Architecture: Use a recursive function returning a (head, tail) pair to flatten subtrees bottom-up.  The Wiring: Connect them by setting root.right = left_head, then left_tail.right = right_head.  The Trap: Always explicitly sever the left pointer (root.left = null) to prevent invalid tree cycles.  The Edge Case: If a node only has a left child, the true end of that list is the left_tail, not the left_head",
-    "attempts": "9",
+    "attempts": "10",
     "phase": "S2",
-    "reviewDate": "2026-07-31",
-    "lastSolved": "2026-07-16",
+    "reviewDate": "2026-07-25",
+    "lastSolved": "2026-07-17",
     "url": "",
-    "ef": "2.4",
-    "interval": "15"
+    "ef": "2.1",
+    "interval": "8"
   },
   {
     "date": "16/05/2026",
@@ -4377,10 +4394,10 @@
     "friction": "Smooth",
     "notes": "Bit Manipulation \u27e9T: Counting set bits in an int \u2014 wrong instinct is repeated A % 2 / A /= 2, which breaks on negative numbers (sign issues) and doesn't generalize \u27e9M: Loop i from 0 to 31 and test (A & (1 << i)) != 0 \u2014 recall hook: check bit i with mask 1 << i, compare against 0, never against 1 (the result is 2^i, not 1). Faster variant to know: A &= (A - 1) clears the lowest set bit, so loop until A == 0 for O(setbits).",
     "oneLiner": "Check ith bit",
-    "attempts": "5",
+    "attempts": "6",
     "phase": "Completed",
-    "reviewDate": "2027-01-10",
-    "lastSolved": "2026-07-14",
+    "reviewDate": "2027-01-13",
+    "lastSolved": "2026-07-17",
     "url": "",
     "ef": "3.0",
     "interval": "180"
