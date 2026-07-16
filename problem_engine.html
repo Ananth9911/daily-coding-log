@@ -11,6 +11,8 @@
     --accent:#f0883e; --accent2:#d56b2c; --accent-soft:#3a2415;
     --easy:#3fb950; --medium:#d29922; --hard:#f85149;
     --easy-bg:#13261a; --medium-bg:#2a2412; --hard-bg:#2d1416;
+    --faang:#a371f7; --faang-bg:#221533; --faang-line:#3d2a5c;
+    --quant:#39a0c9; --quant-bg:#0f2430;
     --shadow:0 0 0 1px rgba(255,255,255,.02),0 8px 28px rgba(0,0,0,.45);
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -20,12 +22,34 @@
     display:flex; align-items:flex-start; justify-content:center; padding:32px 18px 64px;
     background-image:radial-gradient(900px 500px at 50% -10%, #15202e 0%, transparent 70%);
   }
-  .wrap{width:100%; max-width:580px}
-  .top{display:flex; align-items:baseline; justify-content:space-between; margin-bottom:22px}
+  .wrap{width:100%; max-width:600px}
+  .top{display:flex; align-items:baseline; justify-content:space-between; margin-bottom:16px}
   .title{font-size:15px; font-weight:700; letter-spacing:.08em; color:var(--ink)}
   .title b{color:var(--accent)}
   .count{font-size:12px; color:var(--muted)}
 
+  /* topic progress rail */
+  .rail{display:flex; gap:4px; margin-bottom:20px; flex-wrap:wrap}
+  .rail .t{flex:1 1 auto; min-width:0; height:26px; border-radius:6px; background:var(--panel2);
+    border:1px solid var(--line); position:relative; overflow:hidden; cursor:default}
+  .rail .t .fillbar{position:absolute; inset:0; background:linear-gradient(90deg,var(--accent2),var(--accent));
+    transform-origin:left; opacity:.28}
+  .rail .t .lab{position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    font-size:9px; letter-spacing:.02em; color:var(--muted); white-space:nowrap; padding:0 4px}
+  .rail .t.active{border-color:var(--accent)}
+  .rail .t.done .lab{color:var(--easy)}
+
+
+  .phase{display:flex;align-items:center;gap:12px;background:var(--panel);border:1px solid var(--line);
+    border-radius:12px;padding:12px 16px;margin-bottom:16px}
+  .phase .tag{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    padding:4px 10px;border-radius:999px}
+  .phase .tag.core{color:#1a1205;background:var(--accent)}
+  .phase .tag.backup{color:var(--faang);background:var(--faang-bg);border:1px solid var(--faang-line)}
+  .phase .meter{flex:1;height:8px;background:var(--panel2);border-radius:999px;overflow:hidden;border:1px solid var(--line)}
+  .phase .meter .f{height:100%;background:linear-gradient(90deg,var(--accent2),var(--accent));transform-origin:left}
+  .phase .num{font-size:12px;color:var(--muted);white-space:nowrap}
+  .phase.bk .meter .f{background:linear-gradient(90deg,#6b4bab,var(--faang))}
   .card{background:linear-gradient(180deg,var(--panel) 0%,#13181f 100%); border:1px solid var(--line);
     border-radius:14px; box-shadow:var(--shadow); padding:26px 24px; margin-bottom:16px;}
   .eyebrow{display:flex; gap:8px; align-items:center; font-size:11px;
@@ -37,13 +61,25 @@
     padding:2px 7px; border-radius:999px; letter-spacing:.03em}
 
   .pname{font-size:23px; line-height:1.25; font-weight:700; letter-spacing:-.01em; margin-bottom:14px; color:#fff}
-  .meta{display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom:22px}
+  .meta{display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom:14px}
   .pill{font-size:11px; padding:4px 9px; border-radius:999px; border:1px solid var(--line);
     letter-spacing:.04em; text-transform:uppercase}
   .pill.easy{color:var(--easy); border-color:#1f4026; background:var(--easy-bg)}
   .pill.medium{color:var(--medium); border-color:#4a3d12; background:var(--medium-bg)}
   .pill.hard{color:var(--hard); border-color:#5c1f1f; background:var(--hard-bg)}
   .pill.tier{color:var(--muted)}
+  .pill.faang{color:var(--faang); border-color:var(--faang-line); background:var(--faang-bg); font-weight:700}
+
+  /* company chips */
+  .asked{margin-bottom:20px}
+  .asked .lbl{font-size:10px; color:var(--faint); text-transform:uppercase; letter-spacing:.06em; margin-bottom:7px}
+  .chips{display:flex; gap:6px; flex-wrap:wrap}
+  .chip{font-size:10.5px; padding:3px 9px; border-radius:6px; background:var(--panel2);
+    border:1px solid var(--line); color:var(--muted); letter-spacing:.02em}
+  .chip.big{color:var(--faang); border-color:var(--faang-line); background:var(--faang-bg)}
+  .chip.q{color:var(--quant); border-color:#1d3a48; background:var(--quant-bg)}
+  .chip.more{color:var(--faint); background:transparent; border-style:dashed; cursor:pointer}
+  .asked.none .lbl{color:var(--faint)}
 
   .actions{display:flex; gap:10px; flex-wrap:wrap}
   a.btn,button.btn{font:inherit; font-size:13px; font-weight:600; letter-spacing:.02em;
@@ -82,8 +118,11 @@
   .mixsel button{font:inherit; font-size:11px; padding:5px 11px; border-radius:999px; border:1px solid var(--line);
     background:var(--panel2); color:var(--muted); cursor:pointer}
   .mixsel button.on{background:var(--accent-soft); color:var(--accent); border-color:var(--accent2); font-weight:700}
-  .ov-item{display:flex; justify-content:space-between; align-items:center; padding:8px 0; font-size:13px; border-bottom:1px solid var(--line)}
+  .ov-item{display:flex; justify-content:space-between; align-items:center; gap:10px; padding:9px 0; font-size:13px; border-bottom:1px solid var(--line)}
+  .ov-item .l{min-width:0}
   .ov-item a{color:var(--ink); text-decoration:none} .ov-item a:hover{color:var(--accent)}
+  .ov-item .oc{font-size:10px; color:var(--faint); margin-top:3px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:260px}
+  .ov-item .oc b{color:var(--faang)}
 
   .panel{background:var(--panel); border:1px solid var(--line); border-radius:14px; box-shadow:var(--shadow); margin-bottom:16px; overflow:hidden}
   .panel .head{display:flex; justify-content:space-between; align-items:center; padding:16px 20px; cursor:pointer; user-select:none}
@@ -121,9 +160,12 @@
 <body>
 <div class="wrap">
   <div class="top">
-    <div class="title">PROBLEM&nbsp;<b>ENGINE</b></div>
+    <div class="title">PROBLEM&nbsp;<b>ENGINE</b> <span style="color:var(--faint);font-weight:400">· 300 fresh</span></div>
     <div class="count" id="count">—</div>
   </div>
+
+  <div class="phase" id="phase" style="display:none"></div>
+  <div class="rail" id="rail"></div>
 
   <div class="gate" id="gate">
     <label for="key">Admin key — unlock to mark progress</label>
@@ -145,14 +187,17 @@
   </div>
 
   <div class="foot">
-    Each variation is served as a FAANG-style mix — easy, medium, and hard interleaved, not all-easy-first.<br>
-    Bars show mastery by difficulty. Solved problems also go in your SRS log as usual.
+    Served topic-by-topic in your taxonomy order, difficulty-mixed within each variation.<br>
+    Each card shows which FAANG / companies asked that problem. Solved problems also go in your SRS log.
   </div>
 </div>
 
 <script>
 const API = 'https://script.google.com/macros/s/AKfycbxBL-fDlOwouLJnujm1_v4lbDfyRjMACdhAbV_KtYUyAJnQYK_qnwsoHC5NBqwztMx4Bw/exec';
-let ADMIN_KEY=''; let current=null; let progress=null; let overflowMix='balanced';
+// FAANG / big-tech set for chip coloring (display names as they appear in the sheet)
+const BIG = new Set(['Google','Meta','Amazon','Apple','Microsoft','Netflix','Bloomberg','Uber','Airbnb','LinkedIn','ByteDance','TikTok','Nvidia','Salesforce','Atlassian','DoorDash','Stripe','Coinbase','OpenAI','Snap','Pinterest','Palantir']);
+const QUANTS = new Set(['DE Shaw','Goldman Sachs','Jane Street','Two Sigma','HRT','Citadel','Bridgewater','Tower Research','WorldQuant','Morgan Stanley','JPMorgan']);
+let ADMIN_KEY=''; let current=null; let progress=null; let overflowMix='balanced'; let chipsExpanded=false;
 
 function unlock(){
   const k=document.getElementById('key').value.trim(); if(!k) return;
@@ -166,7 +211,7 @@ async function call(action, params={}){
 async function load(){
   try{
     current=await call('getNext'); render();
-    progress=await call('getProgress'); refreshCount(); renderTopic();
+    progress=await call('getProgress'); refreshCount(); renderPhase(); renderRail(); renderTopic();
   }catch(e){
     document.getElementById('main').innerHTML='<div class="card"><div class="msg">Could not reach the engine. Check the API URL.</div></div>';
   }
@@ -177,6 +222,37 @@ function refreshCount(){
 }
 function diffClass(d){ return (d||'').toLowerCase(); }
 function esc(s){ return String(s).replace(/'/g,"\\'"); }
+
+
+function renderPhase(){
+  const el=document.getElementById('phase');
+  if(!progress||!progress.ok){el.style.display='none';return;}
+  el.style.display='flex';
+  const inCore = progress.phase==='Core';
+  const c=progress.core, b=progress.backup;
+  const cur = inCore? c : b;
+  const pct = cur.total? Math.round(cur.done/cur.total*100):0;
+  el.className = 'phase'+(inCore?'':' bk');
+  el.innerHTML = `
+    <span class="tag ${inCore?'core':'backup'}">${inCore?'CORE 150':'BACKUP 150'}</span>
+    <div class="meter"><div class="f" style="transform:scaleX(${pct/100})"></div></div>
+    <span class="num">${cur.done}/${cur.total}${inCore?' core':' backup'}${!inCore?' · core ✓':''}</span>`;
+}
+
+function renderRail(){
+  if(!progress||!progress.topics){document.getElementById('rail').innerHTML='';return;}
+  const activeCat = current && current.problem ? current.problem.category : null;
+  document.getElementById('rail').innerHTML = progress.topics.map(t=>{
+    const pct = t.total? Math.round(t.done/t.total*100):0;
+    const done = t.total>0 && t.done>=t.total;
+    const abbr = t.category.split('/')[0].trim().split(' ').map(w=>w[0]).join('').slice(0,3).toUpperCase()
+                 || t.category.slice(0,3).toUpperCase();
+    const cls = (t.category===activeCat?'active ':'')+(done?'done ':'');
+    return `<div class="t ${cls}" title="${t.category} — ${t.done}/${t.total}">
+      <div class="fillbar" style="transform:scaleX(${pct/100})"></div>
+      <div class="lab">${done?'✓ ':''}${abbr} ${t.done}/${t.total}</div></div>`;
+  }).join('');
+}
 
 function masteryBar(diff){
   const segs=[];
@@ -198,14 +274,37 @@ function legend(diff){
     <span class="h">Hard <b>${g('Hard')}</b></span></div>`;
 }
 
+function companyChips(companies, expanded){
+  const list=(companies||'').split(',').map(s=>s.trim()).filter(Boolean);
+  if(!list.length) return `<div class="asked none"><div class="lbl">Company signal</div><div class="chips"><span class="chip">no direct company tag — global-frequency pick</span></div></div>`;
+  // sort big-tech first, then quant, then rest
+  const rank=c=>BIG.has(c)?0:(QUANTS.has(c)?1:2);
+  list.sort((a,b)=>rank(a)-rank(b)||a.localeCompare(b));
+  const shown = expanded ? list : list.slice(0,8);
+  const chips = shown.map(c=>{
+    const cls = BIG.has(c)?'chip big':(QUANTS.has(c)?'chip q':'chip');
+    return `<span class="${cls}">${c}</span>`;
+  }).join('');
+  const extra = list.length-shown.length;
+  const more = extra>0 ? `<span class="chip more" onclick="expandChips()">+${extra} more</span>` : '';
+  return `<div class="asked"><div class="lbl">Asked by · ${list.length} compan${list.length==1?'y':'ies'}</div><div class="chips">${chips}${more}</div></div>`;
+}
+function expandChips(){ chipsExpanded=true; render(); }
+
 function render(){
   const main=document.getElementById('main'); if(!current) return;
   if(current.done){
     main.innerHTML='<div class="card"><div class="done-state"><div class="big">✓</div><div>'+(current.message||'All targets met.')+'</div></div></div>';
     return;
   }
+  if(current.coreComplete){
+    document.getElementById('main').innerHTML='<div class="card"><div class="done-state"><div class="big">\u2713</div><div style="font-size:16px;font-weight:700;margin-bottom:6px">Core 150 complete</div><div style="color:var(--muted)">Backup pool unlocked \u2014 same topic-by-topic order. Loading\u2026</div></div></div>';
+    setTimeout(load, 1200); return;
+  }
   const p=current.problem, v=current.variation, locked=!ADMIN_KEY;
   const cold = v.coldTest ? '<span class="cold-badge">✓ cold-test passed</span>' : '';
+  const faangBadge = (p.faangHits>=8) ? `<span class="pill faang">★ FAANG favorite</span>`
+                   : (p.faangHits>=1) ? `<span class="pill faang">FAANG</span>` : '';
   main.innerHTML=`
     <div class="card">
       <div class="eyebrow"><span class="dot"></span><span>${p.category}</span></div>
@@ -216,8 +315,10 @@ function render(){
       <div class="pname">${p.name}</div>
       <div class="meta">
         <span class="pill ${diffClass(p.difficulty)}">${p.difficulty||'—'}</span>
+        ${faangBadge}
         ${p.tier&&p.tier!=='Extended'?'<span class="pill tier">'+p.tier+'</span>':''}
       </div>
+      ${companyChips(p.companies, chipsExpanded)}
       <div class="actions">
         <a class="btn solve" href="${p.url||'#'}" target="_blank" rel="noopener">Open on LeetCode ↗</a>
         <button class="btn done" id="doneBtn" ${locked?'disabled title="Unlock to mark progress"':''} onclick="markDone()">Mark done</button>
@@ -250,9 +351,10 @@ async function markDone(){
   const cold=document.getElementById('cold');
   const params={key:ADMIN_KEY,row:current.problem.row};
   if(cold&&cold.checked) params.coldTest='pass';
+  chipsExpanded=false;
   try{
     current=await call('markDone',params); render();
-    progress=await call('getProgress'); refreshCount(); renderTopic();
+    progress=await call('getProgress'); refreshCount(); renderPhase(); renderRail(); renderTopic();
   }catch(e){ btn.disabled=false; btn.textContent='Mark done'; }
 }
 async function editTarget(category,variation,cur){
@@ -277,9 +379,14 @@ async function loadOverflow(){
   const data=await call('moreOfVariation',{category:v.category,variation:v.name,mix:overflowMix});
   const list=document.getElementById('ovlist');
   if(data&&data.items&&data.items.length){
-    list.innerHTML=data.items.map(it=>
-      `<div class="ov-item"><a href="${it.url||'#'}" target="_blank" rel="noopener">${it.name}</a>`+
-      `<span class="pill ${diffClass(it.difficulty)}">${it.difficulty}</span></div>`).join('');
+    list.innerHTML=data.items.map(it=>{
+      const comps=(it.companies||'').split(',').map(s=>s.trim()).filter(Boolean);
+      const top=comps.slice(0,4).map(c=>BIG.has(c)?`<b>${c}</b>`:c).join(', ');
+      const extra=comps.length>4?` +${comps.length-4}`:'';
+      const octxt=comps.length?`<div class="oc">${top}${extra}</div>`:'';
+      return `<div class="ov-item"><div class="l"><a href="${it.url||'#'}" target="_blank" rel="noopener">${it.name}</a>${octxt}</div>`+
+        `<span class="pill ${diffClass(it.difficulty)}">${it.difficulty}</span></div>`;
+    }).join('');
   } else { list.innerHTML='<div class="msg" style="padding:10px 0">Nothing left here.</div>'; }
 }
 
