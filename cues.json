@@ -729,7 +729,7 @@
   },
   {
     "topic": "LinkedList",
-    "cue": "Floyd's Cycle Detection",
+    "cue": "Floyd's Cycle Detection \u27e9T: Remove the loop in a linked list (Floyd's cycle detection, then break the cycle) \u27e9M: Slow/fast pointers to find meeting point. If no cycle, meet stays null \u2014 return as-is. ",
     "exampleProblem": "Remove Loop from Linked List",
     "oneLiner": "Use fast and slow pointers to find the cycle's collision point, then advance one pointer from the head and one from the collision point at equal speeds until their next pointers match, placing you exactly one step before the start of the loop so you can safely sever it by setting next to null.",
     "difficulty": "M",
@@ -1065,7 +1065,7 @@
   },
   {
     "topic": "Tree",
-    "cue": "DFS | Return Head-Tail",
+    "cue": "DFS | Return Head-Tail \u27e9T: Flatten binary tree to a linked list (right-skewed, preorder), in place. \u27e9M: Post-order recursion returning (head, tail) of each flattened subtree. At every node: flatten le",
     "exampleProblem": "Flatten Binary Tree to Linked List",
     "oneLiner": "The Architecture: Use a recursive function returning a (head, tail) pair to flatten subtrees bottom-up.  The Wiring: Connect them by setting root.right = left_head, then left_tail.right = right_head.  The Trap: Always explicitly sever the left pointer (root.left = null) to prevent invalid tree cycles.  The Edge Case: If a node only has a left child, the true end of that list is the left_tail, not the left_head",
     "difficulty": "H",
@@ -1269,6 +1269,14 @@
     "exampleProblem": "Sliding Window Maximum",
     "oneLiner": "Use a Deque<Integer> storing indices, kept monotonic decreasing by value (front = largest, back = smallest). Iterate i from 0 to nums.length - 1:  Evict expired front: if deque.peekFirst() == i - k, that index has slid out of the window \u2192 pollFirst(). (Front can only ever be one element too old, so an if suffices, not a while.) Maintain monotonicity: while the deque isn't empty and nums[deque.peekLast()] <= nums[i], pollLast(). Those smaller-or-equal older elements can never be the max while i is in the window. Add current: deque.offerLast(i). Record answer: once i >= k - 1 (first full window complete), the max is nums[deque.peekFirst()] \u2192 write to ans[i - k + 1].  Sizing: ans = new int[nums.length - k + 1].",
     "difficulty": "M",
-    "friction": "Struggled"
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Two Pointer \u27e9T: Two pointer \u27e9M: Two pointer",
+    "exampleProblem": "Trapping Rain Water II",
+    "oneLiner": "Two pointer",
+    "difficulty": "L",
+    "friction": "Smooth"
   }
 ]
