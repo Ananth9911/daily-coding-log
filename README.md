@@ -1,6 +1,6 @@
 # 🚀 Ananth's Engineering Log
-### ⚡ Automated Career Tracker — Sprint 2026
-- **Total Problems Solved:** 494 🔥
+### ⚡ Automated Career Tracker — FAANG Sprint 2026
+- **Total Problems Solved:** 495 🔥
 - **Overall Mastery:** 89% Smooth | Hard: 147 | Medium: 115
 - **System Status:** Online 🟢
 
@@ -11,6 +11,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem | Topic | Difficulty | Phase |
 | :--- | :--- | :--- | :---: | :---: |
+| 18/07/2026 | Path Sum II | Tree | 🟢 | Completed |
 | 17/07/2026 | Trapping Rain Water II | Array | 🟢 | Completed |
 | 16/07/2026 | Trapping Rain Water | Array | 🟡 | Completed |
 | 15/07/2026 | Sliding Window Maximum | Array | 🟡 | S1 |
@@ -20,6 +21,5 @@
 | 11/07/2026 | Array With Elements Not Equal to Average of Neighbors | Array | 🟡 | Completed |
 | 10/07/2026 | Count Subarrays Where Max Element Appears at Least K Times | Array | 🟢 | Completed |
 | 09/07/2026 | Count of Substrings Containing Every Vowel and K Consonants II | String | 🔴 | Completed |
-| 08/07/2026 | Minimum Number of Operations to Make Array Continuous | Array | 🔴 | Completed |
 
 [→ View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)

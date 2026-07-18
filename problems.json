@@ -1,5 +1,22 @@
 [
   {
+    "date": "18/07/2026",
+    "name": "Path Sum II",
+    "topic": "Tree",
+    "source": "LeetCode",
+    "difficulty": "L",
+    "friction": "Smooth",
+    "notes": "Tree \u27e9T: Tree \u27e9M: Tree",
+    "oneLiner": "Tree",
+    "attempts": "1",
+    "phase": "Completed",
+    "reviewDate": "2027-01-14",
+    "lastSolved": "2026-07-18",
+    "url": "",
+    "ef": "3.0",
+    "interval": "180"
+  },
+  {
     "date": "17/07/2026",
     "name": "Trapping Rain Water II",
     "topic": "Array",
@@ -1076,16 +1093,16 @@
     "topic": "Tree",
     "source": "Scaler",
     "difficulty": "H",
-    "friction": "Struggled",
+    "friction": "Smooth",
     "notes": "DFS | Return Head-Tail \u27e9T: Flatten binary tree to a linked list (right-skewed, preorder), in place. \u27e9M: Post-order recursion returning (head, tail) of each flattened subtree. At every node: flatten left and right, then rewire \u2014 set left = null, attach flattened-left as right, append flattened-right after left's tail. Return the node as head and the deepest right-subtree tail (or node itself if leaf) as the new tail.",
     "oneLiner": "The Architecture: Use a recursive function returning a (head, tail) pair to flatten subtrees bottom-up.  The Wiring: Connect them by setting root.right = left_head, then left_tail.right = right_head.  The Trap: Always explicitly sever the left pointer (root.left = null) to prevent invalid tree cycles.  The Edge Case: If a node only has a left child, the true end of that list is the left_tail, not the left_head",
-    "attempts": "11",
-    "phase": "S1",
-    "reviewDate": "2026-07-22",
+    "attempts": "12",
+    "phase": "S2",
+    "reviewDate": "2026-07-26",
     "lastSolved": "2026-07-18",
     "url": "",
-    "ef": "1.8",
-    "interval": "4"
+    "ef": "1.9",
+    "interval": "8"
   },
   {
     "date": "16/05/2026",
