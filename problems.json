@@ -1,23 +1,6 @@
 [
   {
-    "date": "18/07/2026",
-    "name": "Path Sum II",
-    "topic": "Tree",
-    "source": "LeetCode",
-    "difficulty": "L",
-    "friction": "Smooth",
-    "notes": "Tree \u27e9T: Tree \u27e9M: Tree",
-    "oneLiner": "Tree",
-    "attempts": "1",
-    "phase": "Completed",
-    "reviewDate": "2027-01-14",
-    "lastSolved": "2026-07-18",
-    "url": "",
-    "ef": "3.0",
-    "interval": "180"
-  },
-  {
-    "date": "17/07/2026",
+    "date": "20/08/2026",
     "name": "Trapping Rain Water II",
     "topic": "Array",
     "source": "LeetCode",
@@ -34,7 +17,24 @@
     "interval": "180"
   },
   {
-    "date": "16/07/2026",
+    "date": "20/08/2026",
+    "name": "Path Sum II",
+    "topic": "Tree",
+    "source": "LeetCode",
+    "difficulty": "L",
+    "friction": "Smooth",
+    "notes": "Tree \u27e9T: Tree \u27e9M: Tree",
+    "oneLiner": "Tree",
+    "attempts": "1",
+    "phase": "Completed",
+    "reviewDate": "2027-01-14",
+    "lastSolved": "2026-07-18",
+    "url": "",
+    "ef": "3.0",
+    "interval": "180"
+  },
+  {
+    "date": "19/08/2026",
     "name": "Trapping Rain Water",
     "topic": "Array",
     "source": "LeetCode",
@@ -51,7 +51,7 @@
     "interval": "180"
   },
   {
-    "date": "15/07/2026",
+    "date": "18/08/2026",
     "name": "Sliding Window Maximum",
     "topic": "Array",
     "source": "LeetCode",
@@ -68,7 +68,7 @@
     "interval": "3"
   },
   {
-    "date": "14/07/2026",
+    "date": "17/08/2026",
     "name": "Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit",
     "topic": "Array",
     "source": "LeetCode",
@@ -85,7 +85,7 @@
     "interval": "1"
   },
   {
-    "date": "13/07/2026",
+    "date": "16/08/2026",
     "name": "Max Consecutive Ones II",
     "topic": "Array",
     "source": "LeetCode",
@@ -102,7 +102,7 @@
     "interval": "180"
   },
   {
-    "date": "12/07/2026",
+    "date": "15/08/2026",
     "name": "K-th Symbol in Grammar",
     "topic": "Array",
     "source": "LeetCode",
@@ -119,7 +119,7 @@
     "interval": "180"
   },
   {
-    "date": "11/07/2026",
+    "date": "14/08/2026",
     "name": "Array With Elements Not Equal to Average of Neighbors",
     "topic": "Array",
     "source": "LeetCode",
@@ -136,7 +136,7 @@
     "interval": "180"
   },
   {
-    "date": "10/07/2026",
+    "date": "13/08/2026",
     "name": "Count Subarrays Where Max Element Appears at Least K Times",
     "topic": "Array",
     "source": "LeetCode",
@@ -153,7 +153,7 @@
     "interval": "180"
   },
   {
-    "date": "09/07/2026",
+    "date": "12/08/2026",
     "name": "Count of Substrings Containing Every Vowel and K Consonants II",
     "topic": "String",
     "source": "LeetCode",
@@ -170,7 +170,7 @@
     "interval": "180"
   },
   {
-    "date": "08/07/2026",
+    "date": "11/08/2026",
     "name": "Minimum Number of Operations to Make Array Continuous",
     "topic": "Array",
     "source": "LeetCode",
@@ -187,7 +187,7 @@
     "interval": "180"
   },
   {
-    "date": "07/07/2026",
+    "date": "10/08/2026",
     "name": "Count Number of Nice Subarrays",
     "topic": "Array",
     "source": "LeetCode",
@@ -204,7 +204,7 @@
     "interval": "180"
   },
   {
-    "date": "06/07/2026",
+    "date": "09/08/2026",
     "name": "Defuse the Bomb",
     "topic": "Array",
     "source": "LeetCode",
@@ -221,7 +221,7 @@
     "interval": "3"
   },
   {
-    "date": "05/07/2026",
+    "date": "08/08/2026",
     "name": "Binary Subarrays With Sum",
     "topic": "Array",
     "source": "LeetCode",
@@ -238,7 +238,7 @@
     "interval": "3"
   },
   {
-    "date": "04/07/2026",
+    "date": "07/08/2026",
     "name": "Subarrays with K Different Integers",
     "topic": "Array",
     "source": "LeetCode",
@@ -255,7 +255,7 @@
     "interval": "1"
   },
   {
-    "date": "03/07/2026",
+    "date": "06/08/2026",
     "name": "Alternating Groups II",
     "topic": "Array",
     "source": "LeetCode",
@@ -272,7 +272,7 @@
     "interval": "3"
   },
   {
-    "date": "02/07/2026",
+    "date": "05/08/2026",
     "name": "Valid Word Abbreviation",
     "topic": "String",
     "source": "LeetCode",
@@ -289,7 +289,7 @@
     "interval": "180"
   },
   {
-    "date": "01/07/2026",
+    "date": "04/08/2026",
     "name": "Number of Subsequences That Satisfy the Given Sum Condition",
     "topic": "Array",
     "source": "LeetCode",
@@ -306,7 +306,7 @@
     "interval": "180"
   },
   {
-    "date": "30/06/2026",
+    "date": "03/08/2026",
     "name": "Minimum Length of String after Deleting Similar Ends",
     "topic": "String",
     "source": "LeetCode",
@@ -323,7 +323,7 @@
     "interval": "180"
   },
   {
-    "date": "29/06/2026",
+    "date": "02/08/2026",
     "name": "Valid Palindrome II",
     "topic": "Array",
     "source": "LeetCode",
@@ -340,7 +340,7 @@
     "interval": "180"
   },
   {
-    "date": "28/06/2026",
+    "date": "01/08/2026",
     "name": "Meeting Scheduler",
     "topic": "Array",
     "source": "LeetCode",
@@ -357,7 +357,7 @@
     "interval": "180"
   },
   {
-    "date": "27/06/2026",
+    "date": "31/07/2026",
     "name": "Divide Players Into Teams of Equal Skill",
     "topic": "Array",
     "source": "LeetCode",
@@ -374,7 +374,7 @@
     "interval": "180"
   },
   {
-    "date": "26/06/2026",
+    "date": "30/07/2026",
     "name": "Boats to Save People",
     "topic": "Array",
     "source": "LeetCode",
@@ -391,7 +391,7 @@
     "interval": "180"
   },
   {
-    "date": "25/06/2026",
+    "date": "29/07/2026",
     "name": "Bag of Tokens",
     "topic": "Array",
     "source": "LeetCode",
@@ -408,7 +408,7 @@
     "interval": "3"
   },
   {
-    "date": "24/06/2026",
+    "date": "28/07/2026",
     "name": "Adding Spaces to a String",
     "topic": "Array",
     "source": "LeetCode",
@@ -425,7 +425,7 @@
     "interval": "180"
   },
   {
-    "date": "23/06/2026",
+    "date": "27/07/2026",
     "name": "4Sum",
     "topic": "Array",
     "source": "LeetCode",
@@ -442,7 +442,7 @@
     "interval": "3"
   },
   {
-    "date": "22/06/2026",
+    "date": "26/07/2026",
     "name": "3Sum Smaller",
     "topic": "Array",
     "source": "LeetCode",
@@ -459,7 +459,7 @@
     "interval": "180"
   },
   {
-    "date": "21/06/2026",
+    "date": "25/07/2026",
     "name": "Squares of a Sorted Array",
     "topic": "Array",
     "source": "LeetCode",
@@ -476,7 +476,7 @@
     "interval": "180"
   },
   {
-    "date": "20/06/2026",
+    "date": "24/07/2026",
     "name": "Sort Array By Parity",
     "topic": "Array",
     "source": "LeetCode",
@@ -493,7 +493,7 @@
     "interval": "180"
   },
   {
-    "date": "19/06/2026",
+    "date": "23/07/2026",
     "name": "Reverse Words in a String III",
     "topic": "String",
     "source": "LeetCode",
@@ -510,7 +510,7 @@
     "interval": "180"
   },
   {
-    "date": "18/06/2026",
+    "date": "22/07/2026",
     "name": "Remove Duplicates from Sorted Array",
     "topic": "Array",
     "source": "LeetCode",
@@ -527,7 +527,7 @@
     "interval": "180"
   },
   {
-    "date": "17/06/2026",
+    "date": "21/07/2026",
     "name": "Move Zeroes",
     "topic": "Array",
     "source": "LeetCode",
@@ -544,7 +544,7 @@
     "interval": "180"
   },
   {
-    "date": "16/06/2026",
+    "date": "20/07/2026",
     "name": "Merge Two 2D Arrays by Summing Values",
     "topic": "Array",
     "source": "LeetCode",
@@ -561,7 +561,7 @@
     "interval": "180"
   },
   {
-    "date": "15/06/2026",
+    "date": "19/07/2026",
     "name": "Merge Strings Alternately",
     "topic": "String",
     "source": "LeetCode",
@@ -578,7 +578,7 @@
     "interval": "180"
   },
   {
-    "date": "14/06/2026",
+    "date": "18/07/2026",
     "name": "Find First Palindromic String in the Array",
     "topic": "Array",
     "source": "LeetCode",
@@ -595,7 +595,7 @@
     "interval": "180"
   },
   {
-    "date": "13/06/2026",
+    "date": "17/07/2026",
     "name": "Minimum Time To Make Rope Colorful",
     "topic": "Array",
     "source": "LeetCode",
@@ -612,7 +612,7 @@
     "interval": "3"
   },
   {
-    "date": "12/06/2026",
+    "date": "16/07/2026",
     "name": "Contains Duplicate II",
     "topic": "Array",
     "source": "LeetCode",
@@ -629,7 +629,7 @@
     "interval": "3"
   },
   {
-    "date": "11/06/2026",
+    "date": "15/07/2026",
     "name": "3Sum",
     "topic": "Array",
     "source": "LeetCode",
@@ -646,24 +646,7 @@
     "interval": "1"
   },
   {
-    "date": "10/06/2026",
-    "name": "Backspace String Compare",
-    "topic": "String",
-    "source": "LeetCode",
-    "difficulty": "L",
-    "friction": "Smooth",
-    "notes": "String | Two Pointer",
-    "oneLiner": "The $O(N)$ Space Template: Treat it like a Stack (StringBuilder). If it's a letter, append it. If it's a #, delete the last character (check for empty first!).The $O(1)$ Space Trick: Iterate backwards (right-to-left) using two pointers.Maintain a skip counter.If you see a #, skip++.If you see a letter and skip > 0, you safely ignore the letter and do skip--.Only compare letters when both skip counters are 0",
-    "attempts": "1",
-    "phase": "Smooth",
-    "reviewDate": "2026-06-13",
-    "lastSolved": "2026-06-10",
-    "url": "",
-    "ef": "3.0",
-    "interval": "3"
-  },
-  {
-    "date": "10/06/2026",
+    "date": "14/07/2026",
     "name": "Check If Two String Arrays are Equivalent",
     "topic": "Array",
     "source": "LeetCode",
@@ -680,24 +663,24 @@
     "interval": "180"
   },
   {
-    "date": "09/06/2026",
-    "name": "Apply Operations to an Array",
-    "topic": "Array",
+    "date": "13/07/2026",
+    "name": "Backspace String Compare",
+    "topic": "String",
     "source": "LeetCode",
     "difficulty": "L",
     "friction": "Smooth",
-    "notes": "Array",
-    "oneLiner": "Simple Array",
+    "notes": "String | Two Pointer",
+    "oneLiner": "The $O(N)$ Space Template: Treat it like a Stack (StringBuilder). If it's a letter, append it. If it's a #, delete the last character (check for empty first!).The $O(1)$ Space Trick: Iterate backwards (right-to-left) using two pointers.Maintain a skip counter.If you see a #, skip++.If you see a letter and skip > 0, you safely ignore the letter and do skip--.Only compare letters when both skip counters are 0",
     "attempts": "1",
-    "phase": "Completed",
-    "reviewDate": "2026-12-06",
-    "lastSolved": "2026-06-09",
+    "phase": "Smooth",
+    "reviewDate": "2026-06-13",
+    "lastSolved": "2026-06-10",
     "url": "",
     "ef": "3.0",
-    "interval": "180"
+    "interval": "3"
   },
   {
-    "date": "09/06/2026",
+    "date": "12/07/2026",
     "name": "Assign Cookies",
     "topic": "Array",
     "source": "LeetCode",
@@ -714,7 +697,24 @@
     "interval": "3"
   },
   {
-    "date": "08/06/2026",
+    "date": "11/07/2026",
+    "name": "Apply Operations to an Array",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "L",
+    "friction": "Smooth",
+    "notes": "Array",
+    "oneLiner": "Simple Array",
+    "attempts": "1",
+    "phase": "Completed",
+    "reviewDate": "2026-12-06",
+    "lastSolved": "2026-06-09",
+    "url": "",
+    "ef": "3.0",
+    "interval": "180"
+  },
+  {
+    "date": "10/07/2026",
     "name": "Valid Palindrome",
     "topic": "String",
     "source": "LeetCode",
@@ -731,7 +731,7 @@
     "interval": "3"
   },
   {
-    "date": "07/06/2026",
+    "date": "09/07/2026",
     "name": "Two Sum",
     "topic": "HashMap",
     "source": "LeetCode",
@@ -748,7 +748,7 @@
     "interval": "3"
   },
   {
-    "date": "06/06/2026",
+    "date": "08/07/2026",
     "name": "Best Time to Buy and Sell Stock III",
     "topic": "DP",
     "source": "LeetCode",
@@ -765,7 +765,7 @@
     "interval": "1"
   },
   {
-    "date": "05/06/2026",
+    "date": "07/07/2026",
     "name": "Partition to K Equal Sum Subsets",
     "topic": "Backtracking",
     "source": "LeetCode",
@@ -782,7 +782,7 @@
     "interval": "1"
   },
   {
-    "date": "04/06/2026",
+    "date": "06/07/2026",
     "name": "Insert Delete GetRandom",
     "topic": "HashMap",
     "source": "LeetCode",
@@ -799,7 +799,7 @@
     "interval": "9"
   },
   {
-    "date": "02/06/2026",
+    "date": "05/07/2026",
     "name": "Construct Roads",
     "topic": "Graph",
     "source": "Scaler",
@@ -816,7 +816,7 @@
     "interval": "9"
   },
   {
-    "date": "01/06/2026",
+    "date": "04/07/2026",
     "name": "Floyd Warshall Algorithm",
     "topic": "Graph",
     "source": "Scaler",
@@ -833,7 +833,7 @@
     "interval": "1"
   },
   {
-    "date": "31/05/2026",
+    "date": "03/07/2026",
     "name": "Batches",
     "topic": "Disjoint Set Union",
     "source": "Scaler",
@@ -850,7 +850,7 @@
     "interval": "1"
   },
   {
-    "date": "30/05/2026",
+    "date": "02/07/2026",
     "name": "Coloring a Cycle Graph",
     "topic": "Graph",
     "source": "Scaler",
@@ -867,7 +867,7 @@
     "interval": "9"
   },
   {
-    "date": "29/05/2026",
+    "date": "01/07/2026",
     "name": "Check Bipartite Graph",
     "topic": "Graph",
     "source": "Scaler",
@@ -884,7 +884,7 @@
     "interval": "8"
   },
   {
-    "date": "28/05/2026",
+    "date": "30/06/2026",
     "name": "Palindrome Partitioning II",
     "topic": "DP",
     "source": "Scaler",
@@ -901,7 +901,7 @@
     "interval": "1"
   },
   {
-    "date": "27/05/2026",
+    "date": "29/06/2026",
     "name": "Palindromic Substrings Count",
     "topic": "DP",
     "source": "Scaler",
@@ -918,7 +918,7 @@
     "interval": "1"
   },
   {
-    "date": "26/05/2026",
+    "date": "28/06/2026",
     "name": "Russian Doll Envelopes",
     "topic": "DP",
     "source": "Scaler",
@@ -935,7 +935,7 @@
     "interval": "1"
   },
   {
-    "date": "25/05/2026",
+    "date": "27/06/2026",
     "name": "Longest Increasing Subsequence",
     "topic": "DP",
     "source": "Scaler",
@@ -952,7 +952,7 @@
     "interval": "1"
   },
   {
-    "date": "24/05/2026",
+    "date": "26/06/2026",
     "name": "Edit Distance",
     "topic": "DP",
     "source": "Scaler",
@@ -969,7 +969,7 @@
     "interval": "6"
   },
   {
-    "date": "23/05/2026",
+    "date": "25/06/2026",
     "name": "Longest Common Subsequence",
     "topic": "DP",
     "source": "Scaler",
@@ -986,7 +986,7 @@
     "interval": "6"
   },
   {
-    "date": "22/05/2026",
+    "date": "24/06/2026",
     "name": "Period of a string (KMP-LPS)",
     "topic": "String",
     "source": "Scaler",
@@ -1003,7 +1003,7 @@
     "interval": "3"
   },
   {
-    "date": "21/05/2026",
+    "date": "23/06/2026",
     "name": "Cyclic Permutations -KMP",
     "topic": "String",
     "source": "Scaler",
@@ -1020,7 +1020,7 @@
     "interval": "6"
   },
   {
-    "date": "20/05/2026",
+    "date": "22/06/2026",
     "name": "Permutations of A in B",
     "topic": "String",
     "source": "Scaler",
@@ -1037,7 +1037,7 @@
     "interval": "1"
   },
   {
-    "date": "19/05/2026",
+    "date": "21/06/2026",
     "name": "Boring substring",
     "topic": "String",
     "source": "Scaler",
@@ -1054,7 +1054,7 @@
     "interval": "6"
   },
   {
-    "date": "18/05/2026",
+    "date": "20/06/2026",
     "name": "Node distance C in binary tree",
     "topic": "Tree",
     "source": "Scaler",
@@ -1071,7 +1071,7 @@
     "interval": "1"
   },
   {
-    "date": "17/05/2026",
+    "date": "19/06/2026",
     "name": "Flatten Binary Tree to Linked List",
     "topic": "Tree",
     "source": "Scaler",
@@ -1088,7 +1088,7 @@
     "interval": "8"
   },
   {
-    "date": "16/05/2026",
+    "date": "18/06/2026",
     "name": "Maximum XOR Subarray",
     "topic": "Tries",
     "source": "Scaler",
@@ -1105,7 +1105,7 @@
     "interval": "7"
   },
   {
-    "date": "15/05/2026",
+    "date": "17/06/2026",
     "name": "Maximum XOR",
     "topic": "Tries",
     "source": "Scaler",
@@ -1122,7 +1122,7 @@
     "interval": "4"
   },
   {
-    "date": "14/05/2026",
+    "date": "16/06/2026",
     "name": "Auto Complete",
     "topic": "Tries",
     "source": "Scaler",
@@ -1139,24 +1139,7 @@
     "interval": "2"
   },
   {
-    "date": "13/05/2026",
-    "name": "Shortest Unique Prefix",
-    "topic": "Tries",
-    "source": "Scaler",
-    "difficulty": "H",
-    "friction": "Smooth",
-    "notes": "Trie | Frequency Count",
-    "oneLiner": "To find the shortest unique prefix, upgrade your standard Trie node to include an int freq counter. During the insertion phase, increment this frequency for every single node you step on to track exactly how many words share that specific path. Then, to find the unique prefix for a word, traverse the Trie again and stop the exact moment you land on a node where curr.freq == 1. The substring from the root down to that specific node is mathematically guaranteed to be your shortest unique prefix.",
-    "attempts": "4",
-    "phase": "S1",
-    "reviewDate": "2026-07-02",
-    "lastSolved": "2026-06-25",
-    "url": "",
-    "ef": "2.2",
-    "interval": "7"
-  },
-  {
-    "date": "13/05/2026",
+    "date": "15/06/2026",
     "name": "Spelling Checker",
     "topic": "Tries",
     "source": "Scaler",
@@ -1173,41 +1156,24 @@
     "interval": "15"
   },
   {
-    "date": "12/05/2026",
-    "name": "Trie Deletion",
+    "date": "14/06/2026",
+    "name": "Shortest Unique Prefix",
     "topic": "Tries",
     "source": "Scaler",
     "difficulty": "H",
     "friction": "Smooth",
-    "notes": "Trie | Last Safe Node",
-    "oneLiner": "The secret to deletion is finding the \"Last Safe Node\" so you don't accidentally delete nodes shared by other words. As you traverse down the target word, constantly update a temp pointer and reference character (rc) whenever the current node has more than 1 child or its eow is true (indicating an overlap). Once you reach the end of the target word, immediately set its eow to false. Finally, if that last node has 0 children, go back to your temp node and sever the dead branch by setting temp.children[rc - 'a'] = null",
-    "attempts": "3",
-    "phase": "S2",
-    "reviewDate": "2026-07-06",
-    "lastSolved": "2026-06-21",
+    "notes": "Trie | Frequency Count",
+    "oneLiner": "To find the shortest unique prefix, upgrade your standard Trie node to include an int freq counter. During the insertion phase, increment this frequency for every single node you step on to track exactly how many words share that specific path. Then, to find the unique prefix for a word, traverse the Trie again and stop the exact moment you land on a node where curr.freq == 1. The substring from the root down to that specific node is mathematically guaranteed to be your shortest unique prefix.",
+    "attempts": "4",
+    "phase": "S1",
+    "reviewDate": "2026-07-02",
+    "lastSolved": "2026-06-25",
     "url": "",
-    "ef": "2.1",
-    "interval": "15"
+    "ef": "2.2",
+    "interval": "7"
   },
   {
-    "date": "11/05/2026",
-    "name": "Search in Tries",
-    "topic": "Tries",
-    "source": "Scaler",
-    "difficulty": "H",
-    "friction": "Smooth",
-    "notes": "Trie | Search",
-    "oneLiner": "To search for a word, start at the root and traverse character by character using the ch - 'a' array index. If at any point the child node you need evaluates to null, the path is broken, and you must immediately return false. If you successfully reach the final character of the word, do not just return true; instead, return the final node's eow flag to guarantee you found a complete, intentionally inserted word and not just a prefix of a longer word",
-    "attempts": "3",
-    "phase": "S2",
-    "reviewDate": "2026-07-17",
-    "lastSolved": "2026-07-02",
-    "url": "",
-    "ef": "2.1",
-    "interval": "15"
-  },
-  {
-    "date": "10/05/2026",
+    "date": "07/06/2026",
     "name": "Insertion in Tries",
     "topic": "Tries",
     "source": "Scaler",
@@ -1224,41 +1190,41 @@
     "interval": "15"
   },
   {
-    "date": "09/05/2026",
-    "name": "Sudoku",
-    "topic": "Backtracking",
+    "date": "07/06/2026",
+    "name": "Search in Tries",
+    "topic": "Tries",
     "source": "Scaler",
     "difficulty": "H",
     "friction": "Smooth",
-    "notes": "Backtracking | Constraint Checking",
-    "oneLiner": "The Architecture: Unlike N-Queens (which finds all solutions and returns void), Sudoku only needs one solution. The recursive function must return a boolean to instantly kill the search and bubble true up the call stack the moment the board is solved. The Traversal: Use a double for loop to scan the entire 9x9 board. If a cell is not '.', skip it. If it is '.', loop through '1' to '9'. The Logic (Do -> Recurse -> Undo): If a number is valid, set it (board[r][c] = guess). Recurse: if (solve(board) == true) return true;. If it fails, undo it (board[r][c] = '.'). The 3x3 Validator Math: To check if a guess is valid in its 3x3 block, find the top-left anchor using modulo math: start_row = row - (row % 3) and start_col = col - (col % 3). Then loop 0 to 2 and add them to the anchor",
-    "attempts": "5",
-    "phase": "S1",
-    "reviewDate": "2026-07-06",
-    "lastSolved": "2026-06-30",
+    "notes": "Trie | Search",
+    "oneLiner": "To search for a word, start at the root and traverse character by character using the ch - 'a' array index. If at any point the child node you need evaluates to null, the path is broken, and you must immediately return false. If you successfully reach the final character of the word, do not just return true; instead, return the final node's eow flag to guarantee you found a complete, intentionally inserted word and not just a prefix of a longer word",
+    "attempts": "3",
+    "phase": "S2",
+    "reviewDate": "2026-07-17",
+    "lastSolved": "2026-07-02",
     "url": "",
-    "ef": "1.9",
-    "interval": "6"
+    "ef": "2.1",
+    "interval": "15"
   },
   {
-    "date": "09/05/2026",
-    "name": "Word Break",
-    "topic": "DP",
+    "date": "07/06/2026",
+    "name": "Trie Deletion",
+    "topic": "Tries",
     "source": "Scaler",
     "difficulty": "H",
-    "friction": "Struggled",
-    "notes": "DP | HashSet \u27e9T: Can a string be segmented into dictionary words \u2192 recursion + memoization on \"can I break the suffix starting at index i\" \u27e9M: Define canBreak(i) = true if s[i:] can be fully segmented. Base case: i == length \u2192 true. For each j from i+1 to length, check if s[i:j] is a dictionary word; if so, recurse on canBreak(j). Memoize on i alone (not on j), since the subproblem only depends on where the remaining suffix starts \u2014 cache both true and false results to avoid recomputation",
-    "oneLiner": "The Architecture: Convert the dictionary to a HashSet for $O(1)$ lookups. Use a Boolean[] dp array of the same length as the string to store whether a breakdown is possible from a specific index. The Logic: Loop i from idx + 1 to A.length(). If dict.contains(A.substring(idx, i)) AND the recursive call canBreak(i) is true, return true. State Cleanup: Remember, because we are passing a new index i into the recursive function and not modifying a global string/array, there is no \"undo\" backtracking required!",
-    "attempts": "4",
-    "phase": "S1",
-    "reviewDate": "2026-07-10",
-    "lastSolved": "2026-07-08",
+    "friction": "Smooth",
+    "notes": "Trie | Last Safe Node",
+    "oneLiner": "The secret to deletion is finding the \"Last Safe Node\" so you don't accidentally delete nodes shared by other words. As you traverse down the target word, constantly update a temp pointer and reference character (rc) whenever the current node has more than 1 child or its eow is true (indicating an overlap). Once you reach the end of the target word, immediately set its eow to false. Finally, if that last node has 0 children, go back to your temp node and sever the dead branch by setting temp.children[rc - 'a'] = null",
+    "attempts": "3",
+    "phase": "S2",
+    "reviewDate": "2026-07-06",
+    "lastSolved": "2026-06-21",
     "url": "",
-    "ef": "1.8",
-    "interval": "2"
+    "ef": "2.1",
+    "interval": "15"
   },
   {
-    "date": "08/05/2026",
+    "date": "06/06/2026",
     "name": "NQueens",
     "topic": "Backtracking",
     "source": "Scaler",
@@ -1275,24 +1241,41 @@
     "interval": "1"
   },
   {
-    "date": "07/05/2026",
-    "name": "Trailing Zeros in Factorial",
-    "topic": "Maths",
+    "date": "06/06/2026",
+    "name": "Sudoku",
+    "topic": "Backtracking",
     "source": "Scaler",
     "difficulty": "H",
     "friction": "Smooth",
-    "notes": "Math | Prime Factorization",
-    "oneLiner": "Don't calculate the factorial (overflow). Count the pairs of (2, 5). 2s are abundant, so just count the 5s using a loop: count += n / i where i multiplies by 5 each step.",
-    "attempts": "3",
-    "phase": "S2",
-    "reviewDate": "2026-07-03",
-    "lastSolved": "2026-06-18",
+    "notes": "Backtracking | Constraint Checking",
+    "oneLiner": "The Architecture: Unlike N-Queens (which finds all solutions and returns void), Sudoku only needs one solution. The recursive function must return a boolean to instantly kill the search and bubble true up the call stack the moment the board is solved. The Traversal: Use a double for loop to scan the entire 9x9 board. If a cell is not '.', skip it. If it is '.', loop through '1' to '9'. The Logic (Do -> Recurse -> Undo): If a number is valid, set it (board[r][c] = guess). Recurse: if (solve(board) == true) return true;. If it fails, undo it (board[r][c] = '.'). The 3x3 Validator Math: To check if a guess is valid in its 3x3 block, find the top-left anchor using modulo math: start_row = row - (row % 3) and start_col = col - (col % 3). Then loop 0 to 2 and add them to the anchor",
+    "attempts": "5",
+    "phase": "S1",
+    "reviewDate": "2026-07-06",
+    "lastSolved": "2026-06-30",
     "url": "",
-    "ef": "2.1",
-    "interval": "15"
+    "ef": "1.9",
+    "interval": "6"
   },
   {
-    "date": "07/05/2026",
+    "date": "06/06/2026",
+    "name": "Word Break",
+    "topic": "DP",
+    "source": "Scaler",
+    "difficulty": "H",
+    "friction": "Struggled",
+    "notes": "DP | HashSet \u27e9T: Can a string be segmented into dictionary words \u2192 recursion + memoization on \"can I break the suffix starting at index i\" \u27e9M: Define canBreak(i) = true if s[i:] can be fully segmented. Base case: i == length \u2192 true. For each j from i+1 to length, check if s[i:j] is a dictionary word; if so, recurse on canBreak(j). Memoize on i alone (not on j), since the subproblem only depends on where the remaining suffix starts \u2014 cache both true and false results to avoid recomputation",
+    "oneLiner": "The Architecture: Convert the dictionary to a HashSet for $O(1)$ lookups. Use a Boolean[] dp array of the same length as the string to store whether a breakdown is possible from a specific index. The Logic: Loop i from idx + 1 to A.length(). If dict.contains(A.substring(idx, i)) AND the recursive call canBreak(i) is true, return true. State Cleanup: Remember, because we are passing a new index i into the recursive function and not modifying a global string/array, there is no \"undo\" backtracking required!",
+    "attempts": "4",
+    "phase": "S1",
+    "reviewDate": "2026-07-10",
+    "lastSolved": "2026-07-08",
+    "url": "",
+    "ef": "1.8",
+    "interval": "2"
+  },
+  {
+    "date": "05/06/2026",
     "name": "Pubg- Minimum Health",
     "topic": "Array",
     "source": "Scaler",
@@ -1309,7 +1292,7 @@
     "interval": "7"
   },
   {
-    "date": "07/05/2026",
+    "date": "05/06/2026",
     "name": "Compute nCr % p",
     "topic": "Maths",
     "source": "Scaler",
@@ -1326,7 +1309,7 @@
     "interval": "180"
   },
   {
-    "date": "07/05/2026",
+    "date": "05/06/2026",
     "name": "Very Large Power",
     "topic": "Maths",
     "source": "Scaler",
@@ -1343,24 +1326,24 @@
     "interval": "15"
   },
   {
-    "date": "06/05/2026",
-    "name": "Jump Game 2",
-    "topic": "DP",
+    "date": "04/06/2026",
+    "name": "Trailing Zeros in Factorial",
+    "topic": "Maths",
     "source": "Scaler",
     "difficulty": "H",
     "friction": "Smooth",
-    "notes": "DP | Greedy",
-    "oneLiner": "Move right-to-left. At index i, look ahead at the dist array within your jump range (arr[i]). Find the smallest number of jumps remaining (minReachableDist). Then, add 1 to account for your current physical jump: dist[i] = minReachableDist + 1",
+    "notes": "Math | Prime Factorization",
+    "oneLiner": "Don't calculate the factorial (overflow). Count the pairs of (2, 5). 2s are abundant, so just count the 5s using a loop: count += n / i where i multiplies by 5 each step.",
     "attempts": "3",
-    "phase": "S1",
-    "reviewDate": "2026-07-13",
-    "lastSolved": "2026-07-10",
+    "phase": "S2",
+    "reviewDate": "2026-07-03",
+    "lastSolved": "2026-06-18",
     "url": "",
-    "ef": "1.8",
-    "interval": "3"
+    "ef": "2.1",
+    "interval": "15"
   },
   {
-    "date": "06/05/2026",
+    "date": "03/06/2026",
     "name": "Nearest Smaller Element",
     "topic": "Stack",
     "source": "Scaler",
@@ -1377,7 +1360,24 @@
     "interval": "2"
   },
   {
-    "date": "05/05/2026",
+    "date": "02/06/2026",
+    "name": "Jump Game 2",
+    "topic": "DP",
+    "source": "Scaler",
+    "difficulty": "H",
+    "friction": "Smooth",
+    "notes": "DP | Greedy",
+    "oneLiner": "Move right-to-left. At index i, look ahead at the dist array within your jump range (arr[i]). Find the smallest number of jumps remaining (minReachableDist). Then, add 1 to account for your current physical jump: dist[i] = minReachableDist + 1",
+    "attempts": "3",
+    "phase": "S1",
+    "reviewDate": "2026-07-13",
+    "lastSolved": "2026-07-10",
+    "url": "",
+    "ef": "1.8",
+    "interval": "3"
+  },
+  {
+    "date": "01/06/2026",
     "name": "Shortest Distance in a Maze",
     "topic": "Graph",
     "source": "Scaler",
@@ -1394,7 +1394,7 @@
     "interval": "7"
   },
   {
-    "date": "04/05/2026",
+    "date": "31/05/2026",
     "name": "Number of islands",
     "topic": "Graph",
     "source": "Scaler",
@@ -1411,7 +1411,7 @@
     "interval": "15"
   },
   {
-    "date": "03/05/2026",
+    "date": "30/05/2026",
     "name": "Best Time to Buy and Sell Stocks II",
     "topic": "Greedy",
     "source": "Scaler",
@@ -1428,24 +1428,7 @@
     "interval": "15"
   },
   {
-    "date": "02/05/2026",
-    "name": "Dijkstra",
-    "topic": "Graph",
-    "source": "Scaler",
-    "difficulty": "H",
-    "friction": "Struggled",
-    "notes": "Dijkstra | Min Heap \u27e9T: Single-source shortest path, weighted graph (non-negative weights) \u2192 Dijkstra's algorithm with a min-heap \u27e9M: Build adjacency list (both directions if undirected). Init dist[] to a sentinel (e.g., -1 or infinity) except dist[source]=0. Min-heap seeded with (source, 0), ordered by distance ascending. Pop the minimum; if already visited, continue (stale queue entry \u2014 skip, don't reprocess). Otherwise mark visited, finalize dist[node] to the popped distance, and for each unvisited neighbor, push (neighbor, edgeWeight + currentDistance) \u2014 the accumulated distance, not just the raw edge weight. Never mark a neighbor visited when merely proposing a candidate distance \u2014 visited only becomes true when a node is actually popped and finalized.",
-    "oneLiner": "Use a Priority Queue (Min-Heap) storing (node, total_weight_from_source) and a distance array initialized to -1. Continuously pop the minimum weight node, and if it hasn't been visited, lock in its distance and push all its neighbors into the queue with their new cumulative weights.",
-    "attempts": "3",
-    "phase": "S1",
-    "reviewDate": "2026-07-11",
-    "lastSolved": "2026-07-08",
-    "url": "",
-    "ef": "1.8",
-    "interval": "3"
-  },
-  {
-    "date": "02/05/2026",
+    "date": "29/05/2026",
     "name": "Topological Sort Kahn's Algorithm",
     "topic": "Graph",
     "source": "Scaler",
@@ -1462,7 +1445,24 @@
     "interval": "3"
   },
   {
-    "date": "01/05/2026",
+    "date": "28/05/2026",
+    "name": "Dijkstra",
+    "topic": "Graph",
+    "source": "Scaler",
+    "difficulty": "H",
+    "friction": "Struggled",
+    "notes": "Dijkstra | Min Heap \u27e9T: Single-source shortest path, weighted graph (non-negative weights) \u2192 Dijkstra's algorithm with a min-heap \u27e9M: Build adjacency list (both directions if undirected). Init dist[] to a sentinel (e.g., -1 or infinity) except dist[source]=0. Min-heap seeded with (source, 0), ordered by distance ascending. Pop the minimum; if already visited, continue (stale queue entry \u2014 skip, don't reprocess). Otherwise mark visited, finalize dist[node] to the popped distance, and for each unvisited neighbor, push (neighbor, edgeWeight + currentDistance) \u2014 the accumulated distance, not just the raw edge weight. Never mark a neighbor visited when merely proposing a candidate distance \u2014 visited only becomes true when a node is actually popped and finalized.",
+    "oneLiner": "Use a Priority Queue (Min-Heap) storing (node, total_weight_from_source) and a distance array initialized to -1. Continuously pop the minimum weight node, and if it hasn't been visited, lock in its distance and push all its neighbors into the queue with their new cumulative weights.",
+    "attempts": "3",
+    "phase": "S1",
+    "reviewDate": "2026-07-11",
+    "lastSolved": "2026-07-08",
+    "url": "",
+    "ef": "1.8",
+    "interval": "3"
+  },
+  {
+    "date": "27/05/2026",
     "name": "Possibility of Finishing",
     "topic": "Graph",
     "source": "Scaler",
@@ -1479,7 +1479,7 @@
     "interval": "6"
   },
   {
-    "date": "30/04/2026",
+    "date": "26/05/2026",
     "name": "Another BFS",
     "topic": "Graph",
     "source": "Scaler",
@@ -1496,41 +1496,7 @@
     "interval": "3"
   },
   {
-    "date": "29/04/2026",
-    "name": "Rotten Oranges",
-    "topic": "Graph",
-    "source": "Scaler",
-    "difficulty": "H",
-    "friction": "Struggled",
-    "notes": "Multi-Source BFS",
-    "oneLiner": "Use Multi-source BFS by initially pushing all rotten oranges into a queue with minutes = 0 while counting the total fresh oranges. Process the queue to rot valid 4-directional neighbors, pushing them back into the queue with minutes + 1. Return the final minutes, or -1 if any fresh oranges remain at the end.",
-    "attempts": "3",
-    "phase": "S1",
-    "reviewDate": "2026-06-20",
-    "lastSolved": "2026-06-16",
-    "url": "",
-    "ef": "1.7",
-    "interval": "4"
-  },
-  {
-    "date": "29/04/2026",
-    "name": "Construction Cost",
-    "topic": "Graph",
-    "source": "Scaler",
-    "difficulty": "H",
-    "friction": "Smooth",
-    "notes": "Minimum Spanning Tree | Prim's \u27e9T: Minimum cost to connect all nodes with edges (given edge list, weighted, undirected) \u2192 Minimum Spanning Tree \u27e9M: Build adjacency list from edge list (add both directions since undirected). Min-heap of (node, weight), seed with (start_node, 0). Pop min; if already visited, skip; else mark visited, add weight to answer, push all unvisited neighbors with their edge weight. Repeat until heap empties.",
-    "oneLiner": "Convert the Edge List into an Adjacency List first. Use a Min-Heap (Priority Queue) to greedily pick the minimum weight edge that connects an unvisited node to the growing tree. Always maintain a visited array to prevent cycles, and ensure the Priority Queue is initialized with a custom comparator for the weights",
-    "attempts": "3",
-    "phase": "S1",
-    "reviewDate": "2026-07-14",
-    "lastSolved": "2026-07-07",
-    "url": "",
-    "ef": "2.2",
-    "interval": "7"
-  },
-  {
-    "date": "29/04/2026",
+    "date": "25/05/2026",
     "name": "Commutable Islands",
     "topic": "Graph",
     "source": "Scaler",
@@ -1547,41 +1513,41 @@
     "interval": "1"
   },
   {
-    "date": "28/04/2026",
-    "name": "Cycle in Directed Graph",
+    "date": "24/05/2026",
+    "name": "Construction Cost",
     "topic": "Graph",
     "source": "Scaler",
     "difficulty": "H",
     "friction": "Smooth",
-    "notes": "DFS | Path Visited Array \u27e9T: Detect cycle in a directed graph \u2192 DFS with visited + pathVisited (recursion-stack) arrays \u27e9M: For each unvisited node, DFS marking both visited[idx]=true (global, never unset) and pathVisited[idx]=true (active-path only). For each neighbor: if pathVisited[neighbor]==true \u2192 cycle found (it's an ancestor in the current DFS path, not just any visited node). If unvisited, recurse. On backtrack, unset pathVisited[idx]=false \u2014 this is the \"picking up your breadcrumb\" step. Loop over all nodes as entry points to catch disconnected components.",
-    "oneLiner": "Use two boolean arrays: visited (global memory to avoid redundant work) and pathVisited (active path memory to detect cycles). When entering a node, mark both as true; if you ever encounter a neighbor where pathVisited is already true, you have found a cycle! When backtracking out of a node, set pathVisited to false (picking up your breadcrumb), but leave visited as true to ensure you never process that node again.",
+    "notes": "Minimum Spanning Tree | Prim's \u27e9T: Minimum cost to connect all nodes with edges (given edge list, weighted, undirected) \u2192 Minimum Spanning Tree \u27e9M: Build adjacency list from edge list (add both directions since undirected). Min-heap of (node, weight), seed with (start_node, 0). Pop min; if already visited, skip; else mark visited, add weight to answer, push all unvisited neighbors with their edge weight. Repeat until heap empties.",
+    "oneLiner": "Convert the Edge List into an Adjacency List first. Use a Min-Heap (Priority Queue) to greedily pick the minimum weight edge that connects an unvisited node to the growing tree. Always maintain a visited array to prevent cycles, and ensure the Priority Queue is initialized with a custom comparator for the weights",
     "attempts": "3",
     "phase": "S1",
-    "reviewDate": "2026-07-10",
+    "reviewDate": "2026-07-14",
     "lastSolved": "2026-07-07",
-    "url": "",
-    "ef": "1.8",
-    "interval": "3"
-  },
-  {
-    "date": "28/04/2026",
-    "name": "Path in Directed Graph",
-    "topic": "Graph",
-    "source": "Scaler",
-    "difficulty": "H",
-    "friction": "Smooth",
-    "notes": "DFS \u27e9T: eachability from source to target in a directed graph; the trap is 1-indexed nodes (size arrays/lists as A+1, not A) and treating a directed edge as bidirectional. Build adjacency list, DFS from source, check if target got visited. \u27e9M: Build graph sized A+1; for each edge add v to graph[u] only (directed \u2014 no reverse edge). DFS: mark visited, recurse into unvisited neighbors. Answer = visited[A]. Hook: 1-indexed \u2192 A+1 everywhere; directed \u2192 one-way edge; reachability = just check the target's visited flag after DFS from source. O(V+E).",
-    "oneLiner": "To find if a path exists from node $X$ to node $Y$, you do not need complex return logic. Simply initialize a global visited array, run a standard void DFS starting exclusively from node $X$, and afterward, check if visited[Y] == true. If it is, a path exists.",
-    "attempts": "3",
-    "phase": "S1",
-    "reviewDate": "2026-07-23",
-    "lastSolved": "2026-07-16",
     "url": "",
     "ef": "2.2",
     "interval": "7"
   },
   {
-    "date": "28/04/2026",
+    "date": "23/05/2026",
+    "name": "Rotten Oranges",
+    "topic": "Graph",
+    "source": "Scaler",
+    "difficulty": "H",
+    "friction": "Struggled",
+    "notes": "Multi-Source BFS",
+    "oneLiner": "Use Multi-source BFS by initially pushing all rotten oranges into a queue with minutes = 0 while counting the total fresh oranges. Process the queue to rot valid 4-directional neighbors, pushing them back into the queue with minutes + 1. Return the final minutes, or -1 if any fresh oranges remain at the end.",
+    "attempts": "3",
+    "phase": "S1",
+    "reviewDate": "2026-06-20",
+    "lastSolved": "2026-06-16",
+    "url": "",
+    "ef": "1.7",
+    "interval": "4"
+  },
+  {
+    "date": "22/05/2026",
     "name": "Connected Components in an Undirected Graph",
     "topic": "Graph",
     "source": "Scaler",
@@ -1598,24 +1564,41 @@
     "interval": "3"
   },
   {
-    "date": "27/04/2026",
-    "name": "Cutting a Rod",
-    "topic": "DP",
+    "date": "21/05/2026",
+    "name": "Path in Directed Graph",
+    "topic": "Graph",
     "source": "Scaler",
     "difficulty": "H",
-    "friction": "Struggled",
-    "notes": "DP | Unbounded Knapsack",
-    "oneLiner": "For recursion and memoization, use a 1D state solve(length) with a base case of 0 when length == 0, and loop through all possible cuts i to return the maximum of price[i-1] + solve(length - i). For tabulation, invert this using a 1D array dp[N+1] with an outer loop i building the rod length from 1 to $N$, and an inner loop j trying every cut up to i, updating via the transition dp[i] = Math.max(dp[i], price[j-1] + dp[i-j])",
-    "attempts": "2",
+    "friction": "Smooth",
+    "notes": "DFS \u27e9T: eachability from source to target in a directed graph; the trap is 1-indexed nodes (size arrays/lists as A+1, not A) and treating a directed edge as bidirectional. Build adjacency list, DFS from source, check if target got visited. \u27e9M: Build graph sized A+1; for each edge add v to graph[u] only (directed \u2014 no reverse edge). DFS: mark visited, recurse into unvisited neighbors. Answer = visited[A]. Hook: 1-indexed \u2192 A+1 everywhere; directed \u2192 one-way edge; reachability = just check the target's visited flag after DFS from source. O(V+E).",
+    "oneLiner": "To find if a path exists from node $X$ to node $Y$, you do not need complex return logic. Simply initialize a global visited array, run a standard void DFS starting exclusively from node $X$, and afterward, check if visited[Y] == true. If it is, a path exists.",
+    "attempts": "3",
     "phase": "S1",
-    "reviewDate": "2026-06-13",
-    "lastSolved": "2026-06-12",
+    "reviewDate": "2026-07-23",
+    "lastSolved": "2026-07-16",
     "url": "",
-    "ef": "1.7",
-    "interval": "1"
+    "ef": "2.2",
+    "interval": "7"
   },
   {
-    "date": "27/04/2026",
+    "date": "20/05/2026",
+    "name": "Cycle in Directed Graph",
+    "topic": "Graph",
+    "source": "Scaler",
+    "difficulty": "H",
+    "friction": "Smooth",
+    "notes": "DFS | Path Visited Array \u27e9T: Detect cycle in a directed graph \u2192 DFS with visited + pathVisited (recursion-stack) arrays \u27e9M: For each unvisited node, DFS marking both visited[idx]=true (global, never unset) and pathVisited[idx]=true (active-path only). For each neighbor: if pathVisited[neighbor]==true \u2192 cycle found (it's an ancestor in the current DFS path, not just any visited node). If unvisited, recurse. On backtrack, unset pathVisited[idx]=false \u2014 this is the \"picking up your breadcrumb\" step. Loop over all nodes as entry points to catch disconnected components.",
+    "oneLiner": "Use two boolean arrays: visited (global memory to avoid redundant work) and pathVisited (active path memory to detect cycles). When entering a node, mark both as true; if you ever encounter a neighbor where pathVisited is already true, you have found a cycle! When backtracking out of a node, set pathVisited to false (picking up your breadcrumb), but leave visited as true to ensure you never process that node again.",
+    "attempts": "3",
+    "phase": "S1",
+    "reviewDate": "2026-07-10",
+    "lastSolved": "2026-07-07",
+    "url": "",
+    "ef": "1.8",
+    "interval": "3"
+  },
+  {
+    "date": "19/05/2026",
     "name": "0-1 Knapsack II - Optimised",
     "topic": "DP",
     "source": "Scaler",
@@ -1632,7 +1615,24 @@
     "interval": "1"
   },
   {
-    "date": "26/04/2026",
+    "date": "18/05/2026",
+    "name": "Cutting a Rod",
+    "topic": "DP",
+    "source": "Scaler",
+    "difficulty": "H",
+    "friction": "Struggled",
+    "notes": "DP | Unbounded Knapsack",
+    "oneLiner": "For recursion and memoization, use a 1D state solve(length) with a base case of 0 when length == 0, and loop through all possible cuts i to return the maximum of price[i-1] + solve(length - i). For tabulation, invert this using a 1D array dp[N+1] with an outer loop i building the rod length from 1 to $N$, and an inner loop j trying every cut up to i, updating via the transition dp[i] = Math.max(dp[i], price[j-1] + dp[i-j])",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-06-13",
+    "lastSolved": "2026-06-12",
+    "url": "",
+    "ef": "1.7",
+    "interval": "1"
+  },
+  {
+    "date": "17/05/2026",
     "name": "Coin Sum Infinite",
     "topic": "DP",
     "source": "Scaler",
@@ -1649,58 +1649,7 @@
     "interval": "1"
   },
   {
-    "date": "25/04/2026",
-    "name": "0-1 Knapsack",
-    "topic": "DP",
-    "source": "Scaler",
-    "difficulty": "H",
-    "friction": "Struggled",
-    "notes": "DP | 0-1 Knapsack",
-    "oneLiner": "Create a dp[n][capacity + 1] array and initialize the 0th row to the first item's value whenever the capacity allows (j >= weight[0]). For the remaining items, the max value at dp[i][j] is the maximum of either skipping the item (dp[i-1][j]) or taking it if it fits (value[i] + dp[i-1][j - weight[i]])",
-    "attempts": "2",
-    "phase": "S1",
-    "reviewDate": "2026-06-12",
-    "lastSolved": "2026-06-11",
-    "url": "",
-    "ef": "1.7",
-    "interval": "1"
-  },
-  {
-    "date": "25/04/2026",
-    "name": "Unbounded Knapsack",
-    "topic": "DP",
-    "source": "Scaler",
-    "difficulty": "H",
-    "friction": "Smooth",
-    "notes": "DP | Unbounded Knapsack",
-    "oneLiner": "The implementation is nearly identical to 0/1 Knapsack, but when you pick an item, you stay on the current row i instead of moving back to i-1 so the same item can be selected again. Calculate dp[i][j] as the maximum of either skipping the item completely (dp[i-1][j]) or taking it if capacity allows (value[i] + dp[i][j - weight[i]])",
-    "attempts": "2",
-    "phase": "S1",
-    "reviewDate": "2026-06-17",
-    "lastSolved": "2026-06-11",
-    "url": "",
-    "ef": "2.1",
-    "interval": "6"
-  },
-  {
-    "date": "25/04/2026",
-    "name": "Amazing Subarrays",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "L",
-    "friction": "Smooth",
-    "notes": "Contribution Technique",
-    "oneLiner": "Every time a vowel is found at index i, it acts as the starting character for exactly length - i substrings. Add (length - i) to the total answer inside the loop, and apply % 10003 at each step to prevent overflow",
-    "attempts": "2",
-    "phase": "S2",
-    "reviewDate": "2026-06-21",
-    "lastSolved": "2026-06-12",
-    "url": "",
-    "ef": "3.1",
-    "interval": "9"
-  },
-  {
-    "date": "25/04/2026",
+    "date": "16/05/2026",
     "name": "N/3 Repeat Number - Boyer-Moore Algo",
     "topic": "Array",
     "source": "Scaler",
@@ -1717,7 +1666,58 @@
     "interval": "2"
   },
   {
-    "date": "24/04/2026",
+    "date": "15/05/2026",
+    "name": "Amazing Subarrays",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "L",
+    "friction": "Smooth",
+    "notes": "Contribution Technique",
+    "oneLiner": "Every time a vowel is found at index i, it acts as the starting character for exactly length - i substrings. Add (length - i) to the total answer inside the loop, and apply % 10003 at each step to prevent overflow",
+    "attempts": "2",
+    "phase": "S2",
+    "reviewDate": "2026-06-21",
+    "lastSolved": "2026-06-12",
+    "url": "",
+    "ef": "3.1",
+    "interval": "9"
+  },
+  {
+    "date": "14/05/2026",
+    "name": "Unbounded Knapsack",
+    "topic": "DP",
+    "source": "Scaler",
+    "difficulty": "H",
+    "friction": "Smooth",
+    "notes": "DP | Unbounded Knapsack",
+    "oneLiner": "The implementation is nearly identical to 0/1 Knapsack, but when you pick an item, you stay on the current row i instead of moving back to i-1 so the same item can be selected again. Calculate dp[i][j] as the maximum of either skipping the item completely (dp[i-1][j]) or taking it if capacity allows (value[i] + dp[i][j - weight[i]])",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-06-17",
+    "lastSolved": "2026-06-11",
+    "url": "",
+    "ef": "2.1",
+    "interval": "6"
+  },
+  {
+    "date": "13/05/2026",
+    "name": "0-1 Knapsack",
+    "topic": "DP",
+    "source": "Scaler",
+    "difficulty": "H",
+    "friction": "Struggled",
+    "notes": "DP | 0-1 Knapsack",
+    "oneLiner": "Create a dp[n][capacity + 1] array and initialize the 0th row to the first item's value whenever the capacity allows (j >= weight[0]). For the remaining items, the max value at dp[i][j] is the maximum of either skipping the item (dp[i-1][j]) or taking it if it fits (value[i] + dp[i-1][j - weight[i]])",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-06-12",
+    "lastSolved": "2026-06-11",
+    "url": "",
+    "ef": "1.7",
+    "interval": "1"
+  },
+  {
+    "date": "12/05/2026",
     "name": "Fractional Knapsack",
     "topic": "DP",
     "source": "Scaler",
@@ -1734,58 +1734,7 @@
     "interval": "1"
   },
   {
-    "date": "23/04/2026",
-    "name": "Unique Paths in a Grid",
-    "topic": "DP",
-    "source": "Scaler",
-    "difficulty": "H",
-    "friction": "Smooth",
-    "notes": "DP | 2D Grid",
-    "oneLiner": "For all approaches, the core transition is summing the paths from the right and down cells, making sure to return 0 immediately if you hit a boundary or an obstacle. In Memoization (Top-Down), you simply cache these recursive results in a 2D array initialized to -1 to prevent redundant calculations. In Tabulation (Bottom-Up), after returning 0 if the start or end points are obstacles, set your destination dp[n-1][m-1] = 1 and loop backward through the grid, setting obstacle cells to 0 and all others to the sum of their adjacent right and bottom cells",
-    "attempts": "2",
-    "phase": "S1",
-    "reviewDate": "2026-06-16",
-    "lastSolved": "2026-06-10",
-    "url": "",
-    "ef": "2.1",
-    "interval": "6"
-  },
-  {
-    "date": "23/04/2026",
-    "name": "Unique Binary Search Trees II",
-    "topic": "DP",
-    "source": "Scaler",
-    "difficulty": "H",
-    "friction": "Struggled",
-    "notes": "DP | Catalan Number \u27e9T: Count structurally unique BSTs (or any \"count all valid structures from a smaller count of parts\") \u2192 Catalan number DP, root-split recurrence \u27e9M: Fix k as root \u2192 left subtree uses values smaller than k (size k-1), right subtree uses the rest (size i-k) \u2192 left_count \u00d7 right_count for that root, summed over every possible root choice. Recurrence: dp[i] = \u03a3(k=1 to i) dp[k-1] \u00d7 dp[i-k], base dp[0]=dp[1]=1. Solve order: (1) plain recursion first \u2014 write countBST(i) looping k and recursing on both sides; (2) add memo array to cache countBST(i) results; (3) convert to tabulation \u2014 outer loop i 2\u2192A, inner loop j 0\u2192i-1, dp[i] += dp[j]*dp[i-1-j], remembering to zero dp[i] before the inner loop.",
-    "oneLiner": "To find the total unique BSTs for i nodes, pick one node as the root. The remaining i-1 nodes must be split between the left and right subtrees. If j nodes go left, i-1-j nodes must go right. The total combinations for that specific root is the product of the subtrees: dp[j] * dp[i-1-j]. Sum this product for all possible root splits (j from 0 to i-1) to get dp[i]",
-    "attempts": "3",
-    "phase": "S1",
-    "reviewDate": "2026-07-10",
-    "lastSolved": "2026-07-07",
-    "url": "",
-    "ef": "1.8",
-    "interval": "3"
-  },
-  {
-    "date": "23/04/2026",
-    "name": "Max Sum Without Adjacent Elements",
-    "topic": "DP",
-    "source": "Scaler",
-    "difficulty": "H",
-    "friction": "Smooth",
-    "notes": "DP | House Robber",
-    "oneLiner": "Compress the 2xN grid into a 1D array by taking the maximum value of each column, since picking any element blocks that entire column and the adjacent ones. Then, solve it using the standard House Robber pattern: dp[i] = Math.max(arr[i] + dp[i+2], dp[i+1]).",
-    "attempts": "3",
-    "phase": "S2",
-    "reviewDate": "2026-06-29",
-    "lastSolved": "2026-06-14",
-    "url": "",
-    "ef": "2.1",
-    "interval": "15"
-  },
-  {
-    "date": "23/04/2026",
+    "date": "11/05/2026",
     "name": "N digit numbers",
     "topic": "DP",
     "source": "Scaler",
@@ -1802,24 +1751,58 @@
     "interval": "2"
   },
   {
-    "date": "22/04/2026",
-    "name": "Colorful Number",
-    "topic": "Hashing",
+    "date": "10/05/2026",
+    "name": "Max Sum Without Adjacent Elements",
+    "topic": "DP",
     "source": "Scaler",
-    "difficulty": "M",
-    "friction": "Struggled",
-    "notes": "Brute Force | HashSet",
-    "oneLiner": "Convert the integer to a string and use an $O(N^2)$ nested loop to generate all contiguous subarrays, maintaining a running product inside the inner loop. Check each running product against a HashSet, returning 0 immediately if a duplicate is found, or 1 if all loops finish successfully.",
-    "attempts": "4",
-    "phase": "S1",
-    "reviewDate": "2026-06-22",
-    "lastSolved": "2026-06-18",
+    "difficulty": "H",
+    "friction": "Smooth",
+    "notes": "DP | House Robber",
+    "oneLiner": "Compress the 2xN grid into a 1D array by taking the maximum value of each column, since picking any element blocks that entire column and the adjacent ones. Then, solve it using the standard House Robber pattern: dp[i] = Math.max(arr[i] + dp[i+2], dp[i+1]).",
+    "attempts": "3",
+    "phase": "S2",
+    "reviewDate": "2026-06-29",
+    "lastSolved": "2026-06-14",
     "url": "",
-    "ef": "2.2",
-    "interval": "4"
+    "ef": "2.1",
+    "interval": "15"
   },
   {
-    "date": "22/04/2026",
+    "date": "09/05/2026",
+    "name": "Unique Binary Search Trees II",
+    "topic": "DP",
+    "source": "Scaler",
+    "difficulty": "H",
+    "friction": "Struggled",
+    "notes": "DP | Catalan Number \u27e9T: Count structurally unique BSTs (or any \"count all valid structures from a smaller count of parts\") \u2192 Catalan number DP, root-split recurrence \u27e9M: Fix k as root \u2192 left subtree uses values smaller than k (size k-1), right subtree uses the rest (size i-k) \u2192 left_count \u00d7 right_count for that root, summed over every possible root choice. Recurrence: dp[i] = \u03a3(k=1 to i) dp[k-1] \u00d7 dp[i-k], base dp[0]=dp[1]=1. Solve order: (1) plain recursion first \u2014 write countBST(i) looping k and recursing on both sides; (2) add memo array to cache countBST(i) results; (3) convert to tabulation \u2014 outer loop i 2\u2192A, inner loop j 0\u2192i-1, dp[i] += dp[j]*dp[i-1-j], remembering to zero dp[i] before the inner loop.",
+    "oneLiner": "To find the total unique BSTs for i nodes, pick one node as the root. The remaining i-1 nodes must be split between the left and right subtrees. If j nodes go left, i-1-j nodes must go right. The total combinations for that specific root is the product of the subtrees: dp[j] * dp[i-1-j]. Sum this product for all possible root splits (j from 0 to i-1) to get dp[i]",
+    "attempts": "3",
+    "phase": "S1",
+    "reviewDate": "2026-07-10",
+    "lastSolved": "2026-07-07",
+    "url": "",
+    "ef": "1.8",
+    "interval": "3"
+  },
+  {
+    "date": "08/05/2026",
+    "name": "Unique Paths in a Grid",
+    "topic": "DP",
+    "source": "Scaler",
+    "difficulty": "H",
+    "friction": "Smooth",
+    "notes": "DP | 2D Grid",
+    "oneLiner": "For all approaches, the core transition is summing the paths from the right and down cells, making sure to return 0 immediately if you hit a boundary or an obstacle. In Memoization (Top-Down), you simply cache these recursive results in a 2D array initialized to -1 to prevent redundant calculations. In Tabulation (Bottom-Up), after returning 0 if the start or end points are obstacles, set your destination dp[n-1][m-1] = 1 and loop backward through the grid, setting obstacle cells to 0 and all others to the sum of their adjacent right and bottom cells",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-06-16",
+    "lastSolved": "2026-06-10",
+    "url": "",
+    "ef": "2.1",
+    "interval": "6"
+  },
+  {
+    "date": "07/05/2026",
     "name": "Count Subarrays- Unique",
     "topic": "Hashing",
     "source": "Scaler",
@@ -1836,143 +1819,24 @@
     "interval": "4"
   },
   {
-    "date": "21/04/2026",
-    "name": "K Places Apart",
-    "topic": "Heap",
+    "date": "06/05/2026",
+    "name": "Colorful Number",
+    "topic": "Hashing",
     "source": "Scaler",
-    "difficulty": "H",
-    "friction": "Smooth",
-    "notes": "Max Heap | Greedy",
-    "oneLiner": "Maintain a separate writeIndex = 0. Insert the first $K+1$ elements. Loop from $K+1$ to $N$; overwrite the original array using A.set(writeIndex++, pq.poll()) and add the next element A.get(i) to the heap. Finally, poll() the remaining elements into the array using writeIndex",
-    "attempts": "2",
-    "phase": "S1",
-    "reviewDate": "2026-06-13",
-    "lastSolved": "2026-06-07",
-    "url": "",
-    "ef": "2.1",
-    "interval": "6"
-  },
-  {
-    "date": "21/04/2026",
-    "name": "Meeting Rooms II",
-    "topic": "Greedy",
-    "source": "Scaler",
-    "difficulty": "H",
-    "friction": "Smooth",
-    "notes": "Greedy | Two Sorted Arrays",
-    "oneLiner": "Extract all start times into one array and end times into another. Sort both arrays. Use two pointers (i for start, j for end). If start[i] < end[j], a meeting is starting, increment current rooms and move i. Else, a meeting is ending, decrement current rooms and move j. Keep tracking the global maximum",
-    "attempts": "2",
-    "phase": "S1",
-    "reviewDate": "2026-06-13",
-    "lastSolved": "2026-06-07",
-    "url": "",
-    "ef": "2.1",
-    "interval": "6"
-  },
-  {
-    "date": "21/04/2026",
-    "name": "Minimum Window Substring",
-    "topic": "String",
-    "source": "Scaler",
-    "difficulty": "H",
+    "difficulty": "M",
     "friction": "Struggled",
-    "notes": "Sliding Window | Two Pointer",
-    "oneLiner": "Use an int[128] for ASCII safety. Count frequencies required by T. Expand window by moving e. If a collected character helps meet T's requirement, increment formed. while (formed == required), record the minimum length, decrement the frequency of character at s, and move s forward. If you drop a required character, decrement formed to break the shrink loop and go back to expanding.",
-    "attempts": "7",
+    "notes": "Brute Force | HashSet",
+    "oneLiner": "Convert the integer to a string and use an $O(N^2)$ nested loop to generate all contiguous subarrays, maintaining a running product inside the inner loop. Check each running product against a HashSet, returning 0 immediately if a duplicate is found, or 1 if all loops finish successfully.",
+    "attempts": "4",
     "phase": "S1",
-    "reviewDate": "2026-07-04",
-    "lastSolved": "2026-06-30",
+    "reviewDate": "2026-06-22",
+    "lastSolved": "2026-06-18",
     "url": "",
-    "ef": "1.7",
+    "ef": "2.2",
     "interval": "4"
   },
   {
-    "date": "21/04/2026",
-    "name": "Fibonacci Number -DP",
-    "topic": "DP",
-    "source": "Scaler",
-    "difficulty": "H",
-    "friction": "Smooth",
-    "notes": "DP | Memoization",
-    "oneLiner": "Execution: > 1. The Core Relation: State(N) = State(N-1) + State(N-2). 2. Top-Down (Memoization): Init array with -1. Base cases if (N <= 1) return N. Check cache if (dp[N] != -1). Recurse and save. Time: O(N), Space: O(N). 3. Bottom-Up (Tabulation): Base cases dp[0]=0, dp[1]=1. for(i=2 to N) dp[i] = dp[i-1] + dp[i-2]. 4. Senior Optimization (Slider): We only ever need the last two states. Drop the array. Use a=0, b=1. Loop c = a + b, then shift a = b and b = c. Return c. Time: O(N), Space: O(1)",
-    "attempts": "2",
-    "phase": "S1",
-    "reviewDate": "2026-06-15",
-    "lastSolved": "2026-06-09",
-    "url": "",
-    "ef": "2.1",
-    "interval": "6"
-  },
-  {
-    "date": "21/04/2026",
-    "name": "Stairs",
-    "topic": "DP",
-    "source": "Scaler",
-    "difficulty": "H",
-    "friction": "Struggled",
-    "notes": "DP | Fibonacci Pattern",
-    "oneLiner": "Execution: > 1. The Core Relation: To reach step N, you either came from step N-1 or N-2. Therefore: ways(N) = (ways(N-1) + ways(N-2)) % 1000000007. 2. Top-Down (Memoization): Init array with -1. Base cases: if (N == 0 || N == 1) return 1;. Check cache: if (dp[N] != -1) return dp[N];. Recurse, modulo, and save. (Time: O(N), Space: O(N)). 3. Bottom-Up (Tabulation): Base cases dp[0]=1, dp[1]=1. Loop i = 2 to N: dp[i] = (dp[i-1] + dp[i-2]) % 1000000007. 4. Senior Optimization (Slider): We only need the last two steps. Use a=1, b=1. Loop from 2 to N: c = (a + b) % 1000000007, then shift a = b and b = c. Return c. (Time: O(N), Space: O(1))",
-    "attempts": "2",
-    "phase": "S1",
-    "reviewDate": "2026-06-09",
-    "lastSolved": "2026-06-08",
-    "url": "",
-    "ef": "1.7",
-    "interval": "1"
-  },
-  {
-    "date": "21/04/2026",
-    "name": "Minimum Number of Squares",
-    "topic": "DP",
-    "source": "Scaler",
-    "difficulty": "H",
-    "friction": "Smooth",
-    "notes": "DP | Unbounded",
-    "oneLiner": "Execution: > 1. The Core Relation: State(N) = min( State(N - op*op) ) + 1 for all perfect squares op*op <= N.2. Top-Down (Memoization): Base case if (N == 0) return 0. Init ov_min = MAX_VALUE. Loop while (N - i*i >= 0). CRITICAL TRAP: Do not forget i++ inside the loop, or it will trigger an infinite loop and TLE!3. Bottom-Up (Tabulation): >    * Init dp array of size N + 1. Base cases: dp[0] = 0, dp[1] = 1.Outer loop: for (int i = 2; i <= n; i++) to build each target number.Inner loop: while (i - op*op >= 0).Calculate ans = dp[i - op*op] + 1. Update ov_min = Math.min(ov_min, ans).Increment op++.Save dp[i] = ov_min.Complexity: Time is O(N \\sqrt{N}) because the inner loop only runs sqrt{i} times. Space is O(N)",
-    "attempts": "2",
-    "phase": "S1",
-    "reviewDate": "2026-06-14",
-    "lastSolved": "2026-06-08",
-    "url": "",
-    "ef": "2.1",
-    "interval": "6"
-  },
-  {
-    "date": "21/04/2026",
-    "name": "Matrix Scalar Product",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "L",
-    "friction": "Smooth",
-    "notes": "Matrix Traversal",
-    "oneLiner": "Simple product",
-    "attempts": "2",
-    "phase": "Completed",
-    "reviewDate": "2026-12-05",
-    "lastSolved": "2026-06-08",
-    "url": "",
-    "ef": "3.0",
-    "interval": "180"
-  },
-  {
-    "date": "21/04/2026",
-    "name": "Minor Diagonal Sum",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "L",
-    "friction": "Smooth",
-    "notes": "Matrix Traversal | Diagonal",
-    "oneLiner": "Find Anti diagonal sum",
-    "attempts": "3",
-    "phase": "Completed",
-    "reviewDate": "2026-12-13",
-    "lastSolved": "2026-06-16",
-    "url": "",
-    "ef": "3.0",
-    "interval": "180"
-  },
-  {
-    "date": "21/04/2026",
+    "date": "05/05/2026",
     "name": "Count Increasing Triplets",
     "topic": "Array",
     "source": "Scaler",
@@ -1989,7 +1853,143 @@
     "interval": "4"
   },
   {
-    "date": "20/04/2026",
+    "date": "04/05/2026",
+    "name": "Minor Diagonal Sum",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "L",
+    "friction": "Smooth",
+    "notes": "Matrix Traversal | Diagonal",
+    "oneLiner": "Find Anti diagonal sum",
+    "attempts": "3",
+    "phase": "Completed",
+    "reviewDate": "2026-12-13",
+    "lastSolved": "2026-06-16",
+    "url": "",
+    "ef": "3.0",
+    "interval": "180"
+  },
+  {
+    "date": "03/05/2026",
+    "name": "Matrix Scalar Product",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "L",
+    "friction": "Smooth",
+    "notes": "Matrix Traversal",
+    "oneLiner": "Simple product",
+    "attempts": "2",
+    "phase": "Completed",
+    "reviewDate": "2026-12-05",
+    "lastSolved": "2026-06-08",
+    "url": "",
+    "ef": "3.0",
+    "interval": "180"
+  },
+  {
+    "date": "02/05/2026",
+    "name": "Minimum Number of Squares",
+    "topic": "DP",
+    "source": "Scaler",
+    "difficulty": "H",
+    "friction": "Smooth",
+    "notes": "DP | Unbounded",
+    "oneLiner": "Execution: > 1. The Core Relation: State(N) = min( State(N - op*op) ) + 1 for all perfect squares op*op <= N.2. Top-Down (Memoization): Base case if (N == 0) return 0. Init ov_min = MAX_VALUE. Loop while (N - i*i >= 0). CRITICAL TRAP: Do not forget i++ inside the loop, or it will trigger an infinite loop and TLE!3. Bottom-Up (Tabulation): >    * Init dp array of size N + 1. Base cases: dp[0] = 0, dp[1] = 1.Outer loop: for (int i = 2; i <= n; i++) to build each target number.Inner loop: while (i - op*op >= 0).Calculate ans = dp[i - op*op] + 1. Update ov_min = Math.min(ov_min, ans).Increment op++.Save dp[i] = ov_min.Complexity: Time is O(N \\sqrt{N}) because the inner loop only runs sqrt{i} times. Space is O(N)",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-06-14",
+    "lastSolved": "2026-06-08",
+    "url": "",
+    "ef": "2.1",
+    "interval": "6"
+  },
+  {
+    "date": "01/05/2026",
+    "name": "Stairs",
+    "topic": "DP",
+    "source": "Scaler",
+    "difficulty": "H",
+    "friction": "Struggled",
+    "notes": "DP | Fibonacci Pattern",
+    "oneLiner": "Execution: > 1. The Core Relation: To reach step N, you either came from step N-1 or N-2. Therefore: ways(N) = (ways(N-1) + ways(N-2)) % 1000000007. 2. Top-Down (Memoization): Init array with -1. Base cases: if (N == 0 || N == 1) return 1;. Check cache: if (dp[N] != -1) return dp[N];. Recurse, modulo, and save. (Time: O(N), Space: O(N)). 3. Bottom-Up (Tabulation): Base cases dp[0]=1, dp[1]=1. Loop i = 2 to N: dp[i] = (dp[i-1] + dp[i-2]) % 1000000007. 4. Senior Optimization (Slider): We only need the last two steps. Use a=1, b=1. Loop from 2 to N: c = (a + b) % 1000000007, then shift a = b and b = c. Return c. (Time: O(N), Space: O(1))",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-06-09",
+    "lastSolved": "2026-06-08",
+    "url": "",
+    "ef": "1.7",
+    "interval": "1"
+  },
+  {
+    "date": "30/04/2026",
+    "name": "Fibonacci Number -DP",
+    "topic": "DP",
+    "source": "Scaler",
+    "difficulty": "H",
+    "friction": "Smooth",
+    "notes": "DP | Memoization",
+    "oneLiner": "Execution: > 1. The Core Relation: State(N) = State(N-1) + State(N-2). 2. Top-Down (Memoization): Init array with -1. Base cases if (N <= 1) return N. Check cache if (dp[N] != -1). Recurse and save. Time: O(N), Space: O(N). 3. Bottom-Up (Tabulation): Base cases dp[0]=0, dp[1]=1. for(i=2 to N) dp[i] = dp[i-1] + dp[i-2]. 4. Senior Optimization (Slider): We only ever need the last two states. Drop the array. Use a=0, b=1. Loop c = a + b, then shift a = b and b = c. Return c. Time: O(N), Space: O(1)",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-06-15",
+    "lastSolved": "2026-06-09",
+    "url": "",
+    "ef": "2.1",
+    "interval": "6"
+  },
+  {
+    "date": "29/04/2026",
+    "name": "Minimum Window Substring",
+    "topic": "String",
+    "source": "Scaler",
+    "difficulty": "H",
+    "friction": "Struggled",
+    "notes": "Sliding Window | Two Pointer",
+    "oneLiner": "Use an int[128] for ASCII safety. Count frequencies required by T. Expand window by moving e. If a collected character helps meet T's requirement, increment formed. while (formed == required), record the minimum length, decrement the frequency of character at s, and move s forward. If you drop a required character, decrement formed to break the shrink loop and go back to expanding.",
+    "attempts": "7",
+    "phase": "S1",
+    "reviewDate": "2026-07-04",
+    "lastSolved": "2026-06-30",
+    "url": "",
+    "ef": "1.7",
+    "interval": "4"
+  },
+  {
+    "date": "28/04/2026",
+    "name": "Meeting Rooms II",
+    "topic": "Greedy",
+    "source": "Scaler",
+    "difficulty": "H",
+    "friction": "Smooth",
+    "notes": "Greedy | Two Sorted Arrays",
+    "oneLiner": "Extract all start times into one array and end times into another. Sort both arrays. Use two pointers (i for start, j for end). If start[i] < end[j], a meeting is starting, increment current rooms and move i. Else, a meeting is ending, decrement current rooms and move j. Keep tracking the global maximum",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-06-13",
+    "lastSolved": "2026-06-07",
+    "url": "",
+    "ef": "2.1",
+    "interval": "6"
+  },
+  {
+    "date": "27/04/2026",
+    "name": "K Places Apart",
+    "topic": "Heap",
+    "source": "Scaler",
+    "difficulty": "H",
+    "friction": "Smooth",
+    "notes": "Max Heap | Greedy",
+    "oneLiner": "Maintain a separate writeIndex = 0. Insert the first $K+1$ elements. Loop from $K+1$ to $N$; overwrite the original array using A.set(writeIndex++, pq.poll()) and add the next element A.get(i) to the heap. Finally, poll() the remaining elements into the array using writeIndex",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-06-13",
+    "lastSolved": "2026-06-07",
+    "url": "",
+    "ef": "2.1",
+    "interval": "6"
+  },
+  {
+    "date": "26/04/2026",
     "name": "Shaggy and distances",
     "topic": "Hashing",
     "source": "Scaler",
@@ -2006,24 +2006,92 @@
     "interval": "6"
   },
   {
-    "date": "19/04/2026",
-    "name": "Sum Of Odd & Even Digits In A Number",
-    "topic": "Basic",
+    "date": "25/04/2026",
+    "name": "Invert the Binary Tree",
+    "topic": "Tree",
     "source": "Scaler",
-    "difficulty": "L",
-    "friction": "Smooth",
-    "notes": "Simulation",
-    "oneLiner": "Extract each digital and decide",
-    "attempts": "2",
-    "phase": "Completed",
-    "reviewDate": "2026-11-30",
-    "lastSolved": "2026-06-03",
+    "difficulty": "H",
+    "friction": "Struggled",
+    "notes": "DFS | Postorder",
+    "oneLiner": "To invert a binary tree recursively, you must swap the left and right subtrees. Never assign A.left = invertTree(A.right) directly without saving A.left first, as it destroys the pointer. Always use a TreeNode temp to hold A.left before executing the swaps",
+    "attempts": "5",
+    "phase": "S1",
+    "reviewDate": "2026-06-18",
+    "lastSolved": "2026-06-14",
     "url": "",
-    "ef": "3.0",
-    "interval": "180"
+    "ef": "1.7",
+    "interval": "4"
   },
   {
-    "date": "19/04/2026",
+    "date": "24/04/2026",
+    "name": "Identical Binary Trees",
+    "topic": "Tree",
+    "source": "Scaler",
+    "difficulty": "H",
+    "friction": "Struggled",
+    "notes": "DFS | Simultaneous Recursion",
+    "oneLiner": "To check if two trees are identical, do not flatten them into arrays. Use simultaneous recursion: if both nodes are null, return 1; if only one is null or values differ, return 0. Recursively check if isSameTree(A.left, B.left) AND isSameTree(A.right, B.right) both return 1",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-06-06",
+    "lastSolved": "2026-06-05",
+    "url": "",
+    "ef": "1.7",
+    "interval": "1"
+  },
+  {
+    "date": "23/04/2026",
+    "name": "Distance between Nodes of BST",
+    "topic": "Tree",
+    "source": "Scaler",
+    "difficulty": "M",
+    "friction": "Smooth",
+    "notes": "LCA | BST",
+    "oneLiner": "To find the edge distance between two nodes B and C in a BST, do not flatten the tree. First, find their Lowest Common Ancestor (LCA) by traversing down: if both are smaller, go left; if both are larger, go right; else, you are at the LCA. Then, the total distance is the path length from LCA to B plus the path length from LCA to C",
+    "attempts": "2",
+    "phase": "S2",
+    "reviewDate": "2026-06-13",
+    "lastSolved": "2026-06-05",
+    "url": "",
+    "ef": "2.6",
+    "interval": "8"
+  },
+  {
+    "date": "22/04/2026",
+    "name": "Common Nodes in Two BST",
+    "topic": "Tree",
+    "source": "Scaler",
+    "difficulty": "M",
+    "friction": "Smooth",
+    "notes": "Inorder Traversal | Two Pointer",
+    "oneLiner": "To find common nodes in two BSTs, perform an inorder traversal on both to generate two sorted arrays. Use a two-pointer approach starting at index 0 for both arrays: if A[i] == B[j], add to sum and increment both; if A[i] < B[j], increment i; else increment j",
+    "attempts": "2",
+    "phase": "S2",
+    "reviewDate": "2026-06-14",
+    "lastSolved": "2026-06-06",
+    "url": "",
+    "ef": "2.6",
+    "interval": "8"
+  },
+  {
+    "date": "21/04/2026",
+    "name": "Row to Column Zero",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "L",
+    "friction": "Struggled",
+    "notes": "In-Place Matrix | Flag Array",
+    "oneLiner": "To set matrix zeroes in O(1) space, use Row 0 and Col 0 as flag arrays. First, check if Row 0 or Col 0 inherently contain zeros and store this in two booleans. Next, iterate from i=1, j=1; if A[i][j]==0, set A[i][0]=0 and A[0][j]=0. Iterate from 1,1 again and apply the zeros based on the flags. Finally, update Row 0 and Col 0 based on the saved booleans",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-06-07",
+    "lastSolved": "2026-06-06",
+    "url": "",
+    "ef": "2.7",
+    "interval": "1"
+  },
+  {
+    "date": "20/04/2026",
     "name": "Anti Diagonals",
     "topic": "Array",
     "source": "Scaler",
@@ -2041,88 +2109,20 @@
   },
   {
     "date": "19/04/2026",
-    "name": "Row to Column Zero",
-    "topic": "Array",
+    "name": "Sum Of Odd & Even Digits In A Number",
+    "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
-    "friction": "Struggled",
-    "notes": "In-Place Matrix | Flag Array",
-    "oneLiner": "To set matrix zeroes in O(1) space, use Row 0 and Col 0 as flag arrays. First, check if Row 0 or Col 0 inherently contain zeros and store this in two booleans. Next, iterate from i=1, j=1; if A[i][j]==0, set A[i][0]=0 and A[0][j]=0. Iterate from 1,1 again and apply the zeros based on the flags. Finally, update Row 0 and Col 0 based on the saved booleans",
-    "attempts": "2",
-    "phase": "S1",
-    "reviewDate": "2026-06-07",
-    "lastSolved": "2026-06-06",
-    "url": "",
-    "ef": "2.7",
-    "interval": "1"
-  },
-  {
-    "date": "19/04/2026",
-    "name": "Common Nodes in Two BST",
-    "topic": "Tree",
-    "source": "Scaler",
-    "difficulty": "M",
     "friction": "Smooth",
-    "notes": "Inorder Traversal | Two Pointer",
-    "oneLiner": "To find common nodes in two BSTs, perform an inorder traversal on both to generate two sorted arrays. Use a two-pointer approach starting at index 0 for both arrays: if A[i] == B[j], add to sum and increment both; if A[i] < B[j], increment i; else increment j",
+    "notes": "Simulation",
+    "oneLiner": "Extract each digital and decide",
     "attempts": "2",
-    "phase": "S2",
-    "reviewDate": "2026-06-14",
-    "lastSolved": "2026-06-06",
+    "phase": "Completed",
+    "reviewDate": "2026-11-30",
+    "lastSolved": "2026-06-03",
     "url": "",
-    "ef": "2.6",
-    "interval": "8"
-  },
-  {
-    "date": "19/04/2026",
-    "name": "Distance between Nodes of BST",
-    "topic": "Tree",
-    "source": "Scaler",
-    "difficulty": "M",
-    "friction": "Smooth",
-    "notes": "LCA | BST",
-    "oneLiner": "To find the edge distance between two nodes B and C in a BST, do not flatten the tree. First, find their Lowest Common Ancestor (LCA) by traversing down: if both are smaller, go left; if both are larger, go right; else, you are at the LCA. Then, the total distance is the path length from LCA to B plus the path length from LCA to C",
-    "attempts": "2",
-    "phase": "S2",
-    "reviewDate": "2026-06-13",
-    "lastSolved": "2026-06-05",
-    "url": "",
-    "ef": "2.6",
-    "interval": "8"
-  },
-  {
-    "date": "19/04/2026",
-    "name": "Identical Binary Trees",
-    "topic": "Tree",
-    "source": "Scaler",
-    "difficulty": "H",
-    "friction": "Struggled",
-    "notes": "DFS | Simultaneous Recursion",
-    "oneLiner": "To check if two trees are identical, do not flatten them into arrays. Use simultaneous recursion: if both nodes are null, return 1; if only one is null or values differ, return 0. Recursively check if isSameTree(A.left, B.left) AND isSameTree(A.right, B.right) both return 1",
-    "attempts": "2",
-    "phase": "S1",
-    "reviewDate": "2026-06-06",
-    "lastSolved": "2026-06-05",
-    "url": "",
-    "ef": "1.7",
-    "interval": "1"
-  },
-  {
-    "date": "19/04/2026",
-    "name": "Invert the Binary Tree",
-    "topic": "Tree",
-    "source": "Scaler",
-    "difficulty": "H",
-    "friction": "Struggled",
-    "notes": "DFS | Postorder",
-    "oneLiner": "To invert a binary tree recursively, you must swap the left and right subtrees. Never assign A.left = invertTree(A.right) directly without saving A.left first, as it destroys the pointer. Always use a TreeNode temp to hold A.left before executing the swaps",
-    "attempts": "5",
-    "phase": "S1",
-    "reviewDate": "2026-06-18",
-    "lastSolved": "2026-06-14",
-    "url": "",
-    "ef": "1.7",
-    "interval": "4"
+    "ef": "3.0",
+    "interval": "180"
   },
   {
     "date": "18/04/2026",
