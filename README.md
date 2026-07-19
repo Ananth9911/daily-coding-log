@@ -1,5 +1,4 @@
-# 🚀 Ananth's Engineering Log
-### ⚡ Automated Career Tracker — FAANG Sprint 2026
+# 🚀 Tracker
 - **Total Problems Solved:** 487 🔥
 - **Overall Mastery:** 91% Smooth | Hard: 146 | Medium: 115
 - **System Status:** Online 🟢
@@ -11,9 +10,9 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem | Topic | Difficulty | Phase |
 | :--- | :--- | :--- | :---: | :---: |
-| 21/07/2026 | Path Sum II | Tree | 🟢 | Completed |
-| 20/07/2026 | Trapping Rain Water II | Array | 🟢 | Completed |
+| 20/07/2026 | Path Sum II | Tree | 🟢 | Completed |
 | 19/07/2026 | Trapping Rain Water | Array | 🟡 | Completed |
+| 19/07/2026 | Trapping Rain Water II | Array | 🟢 | Completed |
 | 18/07/2026 | Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit | Array | 🟢 | S1 |
 | 18/07/2026 | Sliding Window Maximum | Array | 🟡 | S1 |
 | 17/07/2026 | Max Consecutive Ones II | Array | 🟢 | Completed |
