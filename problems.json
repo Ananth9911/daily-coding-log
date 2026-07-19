@@ -1,23 +1,6 @@
 [
   {
-    "date": "20/08/2026",
-    "name": "Trapping Rain Water II",
-    "topic": "Array",
-    "source": "LeetCode",
-    "difficulty": "L",
-    "friction": "Smooth",
-    "notes": "Two Pointer \u27e9T: Two pointer \u27e9M: Two pointer",
-    "oneLiner": "Two pointer",
-    "attempts": "1",
-    "phase": "Completed",
-    "reviewDate": "2027-01-13",
-    "lastSolved": "2026-07-17",
-    "url": "",
-    "ef": "3.0",
-    "interval": "180"
-  },
-  {
-    "date": "20/08/2026",
+    "date": "29/07/2026",
     "name": "Path Sum II",
     "topic": "Tree",
     "source": "LeetCode",
@@ -34,7 +17,24 @@
     "interval": "180"
   },
   {
-    "date": "19/08/2026",
+    "date": "28/07/2026",
+    "name": "Trapping Rain Water II",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "L",
+    "friction": "Smooth",
+    "notes": "Two Pointer \u27e9T: Two pointer \u27e9M: Two pointer",
+    "oneLiner": "Two pointer",
+    "attempts": "1",
+    "phase": "Completed",
+    "reviewDate": "2027-01-13",
+    "lastSolved": "2026-07-17",
+    "url": "",
+    "ef": "3.0",
+    "interval": "180"
+  },
+  {
+    "date": "27/07/2026",
     "name": "Trapping Rain Water",
     "topic": "Array",
     "source": "LeetCode",
@@ -51,7 +51,7 @@
     "interval": "180"
   },
   {
-    "date": "18/08/2026",
+    "date": "26/07/2026",
     "name": "Sliding Window Maximum",
     "topic": "Array",
     "source": "LeetCode",
@@ -68,7 +68,7 @@
     "interval": "3"
   },
   {
-    "date": "17/08/2026",
+    "date": "25/07/2026",
     "name": "Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit",
     "topic": "Array",
     "source": "LeetCode",
@@ -85,7 +85,7 @@
     "interval": "1"
   },
   {
-    "date": "16/08/2026",
+    "date": "24/07/2026",
     "name": "Max Consecutive Ones II",
     "topic": "Array",
     "source": "LeetCode",
@@ -102,7 +102,7 @@
     "interval": "180"
   },
   {
-    "date": "15/08/2026",
+    "date": "23/07/2026",
     "name": "K-th Symbol in Grammar",
     "topic": "Array",
     "source": "LeetCode",
@@ -119,7 +119,7 @@
     "interval": "180"
   },
   {
-    "date": "14/08/2026",
+    "date": "22/07/2026",
     "name": "Array With Elements Not Equal to Average of Neighbors",
     "topic": "Array",
     "source": "LeetCode",
@@ -136,7 +136,7 @@
     "interval": "180"
   },
   {
-    "date": "13/08/2026",
+    "date": "21/07/2026",
     "name": "Count Subarrays Where Max Element Appears at Least K Times",
     "topic": "Array",
     "source": "LeetCode",
@@ -153,7 +153,7 @@
     "interval": "180"
   },
   {
-    "date": "12/08/2026",
+    "date": "20/07/2026",
     "name": "Count of Substrings Containing Every Vowel and K Consonants II",
     "topic": "String",
     "source": "LeetCode",
@@ -170,7 +170,7 @@
     "interval": "180"
   },
   {
-    "date": "11/08/2026",
+    "date": "19/07/2026",
     "name": "Minimum Number of Operations to Make Array Continuous",
     "topic": "Array",
     "source": "LeetCode",
@@ -187,7 +187,7 @@
     "interval": "180"
   },
   {
-    "date": "10/08/2026",
+    "date": "18/07/2026",
     "name": "Count Number of Nice Subarrays",
     "topic": "Array",
     "source": "LeetCode",
@@ -204,7 +204,7 @@
     "interval": "180"
   },
   {
-    "date": "09/08/2026",
+    "date": "17/07/2026",
     "name": "Defuse the Bomb",
     "topic": "Array",
     "source": "LeetCode",
@@ -221,7 +221,7 @@
     "interval": "3"
   },
   {
-    "date": "08/08/2026",
+    "date": "16/07/2026",
     "name": "Binary Subarrays With Sum",
     "topic": "Array",
     "source": "LeetCode",
@@ -238,7 +238,7 @@
     "interval": "3"
   },
   {
-    "date": "07/08/2026",
+    "date": "15/07/2026",
     "name": "Subarrays with K Different Integers",
     "topic": "Array",
     "source": "LeetCode",
@@ -255,7 +255,7 @@
     "interval": "1"
   },
   {
-    "date": "06/08/2026",
+    "date": "14/07/2026",
     "name": "Alternating Groups II",
     "topic": "Array",
     "source": "LeetCode",
@@ -272,7 +272,7 @@
     "interval": "3"
   },
   {
-    "date": "05/08/2026",
+    "date": "13/07/2026",
     "name": "Valid Word Abbreviation",
     "topic": "String",
     "source": "LeetCode",
@@ -289,7 +289,7 @@
     "interval": "180"
   },
   {
-    "date": "04/08/2026",
+    "date": "12/07/2026",
     "name": "Number of Subsequences That Satisfy the Given Sum Condition",
     "topic": "Array",
     "source": "LeetCode",
@@ -306,7 +306,7 @@
     "interval": "180"
   },
   {
-    "date": "03/08/2026",
+    "date": "11/07/2026",
     "name": "Minimum Length of String after Deleting Similar Ends",
     "topic": "String",
     "source": "LeetCode",
@@ -323,7 +323,7 @@
     "interval": "180"
   },
   {
-    "date": "02/08/2026",
+    "date": "10/07/2026",
     "name": "Valid Palindrome II",
     "topic": "Array",
     "source": "LeetCode",
@@ -340,7 +340,7 @@
     "interval": "180"
   },
   {
-    "date": "01/08/2026",
+    "date": "09/07/2026",
     "name": "Meeting Scheduler",
     "topic": "Array",
     "source": "LeetCode",
@@ -357,7 +357,7 @@
     "interval": "180"
   },
   {
-    "date": "31/07/2026",
+    "date": "08/07/2026",
     "name": "Divide Players Into Teams of Equal Skill",
     "topic": "Array",
     "source": "LeetCode",
@@ -374,7 +374,7 @@
     "interval": "180"
   },
   {
-    "date": "30/07/2026",
+    "date": "07/07/2026",
     "name": "Boats to Save People",
     "topic": "Array",
     "source": "LeetCode",
@@ -391,7 +391,7 @@
     "interval": "180"
   },
   {
-    "date": "29/07/2026",
+    "date": "06/07/2026",
     "name": "Bag of Tokens",
     "topic": "Array",
     "source": "LeetCode",
@@ -408,7 +408,7 @@
     "interval": "3"
   },
   {
-    "date": "28/07/2026",
+    "date": "05/07/2026",
     "name": "Adding Spaces to a String",
     "topic": "Array",
     "source": "LeetCode",
@@ -425,7 +425,7 @@
     "interval": "180"
   },
   {
-    "date": "27/07/2026",
+    "date": "04/07/2026",
     "name": "4Sum",
     "topic": "Array",
     "source": "LeetCode",
@@ -442,7 +442,7 @@
     "interval": "3"
   },
   {
-    "date": "26/07/2026",
+    "date": "03/07/2026",
     "name": "3Sum Smaller",
     "topic": "Array",
     "source": "LeetCode",
@@ -459,7 +459,7 @@
     "interval": "180"
   },
   {
-    "date": "25/07/2026",
+    "date": "02/07/2026",
     "name": "Squares of a Sorted Array",
     "topic": "Array",
     "source": "LeetCode",
@@ -476,7 +476,7 @@
     "interval": "180"
   },
   {
-    "date": "24/07/2026",
+    "date": "01/07/2026",
     "name": "Sort Array By Parity",
     "topic": "Array",
     "source": "LeetCode",
@@ -493,7 +493,7 @@
     "interval": "180"
   },
   {
-    "date": "23/07/2026",
+    "date": "30/06/2026",
     "name": "Reverse Words in a String III",
     "topic": "String",
     "source": "LeetCode",
@@ -510,7 +510,7 @@
     "interval": "180"
   },
   {
-    "date": "22/07/2026",
+    "date": "29/06/2026",
     "name": "Remove Duplicates from Sorted Array",
     "topic": "Array",
     "source": "LeetCode",
@@ -527,7 +527,7 @@
     "interval": "180"
   },
   {
-    "date": "21/07/2026",
+    "date": "28/06/2026",
     "name": "Move Zeroes",
     "topic": "Array",
     "source": "LeetCode",
@@ -544,7 +544,7 @@
     "interval": "180"
   },
   {
-    "date": "20/07/2026",
+    "date": "27/06/2026",
     "name": "Merge Two 2D Arrays by Summing Values",
     "topic": "Array",
     "source": "LeetCode",
@@ -561,7 +561,7 @@
     "interval": "180"
   },
   {
-    "date": "19/07/2026",
+    "date": "26/06/2026",
     "name": "Merge Strings Alternately",
     "topic": "String",
     "source": "LeetCode",
@@ -578,7 +578,7 @@
     "interval": "180"
   },
   {
-    "date": "18/07/2026",
+    "date": "25/06/2026",
     "name": "Find First Palindromic String in the Array",
     "topic": "Array",
     "source": "LeetCode",
@@ -595,7 +595,7 @@
     "interval": "180"
   },
   {
-    "date": "17/07/2026",
+    "date": "24/06/2026",
     "name": "Minimum Time To Make Rope Colorful",
     "topic": "Array",
     "source": "LeetCode",
@@ -612,7 +612,7 @@
     "interval": "3"
   },
   {
-    "date": "16/07/2026",
+    "date": "23/06/2026",
     "name": "Contains Duplicate II",
     "topic": "Array",
     "source": "LeetCode",
@@ -629,7 +629,7 @@
     "interval": "3"
   },
   {
-    "date": "15/07/2026",
+    "date": "22/06/2026",
     "name": "3Sum",
     "topic": "Array",
     "source": "LeetCode",
@@ -646,7 +646,7 @@
     "interval": "1"
   },
   {
-    "date": "14/07/2026",
+    "date": "21/06/2026",
     "name": "Check If Two String Arrays are Equivalent",
     "topic": "Array",
     "source": "LeetCode",
@@ -663,7 +663,7 @@
     "interval": "180"
   },
   {
-    "date": "13/07/2026",
+    "date": "20/06/2026",
     "name": "Backspace String Compare",
     "topic": "String",
     "source": "LeetCode",
@@ -680,7 +680,7 @@
     "interval": "3"
   },
   {
-    "date": "12/07/2026",
+    "date": "19/06/2026",
     "name": "Assign Cookies",
     "topic": "Array",
     "source": "LeetCode",
@@ -697,7 +697,7 @@
     "interval": "3"
   },
   {
-    "date": "11/07/2026",
+    "date": "18/06/2026",
     "name": "Apply Operations to an Array",
     "topic": "Array",
     "source": "LeetCode",
@@ -714,7 +714,7 @@
     "interval": "180"
   },
   {
-    "date": "10/07/2026",
+    "date": "17/06/2026",
     "name": "Valid Palindrome",
     "topic": "String",
     "source": "LeetCode",
@@ -731,7 +731,7 @@
     "interval": "3"
   },
   {
-    "date": "09/07/2026",
+    "date": "16/06/2026",
     "name": "Two Sum",
     "topic": "HashMap",
     "source": "LeetCode",
@@ -748,7 +748,7 @@
     "interval": "3"
   },
   {
-    "date": "08/07/2026",
+    "date": "15/06/2026",
     "name": "Best Time to Buy and Sell Stock III",
     "topic": "DP",
     "source": "LeetCode",
@@ -765,7 +765,7 @@
     "interval": "1"
   },
   {
-    "date": "07/07/2026",
+    "date": "14/06/2026",
     "name": "Partition to K Equal Sum Subsets",
     "topic": "Backtracking",
     "source": "LeetCode",
@@ -782,58 +782,7 @@
     "interval": "1"
   },
   {
-    "date": "06/07/2026",
-    "name": "Insert Delete GetRandom",
-    "topic": "HashMap",
-    "source": "LeetCode",
-    "difficulty": "L",
-    "friction": "Smooth",
-    "notes": "HashMap | ArrayList \u27e9T: Design a data structure supporting O(1) insert, remove, and getRandom \u2192 HashMap (value \u2192 index) + ArrayList (for random access), with swap-to-end-then-pop for removal \u27e9M: Maintain a HashMap mapping each value to its current index in an ArrayList, and the ArrayList itself holding the actual values. Insert: check the map for duplicates; if new, append to the list and record its index. Remove: look up the target's index k; take the last element in the list, move it into slot k (both in the list and updating its index in the map), then remove the actual last slot (now a duplicate) and delete the target from the map. getRandom: pick a uniformly random index into the list \u2014 O(1) since it's array-backed, unlike trying to get a random element from a HashMap or LinkedList directly.",
-    "oneLiner": "Data Structures: You need a HashMap<Value, Index> for $O(1)$ lookup and an ArrayList<Value> for $O(1)$ random access.Insert: Add value to ArrayList, add (Value, ArrayList.size() - 1) to HashMap.The Remove Trick (Swap & Pop): >    * Get the target's index from the HashMap.Overwrite the target's position in the ArrayList with the last element in the ArrayList (list.set(index, lastElement)).Update the HashMap to reflect the last element's new index.Remove the last element from the ArrayList ($O(1)$ time).Remove the target from the HashMap.Random: Use Random.nextInt(list.size()) to pick an index.",
-    "attempts": "2",
-    "phase": "S2",
-    "reviewDate": "2026-07-19",
-    "lastSolved": "2026-07-10",
-    "url": "",
-    "ef": "3.1",
-    "interval": "9"
-  },
-  {
-    "date": "05/07/2026",
-    "name": "Construct Roads",
-    "topic": "Graph",
-    "source": "Scaler",
-    "difficulty": "L",
-    "friction": "Smooth",
-    "notes": "Bipartite | Colour Grading",
-    "oneLiner": "Use Colour Grading Bipartite technique using DFS",
-    "attempts": "2",
-    "phase": "S2",
-    "reviewDate": "2026-07-11",
-    "lastSolved": "2026-07-02",
-    "url": "",
-    "ef": "3.1",
-    "interval": "9"
-  },
-  {
-    "date": "04/07/2026",
-    "name": "Floyd Warshall Algorithm",
-    "topic": "Graph",
-    "source": "Scaler",
-    "difficulty": "L",
-    "friction": "Struggled",
-    "notes": "Floyd-Warshall",
-    "oneLiner": "The 3 Loops: $K$ (intermediate), then $I$ (source), then $J$ (destination).The Core Logic: Try to route $I \\rightarrow J$ through $K$.The Update: matrix[i][j] = min(matrix[i][j], matrix[i][k] + matrix[k][j]).\ud83d\udea8 THE INFINITY TRAP: If the problem uses -1 to mean \"unreachable\", never add to it directly.Check: if (matrix[i][k] != -1 && matrix[k][j] != -1) before you calculate the new distance.Update if the current matrix[i][j] == -1 OR if your new distance is smaller.",
-    "attempts": "2",
-    "phase": "S1",
-    "reviewDate": "2026-06-05",
-    "lastSolved": "2026-06-04",
-    "url": "",
-    "ef": "2.7",
-    "interval": "1"
-  },
-  {
-    "date": "03/07/2026",
+    "date": "13/06/2026",
     "name": "Batches",
     "topic": "Disjoint Set Union",
     "source": "Scaler",
@@ -850,24 +799,58 @@
     "interval": "1"
   },
   {
-    "date": "02/07/2026",
-    "name": "Coloring a Cycle Graph",
+    "date": "13/06/2026",
+    "name": "Floyd Warshall Algorithm",
+    "topic": "Graph",
+    "source": "Scaler",
+    "difficulty": "L",
+    "friction": "Struggled",
+    "notes": "Floyd-Warshall",
+    "oneLiner": "The 3 Loops: $K$ (intermediate), then $I$ (source), then $J$ (destination).The Core Logic: Try to route $I \\rightarrow J$ through $K$.The Update: matrix[i][j] = min(matrix[i][j], matrix[i][k] + matrix[k][j]).\ud83d\udea8 THE INFINITY TRAP: If the problem uses -1 to mean \"unreachable\", never add to it directly.Check: if (matrix[i][k] != -1 && matrix[k][j] != -1) before you calculate the new distance.Update if the current matrix[i][j] == -1 OR if your new distance is smaller.",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-06-05",
+    "lastSolved": "2026-06-04",
+    "url": "",
+    "ef": "2.7",
+    "interval": "1"
+  },
+  {
+    "date": "13/06/2026",
+    "name": "Construct Roads",
     "topic": "Graph",
     "source": "Scaler",
     "difficulty": "L",
     "friction": "Smooth",
-    "notes": "Graph Properties | Math",
-    "oneLiner": "Cycle Graph Chromatic Number: Even nodes = perfect alternating bipartite (2 colors). Odd nodes = collision at the end (3 colors). return 2 + (A % 2);",
+    "notes": "Bipartite | Colour Grading",
+    "oneLiner": "Use Colour Grading Bipartite technique using DFS",
     "attempts": "2",
     "phase": "S2",
-    "reviewDate": "2026-07-07",
-    "lastSolved": "2026-06-28",
+    "reviewDate": "2026-07-11",
+    "lastSolved": "2026-07-02",
     "url": "",
     "ef": "3.1",
     "interval": "9"
   },
   {
-    "date": "01/07/2026",
+    "date": "13/06/2026",
+    "name": "Insert Delete GetRandom",
+    "topic": "HashMap",
+    "source": "LeetCode",
+    "difficulty": "L",
+    "friction": "Smooth",
+    "notes": "HashMap | ArrayList \u27e9T: Design a data structure supporting O(1) insert, remove, and getRandom \u2192 HashMap (value \u2192 index) + ArrayList (for random access), with swap-to-end-then-pop for removal \u27e9M: Maintain a HashMap mapping each value to its current index in an ArrayList, and the ArrayList itself holding the actual values. Insert: check the map for duplicates; if new, append to the list and record its index. Remove: look up the target's index k; take the last element in the list, move it into slot k (both in the list and updating its index in the map), then remove the actual last slot (now a duplicate) and delete the target from the map. getRandom: pick a uniformly random index into the list \u2014 O(1) since it's array-backed, unlike trying to get a random element from a HashMap or LinkedList directly.",
+    "oneLiner": "Data Structures: You need a HashMap<Value, Index> for $O(1)$ lookup and an ArrayList<Value> for $O(1)$ random access.Insert: Add value to ArrayList, add (Value, ArrayList.size() - 1) to HashMap.The Remove Trick (Swap & Pop): >    * Get the target's index from the HashMap.Overwrite the target's position in the ArrayList with the last element in the ArrayList (list.set(index, lastElement)).Update the HashMap to reflect the last element's new index.Remove the last element from the ArrayList ($O(1)$ time).Remove the target from the HashMap.Random: Use Random.nextInt(list.size()) to pick an index.",
+    "attempts": "2",
+    "phase": "S2",
+    "reviewDate": "2026-07-19",
+    "lastSolved": "2026-07-10",
+    "url": "",
+    "ef": "3.1",
+    "interval": "9"
+  },
+  {
+    "date": "12/06/2026",
     "name": "Check Bipartite Graph",
     "topic": "Graph",
     "source": "Scaler",
@@ -884,24 +867,24 @@
     "interval": "8"
   },
   {
-    "date": "30/06/2026",
-    "name": "Palindrome Partitioning II",
-    "topic": "DP",
+    "date": "12/06/2026",
+    "name": "Coloring a Cycle Graph",
+    "topic": "Graph",
     "source": "Scaler",
-    "difficulty": "H",
-    "friction": "Struggled",
-    "notes": "DP | 2D Palindrome | Cuts",
-    "oneLiner": "The FAANG Trap: Do not write a 1D recursive function that uses a while loop to check if a string is a palindrome. That creates an $O(N^3)$ algorithm that will hit TLE. You must split the problem into two distinct DP phases to achieve $O(N^2)$.Phase 1: The 2D Palindrome Cache (The Lookup Table): * Use the \"Gap Strategy\" (diagonal traversal) to build a boolean[][] isPal table.isPal[i][j] is true if the substring from i to j is a palindrome. This gives you $O(1)$ lookups for Phase 2.Phase 2: The 1D Cuts Array (The State Definition): * cuts[i] represents the minimum number of cuts needed to perfectly partition the prefix string from index 0 to i.The Partition Transition:Base Case: If isPal[0][i] == true, the whole prefix is a palindrome. It needs 0 cuts! (cuts[i] = 0).The Cut Loop: If it's not a palindrome, try placing a cut at every index j (from 1 to i).If the right side of the cut is a palindrome (isPal[j][i] == true), then the total cuts = the cuts needed for the left side plus one new cut.cuts[i] = Math.min(cuts[i], cuts[j-1] + 1)",
+    "difficulty": "L",
+    "friction": "Smooth",
+    "notes": "Graph Properties | Math",
+    "oneLiner": "Cycle Graph Chromatic Number: Even nodes = perfect alternating bipartite (2 colors). Odd nodes = collision at the end (3 colors). return 2 + (A % 2);",
     "attempts": "2",
-    "phase": "S1",
-    "reviewDate": "2026-06-05",
-    "lastSolved": "2026-06-04",
+    "phase": "S2",
+    "reviewDate": "2026-07-07",
+    "lastSolved": "2026-06-28",
     "url": "",
-    "ef": "1.7",
-    "interval": "1"
+    "ef": "3.1",
+    "interval": "9"
   },
   {
-    "date": "29/06/2026",
+    "date": "11/06/2026",
     "name": "Palindromic Substrings Count",
     "topic": "DP",
     "source": "Scaler",
@@ -918,24 +901,41 @@
     "interval": "1"
   },
   {
-    "date": "28/06/2026",
-    "name": "Russian Doll Envelopes",
+    "date": "11/06/2026",
+    "name": "Palindrome Partitioning II",
     "topic": "DP",
     "source": "Scaler",
     "difficulty": "H",
     "friction": "Struggled",
-    "notes": "DP | LIS | Sorting Trick",
-    "oneLiner": "The Object Mapping: You cannot separate heights and widths. Always map the 2D array into a custom Pair or Envelope object array so they travel together during sorting.  The Timeline Sort: To reduce the 2D problem into a 1D LIS problem, sort the array by one of the dimensions (e.g., Height ascending). This guarantees that any envelope j before envelope i is at least short enough to potentially fit inside i.  The Strict 2D LIS Check: Run the exact LIS nested loops, but your inner if condition must strictly check both dimensions. Equal sizes do not fit inside each other! if (env[j].w < env[i].w && env[j].h < env[i].h)  The Global Max: Just like standard LIS, the biggest nested doll doesn't necessarily end with the very last envelope in the array. Track ans = Math.max(ans, dp[i])",
+    "notes": "DP | 2D Palindrome | Cuts",
+    "oneLiner": "The FAANG Trap: Do not write a 1D recursive function that uses a while loop to check if a string is a palindrome. That creates an $O(N^3)$ algorithm that will hit TLE. You must split the problem into two distinct DP phases to achieve $O(N^2)$.Phase 1: The 2D Palindrome Cache (The Lookup Table): * Use the \"Gap Strategy\" (diagonal traversal) to build a boolean[][] isPal table.isPal[i][j] is true if the substring from i to j is a palindrome. This gives you $O(1)$ lookups for Phase 2.Phase 2: The 1D Cuts Array (The State Definition): * cuts[i] represents the minimum number of cuts needed to perfectly partition the prefix string from index 0 to i.The Partition Transition:Base Case: If isPal[0][i] == true, the whole prefix is a palindrome. It needs 0 cuts! (cuts[i] = 0).The Cut Loop: If it's not a palindrome, try placing a cut at every index j (from 1 to i).If the right side of the cut is a palindrome (isPal[j][i] == true), then the total cuts = the cuts needed for the left side plus one new cut.cuts[i] = Math.min(cuts[i], cuts[j-1] + 1)",
     "attempts": "2",
     "phase": "S1",
-    "reviewDate": "2026-07-03",
-    "lastSolved": "2026-07-02",
+    "reviewDate": "2026-06-05",
+    "lastSolved": "2026-06-04",
     "url": "",
     "ef": "1.7",
     "interval": "1"
   },
   {
-    "date": "27/06/2026",
+    "date": "10/06/2026",
+    "name": "Edit Distance",
+    "topic": "DP",
+    "source": "Scaler",
+    "difficulty": "H",
+    "friction": "Smooth",
+    "notes": "DP | 2D Edit Distance",
+    "oneLiner": "That base case bounds swap is the final boss of Edit Distance. Now that you have navigated the 1-indexed string shift and the unique Row 0 / Col 0 initializations, this architecture is fully yours.  Here is your 4-step SRS cheat sheet for the Edit Distance problem. Drop this directly into your notes:  The \"Edit Distance Tabulation\" SRS Cheat Sheet The State Definition: dp[i][j] represents the minimum number of operations required to convert the first i characters of String A into the first j characters of String B.  The Base Case Trap: Size your table as new int[N+1][M+1]. Unlike LCS, Row 0 and Column 0 cannot be 0.  Row 0: Converting an empty string to String B takes j inserts (dp[0][j] = j).  Col 0: Converting String A to an empty string takes i deletes (dp[i][0] = i).  The Match Transition: Shift your string indices back by one (A.charAt(i-1) == B.charAt(j-1)). If the characters match, no operation is needed. Inherit the cost from the diagonal: dp[i][j] = dp[i-1][j-1]  The Mismatch Transition: If the characters do not match, you must perform exactly 1 operation. Take the minimum cost of the three possible paths and add 1:  Insert: Look Left (dp[i][j-1])  Delete: Look Up (dp[i-1][j])  Replace: Look Diagonal (dp[i-1][j-1])  dp[i][j] = 1 + Math.min(Replace, Math.min(Insert, Delete))",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-07-02",
+    "lastSolved": "2026-06-26",
+    "url": "",
+    "ef": "2.1",
+    "interval": "6"
+  },
+  {
+    "date": "10/06/2026",
     "name": "Longest Increasing Subsequence",
     "topic": "DP",
     "source": "Scaler",
@@ -947,6 +947,23 @@
     "phase": "S1",
     "reviewDate": "2026-06-13",
     "lastSolved": "2026-06-12",
+    "url": "",
+    "ef": "1.7",
+    "interval": "1"
+  },
+  {
+    "date": "10/06/2026",
+    "name": "Russian Doll Envelopes",
+    "topic": "DP",
+    "source": "Scaler",
+    "difficulty": "H",
+    "friction": "Struggled",
+    "notes": "DP | LIS | Sorting Trick",
+    "oneLiner": "The Object Mapping: You cannot separate heights and widths. Always map the 2D array into a custom Pair or Envelope object array so they travel together during sorting.  The Timeline Sort: To reduce the 2D problem into a 1D LIS problem, sort the array by one of the dimensions (e.g., Height ascending). This guarantees that any envelope j before envelope i is at least short enough to potentially fit inside i.  The Strict 2D LIS Check: Run the exact LIS nested loops, but your inner if condition must strictly check both dimensions. Equal sizes do not fit inside each other! if (env[j].w < env[i].w && env[j].h < env[i].h)  The Global Max: Just like standard LIS, the biggest nested doll doesn't necessarily end with the very last envelope in the array. Track ans = Math.max(ans, dp[i])",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-07-03",
+    "lastSolved": "2026-07-02",
     "url": "",
     "ef": "1.7",
     "interval": "1"
@@ -1079,23 +1096,6 @@
     "friction": "Smooth",
     "notes": "DP | 2D LCS",
     "oneLiner": "The State Definition: $dp[i][j]$ represents the length of the Longest Common Subsequence using the first $i$ characters of String A and the first $j$ characters of String B.The 1-Indexed Grid Trap: Size your table as new int[N+1][M+1] so row 0 and column 0 (representing empty strings) naturally default to $0$. When checking characters inside the loop, you must shift back by 1: A.charAt(i-1) == B.charAt(j-1).The Match Transition: If the characters match, you successfully found a common letter. Add 1 to your score and move diagonally up-left to check the rest of both strings:$dp[i][j] = 1 + dp[i-1][j-1]$The Mismatch Transition: If the characters do not match, you cannot take them. You must test skipping the current character of String A or skipping the current character of String B. Take the maximum of those two paths:$dp[i][j] = \\max(dp[i-1][j], dp[i][j-1])$",
-    "attempts": "2",
-    "phase": "S1",
-    "reviewDate": "2026-07-02",
-    "lastSolved": "2026-06-26",
-    "url": "",
-    "ef": "2.1",
-    "interval": "6"
-  },
-  {
-    "date": "09/06/2026",
-    "name": "Edit Distance",
-    "topic": "DP",
-    "source": "Scaler",
-    "difficulty": "H",
-    "friction": "Smooth",
-    "notes": "DP | 2D Edit Distance",
-    "oneLiner": "That base case bounds swap is the final boss of Edit Distance. Now that you have navigated the 1-indexed string shift and the unique Row 0 / Col 0 initializations, this architecture is fully yours.  Here is your 4-step SRS cheat sheet for the Edit Distance problem. Drop this directly into your notes:  The \"Edit Distance Tabulation\" SRS Cheat Sheet The State Definition: dp[i][j] represents the minimum number of operations required to convert the first i characters of String A into the first j characters of String B.  The Base Case Trap: Size your table as new int[N+1][M+1]. Unlike LCS, Row 0 and Column 0 cannot be 0.  Row 0: Converting an empty string to String B takes j inserts (dp[0][j] = j).  Col 0: Converting String A to an empty string takes i deletes (dp[i][0] = i).  The Match Transition: Shift your string indices back by one (A.charAt(i-1) == B.charAt(j-1)). If the characters match, no operation is needed. Inherit the cost from the diagonal: dp[i][j] = dp[i-1][j-1]  The Mismatch Transition: If the characters do not match, you must perform exactly 1 operation. Take the minimum cost of the three possible paths and add 1:  Insert: Look Left (dp[i][j-1])  Delete: Look Up (dp[i-1][j])  Replace: Look Diagonal (dp[i-1][j-1])  dp[i][j] = 1 + Math.min(Replace, Math.min(Insert, Delete))",
     "attempts": "2",
     "phase": "S1",
     "reviewDate": "2026-07-02",
