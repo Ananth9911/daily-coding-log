@@ -3,9 +3,9 @@
     "smooth": 133,
     "struggled": 19,
     "hard": 26,
-    "total": 160,
+    "total": 156,
     "topic": "Array",
-    "mastery": 83
+    "mastery": 85
   },
   {
     "smooth": 114,
@@ -16,20 +16,20 @@
     "mastery": 100
   },
   {
-    "smooth": 27,
+    "smooth": 26,
     "struggled": 19,
     "hard": 15,
-    "total": 37,
+    "total": 36,
     "topic": "Tree",
-    "mastery": 73
+    "mastery": 72
   },
   {
     "smooth": 27,
     "struggled": 5,
     "hard": 10,
-    "total": 32,
+    "total": 30,
     "topic": "String",
-    "mastery": 84
+    "mastery": 90
   },
   {
     "smooth": 22,
@@ -74,10 +74,10 @@
   {
     "smooth": 8,
     "struggled": 4,
-    "hard": 5,
-    "total": 11,
+    "hard": 4,
+    "total": 10,
     "topic": "Bit",
-    "mastery": 73
+    "mastery": 80
   },
   {
     "smooth": 9,
