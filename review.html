@@ -312,13 +312,18 @@ function isNewProblem(p){
 }
 function isDueOn(p, todayStr){
   // Completed only returns on its explicit 6-month health-check date.
+  // This is the guard that keeps ★ Complete meaningful.
   if(isCompleted(p)){
     return !!p.reviewDate && p.reviewDate<=todayStr;
   }
-  // A blank review date only counts as due for genuinely-New problems.
-  if(!p.reviewDate||p.reviewDate===''){
-    return isNewProblem(p);
-  }
+  // A New problem has never been solved, so it is ALWAYS eligible —
+  // it is backlog, not a scheduled review. Do not date-gate it.
+  // (The backend heals blank New dates to "today" in server time, which
+  // can be one day ahead of the 4 AM logical day; date-gating those
+  // silently dropped every fresh problem from the queue.)
+  if(isNewProblem(p)) return true;
+  // Everything else: standard scheduled review.
+  if(!p.reviewDate||p.reviewDate==='') return true;
   return p.reviewDate<=todayStr;
 }
 
@@ -581,8 +586,38 @@ async function loadQueue(){
     const split=readSplitMeta();
 
     // ── Rebuild live objects from snapshot names ──
+    //
+    // FIX: the old restore path looked a name up and pushed it blindly,
+    // never re-checking due status. A snapshot written BEFORE a repair
+    // (or before a problem was Completed elsewhere) would resurrect that
+    // problem forever, because this path bypasses buildSmartQueue's
+    // guards entirely. Every restored entry is now re-validated.
     _snapshotData=[];
-    snapshotNames.forEach(n=>{const f=allData.find(p=>p.name===n);if(f)_snapshotData.push(f);});
+    const stale=[];
+    snapshotNames.forEach(n=>{
+      const f=allData.find(p=>p.name===n);
+      if(!f){ stale.push(n); return; }                 // deleted/merged row
+      if(isGradedToday(f.name)){ stale.push(n); return; }
+      if(!isDueOn(f,todayStr)){ stale.push(n); return; } // Completed, or not due yet
+      _snapshotData.push(f);
+    });
+    if(stale.length){
+      console.info('[SRS] dropped '+stale.length+' stale snapshot entries:',stale);
+      snapshotNames=snapshotNames.filter(n=>!stale.includes(n));
+      localStorage.setItem("srs_queue_names",JSON.stringify(snapshotNames));
+      // Backfill so the queue doesn't shrink below your chosen split.
+      const want=(split.retentionCount||5)+(split.freshCount||3);
+      if(_snapshotData.length<want){
+        const built=buildSmartQueue(allData,todayStr);
+        built.all.forEach(p=>{
+          if(_snapshotData.length>=want)return;
+          if(_snapshotData.find(q=>q.name===p.name))return;
+          _snapshotData.push(p);
+          snapshotNames.push(p.name);
+        });
+        localStorage.setItem("srs_queue_names",JSON.stringify(snapshotNames));
+      }
+    }
 
     _allDue=allData.filter(p=>isDueOn(p,todayStr)&&!isGradedToday(p.name));
 
