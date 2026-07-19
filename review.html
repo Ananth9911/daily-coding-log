@@ -594,17 +594,19 @@ async function loadQueue(){
     // guards entirely. Every restored entry is now re-validated.
     _snapshotData=[];
     const stale=[];
+    const takenNames={};
     snapshotNames.forEach(n=>{
       const f=allData.find(p=>p.name===n);
       if(!f){ stale.push(n); return; }                 // deleted/merged row
+      if(takenNames[f.name]){ stale.push(n); return; } // repeated inside snapshot
       if(isGradedToday(f.name)){ stale.push(n); return; }
       if(!isDueOn(f,todayStr)){ stale.push(n); return; } // Completed, or not due yet
+      takenNames[f.name]=true;
       _snapshotData.push(f);
     });
     if(stale.length){
       console.info('[SRS] dropped '+stale.length+' stale snapshot entries:',stale);
       snapshotNames=snapshotNames.filter(n=>!stale.includes(n));
-      localStorage.setItem("srs_queue_names",JSON.stringify(snapshotNames));
       // Backfill so the queue doesn't shrink below your chosen split.
       const want=(split.retentionCount||5)+(split.freshCount||3);
       if(_snapshotData.length<want){
@@ -613,11 +615,24 @@ async function loadQueue(){
           if(_snapshotData.length>=want)return;
           if(_snapshotData.find(q=>q.name===p.name))return;
           _snapshotData.push(p);
-          snapshotNames.push(p.name);
         });
-        localStorage.setItem("srs_queue_names",JSON.stringify(snapshotNames));
       }
     }
+
+    // ── NORMALISE BLOCK ORDER ───────────────────────────────
+    // renderQueue decides "is this a Fresh card" purely by position
+    // (idx >= retentionCount). Restoring a snapshot preserves its old
+    // order, and backfill appends to the end, so reviewed S1/S2
+    // problems could land in the back slots and get rendered with the
+    // orange NEW badge and fresh border. Re-sort so retention always
+    // precedes fresh, then recompute the boundary from real contents.
+    const retentionPart=_snapshotData.filter(p=>!isNewProblem(p));
+    const freshPart    =_snapshotData.filter(p=>isNewProblem(p));
+    _snapshotData=[...retentionPart,...freshPart];
+    split.retentionCount=retentionPart.length;
+    split.freshCount=freshPart.length;
+    localStorage.setItem("srs_queue_split",JSON.stringify(split));
+    localStorage.setItem("srs_queue_names",JSON.stringify(_snapshotData.map(p=>p.name)));
 
     _allDue=allData.filter(p=>isDueOn(p,todayStr)&&!isGradedToday(p.name));
 
@@ -700,12 +715,15 @@ function renderQueue(problems, showBlocks, retentionCount){
     }
     return;
   }
+  // Derive the divider position from the real contents rather than the
+  // stored retentionCount, which can drift out of sync with the queue.
+  const firstFreshIdx=problems.findIndex(p=>isNewProblem(p));
   problems.forEach((p,idx)=>{
-    if(showBlocks&&retentionCount){
-      if(idx===0){
+    if(showBlocks){
+      if(idx===0&&firstFreshIdx!==0){
         qDiv.insertAdjacentHTML('beforeend',`<div class="block-divider"><span class="block-label bl-retention">📚 Retention Block</span><div class="block-line"></div></div>`);
       }
-      if(idx===retentionCount){
+      if(idx===firstFreshIdx){
         qDiv.insertAdjacentHTML('beforeend',`<div class="block-divider"><span class="block-label bl-fresh">🌱 Fresh Solving Block</span><div class="block-line"></div></div>`);
       }
     }
@@ -714,8 +732,11 @@ function renderQueue(problems, showBlocks, retentionCount){
     try{ cardId=`card-${btoa(unescape(encodeURIComponent(p.name))).replace(/[^a-zA-Z0-9]/g,'')}`; }
     catch(e){ cardId=`card-${idx}-${Math.random().toString(36).slice(2,8)}`; }
 
-    const isFresh=showBlocks&&retentionCount&&idx>=retentionCount;
-    const phaseClass=p.phase==='Struggled'?'card-struggled':isNewProblem(p)?'card-new':isFresh?'card-fresh':'card-smooth';
+    // A card is Fresh only if the PROBLEM is actually unreviewed.
+    // Position alone is not evidence — after a snapshot restore or
+    // backfill the back slots can hold reviewed S1/S2 problems.
+    const isFresh=isNewProblem(p);
+    const phaseClass=p.phase==='Struggled'?'card-struggled':isFresh?'card-fresh':'card-smooth';
     const badgeClass=p.phase==='Struggled'?'b-phase-struggled':isNewProblem(p)?'b-phase-new':(p.phase==='Mastered'||isCompleted(p))?'b-phase-mastered':'b-phase-smooth';
     const parsed=parseNotes(p.notes||'');
     const pattern=parsed.pattern||'';
