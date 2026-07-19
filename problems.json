@@ -1,23 +1,6 @@
 [
   {
-    "date": "29/07/2026",
-    "name": "Path Sum II",
-    "topic": "Tree",
-    "source": "LeetCode",
-    "difficulty": "L",
-    "friction": "Smooth",
-    "notes": "Tree \u27e9T: Tree \u27e9M: Tree",
-    "oneLiner": "Tree",
-    "attempts": "1",
-    "phase": "Completed",
-    "reviewDate": "2027-01-14",
-    "lastSolved": "2026-07-18",
-    "url": "",
-    "ef": "3.0",
-    "interval": "180"
-  },
-  {
-    "date": "28/07/2026",
+    "date": "20/08/2026",
     "name": "Trapping Rain Water II",
     "topic": "Array",
     "source": "LeetCode",
@@ -34,7 +17,24 @@
     "interval": "180"
   },
   {
-    "date": "27/07/2026",
+    "date": "20/08/2026",
+    "name": "Path Sum II",
+    "topic": "Tree",
+    "source": "LeetCode",
+    "difficulty": "L",
+    "friction": "Smooth",
+    "notes": "Tree \u27e9T: Tree \u27e9M: Tree",
+    "oneLiner": "Tree",
+    "attempts": "1",
+    "phase": "Completed",
+    "reviewDate": "2027-01-14",
+    "lastSolved": "2026-07-18",
+    "url": "",
+    "ef": "3.0",
+    "interval": "180"
+  },
+  {
+    "date": "19/08/2026",
     "name": "Trapping Rain Water",
     "topic": "Array",
     "source": "LeetCode",
@@ -51,7 +51,7 @@
     "interval": "180"
   },
   {
-    "date": "26/07/2026",
+    "date": "18/08/2026",
     "name": "Sliding Window Maximum",
     "topic": "Array",
     "source": "LeetCode",
@@ -68,7 +68,7 @@
     "interval": "3"
   },
   {
-    "date": "25/07/2026",
+    "date": "17/08/2026",
     "name": "Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit",
     "topic": "Array",
     "source": "LeetCode",
@@ -85,7 +85,7 @@
     "interval": "1"
   },
   {
-    "date": "24/07/2026",
+    "date": "16/08/2026",
     "name": "Max Consecutive Ones II",
     "topic": "Array",
     "source": "LeetCode",
@@ -102,7 +102,7 @@
     "interval": "180"
   },
   {
-    "date": "23/07/2026",
+    "date": "15/08/2026",
     "name": "K-th Symbol in Grammar",
     "topic": "Array",
     "source": "LeetCode",
@@ -119,7 +119,7 @@
     "interval": "180"
   },
   {
-    "date": "22/07/2026",
+    "date": "14/08/2026",
     "name": "Array With Elements Not Equal to Average of Neighbors",
     "topic": "Array",
     "source": "LeetCode",
@@ -136,7 +136,7 @@
     "interval": "180"
   },
   {
-    "date": "21/07/2026",
+    "date": "13/08/2026",
     "name": "Count Subarrays Where Max Element Appears at Least K Times",
     "topic": "Array",
     "source": "LeetCode",
@@ -153,7 +153,7 @@
     "interval": "180"
   },
   {
-    "date": "20/07/2026",
+    "date": "12/08/2026",
     "name": "Count of Substrings Containing Every Vowel and K Consonants II",
     "topic": "String",
     "source": "LeetCode",
@@ -170,7 +170,7 @@
     "interval": "180"
   },
   {
-    "date": "19/07/2026",
+    "date": "11/08/2026",
     "name": "Minimum Number of Operations to Make Array Continuous",
     "topic": "Array",
     "source": "LeetCode",
@@ -187,7 +187,7 @@
     "interval": "180"
   },
   {
-    "date": "18/07/2026",
+    "date": "10/08/2026",
     "name": "Count Number of Nice Subarrays",
     "topic": "Array",
     "source": "LeetCode",
@@ -204,7 +204,7 @@
     "interval": "180"
   },
   {
-    "date": "17/07/2026",
+    "date": "09/08/2026",
     "name": "Defuse the Bomb",
     "topic": "Array",
     "source": "LeetCode",
@@ -221,7 +221,7 @@
     "interval": "3"
   },
   {
-    "date": "16/07/2026",
+    "date": "08/08/2026",
     "name": "Binary Subarrays With Sum",
     "topic": "Array",
     "source": "LeetCode",
@@ -238,7 +238,7 @@
     "interval": "3"
   },
   {
-    "date": "15/07/2026",
+    "date": "07/08/2026",
     "name": "Subarrays with K Different Integers",
     "topic": "Array",
     "source": "LeetCode",
@@ -255,7 +255,7 @@
     "interval": "1"
   },
   {
-    "date": "14/07/2026",
+    "date": "06/08/2026",
     "name": "Alternating Groups II",
     "topic": "Array",
     "source": "LeetCode",
@@ -272,7 +272,7 @@
     "interval": "3"
   },
   {
-    "date": "13/07/2026",
+    "date": "05/08/2026",
     "name": "Valid Word Abbreviation",
     "topic": "String",
     "source": "LeetCode",
@@ -289,7 +289,7 @@
     "interval": "180"
   },
   {
-    "date": "12/07/2026",
+    "date": "04/08/2026",
     "name": "Number of Subsequences That Satisfy the Given Sum Condition",
     "topic": "Array",
     "source": "LeetCode",
@@ -306,7 +306,7 @@
     "interval": "180"
   },
   {
-    "date": "11/07/2026",
+    "date": "03/08/2026",
     "name": "Minimum Length of String after Deleting Similar Ends",
     "topic": "String",
     "source": "LeetCode",
@@ -323,7 +323,7 @@
     "interval": "180"
   },
   {
-    "date": "10/07/2026",
+    "date": "02/08/2026",
     "name": "Valid Palindrome II",
     "topic": "Array",
     "source": "LeetCode",
@@ -340,7 +340,7 @@
     "interval": "180"
   },
   {
-    "date": "09/07/2026",
+    "date": "01/08/2026",
     "name": "Meeting Scheduler",
     "topic": "Array",
     "source": "LeetCode",
@@ -357,7 +357,7 @@
     "interval": "180"
   },
   {
-    "date": "08/07/2026",
+    "date": "31/07/2026",
     "name": "Divide Players Into Teams of Equal Skill",
     "topic": "Array",
     "source": "LeetCode",
@@ -374,7 +374,7 @@
     "interval": "180"
   },
   {
-    "date": "07/07/2026",
+    "date": "30/07/2026",
     "name": "Boats to Save People",
     "topic": "Array",
     "source": "LeetCode",
@@ -391,7 +391,7 @@
     "interval": "180"
   },
   {
-    "date": "06/07/2026",
+    "date": "29/07/2026",
     "name": "Bag of Tokens",
     "topic": "Array",
     "source": "LeetCode",
@@ -408,7 +408,7 @@
     "interval": "3"
   },
   {
-    "date": "05/07/2026",
+    "date": "28/07/2026",
     "name": "Adding Spaces to a String",
     "topic": "Array",
     "source": "LeetCode",
@@ -425,7 +425,7 @@
     "interval": "180"
   },
   {
-    "date": "04/07/2026",
+    "date": "27/07/2026",
     "name": "4Sum",
     "topic": "Array",
     "source": "LeetCode",
@@ -442,7 +442,7 @@
     "interval": "3"
   },
   {
-    "date": "03/07/2026",
+    "date": "26/07/2026",
     "name": "3Sum Smaller",
     "topic": "Array",
     "source": "LeetCode",
@@ -459,7 +459,7 @@
     "interval": "180"
   },
   {
-    "date": "02/07/2026",
+    "date": "25/07/2026",
     "name": "Squares of a Sorted Array",
     "topic": "Array",
     "source": "LeetCode",
@@ -476,7 +476,7 @@
     "interval": "180"
   },
   {
-    "date": "01/07/2026",
+    "date": "24/07/2026",
     "name": "Sort Array By Parity",
     "topic": "Array",
     "source": "LeetCode",
@@ -493,7 +493,7 @@
     "interval": "180"
   },
   {
-    "date": "30/06/2026",
+    "date": "23/07/2026",
     "name": "Reverse Words in a String III",
     "topic": "String",
     "source": "LeetCode",
@@ -510,7 +510,7 @@
     "interval": "180"
   },
   {
-    "date": "29/06/2026",
+    "date": "22/07/2026",
     "name": "Remove Duplicates from Sorted Array",
     "topic": "Array",
     "source": "LeetCode",
@@ -527,7 +527,7 @@
     "interval": "180"
   },
   {
-    "date": "28/06/2026",
+    "date": "21/07/2026",
     "name": "Move Zeroes",
     "topic": "Array",
     "source": "LeetCode",
@@ -544,7 +544,7 @@
     "interval": "180"
   },
   {
-    "date": "27/06/2026",
+    "date": "20/07/2026",
     "name": "Merge Two 2D Arrays by Summing Values",
     "topic": "Array",
     "source": "LeetCode",
@@ -561,7 +561,7 @@
     "interval": "180"
   },
   {
-    "date": "26/06/2026",
+    "date": "19/07/2026",
     "name": "Merge Strings Alternately",
     "topic": "String",
     "source": "LeetCode",
@@ -578,7 +578,7 @@
     "interval": "180"
   },
   {
-    "date": "25/06/2026",
+    "date": "18/07/2026",
     "name": "Find First Palindromic String in the Array",
     "topic": "Array",
     "source": "LeetCode",
@@ -595,7 +595,7 @@
     "interval": "180"
   },
   {
-    "date": "24/06/2026",
+    "date": "17/07/2026",
     "name": "Minimum Time To Make Rope Colorful",
     "topic": "Array",
     "source": "LeetCode",
@@ -612,7 +612,7 @@
     "interval": "3"
   },
   {
-    "date": "23/06/2026",
+    "date": "16/07/2026",
     "name": "Contains Duplicate II",
     "topic": "Array",
     "source": "LeetCode",
@@ -629,7 +629,7 @@
     "interval": "3"
   },
   {
-    "date": "22/06/2026",
+    "date": "15/07/2026",
     "name": "3Sum",
     "topic": "Array",
     "source": "LeetCode",
@@ -646,7 +646,7 @@
     "interval": "1"
   },
   {
-    "date": "21/06/2026",
+    "date": "14/07/2026",
     "name": "Check If Two String Arrays are Equivalent",
     "topic": "Array",
     "source": "LeetCode",
@@ -663,7 +663,7 @@
     "interval": "180"
   },
   {
-    "date": "20/06/2026",
+    "date": "13/07/2026",
     "name": "Backspace String Compare",
     "topic": "String",
     "source": "LeetCode",
@@ -680,7 +680,7 @@
     "interval": "3"
   },
   {
-    "date": "19/06/2026",
+    "date": "12/07/2026",
     "name": "Assign Cookies",
     "topic": "Array",
     "source": "LeetCode",
@@ -697,7 +697,7 @@
     "interval": "3"
   },
   {
-    "date": "18/06/2026",
+    "date": "11/07/2026",
     "name": "Apply Operations to an Array",
     "topic": "Array",
     "source": "LeetCode",
@@ -714,7 +714,7 @@
     "interval": "180"
   },
   {
-    "date": "17/06/2026",
+    "date": "10/07/2026",
     "name": "Valid Palindrome",
     "topic": "String",
     "source": "LeetCode",
@@ -731,7 +731,7 @@
     "interval": "3"
   },
   {
-    "date": "16/06/2026",
+    "date": "09/07/2026",
     "name": "Two Sum",
     "topic": "HashMap",
     "source": "LeetCode",
@@ -748,7 +748,7 @@
     "interval": "3"
   },
   {
-    "date": "15/06/2026",
+    "date": "08/07/2026",
     "name": "Best Time to Buy and Sell Stock III",
     "topic": "DP",
     "source": "LeetCode",
@@ -765,7 +765,7 @@
     "interval": "1"
   },
   {
-    "date": "14/06/2026",
+    "date": "07/07/2026",
     "name": "Partition to K Equal Sum Subsets",
     "topic": "Backtracking",
     "source": "LeetCode",
@@ -782,58 +782,7 @@
     "interval": "1"
   },
   {
-    "date": "13/06/2026",
-    "name": "Batches",
-    "topic": "Disjoint Set Union",
-    "source": "Scaler",
-    "difficulty": "M",
-    "friction": "Struggled",
-    "notes": "Connected Components",
-    "oneLiner": "1. \"Knows each other\" = DSU. 2. Instead of a size[] array, create a strength[] array. Initialize it in the constructor (Watch out: Students are 1-indexed, but the given array is 0-indexed!). 3. The Core Trick: In the Union method, when you attach the smaller component to the larger root (ulp_v), add their strengths: strength[ulp_v] += strength[ulp_u]. 4. The Final Count: Loop 1 to N. A node is the boss of a batch if parent[i] == i. If it is the boss, check if strength[i] >= D and increment your answer",
-    "attempts": "2",
-    "phase": "S1",
-    "reviewDate": "2026-07-02",
-    "lastSolved": "2026-07-01",
-    "url": "",
-    "ef": "2.2",
-    "interval": "1"
-  },
-  {
-    "date": "13/06/2026",
-    "name": "Floyd Warshall Algorithm",
-    "topic": "Graph",
-    "source": "Scaler",
-    "difficulty": "L",
-    "friction": "Struggled",
-    "notes": "Floyd-Warshall",
-    "oneLiner": "The 3 Loops: $K$ (intermediate), then $I$ (source), then $J$ (destination).The Core Logic: Try to route $I \\rightarrow J$ through $K$.The Update: matrix[i][j] = min(matrix[i][j], matrix[i][k] + matrix[k][j]).\ud83d\udea8 THE INFINITY TRAP: If the problem uses -1 to mean \"unreachable\", never add to it directly.Check: if (matrix[i][k] != -1 && matrix[k][j] != -1) before you calculate the new distance.Update if the current matrix[i][j] == -1 OR if your new distance is smaller.",
-    "attempts": "2",
-    "phase": "S1",
-    "reviewDate": "2026-06-05",
-    "lastSolved": "2026-06-04",
-    "url": "",
-    "ef": "2.7",
-    "interval": "1"
-  },
-  {
-    "date": "13/06/2026",
-    "name": "Construct Roads",
-    "topic": "Graph",
-    "source": "Scaler",
-    "difficulty": "L",
-    "friction": "Smooth",
-    "notes": "Bipartite | Colour Grading",
-    "oneLiner": "Use Colour Grading Bipartite technique using DFS",
-    "attempts": "2",
-    "phase": "S2",
-    "reviewDate": "2026-07-11",
-    "lastSolved": "2026-07-02",
-    "url": "",
-    "ef": "3.1",
-    "interval": "9"
-  },
-  {
-    "date": "13/06/2026",
+    "date": "06/07/2026",
     "name": "Insert Delete GetRandom",
     "topic": "HashMap",
     "source": "LeetCode",
@@ -850,24 +799,58 @@
     "interval": "9"
   },
   {
-    "date": "12/06/2026",
-    "name": "Check Bipartite Graph",
+    "date": "05/07/2026",
+    "name": "Construct Roads",
     "topic": "Graph",
     "source": "Scaler",
-    "difficulty": "M",
+    "difficulty": "L",
     "friction": "Smooth",
-    "notes": "DFS | Connected Components",
-    "oneLiner": "Create a color[] array initialized to -1. 2. Loop through all nodes (to handle disconnected components). If unvisited, paint it 0 and start DFS. 3. The Core Trick: In DFS, paint unvisited neighbors with the opposite color using 1 - col[src]. 4. If a neighbor is already visited and has the same color as the current node (col[nbr] == col[src]), return false!",
+    "notes": "Bipartite | Colour Grading",
+    "oneLiner": "Use Colour Grading Bipartite technique using DFS",
     "attempts": "2",
     "phase": "S2",
-    "reviewDate": "2026-07-06",
-    "lastSolved": "2026-06-28",
+    "reviewDate": "2026-07-11",
+    "lastSolved": "2026-07-02",
     "url": "",
-    "ef": "2.6",
-    "interval": "8"
+    "ef": "3.1",
+    "interval": "9"
   },
   {
-    "date": "12/06/2026",
+    "date": "04/07/2026",
+    "name": "Floyd Warshall Algorithm",
+    "topic": "Graph",
+    "source": "Scaler",
+    "difficulty": "L",
+    "friction": "Struggled",
+    "notes": "Floyd-Warshall",
+    "oneLiner": "The 3 Loops: $K$ (intermediate), then $I$ (source), then $J$ (destination).The Core Logic: Try to route $I \\rightarrow J$ through $K$.The Update: matrix[i][j] = min(matrix[i][j], matrix[i][k] + matrix[k][j]).\ud83d\udea8 THE INFINITY TRAP: If the problem uses -1 to mean \"unreachable\", never add to it directly.Check: if (matrix[i][k] != -1 && matrix[k][j] != -1) before you calculate the new distance.Update if the current matrix[i][j] == -1 OR if your new distance is smaller.",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-06-05",
+    "lastSolved": "2026-06-04",
+    "url": "",
+    "ef": "2.7",
+    "interval": "1"
+  },
+  {
+    "date": "03/07/2026",
+    "name": "Batches",
+    "topic": "Disjoint Set Union",
+    "source": "Scaler",
+    "difficulty": "M",
+    "friction": "Struggled",
+    "notes": "Connected Components",
+    "oneLiner": "1. \"Knows each other\" = DSU. 2. Instead of a size[] array, create a strength[] array. Initialize it in the constructor (Watch out: Students are 1-indexed, but the given array is 0-indexed!). 3. The Core Trick: In the Union method, when you attach the smaller component to the larger root (ulp_v), add their strengths: strength[ulp_v] += strength[ulp_u]. 4. The Final Count: Loop 1 to N. A node is the boss of a batch if parent[i] == i. If it is the boss, check if strength[i] >= D and increment your answer",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-07-02",
+    "lastSolved": "2026-07-01",
+    "url": "",
+    "ef": "2.2",
+    "interval": "1"
+  },
+  {
+    "date": "02/07/2026",
     "name": "Coloring a Cycle Graph",
     "topic": "Graph",
     "source": "Scaler",
@@ -884,24 +867,24 @@
     "interval": "9"
   },
   {
-    "date": "11/06/2026",
-    "name": "Palindromic Substrings Count",
-    "topic": "DP",
+    "date": "01/07/2026",
+    "name": "Check Bipartite Graph",
+    "topic": "Graph",
     "source": "Scaler",
-    "difficulty": "H",
-    "friction": "Struggled",
-    "notes": "DP | 2D Palindrome",
-    "oneLiner": "The State Definition: dp[i][j] is a boolean representing whether the exact substring starting at index i and ending at index j is a palindrome.The Gap Traversal: You cannot traverse row-by-row or column-by-column. You must traverse by length (gap) because a string of length 5 relies on the pre-calculated string of length 3 inside it.The Base Cases: * gap == 0 (Length 1): Single letters are always palindromes (true).gap == 1 (Length 2): Palindrome only if A[i] == A[j].The Recursive Transition: For any length $\\ge 3$, the substring is a palindrome ONLY IF the outer characters match (A[i] == A[j]) AND the inner substring is also a palindrome (dp[i+1][j-1] == true).",
+    "difficulty": "M",
+    "friction": "Smooth",
+    "notes": "DFS | Connected Components",
+    "oneLiner": "Create a color[] array initialized to -1. 2. Loop through all nodes (to handle disconnected components). If unvisited, paint it 0 and start DFS. 3. The Core Trick: In DFS, paint unvisited neighbors with the opposite color using 1 - col[src]. 4. If a neighbor is already visited and has the same color as the current node (col[nbr] == col[src]), return false!",
     "attempts": "2",
-    "phase": "S1",
-    "reviewDate": "2026-07-03",
-    "lastSolved": "2026-07-02",
+    "phase": "S2",
+    "reviewDate": "2026-07-06",
+    "lastSolved": "2026-06-28",
     "url": "",
-    "ef": "1.7",
-    "interval": "1"
+    "ef": "2.6",
+    "interval": "8"
   },
   {
-    "date": "11/06/2026",
+    "date": "30/06/2026",
     "name": "Palindrome Partitioning II",
     "topic": "DP",
     "source": "Scaler",
@@ -918,41 +901,24 @@
     "interval": "1"
   },
   {
-    "date": "10/06/2026",
-    "name": "Edit Distance",
-    "topic": "DP",
-    "source": "Scaler",
-    "difficulty": "H",
-    "friction": "Smooth",
-    "notes": "DP | 2D Edit Distance",
-    "oneLiner": "That base case bounds swap is the final boss of Edit Distance. Now that you have navigated the 1-indexed string shift and the unique Row 0 / Col 0 initializations, this architecture is fully yours.  Here is your 4-step SRS cheat sheet for the Edit Distance problem. Drop this directly into your notes:  The \"Edit Distance Tabulation\" SRS Cheat Sheet The State Definition: dp[i][j] represents the minimum number of operations required to convert the first i characters of String A into the first j characters of String B.  The Base Case Trap: Size your table as new int[N+1][M+1]. Unlike LCS, Row 0 and Column 0 cannot be 0.  Row 0: Converting an empty string to String B takes j inserts (dp[0][j] = j).  Col 0: Converting String A to an empty string takes i deletes (dp[i][0] = i).  The Match Transition: Shift your string indices back by one (A.charAt(i-1) == B.charAt(j-1)). If the characters match, no operation is needed. Inherit the cost from the diagonal: dp[i][j] = dp[i-1][j-1]  The Mismatch Transition: If the characters do not match, you must perform exactly 1 operation. Take the minimum cost of the three possible paths and add 1:  Insert: Look Left (dp[i][j-1])  Delete: Look Up (dp[i-1][j])  Replace: Look Diagonal (dp[i-1][j-1])  dp[i][j] = 1 + Math.min(Replace, Math.min(Insert, Delete))",
-    "attempts": "2",
-    "phase": "S1",
-    "reviewDate": "2026-07-02",
-    "lastSolved": "2026-06-26",
-    "url": "",
-    "ef": "2.1",
-    "interval": "6"
-  },
-  {
-    "date": "10/06/2026",
-    "name": "Longest Increasing Subsequence",
+    "date": "29/06/2026",
+    "name": "Palindromic Substrings Count",
     "topic": "DP",
     "source": "Scaler",
     "difficulty": "H",
     "friction": "Struggled",
-    "notes": "DP | LIS",
-    "oneLiner": "The State Definition: dp[i] represents the length of the longest strictly increasing subsequence that ends exactly at index i.  The Base Case Initialization: Every single element is technically an increasing subsequence of length 1 all by itself. So, initialize the entire dp array to 1 (or set dp[i] = 1 + max1 like your code did).  The Look-Back Transition: To find the answer for index i, you must look back at every previous index j (from 0 to i-1).  If the number is strictly smaller (A[j] < A[i]), you can append A[i] to that sequence.  Update state: dp[i] = Math.max(dp[i], dp[j] + 1)  The Global Max Trap: The longest subsequence doesn't necessarily end at the very last index of the array. Never just return dp[n-1]. You must track a global maximum variable (ans = Math.max(ans, dp[i])) across the entire array.",
+    "notes": "DP | 2D Palindrome",
+    "oneLiner": "The State Definition: dp[i][j] is a boolean representing whether the exact substring starting at index i and ending at index j is a palindrome.The Gap Traversal: You cannot traverse row-by-row or column-by-column. You must traverse by length (gap) because a string of length 5 relies on the pre-calculated string of length 3 inside it.The Base Cases: * gap == 0 (Length 1): Single letters are always palindromes (true).gap == 1 (Length 2): Palindrome only if A[i] == A[j].The Recursive Transition: For any length $\\ge 3$, the substring is a palindrome ONLY IF the outer characters match (A[i] == A[j]) AND the inner substring is also a palindrome (dp[i+1][j-1] == true).",
     "attempts": "2",
     "phase": "S1",
-    "reviewDate": "2026-06-13",
-    "lastSolved": "2026-06-12",
+    "reviewDate": "2026-07-03",
+    "lastSolved": "2026-07-02",
     "url": "",
     "ef": "1.7",
     "interval": "1"
   },
   {
-    "date": "10/06/2026",
+    "date": "28/06/2026",
     "name": "Russian Doll Envelopes",
     "topic": "DP",
     "source": "Scaler",
@@ -969,126 +935,41 @@
     "interval": "1"
   },
   {
-    "date": "09/06/2026",
-    "name": "Maximum XOR Subarray",
-    "topic": "Tries",
-    "source": "Scaler",
-    "difficulty": "H",
-    "friction": "Smooth",
-    "notes": "Bitwise Trie | Prefix XOR",
-    "oneLiner": "you don't invent new logic; you capitalize on the rule that XOR is its own inverse by building a prefixXOR array and feeding it directly into your first Trie, with the vital upgrade of dropping \"index anchors\" at the leaf nodes. When a match is found, you pull those two indices to define your subarray boundaries (Left = min + 1, Right = max), which immediately allows you to filter the results through Scaler's strict three-tier tie-breaker: highest XOR first, then shortest length, and finally the earliest starting index.",
-    "attempts": "4",
-    "phase": "S1",
-    "reviewDate": "2026-07-05",
-    "lastSolved": "2026-06-28",
-    "url": "",
-    "ef": "2.2",
-    "interval": "7"
-  },
-  {
-    "date": "09/06/2026",
-    "name": "Flatten Binary Tree to Linked List",
-    "topic": "Tree",
-    "source": "Scaler",
-    "difficulty": "H",
-    "friction": "Smooth",
-    "notes": "DFS | Return Head-Tail \u27e9T: Flatten binary tree to a linked list (right-skewed, preorder), in place. \u27e9M: Post-order recursion returning (head, tail) of each flattened subtree. At every node: flatten left and right, then rewire \u2014 set left = null, attach flattened-left as right, append flattened-right after left's tail. Return the node as head and the deepest right-subtree tail (or node itself if leaf) as the new tail.",
-    "oneLiner": "State Passing: Use a custom Pair(head, tail) to pass the start and end of flattened subtrees upwards.  Traversal: Do a Post-Order traversal (lp = getanswer(left), rp = getanswer(right)).  The Rewire (4 Cases):  Leaf: Return (root, root).  No Left Child: Return (root, right.tail).  No Right Child: Move left to right (root.left = null; root.right = left.head), return (root, left.tail).  Both Children: Connect them! root.left = null, root.right = left.head, left.tail.right = right.head. Return (root, right.tail)",
-    "attempts": "12",
-    "phase": "S2",
-    "reviewDate": "2026-07-26",
-    "lastSolved": "2026-07-18",
-    "url": "",
-    "ef": "1.9",
-    "interval": "8"
-  },
-  {
-    "date": "09/06/2026",
-    "name": "Node distance C in binary tree",
-    "topic": "Tree",
+    "date": "27/06/2026",
+    "name": "Longest Increasing Subsequence",
+    "topic": "DP",
     "source": "Scaler",
     "difficulty": "H",
     "friction": "Struggled",
-    "notes": "BFS | Parent Map",
-    "oneLiner": "The Architecture (Pass 1): Traverse the tree to find the Target node AND build a HashMap<Node, Node> mapping every child to its parent (the \"Up\" pointer).  The Graph BFS (Pass 2): Start a Level-Order Queue from the Target node. You now have three valid moves: left, right, and parent.  The Infinite Loop Trap: You MUST use a HashSet to track visited nodes, otherwise you will bounce between child and parent forever.  The Extraction: Increment a distance counter after every full level. When distance == C, break the loop; the queue now contains exactly your answer.",
-    "attempts": "4",
+    "notes": "DP | LIS",
+    "oneLiner": "The State Definition: dp[i] represents the length of the longest strictly increasing subsequence that ends exactly at index i.  The Base Case Initialization: Every single element is technically an increasing subsequence of length 1 all by itself. So, initialize the entire dp array to 1 (or set dp[i] = 1 + max1 like your code did).  The Look-Back Transition: To find the answer for index i, you must look back at every previous index j (from 0 to i-1).  If the number is strictly smaller (A[j] < A[i]), you can append A[i] to that sequence.  Update state: dp[i] = Math.max(dp[i], dp[j] + 1)  The Global Max Trap: The longest subsequence doesn't necessarily end at the very last index of the array. Never just return dp[n-1]. You must track a global maximum variable (ans = Math.max(ans, dp[i])) across the entire array.",
+    "attempts": "2",
     "phase": "S1",
-    "reviewDate": "2026-07-19",
-    "lastSolved": "2026-07-18",
+    "reviewDate": "2026-06-13",
+    "lastSolved": "2026-06-12",
     "url": "",
-    "ef": "1.4",
+    "ef": "1.7",
     "interval": "1"
   },
   {
-    "date": "09/06/2026",
-    "name": "Boring substring",
-    "topic": "String",
+    "date": "26/06/2026",
+    "name": "Edit Distance",
+    "topic": "DP",
     "source": "Scaler",
     "difficulty": "H",
     "friction": "Smooth",
-    "notes": "ASCII Arithmetic | Observation",
-    "oneLiner": "The Core Secret (The Bridge): Odd ASCII characters are never adjacent to each other. Evens are never adjacent. If you separate them into two halves, you just need to find one valid pair (a bridge) to connect the Odd half to the Even half.The Trap (Brute Force - $O(N^2)$): Iterating through every single Odd character and comparing it against every single Even character will cause a Time Limit Exceeded (TLE) on massive strings.The HashSet Pivot ($O(N)$ Time, $O(1)$ Space): Since there are only 26 letters, dump characters into two HashSets (Odds and Evens). This reduces the nested loop to a maximum of $13 \\times 13 = 169$ constant-time checks.The Masterpiece ($O(N)$ Time, $O(1)$ Space): Ditch the sets. Traverse the string once to find four extremes: minOdd, maxOdd, minEven, and maxEven. Test the 4 cross-combinations. If the absolute difference of any pair is != 1, return true. Otherwise, return false.",
+    "notes": "DP | 2D Edit Distance",
+    "oneLiner": "That base case bounds swap is the final boss of Edit Distance. Now that you have navigated the 1-indexed string shift and the unique Row 0 / Col 0 initializations, this architecture is fully yours.  Here is your 4-step SRS cheat sheet for the Edit Distance problem. Drop this directly into your notes:  The \"Edit Distance Tabulation\" SRS Cheat Sheet The State Definition: dp[i][j] represents the minimum number of operations required to convert the first i characters of String A into the first j characters of String B.  The Base Case Trap: Size your table as new int[N+1][M+1]. Unlike LCS, Row 0 and Column 0 cannot be 0.  Row 0: Converting an empty string to String B takes j inserts (dp[0][j] = j).  Col 0: Converting String A to an empty string takes i deletes (dp[i][0] = i).  The Match Transition: Shift your string indices back by one (A.charAt(i-1) == B.charAt(j-1)). If the characters match, no operation is needed. Inherit the cost from the diagonal: dp[i][j] = dp[i-1][j-1]  The Mismatch Transition: If the characters do not match, you must perform exactly 1 operation. Take the minimum cost of the three possible paths and add 1:  Insert: Look Left (dp[i][j-1])  Delete: Look Up (dp[i-1][j])  Replace: Look Diagonal (dp[i-1][j-1])  dp[i][j] = 1 + Math.min(Replace, Math.min(Insert, Delete))",
     "attempts": "2",
     "phase": "S1",
-    "reviewDate": "2026-06-27",
-    "lastSolved": "2026-06-21",
+    "reviewDate": "2026-07-02",
+    "lastSolved": "2026-06-26",
     "url": "",
     "ef": "2.1",
     "interval": "6"
   },
   {
-    "date": "09/06/2026",
-    "name": "Permutations of A in B",
-    "topic": "String",
-    "source": "Scaler",
-    "difficulty": "H",
-    "friction": "Struggled",
-    "notes": "Sliding Window | Fixed Window",
-    "oneLiner": "The Architecture (Fixed Size): Because any valid permutation of A must be exactly the length of A, the window size never changes. You do not need a while loop to shrink it.The Initial Setup: Create freq_A and freq_B arrays (size 26). Fully populate freq_A, but only populate freq_B with the first A.length() characters of string B. Check if they match using Arrays.equals(); if yes, count++.The Slide ($O(N)$): Loop from i = A.length() to the end of B. Slide the rigid frame by doing exactly two operations:Add Right: Increment the frequency of the new character entering the window: B.charAt(i).Drop Left: Decrement the frequency of the old character falling out of the window: B.charAt(i - A.length()).The Array Index Trap: When dropping the left character, do not accidentally use the raw index math (i - A.length()) inside the frequency array. You must fetch the actual character from string B first, then subtract 'a' to get the correct frequency bucket.",
-    "attempts": "4",
-    "phase": "S1",
-    "reviewDate": "2026-07-03",
-    "lastSolved": "2026-07-02",
-    "url": "",
-    "ef": "1.4",
-    "interval": "1"
-  },
-  {
-    "date": "09/06/2026",
-    "name": "Cyclic Permutations -KMP",
-    "topic": "String",
-    "source": "Scaler",
-    "difficulty": "H",
-    "friction": "Smooth",
-    "notes": "KMP Pattern Matching",
-    "oneLiner": "The \"Cyclic Shift = KMP\" SRS Cheat SheetThe XOR Decoy: X ^ Y = 0 mathematically guarantees that X == Y. The problem is simply asking: \"How many cyclic shifts of B are exactly identical to A?\"The Cyclic Trick (B + B): Never use Frequency Maps for cyclic shifts, as they ignore relative character order. To instantly generate every possible cyclic shift of a string, concatenate it to itself. Your new search space is Text = (B + B).substring(0, 2 * N - 1).The Architecture Shift: The problem has now been cleanly converted from a bit-manipulation/permutation disguise into a classic String Pattern Matching problem: Find how many times Pattern A appears inside Text.The KMP Execution ($O(N)$): Create the master string S = A + \"#\" + Text. Generate the LPS array for S. Iterate through the LPS array, and every time lps[i] == A.length(), increment your count.",
-    "attempts": "2",
-    "phase": "S1",
-    "reviewDate": "2026-06-27",
-    "lastSolved": "2026-06-21",
-    "url": "",
-    "ef": "2.1",
-    "interval": "6"
-  },
-  {
-    "date": "09/06/2026",
-    "name": "Period of a string (KMP-LPS)",
-    "topic": "String",
-    "source": "Scaler",
-    "difficulty": "H",
-    "friction": "Struggled",
-    "notes": "KMP Failure Function \u27e9T: Find the period of a string (smallest k such that the string repeats with cycle length k) \u2192 build the LPS array on the whole string, then period = length - lps[length-1] \u27e9M: Build the LPS array exactly as derived: lps[0]=0; for each i, start x = lps[i-1], and while x>0 and there's a mismatch between pattern[i] and pattern[x], fall back via x = lps[x-1]; after the loop, if they now match, lps[i]=x+1, otherwise lps[i]=0. Then the period is simply N - lps[N-1] \u2014 the string length minus the longest proper prefix-suffix overlap of the entire string.",
-    "oneLiner": "The Core Concept: The \"Period\" of a string is the minimum distance k between repeating characters, where $A[i] == A[i \\% k]$.The LPS Secret: The last value of the LPS array (LPS[N-1]) tells you the length of the longest prefix that perfectly overlaps with the suffix of the entire string.The Visual Overlap: If a prefix of length $L$ perfectly matches a suffix of length $L$, it means every character in the overlap is exactly $N - L$ steps away from its identical twin.The Golden Formula ($O(N)$): Run KMP to generate the LPS array for the string. The minimum period is always strictly mathematically defined as: $k = N - LPS[N-1]$",
-    "attempts": "3",
-    "phase": "S1",
-    "reviewDate": "2026-07-13",
-    "lastSolved": "2026-07-10",
-    "url": "",
-    "ef": "1.8",
-    "interval": "3"
-  },
-  {
-    "date": "09/06/2026",
+    "date": "25/06/2026",
     "name": "Longest Common Subsequence",
     "topic": "DP",
     "source": "Scaler",
@@ -1105,41 +986,143 @@
     "interval": "6"
   },
   {
-    "date": "08/06/2026",
-    "name": "Shortest Unique Prefix",
+    "date": "24/06/2026",
+    "name": "Period of a string (KMP-LPS)",
+    "topic": "String",
+    "source": "Scaler",
+    "difficulty": "H",
+    "friction": "Struggled",
+    "notes": "KMP Failure Function \u27e9T: Find the period of a string (smallest k such that the string repeats with cycle length k) \u2192 build the LPS array on the whole string, then period = length - lps[length-1] \u27e9M: Build the LPS array exactly as derived: lps[0]=0; for each i, start x = lps[i-1], and while x>0 and there's a mismatch between pattern[i] and pattern[x], fall back via x = lps[x-1]; after the loop, if they now match, lps[i]=x+1, otherwise lps[i]=0. Then the period is simply N - lps[N-1] \u2014 the string length minus the longest proper prefix-suffix overlap of the entire string.",
+    "oneLiner": "The Core Concept: The \"Period\" of a string is the minimum distance k between repeating characters, where $A[i] == A[i \\% k]$.The LPS Secret: The last value of the LPS array (LPS[N-1]) tells you the length of the longest prefix that perfectly overlaps with the suffix of the entire string.The Visual Overlap: If a prefix of length $L$ perfectly matches a suffix of length $L$, it means every character in the overlap is exactly $N - L$ steps away from its identical twin.The Golden Formula ($O(N)$): Run KMP to generate the LPS array for the string. The minimum period is always strictly mathematically defined as: $k = N - LPS[N-1]$",
+    "attempts": "3",
+    "phase": "S1",
+    "reviewDate": "2026-07-13",
+    "lastSolved": "2026-07-10",
+    "url": "",
+    "ef": "1.8",
+    "interval": "3"
+  },
+  {
+    "date": "23/06/2026",
+    "name": "Cyclic Permutations -KMP",
+    "topic": "String",
+    "source": "Scaler",
+    "difficulty": "H",
+    "friction": "Smooth",
+    "notes": "KMP Pattern Matching",
+    "oneLiner": "The \"Cyclic Shift = KMP\" SRS Cheat SheetThe XOR Decoy: X ^ Y = 0 mathematically guarantees that X == Y. The problem is simply asking: \"How many cyclic shifts of B are exactly identical to A?\"The Cyclic Trick (B + B): Never use Frequency Maps for cyclic shifts, as they ignore relative character order. To instantly generate every possible cyclic shift of a string, concatenate it to itself. Your new search space is Text = (B + B).substring(0, 2 * N - 1).The Architecture Shift: The problem has now been cleanly converted from a bit-manipulation/permutation disguise into a classic String Pattern Matching problem: Find how many times Pattern A appears inside Text.The KMP Execution ($O(N)$): Create the master string S = A + \"#\" + Text. Generate the LPS array for S. Iterate through the LPS array, and every time lps[i] == A.length(), increment your count.",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-06-27",
+    "lastSolved": "2026-06-21",
+    "url": "",
+    "ef": "2.1",
+    "interval": "6"
+  },
+  {
+    "date": "22/06/2026",
+    "name": "Permutations of A in B",
+    "topic": "String",
+    "source": "Scaler",
+    "difficulty": "H",
+    "friction": "Struggled",
+    "notes": "Sliding Window | Fixed Window",
+    "oneLiner": "The Architecture (Fixed Size): Because any valid permutation of A must be exactly the length of A, the window size never changes. You do not need a while loop to shrink it.The Initial Setup: Create freq_A and freq_B arrays (size 26). Fully populate freq_A, but only populate freq_B with the first A.length() characters of string B. Check if they match using Arrays.equals(); if yes, count++.The Slide ($O(N)$): Loop from i = A.length() to the end of B. Slide the rigid frame by doing exactly two operations:Add Right: Increment the frequency of the new character entering the window: B.charAt(i).Drop Left: Decrement the frequency of the old character falling out of the window: B.charAt(i - A.length()).The Array Index Trap: When dropping the left character, do not accidentally use the raw index math (i - A.length()) inside the frequency array. You must fetch the actual character from string B first, then subtract 'a' to get the correct frequency bucket.",
+    "attempts": "4",
+    "phase": "S1",
+    "reviewDate": "2026-07-03",
+    "lastSolved": "2026-07-02",
+    "url": "",
+    "ef": "1.4",
+    "interval": "1"
+  },
+  {
+    "date": "21/06/2026",
+    "name": "Boring substring",
+    "topic": "String",
+    "source": "Scaler",
+    "difficulty": "H",
+    "friction": "Smooth",
+    "notes": "ASCII Arithmetic | Observation",
+    "oneLiner": "The Core Secret (The Bridge): Odd ASCII characters are never adjacent to each other. Evens are never adjacent. If you separate them into two halves, you just need to find one valid pair (a bridge) to connect the Odd half to the Even half.The Trap (Brute Force - $O(N^2)$): Iterating through every single Odd character and comparing it against every single Even character will cause a Time Limit Exceeded (TLE) on massive strings.The HashSet Pivot ($O(N)$ Time, $O(1)$ Space): Since there are only 26 letters, dump characters into two HashSets (Odds and Evens). This reduces the nested loop to a maximum of $13 \\times 13 = 169$ constant-time checks.The Masterpiece ($O(N)$ Time, $O(1)$ Space): Ditch the sets. Traverse the string once to find four extremes: minOdd, maxOdd, minEven, and maxEven. Test the 4 cross-combinations. If the absolute difference of any pair is != 1, return true. Otherwise, return false.",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-06-27",
+    "lastSolved": "2026-06-21",
+    "url": "",
+    "ef": "2.1",
+    "interval": "6"
+  },
+  {
+    "date": "20/06/2026",
+    "name": "Node distance C in binary tree",
+    "topic": "Tree",
+    "source": "Scaler",
+    "difficulty": "H",
+    "friction": "Struggled",
+    "notes": "BFS | Parent Map",
+    "oneLiner": "The Architecture (Pass 1): Traverse the tree to find the Target node AND build a HashMap<Node, Node> mapping every child to its parent (the \"Up\" pointer).  The Graph BFS (Pass 2): Start a Level-Order Queue from the Target node. You now have three valid moves: left, right, and parent.  The Infinite Loop Trap: You MUST use a HashSet to track visited nodes, otherwise you will bounce between child and parent forever.  The Extraction: Increment a distance counter after every full level. When distance == C, break the loop; the queue now contains exactly your answer.",
+    "attempts": "4",
+    "phase": "S1",
+    "reviewDate": "2026-07-19",
+    "lastSolved": "2026-07-18",
+    "url": "",
+    "ef": "1.4",
+    "interval": "1"
+  },
+  {
+    "date": "19/06/2026",
+    "name": "Flatten Binary Tree to Linked List",
+    "topic": "Tree",
+    "source": "Scaler",
+    "difficulty": "H",
+    "friction": "Smooth",
+    "notes": "DFS | Return Head-Tail \u27e9T: Flatten binary tree to a linked list (right-skewed, preorder), in place. \u27e9M: Post-order recursion returning (head, tail) of each flattened subtree. At every node: flatten left and right, then rewire \u2014 set left = null, attach flattened-left as right, append flattened-right after left's tail. Return the node as head and the deepest right-subtree tail (or node itself if leaf) as the new tail.",
+    "oneLiner": "State Passing: Use a custom Pair(head, tail) to pass the start and end of flattened subtrees upwards.  Traversal: Do a Post-Order traversal (lp = getanswer(left), rp = getanswer(right)).  The Rewire (4 Cases):  Leaf: Return (root, root).  No Left Child: Return (root, right.tail).  No Right Child: Move left to right (root.left = null; root.right = left.head), return (root, left.tail).  Both Children: Connect them! root.left = null, root.right = left.head, left.tail.right = right.head. Return (root, right.tail)",
+    "attempts": "12",
+    "phase": "S2",
+    "reviewDate": "2026-07-26",
+    "lastSolved": "2026-07-18",
+    "url": "",
+    "ef": "1.9",
+    "interval": "8"
+  },
+  {
+    "date": "18/06/2026",
+    "name": "Maximum XOR Subarray",
     "topic": "Tries",
     "source": "Scaler",
     "difficulty": "H",
     "friction": "Smooth",
-    "notes": "Trie | Frequency Count",
-    "oneLiner": "To find the shortest unique prefix, upgrade your standard Trie node to include an int freq counter. During the insertion phase, increment this frequency for every single node you step on to track exactly how many words share that specific path. Then, to find the unique prefix for a word, traverse the Trie again and stop the exact moment you land on a node where curr.freq == 1. The substring from the root down to that specific node is mathematically guaranteed to be your shortest unique prefix.",
+    "notes": "Bitwise Trie | Prefix XOR",
+    "oneLiner": "you don't invent new logic; you capitalize on the rule that XOR is its own inverse by building a prefixXOR array and feeding it directly into your first Trie, with the vital upgrade of dropping \"index anchors\" at the leaf nodes. When a match is found, you pull those two indices to define your subarray boundaries (Left = min + 1, Right = max), which immediately allows you to filter the results through Scaler's strict three-tier tie-breaker: highest XOR first, then shortest length, and finally the earliest starting index.",
     "attempts": "4",
     "phase": "S1",
-    "reviewDate": "2026-07-02",
-    "lastSolved": "2026-06-25",
+    "reviewDate": "2026-07-05",
+    "lastSolved": "2026-06-28",
     "url": "",
     "ef": "2.2",
     "interval": "7"
   },
   {
-    "date": "08/06/2026",
-    "name": "Spelling Checker",
+    "date": "17/06/2026",
+    "name": "Maximum XOR",
     "topic": "Tries",
     "source": "Scaler",
     "difficulty": "H",
-    "friction": "Smooth",
-    "notes": "Trie | Search",
-    "oneLiner": "To build a spellchecker, use a Trie to store the valid dictionary. First, iterate through the array of valid words and use standard Trie insertion to build the tree, ensuring the final character of each word is marked with eow = true. Then, iterate through the query array and run a standard Trie search for each word. The critical trap to avoid: your search function must return the final node's eow flag instead of a hardcoded true to guarantee the queried word is a complete dictionary word and not just a prefix.",
+    "friction": "Struggled",
+    "notes": "Bitwise Trie | Greedy XOR",
+    "oneLiner": "the core engine is treating integers as 32-bit paths (MSB to LSB) in an empty Bitwise Trie, allowing you to make the \"Greedy Choice\" by always searching for the opposite bit (1 - bit) to guarantee the highest possible value",
     "attempts": "3",
-    "phase": "S2",
-    "reviewDate": "2026-07-09",
-    "lastSolved": "2026-06-24",
+    "phase": "S1",
+    "reviewDate": "2026-07-06",
+    "lastSolved": "2026-07-02",
     "url": "",
-    "ef": "2.1",
-    "interval": "15"
+    "ef": "1.7",
+    "interval": "4"
   },
   {
-    "date": "08/06/2026",
+    "date": "16/06/2026",
     "name": "Auto Complete",
     "topic": "Tries",
     "source": "Scaler",
@@ -1156,21 +1139,38 @@
     "interval": "2"
   },
   {
-    "date": "08/06/2026",
-    "name": "Maximum XOR",
+    "date": "15/06/2026",
+    "name": "Spelling Checker",
     "topic": "Tries",
     "source": "Scaler",
     "difficulty": "H",
-    "friction": "Struggled",
-    "notes": "Bitwise Trie | Greedy XOR",
-    "oneLiner": "the core engine is treating integers as 32-bit paths (MSB to LSB) in an empty Bitwise Trie, allowing you to make the \"Greedy Choice\" by always searching for the opposite bit (1 - bit) to guarantee the highest possible value",
+    "friction": "Smooth",
+    "notes": "Trie | Search",
+    "oneLiner": "To build a spellchecker, use a Trie to store the valid dictionary. First, iterate through the array of valid words and use standard Trie insertion to build the tree, ensuring the final character of each word is marked with eow = true. Then, iterate through the query array and run a standard Trie search for each word. The critical trap to avoid: your search function must return the final node's eow flag instead of a hardcoded true to guarantee the queried word is a complete dictionary word and not just a prefix.",
     "attempts": "3",
-    "phase": "S1",
-    "reviewDate": "2026-07-06",
-    "lastSolved": "2026-07-02",
+    "phase": "S2",
+    "reviewDate": "2026-07-09",
+    "lastSolved": "2026-06-24",
     "url": "",
-    "ef": "1.7",
-    "interval": "4"
+    "ef": "2.1",
+    "interval": "15"
+  },
+  {
+    "date": "14/06/2026",
+    "name": "Shortest Unique Prefix",
+    "topic": "Tries",
+    "source": "Scaler",
+    "difficulty": "H",
+    "friction": "Smooth",
+    "notes": "Trie | Frequency Count",
+    "oneLiner": "To find the shortest unique prefix, upgrade your standard Trie node to include an int freq counter. During the insertion phase, increment this frequency for every single node you step on to track exactly how many words share that specific path. Then, to find the unique prefix for a word, traverse the Trie again and stop the exact moment you land on a node where curr.freq == 1. The substring from the root down to that specific node is mathematically guaranteed to be your shortest unique prefix.",
+    "attempts": "4",
+    "phase": "S1",
+    "reviewDate": "2026-07-02",
+    "lastSolved": "2026-06-25",
+    "url": "",
+    "ef": "2.2",
+    "interval": "7"
   },
   {
     "date": "07/06/2026",
