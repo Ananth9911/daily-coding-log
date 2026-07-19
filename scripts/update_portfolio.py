@@ -182,7 +182,7 @@ def update_portfolio():
     med_c   = sum(1 for p in problems if p['difficulty']=='M')
     curriculum = get_curriculum_stats()
 
-
+    readme = f"""# 🚀 Tracker
 - **Total Problems Solved:** {total} 🔥
 - **Overall Mastery:** {mastery}% Smooth | Hard: {hard_c} | Medium: {med_c}
 - **System Status:** Online 🟢
