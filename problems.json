@@ -5242,15 +5242,15 @@
     "source": "Scaler",
     "difficulty": "L",
     "friction": "Smooth",
-    "notes": "HashSet",
+    "notes": "HashSet \u27e9T: nested loop over all pairs to find sum \u27e9M: ingle pass with HashSet \u2014 check for complement B\u2212A[i] *before* inserting A[i], so an element never pairs with itself",
     "oneLiner": "This can be done thorugh hashing",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "2026-07-20",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "Completed",
+    "reviewDate": "2027-01-16",
+    "lastSolved": "2026-07-20",
     "url": "",
     "ef": "3.0",
-    "interval": "3"
+    "interval": "180"
   },
   {
     "date": "27/01/2026",
@@ -5446,15 +5446,15 @@
     "source": "Scaler",
     "difficulty": "L",
     "friction": "Smooth",
-    "notes": "String Parsing",
+    "notes": "String Parsing \u27e9T: build the acronym string, then hand-roll a two-pointer comparison against B \u27e9M: length-check first (A.size() != B.length() \u2192 0), then single pass comparing A.get(i).charAt(0) with B.charAt(i) \u2014 no StringBuilder, no second loop",
     "oneLiner": "Take first char of each string , appened it and compare it with B",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "2026-07-20",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "Completed",
+    "reviewDate": "2027-01-16",
+    "lastSolved": "2026-07-20",
     "url": "",
     "ef": "3.0",
-    "interval": "3"
+    "interval": "180"
   },
   {
     "date": "26/01/2026",

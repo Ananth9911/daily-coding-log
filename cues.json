@@ -120,6 +120,22 @@
     "friction": "Smooth"
   },
   {
+    "topic": "String",
+    "cue": "String Parsing \u27e9T: build the acronym string, then hand-roll a two-pointer comparison against B \u27e9M: length-check first (A.size() != B.length() \u2192 0), then single pass comparing A.get(i).charAt(0) with B",
+    "exampleProblem": "Check if a String Is an Acronym of Word",
+    "oneLiner": "Take first char of each string , appened it and compare it with B",
+    "difficulty": "L",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "HashSet \u27e9T: nested loop over all pairs to find sum \u27e9M: ingle pass with HashSet \u2014 check for complement B\u2212A[i] *before* inserting A[i], so an element never pairs with itself",
+    "exampleProblem": "Good Pair",
+    "oneLiner": "This can be done thorugh hashing",
+    "difficulty": "L",
+    "friction": "Smooth"
+  },
+  {
     "topic": "Array",
     "cue": "Contribution Technique",
     "exampleProblem": "Sum of All Subarrays",
