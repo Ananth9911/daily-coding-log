@@ -609,6 +609,14 @@
   },
   {
     "topic": "Tree",
+    "cue": "DFS | BST Property \u27e9T: full inorder traversal into a list, then filter by range \u2014 treats the BST like an unsorted tree \u27e9M: rune at each node using the ordering \u2014 val < B \u2192 go right only, val > C \u2192 go ",
+    "exampleProblem": "BST nodes in a range",
+    "oneLiner": "Do it recursively and compare it with ranges B and C , if less or greater we ignore that branch in end we increase the count",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Tree",
     "cue": "Inorder Traversal | Two Pointer",
     "exampleProblem": "Two Sum BST",
     "oneLiner": "Two approaches , 1) Get inorder travesal and then have hashing , you know the apprach\n2) Get inorder travesal , then as it is sorted do two pointer apporach from first and end",
@@ -846,6 +854,14 @@
     "oneLiner": "To set matrix zeroes in O(1) space, use Row 0 and Col 0 as flag arrays. First, check if Row 0 or Col 0 inherently contain zeros and store this in two booleans. Next, iterate from i=1, j=1; if A[i][j]==0, set A[i][0]=0 and A[0][j]=0. Iterate from 1,1 again and apply the zeros based on the flags. Finally, update Row 0 and Col 0 based on the saved booleans",
     "difficulty": "L",
     "friction": "Struggled"
+  },
+  {
+    "topic": "Tree",
+    "cue": "Inorder Traversal | Two Pointer \u27e9T: nested loops or a HashSet of one tree's values to check membership in the other \u27e9M: inorder each BST \u2192 two sorted arrays \u2192 merge-style two-pointer: equal \u2192 add & ad",
+    "exampleProblem": "Common Nodes in Two BST",
+    "oneLiner": "To find common nodes in two BSTs, perform an inorder traversal on both to generate two sorted arrays. Use a two-pointer approach starting at index 0 for both arrays: if A[i] == B[j], add to sum and increment both; if A[i] < B[j], increment i; else increment j",
+    "difficulty": "M",
+    "friction": "Smooth"
   },
   {
     "topic": "Tree",
@@ -1129,7 +1145,7 @@
   },
   {
     "topic": "DP",
-    "cue": "DP | 2D Palindrome | Cuts",
+    "cue": "DP | 2D Palindrome | Cuts \u27e9T: try to partition front-to-back, or generate all partitions and count \u27e9M: define f(i) = min cuts for prefix A[0..i]; base case f(i)=0 if whole prefix is a palindrome; else",
     "exampleProblem": "Palindrome Partitioning II",
     "oneLiner": "The FAANG Trap: Do not write a 1D recursive function that uses a while loop to check if a string is a palindrome. That creates an $O(N^3)$ algorithm that will hit TLE. You must split the problem into two distinct DP phases to achieve $O(N^2)$.Phase 1: The 2D Palindrome Cache (The Lookup Table): * Use the \"Gap Strategy\" (diagonal traversal) to build a boolean[][] isPal table.isPal[i][j] is true if the substring from i to j is a palindrome. This gives you $O(1)$ lookups for Phase 2.Phase 2: The 1D Cuts Array (The State Definition): * cuts[i] represents the minimum number of cuts needed to perfectly partition the prefix string from index 0 to i.The Partition Transition:Base Case: If isPal[0][i] == true, the whole prefix is a palindrome. It needs 0 cuts! (cuts[i] = 0).The Cut Loop: If it's not a palindrome, try placing a cut at every index j (from 1 to i).If the right side of the cut is a palindrome (isPal[j][i] == true), then the total cuts = the cuts needed for the left side plus one new cut.cuts[i] = Math.min(cuts[i], cuts[j-1] + 1)",
     "difficulty": "H",
@@ -1182,6 +1198,14 @@
     "oneLiner": "The 4 States: Track firstbuy, firstsell, secondbuy, secondsell.  Initial Values: firstbuy and secondbuy start at -prices[0] (or Integer.MIN_VALUE). Sells start at 0.  The Transitions (Max of doing nothing vs. acting today):  firstbuy = max(firstbuy, -prices[i])  firstsell = max(firstsell, firstbuy + prices[i])  secondbuy = max(secondbuy, firstsell - prices[i])  secondsell = max(secondsell, secondbuy + prices[i])  Pro-Tip: If you update them in reverse order inside the loop (secondsell first, down to firstbuy), you don't even need temporary variables!",
     "difficulty": "L",
     "friction": "Struggled"
+  },
+  {
+    "topic": "HashMap",
+    "cue": "HashMap \u27e9T: nested loop checking every pair, O(n\u00b2) \u27e9M: single pass with HashMap<value, index> \u2014 look up target\u2212nums[i] *before* putting nums[i] in, so an index never pairs with itself",
+    "exampleProblem": "Two Sum",
+    "oneLiner": "Initialize a HashMap<Integer, Integer>.  Loop through nums. Calculate complement = target - nums[i].  Check: Does map contain complement?  If yes, return new int[] {map.get(complement), i}.  If no, map.put(nums[i], i)",
+    "difficulty": "L",
+    "friction": "Smooth"
   },
   {
     "topic": "String",
