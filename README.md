@@ -1,6 +1,6 @@
 # 🚀 Tracker
-- **Total Problems Solved:** 487 🔥
-- **Overall Mastery:** 91% Smooth | Hard: 146 | Medium: 115
+- **Total Problems Solved:** 488 🔥
+- **Overall Mastery:** 91% Smooth | Hard: 146 | Medium: 116
 - **System Status:** Online 🟢
 
 ### 🎓 Curriculum Progress
@@ -10,6 +10,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem | Topic | Difficulty | Phase |
 | :--- | :--- | :--- | :---: | :---: |
+| 21/07/2026 | String Compression | Array | 🟡 | Struggled |
 | 20/07/2026 | Path Sum II | Tree | 🟢 | Completed |
 | 19/07/2026 | Trapping Rain Water | Array | 🟡 | Completed |
 | 19/07/2026 | Trapping Rain Water II | Array | 🟢 | Completed |
@@ -19,6 +20,5 @@
 | 16/07/2026 | K-th Symbol in Grammar | Array | 🔴 | Completed |
 | 15/07/2026 | Array With Elements Not Equal to Average of Neighbors | Array | 🟡 | Completed |
 | 14/07/2026 | Count Subarrays Where Max Element Appears at Least K Times | Array | 🟢 | Completed |
-| 13/07/2026 | Count of Substrings Containing Every Vowel and K Consonants II | String | 🔴 | Completed |
 
 [→ View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)

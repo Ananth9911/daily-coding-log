@@ -1318,5 +1318,13 @@
     "oneLiner": "Tree",
     "difficulty": "L",
     "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Two Pointer \u27e9T: build the compressed result in a StringBuilder (or use a global frequency array, which loses run grouping) then copy back \u27e9M: separate read and write pointers \u2014 inner loop eats a full ",
+    "exampleProblem": "String Compression",
+    "oneLiner": "Runs are consecutive, not global \u2014 \"aabaa\" is a2b1a2. Use two pointers where write lags read, so you're always overwriting territory already consumed. Counts \u2265 10 need each digit as its own char",
+    "difficulty": "M",
+    "friction": "Struggled"
   }
 ]

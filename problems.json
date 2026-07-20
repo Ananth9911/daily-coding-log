@@ -1,5 +1,22 @@
 [
   {
+    "date": "21/07/2026",
+    "name": "String Compression",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "M",
+    "friction": "Struggled",
+    "notes": "Two Pointer \u27e9T: build the compressed result in a StringBuilder (or use a global frequency array, which loses run grouping) then copy back \u27e9M: separate read and write pointers \u2014 inner loop eats a full consecutive run and leaves read on the next run's start; write the char, then each digit of String.valueOf(count) if count > 1; return write",
+    "oneLiner": "Runs are consecutive, not global \u2014 \"aabaa\" is a2b1a2. Use two pointers where write lags read, so you're always overwriting territory already consumed. Counts \u2265 10 need each digit as its own char",
+    "attempts": "1",
+    "phase": "Struggled",
+    "reviewDate": "2026-07-22",
+    "lastSolved": "2026-07-21",
+    "url": "",
+    "ef": "2.5",
+    "interval": "1"
+  },
+  {
     "date": "20/07/2026",
     "name": "Path Sum II",
     "topic": "Tree",
