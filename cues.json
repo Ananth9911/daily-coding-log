@@ -137,6 +137,14 @@
   },
   {
     "topic": "Array",
+    "cue": "Simulation \u27e9T: Your default instinct was to erase the max (overwrite with -1) and rescan \u2014 three passes plus destructive mutation of the caller's list. It also silently breaks on duplicates of the max",
+    "exampleProblem": "Second Largest",
+    "oneLiner": "Find max , after that loop it and insert 0 in that postion , now again find max , you will get 2nd max",
+    "difficulty": "L",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
     "cue": "Contribution Technique",
     "exampleProblem": "Sum of All Subarrays",
     "oneLiner": "Think about contrubtion of each element of array in all subarray",
@@ -276,6 +284,14 @@
     "cue": "Bit Manipulation \u27e9T: Counting set bits in an int \u2014 wrong instinct is repeated A % 2 / A /= 2, which breaks on negative numbers (sign issues) and doesn't generalize \u27e9M: Loop i from 0 to 31 and test (A ",
     "exampleProblem": "Number of 1 Bits",
     "oneLiner": "Check ith bit",
+    "difficulty": "L",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Bit",
+    "cue": "XOR \u27e9T: The default instinct on \"find the element that appears once among pairs\" is a HashMap frequency count or sort-then-scan \u2014 O(n) space or O(n log n) time. You skipped both, which is correct. \u27e9M:",
+    "exampleProblem": "Single Number",
+    "oneLiner": "Do whole xor",
     "difficulty": "L",
     "friction": "Smooth"
   },

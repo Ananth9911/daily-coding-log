@@ -4375,15 +4375,15 @@
     "source": "Scaler",
     "difficulty": "L",
     "friction": "Smooth",
-    "notes": "XOR",
+    "notes": "XOR \u27e9T: The default instinct on \"find the element that appears once among pairs\" is a HashMap frequency count or sort-then-scan \u2014 O(n) space or O(n log n) time. You skipped both, which is correct. \u27e9M: XOR the whole array. x^x = 0 and x^0 = x, and XOR is commutative/associative, so every pair annihilates regardless of position and only the loner survives. O(n) time, O(1) space, no mutation.",
     "oneLiner": "Do whole xor",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "2026-07-20",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S2",
+    "reviewDate": "2026-07-30",
+    "lastSolved": "2026-07-21",
     "url": "",
-    "ef": "3.0",
-    "interval": "3"
+    "ef": "3.1",
+    "interval": "9"
   },
   {
     "date": "27/02/2026",
@@ -5227,13 +5227,13 @@
     "friction": "Smooth",
     "notes": "Linear Search",
     "oneLiner": "Linear search",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "2026-07-20",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "Completed",
+    "reviewDate": "2027-01-17",
+    "lastSolved": "2026-07-21",
     "url": "",
     "ef": "3.0",
-    "interval": "3"
+    "interval": "180"
   },
   {
     "date": "28/01/2026",
@@ -5242,15 +5242,15 @@
     "source": "Scaler",
     "difficulty": "L",
     "friction": "Smooth",
-    "notes": "Simulation",
+    "notes": "Simulation \u27e9T: Your default instinct was to erase the max (overwrite with -1) and rescan \u2014 three passes plus destructive mutation of the caller's list. It also silently breaks on duplicates of the max: if the array is [5,5,3], you wipe both 5s and return 3 instead of 5. And idx is assigned every iteration, so it's dead code that doesn't track the max index at all. \u27e9M: Track both extremes in one pass with two variables. Compare against max first; if the element beats max, demote max to second and promote the element. Else if it beats second (and, depending on the duplicate rule, isn't equal to max), update second only.",
     "oneLiner": "Find max , after that loop it and insert 0 in that postion , now again find max , you will get 2nd max",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "2026-07-20",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "Completed",
+    "reviewDate": "2027-01-17",
+    "lastSolved": "2026-07-21",
     "url": "",
     "ef": "3.0",
-    "interval": "3"
+    "interval": "180"
   },
   {
     "date": "27/01/2026",
@@ -6621,13 +6621,13 @@
     "friction": "Smooth",
     "notes": "Nested Loops | Pattern Printing",
     "oneLiner": "Just figure out loop ranges",
-    "attempts": "4",
-    "phase": "S3",
-    "reviewDate": "2026-06-06",
-    "lastSolved": "2026-05-13",
+    "attempts": "5",
+    "phase": "Completed",
+    "reviewDate": "2027-01-17",
+    "lastSolved": "2026-07-21",
     "url": "",
     "ef": "3.0",
-    "interval": "30"
+    "interval": "180"
   },
   {
     "date": "08/01/2026",
@@ -7114,13 +7114,13 @@
     "friction": "Smooth",
     "notes": "Nested Loops | Pattern Printing",
     "oneLiner": "Pattern printing",
-    "attempts": "2",
-    "phase": "S2",
-    "reviewDate": "2026-06-06",
-    "lastSolved": "2026-05-28",
+    "attempts": "3",
+    "phase": "Completed",
+    "reviewDate": "2027-01-17",
+    "lastSolved": "2026-07-21",
     "url": "",
-    "ef": "3.1",
-    "interval": "9"
+    "ef": "3.0",
+    "interval": "180"
   },
   {
     "date": "03/01/2026",
