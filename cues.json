@@ -137,6 +137,14 @@
   },
   {
     "topic": "Array",
+    "cue": "Observation \u27e9T: The instinct on \"make all elements equal at minimum cost\" is to reach for the median (the classic minimizer of absolute deviations) or to try each candidate target and take the best \u2014 ",
+    "exampleProblem": "Time to equality",
+    "oneLiner": "Find max and increase all elements in array to max and have count vairable",
+    "difficulty": "L",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
     "cue": "Simulation \u27e9T: Your default instinct was to erase the max (overwrite with -1) and rescan \u2014 three passes plus destructive mutation of the caller's list. It also silently breaks on duplicates of the max",
     "exampleProblem": "Second Largest",
     "oneLiner": "Find max , after that loop it and insert 0 in that postion , now again find max , you will get 2nd max",
@@ -265,7 +273,7 @@
   },
   {
     "topic": "Array",
-    "cue": "Sorting | Interval Merge",
+    "cue": "Sorting | Interval Merge \u27e9T: The instinct on interval merging is to compare each interval against everything already in the answer, or to mutate the last element of the result list in place. Mutating ",
     "exampleProblem": "Merge Sorted Overlapping Intervals - 2",
     "oneLiner": "Need to redo",
     "difficulty": "H",
@@ -1025,11 +1033,11 @@
   },
   {
     "topic": "Graph",
-    "cue": "Topological Sort | Kahn's BFS",
+    "cue": "Topological Sort | Kahn's BFS \u27e9T: The instinct on topological sort is DFS with a visited array, pushing nodes onto a stack on the way out and reversing at the end. That produces a valid ordering, but ",
     "exampleProblem": "Topological Sort Kahn's Algorithm",
     "oneLiner": "Calculate the in-degree for all nodes and push those with an in-degree of 0 into a Queue (use a PriorityQueue if you need the lexicographically smallest order). Pop nodes, add them to your answer array, and decrement their neighbors' in-degrees\u2014pushing any neighbor that drops to 0 into the queue\u2014and finally check if the answer size matches the total nodes to ensure no cycles exist",
     "difficulty": "H",
-    "friction": "Smooth"
+    "friction": "Struggled"
   },
   {
     "topic": "Greedy",
@@ -1342,5 +1350,13 @@
     "oneLiner": "Runs are consecutive, not global \u2014 \"aabaa\" is a2b1a2. Use two pointers where write lags read, so you're always overwriting territory already consumed. Counts \u2265 10 need each digit as its own char",
     "difficulty": "M",
     "friction": "Struggled"
+  },
+  {
+    "topic": "Array",
+    "cue": "Two Pointer \u27e9T: The instinct on two-sum is a HashMap of value\u2192index \u2014 O(n) time but O(n) space, which the constant-space constraint forbids. Your second instinct was a left-anchored scan (i=0, j=1, wa",
+    "exampleProblem": "Two Sum II - Input Array Is Sorted",
+    "oneLiner": "Two pointer",
+    "difficulty": "L",
+    "friction": "Smooth"
   }
 ]

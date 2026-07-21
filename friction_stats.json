@@ -1,9 +1,9 @@
 [
   {
-    "smooth": 136,
+    "smooth": 137,
     "struggled": 20,
     "hard": 26,
-    "total": 157,
+    "total": 158,
     "topic": "Array",
     "mastery": 87
   },
@@ -49,7 +49,7 @@
   },
   {
     "smooth": 16,
-    "struggled": 4,
+    "struggled": 5,
     "hard": 12,
     "total": 16,
     "topic": "Graph",
