@@ -153,6 +153,22 @@
   },
   {
     "topic": "Array",
+    "cue": "Prefix Sum \u27e9T: Multiple range-sum queries \u2014 here your instinct was already right (build the prefix array), but you branched on L==0 to avoid the ps[L-1] out-of-bounds. That's a correct patch, not a cl",
+    "exampleProblem": "Range Sum Query",
+    "oneLiner": "Precompute a 64-bit (Long) prefix sum array to avoid overflow, then answer each query in O(1) time by calculating ps[R] - ps[L-1] (handling the L=0 edge case)",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Prefix Sum \u27e9T: \"Sum of left equals sum of right\" makes you build prefLeft[] and prefRight[] arrays. The instinct is right (prefix pattern) but the storage is wasteful \u2014 you're persisting N values you ",
+    "exampleProblem": "Equilibrium index of an array",
+    "oneLiner": "iterate through the array maintaining a running leftSum, calculating rightSum dynamically to find the equilibrium in O(1) space.",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
     "cue": "Contribution Technique",
     "exampleProblem": "Sum of All Subarrays",
     "oneLiner": "Think about contrubtion of each element of array in all subarray",
@@ -625,6 +641,22 @@
   },
   {
     "topic": "Tree",
+    "cue": "DFS | Backtracking \u27e9T: \"Does a root-to-leaf path sum to B\" tempts you to carry a running total up or match the sum anywhere it hits B. The two easy misses: (1) matching at a non-leaf, and (2) mishandl",
+    "exampleProblem": "Path Sum",
+    "oneLiner": "handle the edge case and base and the calcualte left subtree path sum and right sub tree path sum , with remaining debt with each node recursion",
+    "difficulty": "H",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Tree",
+    "cue": "DFS | Tree Sum \u27e9T: \"Split into two equal halves by removing one edge\" makes you think about actually severing edges and summing both resulting pieces \u2014 O(N) per edge, O(N\u00b2). The missed insight: removi",
+    "exampleProblem": "Equal Tree Partition",
+    "oneLiner": "Have sum function to calcualte sum and then for each node find left sum and right sum if it equal",
+    "difficulty": "H",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Tree",
     "cue": "Divide and Conquer | Recursion \u27e9T: Reconstruct tree from preorder + inorder; wrong instinct is splitting preorder by position (it has no left/right marker) or forgetting the inorder search must be inc",
     "exampleProblem": "Binary Tree From Inorder And Preorder",
     "oneLiner": "create root node and then search for that root node in inorder and the find position , and then we need to figgure exxact left tree and right tree in both preorder and inorder array",
@@ -684,6 +716,14 @@
     "cue": "Math | Base Conversion",
     "exampleProblem": "Excel Column Title",
     "oneLiner": "Logic is do modulo and dive by 26 just like binary number finding and then prpend to ans string",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Two Pointer \u27e9T: \"Max area between two lines\" makes you consider every pair \u2014 pick a left, scan all rights \u2014 which is O(N\u00b2). The buried instinct is that both walls matter independently, so you feel you",
+    "exampleProblem": "Container With Most Water",
+    "oneLiner": "have width and min height of both pointers. Bascially two pointer approach",
     "difficulty": "M",
     "friction": "Smooth"
   },
@@ -1349,7 +1389,7 @@
     "exampleProblem": "String Compression",
     "oneLiner": "Runs are consecutive, not global \u2014 \"aabaa\" is a2b1a2. Use two pointers where write lags read, so you're always overwriting territory already consumed. Counts \u2265 10 need each digit as its own char",
     "difficulty": "M",
-    "friction": "Struggled"
+    "friction": "Smooth"
   },
   {
     "topic": "Array",
@@ -1358,5 +1398,13 @@
     "oneLiner": "Two pointer",
     "difficulty": "L",
     "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Sliding Window \u27e9T: \"K closest to x\" makes you find x's position (or insertion point) and expand outward with two pointers, comparing arr[lo] vs arr[hi] each step. That works (O(log n + k)) but is fidd",
+    "exampleProblem": "Find K Closest Elements",
+    "oneLiner": "The answer is always k contiguous elements (sorted array \u2192 closest cluster is a window). So you're not searching for x and growing \u2014 you're placing a fixed-width frame of size k. Binary search over where that frame starts, in range [0, n-k].",
+    "difficulty": "H",
+    "friction": "Struggled"
   }
 ]

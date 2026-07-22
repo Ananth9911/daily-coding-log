@@ -1,11 +1,11 @@
 [
   {
-    "smooth": 137,
+    "smooth": 141,
     "struggled": 20,
-    "hard": 26,
-    "total": 158,
+    "hard": 27,
+    "total": 159,
     "topic": "Array",
-    "mastery": 87
+    "mastery": 89
   },
   {
     "smooth": 114,
@@ -17,7 +17,7 @@
   },
   {
     "smooth": 27,
-    "struggled": 18,
+    "struggled": 19,
     "hard": 15,
     "total": 36,
     "topic": "Tree",
@@ -64,12 +64,12 @@
     "mastery": 79
   },
   {
-    "smooth": 12,
+    "smooth": 13,
     "struggled": 2,
     "hard": 6,
     "total": 13,
     "topic": "LinkedList",
-    "mastery": 92
+    "mastery": 100
   },
   {
     "smooth": 9,
