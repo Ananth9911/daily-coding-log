@@ -169,6 +169,14 @@
   },
   {
     "topic": "Array",
+    "cue": "Prefix Sum \u27e9T: tried to handle \"only odd indices\" inside the query loop \u2014 stepping i += 2 from L, or checking parity per query, making each query O(n) \u27e9M: bake the predicate into the prefix array itse",
+    "exampleProblem": "Sum of Odd indexed elements in a range",
+    "oneLiner": "Precompute a 64-bit (Long) prefix sum array to avoid overflow, then answer each query in O(1) time by calculating ps[R] - ps[L-1] (handling the L=0 edge case)",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
     "cue": "Contribution Technique \u27e9T: reached for nested loops to enumerate every subarray and sum them (O(n\u00b2)) \u27e9M: flip the axis \u2014 instead of iterating subarrays, iterate elements and count how many subarrays e",
     "exampleProblem": "Sum of All Subarrays",
     "oneLiner": "Think about contrubtion of each element of array in all subarray",
@@ -273,7 +281,7 @@
   },
   {
     "topic": "String",
-    "cue": "Bit Manipulation | ASCII Arithmetic",
+    "cue": "Bit Manipulation | ASCII Arithmetic \u27e9T: reached for Character.isUpperCase/toLowerCase or built a new string with += in the loop, treating case as a library concern \u27e9M: exploit the fixed 32 offset betw",
     "exampleProblem": "Toggle Case",
     "oneLiner": "Approach 1 (ASCII Math):\nIterate through the string, check if each character falls in the uppercase or lowercase ASCII range, and mathematically add or subtract 32 to toggle its case.\n\nApproach 2 (Bitwise XOR):\nIterate through the string and apply the bitwise XOR operator (^ 32) to each character to instantly flip its 6th bit, automatically swapping its case.",
     "difficulty": "L",
@@ -341,7 +349,7 @@
     "exampleProblem": "Set Bit",
     "oneLiner": "we assume C=0 and then we do toggle A th and Bth bit, if both are different or else toggle A",
     "difficulty": "L",
-    "friction": "Struggled"
+    "friction": "Smooth"
   },
   {
     "topic": "Bit",
@@ -937,11 +945,11 @@
   },
   {
     "topic": "Tree",
-    "cue": "DFS | Simultaneous Recursion",
+    "cue": "DFS | Simultaneous Recursion \u27e9T: returned success as soon as the current node matched, treating a local match as a global answer \u27e9M: at each node, only failure is decidable early \u2014 mismatch \u2192 0 immedi",
     "exampleProblem": "Identical Binary Trees",
     "oneLiner": "To check if two trees are identical, do not flatten them into arrays. Use simultaneous recursion: if both nodes are null, return 1; if only one is null or values differ, return 0. Recursively check if isSameTree(A.left, B.left) AND isSameTree(A.right, B.right) both return 1",
     "difficulty": "H",
-    "friction": "Struggled"
+    "friction": "Smooth"
   },
   {
     "topic": "Hashing",
@@ -1113,11 +1121,19 @@
   },
   {
     "topic": "Backtracking",
-    "cue": "Backtracking | Constraint Checking",
+    "cue": "Backtracking | Constraint Checking \u27e9T: searched over both row and column as free choices, and wrote the undo block by copying the mark block \u2014 leaving stale marks in the sets \u27e9M: fix row = recursion d",
     "exampleProblem": "NQueens",
     "oneLiner": "If a problem asks if ANY valid state exists (e.g., Sudoku), return boolean from your recursive calls to instantly kill the search once found. If a problem asks to generate ALL valid states (e.g., N-Queens), keep the return type void. Let the recursion naturally unfold and save the state only inside your base case",
     "difficulty": "H",
     "friction": "Struggled"
+  },
+  {
+    "topic": "Backtracking",
+    "cue": "Backtracking | Constraint Checking",
+    "exampleProblem": "Sudoku",
+    "oneLiner": "The Architecture: Unlike N-Queens (which finds all solutions and returns void), Sudoku only needs one solution. The recursive function must return a boolean to instantly kill the search and bubble true up the call stack the moment the board is solved. The Traversal: Use a double for loop to scan the entire 9x9 board. If a cell is not '.', skip it. If it is '.', loop through '1' to '9'. The Logic (Do -> Recurse -> Undo): If a number is valid, set it (board[r][c] = guess). Recurse: if (solve(board) == true) return true;. If it fails, undo it (board[r][c] = '.'). The 3x3 Validator Math: To check if a guess is valid in its 3x3 block, find the top-left anchor using modulo math: start_row = row - (row % 3) and start_col = col - (col % 3). Then loop 0 to 2 and add them to the anchor",
+    "difficulty": "H",
+    "friction": "Smooth"
   },
   {
     "topic": "DP",
@@ -1413,6 +1429,14 @@
     "exampleProblem": "Find K Closest Elements",
     "oneLiner": "The answer is always k contiguous elements (sorted array \u2192 closest cluster is a window). So you're not searching for x and growing \u2014 you're placing a fixed-width frame of size k. Binary search over where that frame starts, in range [0, n-k].",
     "difficulty": "H",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Array",
+    "cue": "Sliding Window | Two Pointer \u27e9T: drove both pointers manually and treated the map as a set \u2014 put(key, 1) on entry, remove(key) on exit \u2014 so duplicates inside the window vanished after one decrement; a",
+    "exampleProblem": "Fruit Into Baskets",
+    "oneLiner": "the map counts, it doesn't remember\" \u2014 one key can own many window slots.",
+    "difficulty": "M",
     "friction": "Struggled"
   }
 ]
