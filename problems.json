@@ -5140,15 +5140,15 @@
     "source": "Scaler",
     "difficulty": "M",
     "friction": "Smooth",
-    "notes": "Contribution Technique",
+    "notes": "Contribution Technique \u27e9T: reached for nested loops to enumerate every subarray and sum them (O(n\u00b2)) \u27e9M: flip the axis \u2014 instead of iterating subarrays, iterate elements and count how many subarrays each one lands in: (i+1) choices for start \u00d7 (n-i) choices for end. Hook: \"count the choices, not the gaps\" \u2014 inclusive range [a,b] has b-a+1 elements, so include i itself on both sides",
     "oneLiner": "Think about contrubtion of each element of array in all subarray",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "2026-07-20",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S2",
+    "reviewDate": "2026-07-31",
+    "lastSolved": "2026-07-23",
     "url": "",
-    "ef": "2.5",
-    "interval": "3"
+    "ef": "2.6",
+    "interval": "8"
   },
   {
     "date": "31/01/2026",

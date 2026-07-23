@@ -169,7 +169,7 @@
   },
   {
     "topic": "Array",
-    "cue": "Contribution Technique",
+    "cue": "Contribution Technique \u27e9T: reached for nested loops to enumerate every subarray and sum them (O(n\u00b2)) \u27e9M: flip the axis \u2014 instead of iterating subarrays, iterate elements and count how many subarrays e",
     "exampleProblem": "Sum of All Subarrays",
     "oneLiner": "Think about contrubtion of each element of array in all subarray",
     "difficulty": "M",
@@ -291,6 +291,14 @@
     "topic": "Array",
     "cue": "Sorting | Interval Merge \u27e9T: The instinct on interval merging is to compare each interval against everything already in the answer, or to mutate the last element of the result list in place. Mutating ",
     "exampleProblem": "Merge Sorted Overlapping Intervals - 2",
+    "oneLiner": "Need to redo",
+    "difficulty": "H",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Array",
+    "cue": "Contribution Technique",
+    "exampleProblem": "Sum of all Submatrices",
     "oneLiner": "Need to redo",
     "difficulty": "H",
     "friction": "Struggled"
