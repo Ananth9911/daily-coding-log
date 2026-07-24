@@ -4445,13 +4445,13 @@
     "friction": "Smooth",
     "notes": "Bit Manipulation",
     "oneLiner": "Check if ith bit set or unset , if set then toggle",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "2026-07-20",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S2",
+    "reviewDate": "2026-08-02",
+    "lastSolved": "2026-07-24",
     "url": "",
-    "ef": "3.0",
-    "interval": "3"
+    "ef": "3.1",
+    "interval": "9"
   },
   {
     "date": "27/02/2026",
