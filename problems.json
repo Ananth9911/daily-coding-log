@@ -1,5 +1,22 @@
 [
   {
+    "date": "26/07/2026",
+    "name": "Get Equal Substrings Within Budget",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "M",
+    "friction": "Smooth",
+    "notes": "Two Pointers",
+    "oneLiner": "",
+    "attempts": "1",
+    "phase": "Completed",
+    "reviewDate": "2027-01-22",
+    "lastSolved": "2026-07-26",
+    "url": "",
+    "ef": "3.0",
+    "interval": "180"
+  },
+  {
     "date": "25/07/2026",
     "name": "Sentence Similarity III",
     "topic": "Array",
@@ -39,16 +56,16 @@
     "topic": "Array",
     "source": "LeetCode",
     "difficulty": "H",
-    "friction": "Struggled",
+    "friction": "Smooth",
     "notes": "Sliding Window \u27e9T: \"K closest to x\" makes you find x's position (or insertion point) and expand outward with two pointers, comparing arr[lo] vs arr[hi] each step. That works (O(log n + k)) but is fiddly on edges and ties. The deeper miss: you're treating it as \"find x then grow,\" when the result is a fixed-size contiguous window \u2014 which means the unknown is a single index (where it starts), and single-unknown-in-a-range = binary search directly. \u27e9M: Binary search on left \u2208 [0, n-k], the window's start. At mid, compare the window's two outer edges: x - arr[mid] (left edge distance) vs arr[mid+k] - x (the element just past the right edge). If left edge is strictly farther, the window must move right (left = mid+1); else right = mid. Converges to the optimal start. Then emit arr[left .. left+k-1]. O(log(n\u2212k) + k).",
     "oneLiner": "The answer is always k contiguous elements (sorted array \u2192 closest cluster is a window). So you're not searching for x and growing \u2014 you're placing a fixed-width frame of size k. Binary search over where that frame starts, in range [0, n-k].",
-    "attempts": "1",
-    "phase": "Struggled",
-    "reviewDate": "2026-07-24",
-    "lastSolved": "2026-07-23",
+    "attempts": "2",
+    "phase": "S1",
+    "reviewDate": "2026-07-29",
+    "lastSolved": "2026-07-26",
     "url": "",
-    "ef": "2.0",
-    "interval": "1"
+    "ef": "2.1",
+    "interval": "3"
   },
   {
     "date": "22/07/2026",

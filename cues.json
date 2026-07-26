@@ -1429,7 +1429,7 @@
     "exampleProblem": "Find K Closest Elements",
     "oneLiner": "The answer is always k contiguous elements (sorted array \u2192 closest cluster is a window). So you're not searching for x and growing \u2014 you're placing a fixed-width frame of size k. Binary search over where that frame starts, in range [0, n-k].",
     "difficulty": "H",
-    "friction": "Struggled"
+    "friction": "Smooth"
   },
   {
     "topic": "Array",
