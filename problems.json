@@ -1,5 +1,22 @@
 [
   {
+    "date": "25/07/2026",
+    "name": "Sentence Similarity III",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "M",
+    "friction": "Smooth",
+    "notes": "Two Pointers",
+    "oneLiner": "",
+    "attempts": "1",
+    "phase": "Completed",
+    "reviewDate": "2027-01-22",
+    "lastSolved": "2026-07-26",
+    "url": "",
+    "ef": "3.0",
+    "interval": "180"
+  },
+  {
     "date": "24/07/2026",
     "name": "Fruit Into Baskets",
     "topic": "Array",
