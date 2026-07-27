@@ -1,5 +1,22 @@
 [
   {
+    "date": "27/07/2026",
+    "name": "Longest Repeating Character Replacement",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "M",
+    "friction": "Struggled",
+    "notes": "Two Pointer",
+    "oneLiner": "",
+    "attempts": "1",
+    "phase": "Struggled",
+    "reviewDate": "2026-07-29",
+    "lastSolved": "2026-07-27",
+    "url": "",
+    "ef": "2.5",
+    "interval": "1"
+  },
+  {
     "date": "26/07/2026",
     "name": "Get Equal Substrings Within Budget",
     "topic": "Array",
