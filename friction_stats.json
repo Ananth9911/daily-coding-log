@@ -1,11 +1,11 @@
 [
   {
-    "smooth": 148,
+    "smooth": 149,
     "struggled": 20,
     "hard": 27,
     "total": 162,
     "topic": "Array",
-    "mastery": 91
+    "mastery": 92
   },
   {
     "smooth": 114,
@@ -105,7 +105,7 @@
   },
   {
     "smooth": 8,
-    "struggled": 0,
+    "struggled": 1,
     "hard": 4,
     "total": 8,
     "topic": "Heap",

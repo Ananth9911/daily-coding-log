@@ -12,7 +12,7 @@
 | :--- | :--- | :--- | :---: | :---: |
 | 26/07/2026 | Get Equal Substrings Within Budget | Array | 🟡 | Completed |
 | 25/07/2026 | Sentence Similarity III | Array | 🟡 | Completed |
-| 24/07/2026 | Fruit Into Baskets | Array | 🟡 | Struggled |
+| 24/07/2026 | Fruit Into Baskets | Array | 🟡 | S1 |
 | 23/07/2026 | Find K Closest Elements | Array | 🔴 | S1 |
 | 22/07/2026 | Two Sum II - Input Array Is Sorted | Array | 🟢 | Completed |
 | 21/07/2026 | String Compression | Array | 🟡 | S1 |
