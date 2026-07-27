@@ -193,7 +193,15 @@
   },
   {
     "topic": "Array",
-    "cue": "Carry Forward | Two Pointer",
+    "cue": "Brute Force \u27e9T: assumed \"all subarrays\" needs a smart trick and hunted for one \u27e9M: a subarray is fixed by its (start, end) pair, so two nested loops over i \u2264 j enumerate all of them; inner loop copies",
+    "exampleProblem": "Generate all subarrays",
+    "oneLiner": "Simple three loops",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Carry Forward | Two Pointer \u27e9T: reached for tracking all min positions and all max positions to pair across them \u27e9M: keep only the last-seen index of each; at every step the freshest min and freshest ",
     "exampleProblem": "Closest MinMax",
     "oneLiner": "Find the array's min and max values, then iterate through the array updating their latest seen indices (initialized to -1), calculating the minimum subarray length only when both values have been encountered.",
     "difficulty": "M",
@@ -467,6 +475,14 @@
     "topic": "Sorting",
     "cue": "Count Sort \u27e9T: Sort an array with a known, limited value range \u2192 Counting Sort (not comparison-based, O(n+k) instead of O(n log n)) \u27e9M: Build a frequency array sized to the max possible value; for eac",
     "exampleProblem": "Count Sort",
+    "oneLiner": "Count sort Algo, find freq array and then insert i val times into A",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Sorting",
+    "cue": "Count Sort \u27e9T: saw \"sort the array\" and reached for Collections.sort / comparison sort at O(n log n) \u27e9M: when values are bounded by a known max, count occurrences into a freq array indexed by value, t",
+    "exampleProblem": "Smallest Number",
     "oneLiner": "Count sort Algo, find freq array and then insert i val times into A",
     "difficulty": "M",
     "friction": "Smooth"
