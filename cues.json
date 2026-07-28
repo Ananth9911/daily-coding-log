@@ -1486,5 +1486,21 @@
     "oneLiner": "the map counts, it doesn't remember\" \u2014 one key can own many window slots.",
     "difficulty": "M",
     "friction": "Struggled"
+  },
+  {
+    "topic": "Array",
+    "cue": "Sliding Window | Two Pointer \u27e9T: Longest substring of same letter with at most k replacements\" \u2192 sliding window where windowSize - maxFreq <= k defines validity \u27e9M: freq[26], left = 0, maxFreq = 0, an",
+    "exampleProblem": "Longest Repeating Character Replacement",
+    "oneLiner": "",
+    "difficulty": "M",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Array",
+    "cue": "Sliding Window \u27e9T: Longest substring without repeating characters\" \u2192 sliding window; shrink from left while the just-added char has count > 1. \u27e9M: freq[128] (ASCII), left = 0, maxlen = 0 Expand right:",
+    "exampleProblem": "Longest Substring Without Repeating Characters",
+    "oneLiner": "The shrink trigger is freq[c] > 1 \u2014 the newly added char is the only possible new duplicate, so shrinking until its count drops back to 1 guarantees an all-unique window. freq[128] covers full ASCII; use freq[256] for extended.",
+    "difficulty": "M",
+    "friction": "Smooth"
   }
 ]
