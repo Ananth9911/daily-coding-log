@@ -6,7 +6,7 @@
     "source": "LeetCode",
     "difficulty": "M",
     "friction": "Struggled",
-    "notes": "Two Pointer",
+    "notes": "Sliding Window | Two Pointer \u27e9T: drove both pointers manually and treated the map as a set \u2014 put(key, 1) on entry, remove(key) on exit \u2014 so duplicates inside the window vanished after one decrement; also returned the final window instead of the best one \u27e9M: only j advances the loop; i reacts inside a while until the invariant (\u2264 2 distinct) holds again, and the map is a counter \u2014 merge(+1) on entry, merge(-1) on exit, remove only at zero. Capture max = j - i + 1 every iteration, not at the end",
     "oneLiner": "",
     "attempts": "1",
     "phase": "Struggled",
