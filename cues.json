@@ -41,6 +41,14 @@
   },
   {
     "topic": "Array",
+    "cue": "Frequency Count \u27e9T: Return array where each element is the frequency of A[i] in A\" \u2192 for each i, count occurrences of A[i] across entire array using .equals() \u27e9M: For each i, initialize cnt = 0 Inner ",
+    "exampleProblem": "Frequency count",
+    "oneLiner": "Just run loop and have count variable",
+    "difficulty": "L",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
     "cue": "HashMap | Brute Force",
     "exampleProblem": "Pair Count",
     "oneLiner": "Brute Force Two loops and Optimised is HashMap",
@@ -217,11 +225,11 @@
   },
   {
     "topic": "Array",
-    "cue": "Carry Forward | Greedy",
+    "cue": "Carry Forward | Greedy \u27e9T: Max profit from one buy/sell in a price array\" \u2192 track running minimum, compute price[i] - minSoFar at each step \u27e9M: Handle edge: size 0 or 1 \u2192 return 0 minStock = A[0], max",
     "exampleProblem": "Best Time to Buy and Sell Stocks",
     "oneLiner": "have lowest variable and for each iteration check if current element is lower or not and update and then calculate A.get(i)-lowest and then update ans for max",
     "difficulty": "M",
-    "friction": "Struggled"
+    "friction": "Smooth"
   },
   {
     "topic": "Array",
@@ -273,11 +281,11 @@
   },
   {
     "topic": "Array",
-    "cue": "Sliding Window | Two Pointer",
+    "cue": "Sliding Window | Two Pointer \u27e9T: Count subarrays with sum strictly less than B\" \u2192 O(N\u00b2) prefix sum with early break on >= B \u27e9M: For each start j, reset sum = 0 Expand right, accumulate sum sum >= B \u2192 ",
     "exampleProblem": "Counting Subarrays Easy",
     "oneLiner": "Use a sliding window to maintain a valid sum < B; for every valid window ending at e, there are exactly e - s + 1 valid subarrays ending at that position, which you add to a running total.",
     "difficulty": "M",
-    "friction": "Struggled"
+    "friction": "Smooth"
   },
   {
     "topic": "Array",
@@ -397,7 +405,7 @@
     "exampleProblem": "Fast Power",
     "oneLiner": "Do recursion",
     "difficulty": "H",
-    "friction": "Smooth"
+    "friction": "Struggled"
   },
   {
     "topic": "Math",
@@ -673,6 +681,14 @@
   },
   {
     "topic": "Tree",
+    "cue": "DFS | Height Check \u27e9T: Check if binary tree is height-balanced\" \u2192 recursive height check returning -1 as sentinel for unbalanced, actual height otherwise \u27e9M: Base case: null \u2192 return 0 Recurse left \u2192 ",
+    "exampleProblem": "Balanced Binary Tree",
+    "oneLiner": "Solve it recusively and calucalte left subtree and rightsubtree heights and do max of them and add+1 other wise in all cases it will be -1 , base case is root==null return 0",
+    "difficulty": "H",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Tree",
     "cue": "DFS | Backtracking \u27e9T: \"Does a root-to-leaf path sum to B\" tempts you to carry a running total up or match the sum anywhere it hits B. The two easy misses: (1) matching at a non-leaf, and (2) mishandl",
     "exampleProblem": "Path Sum",
     "oneLiner": "handle the edge case and base and the calcualte left subtree path sum and right sub tree path sum , with remaining debt with each node recursion",
@@ -929,11 +945,11 @@
   },
   {
     "topic": "Greedy",
-    "cue": "Greedy | Sort by End Time",
+    "cue": "Greedy | Sort by End Time \u27e9T: Correct! Clean greedy solution.  T \u2014 Trigger:  \"Max number of non-overlapping jobs / activity selection\" \u2192 sort by finish time, greedily pick each job whose start \u2265 last ",
     "exampleProblem": "Finish Maximum Jobs",
     "oneLiner": "Bundle the start and end times into a custom object and sort the array in ascending order strictly by their end times. Iterate through the sorted list, incrementing your count and updating your lastEndTime tracker only when a job's start time is greater than or equal to the previous job's end time",
     "difficulty": "H",
-    "friction": "Smooth"
+    "friction": "Struggled"
   },
   {
     "topic": "Heap",
@@ -961,11 +977,11 @@
   },
   {
     "topic": "Array",
-    "cue": "In-Place Matrix | Flag Array",
+    "cue": "In-Place Matrix | Flag Array \u27e9T: Zero entire row and column wherever matrix has a 0\" \u2192 two-pass: mark affected rows/cols in boolean arrays, then zero in second pass \u27e9M: boolean[] zeroRow[rows], zeroCo",
     "exampleProblem": "Row to Column Zero",
     "oneLiner": "To set matrix zeroes in O(1) space, use Row 0 and Col 0 as flag arrays. First, check if Row 0 or Col 0 inherently contain zeros and store this in two booleans. Next, iterate from i=1, j=1; if A[i][j]==0, set A[i][0]=0 and A[0][j]=0. Iterate from 1,1 again and apply the zeros based on the flags. Finally, update Row 0 and Col 0 based on the saved booleans",
     "difficulty": "L",
-    "friction": "Struggled"
+    "friction": "Smooth"
   },
   {
     "topic": "Tree",

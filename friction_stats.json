@@ -1,11 +1,11 @@
 [
   {
-    "smooth": 150,
-    "struggled": 21,
+    "smooth": 152,
+    "struggled": 18,
     "hard": 27,
     "total": 163,
     "topic": "Array",
-    "mastery": 92
+    "mastery": 93
   },
   {
     "smooth": 114,
@@ -17,7 +17,7 @@
   },
   {
     "smooth": 27,
-    "struggled": 18,
+    "struggled": 19,
     "hard": 15,
     "total": 36,
     "topic": "Tree",
@@ -89,7 +89,7 @@
   },
   {
     "smooth": 8,
-    "struggled": 1,
+    "struggled": 2,
     "hard": 8,
     "total": 8,
     "topic": "Math",
@@ -129,7 +129,7 @@
   },
   {
     "smooth": 5,
-    "struggled": 0,
+    "struggled": 1,
     "hard": 5,
     "total": 5,
     "topic": "Greedy",
