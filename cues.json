@@ -233,7 +233,7 @@
   },
   {
     "topic": "Array",
-    "cue": "Sorting | Observation",
+    "cue": "Sorting | Observation \u27e9T: Given an array, check if it can form an Arithmetic Progression\" \u2192 sort, then verify all consecutive differences are equal. \u27e9M: Sort the array Compute diff = A[1] - A[0] Loop ",
     "exampleProblem": "Arithmetic Progression?",
     "oneLiner": "find d difference and check for every consecutive parit till n-2 , if d is sanswer , and then count ==n-2 , we have it",
     "difficulty": "L",

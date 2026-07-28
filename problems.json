@@ -4499,7 +4499,7 @@
     "attempts": "2",
     "phase": "S2",
     "reviewDate": "2026-08-02",
-    "lastSolved": "2026-07-24",
+    "lastSolved": "2026-07-25",
     "url": "",
     "ef": "3.1",
     "interval": "9"
@@ -5089,15 +5089,15 @@
     "source": "Scaler",
     "difficulty": "L",
     "friction": "Smooth",
-    "notes": "Sorting | Observation",
+    "notes": "Sorting | Observation \u27e9T: Given an array, check if it can form an Arithmetic Progression\" \u2192 sort, then verify all consecutive differences are equal. \u27e9M: Sort the array Compute diff = A[1] - A[0] Loop i = 1 to n-2, check A[i+1] - A[i] == diff Any mismatch \u2192 return 0, else return 1",
     "oneLiner": "find d difference and check for every consecutive parit till n-2 , if d is sanswer , and then count ==n-2 , we have it",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "2026-07-20",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "Completed",
+    "reviewDate": "2027-01-24",
+    "lastSolved": "2026-07-28",
     "url": "",
     "ef": "3.0",
-    "interval": "3"
+    "interval": "180"
   },
   {
     "date": "04/02/2026",
