@@ -249,7 +249,7 @@
   },
   {
     "topic": "Array",
-    "cue": "Sorting | Binary Search",
+    "cue": "Sorting | Binary Search \u27e9T: \"Does an integer p exist where the count of elements strictly greater than p equals p itself?\" \u27e9M: Sort ascending. For each element at index i, the number of elements to it",
     "exampleProblem": "Noble Integer",
     "oneLiner": "Sort and then for each i check if A.get(I) and n-i-1 equal or not",
     "difficulty": "L",
@@ -257,7 +257,7 @@
   },
   {
     "topic": "Array",
-    "cue": "Brute Force | Simulation",
+    "cue": "Brute Force | Simulation \u27e9T: \"Cost of each removal = sum of remaining elements; minimize total cost to remove all.\" \u27e9M: Remove the largest element first. Sort descending, then sum contributions: each ",
     "exampleProblem": "Elements Removal",
     "oneLiner": "Run two loops and then inner loop calucalte suum and outer loop remove",
     "difficulty": "L",
