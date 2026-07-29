@@ -753,6 +753,14 @@
   },
   {
     "topic": "Maths",
+    "cue": "Sieve of Eratosthenes \u27e9T: \"Count divisors of each element (optimized) \u2014 precompute for all values up to max.\" \u27e9M: Build a lookup array of size maxel+1. Sieve outward: for each divisor d from 1 to maxe",
+    "exampleProblem": "Sieve of Eratosthenes - Divisors",
+    "oneLiner": "Create lookup array for factor count and then find out required count array",
+    "difficulty": "M",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Maths",
     "cue": "Two Pointer | Sorting",
     "exampleProblem": "Pairs with given sum II",
     "oneLiner": "We need to handle duplicates here",
@@ -952,6 +960,22 @@
     "friction": "Struggled"
   },
   {
+    "topic": "Greedy",
+    "cue": "Greedy | Median \u27e9T: \"Move all scattered 'x' seats together with minimum adjacent hops.\" \u27e9M: Collect indices of all 'x'. To remove the gaps between them, \"normalize\" each occupied index by subtracting ",
+    "exampleProblem": "Seats",
+    "oneLiner": "Store the original indices of all occupied seats in a list and select the median person as the immovable anchor. To pack everyone tightly without simulating physical collisions, calculate the absolute difference between each person's current seat and their mathematical target: anchorSeat + (i - median)",
+    "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Greedy",
+    "cue": "Greedy | Two Pass \u27e9T: \"Min candies \u2014 each child \u22651, higher rating than a neighbor gets strictly more than that neighbor.\" \u27e9M: Two passes with two arrays, both filled with 1s.  Left\u2192right: if A[i] > A[",
+    "exampleProblem": "Distribute Candy",
+    "oneLiner": "To distribute candies based on neighbor ratings, use two passes: initialize arrays with 1, scan left-to-right updating L[i] = L[i-1] + 1 if higher, then right-to-left updating R[i] = R[i+1] + 1. The candies for each child is max(L[i], R[i])",
+    "difficulty": "H",
+    "friction": "Struggled"
+  },
+  {
     "topic": "Heap",
     "cue": "Min Heap | K-way Merge \u27e9T: Merge K sorted lists into one sorted list \u2192 min-heap holding the current head of each list \u27e9M: Push the head node of all K lists into a min-heap ordered by value. Repeatedly",
     "exampleProblem": "Merge K Sorted Lists",
@@ -961,11 +985,11 @@
   },
   {
     "topic": "Heap",
-    "cue": "Min Heap | K-size Heap",
+    "cue": "Min Heap | K-size Heap \u27e9T: \"Ath largest in every prefix [1:i] \u2014 streaming, running answer per index.\" \u27e9M: Maintain a min-heap capped at size A. For each element: offer it; if heap size > A, poll (drop",
     "exampleProblem": "Ath largest element",
     "oneLiner": "To find the A-th largest element, first pad the answer array with A-1 negative ones and build an initial Min Heap using the first A elements. Then, iterate the rest of the array: if the incoming element is greater than heap.peek(), poll() the root and add the new element, appending heap.peek() to your answer array at every step",
     "difficulty": "H",
-    "friction": "Smooth"
+    "friction": "Struggled"
   },
   {
     "topic": "Array",
@@ -1493,13 +1517,21 @@
     "exampleProblem": "Longest Repeating Character Replacement",
     "oneLiner": "",
     "difficulty": "M",
-    "friction": "Struggled"
+    "friction": "Smooth"
   },
   {
     "topic": "Array",
     "cue": "Sliding Window \u27e9T: Longest substring without repeating characters\" \u2192 sliding window; shrink from left while the just-added char has count > 1. \u27e9M: freq[128] (ASCII), left = 0, maxlen = 0 Expand right:",
     "exampleProblem": "Longest Substring Without Repeating Characters",
     "oneLiner": "The shrink trigger is freq[c] > 1 \u2014 the newly added char is the only possible new duplicate, so shrinking until its count drops back to 1 guarantees an all-unique window. freq[128] covers full ASCII; use freq[256] for extended.",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Sliding Window \u27e9T: Longest subarray of all 1s allowing at most k flips of 0\u21921 (max consecutive ones with k flips).\" \u27e9M: Sliding window with an explicit zeros counter. Expand right every step; if the n",
+    "exampleProblem": "Max Consecutive Ones III",
+    "oneLiner": "Don't try to slide the window by exactly one position when budget runs out \u2014 that silently breaks the invariant. Use a while (not if) to shrink, because after adding one bad element you might need to drop several positions to get back under k. And track zeros as a real counter rather than decrementing/resetting the budget k in place \u2014 mutating k and \"crediting it back\" is where the accounting drifts and oversized windows leak through.",
     "difficulty": "M",
     "friction": "Smooth"
   }

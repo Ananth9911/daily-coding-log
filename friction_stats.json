@@ -1,11 +1,11 @@
 [
   {
-    "smooth": 154,
-    "struggled": 18,
+    "smooth": 157,
+    "struggled": 17,
     "hard": 27,
-    "total": 164,
+    "total": 165,
     "topic": "Array",
-    "mastery": 94
+    "mastery": 95
   },
   {
     "smooth": 114,
@@ -56,12 +56,12 @@
     "mastery": 100
   },
   {
-    "smooth": 11,
+    "smooth": 12,
     "struggled": 2,
     "hard": 6,
     "total": 14,
     "topic": "Maths",
-    "mastery": 79
+    "mastery": 86
   },
   {
     "smooth": 13,
@@ -105,7 +105,7 @@
   },
   {
     "smooth": 8,
-    "struggled": 1,
+    "struggled": 2,
     "hard": 4,
     "total": 8,
     "topic": "Heap",
@@ -129,7 +129,7 @@
   },
   {
     "smooth": 5,
-    "struggled": 1,
+    "struggled": 2,
     "hard": 5,
     "total": 5,
     "topic": "Greedy",
