@@ -5021,15 +5021,15 @@
     "source": "Scaler",
     "difficulty": "M",
     "friction": "Smooth",
-    "notes": "Sliding Window | Fixed Window",
+    "notes": "Sliding Window | Fixed Window \u27e9T: Fixed-window sum, find max/min over all windows of size B \u27e9M: Compute first window fully \u2192 seed maxsum = sum \u2192 slide (add incoming, subtract outgoing) and max each step. Seeding with the first window (not MIN_VALUE) is what prevents missing window 0.",
     "oneLiner": "Carryforward the sum with appropriate additon and subtraction",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "2026-07-20",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S2",
+    "reviewDate": "2026-08-07",
+    "lastSolved": "2026-07-30",
     "url": "",
-    "ef": "2.5",
-    "interval": "3"
+    "ef": "2.6",
+    "interval": "8"
   },
   {
     "date": "07/02/2026",

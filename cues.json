@@ -265,6 +265,14 @@
   },
   {
     "topic": "Array",
+    "cue": "Sliding Window | Fixed Window \u27e9T: Fixed-window sum, find max/min over all windows of size B \u27e9M: Compute first window fully \u2192 seed maxsum = sum \u2192 slide (add incoming, subtract outgoing) and max each st",
+    "exampleProblem": "Maximum subarray sum of fixed length",
+    "oneLiner": "Carryforward the sum with appropriate additon and subtraction",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
     "cue": "Carry Forward (Right to Left)",
     "exampleProblem": "Leaders in an array",
     "oneLiner": "Loop from right to left , add last eelemnt to ans and then compare each element to it and if greater then update the value , so that in next iteration we can get new comparision",
