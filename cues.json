@@ -265,6 +265,14 @@
   },
   {
     "topic": "Array",
+    "cue": "Brute Force \u27e9T: Max subarray sum with sum \u2264 B (a cap/budget constraint), all elements non-negative \u2192 variable-size sliding window. \u27e9M: Expand right adding to sum; while sum > B shrink from left; after",
+    "exampleProblem": "Maximum Subarray",
+    "oneLiner": "Use a nested loop where the outer loop sets the subarray start index, and the inner loop expands the end index, maintaining a running sum to find the maximum sum that remains less than or equal to B.",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
     "cue": "Sliding Window | Fixed Window \u27e9T: Fixed-window sum, find max/min over all windows of size B \u27e9M: Compute first window fully \u2192 seed maxsum = sum \u2192 slide (add incoming, subtract outgoing) and max each st",
     "exampleProblem": "Maximum subarray sum of fixed length",
     "oneLiner": "Carryforward the sum with appropriate additon and subtraction",
@@ -649,7 +657,7 @@
   },
   {
     "topic": "Queue",
-    "cue": "Monotonic Deque | Sliding Window Max",
+    "cue": "Monotonic Deque | Sliding Window Max \u27e9T: Max (or min) of every fixed-size window of length B \u2192 \"sliding window maximum\". \u27e9M: Monotonic deque of indices, kept decreasing. Per element: pop back while A[",
     "exampleProblem": "Parking Ice Cream Truck",
     "oneLiner": "Using Deque , we need tohave and two condition a 0 b-1 and b to n-1 then basic idea if maximum element should be front, if max element occures remove all smaller elments than it and then push and for window always check i-B",
     "difficulty": "H",
@@ -729,11 +737,11 @@
   },
   {
     "topic": "Tree",
-    "cue": "Inorder Traversal | Two Pointer",
+    "cue": "Inorder Traversal | Two Pointer \u27e9T: Two-sum / pair-with-target-sum in a BST or binary tree. \u27e9M: HashSet of seen values; for each node check if target - val was already seen, else add val. Traversal or",
     "exampleProblem": "Two Sum BST",
     "oneLiner": "Two approaches , 1) Get inorder travesal and then have hashing , you know the apprach\n2) Get inorder travesal , then as it is sorted do two pointer apporach from first and end",
     "difficulty": "M",
-    "friction": "Struggled"
+    "friction": "Smooth"
   },
   {
     "topic": "Maths",
