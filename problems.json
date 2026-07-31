@@ -5006,13 +5006,13 @@
     "friction": "Smooth",
     "notes": "Matrix Traversal",
     "oneLiner": "It is simple row wise sum",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "2026-07-20",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "Completed",
+    "reviewDate": "2027-01-27",
+    "lastSolved": "2026-07-31",
     "url": "",
     "ef": "3.0",
-    "interval": "3"
+    "interval": "180"
   },
   {
     "date": "08/02/2026",
@@ -7114,13 +7114,13 @@
     "friction": "Smooth",
     "notes": "Nested Loops | Pattern Printing",
     "oneLiner": "Figure out loop and ranges",
-    "attempts": "2",
-    "phase": "S2",
-    "reviewDate": "2026-06-10",
-    "lastSolved": "2026-06-02",
+    "attempts": "3",
+    "phase": "Completed",
+    "reviewDate": "2027-01-27",
+    "lastSolved": "2026-07-31",
     "url": "",
-    "ef": "2.6",
-    "interval": "8"
+    "ef": "3.0",
+    "interval": "180"
   },
   {
     "date": "04/01/2026",
