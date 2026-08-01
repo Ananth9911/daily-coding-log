@@ -4836,13 +4836,13 @@
     "friction": "Smooth",
     "notes": "Sliding Window | Prefix Sum",
     "oneLiner": "The algo here is to have currsum and then do for each iteration remove b-1-i elemtn and add N-I-i elemnt and then compare and get max",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "2026-07-20",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "Completed",
+    "reviewDate": "2027-01-29",
+    "lastSolved": "2026-08-01",
     "url": "",
     "ef": "3.0",
-    "interval": "3"
+    "interval": "180"
   },
   {
     "date": "18/02/2026",
