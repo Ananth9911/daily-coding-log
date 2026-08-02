@@ -297,6 +297,14 @@
   },
   {
     "topic": "Array",
+    "cue": "Sliding Window \u27e9T: \"minimum swaps to bring all elements [satisfying condition] together\" / swaps can be between any two positions \u2192 fixed-size sliding window. The tell: the final block size is knowabl",
+    "exampleProblem": "Minimum Swaps",
+    "oneLiner": "Count total valid elements to determine window size K, count \"bad\" elements (>B) in the first window, then slide the window across the array tracking the minimum number of bad elements seen.",
+    "difficulty": "M",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Array",
     "cue": "Sliding Window | Two Pointer \u27e9T: Count subarrays with sum strictly less than B\" \u2192 O(N\u00b2) prefix sum with early break on >= B \u27e9M: For each start j, reset sum = 0 Expand right, accumulate sum sum >= B \u2192 ",
     "exampleProblem": "Counting Subarrays Easy",
     "oneLiner": "Use a sliding window to maintain a valid sum < B; for every valid window ending at e, there are exactly e - s + 1 valid subarrays ending at that position, which you add to a running total.",
@@ -321,7 +329,7 @@
   },
   {
     "topic": "String",
-    "cue": "String Parsing | Two Pointer",
+    "cue": "String Parsing | Two Pointer \u27e9T: \"reverse word by word\" / \"collapse multiple spaces\" / \"no leading or trailing spaces\" \u2192 split-on-whitespace-regex, walk backwards, join \u27e9M: A.trim().split(\"\\\\s+\") hand",
     "exampleProblem": "Reverse the String",
     "oneLiner": "Main crux  A.trim().split(\"\\\\s+\") , post this i will reverse each word in string and then just read",
     "difficulty": "L",
@@ -521,7 +529,7 @@
   },
   {
     "topic": "Maths",
-    "cue": "Binary Search on Answer",
+    "cue": "Binary Search on Answer \u27e9T: \"integer square root\" / \"floor of sqrt without built-in\" / find largest x with x*x <= A \u2192 binary search on the answer. \u27e9M: lo=1, hi=A/2 (or hi=A). mid = lo+(hi-lo)/2. If mi",
     "exampleProblem": "Square Root of Integer",
     "oneLiner": "Sorting",
     "difficulty": "M",
@@ -681,7 +689,7 @@
   },
   {
     "topic": "Tree",
-    "cue": "Divide and Conquer | Recursion",
+    "cue": "Divide and Conquer | Recursion \u27e9T: \"sorted array \u2192 height-balanced BST\" / \"depth of subtrees never differ by more than 1\" \u2192 recursive build-and-return, always pick the middle of the current range as t",
     "exampleProblem": "Sorted Array To Balanced BST",
     "oneLiner": "\"The exact middle is always the root; divide the rest in half.",
     "difficulty": "H",
@@ -721,10 +729,26 @@
   },
   {
     "topic": "Tree",
+    "cue": "Divide and Conquer | Recursion",
+    "exampleProblem": "Binary Tree From Inorder And Postorder",
+    "oneLiner": "create root node and then search for that root node in inorder and the find position , and then we need to figgure exxact left tree and right tree in both postorder and inorder array",
+    "difficulty": "H",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Tree",
     "cue": "Divide and Conquer | Recursion \u27e9T: Reconstruct tree from preorder + inorder; wrong instinct is splitting preorder by position (it has no left/right marker) or forgetting the inorder search must be inc",
     "exampleProblem": "Binary Tree From Inorder And Preorder",
     "oneLiner": "create root node and then search for that root node in inorder and the find position , and then we need to figgure exxact left tree and right tree in both preorder and inorder array",
     "difficulty": "H",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Tree",
+    "cue": "BFS | Level Order \u27e9T: \"deserialize / reconstruct binary tree from level-order array\" / null denoted by -1 \u2192 BFS with a queue, index walking the array \u27e9M: Make root from A[0], enqueue it. Keep a pointe",
+    "exampleProblem": "Deserialize Binary Tree",
+    "oneLiner": "Just use same algo of level order trvasesal , with slight modification",
+    "difficulty": "M",
     "friction": "Struggled"
   },
   {
@@ -873,11 +897,11 @@
   },
   {
     "topic": "LinkedList",
-    "cue": "Slow Fast Pointer | Reverse Half",
+    "cue": "Slow Fast Pointer | Reverse Half \u27e9T: \"is this linked list a palindrome\" / O(1) space required \u2192 slow/fast to middle, reverse second half, compare the two halves. \u27e9M: Find middle with slow/fast. Split,",
     "exampleProblem": "Palindrome List",
     "oneLiner": "Find middle , reverse and then compare each",
     "difficulty": "M",
-    "friction": "Smooth"
+    "friction": "Struggled"
   },
   {
     "topic": "LinkedList",
