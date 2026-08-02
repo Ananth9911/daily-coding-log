@@ -1,6 +1,6 @@
 [
   {
-    "smooth": 161,
+    "smooth": 162,
     "struggled": 17,
     "hard": 27,
     "total": 165,
@@ -40,12 +40,12 @@
     "mastery": 100
   },
   {
-    "smooth": 15,
+    "smooth": 16,
     "struggled": 3,
     "hard": 5,
     "total": 17,
     "topic": "Hashing",
-    "mastery": 88
+    "mastery": 94
   },
   {
     "smooth": 16,

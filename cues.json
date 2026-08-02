@@ -281,7 +281,7 @@
   },
   {
     "topic": "Array",
-    "cue": "Carry Forward (Right to Left)",
+    "cue": "Carry Forward (Right to Left) \u27e9T: \"strictly greater than all elements to the right\" / \"rightmost is always X\" \u2192 suffix-max pattern. \u27e9M: Walk right\u2192left, keep a running maxSoFar. Element is a leader if",
     "exampleProblem": "Leaders in an array",
     "oneLiner": "Loop from right to left , add last eelemnt to ans and then compare each element to it and if greater then update the value , so that in next iteration we can get new comparision",
     "difficulty": "L",
@@ -473,7 +473,7 @@
   },
   {
     "topic": "Hashing",
-    "cue": "Sliding Window | HashSet",
+    "cue": "Sliding Window | HashSet \u27e9T: \"longest substring with no repeating characters\" / \"unique-character window\" / O(N) required \u2192 sliding window with a HashSet (or last-seen index map). \u27e9M: Expand right eac",
     "exampleProblem": "Longest Substring Without Repeat",
     "oneLiner": "The logic is to maintian i then loop thorugh string with j , if we find duplcaites , then remove it from i to till duplicate is present . Post that  i will that element in hashset, at last i will calulate temp = j-i+1,ans=max(ans,temp)",
     "difficulty": "M",
@@ -1092,6 +1092,14 @@
     "cue": "Brute Force | HashSet",
     "exampleProblem": "Colorful Number",
     "oneLiner": "Convert the integer to a string and use an $O(N^2)$ nested loop to generate all contiguous subarrays, maintaining a running product inside the inner loop. Check each running product against a HashSet, returning 0 immediately if a duplicate is found, or 1 if all loops finish successfully.",
+    "difficulty": "M",
+    "friction": "Struggled"
+  },
+  {
+    "topic": "Hashing",
+    "cue": "Sliding Window | HashSet",
+    "exampleProblem": "Count Subarrays- Unique",
+    "oneLiner": "Use a Two-Pointer Sliding Window (L and R) with a HashSet: expand R to add elements, but if a duplicate is found, shrink L until the duplicate is removed. At every valid step, add (R - L + 1) to your total count to mathematically capture all new unique subarrays ending at R",
     "difficulty": "M",
     "friction": "Struggled"
   },
