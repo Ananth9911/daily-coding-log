@@ -33,7 +33,7 @@
   },
   {
     "smooth": 22,
-    "struggled": 14,
+    "struggled": 13,
     "hard": 21,
     "total": 22,
     "topic": "DP",
@@ -105,7 +105,7 @@
   },
   {
     "smooth": 8,
-    "struggled": 2,
+    "struggled": 3,
     "hard": 4,
     "total": 8,
     "topic": "Heap",
