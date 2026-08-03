@@ -457,7 +457,7 @@
   },
   {
     "topic": "Hashing",
-    "cue": "HashSet | Two Sum Pattern",
+    "cue": "HashSet | Two Sum Pattern \u27e9T: Unsorted array + \"does any pair sum to target\" / \"find two elements adding to X\". \u27e9M: Single pass with a HashSet. For each element x, check whether target - x is already ",
     "exampleProblem": "Check Pair Sum",
     "oneLiner": "Using hashset , we need to check sum-A.get(i) in hashset",
     "difficulty": "M",
@@ -526,6 +526,14 @@
     "oneLiner": "Sorting",
     "difficulty": "M",
     "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Binary Search \u27e9T: Sorted array + asked for first index, last index, range, or count of a target value. \u27e9M: wo independent binary searches over the same array \u2014 one biased left, one biased right. Never",
+    "exampleProblem": "Search for a Range",
+    "oneLiner": "Sorting",
+    "difficulty": "M",
+    "friction": "Struggled"
   },
   {
     "topic": "Maths",
@@ -1137,6 +1145,14 @@
   },
   {
     "topic": "DP",
+    "cue": "Greedy | Ratio Sort \u27e9T: Knapsack-shaped problem (items with value + weight, capacity limit) where you're allowed to take a fraction of an item. Signal phrases: \"you may take part of an item,\" \"fractio",
+    "exampleProblem": "Fractional Knapsack",
+    "oneLiner": "Sort items descending by their value-to-weight ratio ((double) value / weight), greedily taking full items while capacity allows. If an item exceeds the remaining capacity, add the exact fractional value needed ((double) remaining_capacity * value / weight) to perfectly fill the bag, break the loop, and handle final floating-point precision if returning an integer",
+    "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "DP",
     "cue": "DP | Unbounded Knapsack",
     "exampleProblem": "Unbounded Knapsack",
     "oneLiner": "The implementation is nearly identical to 0/1 Knapsack, but when you pick an item, you stay on the current row i instead of moving back to i-1 so the same item can be selected again. Calculate dp[i][j] as the maximum of either skipping the item completely (dp[i-1][j]) or taking it if capacity allows (value[i] + dp[i][j - weight[i]])",
@@ -1421,7 +1437,7 @@
     "exampleProblem": "Valid Palindrome",
     "oneLiner": "Use Two Pointers (i = 0, j = s.length() - 1).  Skip garbage: Use a while loop with !Character.isLetterOrDigit(char) to advance i or decrement j until they hit valid characters.  Compare case-insensitive: Character.toLowerCase(left) != Character.toLowerCase(right).  The Trap to Avoid: Never use s.replaceAll() or s.toLowerCase() on the whole string, as it wastes O(N) space.",
     "difficulty": "L",
-    "friction": "Smooth"
+    "friction": "Struggled"
   },
   {
     "topic": "Array",
