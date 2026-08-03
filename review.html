@@ -6,14 +6,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <style>
-/* --orange was used in 8 rules but never defined — cards/labels were rendering
-   with a transparent accent. Defined here as your standard accent. */
-:root{--bg:#030303;--bg2:#0a0a0a;--bg3:#111;--card:#0d0d0d;--border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.15);--text:#f4f4f5;--muted:#71717a;--dim:#3f3f46;--green:#39d353;--blue:#3b82f6;--yellow:#eab308;--red:#ef4444;--purple:#a855f7;--orange:#f0883e;--fd:'Space Grotesk',sans-serif;--fm:'IBM Plex Mono',monospace}
+:root{--bg:#030303;--bg2:#0a0a0a;--bg3:#111;--card:#0d0d0d;--border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.15);--text:#f4f4f5;--muted:#71717a;--dim:#3f3f46;--green:#39d353;--blue:#3b82f6;--yellow:#eab308;--red:#ef4444;--purple:#a855f7;--orange:#f0883e;--cyan:#22d3ee;--fd:'Space Grotesk',sans-serif;--fm:'IBM Plex Mono',monospace}
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--text);font-family:var(--fd);min-height:100vh;padding:40px 20px;-webkit-font-smoothing:antialiased}
 body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse at 50% 0%,black 30%,transparent 80%);pointer-events:none;z-index:0}
 .wrap{max-width:820px;margin:0 auto;position:relative;z-index:1}
-/* HEADER */
 .hdr{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1px solid var(--border);padding-bottom:20px;margin-bottom:28px;flex-wrap:wrap;gap:14px}
 .hdr-left{display:flex;align-items:center;gap:12px}
 .sys-dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:pulse 2s ease infinite;flex-shrink:0}
@@ -21,7 +18,6 @@ h1{font-size:1.7rem;font-weight:700;letter-spacing:-.5px}
 .sub{font-family:var(--fm);font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin-top:3px}
 .hdr-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .date-chip{font-family:var(--fm);font-size:.72rem;color:var(--muted);background:var(--bg2);border:1px solid var(--border);padding:6px 14px;border-radius:20px}
-/* QUEUE INFO BAR */
 .queue-info{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 18px;margin-bottom:16px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .qi-label{font-family:var(--fm);font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;flex-shrink:0}
 .qi-blocks{display:flex;gap:8px;flex-wrap:wrap}
@@ -30,7 +26,7 @@ h1{font-size:1.7rem;font-weight:700;letter-spacing:-.5px}
 .qi-fresh{background:rgba(57,211,83,.1);color:var(--green);border:1px solid rgba(57,211,83,.2)}
 .qi-total{background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--border)}
 .qi-done{background:rgba(168,85,247,.1);color:#c084fc;border:1px solid rgba(168,85,247,.2)}
-/* PROPORTION BAR */
+.qi-relearn{background:rgba(34,211,238,.1);color:var(--cyan);border:1px solid rgba(34,211,238,.2)}
 .proportion-bar{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 18px;margin-bottom:16px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .prop-label{font-family:var(--fm);font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;flex-shrink:0}
 .prop-segments{display:flex;gap:3px;flex:1;min-width:160px;height:6px;border-radius:3px;overflow:hidden}
@@ -42,26 +38,26 @@ h1{font-size:1.7rem;font-weight:700;letter-spacing:-.5px}
 .pc-new{background:rgba(168,85,247,.1);color:var(--purple);border:1px solid rgba(168,85,247,.2)}
 .pc-total{background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--border)}
 .pc-locked{background:rgba(249,115,22,.1);color:var(--orange);border:1px solid rgba(249,115,22,.2)}
-/* FILTER BAR */
+.pc-relearn{background:rgba(34,211,238,.1);color:var(--cyan);border:1px solid rgba(34,211,238,.2)}
 .filter-bar{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;align-items:center}
 .filter-label{font-family:var(--fm);font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px}
 .filter-btn{font-family:var(--fm);font-size:.65rem;padding:5px 11px;border-radius:6px;border:1px solid var(--border);background:var(--bg2);color:var(--muted);cursor:pointer;transition:.18s;white-space:nowrap}
 .filter-btn:hover{color:var(--text);border-color:var(--border2)}
 .filter-btn.active{border-color:var(--green);color:var(--green);background:rgba(57,211,83,.07)}
 .filter-sep{width:1px;height:18px;background:var(--border);flex-shrink:0}
-/* BLOCK DIVIDER */
 .block-divider{display:flex;align-items:center;gap:12px;margin:20px 0 12px}
 .block-label{font-family:var(--fm);font-size:.6rem;text-transform:uppercase;letter-spacing:2px;padding:3px 10px;border-radius:4px;white-space:nowrap}
 .bl-retention{color:var(--blue);background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2)}
 .bl-fresh{color:var(--green);background:rgba(57,211,83,.1);border:1px solid rgba(57,211,83,.2)}
+.bl-relearn{color:var(--cyan);background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.2)}
 .block-line{flex:1;height:1px;background:var(--border)}
-/* CARDS */
 .problem-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;margin-bottom:14px;transition:border-color .2s;position:relative;overflow:hidden}
 .problem-card:hover{border-color:var(--border2)}
 .problem-card.card-struggled{border-left:3px solid var(--red)}
 .problem-card.card-smooth{border-left:3px solid var(--green)}
 .problem-card.card-new{border-left:3px solid var(--purple)}
 .problem-card.card-fresh{border-left:3px solid var(--orange);background:rgba(249,115,22,.02)}
+.problem-card.card-relearn{border-left:3px solid var(--cyan);background:rgba(34,211,238,.03)}
 .card-header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px;flex-wrap:wrap}
 .card-title{font-size:1.1rem;font-weight:600;color:var(--text);line-height:1.3;flex:1}
 .pattern-tag{font-family:var(--fm);font-size:.65rem;padding:4px 10px;border-radius:5px;background:rgba(59,130,246,.1);color:var(--blue);border:1px solid rgba(59,130,246,.2);white-space:nowrap;flex-shrink:0}
@@ -72,11 +68,11 @@ h1{font-size:1.7rem;font-weight:700;letter-spacing:-.5px}
 .b-phase-smooth{background:rgba(57,211,83,.08);color:var(--green);border:1px solid rgba(57,211,83,.18)}
 .b-phase-new{background:rgba(168,85,247,.1);color:var(--purple);border:1px solid rgba(168,85,247,.2)}
 .b-phase-mastered{background:rgba(168,85,247,.15);color:#c084fc;border:1px solid rgba(168,85,247,.3)}
+.b-phase-relearn{background:rgba(34,211,238,.12);color:var(--cyan);border:1px solid rgba(34,211,238,.25)}
 .b-attempt{background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--border)}
 .b-date{background:rgba(59,130,246,.08);color:#60a5fa;border:1px solid rgba(59,130,246,.15)}
 .b-ef{background:rgba(234,179,8,.08);color:var(--yellow);border:1px solid rgba(234,179,8,.15)}
-.b-fresh{background:rgba(249,115,22,.1);color:var(--orange);border:1px solid rgba(249,115,22,.2)}
-/* ACTION BUTTONS */
+.b-weak{background:rgba(239,68,68,.12);color:var(--red);border:1px solid rgba(239,68,68,.25)}
 .actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 button{font-family:var(--fd);font-weight:600;font-size:.82rem;padding:9px 16px;border-radius:8px;border:none;cursor:pointer;transition:.18s}
 .btn-hint{background:transparent;color:var(--muted);border:1px solid var(--border)}
@@ -89,7 +85,10 @@ button{font-family:var(--fd);font-weight:600;font-size:.82rem;padding:9px 16px;b
 .btn-struggled:hover{background:rgba(239,68,68,.08);border-color:var(--red)}
 .btn-smooth{background:var(--green);color:#000;border:1px solid var(--green);font-size:.78rem}
 .btn-smooth:hover{opacity:.85;box-shadow:0 0 16px rgba(57,211,83,.3)}
+.btn-relearned{background:var(--cyan);color:#000;border:1px solid var(--cyan);font-size:.78rem;margin-left:auto}
+.btn-relearned:hover{opacity:.85;box-shadow:0 0 16px rgba(34,211,238,.3)}
 .btn-refresh{background:transparent;color:var(--muted);border:1px solid var(--border);font-size:.72rem}
+.btn-refresh:hover{color:var(--text);border-color:var(--border2)}
 .split-toggle{display:flex;gap:4px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:3px}
 .split-opt{font-family:var(--fm);font-size:.66rem;padding:5px 10px;border-radius:6px;border:none;background:transparent;color:var(--muted);cursor:pointer;transition:.15s;white-space:nowrap}
 .split-opt:hover{color:var(--text)}
@@ -102,11 +101,9 @@ button{font-family:var(--fd);font-weight:600;font-size:.82rem;padding:9px 16px;b
 .drain-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--green),#22c55e);transition:width .8s ease}
 .btn-complete{background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(168,85,247,.35);font-size:.78rem;padding:7px 13px}
 .btn-complete:hover{background:rgba(168,85,247,.2);box-shadow:0 0 14px rgba(168,85,247,.25)}
-.btn-refresh:hover{color:var(--text);border-color:var(--border2)}
 .btn-add{background:transparent;color:var(--green);border:1px solid rgba(57,211,83,.4)}
 .btn-add:hover{background:rgba(57,211,83,.08)}
 button:disabled{opacity:.4;pointer-events:none}
-/* TRIGGER / MOVE BLOCK */
 .tm-block{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
 .tm-cell{flex:1;min-width:200px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:10px;padding:11px 14px}
 .tm-cell.tm-trigger{border-left:3px solid var(--orange)}
@@ -118,7 +115,6 @@ button:disabled{opacity:.4;pointer-events:none}
 .tm-empty{color:var(--dim);font-style:italic;font-size:.76rem}
 .tm-reveal{cursor:pointer;filter:blur(5px);transition:filter .2s;user-select:none}
 .tm-reveal.shown{filter:none}
-/* TM EDIT */
 .btn-tm-edit{background:transparent;color:var(--orange);border:1px dashed rgba(249,115,22,.4);font-size:.72rem;padding:6px 12px}
 .btn-tm-edit:hover{background:rgba(249,115,22,.08);border-color:var(--orange)}
 .tm-editor{display:none;margin-top:12px;background:rgba(249,115,22,.03);border:1px solid rgba(249,115,22,.2);border-radius:10px;padding:14px}
@@ -132,16 +128,18 @@ button:disabled{opacity:.4;pointer-events:none}
 .btn-tm-save:hover{opacity:.85}
 .btn-tm-cancel{background:transparent;color:var(--muted);border:1px solid var(--border);font-size:.74rem;padding:7px 13px}
 .hint-box{display:none;background:rgba(59,130,246,.05);padding:14px 16px;border-radius:8px;margin-top:16px;font-size:.88rem;color:#cbd5e1;border-left:3px solid var(--blue);line-height:1.65;border:1px solid rgba(59,130,246,.15);border-left-width:3px}
-/* SM-2 PREVIEW */
 .sm2-preview{display:flex;gap:8px;margin-top:10px;padding:10px 12px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:8px;align-items:center;flex-wrap:wrap}
 .sm2-label{font-family:var(--fm);font-size:.58rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;flex-shrink:0}
 .sm2-smooth{font-family:var(--fm);font-size:.7rem;color:var(--green);background:rgba(57,211,83,.08);padding:3px 9px;border-radius:4px;border:1px solid rgba(57,211,83,.2)}
 .sm2-struggled{font-family:var(--fm);font-size:.7rem;color:var(--red);background:rgba(239,68,68,.06);padding:3px 9px;border-radius:4px;border:1px solid rgba(239,68,68,.15)}
-/* EMPTY */
+.relearn-note{background:rgba(34,211,238,.05);border:1px solid rgba(34,211,238,.2);border-radius:8px;padding:12px 14px;margin-top:12px;font-size:.8rem;color:#a5f3fc;line-height:1.6}
+.relearn-note strong{color:var(--cyan)}
+.sweep-bar{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 18px;margin-bottom:16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.sweep-select{background:var(--bg2);border:1px solid var(--border);color:var(--text);padding:6px 12px;border-radius:7px;font-family:var(--fm);font-size:.7rem;outline:none;cursor:pointer}
+.sweep-select:focus{border-color:var(--cyan)}
 .empty-state{text-align:center;padding:60px 20px;background:var(--card);border-radius:16px;border:1px dashed var(--border2)}
 .empty-state h2{color:var(--green);margin-bottom:8px}
 .empty-state p{color:var(--muted);font-family:var(--fm);font-size:.78rem}
-/* MODAL */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);backdrop-filter:blur(8px);z-index:100;align-items:center;justify-content:center}
 .modal{background:var(--card);border:1px solid var(--border2);width:90%;max-width:500px;border-radius:16px;padding:28px;box-shadow:0 20px 60px rgba(0,0,0,.8);max-height:90vh;overflow-y:auto}
 .modal h2{font-size:1.2rem;margin-bottom:20px}
@@ -168,14 +166,15 @@ button:disabled{opacity:.4;pointer-events:none}
       <div class="sys-dot"></div>
       <div>
         <h1>SRS Engine</h1>
-        <div class="sub" id="split-sub">SM-2 Adaptive · 5 Retention + 3 Fresh daily</div>
+        <div class="sub" id="split-sub">SM-2 Adaptive</div>
       </div>
     </div>
     <div class="hdr-right">
       <div class="split-toggle" id="split-toggle">
-        <button class="split-opt" data-split="7,1" onclick="setSplit(7,1,this)">Drain 7+1</button>
-        <button class="split-opt" data-split="6,2" onclick="setSplit(6,2,this)">Lean 6+2</button>
-        <button class="split-opt" data-split="5,3" onclick="setSplit(5,3,this)">Balanced 5+3</button>
+        <button class="split-opt" data-split="8,0" onclick="setSplit(8,0,this)">Drain 8</button>
+        <button class="split-opt" data-split="7,1" onclick="setSplit(7,1,this)">7+1</button>
+        <button class="split-opt" data-split="6,2" onclick="setSplit(6,2,this)">6+2</button>
+        <button class="split-opt" data-split="5,3" onclick="setSplit(5,3,this)">5+3</button>
       </div>
       <button class="btn-refresh" onclick="refreshQueue()">↺ New Queue</button>
       <button class="btn-add" onclick="openModal()">+ Log Problem</button>
@@ -183,12 +182,21 @@ button:disabled{opacity:.4;pointer-events:none}
       <a href="dashboard.html" class="nav-link">← Hub</a>
     </div>
   </div>
-  <!-- QUEUE INFO BAR -->
+
+  <!-- SWEEP MODE -->
+  <div class="sweep-bar" id="sweep-bar" style="display:none">
+    <span class="qi-label">🎯 Sweep Mode</span>
+    <select class="sweep-select" id="sweep-select" onchange="setSweep(this.value)">
+      <option value="">Off — normal mixed queue</option>
+    </select>
+    <span style="font-family:var(--fm);font-size:.62rem;color:var(--dim)">Pre-interview: drill one topic only</span>
+  </div>
+
   <div class="queue-info" id="queue-info" style="display:none">
     <div class="qi-label">Today's Mix</div>
     <div class="qi-blocks" id="qi-blocks"></div>
   </div>
-  <!-- DRAIN PROGRESS METER -->
+
   <div class="drain-meter" id="drain-meter" style="display:none">
     <div class="drain-top">
       <span class="drain-label">📉 First-Review Progress</span>
@@ -196,27 +204,29 @@ button:disabled{opacity:.4;pointer-events:none}
     </div>
     <div class="drain-bar"><div class="drain-fill" id="drain-fill" style="width:0%"></div></div>
   </div>
-  <!-- PROPORTION BAR -->
+
   <div class="proportion-bar" id="proportion-bar" style="display:none">
     <div class="prop-label">Due Pool</div>
     <div class="prop-segments" id="prop-segs"></div>
     <div class="prop-chips" id="prop-chips"></div>
   </div>
-  <!-- FILTER BAR -->
+
   <div class="filter-bar">
     <span class="filter-label">Filter</span>
     <button class="filter-btn active" onclick="setFilter('all',this)">All Due</button>
-    <button class="filter-btn" onclick="setFilter('Struggled',this)">⚠ Struggled</button>
+    <button class="filter-btn" onclick="setFilter('Struggled',this)">⚠ Weak</button>
     <button class="filter-btn" onclick="setFilter('Smooth',this)">✓ In Review</button>
     <button class="filter-btn" onclick="setFilter('New',this)">★ New/Fresh</button>
+    <button class="filter-btn" onclick="setFilter('Relearn',this)">🔬 Relearn Lab</button>
     <div class="filter-sep"></div>
     <span class="filter-label">Topic</span>
     <div id="topic-filters" style="display:flex;gap:6px;flex-wrap:wrap"></div>
   </div>
+
   <div id="loading" class="empty-state"><h2 style="color:var(--muted);animation:pulse 1.5s infinite">Syncing…</h2></div>
   <div id="queue"></div>
 </div>
-<!-- ADD PROBLEM MODAL -->
+
 <div class="modal-overlay" id="addModal">
   <div class="modal">
     <h2>Log New Problem</h2>
@@ -245,6 +255,7 @@ button:disabled{opacity:.4;pointer-events:none}
     </div>
   </div>
 </div>
+
 <script>
 const API_URL = "https://script.google.com/macros/s/AKfycby8l7EkNbMy19gfCuvUYefTArdaY7yMW2qSZLh2mI9-mbRikkjTJ0jYO9B8rgUO3Ic/exec";
 let activeTimers = {};
@@ -253,10 +264,9 @@ let currentFilter = 'all';
 let currentTopicFilter = 'all';
 let _snapshotData = [];
 let _allDue = [];
+let _relearnData = [];
 
 // ── 4 AM DAY BOUNDARY ────────────────────────────────────────
-// Your day runs 11:30 AM → 2:30 AM. Anything before 4 AM belongs
-// to the previous calendar day so SRS queue never resets mid-session.
 function logicalNow(){const n=new Date();n.setHours(n.getHours()-4);return n;}
 function todayLogical(){
   const n=logicalNow();
@@ -268,16 +278,7 @@ function ymdPlus(days){
 }
 document.getElementById('date-display').innerText = logicalNow().toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
 
-// ══════════════════════════════════════════════════════════════
-// GRADED-TODAY LEDGER
-//
-// FIX for "problems repeat within 1-2 days".
-// The old code only removed a graded problem from srs_queue_names.
-// Pressing ↺ New Queue or changing the split toggle wiped that
-// snapshot and rebuilt from the STALE in-memory allData, so anything
-// you had just graded came straight back. This ledger survives those
-// wipes, so a problem graded today can never reappear today.
-// ══════════════════════════════════════════════════════════════
+// ── GRADED-TODAY LEDGER ──────────────────────────────────────
 function getGraded(){
   let g;
   try{ g=JSON.parse(localStorage.getItem('srs_graded')||'{}'); }catch(e){ g={}; }
@@ -292,37 +293,31 @@ function markGraded(name){
 }
 function isGradedToday(name){ return getGraded().names.includes(name); }
 
-// ══════════════════════════════════════════════════════════════
-// DUE LOGIC — single source of truth
-//
-// FIX for "Completed problems reappear".
-// Old isDue() never checked phase==='Completed'. Combined with
-// duplicate rows in the sheet (8 of them, e.g. "Number of 1 Bits"
-// existed as both Completed AND New), a Completed problem could be
-// pulled in by its ghost twin. Backend now dedupes; this is the
-// second line of defence.
-// ══════════════════════════════════════════════════════════════
+// ── STATE PREDICATES ─────────────────────────────────────────
 function isCompleted(p){
   return p.completed===true || String(p.phase||'').trim()==='Completed';
 }
+function isRelearn(p){
+  return p.relearn===true || String(p.phase||'').trim()==='Relearn';
+}
 function isNewProblem(p){
-  if(isCompleted(p)) return false;
+  if(isCompleted(p)||isRelearn(p)) return false;
   const ph=String(p.phase||'').trim();
   return ph==='New'||ph==='';
 }
+// A problem is "weak" if the LAST grade was a struggle. Reads the
+// friction column, not phase — phase never holds 'Struggled' because
+// intervalToPhase relabels anything <= 7 days as S1.
+function isWeak(p){
+  return String(p.friction||'').trim()==='Struggled' || (p.consecStruggle||0)>0;
+}
 function isDueOn(p, todayStr){
-  // Completed only returns on its explicit 6-month health-check date.
-  // This is the guard that keeps ★ Complete meaningful.
+  // Relearn problems are quarantined — never in the daily queue.
+  if(isRelearn(p)) return false;
   if(isCompleted(p)){
     return !!p.reviewDate && p.reviewDate<=todayStr;
   }
-  // A New problem has never been solved, so it is ALWAYS eligible —
-  // it is backlog, not a scheduled review. Do not date-gate it.
-  // (The backend heals blank New dates to "today" in server time, which
-  // can be one day ahead of the 4 AM logical day; date-gating those
-  // silently dropped every fresh problem from the queue.)
   if(isNewProblem(p)) return true;
-  // Everything else: standard scheduled review.
   if(!p.reviewDate||p.reviewDate==='') return true;
   return p.reviewDate<=todayStr;
 }
@@ -338,8 +333,6 @@ function closeModal(){
 }
 
 // ── TRIGGER/MOVE encoding ────────────────────────────────────
-// Stored inside the existing "Notes / Pattern Used" column.
-// Format:  <pattern> ⟩T: <trigger> ⟩M: <move>
 function buildNotes(){
   const pat=document.getElementById('p-pattern').value.trim();
   const trg=document.getElementById('p-trigger').value.trim();
@@ -371,9 +364,8 @@ function escAttr(s){
 async function submitProblem(){
   const name=document.getElementById('p-name').value.trim();
   if(!name)return alert("Problem Name is required.");
-  // Local duplicate guard — this is how the 8 ghost rows got created.
   if(allData.some(p=>p.name.trim().toLowerCase()===name.toLowerCase())){
-    if(!confirm('"'+name+'" is already in your sheet.\n\nRe-adding creates a duplicate row, which is what caused Completed problems to keep reappearing.\n\nAdd anyway?')) return;
+    if(!confirm('"'+name+'" is already in your sheet.\n\nAdd anyway?')) return;
   }
   const btn=document.getElementById('btn-save');
   btn.innerText="Syncing…";btn.disabled=true;
@@ -395,24 +387,30 @@ async function submitProblem(){
   finally{btn.innerText="Save & Sync";btn.disabled=false;}
 }
 
-// ── SM-2 PREVIEW ─────────────────────────────────────────────
+// ── SM-2 PREVIEW (mirrors the braked backend) ────────────────
 function previewInterval(p, action){
   const ef=p.ef||2.5;
   let interval=p.interval||7;
   const ph=String(p.phase||'').trim();
-  // Mirror the backend's first-review normalisation so the button
-  // label matches what actually gets written.
   if(ph==='New'||ph===''||ph==='Smooth'){
     interval = (action==='Struggled') ? 1 : 3;
   }
   if(action==='Struggled'){
-    return Math.max(1,Math.round(interval*0.5));
+    const cs=(p.consecStruggle||0)+1;
+    const floor = cs>=3 ? 4 : cs>=2 ? 3 : 2;
+    return Math.max(floor,Math.round(interval*0.6));
   }
   const newEF=Math.min(4.0,ef+0.1);
   return Math.max(3,Math.round(interval*newEF));
 }
+// Will this Struggled grade trip the Relearn quarantine?
+function willRelearn(p){
+  const cs=(p.consecStruggle||0)+1;
+  const newEF=Math.max(1.3,(p.ef||2.5)-0.3);
+  return cs>=3 && newEF<=2.0;
+}
 
-// ── SMART QUEUE BUILDER ──────────────────────────────────────
+// ── QUEUE BUILDER ────────────────────────────────────────────
 function shuffle(a){let i=a.length,r;while(i!==0){r=Math.floor(Math.random()*i);i--;[a[i],a[r]]=[a[r],a[i]];}return a;}
 function parseDMY(str){
   if(!str)return null;
@@ -421,71 +419,91 @@ function parseDMY(str){
   return null;
 }
 function getSplit(){
-  try{ return JSON.parse(localStorage.getItem('srs_split_pref')||'{"r":5,"f":3}'); }
-  catch(e){ return {r:5,f:3}; }
+  try{ return JSON.parse(localStorage.getItem('srs_split_pref')||'{"r":7,"f":1}'); }
+  catch(e){ return {r:7,f:1}; }
+}
+function getSweep(){ return localStorage.getItem('srs_sweep')||''; }
+function setSweep(topic){
+  localStorage.setItem('srs_sweep',topic||'');
+  localStorage.removeItem("srs_date");
+  localStorage.removeItem("srs_queue_names");
+  localStorage.removeItem("srs_queue_split");
+  loadQueue();
 }
 
 function buildSmartQueue(data, todayStr){
   const SPLIT=getSplit();
   const RET=SPLIT.r, FRESH=SPLIT.f;
+  const sweep=getSweep();
 
-  // Hard exclusions applied ONCE, up front:
-  //   - anything already graded today (survives ↺ New Queue)
-  //   - Completed problems before their health-check date
-  const pool=data.filter(p=>!isGradedToday(p.name))
-                 .filter(p=>!isCompleted(p) || isDueOn(p,todayStr));
+  let pool=data.filter(p=>!isGradedToday(p.name))
+               .filter(p=>!isRelearn(p))
+               .filter(p=>!isCompleted(p) || isDueOn(p,todayStr));
+
+  if(sweep) pool=pool.filter(p=>p.topic===sweep);
 
   const due=p=>isDueOn(p,todayStr);
 
   // ── BLOCK A: RETENTION ──
-  const struggled=pool.filter(p=>due(p)&&p.phase==='Struggled');
-  const smoothDue=pool.filter(p=>due(p)&&p.phase!=='Struggled'&&!isNewProblem(p));
+  // Priority 1: weak problems (last grade was a struggle) — up to 40%.
+  const weak=pool.filter(p=>due(p)&&isWeak(p)&&!isNewProblem(p));
   let blockA=[];
+  const weakCap=Math.max(1,Math.ceil(RET*0.4));
+  blockA.push(...shuffle([...weak]).slice(0,weakCap));
 
-  // Struggled first — up to ~40% of retention slots, min 1
-  const strugCap=Math.max(1,Math.ceil(RET*0.4));
-  blockA.push(...shuffle([...struggled]).slice(0,strugCap));
-
-  // Oldest reviewDate first — most overdue gets seen soonest
-  const smoothSorted=[...smoothDue].filter(p=>!blockA.find(q=>q.name===p.name))
+  // Priority 2: most overdue first, but INTERLEAVED — cap 2 per topic
+  // while slots remain. Mixing topics is what trains pattern
+  // recognition; five graph problems in a row does not.
+  const rest=[...pool].filter(p=>due(p)&&!isNewProblem(p)&&!blockA.find(q=>q.name===p.name))
     .sort((a,b)=>String(a.reviewDate).localeCompare(String(b.reviewDate)));
-  const smoothCap=Math.max(0,RET-blockA.length-1); // leave 1 for wildcard
-  blockA.push(...smoothSorted.slice(0,smoothCap));
 
-  // Wildcard fill — top up to RET with anything else due
+  const topicCount={};
+  blockA.forEach(p=>{topicCount[p.topic]=(topicCount[p.topic]||0)+1;});
+  const overflow=[];
+  for(const p of rest){
+    if(blockA.length>=RET)break;
+    const n=topicCount[p.topic]||0;
+    if(n>=2){overflow.push(p);continue;}
+    topicCount[p.topic]=n+1;
+    blockA.push(p);
+  }
+  // Relax the cap if we ran short.
+  for(const p of overflow){
+    if(blockA.length>=RET)break;
+    blockA.push(p);
+  }
+  // Final wildcard top-up.
   const wildPool=shuffle(pool.filter(p=>due(p)&&!blockA.find(q=>q.name===p.name)));
   while(blockA.length<RET&&wildPool.length){blockA.push(wildPool.shift());}
 
-  // ── BLOCK B: FRESH (never-reviewed problems only) ──
+  // ── BLOCK B: FRESH (never-reviewed only) ──
   const freshPool=pool.filter(p=>isNewProblem(p)&&!blockA.find(q=>q.name===p.name));
   let blockB=[];
+  if(FRESH>0&&freshPool.length){
+    const topics=[...new Set(freshPool.map(p=>p.topic).filter(Boolean))].sort();
+    if(topics.length>0){
+      let tidx=(parseInt(localStorage.getItem('srs_topic_idx')||'0'))%topics.length;
+      const rotTopic=topics[tidx];
+      localStorage.setItem('srs_topic_idx',String((tidx+1)%topics.length));
+      const fromTopic=freshPool.filter(p=>p.topic===rotTopic);
+      if(fromTopic.length)blockB.push(shuffle([...fromTopic])[0]);
+    }
+    const hardFresh=freshPool.filter(p=>p.difficulty==='H'&&!blockB.find(q=>q.name===p.name));
+    if(hardFresh.length)blockB.push(shuffle([...hardFresh])[0]);
+    const oldest=[...freshPool].filter(p=>!blockB.find(q=>q.name===p.name))
+      .sort((a,b)=>{const da=parseDMY(a.initialDate),db=parseDMY(b.initialDate);return (da||new Date(0))-(db||new Date(0));});
+    if(oldest.length)blockB.push(oldest[0]);
 
-  // 1. Topic rotation
-  const topics=[...new Set(freshPool.map(p=>p.topic).filter(Boolean))].sort();
-  if(topics.length>0){
-    let tidx=(parseInt(localStorage.getItem('srs_topic_idx')||'0'))%topics.length;
-    const rotTopic=topics[tidx];
-    localStorage.setItem('srs_topic_idx',String((tidx+1)%topics.length));
-    const fromTopic=freshPool.filter(p=>p.topic===rotTopic);
-    if(fromTopic.length)blockB.push(shuffle([...fromTopic])[0]);
-  }
-  // 2. Hard problem from fresh pool
-  const hardFresh=freshPool.filter(p=>p.difficulty==='H'&&!blockB.find(q=>q.name===p.name));
-  if(hardFresh.length)blockB.push(shuffle([...hardFresh])[0]);
-  // 3. Oldest unseen (longest waiting in backlog)
-  const oldest=[...freshPool].filter(p=>!blockB.find(q=>q.name===p.name))
-    .sort((a,b)=>{const da=parseDMY(a.initialDate),db=parseDMY(b.initialDate);return (da||new Date(0))-(db||new Date(0));});
-  if(oldest.length)blockB.push(oldest[0]);
-
-  blockB=blockB.slice(0,FRESH);
-  while(blockB.length<FRESH&&freshPool.length){
-    const extra=freshPool.find(p=>!blockB.find(q=>q.name===p.name));
-    if(!extra)break; blockB.push(extra);
+    blockB=blockB.slice(0,FRESH);
+    while(blockB.length<FRESH&&freshPool.length){
+      const extra=freshPool.find(p=>!blockB.find(q=>q.name===p.name));
+      if(!extra)break; blockB.push(extra);
+    }
   }
   return {blockA, blockB, all:[...blockA,...blockB]};
 }
 
-// ── FILTER CONTROLS ──────────────────────────────────────────
+// ── FILTERS ──────────────────────────────────────────────────
 function setFilter(f,el){
   currentFilter=f;
   document.querySelectorAll('.filter-btn:not([data-topic])').forEach(b=>b.classList.remove('active'));
@@ -505,12 +523,17 @@ function buildTopicFilters(problems){
     topics.map(t=>`<button class="filter-btn" data-topic="${escAttr(t)}" onclick="setTopicFilter('${t.replace(/'/g,"\\'")}',this)">${t}</button>`).join('');
 }
 function applyFilters(){
+  if(currentFilter==='Relearn'){
+    const rl=_relearnData.filter(p=>currentTopicFilter==='all'||p.topic===currentTopicFilter);
+    renderQueue(rl,false,0,true);
+    return;
+  }
   const source=(currentFilter==='all'&&currentTopicFilter==='all')?_snapshotData:_allDue;
   const filtered=source.filter(p=>{
     if(currentTopicFilter!=='all'&&p.topic!==currentTopicFilter)return false;
     if(currentFilter==='all')return true;
-    if(currentFilter==='Struggled')return p.phase==='Struggled';
-    if(currentFilter==='Smooth')return p.phase!=='Struggled'&&!isNewProblem(p)&&!isCompleted(p);
+    if(currentFilter==='Struggled')return isWeak(p);
+    if(currentFilter==='Smooth')return !isWeak(p)&&!isNewProblem(p)&&!isCompleted(p);
     if(currentFilter==='New')return isNewProblem(p);
     return true;
   });
@@ -520,8 +543,8 @@ function applyFilters(){
     split.retentionCount);
 }
 function readSplitMeta(){
-  try{ return JSON.parse(localStorage.getItem("srs_queue_split")||'{"retentionCount":5,"freshCount":3}'); }
-  catch(e){ return {retentionCount:5,freshCount:3}; }
+  try{ return JSON.parse(localStorage.getItem("srs_queue_split")||'{"retentionCount":7,"freshCount":1}'); }
+  catch(e){ return {retentionCount:7,freshCount:1}; }
 }
 
 // ── LOAD ─────────────────────────────────────────────────────
@@ -531,7 +554,6 @@ async function loadQueue(){
     allData=await res.json();
     if(!Array.isArray(allData)) throw new Error('Bad payload');
 
-    // Defensive client-side dedupe in case an old backend is still deployed.
     const seen={};
     allData=allData.filter(p=>{
       const k=String(p.name||'').trim().toLowerCase();
@@ -540,35 +562,35 @@ async function loadQueue(){
     });
 
     const todayStr=todayLogical();
+    _relearnData=allData.filter(p=>isRelearn(p));
     updateDrainMeter(allData);
+    buildSweepOptions(allData);
 
     // ── Proportion display ──
-    const dueStruggled=allData.filter(p=>isDueOn(p,todayStr)&&p.phase==='Struggled');
-    const dueSmooth   =allData.filter(p=>isDueOn(p,todayStr)&&p.phase!=='Struggled'&&!isNewProblem(p)&&!isCompleted(p));
-    const newProbs    =allData.filter(p=>isNewProblem(p));
-    const lockedComplete=allData.filter(p=>isCompleted(p)&&!isDueOn(p,todayStr));
-    const total=dueStruggled.length+dueSmooth.length;
-    if(total>0||newProbs.length>0){
-      const sp=total>0?Math.round((dueStruggled.length/total)*100):0;
-      const pp=100-sp;
+    const dueWeak   =allData.filter(p=>isDueOn(p,todayStr)&&isWeak(p)&&!isNewProblem(p));
+    const dueSolid  =allData.filter(p=>isDueOn(p,todayStr)&&!isWeak(p)&&!isNewProblem(p)&&!isCompleted(p));
+    const newProbs  =allData.filter(p=>isNewProblem(p));
+    const lockedComp=allData.filter(p=>isCompleted(p)&&!isDueOn(p,todayStr));
+    const total=dueWeak.length+dueSolid.length;
+    if(total>0||newProbs.length>0||_relearnData.length>0){
+      const sp=total>0?Math.round((dueWeak.length/total)*100):0;
       document.getElementById('prop-segs').innerHTML=
         `<div class="prop-seg" style="width:${sp}%;background:var(--red)"></div>`+
-        `<div class="prop-seg" style="width:${pp}%;background:var(--green)"></div>`;
+        `<div class="prop-seg" style="width:${100-sp}%;background:var(--green)"></div>`;
       document.getElementById('prop-chips').innerHTML=
-        `<span class="prop-chip pc-struggled">⚠ ${dueStruggled.length} Struggled</span>`+
-        `<span class="prop-chip pc-smooth">✓ ${dueSmooth.length} In Review</span>`+
+        `<span class="prop-chip pc-struggled">⚠ ${dueWeak.length} Weak</span>`+
+        `<span class="prop-chip pc-smooth">✓ ${dueSolid.length} In Review</span>`+
         `<span class="prop-chip pc-new">★ ${newProbs.length} New/Fresh</span>`+
-        `<span class="prop-chip pc-locked">🔒 ${lockedComplete.length} Completed</span>`+
-        `<span class="prop-chip pc-total">${allData.length} total problems</span>`;
+        `<span class="prop-chip pc-relearn">🔬 ${_relearnData.length} Relearn</span>`+
+        `<span class="prop-chip pc-locked">🔒 ${lockedComp.length} Completed</span>`+
+        `<span class="prop-chip pc-total">${allData.length} total</span>`;
       document.getElementById('proportion-bar').style.display='flex';
     }
 
-    // ── Build or restore daily snapshot ──
+    // ── Snapshot ──
     let snapshotDate=localStorage.getItem("srs_date");
     let snapshotNames=[];
     try{ snapshotNames=JSON.parse(localStorage.getItem("srs_queue_names")||"[]"); }catch(e){}
-
-    // Drop anything from the stored snapshot that has since been graded.
     snapshotNames=snapshotNames.filter(n=>!isGradedToday(n));
 
     if(snapshotDate!==todayStr||snapshotNames.length===0){
@@ -585,30 +607,22 @@ async function loadQueue(){
     }
     const split=readSplitMeta();
 
-    // ── Rebuild live objects from snapshot names ──
-    //
-    // FIX: the old restore path looked a name up and pushed it blindly,
-    // never re-checking due status. A snapshot written BEFORE a repair
-    // (or before a problem was Completed elsewhere) would resurrect that
-    // problem forever, because this path bypasses buildSmartQueue's
-    // guards entirely. Every restored entry is now re-validated.
     _snapshotData=[];
     const stale=[];
-    const takenNames={};
+    const taken={};
     snapshotNames.forEach(n=>{
       const f=allData.find(p=>p.name===n);
-      if(!f){ stale.push(n); return; }                 // deleted/merged row
-      if(takenNames[f.name]){ stale.push(n); return; } // repeated inside snapshot
+      if(!f){ stale.push(n); return; }
+      if(taken[f.name]){ stale.push(n); return; }
       if(isGradedToday(f.name)){ stale.push(n); return; }
-      if(!isDueOn(f,todayStr)){ stale.push(n); return; } // Completed, or not due yet
-      takenNames[f.name]=true;
+      if(isRelearn(f)){ stale.push(n); return; }
+      if(!isDueOn(f,todayStr)){ stale.push(n); return; }
+      taken[f.name]=true;
       _snapshotData.push(f);
     });
     if(stale.length){
-      console.info('[SRS] dropped '+stale.length+' stale snapshot entries:',stale);
       snapshotNames=snapshotNames.filter(n=>!stale.includes(n));
-      // Backfill so the queue doesn't shrink below your chosen split.
-      const want=(split.retentionCount||5)+(split.freshCount||3);
+      const want=(split.retentionCount||7)+(split.freshCount||1);
       if(_snapshotData.length<want){
         const built=buildSmartQueue(allData,todayStr);
         built.all.forEach(p=>{
@@ -619,13 +633,6 @@ async function loadQueue(){
       }
     }
 
-    // ── NORMALISE BLOCK ORDER ───────────────────────────────
-    // renderQueue decides "is this a Fresh card" purely by position
-    // (idx >= retentionCount). Restoring a snapshot preserves its old
-    // order, and backfill appends to the end, so reviewed S1/S2
-    // problems could land in the back slots and get rendered with the
-    // orange NEW badge and fresh border. Re-sort so retention always
-    // precedes fresh, then recompute the boundary from real contents.
     const retentionPart=_snapshotData.filter(p=>!isNewProblem(p));
     const freshPart    =_snapshotData.filter(p=>isNewProblem(p));
     _snapshotData=[...retentionPart,...freshPart];
@@ -637,39 +644,49 @@ async function loadQueue(){
     _allDue=allData.filter(p=>isDueOn(p,todayStr)&&!isGradedToday(p.name));
 
     const doneToday=getGraded().names.length;
+    const sweep=getSweep();
     document.getElementById('qi-blocks').innerHTML=
       `<span class="qi-chip qi-ret">📚 ${split.retentionCount} Retention</span>`+
-      `<span class="qi-chip qi-fresh">🌱 ${split.freshCount} Fresh Solving</span>`+
+      (split.freshCount?`<span class="qi-chip qi-fresh">🌱 ${split.freshCount} Fresh</span>`:'')+
       `<span class="qi-chip qi-total">${_snapshotData.length} remaining today</span>`+
-      (doneToday?`<span class="qi-chip qi-done">✓ ${doneToday} graded today</span>`:'');
+      (_relearnData.length?`<span class="qi-chip qi-relearn">🔬 ${_relearnData.length} in Relearn Lab</span>`:'')+
+      (doneToday?`<span class="qi-chip qi-done">✓ ${doneToday} graded today</span>`:'')+
+      (sweep?`<span class="qi-chip qi-relearn">🎯 Sweep: ${sweep}</span>`:'');
     document.getElementById('queue-info').style.display='flex';
 
     buildTopicFilters(_allDue);
     renderQueue(_snapshotData,true,split.retentionCount);
   }catch(e){
     document.getElementById('loading').style.display='block';
-    document.getElementById('loading').innerHTML='<div class="empty-state"><h2>Connection Failed</h2><p style="color:var(--muted)">Check console for errors.</p></div>';
+    document.getElementById('loading').innerHTML='<div class="empty-state"><h2>Connection Failed</h2><p style="color:var(--muted)">Check console.</p></div>';
     console.error(e);
   }
 }
 
+function buildSweepOptions(data){
+  const sel=document.getElementById('sweep-select');
+  if(!sel)return;
+  const topics=[...new Set(data.map(p=>p.topic).filter(Boolean))].sort();
+  const cur=getSweep();
+  sel.innerHTML='<option value="">Off — normal mixed queue</option>'+
+    topics.map(t=>`<option value="${escAttr(t)}"${t===cur?' selected':''}>${t}</option>`).join('');
+  document.getElementById('sweep-bar').style.display='flex';
+}
+
 function refreshQueue(){
   if(localStorage.getItem("admin_key")!=="scaler2026"){alert("🔒 READ-ONLY MODE");return;}
-  // NOTE: srs_graded is deliberately NOT cleared here. That is the fix —
-  // a fresh queue must not resurrect problems you already graded today.
   localStorage.removeItem("srs_date");
   localStorage.removeItem("srs_queue_names");
   localStorage.removeItem("srs_queue_split");
   loadQueue();
 }
 
-// ── SPLIT TOGGLE ─────────────────────────────────────────────
 function setSplit(r,f,el){
   localStorage.setItem('srs_split_pref',JSON.stringify({r:r,f:f}));
   document.querySelectorAll('.split-opt').forEach(b=>b.classList.remove('active'));
   if(el)el.classList.add('active');
   const sub=document.getElementById('split-sub');
-  if(sub)sub.textContent=`SM-2 Adaptive · ${r} Retention + ${f} Fresh daily`;
+  if(sub)sub.textContent=`SM-2 Adaptive · ${r} Retention${f?' + '+f+' Fresh':''} daily`;
   localStorage.removeItem("srs_date");
   localStorage.removeItem("srs_queue_names");
   localStorage.removeItem("srs_queue_split");
@@ -682,10 +699,9 @@ function initSplitToggle(){
     if(r===s.r&&f===s.f)b.classList.add('active');else b.classList.remove('active');
   });
   const sub=document.getElementById('split-sub');
-  if(sub)sub.textContent=`SM-2 Adaptive · ${s.r} Retention + ${s.f} Fresh daily`;
+  if(sub)sub.textContent=`SM-2 Adaptive · ${s.r} Retention${s.f?' + '+s.f+' Fresh':''} daily`;
 }
 
-// ── DRAIN METER ──────────────────────────────────────────────
 function updateDrainMeter(data){
   const awaiting=data.filter(p=>isNewProblem(p)).length;
   const total=data.length;
@@ -702,12 +718,15 @@ function updateDrainMeter(data){
 }
 
 // ── RENDER ────────────────────────────────────────────────────
-function renderQueue(problems, showBlocks, retentionCount){
+function renderQueue(problems, showBlocks, retentionCount, relearnMode){
   const qDiv=document.getElementById('queue');
   document.getElementById('loading').style.display='none';
   qDiv.innerHTML='';
+
   if(!problems.length){
-    if(currentFilter==='all'&&currentTopicFilter==='all'){
+    if(relearnMode){
+      qDiv.innerHTML=`<div class="empty-state fade"><h2 style="color:var(--cyan)">Relearn Lab is empty 🔬</h2><p>Nothing is stuck. Problems land here automatically after 3 struggles in a row.</p></div>`;
+    } else if(currentFilter==='all'&&currentTopicFilter==='all'){
       triggerSuccess();
       qDiv.innerHTML=`<div class="empty-state fade"><h2>Queue Clear 🚀</h2><p>All done for today. Great work!</p></div>`;
     } else {
@@ -715,29 +734,33 @@ function renderQueue(problems, showBlocks, retentionCount){
     }
     return;
   }
-  // Derive the divider position from the real contents rather than the
-  // stored retentionCount, which can drift out of sync with the queue.
+
+  if(relearnMode){
+    qDiv.insertAdjacentHTML('beforeend',
+      `<div class="block-divider"><span class="block-label bl-relearn">🔬 Relearn Lab — study, don't test</span><div class="block-line"></div></div>`+
+      `<div class="relearn-note" style="margin-bottom:16px"><strong>These are not memory failures.</strong> Three misses in a row means the concept never landed. Don't re-attempt from memory — open your notes or the editorial, rebuild the solution from first principles, write it out once cleanly, then click Relearned. It re-enters rotation at 7 days with a fresh EF.</div>`);
+  }
+
   const firstFreshIdx=problems.findIndex(p=>isNewProblem(p));
   problems.forEach((p,idx)=>{
-    if(showBlocks){
+    if(showBlocks&&!relearnMode){
       if(idx===0&&firstFreshIdx!==0){
         qDiv.insertAdjacentHTML('beforeend',`<div class="block-divider"><span class="block-label bl-retention">📚 Retention Block</span><div class="block-line"></div></div>`);
       }
-      if(idx===firstFreshIdx){
+      if(idx===firstFreshIdx&&firstFreshIdx>=0){
         qDiv.insertAdjacentHTML('beforeend',`<div class="block-divider"><span class="block-label bl-fresh">🌱 Fresh Solving Block</span><div class="block-line"></div></div>`);
       }
     }
-    // btoa breaks on non-ASCII problem names — encode first.
+
     let cardId;
     try{ cardId=`card-${btoa(unescape(encodeURIComponent(p.name))).replace(/[^a-zA-Z0-9]/g,'')}`; }
     catch(e){ cardId=`card-${idx}-${Math.random().toString(36).slice(2,8)}`; }
 
-    // A card is Fresh only if the PROBLEM is actually unreviewed.
-    // Position alone is not evidence — after a snapshot restore or
-    // backfill the back slots can hold reviewed S1/S2 problems.
-    const isFresh=isNewProblem(p);
-    const phaseClass=p.phase==='Struggled'?'card-struggled':isFresh?'card-fresh':'card-smooth';
-    const badgeClass=p.phase==='Struggled'?'b-phase-struggled':isNewProblem(p)?'b-phase-new':(p.phase==='Mastered'||isCompleted(p))?'b-phase-mastered':'b-phase-smooth';
+    const fresh=isNewProblem(p);
+    const relearn=isRelearn(p);
+    const weak=isWeak(p);
+    const phaseClass=relearn?'card-relearn':weak?'card-struggled':fresh?'card-fresh':'card-smooth';
+    const badgeClass=relearn?'b-phase-relearn':fresh?'b-phase-new':(p.phase==='Mastered'||isCompleted(p))?'b-phase-mastered':weak?'b-phase-struggled':'b-phase-smooth';
     const parsed=parseNotes(p.notes||'');
     const pattern=parsed.pattern||'';
 
@@ -747,7 +770,7 @@ function renderQueue(problems, showBlocks, retentionCount){
         const ds=p.initialDate.includes('T')?p.initialDate:p.initialDate+'T00:00:00';
         prettyDate=new Date(ds).toLocaleDateString('en-GB',{day:'numeric',month:'short'});
       }
-    }catch(e){prettyDate='—';}
+    }catch(e){}
     try{
       if(p.lastSolved&&p.lastSolved!=='Never'&&p.lastSolved!==''){
         const ls=p.lastSolved.includes('T')?p.lastSolved:p.lastSolved+'T00:00:00';
@@ -759,6 +782,8 @@ function renderQueue(problems, showBlocks, retentionCount){
     const nextStruggled=previewInterval(p,'Struggled');
     const ef=p.ef||2.5;
     const interval=p.interval||7;
+    const cs=p.consecStruggle||0;
+    const trips=willRelearn(p);
 
     const card=document.createElement('div');
     card.className=`problem-card ${phaseClass} fade`;
@@ -767,56 +792,62 @@ function renderQueue(problems, showBlocks, retentionCount){
     card.dataset.ppattern=parsed.pattern||'';
     card.dataset.ptrigger=parsed.trigger||'';
     card.dataset.pmove=parsed.move||'';
-    card.dataset.phint=p.hint||'';
     const safeName=escAttr(p.name).replace(/'/g,"\\'");
+
+    const actionsHTML = relearn
+      ? `<button class="btn-hint" onclick="toggleHint('hint-${cardId}')">💡 Hint</button>
+         <button class="btn-tm-edit" onclick="openTMEditor('${cardId}')">✎ Trigger/Move</button>
+         <button class="btn-relearned" onclick="relearnExit('${safeName}','${cardId}')">🔬 Relearned → back at 7d</button>`
+      : `<button class="btn-hint" onclick="toggleHint('hint-${cardId}')">💡 Hint</button>
+         <button class="btn-tm-edit" onclick="openTMEditor('${cardId}')">✎ Trigger/Move</button>
+         <button class="btn-timer" id="btn-timer-${cardId}" onclick="startTimer('${cardId}')">▶ Focus</button>
+         <span class="timer-display" id="timer-${cardId}">00:00</span>
+         <button class="btn-struggled" onclick="updateProblem('${safeName}','Struggled','${cardId}')">⚠ Struggled → ${trips?'RELEARN LAB':nextStruggled+'d'}</button>
+         <button class="btn-smooth" onclick="updateProblem('${safeName}','Smooth','${cardId}')">✓ Smooth → ${nextSmooth}d</button>
+         <button class="btn-complete" onclick="completeProblem('${safeName}','${cardId}')" title="Know it cold — 6-month health check only">★ Complete</button>`;
+
     card.innerHTML=`
       <div class="card-header">
-        <div class="card-title">${p.name}${isFresh?'<span style="font-family:var(--fm);font-size:.58rem;color:var(--orange);margin-left:8px;font-weight:400">NEW</span>':''}</div>
+        <div class="card-title">${p.name}${fresh?'<span style="font-family:var(--fm);font-size:.58rem;color:var(--orange);margin-left:8px;font-weight:400">NEW</span>':''}${relearn?'<span style="font-family:var(--fm);font-size:.58rem;color:var(--cyan);margin-left:8px;font-weight:400">RELEARN</span>':''}</div>
         ${pattern?`<span class="pattern-tag">${pattern.split('|')[0].trim()}</span>`:''}
       </div>
       <div class="meta-row">
         <span class="badge b-topic">${p.topic}</span>
-        <span class="badge ${badgeClass}">${p.phase||'New'}</span>
+        <span class="badge ${badgeClass}">${relearn?'Relearn':(p.phase||'New')}</span>
         <span class="badge b-attempt">×${p.attempts||0}</span>
+        ${cs>0?`<span class="badge b-weak">${cs} miss${cs>1?'es':''} in a row</span>`:''}
         <span class="badge b-date">Added ${prettyDate}</span>
         <span class="badge" style="background:rgba(168,85,247,.08);color:#c084fc;border:1px solid rgba(168,85,247,.18)">Last ${prettyLast}</span>
         ${p.difficulty?`<span class="badge" style="background:${p.difficulty==='H'?'rgba(239,68,68,.1)':p.difficulty==='M'?'rgba(234,179,8,.1)':'rgba(57,211,83,.1)'};color:${p.difficulty==='H'?'var(--red)':p.difficulty==='M'?'var(--yellow)':'var(--green)'};border:1px solid transparent">${p.difficulty}</span>`:''}
         <span class="badge b-ef">EF ${Number(ef).toFixed(2)}</span>
-        <span class="badge" style="background:rgba(255,255,255,.04);color:var(--muted);border:1px solid var(--border)">Now: ${interval}d</span>
+        ${relearn?'':`<span class="badge" style="background:rgba(255,255,255,.04);color:var(--muted);border:1px solid var(--border)">Now: ${interval}d</span>`}
       </div>
-      <div class="actions">
-        <button class="btn-hint" onclick="toggleHint('hint-${cardId}')">💡 Hint</button>
-        <button class="btn-tm-edit" onclick="openTMEditor('${cardId}')">✎ Trigger/Move</button>
-        <button class="btn-timer" id="btn-timer-${cardId}" onclick="startTimer('${cardId}')">▶ Focus</button>
-        <span class="timer-display" id="timer-${cardId}">00:00</span>
-        <button class="btn-struggled" onclick="updateProblem('${safeName}','Struggled','${cardId}')">⚠ Struggled → ${nextStruggled}d</button>
-        <button class="btn-smooth" onclick="updateProblem('${safeName}','Smooth','${cardId}')">✓ Smooth → ${nextSmooth}d</button>
-        <button class="btn-complete" onclick="completeProblem('${safeName}','${cardId}')" title="I know this cold — pull it out of rotation (6-month health check only)">★ Complete</button>
-      </div>
+      <div class="actions">${actionsHTML}</div>
       <div class="tm-block">
         <div class="tm-cell tm-trigger">
           <div class="tm-label">🎯 Trigger — recognise it</div>
-          ${parsed.trigger?`<div class="tm-text">${parsed.trigger}</div>`:'<div class="tm-text tm-empty">Not recorded — add on next log</div>'}
+          ${parsed.trigger?`<div class="tm-text">${parsed.trigger}</div>`:'<div class="tm-text tm-empty">Not recorded</div>'}
         </div>
         <div class="tm-cell tm-move">
-          <div class="tm-label">♟ Move — recall before revealing</div>
-          ${parsed.move?`<div class="tm-text tm-reveal" onclick="this.classList.add('shown')" title="tap to reveal">${parsed.move}</div>`:'<div class="tm-text tm-empty">Not recorded — add on next log</div>'}
+          <div class="tm-label">♟ Move — ${relearn?'read it, this is study mode':'recall before revealing'}</div>
+          ${parsed.move?`<div class="tm-text ${relearn?'':'tm-reveal'}" ${relearn?'':'onclick="this.classList.add(\'shown\')" title="tap to reveal"'}>${parsed.move}</div>`:'<div class="tm-text tm-empty">Not recorded</div>'}
         </div>
       </div>
       <div class="tm-editor" id="tmed-${cardId}">
         <div class="tm-field"><label>Pattern</label><input type="text" id="tmpat-${cardId}" placeholder="Sliding Window"></div>
-        <div class="tm-field"><label>🎯 Trigger — what signals the pattern</label><input type="text" id="tmtrg-${cardId}" placeholder="longest subarray with ≤ K distinct"></div>
-        <div class="tm-field"><label>♟ Move — the mechanical action</label><input type="text" id="tmmov-${cardId}" placeholder="expand right, shrink left on violation"></div>
+        <div class="tm-field"><label>🎯 Trigger</label><input type="text" id="tmtrg-${cardId}" placeholder="longest subarray with ≤ K distinct"></div>
+        <div class="tm-field"><label>♟ Move</label><input type="text" id="tmmov-${cardId}" placeholder="expand right, shrink left on violation"></div>
         <div class="tm-edit-actions">
           <button class="btn-tm-cancel" onclick="closeTMEditor('${cardId}')">Cancel</button>
           <button class="btn-tm-save" id="tmsave-${cardId}" onclick="saveTM('${cardId}')">Save to sheet</button>
         </div>
       </div>
-      <div class="sm2-preview">
+      ${relearn?'':`<div class="sm2-preview">
         <span class="sm2-label">SM-2 Preview:</span>
-        <span class="sm2-smooth">✓ Smooth: next in ${nextSmooth}d (EF ${Math.min(4.0,ef+0.1).toFixed(2)})</span>
-        <span class="sm2-struggled">⚠ Struggled: next in ${nextStruggled}d (EF ${Math.max(1.3,ef-0.3).toFixed(2)})</span>
-      </div>
+        <span class="sm2-smooth">✓ Smooth: ${nextSmooth}d (EF ${Math.min(4.0,ef+0.1).toFixed(2)})</span>
+        <span class="sm2-struggled">⚠ Struggled: ${trips?'→ Relearn Lab':nextStruggled+'d'} (EF ${Math.max(1.3,ef-0.3).toFixed(2)})</span>
+      </div>`}
+      ${relearn?`<div class="relearn-note">Quarantined after ${p.attempts||0} attempts with EF down to ${Number(ef).toFixed(2)}. Study it properly — notes, editorial, write it out once — then mark Relearned.</div>`:''}
       <div class="hint-box" id="hint-${cardId}">
         <strong style="color:var(--blue);font-family:var(--fm);font-size:.7rem;text-transform:uppercase;letter-spacing:1px">Algorithm Hint</strong><br><br>
         ${p.hint||'No hint recorded.'}
@@ -831,9 +862,9 @@ function toggleHint(id){
   el.style.display=el.style.display==='block'?'none':'block';
 }
 
-// ── TRIGGER/MOVE INLINE EDITOR ───────────────────────────────
+// ── TRIGGER/MOVE EDITOR ──────────────────────────────────────
 function openTMEditor(cardId){
-  if(localStorage.getItem("admin_key")!=="scaler2026"){alert("🔒 READ-ONLY MODE — set admin key to edit");return;}
+  if(localStorage.getItem("admin_key")!=="scaler2026"){alert("🔒 READ-ONLY MODE");return;}
   const card=document.getElementById(cardId);
   const ed=document.getElementById('tmed-'+cardId);
   if(!card||!ed)return;
@@ -867,9 +898,9 @@ async function saveTM(cardId){
     const trgCell=card.querySelector('.tm-trigger');
     const movCell=card.querySelector('.tm-move');
     if(trgCell)trgCell.innerHTML=`<div class="tm-label">🎯 Trigger — recognise it</div>`+
-      (trigger?`<div class="tm-text">${trigger}</div>`:'<div class="tm-text tm-empty">Not recorded — add on next log</div>');
-    if(movCell)movCell.innerHTML=`<div class="tm-label">♟ Move — recall before revealing</div>`+
-      (move?`<div class="tm-text tm-reveal" onclick="this.classList.add('shown')" title="tap to reveal">${move}</div>`:'<div class="tm-text tm-empty">Not recorded — add on next log</div>');
+      (trigger?`<div class="tm-text">${trigger}</div>`:'<div class="tm-text tm-empty">Not recorded</div>');
+    if(movCell)movCell.innerHTML=`<div class="tm-label">♟ Move</div>`+
+      (move?`<div class="tm-text tm-reveal" onclick="this.classList.add('shown')" title="tap to reveal">${move}</div>`:'<div class="tm-text tm-empty">Not recorded</div>');
     const ptag=card.querySelector('.pattern-tag');
     if(pattern&&ptag)ptag.textContent=pattern.split('|')[0].trim();
     const src=allData.find(x=>x.name===name);
@@ -896,11 +927,7 @@ function startTimer(cardId){
   },1000);
 }
 
-// ══════════════════════════════════════════════════════════════
-// GRADE — Smooth / Struggled
-// Now writes the result back into allData AND records the name in
-// the graded-today ledger, so no code path can resurface it today.
-// ══════════════════════════════════════════════════════════════
+// ── GRADE ────────────────────────────────────────────────────
 async function updateProblem(name,action,cardId){
   if(localStorage.getItem("admin_key")!=="scaler2026"){alert("🔒 READ-ONLY MODE");return;}
   const card=document.getElementById(cardId);
@@ -911,19 +938,26 @@ async function updateProblem(name,action,cardId){
     const r=await res.json();
     if(r.error||r.status==="Error"){alert("Error: "+(r.error||r.message));card.querySelectorAll('button').forEach(b=>b.disabled=false);return;}
 
-    // Ledger first — survives ↺ New Queue and split changes.
     markGraded(name);
 
-    // Sync in-memory record so a rebuild in this session sees fresh state.
     const src=allData.find(x=>x.name===name);
     if(src){
       if(r.newPhase)    src.phase=r.newPhase;
       if(r.newEF)       src.ef=parseFloat(r.newEF)||src.ef;
-      if(r.newInterval) src.interval=r.newInterval;
+      if(r.newInterval!==undefined) src.interval=r.newInterval;
       if(r.reviewDate)  src.reviewDate=r.reviewDate;
       src.lastSolved=todayLogical();
       src.attempts=(Number(src.attempts)||0)+1;
+      src.friction=action;
+      src.consecSmooth=r.consecSmooth||0;
+      src.consecStruggle=r.consecStruggle||0;
       src.completed=(r.newPhase==='Completed');
+      src.relearn=(r.newPhase==='Relearn');
+      if(src.relearn&&!_relearnData.find(q=>q.name===name))_relearnData.push(src);
+    }
+
+    if(r.relearn){
+      alert('🔬 "'+name+'" moved to the Relearn Lab.\n\nThree misses in a row — this is a comprehension gap, not a memory one. It has left the daily queue. Study it properly from the Relearn Lab tab, then mark it Relearned.');
     }
 
     if(r.graduated){
@@ -936,10 +970,6 @@ async function updateProblem(name,action,cardId){
     snap=snap.filter(n=>n!==name);
     localStorage.setItem("srs_queue_names",JSON.stringify(snap));
 
-    if(r.newInterval){
-      const preview=card.querySelector('.sm2-preview');
-      if(preview)preview.innerHTML=`<span style="font-family:var(--fm);font-size:.7rem;color:${action==='Smooth'?'var(--green)':'var(--red)'}">${action==='Smooth'?'✓':'⚠'} Next review: ${r.newInterval} days (${r.newPhase}) · EF: ${r.newEF} · ${r.reviewDate||''}</span>`;
-    }
     card.style.opacity='0';card.style.transform='scale(0.96)';card.style.transition='.25s';
     setTimeout(()=>{
       card.remove();
@@ -950,12 +980,39 @@ async function updateProblem(name,action,cardId){
   }catch(e){alert("Sync failed.");card.querySelectorAll('button').forEach(b=>b.disabled=false);}
 }
 
-// ══════════════════════════════════════════════════════════════
-// COMPLETE — mark known-cold, pull out of rotation for 180 days
-// ══════════════════════════════════════════════════════════════
+// ── RELEARN EXIT ─────────────────────────────────────────────
+async function relearnExit(name,cardId){
+  if(localStorage.getItem("admin_key")!=="scaler2026"){alert("🔒 READ-ONLY MODE");return;}
+  if(!confirm('Mark "'+name+'" as relearned?\n\nOnly do this if you rebuilt the solution from scratch and understand WHY it works. It re-enters rotation in 7 days.')){return;}
+  const card=document.getElementById(cardId);
+  card.querySelectorAll('button').forEach(b=>b.disabled=true);
+  try{
+    const res=await fetch(API_URL,{method:"POST",body:JSON.stringify({name,action:"RelearnExit",secret:localStorage.getItem("admin_key")})});
+    const r=await res.json();
+    if(r.error||r.status==="Error"){alert("Error: "+(r.error||r.message));card.querySelectorAll('button').forEach(b=>b.disabled=false);return;}
+
+    const src=allData.find(x=>x.name===name);
+    if(src){
+      src.phase='S1';src.relearn=false;src.interval=7;
+      src.reviewDate=r.reviewDate||ymdPlus(7);
+      src.consecStruggle=0;src.friction='Smooth';
+      src.ef=Math.max(2.2,src.ef||2.0);
+    }
+    _relearnData=_relearnData.filter(p=>p.name!==name);
+
+    confetti({particleCount:90,spread:75,origin:{y:.6},colors:['#22d3ee','#fff','#39d353']});
+    card.style.opacity='0';card.style.transform='scale(0.96)';card.style.transition='.25s';
+    setTimeout(()=>{
+      card.remove();
+      if(!document.querySelectorAll('.problem-card').length)applyFilters();
+    },280);
+  }catch(e){alert("Sync failed.");card.querySelectorAll('button').forEach(b=>b.disabled=false);}
+}
+
+// ── COMPLETE ─────────────────────────────────────────────────
 async function completeProblem(name,cardId){
   if(localStorage.getItem("admin_key")!=="scaler2026"){alert("🔒 READ-ONLY MODE");return;}
-  if(!confirm("Mark \""+name+"\" as Complete?\n\nIt leaves daily rotation and only returns for a health-check in 6 months. Use this only when you know it cold.")){return;}
+  if(!confirm("Mark \""+name+"\" as Complete?\n\nIt leaves daily rotation and only returns for a health check in 6 months.")){return;}
   const card=document.getElementById(cardId);
   card.querySelectorAll('button').forEach(b=>b.disabled=true);
   if(activeTimers[cardId]){clearInterval(activeTimers[cardId]);delete activeTimers[cardId];}
@@ -965,16 +1022,13 @@ async function completeProblem(name,cardId){
     if(r.error||r.status==="Error"){alert("Error: "+(r.error||r.message));card.querySelectorAll('button').forEach(b=>b.disabled=false);return;}
 
     markGraded(name);
-
     const src=allData.find(x=>x.name===name);
     if(src){
-      src.phase='Completed';
-      src.completed=true;
-      src.interval=180;
-      src.ef=3.0;
+      src.phase='Completed';src.completed=true;src.interval=180;src.ef=3.0;
       src.reviewDate=r.reviewDate||ymdPlus(180);
       src.lastSolved=todayLogical();
       src.attempts=(Number(src.attempts)||0)+1;
+      src.consecStruggle=0;
     }
 
     confetti({particleCount:100,spread:80,origin:{y:.6},colors:['#a855f7','#c084fc','#fff']});
