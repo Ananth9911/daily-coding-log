@@ -26,6 +26,13 @@ h1{font-size:1.6rem;font-weight:700;letter-spacing:-.5px}
 .sync.saving{color:var(--yellow);border-color:rgba(234,179,8,.3)}
 .sync.saved{color:var(--green);border-color:rgba(57,211,83,.3)}
 .sync.err{color:var(--red);border-color:rgba(239,68,68,.3)}
+.sync.locked{color:var(--red);border-color:rgba(239,68,68,.35);background:rgba(239,68,68,.06)}
+.lockbtn{font-family:var(--fm);font-size:.62rem;padding:6px 12px;border-radius:20px;border:1px solid rgba(239,68,68,.35);background:rgba(239,68,68,.08);color:var(--red);cursor:pointer;transition:.18s}
+.lockbtn:hover{background:rgba(239,68,68,.15)}
+.lockbtn.open{border-color:rgba(57,211,83,.3);background:rgba(57,211,83,.07);color:var(--green)}
+.ro-banner{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.25);border-radius:11px;padding:12px 16px;margin-bottom:14px;font-size:.8rem;color:#fca5a5;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+body.readonly .slot-check,body.readonly .target-chip,body.readonly .cnt-btn,body.readonly .cs-chip,body.readonly .tbtn,body.readonly .phase-btn{opacity:.45;pointer-events:none}
+body.readonly .notes-in,body.readonly .score-in{opacity:.45;pointer-events:none}
 .tabs{display:flex;gap:6px;margin-bottom:14px}
 .tab{font-family:var(--fm);font-size:.7rem;padding:8px 16px;border-radius:9px;border:1px solid var(--border);background:var(--bg2);color:var(--muted);cursor:pointer;transition:.15s}
 .tab:hover{color:var(--text);border-color:var(--border2)}
@@ -166,6 +173,7 @@ h1{font-size:1.6rem;font-weight:700;letter-spacing:-.5px}
       </div>
     </div>
     <div class="hdr-right">
+      <button class="lockbtn" id="lockbtn" onclick="toggleLock()">🔒 Locked</button>
       <span class="sync" id="sync">idle</span>
       <div class="date-chip" id="date-display"></div>
       <a href="review.html" class="nav-link">SRS →</a>
@@ -176,6 +184,10 @@ h1{font-size:1.6rem;font-weight:700;letter-spacing:-.5px}
   <div class="tabs">
     <button class="tab on" id="tab-day" onclick="setTab('day')">📋 Today</button>
     <button class="tab" id="tab-stats" onclick="setTab('stats')">📊 Analysis</button>
+  </div>
+
+  <div class="ro-banner" id="ro-banner" style="display:none">
+    🔒 <b>Read-only mode.</b> Viewing is fine, but nothing will save. Click <b>Locked</b> in the header to unlock with your admin key.
   </div>
 
   <!-- ══ DAY VIEW ══ -->
@@ -260,6 +272,38 @@ let statsWindow=30;
 let saveTimer=null;
 
 const isWk=d=>d==='sat'||d==='sun';
+
+// ══════════════════════════════════════════════════════════════
+// AUTH — same admin_key gate as review.html and the rest of the system.
+// Read is open; every WRITE goes through guard().
+// ══════════════════════════════════════════════════════════════
+function isUnlocked(){ return localStorage.getItem('admin_key')===ADMIN; }
+function guard(){
+  if(isUnlocked())return true;
+  alert('🔒 READ-ONLY MODE\n\nUnlock with your admin key to make changes.');
+  return false;
+}
+function toggleLock(){
+  if(isUnlocked()){
+    if(!confirm('Lock this planner again?\n\nYou will not be able to tick anything until you unlock.'))return;
+    localStorage.removeItem('admin_key');
+  } else {
+    const k=prompt('Enter admin key to unlock editing:');
+    if(k===null)return;
+    if(k!==ADMIN){alert('Wrong key. Still read-only.');return;}
+    localStorage.setItem('admin_key',ADMIN);
+  }
+  applyLockUI();render();
+}
+function applyLockUI(){
+  const open=isUnlocked();
+  const b=document.getElementById('lockbtn');
+  b.className='lockbtn'+(open?' open':'');
+  b.innerText=open?'🔓 Unlocked':'🔒 Locked';
+  document.body.classList.toggle('readonly',!open);
+  document.getElementById('ro-banner').style.display=open?'none':'flex';
+  if(!open)setSync('locked','read-only');
+}
 
 // ── 4 AM LOGICAL DAY ─────────────────────────────────────────
 function logicalNow(){const n=new Date();n.setHours(n.getHours()-4);return n;}
@@ -402,6 +446,7 @@ function setSync(cls,txt){
   el.className='sync '+cls; el.innerText=txt;
 }
 function queueSave(){
+  if(!isUnlocked()){setSync('locked','read-only');return;}
   if(saveTimer)clearTimeout(saveTimer);
   setSync('saving','saving…');
   saveTimer=setTimeout(doSave,900);
@@ -409,9 +454,10 @@ function queueSave(){
 async function doSave(){
   const slots=getSlots().map(b=>{
     const tt=(b.targets||[]).length;
-    const th=(b.targets||[]).filter((t,i)=>state.checks[b.id+'-t'+i]).length;
+    const idx=[];
+    (b.targets||[]).forEach((t,i)=>{ if(state.checks[b.id+'-t'+i]) idx.push(i); });
     return {id:b.id,title:b.title,category:b.cat||'OTHER',plannedMin:b.dur,
-      done:!!state.checks[b.id],targetsHit:th,targetsTotal:tt,
+      done:!!state.checks[b.id],targetsHit:idx.length,targetsTotal:tt,targetIdx:idx,
       counterVal:state.counters[b.id]||0,
       counterTarget:b.counter?(state.targets[b.id]??b.counter.default):0,
       notes:state.notes[b.id]||''};
@@ -440,10 +486,17 @@ async function loadDay(){
         if(sl.counterVal)state.counters[sl.id]=sl.counterVal;
         if(sl.counterTarget)state.targets[sl.id]=sl.counterTarget;
         if(sl.notes)state.notes[sl.id]=sl.notes;
-        for(let i=0;i<sl.targetsHit;i++)state.checks[sl.id+'-t'+i]=true;
+        // Restore the exact indices that were ticked. The old code
+        // replayed the first N, so ticking only target #3 came back as
+        // #1 and #2 checked instead.
+        if(sl.targetIdx&&sl.targetIdx.length){
+          sl.targetIdx.forEach(i=>{state.checks[sl.id+'-t'+i]=true;});
+        } else {
+          for(let i=0;i<sl.targetsHit;i++)state.checks[sl.id+'-t'+i]=true;
+        }
       });
     }
-    setSync('saved','loaded ✓');
+    if(isUnlocked())setSync('saved','loaded ✓'); else setSync('locked','read-only');
   }catch(e){setSync('err','offline');}
   syncPhaseButtons();render();fetchLive();
 }
@@ -491,7 +544,7 @@ function syncPhaseButtons(){
     ? 'LLD 3 machine coding. Weekday = lecture (passive, 1.5x, no coding along). Saturday = design solo then implement end-to-end. Sunday = contest + upsolve + review.'
     : 'HLD running (from 17 Aug). Weekday = lecture. Saturday = extra case study — you know the method now. Sunday = solo HLD design drill under the clock.';
 }
-function setPhase(p){ state.phase=p; syncPhaseButtons(); render(); queueSave(); }
+function setPhase(p){ if(!guard())return; state.phase=p; syncPhaseButtons(); render(); queueSave(); }
 
 function currentSlotId(){
   if(state.date!==todayYMD())return null;
@@ -534,7 +587,7 @@ function render(){
         </div>
         <div class="slot-desc">${b.desc}</div>`;
     if(b.iris) h+=`<div class="score-row"><label>Iris score</label>
-      <input class="score-in" type="number" min="0" max="100" placeholder="—" value="${state.iris}" oninput="state.iris=this.value;queueSave()">
+      <input class="score-in" type="number" min="0" max="100" placeholder="—" value="${state.iris}" oninput="if(isUnlocked()){state.iris=this.value;queueSave();}">
       <span class="hint">/100 · track the TREND across weeks, not one night</span></div>`;
     if(b.casestudy) h+=`<div class="cs-row">`+EXTRA_CS.map(c=>
       `<span class="cs-chip ${state.cs[c]?'sel':''}" onclick="pick('cs','${c.replace(/'/g,"\\'")}')">${c}</span>`).join('')+`</div>`;
@@ -566,9 +619,10 @@ function render(){
   });
   updateProgress();
 }
-function setNote(id,v){ state.notes[id]=v; queueSave(); }
-function pick(kind,c){ if(kind==='cs'){state.cs={};state.cs[c]=true;} else {state.hd={};state.hd[c]=true;} render(); }
+function setNote(id,v){ if(!isUnlocked())return; state.notes[id]=v; queueSave(); }
+function pick(kind,c){ if(!guard())return; if(kind==='cs'){state.cs={};state.cs[c]=true;} else {state.hd={};state.hd[c]=true;} render(); }
 function toggleCheck(id){
+  if(!guard())return;
   state.checks[id]=!state.checks[id]; render(); queueSave();
   if(getSlots().every(b=>state.checks[b.id])) celebrate();
 }
@@ -578,6 +632,7 @@ function updateProgress(){
   document.getElementById('dp-fill').style.width=(l.length?d/l.length*100:0)+'%';
 }
 function bumpCount(id,dl){
+  if(!guard())return;
   state.counters[id]=Math.max(0,(state.counters[id]??0)+dl);
   const b=getSlots().find(x=>x.id===id);
   const t=state.targets[id]??b.counter.default;
@@ -587,13 +642,14 @@ function bumpCount(id,dl){
   queueSave();
 }
 function bumpTarget(id,dl){
+  if(!guard())return;
   const b=getSlots().find(x=>x.id===id);
   state.targets[id]=Math.max(1,(state.targets[id]??b.counter.default)+dl);
   const el=document.getElementById('ctgt-'+id); if(el)el.innerText=state.targets[id];
   queueSave();
 }
 let T={};
-function startTimer(id,m){ if(T[id])return;
+function startTimer(id,m){ if(!guard())return; if(T[id])return;
   const b=document.getElementById('tbtn-'+id); if(b)b.innerText='● Running';
   if(T[id+'_s']===undefined)T[id+'_s']=m*60;
   T[id]=setInterval(()=>{T[id+'_s']--;clock(id);},1000);}
@@ -713,6 +769,7 @@ async function loadStats(){
 function celebrate(){confetti({particleCount:110,spread:85,origin:{y:.6},colors:['#f97316','#fb923c','#fff','#39d353']});}
 function small(){confetti({particleCount:40,spread:50,origin:{y:.7},colors:['#f97316','#fff']});}
 function resetDay(){
+  if(!guard())return;
   if(!confirm('Clear all progress for '+prettyDate(state.date)+'?'))return;
   state.checks={};state.counters={};state.targets={};state.notes={};state.iris='';
   render();queueSave();
@@ -725,6 +782,7 @@ function init(){
   state.phase = new Date() < new Date(2026,7,17) ? 'lld' : 'hld';
   document.getElementById('date-display').innerText=
     logicalNow().toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'short'});
+  applyLockUI();
   renderNav(); syncPhaseButtons(); loadDay(); loadHeat();
   setInterval(()=>{updateNow();},30000);
   updateNow();
