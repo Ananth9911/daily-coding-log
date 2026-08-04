@@ -2334,16 +2334,16 @@
     "topic": "Array",
     "source": "Scaler",
     "difficulty": "L",
-    "friction": "Struggled",
+    "friction": "Smooth",
     "notes": "Matrix Traversal | Diagonal \u27e9T: \"Print/collect all anti-diagonals of a matrix\" \u2192 need to group elements where row + col is constant \u27e9M: Anti-diagonals share the invariant r + c = constant. Start from every cell in the top row (fix c=i, r=0) to catch diagonals starting from row 0, then start from every cell in the last column except the first (fix c=n-1, r=i starting at i=1, skipping i=0 since it's already covered) to catch the rest. Walk each diagonal with r++, c-- until you fall off the matrix, then pad with 0s to length n for uniform row sizes.",
     "oneLiner": "To find all anti-diagonals, trace from two sets of starting points: the top row (col 0 to N-1) and the rightmost column (row 1 to N-1). From each starting point (r, c), collect elements by moving down-left (r+1, c-1) and place them into the current row of the output matrix. Java's default initialization handles the trailing zeros automatically",
     "attempts": "3",
-    "phase": "S1",
-    "reviewDate": "2026-07-11",
+    "phase": "Completed",
+    "reviewDate": "2027-01-31",
     "lastSolved": "2026-07-10",
     "url": "",
-    "ef": "2.4",
-    "interval": "1"
+    "ef": "3.0",
+    "interval": "180"
   },
   {
     "date": "19/04/2026",
@@ -4820,12 +4820,12 @@
     "notes": "Bit Manipulation | ASCII Arithmetic \u27e9T: reached for Character.isUpperCase/toLowerCase or built a new string with += in the loop, treating case as a library concern \u27e9M: exploit the fixed 32 offset between 'a' and 'A' \u2014 subtract 32 to upper, add 32 to lower, mutating in place via StringBuilder.setCharAt for O(1) per char. Hook: \"case is one bit apart\" \u2014 32 = 0b100000, so c ^ 32 toggles either direction without the if/else.",
     "oneLiner": "Approach 1 (ASCII Math):\nIterate through the string, check if each character falls in the uppercase or lowercase ASCII range, and mathematically add or subtract 32 to toggle its case.\n\nApproach 2 (Bitwise XOR):\nIterate through the string and apply the bitwise XOR operator (^ 32) to each character to instantly flip its 6th bit, automatically swapping its case.",
     "attempts": "2",
-    "phase": "S2",
-    "reviewDate": "2026-08-01",
+    "phase": "Completed",
+    "reviewDate": "2027-01-31",
     "lastSolved": "2026-07-23",
     "url": "",
-    "ef": "3.1",
-    "interval": "9"
+    "ef": "3.0",
+    "interval": "180"
   },
   {
     "date": "22/02/2026",
@@ -5075,12 +5075,12 @@
     "notes": "Matrix Traversal",
     "oneLiner": "It is simple column wise sum",
     "attempts": "3",
-    "phase": "S3",
-    "reviewDate": "2026-06-29",
+    "phase": "Completed",
+    "reviewDate": "2027-01-31",
     "lastSolved": "2026-06-07",
     "url": "",
-    "ef": "3.1",
-    "interval": "22"
+    "ef": "3.0",
+    "interval": "180"
   },
   {
     "date": "09/02/2026",
@@ -5160,12 +5160,12 @@
     "notes": "Brute Force | Simulation \u27e9T: \"Cost of each removal = sum of remaining elements; minimize total cost to remove all.\" \u27e9M: Remove the largest element first. Sort descending, then sum contributions: each element's cost is value \u00d7 (its 1-indexed position in descending order). Equivalently, keep a running total and at each step add the current sum, then subtract the largest remaining element.",
     "oneLiner": "Run two loops and then inner loop calucalte suum and outer loop remove",
     "attempts": "2",
-    "phase": "S2",
-    "reviewDate": "2026-08-07",
+    "phase": "Completed",
+    "reviewDate": "2027-01-31",
     "lastSolved": "2026-07-29",
     "url": "",
-    "ef": "3.1",
-    "interval": "9"
+    "ef": "3.0",
+    "interval": "180"
   },
   {
     "date": "05/02/2026",
@@ -5755,12 +5755,12 @@
     "notes": "Simulation \u27e9T: \"Find longest/last word in a string\" \u2192 need word boundaries without split() \u27e9M: Two-pointer scan with an inner while-loop that only advances on non-space chars; track max via a running count reset each outer iteration. Outer i and inner i share the same index (no separate reset needed since the outer loop's i++ is skipped when inner loop already consumed it) \u2014 but watch that this only works because inner loop increments i directly, letting the for loop's own i++ naturally continue past the space.",
     "oneLiner": "Have the count and use the logic of count till we encounter space",
     "attempts": "2",
-    "phase": "S2",
-    "reviewDate": "2026-07-26",
+    "phase": "Completed",
+    "reviewDate": "2027-01-31",
     "lastSolved": "2026-07-19",
     "url": "",
-    "ef": "3.1",
-    "interval": "9"
+    "ef": "3.0",
+    "interval": "180"
   },
   {
     "date": "25/01/2026",
@@ -6010,12 +6010,12 @@
     "notes": "Simulation",
     "oneLiner": "just we need to add element after the required operation",
     "attempts": "2",
-    "phase": "S2",
-    "reviewDate": "2026-07-15",
+    "phase": "Completed",
+    "reviewDate": "2027-01-31",
     "lastSolved": "2026-07-06",
     "url": "",
-    "ef": "3.1",
-    "interval": "9"
+    "ef": "3.0",
+    "interval": "180"
   },
   {
     "date": "23/01/2026",
@@ -6061,12 +6061,12 @@
     "notes": "Matrix Traversal",
     "oneLiner": "Find min by looping through specific column",
     "attempts": "4",
-    "phase": "S3",
-    "reviewDate": "2026-06-13",
+    "phase": "Completed",
+    "reviewDate": "2027-01-31",
     "lastSolved": "2026-05-20",
     "url": "",
     "ef": "3.0",
-    "interval": "30"
+    "interval": "180"
   },
   {
     "date": "23/01/2026",
@@ -6180,12 +6180,12 @@
     "notes": "Simulation",
     "oneLiner": "Run loop from front and store first element and then shift elements",
     "attempts": "4",
-    "phase": "S3",
-    "reviewDate": "2026-08-07",
+    "phase": "Completed",
+    "reviewDate": "2027-01-31",
     "lastSolved": "2026-06-25",
     "url": "",
-    "ef": "3.1",
-    "interval": "43"
+    "ef": "3.0",
+    "interval": "180"
   },
   {
     "date": "22/01/2026",
@@ -7047,12 +7047,12 @@
     "notes": "Two Pointer | Simulation",
     "oneLiner": "Variation of reverse , just need to check if reverse and original number same or not",
     "attempts": "2",
-    "phase": "S2",
-    "reviewDate": "2026-06-16",
+    "phase": "Completed",
+    "reviewDate": "2027-01-31",
     "lastSolved": "2026-06-08",
     "url": "",
-    "ef": "2.6",
-    "interval": "8"
+    "ef": "3.0",
+    "interval": "180"
   },
   {
     "date": "05/01/2026",
@@ -7115,12 +7115,12 @@
     "notes": "Nested Loops | Pattern Printing",
     "oneLiner": "So here we need to fgure out ranges of loops ,and it will depend on i",
     "attempts": "2",
-    "phase": "S2",
-    "reviewDate": "2026-06-17",
+    "phase": "Completed",
+    "reviewDate": "2027-01-31",
     "lastSolved": "2026-06-09",
     "url": "",
-    "ef": "2.6",
-    "interval": "8"
+    "ef": "3.0",
+    "interval": "180"
   },
   {
     "date": "04/01/2026",
@@ -7217,12 +7217,12 @@
     "notes": "Simulation",
     "oneLiner": "It is armstrong number",
     "attempts": "3",
-    "phase": "S3",
-    "reviewDate": "2026-09-02",
+    "phase": "Completed",
+    "reviewDate": "2027-01-31",
     "lastSolved": "2026-08-04",
     "url": "",
-    "ef": "3.2",
-    "interval": "29"
+    "ef": "3.0",
+    "interval": "180"
   },
   {
     "date": "03/01/2026",
@@ -7285,12 +7285,12 @@
     "notes": "Nested Loops | Pattern Printing",
     "oneLiner": "Pattern printing",
     "attempts": "4",
-    "phase": "S3",
-    "reviewDate": "2026-06-14",
+    "phase": "Completed",
+    "reviewDate": "2027-01-31",
     "lastSolved": "2026-05-21",
     "url": "",
     "ef": "3.0",
-    "interval": "30"
+    "interval": "180"
   },
   {
     "date": "03/01/2026",
@@ -7319,12 +7319,12 @@
     "notes": "Nested Loops | Pattern Printing",
     "oneLiner": "Pattern printing",
     "attempts": "3",
-    "phase": "S3",
-    "reviewDate": "2026-08-11",
+    "phase": "Completed",
+    "reviewDate": "2027-01-31",
     "lastSolved": "2026-07-13",
     "url": "",
-    "ef": "3.2",
-    "interval": "29"
+    "ef": "3.0",
+    "interval": "180"
   },
   {
     "date": "03/01/2026",
