@@ -713,6 +713,14 @@
   },
   {
     "topic": "Tree",
+    "cue": "BFS | Level Order \u27e9T: need one node per level \u2014 rightmost (right-view), leftmost (left-view), or any position-in-level pick \u27e9M: Standard level-order scaffold (null-guard root, snapshot k=q.size(), for",
+    "exampleProblem": "Right View of Binary tree",
+    "oneLiner": "This is a variation of level order of traversal , we need to get only l-1 element",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Tree",
     "cue": "Divide and Conquer | Recursion \u27e9T: \"sorted array \u2192 height-balanced BST\" / \"depth of subtrees never differ by more than 1\" \u2192 recursive build-and-return, always pick the middle of the current range as t",
     "exampleProblem": "Sorted Array To Balanced BST",
     "oneLiner": "\"The exact middle is always the root; divide the rest in half.",
@@ -1454,6 +1462,14 @@
     "oneLiner": "Use Two Pointers (i = 0, j = s.length() - 1).  Skip garbage: Use a while loop with !Character.isLetterOrDigit(char) to advance i or decrement j until they hit valid characters.  Compare case-insensitive: Character.toLowerCase(left) != Character.toLowerCase(right).  The Trap to Avoid: Never use s.replaceAll() or s.toLowerCase() on the whole string, as it wastes O(N) space.",
     "difficulty": "L",
     "friction": "Struggled"
+  },
+  {
+    "topic": "Array",
+    "cue": "Two Pointer | Greedy \u27e9T: two arrays, match each element of A to a qualifying element of B, maximize pairs (cookies\u2194children, boats\u2194people, arrows\u2194balloons) \u27e9M: Sort BOTH ascending, pointers from the s",
+    "exampleProblem": "Assign Cookies",
+    "oneLiner": "Sort both arrays ascending (Order from chaos).  Use Two Pointers starting at index 0 (i for requirements, j for resources).  If the resource satisfies the requirement (s[j] >= g[i]), increment both pointers and your success counter.  If the resource is too small (s[j] < g[i]), it's useless for everyone. Increment only the resource pointer (j++) to try the next biggest one.",
+    "difficulty": "L",
+    "friction": "Smooth"
   },
   {
     "topic": "Array",

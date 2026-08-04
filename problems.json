@@ -924,15 +924,15 @@
     "source": "LeetCode",
     "difficulty": "L",
     "friction": "Smooth",
-    "notes": "Two Pointer | Greedy",
+    "notes": "Two Pointer | Greedy \u27e9T: two arrays, match each element of A to a qualifying element of B, maximize pairs (cookies\u2194children, boats\u2194people, arrows\u2194balloons) \u27e9M: Sort BOTH ascending, pointers from the small end. Advance the resource pointer every iteration; advance the demand pointer + count ONLY on a satisfying match. Correctness = exchange argument: smallest sufficient resource to the smallest demand never blocks a later pairing. O(n log n)",
     "oneLiner": "Sort both arrays ascending (Order from chaos).  Use Two Pointers starting at index 0 (i for requirements, j for resources).  If the resource satisfies the requirement (s[j] >= g[i]), increment both pointers and your success counter.  If the resource is too small (s[j] < g[i]), it's useless for everyone. Increment only the resource pointer (j++) to try the next biggest one.",
-    "attempts": "1",
-    "phase": "Smooth",
-    "reviewDate": "2026-06-12",
-    "lastSolved": "2026-06-09",
+    "attempts": "2",
+    "phase": "S2",
+    "reviewDate": "2026-08-13",
+    "lastSolved": "2026-08-04",
     "url": "",
-    "ef": "3.0",
-    "interval": "3"
+    "ef": "3.1",
+    "interval": "9"
   },
   {
     "date": "18/06/2026",
@@ -1674,13 +1674,13 @@
     "friction": "Struggled",
     "notes": "Topological Sort | Kahn's BFS \u27e9T: The instinct on topological sort is DFS with a visited array, pushing nodes onto a stack on the way out and reversing at the end. That produces a valid ordering, but not the lexicographically smallest one \u2014 and this problem wants the smallest. The second trap is using a plain Queue for Kahn's algorithm: FIFO gives a valid order too, but the tie-break is arbitrary (whatever entered first), not smallest-first. \u27e9M: Kahn's algorithm with a min-heap instead of a queue. Build adjacency + indegree, seed the heap with every indegree-0 node, then repeatedly poll the smallest available node, append it, and decrement its neighbours' indegrees \u2014 pushing any that hit zero. The heap makes the greedy choice at each step: among all currently-unblocked nodes, take the smallest. O((V+E) log V).",
     "oneLiner": "Calculate the in-degree for all nodes and push those with an in-degree of 0 into a Queue (use a PriorityQueue if you need the lexicographically smallest order). Pop nodes, add them to your answer array, and decrement their neighbors' in-degrees\u2014pushing any neighbor that drops to 0 into the queue\u2014and finally check if the answer size matches the total nodes to ensure no cycles exist",
-    "attempts": "2",
+    "attempts": "3",
     "phase": "S1",
-    "reviewDate": "2026-07-23",
-    "lastSolved": "2026-07-22",
+    "reviewDate": "2026-08-07",
+    "lastSolved": "2026-08-05",
     "url": "",
-    "ef": "1.7",
-    "interval": "1"
+    "ef": "1.4",
+    "interval": "2"
   },
   {
     "date": "28/05/2026",
@@ -1861,13 +1861,13 @@
     "friction": "Struggled",
     "notes": "DP | Unbounded Knapsack",
     "oneLiner": "For recursion and memoization, use a 1D state solve(length) with a base case of 0 when length == 0, and loop through all possible cuts i to return the maximum of price[i-1] + solve(length - i). For tabulation, invert this using a 1D array dp[N+1] with an outer loop i building the rod length from 1 to $N$, and an inner loop j trying every cut up to i, updating via the transition dp[i] = Math.max(dp[i], price[j-1] + dp[i-j])",
-    "attempts": "2",
+    "attempts": "3",
     "phase": "S1",
-    "reviewDate": "2026-06-13",
-    "lastSolved": "2026-06-12",
+    "reviewDate": "2026-08-07",
+    "lastSolved": "2026-08-05",
     "url": "",
-    "ef": "1.7",
-    "interval": "1"
+    "ef": "1.4",
+    "interval": "2"
   },
   {
     "date": "17/05/2026",
@@ -1946,13 +1946,13 @@
     "friction": "Struggled",
     "notes": "DP | 0-1 Knapsack",
     "oneLiner": "Create a dp[n][capacity + 1] array and initialize the 0th row to the first item's value whenever the capacity allows (j >= weight[0]). For the remaining items, the max value at dp[i][j] is the maximum of either skipping the item (dp[i-1][j]) or taking it if it fits (value[i] + dp[i-1][j - weight[i]])",
-    "attempts": "2",
+    "attempts": "3",
     "phase": "S1",
-    "reviewDate": "2026-06-12",
-    "lastSolved": "2026-06-11",
+    "reviewDate": "2026-08-07",
+    "lastSolved": "2026-08-05",
     "url": "",
-    "ef": "1.7",
-    "interval": "1"
+    "ef": "1.4",
+    "interval": "2"
   },
   {
     "date": "12/05/2026",
@@ -3422,16 +3422,16 @@
     "topic": "Tree",
     "source": "Scaler",
     "difficulty": "M",
-    "friction": "Struggled",
-    "notes": "BFS | Level Order",
+    "friction": "Smooth",
+    "notes": "BFS | Level Order \u27e9T: need one node per level \u2014 rightmost (right-view), leftmost (left-view), or any position-in-level pick \u27e9M: Standard level-order scaffold (null-guard root, snapshot k=q.size(), for i<k). Always poll and always enqueue left+right; gate only the add \u2014 i==k-1 \u2192 rightmost, i==0 \u2192 leftmost. No inner list, no second pass: O(w) space not O(n). Trap: building full levels then post-filtering works but is two-pass waste",
     "oneLiner": "This is a variation of level order of traversal , we need to get only l-1 element",
-    "attempts": "1",
-    "phase": "New",
-    "reviewDate": "2026-07-20",
-    "lastSolved": "",
+    "attempts": "2",
+    "phase": "S2",
+    "reviewDate": "2026-08-12",
+    "lastSolved": "2026-08-04",
     "url": "",
-    "ef": "2.5",
-    "interval": "3"
+    "ef": "2.6",
+    "interval": "8"
   },
   {
     "date": "24/03/2026",
@@ -3612,13 +3612,13 @@
     "friction": "Struggled",
     "notes": "Monotonic Stack | Contribution Technique",
     "oneLiner": "Find LSE_L,LSE_R,LGE_L,LGE_R and then from there using contrubtion tecnhqie find count and then find contribution and then find difference",
-    "attempts": "2",
+    "attempts": "3",
     "phase": "S1",
-    "reviewDate": "2026-06-12",
-    "lastSolved": "2026-06-11",
+    "reviewDate": "2026-08-07",
+    "lastSolved": "2026-08-05",
     "url": "",
-    "ef": "1.7",
-    "interval": "1"
+    "ef": "1.4",
+    "interval": "2"
   },
   {
     "date": "18/03/2026",
