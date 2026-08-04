@@ -689,9 +689,25 @@
   },
   {
     "topic": "Tree",
+    "cue": "BFS | Level Order \u27e9T: eed nodes grouped by depth, or any per-level aggregate (max, avg, right-view, zigzag) \u27e9M: Queue (ArrayDeque), null-guard root before offer. Outer while(!q.isEmpty()) = one level;",
+    "exampleProblem": "Level Order",
+    "oneLiner": "Go level by level using queue and have for loop so that we cann array list for each",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Tree",
     "cue": "DFS | Inorder \u27e9T: Binary tree \"return nodes in sorted/BST order\" or any traversal-order question \u2014 wrong instinct is to reach for a stack/iterative machinery or to touch the node before recursing \u27e9M: ",
     "exampleProblem": "Inorder Traversal",
     "oneLiner": "inorder travesal , left root pritn , right , only logic you need to create separate funtion for main recursive calls as we do not want multiple arraylist confusion in memory",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Tree",
+    "cue": "DFS | Preorder \u27e9T: need node value before its subtrees (root \u2192 left \u2192 right), collected in visit order \u27e9M: Recursive \u2014 void helper(node, list), null-guard return, list.add(node.val), left, right; accu",
+    "exampleProblem": "Preorder Traversal",
+    "oneLiner": "preorder travesal , root pritn ,left , right , only logic you need to create separate funtion for main recursive calls as we do not want multiple arraylist confusion in memory",
     "difficulty": "M",
     "friction": "Smooth"
   },
