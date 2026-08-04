@@ -1638,5 +1638,13 @@
     "oneLiner": "Sliding window",
     "difficulty": "M",
     "friction": "Smooth"
+  },
+  {
+    "topic": "String",
+    "cue": "Sliding Window \u27e9T: does a permutation/anagram of s1 appear in s2 \u2014 fixed-width window, order-independent match \u27e9M: int[26] freq for pattern and for window, seed first len1 chars. Slide: ++ entering ch",
+    "exampleProblem": "Permutation in String",
+    "oneLiner": "Sliding Window",
+    "difficulty": "M",
+    "friction": "Struggled"
   }
 ]

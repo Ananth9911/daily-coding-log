@@ -1,6 +1,6 @@
 [
   {
-    "date": "05/08/2026",
+    "date": "04/08/2026",
     "name": "Minimum Size Subarray Sum",
     "topic": "Array",
     "source": "LeetCode",
@@ -15,6 +15,23 @@
     "url": "",
     "ef": "2.5",
     "interval": "3"
+  },
+  {
+    "date": "04/08/2026",
+    "name": "Permutation in String",
+    "topic": "String",
+    "source": "LeetCode",
+    "difficulty": "M",
+    "friction": "Struggled",
+    "notes": "Sliding Window \u27e9T: does a permutation/anagram of s1 appear in s2 \u2014 fixed-width window, order-independent match \u27e9M: int[26] freq for pattern and for window, seed first len1 chars. Slide: ++ entering char, -- leaving char, compare arrays. Window count = n-m+1, so either slide-then-check or check-then-slide-with-trailing-check. Trap: containsKey/membership instead of counts \u2014 \"aa\" passes as a permutation of \"ab\". Permutation = multiplicity, always compare counts. O(26n); matched-counter makes it O(n)",
+    "oneLiner": "Sliding Window",
+    "attempts": "1",
+    "phase": "Struggled",
+    "reviewDate": "2026-08-06",
+    "lastSolved": "2026-08-05",
+    "url": "",
+    "ef": "2.5",
+    "interval": "1"
   },
   {
     "date": "03/08/2026",
