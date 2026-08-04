@@ -1630,5 +1630,13 @@
     "oneLiner": "Don't try to slide the window by exactly one position when budget runs out \u2014 that silently breaks the invariant. Use a while (not if) to shrink, because after adding one bad element you might need to drop several positions to get back under k. And track zeros as a real counter rather than decrementing/resetting the budget k in place \u2014 mutating k and \"crediting it back\" is where the accounting drifts and oversized windows leak through.",
     "difficulty": "M",
     "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Sliding Window | Min Windo \u27e9T: shortest contiguous subarray/substring satisfying a threshold (sum \u2265 target, contains all chars) \u2014 all-positive values required for the sum variant \u27e9M: sum=0, left=0, ex",
+    "exampleProblem": "Minimum Size Subarray Sum",
+    "oneLiner": "Sliding window",
+    "difficulty": "M",
+    "friction": "Smooth"
   }
 ]

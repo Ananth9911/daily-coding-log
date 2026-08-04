@@ -1,5 +1,22 @@
 [
   {
+    "date": "05/08/2026",
+    "name": "Minimum Size Subarray Sum",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "M",
+    "friction": "Smooth",
+    "notes": "Sliding Window | Min Windo \u27e9T: shortest contiguous subarray/substring satisfying a threshold (sum \u2265 target, contains all chars) \u2014 all-positive values required for the sum variant \u27e9M: sum=0, left=0, expand right in for-loop. Shrink WHILE VALID (sum>=target): measure right-left+1 FIRST, then subtract nums[left], left++. Sentinel MAX_VALUE \u2192 return 0 if untouched. Discriminator: MIN-window shrinks while valid, MAX-window shrinks while invalid \u2014 same scaffold, inverted condition",
+    "oneLiner": "Sliding window",
+    "attempts": "1",
+    "phase": "Smooth",
+    "reviewDate": "2026-08-08",
+    "lastSolved": "2026-08-05",
+    "url": "",
+    "ef": "2.5",
+    "interval": "3"
+  },
+  {
     "date": "03/08/2026",
     "name": "Longest Substring with At Most K Distinct Characters",
     "topic": "Array",
