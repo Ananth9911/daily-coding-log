@@ -16,12 +16,12 @@
     "mastery": 100
   },
   {
-    "smooth": 32,
-    "struggled": 15,
+    "smooth": 34,
+    "struggled": 13,
     "hard": 15,
     "total": 36,
     "topic": "Tree",
-    "mastery": 89
+    "mastery": 94
   },
   {
     "smooth": 30,
@@ -56,12 +56,12 @@
     "mastery": 100
   },
   {
-    "smooth": 13,
+    "smooth": 14,
     "struggled": 2,
     "hard": 6,
     "total": 14,
     "topic": "Maths",
-    "mastery": 93
+    "mastery": 100
   },
   {
     "smooth": 13,

@@ -777,11 +777,27 @@
   },
   {
     "topic": "Tree",
+    "cue": "BFS | Level Order \u27e9T: level-order output where missing children must appear as -1 \u27e9M: enqueue real nodes AND nulls; at poll, if node==null add -1 and continue (never expand a null); else add val and e",
+    "exampleProblem": "Serialize Binary Tree",
+    "oneLiner": "Simple level order traversal with handling null",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Tree",
     "cue": "BFS | Level Order \u27e9T: \"deserialize / reconstruct binary tree from level-order array\" / null denoted by -1 \u2192 BFS with a queue, index walking the array \u27e9M: Make root from A[0], enqueue it. Keep a pointe",
     "exampleProblem": "Deserialize Binary Tree",
     "oneLiner": "Just use same algo of level order trvasesal , with slight modification",
     "difficulty": "M",
     "friction": "Struggled"
+  },
+  {
+    "topic": "Tree",
+    "cue": "DFS | Min-Max Bound \u27e9T: preorder + \"every internal node has exactly one child\" \u2192 tree is a chain, consecutive pairs are parent\u2192child \u27e9M: maintain (min,max) window init to \u00b1INF; per step check A[i+1] i",
+    "exampleProblem": "Check for BST with One Child",
+    "oneLiner": "Have min and max and now if current elemt falls under max and min then it is not BST or else yes",
+    "difficulty": "M",
+    "friction": "Smooth"
   },
   {
     "topic": "Tree",
@@ -833,11 +849,19 @@
   },
   {
     "topic": "Maths",
-    "cue": "Two Pointer | Sorting",
+    "cue": "Two Pointer | Sorting \u27e9T: sorted array + count pairs with target sum + duplicates allowed \u27e9M: two pointers; on match, if A[l]==A[r] the whole window is one value \u2192 add C(n,2), break; else count block ",
     "exampleProblem": "Pairs with given sum II",
     "oneLiner": "We need to handle duplicates here",
     "difficulty": "M",
     "friction": "Struggled"
+  },
+  {
+    "topic": "Maths",
+    "cue": "Two Pointer | Sorting",
+    "exampleProblem": "3 Sum",
+    "oneLiner": "Have two loops for every i have two pointers of previous problem",
+    "difficulty": "M",
+    "friction": "Smooth"
   },
   {
     "topic": "Maths",
