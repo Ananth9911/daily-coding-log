@@ -1001,11 +1001,11 @@
   },
   {
     "topic": "Tree",
-    "cue": "Morris Traversal | O(1) Space",
+    "cue": "Morris Traversal | O(1) Space \u27e9T: inorder without recursion or stack, extra space must be O(1) \u27e9M: no left \u2192 print, go right. Else find pred (left, then right till null-or-curr):     pred.right null \u2192",
     "exampleProblem": "Morris Inorder Traversal",
     "oneLiner": "if left node is empty , then add to our arraylist ,else find left subtree right most node and make connection to curr node and move to left , if we visited 2nd time then remove connection and add to our arrray list and move right",
     "difficulty": "M",
-    "friction": "Smooth"
+    "friction": "Struggled"
   },
   {
     "topic": "Tree",
