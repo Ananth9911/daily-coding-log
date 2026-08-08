@@ -136,6 +136,14 @@
     "friction": "Smooth"
   },
   {
+    "topic": "String",
+    "cue": "Vertical Scanning \u27e9T: longest common prefix across a list of strings \u27e9M: take A[0] as reference. For each column i, check that char against every other string at index i. Bail with substring(0,i) on t",
+    "exampleProblem": "Longest Common Prefix",
+    "oneLiner": "Use the first word as a template, scanning column-by-column across all other words, and chop off the prefix the exact moment you hit a mismatched letter or a shorter word",
+    "difficulty": "H",
+    "friction": "Smooth"
+  },
+  {
     "topic": "Array",
     "cue": "HashSet \u27e9T: nested loop over all pairs to find sum \u27e9M: ingle pass with HashSet \u2014 check for complement B\u2212A[i] *before* inserting A[i], so an element never pairs with itself",
     "exampleProblem": "Good Pair",
@@ -164,6 +172,14 @@
     "cue": "Prefix Sum \u27e9T: Multiple range-sum queries \u2014 here your instinct was already right (build the prefix array), but you branched on L==0 to avoid the ps[L-1] out-of-bounds. That's a correct patch, not a cl",
     "exampleProblem": "Range Sum Query",
     "oneLiner": "Precompute a 64-bit (Long) prefix sum array to avoid overflow, then answer each query in O(1) time by calculating ps[R] - ps[L-1] (handling the L=0 edge case)",
+    "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "Array",
+    "cue": "Carry Forward \u27e9T: count subsequences matching a fixed 2-char pattern \"XY\" (X before Y) in a string \u27e9M: single right-to-left sweep. Maintain running count of the SECOND char seen so far (cg). On hittin",
+    "exampleProblem": "Carry Forward - Special Subsequences",
+    "oneLiner": "Iterate right to left maintaining a running count of 'G's, and whenever you encounter a 'A', add the current count of 'G's to your total pairs.",
     "difficulty": "M",
     "friction": "Smooth"
   },
@@ -317,6 +333,14 @@
     "exampleProblem": "Good Subarrays",
     "oneLiner": "Run two loops and find count",
     "difficulty": "M",
+    "friction": "Smooth"
+  },
+  {
+    "topic": "String",
+    "cue": "Expand Around Center \u27e9T: longest palindromic substring, O(1) space (no DP table) \u27e9M: 2n-1 centers. For each i run TWO expansions: (i,i) odd and (i,i+1) even. while(l>=0 && r<n && A[l]==A[r]) update-th",
+    "exampleProblem": "Longest Palindromic Substring",
+    "oneLiner": "Iterate through every character in the string, treating it as both an odd-length and even-length center, and use two pointers to expand outward as long as the characters match, keeping track of the longest valid start index and length",
+    "difficulty": "H",
     "friction": "Smooth"
   },
   {
@@ -681,11 +705,11 @@
   },
   {
     "topic": "Queue",
-    "cue": "Deque | Frequency Count",
+    "cue": "Deque | Frequency Count \u27e9T: stream of chars, after each one report the FIRST non-repeating so far (else '#') \u27e9M: for each char: freq[c-'a']++ then q.offer(c) UNCONDITIONALLY (no gate). Then while(!q.i",
     "exampleProblem": "Unique Letter",
     "oneLiner": "Have freq array to know duplicates and also use queues",
     "difficulty": "H",
-    "friction": "Struggled"
+    "friction": "Smooth"
   },
   {
     "topic": "Tree",
@@ -1009,11 +1033,11 @@
   },
   {
     "topic": "Tree",
-    "cue": "Inorder Traversal | Swap Detection",
+    "cue": "Inorder Traversal | Swap Detection \u27e9T: BST + find/fix swapped pair + O(1) space (no stack, no array) \u27e9M: Morris inorder, carry prev TreeNode across iterations. Two emit points ONLY: (a) curr.left==nul",
     "exampleProblem": "Recover Binary Search Tree",
     "oneLiner": "Find inorder then have 3 variables to track first , middle(in case of adjacent swaps) , last for 2 cases",
     "difficulty": "M",
-    "friction": "Smooth"
+    "friction": "Struggled"
   },
   {
     "topic": "Hashing",
