@@ -2779,13 +2779,13 @@
     "friction": "Smooth",
     "notes": "Inorder Traversal | Counter",
     "oneLiner": "find inorder and do count++ ,if count==k return that node",
-    "attempts": "3",
-    "phase": "S2",
-    "reviewDate": "2026-06-13",
-    "lastSolved": "2026-05-26",
+    "attempts": "4",
+    "phase": "S4",
+    "reviewDate": "2026-09-27",
+    "lastSolved": "2026-08-09",
     "url": "",
-    "ef": "2.6",
-    "interval": "18"
+    "ef": "2.7",
+    "interval": "49"
   },
   {
     "date": "09/04/2026",
