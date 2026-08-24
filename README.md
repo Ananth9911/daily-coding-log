@@ -10,15 +10,15 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem | Topic | Difficulty | Phase |
 | :--- | :--- | :--- | :---: | :---: |
-| 25/08/2026 | Flatten Nested List Iterator | Stack & Queue | 🟡 |  |
-| 24/08/2026 | Remove All Adjacent Duplicates In String II | Stack & Queue | 🟡 |  |
-| 23/08/2026 | Last Stone Weight | Queue | 🟡 |  |
-| 22/08/2026 | Sort Characters By Frequency | Hashing | 🟡 |  |
-| 21/08/2026 | Find All Anagrams in a String | Hashing | 🟡 |  |
-| 20/08/2026 | Find Pivot Index | Hashing | 🟡 |  |
-| 19/08/2026 | Contiguous Array | Hashing | 🟡 |  |
-| 18/08/2026 | Logger Rate Limiter | Hashing | 🟡 |  |
-| 17/08/2026 | Largest Number | Hashing | 🟡 |  |
-| 16/08/2026 | Majority Element | Hashing | 🟡 |  |
+| 25/08/2026 | Flatten Nested List Iterator | Uncategorized | 🟡 |  |
+| 24/08/2026 | Remove All Adjacent Duplicates In String II | Uncategorized | 🟡 |  |
+| 23/08/2026 | Last Stone Weight | Uncategorized | 🟡 |  |
+| 22/08/2026 | Sort Characters By Frequency | Uncategorized | 🟡 |  |
+| 21/08/2026 | Find All Anagrams in a String | Uncategorized | 🟡 |  |
+| 20/08/2026 | Find Pivot Index | Uncategorized | 🟡 |  |
+| 19/08/2026 | Contiguous Array | Uncategorized | 🟡 |  |
+| 18/08/2026 | Logger Rate Limiter | Uncategorized | 🟡 |  |
+| 17/08/2026 | Largest Number | Uncategorized | 🟡 |  |
+| 16/08/2026 | Majority Element | Uncategorized | 🟡 |  |
 
 [→ View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)

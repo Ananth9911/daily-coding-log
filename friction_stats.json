@@ -3,9 +3,9 @@
     "smooth": 171,
     "struggled": 18,
     "hard": 27,
-    "total": 177,
+    "total": 171,
     "topic": "Array",
-    "mastery": 97
+    "mastery": 100
   },
   {
     "smooth": 114,
@@ -32,19 +32,27 @@
     "mastery": 97
   },
   {
-    "smooth": 17,
-    "struggled": 3,
-    "hard": 5,
-    "total": 29,
-    "topic": "Hashing",
-    "mastery": 59
-  },
-  {
     "smooth": 22,
     "struggled": 12,
     "hard": 21,
     "total": 22,
     "topic": "DP",
+    "mastery": 100
+  },
+  {
+    "smooth": 0,
+    "struggled": 0,
+    "hard": 0,
+    "total": 21,
+    "topic": "Uncategorized",
+    "mastery": 0
+  },
+  {
+    "smooth": 17,
+    "struggled": 3,
+    "hard": 5,
+    "total": 17,
+    "topic": "Hashing",
     "mastery": 100
   },
   {
@@ -139,9 +147,9 @@
     "smooth": 3,
     "struggled": 1,
     "hard": 3,
-    "total": 4,
+    "total": 3,
     "topic": "Queue",
-    "mastery": 75
+    "mastery": 100
   },
   {
     "smooth": 2,
@@ -150,14 +158,6 @@
     "total": 2,
     "topic": "HashMap",
     "mastery": 100
-  },
-  {
-    "smooth": 0,
-    "struggled": 0,
-    "hard": 0,
-    "total": 2,
-    "topic": "Stack & Queue",
-    "mastery": 0
   },
   {
     "smooth": 1,
