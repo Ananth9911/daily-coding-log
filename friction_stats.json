@@ -1,9 +1,9 @@
 [
   {
-    "smooth": 177,
+    "smooth": 171,
     "struggled": 18,
     "hard": 27,
-    "total": 177,
+    "total": 171,
     "topic": "Array",
     "mastery": 100
   },
@@ -32,19 +32,27 @@
     "mastery": 97
   },
   {
-    "smooth": 29,
-    "struggled": 3,
-    "hard": 5,
-    "total": 29,
-    "topic": "Hashing",
-    "mastery": 100
-  },
-  {
     "smooth": 22,
     "struggled": 12,
     "hard": 21,
     "total": 22,
     "topic": "DP",
+    "mastery": 100
+  },
+  {
+    "smooth": 0,
+    "struggled": 0,
+    "hard": 0,
+    "total": 21,
+    "topic": "Uncategorized",
+    "mastery": 0
+  },
+  {
+    "smooth": 17,
+    "struggled": 3,
+    "hard": 5,
+    "total": 17,
+    "topic": "Hashing",
     "mastery": 100
   },
   {
@@ -106,14 +114,6 @@
   {
     "smooth": 8,
     "struggled": 2,
-    "hard": 3,
-    "total": 8,
-    "topic": "Stack",
-    "mastery": 100
-  },
-  {
-    "smooth": 8,
-    "struggled": 2,
     "hard": 4,
     "total": 8,
     "topic": "Heap",
@@ -128,11 +128,11 @@
     "mastery": 100
   },
   {
-    "smooth": 5,
-    "struggled": 1,
+    "smooth": 7,
+    "struggled": 2,
     "hard": 3,
-    "total": 5,
-    "topic": "Queue",
+    "total": 7,
+    "topic": "Stack",
     "mastery": 100
   },
   {
@@ -141,6 +141,14 @@
     "hard": 5,
     "total": 5,
     "topic": "Greedy",
+    "mastery": 100
+  },
+  {
+    "smooth": 3,
+    "struggled": 1,
+    "hard": 3,
+    "total": 3,
+    "topic": "Queue",
     "mastery": 100
   },
   {
