@@ -1701,7 +1701,7 @@
     "exampleProblem": "Sort Characters By Frequency",
     "oneLiner": "",
     "difficulty": "M",
-    "friction": ""
+    "friction": "Completed"
   },
   {
     "topic": "Queue",
@@ -1709,6 +1709,6 @@
     "exampleProblem": "Last Stone Weight",
     "oneLiner": "",
     "difficulty": "M",
-    "friction": ""
+    "friction": "Completed"
   }
 ]
