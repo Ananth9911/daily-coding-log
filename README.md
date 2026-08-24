@@ -10,8 +10,8 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem | Topic | Difficulty | Phase |
 | :--- | :--- | :--- | :---: | :---: |
-| 25/08/2026 | Flatten Nested List Iterator | Stack | 🟡 |  |
-| 24/08/2026 | Remove All Adjacent Duplicates In String II | Queue | 🟡 |  |
+| 25/08/2026 | Flatten Nested List Iterator | Stack & Queue | 🟡 |  |
+| 24/08/2026 | Remove All Adjacent Duplicates In String II | Stack & Queue | 🟡 |  |
 | 23/08/2026 | Last Stone Weight | Queue | 🟡 |  |
 | 22/08/2026 | Sort Characters By Frequency | Hashing | 🟡 |  |
 | 21/08/2026 | Find All Anagrams in a String | Hashing | 🟡 |  |

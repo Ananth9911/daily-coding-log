@@ -104,14 +104,6 @@
     "mastery": 100
   },
   {
-    "smooth": 7,
-    "struggled": 2,
-    "hard": 3,
-    "total": 8,
-    "topic": "Stack",
-    "mastery": 88
-  },
-  {
     "smooth": 8,
     "struggled": 2,
     "hard": 4,
@@ -128,12 +120,12 @@
     "mastery": 100
   },
   {
-    "smooth": 3,
-    "struggled": 1,
+    "smooth": 7,
+    "struggled": 2,
     "hard": 3,
-    "total": 5,
-    "topic": "Queue",
-    "mastery": 60
+    "total": 7,
+    "topic": "Stack",
+    "mastery": 100
   },
   {
     "smooth": 5,
@@ -144,12 +136,28 @@
     "mastery": 100
   },
   {
+    "smooth": 3,
+    "struggled": 1,
+    "hard": 3,
+    "total": 4,
+    "topic": "Queue",
+    "mastery": 75
+  },
+  {
     "smooth": 2,
     "struggled": 0,
     "hard": 0,
     "total": 2,
     "topic": "HashMap",
     "mastery": 100
+  },
+  {
+    "smooth": 0,
+    "struggled": 0,
+    "hard": 0,
+    "total": 2,
+    "topic": "Stack & Queue",
+    "mastery": 0
   },
   {
     "smooth": 1,
