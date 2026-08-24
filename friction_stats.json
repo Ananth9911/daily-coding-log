@@ -40,6 +40,14 @@
     "mastery": 100
   },
   {
+    "smooth": 0,
+    "struggled": 0,
+    "hard": 0,
+    "total": 21,
+    "topic": "Uncategorized",
+    "mastery": 0
+  },
+  {
     "smooth": 17,
     "struggled": 3,
     "hard": 5,
