@@ -1157,7 +1157,7 @@
     "exampleProblem": "Meeting Rooms II",
     "oneLiner": "Extract all start times into one array and end times into another. Sort both arrays. Use two pointers (i for start, j for end). If start[i] < end[j], a meeting is starting, increment current rooms and move i. Else, a meeting is ending, decrement current rooms and move j. Keep tracking the global maximum",
     "difficulty": "H",
-    "friction": "Smooth"
+    "friction": "Struggled"
   },
   {
     "topic": "String",
