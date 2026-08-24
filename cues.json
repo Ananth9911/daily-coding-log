@@ -1694,5 +1694,21 @@
     "oneLiner": "Sliding Window",
     "difficulty": "M",
     "friction": "Struggled"
+  },
+  {
+    "topic": "Hashing",
+    "cue": "Heap (Priority Queue)",
+    "exampleProblem": "Sort Characters By Frequency",
+    "oneLiner": "",
+    "difficulty": "M",
+    "friction": ""
+  },
+  {
+    "topic": "Queue",
+    "cue": "Heap (Priority Queue)",
+    "exampleProblem": "Last Stone Weight",
+    "oneLiner": "",
+    "difficulty": "M",
+    "friction": ""
   }
 ]
