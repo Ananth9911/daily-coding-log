@@ -421,7 +421,7 @@
     "exampleProblem": "Find nth Magic Number",
     "oneLiner": "Treat the binary representation of the integer A as a sequence of ON/OFF flags, where every set bit (1) at index i adds 5^{i+1} to the total sum.",
     "difficulty": "H",
-    "friction": "Struggled"
+    "friction": "Smooth"
   },
   {
     "topic": "Array",
@@ -1293,7 +1293,7 @@
     "exampleProblem": "Dijkstra",
     "oneLiner": "Use a Priority Queue (Min-Heap) storing (node, total_weight_from_source) and a distance array initialized to -1. Continuously pop the minimum weight node, and if it hasn't been visited, lock in its distance and push all its neighbors into the queue with their new cumulative weights.",
     "difficulty": "H",
-    "friction": "Struggled"
+    "friction": "Smooth"
   },
   {
     "topic": "Graph",
