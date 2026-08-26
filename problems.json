@@ -1,5 +1,22 @@
 [
   {
+    "date": "26/08/2026",
+    "name": "Subarray Product Less Than K",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "M",
+    "friction": "Smooth",
+    "notes": "Sliding Window | Two Pointer \u27e9T: \"Count subarrays/substrings\" + a condition that's monotonic as the window grows (product < k, sum < k, at most K distinct, at most K zeros). All elements \u2265 1 (or non-negative for sums) \u2014 this is what makes the window valid. If negatives, zeros, or fractions appear, the trigger dies; go to prefix sums + map instead. \"Contiguous\" + \"count,\" not \"find the best one.\" Count \u2192 add per right. Optimize \u2192 track max/min per right. \u27e9M: Guard the degenerate case (k <= 1 here \u2014 condition unsatisfiable for any window). left = 0, running aggregate = identity (1 for product, 0 for sum). For each right: absorb nums[right] into the aggregate. while (invalid) \u2192 release nums[left] from the aggregate, left++. count += right - left + 1.",
+    "oneLiner": "Sliding window and keep two pointers and then for left movement divide with nums[left]",
+    "attempts": "1",
+    "phase": "Smooth",
+    "reviewDate": "2026-08-29",
+    "lastSolved": "2026-08-26",
+    "url": "",
+    "ef": "2.5",
+    "interval": "3"
+  },
+  {
     "date": "25/08/2026",
     "name": "Flatten Nested List Iterator",
     "topic": "Stack",
@@ -1300,13 +1317,13 @@
     "friction": "Struggled",
     "notes": "Array | Two Pointer",
     "oneLiner": "The Setup: Sort the array.  The Anchor: Loop i from 0 to n-2.  Anchor Duplicate Check: if(i > 0 && nums[i] == nums[i-1]) continue;  The Pinch: Set left = i + 1 and right = n - 1. If sum < 0, left++. If sum > 0, right--.  The Trap (Pointer Duplicates): When sum == 0, record the triplet. Then, you must advance both pointers, and use two inner while loops to fast-forward left and right past any identical consecutive numbers.",
-    "attempts": "2",
+    "attempts": "3",
     "phase": "S1",
-    "reviewDate": "2026-06-13",
-    "lastSolved": "2026-06-12",
+    "reviewDate": "2026-08-29",
+    "lastSolved": "2026-08-27",
     "url": "",
-    "ef": "2.7",
-    "interval": "1"
+    "ef": "2.4",
+    "interval": "2"
   },
   {
     "date": "19/06/2026",
@@ -5142,13 +5159,13 @@
     "friction": "Smooth",
     "notes": "Two Pointer",
     "oneLiner": "Have two pointers and then do swap",
-    "attempts": "2",
-    "phase": "S2",
-    "reviewDate": "2026-06-14",
-    "lastSolved": "2026-06-05",
+    "attempts": "4",
+    "phase": "Completed",
+    "reviewDate": "2027-02-22",
+    "lastSolved": "2026-08-26",
     "url": "",
-    "ef": "3.1",
-    "interval": "9"
+    "ef": "3.0",
+    "interval": "180"
   },
   {
     "date": "24/02/2026",

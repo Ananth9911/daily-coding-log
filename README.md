@@ -1,6 +1,6 @@
 # 🚀 Tracker
-- **Total Problems Solved:** 524 🔥
-- **Overall Mastery:** 100% Smooth | Hard: 147 | Medium: 150
+- **Total Problems Solved:** 525 🔥
+- **Overall Mastery:** 100% Smooth | Hard: 147 | Medium: 151
 - **System Status:** Online 🟢
 
 ### 🎓 Curriculum Progress
@@ -10,6 +10,7 @@
 ### ⏳ Latest 10 Solved
 | Date | Problem | Topic | Difficulty | Phase |
 | :--- | :--- | :--- | :---: | :---: |
+| 26/08/2026 | Subarray Product Less Than K | Array | 🟡 | Smooth |
 | 25/08/2026 | Flatten Nested List Iterator | Stack | 🟡 | Completed |
 | 24/08/2026 | Remove All Adjacent Duplicates In String II | Queue | 🟡 | Completed |
 | 23/08/2026 | Last Stone Weight | Queue | 🟡 | Completed |
@@ -19,6 +20,5 @@
 | 19/08/2026 | Contiguous Array | Hashing | 🟡 | Completed |
 | 18/08/2026 | Logger Rate Limiter | Hashing | 🟡 | Completed |
 | 17/08/2026 | Largest Number | Hashing | 🟡 | Completed |
-| 16/08/2026 | Majority Element | Hashing | 🟡 | Completed |
 
 [→ View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)

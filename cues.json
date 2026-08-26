@@ -1710,5 +1710,13 @@
     "oneLiner": "",
     "difficulty": "M",
     "friction": "Completed"
+  },
+  {
+    "topic": "Array",
+    "cue": "Sliding Window | Two Pointer \u27e9T: \"Count subarrays/substrings\" + a condition that's monotonic as the window grows (product < k, sum < k, at most K distinct, at most K zeros). All elements \u2265 1 (or non-n",
+    "exampleProblem": "Subarray Product Less Than K",
+    "oneLiner": "Sliding window and keep two pointers and then for left movement divide with nums[left]",
+    "difficulty": "M",
+    "friction": "Smooth"
   }
 ]
