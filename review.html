@@ -5,6 +5,7 @@
 <title>SRS Engine | Ananth</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>window.confetti = window.confetti || function(){}; /* ADDED: page still works if the CDN is blocked */</script>
 <style>
 :root{--bg:#030303;--bg2:#0a0a0a;--bg3:#111;--card:#0d0d0d;--border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.15);--text:#f4f4f5;--muted:#71717a;--dim:#3f3f46;--green:#39d353;--blue:#3b82f6;--yellow:#eab308;--red:#ef4444;--purple:#a855f7;--orange:#f0883e;--cyan:#22d3ee;--fd:'Space Grotesk',sans-serif;--fm:'IBM Plex Mono',monospace}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -658,7 +659,7 @@ async function loadQueue(){
     renderQueue(_snapshotData,true,split.retentionCount);
   }catch(e){
     document.getElementById('loading').style.display='block';
-    document.getElementById('loading').innerHTML='<div class="empty-state"><h2>Connection Failed</h2><p style="color:var(--muted)">Check console.</p></div>';
+    document.getElementById('loading').innerHTML='<div class="empty-state"><h2>Connection Failed</h2><p style="color:var(--muted)">'+String((e&&e.message)||e).replace(/</g,'&lt;')+'</p></div>'; /* CHANGED: shows the real error */
     console.error(e);
   }
 }
