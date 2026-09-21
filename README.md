@@ -1,6 +1,6 @@
 # 🚀 Tracker
 - **Total Problems Solved:** 525 🔥
-- **Overall Mastery:** 100% Smooth | Hard: 147 | Medium: 151
+- **Overall Mastery:** 62% Smooth | Hard: 147 | Medium: 151
 - **System Status:** Online 🟢
 
 ### 🎓 Curriculum Progress
