@@ -41,10 +41,11 @@ def get_curriculum_stats():
     try:
         df = pd.read_csv(f"{PLAN_SHEET_URL}&cb={int(time.time())}")
         modules = {
-            "Foundation":              ["Intro to Programming"],
-            "DSA":                     ["DSA 1","DSA 2","DSA 3","DSA 4","DSA 4.2","Problem Solving","DSA Practice","DSA Revision"],
-            "Core (SQL/CS)":           ["Databases","SQL","CS Fundamentals"],
-            "System Design (LLD/HLD)": ["LLD","High Level Design","System Design"]
+            "Foundation": ["Intro to Programming"],
+            "DSA": ["DSA 1", "DSA 2", "DSA 3", "DSA 4", "DSA 4.2", "Problem Solving", "DSA Practice", "DSA Revision"],
+            "Core (SQL/CS)": ["Databases", "SQL", "CS Fundamentals"],
+            "System Design (LLD/HLD)": ["LLD", "High Level Design", "System Design", "OOP + Design Revision"],
+            "Mocks": ["Mock"]
         }
         md = ""
         for name, keys in modules.items():
