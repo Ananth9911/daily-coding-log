@@ -133,10 +133,15 @@ def update_portfolio():
     except: pass
 
     # ── WRITE JSONs to REPO ROOT ──────────────────────────────
-    with open(out("problems.json"), "w") as f: json.dump(problems, f, indent=2)
+    # PUBLIC FILE — only what the portfolio shows. Notes, ease factors, review dates,
+    # attempts and phases stay in the private Sheet and the private CONTROL dashboard.
+    PUBLIC = ("date", "name", "topic", "source", "difficulty", "url")
+    public_problems = [{k: p.get(k, "") for k in PUBLIC} for p in problems]
+    with open(out("problems.json"), "w") as f: json.dump(public_problems, f, indent=2)
     print(f"✅ problems.json → {len(problems)} records (written to {out('problems.json')})")
 
-    with open(out("cues.json"), "w") as f: json.dump(cues, f, indent=2)
+    # cues.json held raw study notes for the retired Cue Library — publish nothing now.
+    with open(out("cues.json"), "w") as f: json.dump([], f)
     print(f"✅ cues.json → {len(cues)} entries")
 
     friction_list = []
