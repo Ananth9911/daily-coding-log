@@ -1,3 +1,4 @@
+import re
 """
 update_portfolio.py v3 — PATH FIX
 - Always writes to REPO ROOT regardless of where script is called from
@@ -24,6 +25,9 @@ def out(filename):
     return os.path.join(REPO_ROOT, filename)
 
 LIVE_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTQO1O6tuJ-BykB1-96MjCERmbqV205_0QFGRT6s5h1opfAFygWJb98gBvvuXLBKLb7-LG8Q1Uh0MMI/pub?gid=2101622849&single=true&output=csv"
+# gid of the Activity_Log tab — run setupActivityLog() in CONTROL once and paste the number it prints.
+# Left empty, the sync simply skips activity.json and everything else works as before.
+ACTIVITY_GID = ""
 PLAN_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTQO1O6tuJ-BykB1-96MjCERmbqV205_0QFGRT6s5h1opfAFygWJb98gBvvuXLBKLb7-LG8Q1Uh0MMI/pub?gid=0&single=true&output=csv"
 
 # Phases that count as "solved at least once"
@@ -205,9 +209,31 @@ def update_portfolio():
         diff  = "🔴" if p['difficulty']=='H' else "🟡" if p['difficulty']=='M' else "🟢"
         phase = p.get('phase','New')
         readme += f"| {p['date']} | {p['name']} | {p['topic']} | {diff} | {phase} |\n"
-    readme += "\n[→ View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)"
+    readme += "\n[→ Portfolio](https://ananth9911.github.io/Ananth-Porfolio/)"
 
     with open(out("README.md"), "w") as f: f.write(readme)
     print(f"✅ README.md\n\n🎯 Done: {total} problems | {mastery}% mastery | {len(cues)} cues")
 
-if __name__ == "__main__": update_portfolio()
+def build_activity():
+    """activity.json — re-solves per day, counts only (no problem names, no notes)."""
+    if not ACTIVITY_GID:
+        print("ℹ️  ACTIVITY_GID not set — skipping activity.json"); return
+    url = LIVE_SHEET_URL.split("pub?")[0] + f"pub?gid={ACTIVITY_GID}&single=true&output=csv&cb={int(time.time())}"
+    try:
+        df = pd.read_csv(url, dtype=str)
+    except Exception as e:
+        print(f"⚠️  Activity_Log not readable ({e}) — leaving activity.json as it was"); return
+    counts = {}
+    for v in df.iloc[:, 0].dropna():
+        v = str(v).strip(); k = ""
+        if re.match(r"^\d{4}-\d{2}-\d{2}", v): k = v[:10]
+        else:
+            m = re.match(r"^(\d{1,2})/(\d{1,2})/(\d{4})", v)
+            if m: k = f"{m.group(3)}-{int(m.group(2)):02d}-{int(m.group(1)):02d}"
+        if k: counts[k] = counts.get(k, 0) + 1
+    with open(out("activity.json"), "w") as f: json.dump(dict(sorted(counts.items())), f)
+    print(f"✅ activity.json → {sum(counts.values())} re-solves across {len(counts)} days")
+
+if __name__ == "__main__":
+    update_portfolio()
+    build_activity()
