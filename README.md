@@ -21,4 +21,4 @@
 | 18/08/2026 | Logger Rate Limiter | Hashing | 🟡 | Completed |
 | 17/08/2026 | Largest Number | Hashing | 🟡 | Completed |
 
-[→ View Full Archive](https://ananth9911.github.io/Ananth-Porfolio/)
+[→ Portfolio](https://ananth9911.github.io/Ananth-Porfolio/)
