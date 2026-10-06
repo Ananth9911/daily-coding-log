@@ -52,6 +52,7 @@ jobs:
           # Stage all generated artefacts (at repo root now)
           git add problems.json README.md topic_breakdown.png 2>/dev/null || true
           git add cues.json friction_stats.json mastery_chart.png 2>/dev/null || true
+          git add activity.json 2>/dev/null || true
 
           if git diff --cached --quiet; then
             echo "✅ No changes to commit — sheet unchanged since last sync."
