@@ -1,6 +1,6 @@
 [
   {
-    "date": "26/08/2026",
+    "date": "12/10/2026",
     "name": "Subarray Product Less Than K",
     "topic": "Array",
     "source": "LeetCode",
@@ -8,7 +8,7 @@
     "url": ""
   },
   {
-    "date": "25/08/2026",
+    "date": "11/10/2026",
     "name": "Flatten Nested List Iterator",
     "topic": "Stack",
     "source": "LeetCode",
@@ -16,7 +16,7 @@
     "url": ""
   },
   {
-    "date": "24/08/2026",
+    "date": "10/10/2026",
     "name": "Remove All Adjacent Duplicates In String II",
     "topic": "Queue",
     "source": "LeetCode",
@@ -24,7 +24,7 @@
     "url": ""
   },
   {
-    "date": "23/08/2026",
+    "date": "09/10/2026",
     "name": "Last Stone Weight",
     "topic": "Queue",
     "source": "LeetCode",
@@ -32,15 +32,7 @@
     "url": ""
   },
   {
-    "date": "22/08/2026",
-    "name": "Sort Characters By Frequency",
-    "topic": "Hashing",
-    "source": "LeetCode",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "21/08/2026",
+    "date": "08/10/2026",
     "name": "Find All Anagrams in a String",
     "topic": "Hashing",
     "source": "LeetCode",
@@ -48,7 +40,15 @@
     "url": ""
   },
   {
-    "date": "20/08/2026",
+    "date": "08/10/2026",
+    "name": "Sort Characters By Frequency",
+    "topic": "Hashing",
+    "source": "LeetCode",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "07/10/2026",
     "name": "Find Pivot Index",
     "topic": "Hashing",
     "source": "LeetCode",
@@ -56,7 +56,7 @@
     "url": ""
   },
   {
-    "date": "19/08/2026",
+    "date": "06/10/2026",
     "name": "Contiguous Array",
     "topic": "Hashing",
     "source": "LeetCode",
@@ -64,39 +64,7 @@
     "url": ""
   },
   {
-    "date": "18/08/2026",
-    "name": "Logger Rate Limiter",
-    "topic": "Hashing",
-    "source": "LeetCode",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "17/08/2026",
-    "name": "Largest Number",
-    "topic": "Hashing",
-    "source": "LeetCode",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "16/08/2026",
-    "name": "Majority Element",
-    "topic": "Hashing",
-    "source": "LeetCode",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "15/08/2026",
-    "name": "Is Subsequence",
-    "topic": "Hashing",
-    "source": "LeetCode",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "14/08/2026",
+    "date": "05/10/2026",
     "name": "Find The Index of The First Occurrence in a String",
     "topic": "Hashing",
     "source": "LeetCode",
@@ -104,15 +72,39 @@
     "url": ""
   },
   {
-    "date": "13/08/2026",
-    "name": "Find the Length of the Longest Common Prefix",
+    "date": "05/10/2026",
+    "name": "Is Subsequence",
     "topic": "Hashing",
     "source": "LeetCode",
     "difficulty": "M",
     "url": ""
   },
   {
-    "date": "12/08/2026",
+    "date": "05/10/2026",
+    "name": "Majority Element",
+    "topic": "Hashing",
+    "source": "LeetCode",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "05/10/2026",
+    "name": "Largest Number",
+    "topic": "Hashing",
+    "source": "LeetCode",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "05/10/2026",
+    "name": "Logger Rate Limiter",
+    "topic": "Hashing",
+    "source": "LeetCode",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "04/10/2026",
     "name": "Isomorphic Strings",
     "topic": "Hashing",
     "source": "LeetCode",
@@ -120,7 +112,15 @@
     "url": ""
   },
   {
-    "date": "11/08/2026",
+    "date": "04/10/2026",
+    "name": "Find the Length of the Longest Common Prefix",
+    "topic": "Hashing",
+    "source": "LeetCode",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "03/10/2026",
     "name": "Next Greater Element I",
     "topic": "Hashing",
     "source": "LeetCode",
@@ -128,7 +128,7 @@
     "url": ""
   },
   {
-    "date": "10/08/2026",
+    "date": "02/10/2026",
     "name": "Get Equal Substrings Within Budget",
     "topic": "Array",
     "source": "LeetCode",
@@ -136,15 +136,7 @@
     "url": ""
   },
   {
-    "date": "09/08/2026",
-    "name": "Minimum Difference Between Highest And Lowest of K Scores",
-    "topic": "Array",
-    "source": "LeetCode",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "08/08/2026",
+    "date": "01/10/2026",
     "name": "Longest Substring with At Most Two Distinct Characters",
     "topic": "Array",
     "source": "LeetCode",
@@ -152,7 +144,15 @@
     "url": ""
   },
   {
-    "date": "07/08/2026",
+    "date": "01/10/2026",
+    "name": "Minimum Difference Between Highest And Lowest of K Scores",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "30/09/2026",
     "name": "Longest Substring with At Most K Distinct Characters",
     "topic": "Array",
     "source": "LeetCode",
@@ -160,15 +160,7 @@
     "url": ""
   },
   {
-    "date": "06/08/2026",
-    "name": "Minimum Operations to Reduce X to Zero",
-    "topic": "Array",
-    "source": "LeetCode",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "05/08/2026",
+    "date": "29/09/2026",
     "name": "Maximum Number of Vowels in a Substring of Given Length",
     "topic": "Array",
     "source": "LeetCode",
@@ -176,15 +168,15 @@
     "url": ""
   },
   {
-    "date": "04/08/2026",
-    "name": "Minimum Size Subarray Sum",
+    "date": "29/09/2026",
+    "name": "Minimum Operations to Reduce X to Zero",
     "topic": "Array",
     "source": "LeetCode",
     "difficulty": "M",
     "url": ""
   },
   {
-    "date": "04/08/2026",
+    "date": "28/09/2026",
     "name": "Permutation in String",
     "topic": "String",
     "source": "LeetCode",
@@ -192,7 +184,15 @@
     "url": ""
   },
   {
-    "date": "03/08/2026",
+    "date": "27/09/2026",
+    "name": "Minimum Size Subarray Sum",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "26/09/2026",
     "name": "Longest Substring with At Most K Distinct Characters",
     "topic": "Array",
     "source": "LeetCode",
@@ -200,7 +200,7 @@
     "url": ""
   },
   {
-    "date": "02/08/2026",
+    "date": "25/09/2026",
     "name": "Minimum Operations to Reduce X to Zero",
     "topic": "Array",
     "source": "LeetCode",
@@ -208,7 +208,7 @@
     "url": ""
   },
   {
-    "date": "01/08/2026",
+    "date": "24/09/2026",
     "name": "Maximum Number of Vowels in a Substring of Given Length",
     "topic": "Array",
     "source": "LeetCode",
@@ -216,15 +216,7 @@
     "url": ""
   },
   {
-    "date": "31/07/2026",
-    "name": "Smallest Range Covering Elements from K Lists",
-    "topic": "Array",
-    "source": "LeetCode",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "30/07/2026",
+    "date": "23/09/2026",
     "name": "Number of Substrings Containing All Three Characters",
     "topic": "Array",
     "source": "LeetCode",
@@ -232,7 +224,15 @@
     "url": ""
   },
   {
-    "date": "29/07/2026",
+    "date": "23/09/2026",
+    "name": "Smallest Range Covering Elements from K Lists",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "22/09/2026",
     "name": "Max Consecutive Ones III",
     "topic": "Array",
     "source": "LeetCode",
@@ -240,15 +240,7 @@
     "url": ""
   },
   {
-    "date": "28/07/2026",
-    "name": "Longest Substring Without Repeating Characters",
-    "topic": "Array",
-    "source": "LeetCode",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "27/07/2026",
+    "date": "21/09/2026",
     "name": "Longest Repeating Character Replacement",
     "topic": "Array",
     "source": "LeetCode",
@@ -256,7 +248,15 @@
     "url": ""
   },
   {
-    "date": "26/07/2026",
+    "date": "21/09/2026",
+    "name": "Longest Substring Without Repeating Characters",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "20/09/2026",
     "name": "Get Equal Substrings Within Budget",
     "topic": "Array",
     "source": "LeetCode",
@@ -264,15 +264,7 @@
     "url": ""
   },
   {
-    "date": "25/07/2026",
-    "name": "Sentence Similarity III",
-    "topic": "Array",
-    "source": "LeetCode",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "24/07/2026",
+    "date": "19/09/2026",
     "name": "Fruit Into Baskets",
     "topic": "Array",
     "source": "LeetCode",
@@ -280,7 +272,15 @@
     "url": ""
   },
   {
-    "date": "23/07/2026",
+    "date": "19/09/2026",
+    "name": "Sentence Similarity III",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "18/09/2026",
     "name": "Find K Closest Elements",
     "topic": "Array",
     "source": "LeetCode",
@@ -288,23 +288,7 @@
     "url": ""
   },
   {
-    "date": "22/07/2026",
-    "name": "Two Sum II - Input Array Is Sorted",
-    "topic": "Array",
-    "source": "LeetCode",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "21/07/2026",
-    "name": "String Compression",
-    "topic": "Array",
-    "source": "LeetCode",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "20/07/2026",
+    "date": "17/09/2026",
     "name": "Path Sum II",
     "topic": "Tree",
     "source": "LeetCode",
@@ -312,7 +296,23 @@
     "url": ""
   },
   {
-    "date": "19/07/2026",
+    "date": "17/09/2026",
+    "name": "String Compression",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "17/09/2026",
+    "name": "Two Sum II - Input Array Is Sorted",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "16/09/2026",
     "name": "Trapping Rain Water",
     "topic": "Array",
     "source": "LeetCode",
@@ -320,7 +320,7 @@
     "url": ""
   },
   {
-    "date": "19/07/2026",
+    "date": "16/09/2026",
     "name": "Trapping Rain Water II",
     "topic": "Array",
     "source": "LeetCode",
@@ -328,15 +328,7 @@
     "url": ""
   },
   {
-    "date": "18/07/2026",
-    "name": "Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit",
-    "topic": "Array",
-    "source": "LeetCode",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "18/07/2026",
+    "date": "15/09/2026",
     "name": "Sliding Window Maximum",
     "topic": "Array",
     "source": "LeetCode",
@@ -344,15 +336,15 @@
     "url": ""
   },
   {
-    "date": "17/07/2026",
-    "name": "Max Consecutive Ones II",
+    "date": "14/09/2026",
+    "name": "Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit",
     "topic": "Array",
     "source": "LeetCode",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "16/07/2026",
+    "date": "13/09/2026",
     "name": "K-th Symbol in Grammar",
     "topic": "Array",
     "source": "LeetCode",
@@ -360,23 +352,15 @@
     "url": ""
   },
   {
-    "date": "15/07/2026",
-    "name": "Array With Elements Not Equal to Average of Neighbors",
-    "topic": "Array",
-    "source": "LeetCode",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "14/07/2026",
-    "name": "Count Subarrays Where Max Element Appears at Least K Times",
+    "date": "13/09/2026",
+    "name": "Max Consecutive Ones II",
     "topic": "Array",
     "source": "LeetCode",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "13/07/2026",
+    "date": "12/09/2026",
     "name": "Count of Substrings Containing Every Vowel and K Consonants II",
     "topic": "String",
     "source": "LeetCode",
@@ -384,7 +368,23 @@
     "url": ""
   },
   {
-    "date": "12/07/2026",
+    "date": "12/09/2026",
+    "name": "Count Subarrays Where Max Element Appears at Least K Times",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "12/09/2026",
+    "name": "Array With Elements Not Equal to Average of Neighbors",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "11/09/2026",
     "name": "Minimum Number of Operations to Make Array Continuous",
     "topic": "Array",
     "source": "LeetCode",
@@ -392,23 +392,7 @@
     "url": ""
   },
   {
-    "date": "11/07/2026",
-    "name": "Count Number of Nice Subarrays",
-    "topic": "Array",
-    "source": "LeetCode",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "10/07/2026",
-    "name": "Defuse the Bomb",
-    "topic": "Array",
-    "source": "LeetCode",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "09/07/2026",
+    "date": "10/09/2026",
     "name": "Binary Subarrays With Sum",
     "topic": "Array",
     "source": "LeetCode",
@@ -416,23 +400,23 @@
     "url": ""
   },
   {
-    "date": "08/07/2026",
-    "name": "Subarrays with K Different Integers",
-    "topic": "Array",
-    "source": "LeetCode",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "07/07/2026",
-    "name": "Alternating Groups II",
+    "date": "10/09/2026",
+    "name": "Defuse the Bomb",
     "topic": "Array",
     "source": "LeetCode",
     "difficulty": "M",
     "url": ""
   },
   {
-    "date": "06/07/2026",
+    "date": "10/09/2026",
+    "name": "Count Number of Nice Subarrays",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "09/09/2026",
     "name": "Valid Word Abbreviation",
     "topic": "String",
     "source": "LeetCode",
@@ -440,15 +424,23 @@
     "url": ""
   },
   {
-    "date": "05/07/2026",
-    "name": "Number of Subsequences That Satisfy the Given Sum Condition",
+    "date": "09/09/2026",
+    "name": "Alternating Groups II",
     "topic": "Array",
     "source": "LeetCode",
     "difficulty": "M",
     "url": ""
   },
   {
-    "date": "04/07/2026",
+    "date": "09/09/2026",
+    "name": "Subarrays with K Different Integers",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "08/09/2026",
     "name": "Minimum Length of String after Deleting Similar Ends",
     "topic": "String",
     "source": "LeetCode",
@@ -456,15 +448,15 @@
     "url": ""
   },
   {
-    "date": "03/07/2026",
-    "name": "Valid Palindrome II",
+    "date": "08/09/2026",
+    "name": "Number of Subsequences That Satisfy the Given Sum Condition",
     "topic": "Array",
     "source": "LeetCode",
-    "difficulty": "L",
+    "difficulty": "M",
     "url": ""
   },
   {
-    "date": "02/07/2026",
+    "date": "07/09/2026",
     "name": "Meeting Scheduler",
     "topic": "Array",
     "source": "LeetCode",
@@ -472,7 +464,15 @@
     "url": ""
   },
   {
-    "date": "01/07/2026",
+    "date": "07/09/2026",
+    "name": "Valid Palindrome II",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "06/09/2026",
     "name": "Divide Players Into Teams of Equal Skill",
     "topic": "Array",
     "source": "LeetCode",
@@ -480,31 +480,7 @@
     "url": ""
   },
   {
-    "date": "30/06/2026",
-    "name": "Boats to Save People",
-    "topic": "Array",
-    "source": "LeetCode",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "29/06/2026",
-    "name": "4Sum",
-    "topic": "Array",
-    "source": "LeetCode",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "29/06/2026",
-    "name": "Adding Spaces to a String",
-    "topic": "Array",
-    "source": "LeetCode",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "29/06/2026",
+    "date": "05/09/2026",
     "name": "Bag of Tokens",
     "topic": "Array",
     "source": "LeetCode",
@@ -512,7 +488,15 @@
     "url": ""
   },
   {
-    "date": "28/06/2026",
+    "date": "05/09/2026",
+    "name": "Boats to Save People",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "04/09/2026",
     "name": "3Sum Smaller",
     "topic": "Array",
     "source": "LeetCode",
@@ -520,15 +504,23 @@
     "url": ""
   },
   {
-    "date": "27/06/2026",
-    "name": "Squares of a Sorted Array",
+    "date": "04/09/2026",
+    "name": "4Sum",
     "topic": "Array",
     "source": "LeetCode",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "26/06/2026",
+    "date": "04/09/2026",
+    "name": "Adding Spaces to a String",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "03/09/2026",
     "name": "Sort Array By Parity",
     "topic": "Array",
     "source": "LeetCode",
@@ -536,47 +528,15 @@
     "url": ""
   },
   {
-    "date": "25/06/2026",
-    "name": "Reverse Words in a String III",
-    "topic": "String",
-    "source": "LeetCode",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "24/06/2026",
-    "name": "Remove Duplicates from Sorted Array",
+    "date": "03/09/2026",
+    "name": "Squares of a Sorted Array",
     "topic": "Array",
     "source": "LeetCode",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "23/06/2026",
-    "name": "Find First Palindromic String in the Array",
-    "topic": "Array",
-    "source": "LeetCode",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "23/06/2026",
-    "name": "Merge Strings Alternately",
-    "topic": "String",
-    "source": "LeetCode",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "23/06/2026",
-    "name": "Merge Two 2D Arrays by Summing Values",
-    "topic": "Array",
-    "source": "LeetCode",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "23/06/2026",
+    "date": "02/09/2026",
     "name": "Move Zeroes",
     "topic": "Array",
     "source": "LeetCode",
@@ -584,15 +544,31 @@
     "url": ""
   },
   {
-    "date": "22/06/2026",
-    "name": "Minimum Time To Make Rope Colorful",
+    "date": "02/09/2026",
+    "name": "Remove Duplicates from Sorted Array",
     "topic": "Array",
     "source": "LeetCode",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "21/06/2026",
+    "date": "02/09/2026",
+    "name": "Reverse Words in a String III",
+    "topic": "String",
+    "source": "LeetCode",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "01/09/2026",
+    "name": "Merge Two 2D Arrays by Summing Values",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "31/08/2026",
     "name": "Contains Duplicate II",
     "topic": "Array",
     "source": "LeetCode",
@@ -600,23 +576,31 @@
     "url": ""
   },
   {
-    "date": "20/06/2026",
-    "name": "Backspace String Compare",
-    "topic": "String",
-    "source": "LeetCode",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "20/06/2026",
-    "name": "Check If Two String Arrays are Equivalent",
+    "date": "31/08/2026",
+    "name": "Minimum Time To Make Rope Colorful",
     "topic": "Array",
     "source": "LeetCode",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "20/06/2026",
+    "date": "31/08/2026",
+    "name": "Find First Palindromic String in the Array",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "31/08/2026",
+    "name": "Merge Strings Alternately",
+    "topic": "String",
+    "source": "LeetCode",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "30/08/2026",
     "name": "3Sum",
     "topic": "Array",
     "source": "LeetCode",
@@ -624,7 +608,23 @@
     "url": ""
   },
   {
-    "date": "19/06/2026",
+    "date": "29/08/2026",
+    "name": "Backspace String Compare",
+    "topic": "String",
+    "source": "LeetCode",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "29/08/2026",
+    "name": "Check If Two String Arrays are Equivalent",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "28/08/2026",
     "name": "Assign Cookies",
     "topic": "Array",
     "source": "LeetCode",
@@ -632,23 +632,7 @@
     "url": ""
   },
   {
-    "date": "18/06/2026",
-    "name": "Apply Operations to an Array",
-    "topic": "Array",
-    "source": "LeetCode",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "17/06/2026",
-    "name": "Valid Palindrome",
-    "topic": "String",
-    "source": "LeetCode",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "16/06/2026",
+    "date": "27/08/2026",
     "name": "Two Sum",
     "topic": "HashMap",
     "source": "LeetCode",
@@ -656,15 +640,23 @@
     "url": ""
   },
   {
-    "date": "15/06/2026",
-    "name": "Best Time to Buy and Sell Stock III",
-    "topic": "DP",
+    "date": "27/08/2026",
+    "name": "Valid Palindrome",
+    "topic": "String",
     "source": "LeetCode",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "14/06/2026",
+    "date": "27/08/2026",
+    "name": "Apply Operations to an Array",
+    "topic": "Array",
+    "source": "LeetCode",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "26/08/2026",
     "name": "Partition to K Equal Sum Subsets",
     "topic": "Backtracking",
     "source": "LeetCode",
@@ -672,31 +664,15 @@
     "url": ""
   },
   {
-    "date": "13/06/2026",
-    "name": "Batches",
-    "topic": "Disjoint Set Union",
-    "source": "Scaler",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "13/06/2026",
-    "name": "Floyd Warshall Algorithm",
-    "topic": "Graph",
-    "source": "Scaler",
+    "date": "26/08/2026",
+    "name": "Best Time to Buy and Sell Stock III",
+    "topic": "DP",
+    "source": "LeetCode",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "13/06/2026",
-    "name": "Construct Roads",
-    "topic": "Graph",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "13/06/2026",
+    "date": "25/08/2026",
     "name": "Insert Delete GetRandom",
     "topic": "HashMap",
     "source": "LeetCode",
@@ -704,7 +680,31 @@
     "url": ""
   },
   {
-    "date": "12/06/2026",
+    "date": "24/08/2026",
+    "name": "Construct Roads",
+    "topic": "Graph",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "23/08/2026",
+    "name": "Floyd Warshall Algorithm",
+    "topic": "Graph",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "22/08/2026",
+    "name": "Batches",
+    "topic": "Disjoint Set Union",
+    "source": "Scaler",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "21/08/2026",
     "name": "Check Bipartite Graph",
     "topic": "Graph",
     "source": "Scaler",
@@ -712,7 +712,7 @@
     "url": ""
   },
   {
-    "date": "12/06/2026",
+    "date": "21/08/2026",
     "name": "Coloring a Cycle Graph",
     "topic": "Graph",
     "source": "Scaler",
@@ -720,7 +720,7 @@
     "url": ""
   },
   {
-    "date": "11/06/2026",
+    "date": "20/08/2026",
     "name": "Palindromic Substrings Count",
     "topic": "DP",
     "source": "Scaler",
@@ -728,7 +728,7 @@
     "url": ""
   },
   {
-    "date": "11/06/2026",
+    "date": "20/08/2026",
     "name": "Palindrome Partitioning II",
     "topic": "DP",
     "source": "Scaler",
@@ -736,23 +736,7 @@
     "url": ""
   },
   {
-    "date": "10/06/2026",
-    "name": "Edit Distance",
-    "topic": "DP",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "10/06/2026",
-    "name": "Longest Increasing Subsequence",
-    "topic": "DP",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "10/06/2026",
+    "date": "19/08/2026",
     "name": "Russian Doll Envelopes",
     "topic": "DP",
     "source": "Scaler",
@@ -760,55 +744,23 @@
     "url": ""
   },
   {
-    "date": "09/06/2026",
-    "name": "Maximum XOR Subarray",
-    "topic": "Tries",
+    "date": "18/08/2026",
+    "name": "Longest Increasing Subsequence",
+    "topic": "DP",
     "source": "Scaler",
     "difficulty": "H",
     "url": ""
   },
   {
-    "date": "09/06/2026",
-    "name": "Flatten Binary Tree to Linked List",
-    "topic": "Tree",
+    "date": "17/08/2026",
+    "name": "Edit Distance",
+    "topic": "DP",
     "source": "Scaler",
     "difficulty": "H",
     "url": ""
   },
   {
-    "date": "09/06/2026",
-    "name": "Node distance C in binary tree",
-    "topic": "Tree",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "09/06/2026",
-    "name": "Boring substring",
-    "topic": "String",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "09/06/2026",
-    "name": "Permutations of A in B",
-    "topic": "String",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "09/06/2026",
-    "name": "Cyclic Permutations -KMP",
-    "topic": "String",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "09/06/2026",
+    "date": "16/08/2026",
     "name": "Period of a string (KMP-LPS)",
     "topic": "String",
     "source": "Scaler",
@@ -816,7 +768,7 @@
     "url": ""
   },
   {
-    "date": "09/06/2026",
+    "date": "16/08/2026",
     "name": "Longest Common Subsequence",
     "topic": "DP",
     "source": "Scaler",
@@ -824,31 +776,47 @@
     "url": ""
   },
   {
-    "date": "08/06/2026",
-    "name": "Shortest Unique Prefix",
-    "topic": "Tries",
+    "date": "15/08/2026",
+    "name": "Cyclic Permutations -KMP",
+    "topic": "String",
     "source": "Scaler",
     "difficulty": "H",
     "url": ""
   },
   {
-    "date": "08/06/2026",
-    "name": "Spelling Checker",
-    "topic": "Tries",
+    "date": "14/08/2026",
+    "name": "Boring substring",
+    "topic": "String",
     "source": "Scaler",
     "difficulty": "H",
     "url": ""
   },
   {
-    "date": "08/06/2026",
-    "name": "Auto Complete",
-    "topic": "Tries",
+    "date": "14/08/2026",
+    "name": "Permutations of A in B",
+    "topic": "String",
     "source": "Scaler",
     "difficulty": "H",
     "url": ""
   },
   {
-    "date": "08/06/2026",
+    "date": "13/08/2026",
+    "name": "Node distance C in binary tree",
+    "topic": "Tree",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "12/08/2026",
+    "name": "Flatten Binary Tree to Linked List",
+    "topic": "Tree",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "11/08/2026",
     "name": "Maximum XOR",
     "topic": "Tries",
     "source": "Scaler",
@@ -856,23 +824,39 @@
     "url": ""
   },
   {
-    "date": "07/06/2026",
-    "name": "Insertion in Tries",
+    "date": "11/08/2026",
+    "name": "Maximum XOR Subarray",
     "topic": "Tries",
     "source": "Scaler",
     "difficulty": "H",
     "url": ""
   },
   {
-    "date": "07/06/2026",
-    "name": "Search in Tries",
+    "date": "10/08/2026",
+    "name": "Auto Complete",
     "topic": "Tries",
     "source": "Scaler",
     "difficulty": "H",
     "url": ""
   },
   {
-    "date": "07/06/2026",
+    "date": "09/08/2026",
+    "name": "Spelling Checker",
+    "topic": "Tries",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "08/08/2026",
+    "name": "Shortest Unique Prefix",
+    "topic": "Tries",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "07/08/2026",
     "name": "Trie Deletion",
     "topic": "Tries",
     "source": "Scaler",
@@ -880,23 +864,23 @@
     "url": ""
   },
   {
-    "date": "06/06/2026",
-    "name": "NQueens",
-    "topic": "Backtracking",
+    "date": "06/08/2026",
+    "name": "Search in Tries",
+    "topic": "Tries",
     "source": "Scaler",
     "difficulty": "H",
     "url": ""
   },
   {
-    "date": "06/06/2026",
-    "name": "Sudoku",
-    "topic": "Backtracking",
+    "date": "05/08/2026",
+    "name": "Insertion in Tries",
+    "topic": "Tries",
     "source": "Scaler",
     "difficulty": "H",
     "url": ""
   },
   {
-    "date": "06/06/2026",
+    "date": "04/08/2026",
     "name": "Word Break",
     "topic": "DP",
     "source": "Scaler",
@@ -904,23 +888,15 @@
     "url": ""
   },
   {
-    "date": "05/06/2026",
-    "name": "Pubg- Minimum Health",
-    "topic": "Array",
+    "date": "03/08/2026",
+    "name": "Sudoku",
+    "topic": "Backtracking",
     "source": "Scaler",
     "difficulty": "H",
     "url": ""
   },
   {
-    "date": "05/06/2026",
-    "name": "Compute nCr % p",
-    "topic": "Maths",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "05/06/2026",
+    "date": "02/08/2026",
     "name": "Very Large Power",
     "topic": "Maths",
     "source": "Scaler",
@@ -928,23 +904,31 @@
     "url": ""
   },
   {
-    "date": "04/06/2026",
-    "name": "Trailing Zeros in Factorial",
+    "date": "02/08/2026",
+    "name": "NQueens",
+    "topic": "Backtracking",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "01/08/2026",
+    "name": "Pubg- Minimum Health",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "01/08/2026",
+    "name": "Compute nCr % p",
     "topic": "Maths",
     "source": "Scaler",
     "difficulty": "H",
     "url": ""
   },
   {
-    "date": "03/06/2026",
-    "name": "Nearest Smaller Element",
-    "topic": "Stack",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "02/06/2026",
+    "date": "31/07/2026",
     "name": "Jump Game 2",
     "topic": "DP",
     "source": "Scaler",
@@ -952,15 +936,23 @@
     "url": ""
   },
   {
-    "date": "01/06/2026",
-    "name": "Shortest Distance in a Maze",
-    "topic": "Graph",
+    "date": "31/07/2026",
+    "name": "Nearest Smaller Element",
+    "topic": "Stack",
     "source": "Scaler",
     "difficulty": "H",
     "url": ""
   },
   {
-    "date": "31/05/2026",
+    "date": "31/07/2026",
+    "name": "Trailing Zeros in Factorial",
+    "topic": "Maths",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "30/07/2026",
     "name": "Number of islands",
     "topic": "Graph",
     "source": "Scaler",
@@ -968,7 +960,15 @@
     "url": ""
   },
   {
-    "date": "30/05/2026",
+    "date": "30/07/2026",
+    "name": "Shortest Distance in a Maze",
+    "topic": "Graph",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "29/07/2026",
     "name": "Best Time to Buy and Sell Stocks II",
     "topic": "Greedy",
     "source": "Scaler",
@@ -976,7 +976,7 @@
     "url": ""
   },
   {
-    "date": "29/05/2026",
+    "date": "28/07/2026",
     "name": "Topological Sort Kahn's Algorithm",
     "topic": "Graph",
     "source": "Scaler",
@@ -984,15 +984,7 @@
     "url": ""
   },
   {
-    "date": "28/05/2026",
-    "name": "Dijkstra",
-    "topic": "Graph",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "27/05/2026",
+    "date": "27/07/2026",
     "name": "Possibility of Finishing",
     "topic": "Graph",
     "source": "Scaler",
@@ -1000,7 +992,15 @@
     "url": ""
   },
   {
-    "date": "26/05/2026",
+    "date": "27/07/2026",
+    "name": "Dijkstra",
+    "topic": "Graph",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "26/07/2026",
     "name": "Another BFS",
     "topic": "Graph",
     "source": "Scaler",
@@ -1008,7 +1008,7 @@
     "url": ""
   },
   {
-    "date": "25/05/2026",
+    "date": "25/07/2026",
     "name": "Commutable Islands",
     "topic": "Graph",
     "source": "Scaler",
@@ -1016,7 +1016,7 @@
     "url": ""
   },
   {
-    "date": "24/05/2026",
+    "date": "24/07/2026",
     "name": "Construction Cost",
     "topic": "Graph",
     "source": "Scaler",
@@ -1024,15 +1024,7 @@
     "url": ""
   },
   {
-    "date": "23/05/2026",
-    "name": "Rotten Oranges",
-    "topic": "Graph",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "22/05/2026",
+    "date": "23/07/2026",
     "name": "Connected Components in an Undirected Graph",
     "topic": "Graph",
     "source": "Scaler",
@@ -1040,15 +1032,15 @@
     "url": ""
   },
   {
-    "date": "21/05/2026",
-    "name": "Path in Directed Graph",
+    "date": "23/07/2026",
+    "name": "Rotten Oranges",
     "topic": "Graph",
     "source": "Scaler",
     "difficulty": "H",
     "url": ""
   },
   {
-    "date": "20/05/2026",
+    "date": "22/07/2026",
     "name": "Cycle in Directed Graph",
     "topic": "Graph",
     "source": "Scaler",
@@ -1056,7 +1048,15 @@
     "url": ""
   },
   {
-    "date": "19/05/2026",
+    "date": "22/07/2026",
+    "name": "Path in Directed Graph",
+    "topic": "Graph",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "21/07/2026",
     "name": "0-1 Knapsack II - Optimised",
     "topic": "DP",
     "source": "Scaler",
@@ -1064,31 +1064,7 @@
     "url": ""
   },
   {
-    "date": "18/05/2026",
-    "name": "Cutting a Rod",
-    "topic": "DP",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "17/05/2026",
-    "name": "Coin Sum Infinite",
-    "topic": "DP",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "16/05/2026",
-    "name": "N/3 Repeat Number - Boyer-Moore Algo",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "15/05/2026",
+    "date": "20/07/2026",
     "name": "Amazing Subarrays",
     "topic": "Array",
     "source": "Scaler",
@@ -1096,31 +1072,31 @@
     "url": ""
   },
   {
-    "date": "14/05/2026",
-    "name": "Unbounded Knapsack",
+    "date": "20/07/2026",
+    "name": "N/3 Repeat Number - Boyer-Moore Algo",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "20/07/2026",
+    "name": "Coin Sum Infinite",
     "topic": "DP",
     "source": "Scaler",
     "difficulty": "H",
     "url": ""
   },
   {
-    "date": "13/05/2026",
-    "name": "0-1 Knapsack",
+    "date": "20/07/2026",
+    "name": "Cutting a Rod",
     "topic": "DP",
     "source": "Scaler",
     "difficulty": "H",
     "url": ""
   },
   {
-    "date": "12/05/2026",
-    "name": "Fractional Knapsack",
-    "topic": "DP",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "11/05/2026",
+    "date": "19/07/2026",
     "name": "N digit numbers",
     "topic": "DP",
     "source": "Scaler",
@@ -1128,31 +1104,31 @@
     "url": ""
   },
   {
-    "date": "10/05/2026",
-    "name": "Max Sum Without Adjacent Elements",
+    "date": "19/07/2026",
+    "name": "Fractional Knapsack",
     "topic": "DP",
     "source": "Scaler",
     "difficulty": "H",
     "url": ""
   },
   {
-    "date": "09/05/2026",
-    "name": "Unique Binary Search Trees II",
+    "date": "19/07/2026",
+    "name": "0-1 Knapsack",
     "topic": "DP",
     "source": "Scaler",
     "difficulty": "H",
     "url": ""
   },
   {
-    "date": "08/05/2026",
-    "name": "Unique Paths in a Grid",
+    "date": "19/07/2026",
+    "name": "Unbounded Knapsack",
     "topic": "DP",
     "source": "Scaler",
     "difficulty": "H",
     "url": ""
   },
   {
-    "date": "07/05/2026",
+    "date": "18/07/2026",
     "name": "Count Subarrays- Unique",
     "topic": "Hashing",
     "source": "Scaler",
@@ -1160,7 +1136,31 @@
     "url": ""
   },
   {
-    "date": "06/05/2026",
+    "date": "18/07/2026",
+    "name": "Unique Paths in a Grid",
+    "topic": "DP",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "18/07/2026",
+    "name": "Unique Binary Search Trees II",
+    "topic": "DP",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "18/07/2026",
+    "name": "Max Sum Without Adjacent Elements",
+    "topic": "DP",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "17/07/2026",
     "name": "Colorful Number",
     "topic": "Hashing",
     "source": "Scaler",
@@ -1168,7 +1168,7 @@
     "url": ""
   },
   {
-    "date": "05/05/2026",
+    "date": "16/07/2026",
     "name": "Count Increasing Triplets",
     "topic": "Array",
     "source": "Scaler",
@@ -1176,23 +1176,7 @@
     "url": ""
   },
   {
-    "date": "04/05/2026",
-    "name": "Minor Diagonal Sum",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "03/05/2026",
-    "name": "Matrix Scalar Product",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "02/05/2026",
+    "date": "15/07/2026",
     "name": "Minimum Number of Squares",
     "topic": "DP",
     "source": "Scaler",
@@ -1200,7 +1184,23 @@
     "url": ""
   },
   {
-    "date": "01/05/2026",
+    "date": "15/07/2026",
+    "name": "Matrix Scalar Product",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "15/07/2026",
+    "name": "Minor Diagonal Sum",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "14/07/2026",
     "name": "Stairs",
     "topic": "DP",
     "source": "Scaler",
@@ -1208,7 +1208,7 @@
     "url": ""
   },
   {
-    "date": "30/04/2026",
+    "date": "13/07/2026",
     "name": "Fibonacci Number -DP",
     "topic": "DP",
     "source": "Scaler",
@@ -1216,15 +1216,7 @@
     "url": ""
   },
   {
-    "date": "29/04/2026",
-    "name": "Minimum Window Substring",
-    "topic": "String",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "28/04/2026",
+    "date": "12/07/2026",
     "name": "Meeting Rooms II",
     "topic": "Greedy",
     "source": "Scaler",
@@ -1232,15 +1224,15 @@
     "url": ""
   },
   {
-    "date": "27/04/2026",
-    "name": "K Places Apart",
-    "topic": "Heap",
+    "date": "12/07/2026",
+    "name": "Minimum Window Substring",
+    "topic": "String",
     "source": "Scaler",
     "difficulty": "H",
     "url": ""
   },
   {
-    "date": "26/04/2026",
+    "date": "11/07/2026",
     "name": "Shaggy and distances",
     "topic": "Hashing",
     "source": "Scaler",
@@ -1248,7 +1240,15 @@
     "url": ""
   },
   {
-    "date": "25/04/2026",
+    "date": "11/07/2026",
+    "name": "K Places Apart",
+    "topic": "Heap",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "10/07/2026",
     "name": "Invert the Binary Tree",
     "topic": "Tree",
     "source": "Scaler",
@@ -1256,7 +1256,7 @@
     "url": ""
   },
   {
-    "date": "24/04/2026",
+    "date": "09/07/2026",
     "name": "Identical Binary Trees",
     "topic": "Tree",
     "source": "Scaler",
@@ -1264,7 +1264,7 @@
     "url": ""
   },
   {
-    "date": "23/04/2026",
+    "date": "08/07/2026",
     "name": "Distance between Nodes of BST",
     "topic": "Tree",
     "source": "Scaler",
@@ -1272,7 +1272,7 @@
     "url": ""
   },
   {
-    "date": "22/04/2026",
+    "date": "07/07/2026",
     "name": "Common Nodes in Two BST",
     "topic": "Tree",
     "source": "Scaler",
@@ -1280,7 +1280,7 @@
     "url": ""
   },
   {
-    "date": "21/04/2026",
+    "date": "06/07/2026",
     "name": "Row to Column Zero",
     "topic": "Array",
     "source": "Scaler",
@@ -1288,7 +1288,7 @@
     "url": ""
   },
   {
-    "date": "20/04/2026",
+    "date": "05/07/2026",
     "name": "Anti Diagonals",
     "topic": "Array",
     "source": "Scaler",
@@ -1296,39 +1296,7 @@
     "url": ""
   },
   {
-    "date": "19/04/2026",
-    "name": "Sum Of Odd & Even Digits In A Number",
-    "topic": "Basic",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "18/04/2026",
-    "name": "Distribute Candy",
-    "topic": "Greedy",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "18/04/2026",
-    "name": "Merge K Sorted Lists",
-    "topic": "Heap",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "18/04/2026",
-    "name": "Ath largest element",
-    "topic": "Heap",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "18/04/2026",
+    "date": "04/07/2026",
     "name": "Flipkart Challenge in Effective Inventory Management",
     "topic": "Heap",
     "source": "Scaler",
@@ -1336,7 +1304,31 @@
     "url": ""
   },
   {
-    "date": "17/04/2026",
+    "date": "04/07/2026",
+    "name": "Sum Of Odd & Even Digits In A Number",
+    "topic": "Basic",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "03/07/2026",
+    "name": "Merge K Sorted Lists",
+    "topic": "Heap",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "03/07/2026",
+    "name": "Ath largest element",
+    "topic": "Heap",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "02/07/2026",
     "name": "Finish Maximum Jobs",
     "topic": "Greedy",
     "source": "Scaler",
@@ -1344,7 +1336,7 @@
     "url": ""
   },
   {
-    "date": "17/04/2026",
+    "date": "02/07/2026",
     "name": "Seats",
     "topic": "Greedy",
     "source": "Scaler",
@@ -1352,31 +1344,15 @@
     "url": ""
   },
   {
-    "date": "16/04/2026",
-    "name": "Connect ropes",
-    "topic": "Heap",
+    "date": "02/07/2026",
+    "name": "Distribute Candy",
+    "topic": "Greedy",
     "source": "Scaler",
-    "difficulty": "M",
+    "difficulty": "H",
     "url": ""
   },
   {
-    "date": "16/04/2026",
-    "name": "Build a Heap",
-    "topic": "Heap",
-    "source": "Scaler",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "16/04/2026",
-    "name": "Heap Queries",
-    "topic": "Heap",
-    "source": "Scaler",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "16/04/2026",
+    "date": "01/07/2026",
     "name": "Running Median",
     "topic": "Heap",
     "source": "Scaler",
@@ -1384,7 +1360,31 @@
     "url": ""
   },
   {
-    "date": "15/04/2026",
+    "date": "30/06/2026",
+    "name": "Connect ropes",
+    "topic": "Heap",
+    "source": "Scaler",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "30/06/2026",
+    "name": "Build a Heap",
+    "topic": "Heap",
+    "source": "Scaler",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "30/06/2026",
+    "name": "Heap Queries",
+    "topic": "Heap",
+    "source": "Scaler",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "29/06/2026",
     "name": "Longest Subarray Zero Sum",
     "topic": "Hashing",
     "source": "Scaler",
@@ -1392,7 +1392,7 @@
     "url": ""
   },
   {
-    "date": "15/04/2026",
+    "date": "29/06/2026",
     "name": "Group Anagrams 1",
     "topic": "Hashing",
     "source": "Scaler",
@@ -1400,7 +1400,7 @@
     "url": ""
   },
   {
-    "date": "15/04/2026",
+    "date": "29/06/2026",
     "name": "Custom Hashmap (Chaining)",
     "topic": "Hashing",
     "source": "Scaler",
@@ -1408,7 +1408,7 @@
     "url": ""
   },
   {
-    "date": "14/04/2026",
+    "date": "28/06/2026",
     "name": "Vertical Order traversal",
     "topic": "Tree",
     "source": "Scaler",
@@ -1416,7 +1416,7 @@
     "url": ""
   },
   {
-    "date": "14/04/2026",
+    "date": "28/06/2026",
     "name": "Top View of Binary tree",
     "topic": "Tree",
     "source": "Scaler",
@@ -1424,7 +1424,7 @@
     "url": ""
   },
   {
-    "date": "14/04/2026",
+    "date": "28/06/2026",
     "name": "Diameter of binary tree",
     "topic": "Tree",
     "source": "Scaler",
@@ -1432,7 +1432,7 @@
     "url": ""
   },
   {
-    "date": "13/04/2026",
+    "date": "27/06/2026",
     "name": "Next Pointer Binary Tree",
     "topic": "Tree",
     "source": "Scaler",
@@ -1440,7 +1440,7 @@
     "url": ""
   },
   {
-    "date": "12/04/2026",
+    "date": "26/06/2026",
     "name": "Test-AlgoArray",
     "topic": "Array",
     "source": "Scaler",
@@ -1448,23 +1448,7 @@
     "url": ""
   },
   {
-    "date": "11/04/2026",
-    "name": "LCA in BST",
-    "topic": "Tree",
-    "source": "Scaler",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "11/04/2026",
-    "name": "Morris Inorder Traversal",
-    "topic": "Tree",
-    "source": "Scaler",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "11/04/2026",
+    "date": "25/06/2026",
     "name": "Recover Binary Search Tree",
     "topic": "Tree",
     "source": "Scaler",
@@ -1472,39 +1456,23 @@
     "url": ""
   },
   {
-    "date": "10/04/2026",
-    "name": "Least Common Ancestor",
-    "topic": "Tree",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "10/04/2026",
-    "name": "Kth Smallest Element In BST",
+    "date": "24/06/2026",
+    "name": "LCA in BST",
     "topic": "Tree",
     "source": "Scaler",
     "difficulty": "M",
     "url": ""
   },
   {
-    "date": "09/04/2026",
-    "name": "Intersection of Linked Lists",
-    "topic": "LinkedList",
+    "date": "24/06/2026",
+    "name": "Morris Inorder Traversal",
+    "topic": "Tree",
     "source": "Scaler",
     "difficulty": "M",
     "url": ""
   },
   {
-    "date": "09/04/2026",
-    "name": "Remove Loop from Linked List",
-    "topic": "LinkedList",
-    "source": "Scaler",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "09/04/2026",
+    "date": "23/06/2026",
     "name": "LRU Cache",
     "topic": "LinkedList",
     "source": "Scaler",
@@ -1512,31 +1480,31 @@
     "url": ""
   },
   {
-    "date": "08/04/2026",
-    "name": "Middle element of linked list",
+    "date": "23/06/2026",
+    "name": "Least Common Ancestor",
+    "topic": "Tree",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "23/06/2026",
+    "name": "Kth Smallest Element In BST",
+    "topic": "Tree",
+    "source": "Scaler",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "22/06/2026",
+    "name": "Remove Loop from Linked List",
     "topic": "LinkedList",
     "source": "Scaler",
     "difficulty": "M",
     "url": ""
   },
   {
-    "date": "08/04/2026",
-    "name": "Merge Two Sorted Lists",
-    "topic": "LinkedList",
-    "source": "Scaler",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "08/04/2026",
-    "name": "Sort List",
-    "topic": "LinkedList",
-    "source": "Scaler",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "08/04/2026",
+    "date": "21/06/2026",
     "name": "Palindrome List",
     "topic": "LinkedList",
     "source": "Scaler",
@@ -1544,15 +1512,15 @@
     "url": ""
   },
   {
-    "date": "07/04/2026",
-    "name": "Shortest path in a Binary Maze with Hurdles",
-    "topic": "Backtracking",
+    "date": "21/06/2026",
+    "name": "Intersection of Linked Lists",
+    "topic": "LinkedList",
     "source": "Scaler",
-    "difficulty": "H",
+    "difficulty": "M",
     "url": ""
   },
   {
-    "date": "06/04/2026",
+    "date": "20/06/2026",
     "name": "Print All Maze Paths",
     "topic": "Backtracking",
     "source": "Scaler",
@@ -1560,7 +1528,39 @@
     "url": ""
   },
   {
-    "date": "05/04/2026",
+    "date": "20/06/2026",
+    "name": "Shortest path in a Binary Maze with Hurdles",
+    "topic": "Backtracking",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "20/06/2026",
+    "name": "Middle element of linked list",
+    "topic": "LinkedList",
+    "source": "Scaler",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "20/06/2026",
+    "name": "Merge Two Sorted Lists",
+    "topic": "LinkedList",
+    "source": "Scaler",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "20/06/2026",
+    "name": "Sort List",
+    "topic": "LinkedList",
+    "source": "Scaler",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "19/06/2026",
     "name": "Print paths in Staircase",
     "topic": "Backtracking",
     "source": "Scaler",
@@ -1568,23 +1568,7 @@
     "url": ""
   },
   {
-    "date": "04/04/2026",
-    "name": "Generate all Parentheses II",
-    "topic": "Backtracking",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "04/04/2026",
-    "name": "Generate Subsets",
-    "topic": "Backtracking",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "04/04/2026",
+    "date": "18/06/2026",
     "name": "Permutations",
     "topic": "Backtracking",
     "source": "Scaler",
@@ -1592,15 +1576,23 @@
     "url": ""
   },
   {
-    "date": "03/04/2026",
-    "name": "Excel Column Title",
-    "topic": "Maths",
+    "date": "17/06/2026",
+    "name": "Generate all Parentheses II",
+    "topic": "Backtracking",
     "source": "Scaler",
-    "difficulty": "M",
+    "difficulty": "H",
     "url": ""
   },
   {
-    "date": "03/04/2026",
+    "date": "17/06/2026",
+    "name": "Generate Subsets",
+    "topic": "Backtracking",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "16/06/2026",
     "name": "Container With Most Water",
     "topic": "Array",
     "source": "Scaler",
@@ -1608,7 +1600,7 @@
     "url": ""
   },
   {
-    "date": "03/04/2026",
+    "date": "16/06/2026",
     "name": "Sorted Permutation Rank",
     "topic": "Array",
     "source": "Scaler",
@@ -1616,7 +1608,7 @@
     "url": ""
   },
   {
-    "date": "03/04/2026",
+    "date": "16/06/2026",
     "name": "Pairs with Given Difference",
     "topic": "Array",
     "source": "Scaler",
@@ -1624,23 +1616,15 @@
     "url": ""
   },
   {
-    "date": "02/04/2026",
-    "name": "Pairs with given sum II",
+    "date": "15/06/2026",
+    "name": "Excel Column Title",
     "topic": "Maths",
     "source": "Scaler",
     "difficulty": "M",
     "url": ""
   },
   {
-    "date": "02/04/2026",
-    "name": "3 Sum",
-    "topic": "Maths",
-    "source": "Scaler",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "01/04/2026",
+    "date": "14/06/2026",
     "name": "Pascal Triangle",
     "topic": "Maths",
     "source": "Scaler",
@@ -1648,7 +1632,7 @@
     "url": ""
   },
   {
-    "date": "01/04/2026",
+    "date": "14/06/2026",
     "name": "Sieve of Eratosthenes - Divisors",
     "topic": "Maths",
     "source": "Scaler",
@@ -1656,23 +1640,23 @@
     "url": ""
   },
   {
-    "date": "31/03/2026",
-    "name": "Goldbach Algo",
+    "date": "14/06/2026",
+    "name": "Pairs with given sum II",
     "topic": "Maths",
     "source": "Scaler",
-    "difficulty": "H",
+    "difficulty": "M",
     "url": ""
   },
   {
-    "date": "30/03/2026",
-    "name": "Compute nCr % m",
+    "date": "14/06/2026",
+    "name": "3 Sum",
     "topic": "Maths",
     "source": "Scaler",
-    "difficulty": "H",
+    "difficulty": "M",
     "url": ""
   },
   {
-    "date": "30/03/2026",
+    "date": "13/06/2026",
     "name": "Sieve of Eratosthenes",
     "topic": "Maths",
     "source": "Scaler",
@@ -1680,23 +1664,23 @@
     "url": ""
   },
   {
-    "date": "29/03/2026",
-    "name": "Deserialize Binary Tree",
-    "topic": "Tree",
+    "date": "13/06/2026",
+    "name": "Goldbach Algo",
+    "topic": "Maths",
     "source": "Scaler",
-    "difficulty": "M",
+    "difficulty": "H",
     "url": ""
   },
   {
-    "date": "29/03/2026",
-    "name": "Check for BST with One Child",
-    "topic": "Tree",
+    "date": "12/06/2026",
+    "name": "Compute nCr % m",
+    "topic": "Maths",
     "source": "Scaler",
-    "difficulty": "M",
+    "difficulty": "H",
     "url": ""
   },
   {
-    "date": "29/03/2026",
+    "date": "11/06/2026",
     "name": "BST nodes in a range",
     "topic": "Tree",
     "source": "Scaler",
@@ -1704,7 +1688,7 @@
     "url": ""
   },
   {
-    "date": "29/03/2026",
+    "date": "11/06/2026",
     "name": "Two Sum BST",
     "topic": "Tree",
     "source": "Scaler",
@@ -1712,31 +1696,23 @@
     "url": ""
   },
   {
-    "date": "28/03/2026",
-    "name": "Serialize Binary Tree",
+    "date": "10/06/2026",
+    "name": "Check for BST with One Child",
     "topic": "Tree",
     "source": "Scaler",
     "difficulty": "M",
     "url": ""
   },
   {
-    "date": "27/03/2026",
-    "name": "Copy List",
-    "topic": "LinkedList",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "27/03/2026",
-    "name": "Binary Tree From Inorder And Postorder",
+    "date": "09/06/2026",
+    "name": "Deserialize Binary Tree",
     "topic": "Tree",
     "source": "Scaler",
-    "difficulty": "H",
+    "difficulty": "M",
     "url": ""
   },
   {
-    "date": "27/03/2026",
+    "date": "08/06/2026",
     "name": "Binary Tree From Inorder And Preorder",
     "topic": "Tree",
     "source": "Scaler",
@@ -1744,15 +1720,31 @@
     "url": ""
   },
   {
-    "date": "26/03/2026",
-    "name": "Balanced Binary Tree",
+    "date": "08/06/2026",
+    "name": "Serialize Binary Tree",
+    "topic": "Tree",
+    "source": "Scaler",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "07/06/2026",
+    "name": "Binary Tree From Inorder And Postorder",
     "topic": "Tree",
     "source": "Scaler",
     "difficulty": "H",
     "url": ""
   },
   {
-    "date": "26/03/2026",
+    "date": "06/06/2026",
+    "name": "Copy List",
+    "topic": "LinkedList",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "05/06/2026",
     "name": "Path Sum",
     "topic": "Tree",
     "source": "Scaler",
@@ -1760,7 +1752,7 @@
     "url": ""
   },
   {
-    "date": "26/03/2026",
+    "date": "05/06/2026",
     "name": "Equal Tree Partition",
     "topic": "Tree",
     "source": "Scaler",
@@ -1768,31 +1760,7 @@
     "url": ""
   },
   {
-    "date": "25/03/2026",
-    "name": "Valid Binary Search Tree",
-    "topic": "Tree",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "25/03/2026",
-    "name": "Sorted Array To Balanced BST",
-    "topic": "Tree",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "25/03/2026",
-    "name": "Delete a node in BST",
-    "topic": "Tree",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "25/03/2026",
+    "date": "04/06/2026",
     "name": "Search in BST",
     "topic": "Tree",
     "source": "Scaler",
@@ -1800,15 +1768,39 @@
     "url": ""
   },
   {
-    "date": "24/03/2026",
-    "name": "Right View of Binary tree",
+    "date": "04/06/2026",
+    "name": "Balanced Binary Tree",
     "topic": "Tree",
     "source": "Scaler",
-    "difficulty": "M",
+    "difficulty": "H",
     "url": ""
   },
   {
-    "date": "24/03/2026",
+    "date": "03/06/2026",
+    "name": "Sorted Array To Balanced BST",
+    "topic": "Tree",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "03/06/2026",
+    "name": "Delete a node in BST",
+    "topic": "Tree",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "02/06/2026",
+    "name": "Valid Binary Search Tree",
+    "topic": "Tree",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "01/06/2026",
     "name": "Postorder Traversal",
     "topic": "Tree",
     "source": "Scaler",
@@ -1816,7 +1808,7 @@
     "url": ""
   },
   {
-    "date": "24/03/2026",
+    "date": "01/06/2026",
     "name": "Sum binary tree or not",
     "topic": "Tree",
     "source": "Scaler",
@@ -1824,23 +1816,7 @@
     "url": ""
   },
   {
-    "date": "23/03/2026",
-    "name": "Level Order",
-    "topic": "Tree",
-    "source": "Scaler",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "23/03/2026",
-    "name": "Inorder Traversal",
-    "topic": "Tree",
-    "source": "Scaler",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "23/03/2026",
+    "date": "31/05/2026",
     "name": "Preorder Traversal",
     "topic": "Tree",
     "source": "Scaler",
@@ -1848,23 +1824,23 @@
     "url": ""
   },
   {
-    "date": "22/03/2026",
-    "name": "Unique Letter",
-    "topic": "Queue",
+    "date": "31/05/2026",
+    "name": "Right View of Binary tree",
+    "topic": "Tree",
     "source": "Scaler",
-    "difficulty": "H",
+    "difficulty": "M",
     "url": ""
   },
   {
-    "date": "21/03/2026",
-    "name": "Parking Ice Cream Truck",
-    "topic": "Queue",
+    "date": "30/05/2026",
+    "name": "Inorder Traversal",
+    "topic": "Tree",
     "source": "Scaler",
-    "difficulty": "H",
+    "difficulty": "M",
     "url": ""
   },
   {
-    "date": "20/03/2026",
+    "date": "29/05/2026",
     "name": "Queue Using Stacks",
     "topic": "Queue",
     "source": "Scaler",
@@ -1872,23 +1848,31 @@
     "url": ""
   },
   {
-    "date": "19/03/2026",
-    "name": "Double Character Trouble",
-    "topic": "Stack",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "19/03/2026",
-    "name": "Largest Rectangle in Histogram",
-    "topic": "Stack",
+    "date": "29/05/2026",
+    "name": "Parking Ice Cream Truck",
+    "topic": "Queue",
     "source": "Scaler",
     "difficulty": "H",
     "url": ""
   },
   {
-    "date": "19/03/2026",
+    "date": "29/05/2026",
+    "name": "Unique Letter",
+    "topic": "Queue",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "29/05/2026",
+    "name": "Level Order",
+    "topic": "Tree",
+    "source": "Scaler",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "28/05/2026",
     "name": "Subarray(MAX - MIN)",
     "topic": "Stack",
     "source": "Scaler",
@@ -1896,15 +1880,15 @@
     "url": ""
   },
   {
-    "date": "18/03/2026",
-    "name": "Evaluate Expression",
+    "date": "27/05/2026",
+    "name": "Largest Rectangle in Histogram",
     "topic": "Stack",
     "source": "Scaler",
-    "difficulty": "M",
+    "difficulty": "H",
     "url": ""
   },
   {
-    "date": "18/03/2026",
+    "date": "26/05/2026",
     "name": "Balanced Paranthesis",
     "topic": "Stack",
     "source": "Scaler",
@@ -1912,7 +1896,7 @@
     "url": ""
   },
   {
-    "date": "18/03/2026",
+    "date": "26/05/2026",
     "name": "Passing game",
     "topic": "Stack",
     "source": "Scaler",
@@ -1920,7 +1904,23 @@
     "url": ""
   },
   {
-    "date": "17/03/2026",
+    "date": "26/05/2026",
+    "name": "Double Character Trouble",
+    "topic": "Stack",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "25/05/2026",
+    "name": "Evaluate Expression",
+    "topic": "Stack",
+    "source": "Scaler",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "24/05/2026",
     "name": "Reverse Linked List",
     "topic": "LinkedList",
     "source": "Scaler",
@@ -1928,7 +1928,7 @@
     "url": ""
   },
   {
-    "date": "17/03/2026",
+    "date": "24/05/2026",
     "name": "Delete in Linked List",
     "topic": "LinkedList",
     "source": "Scaler",
@@ -1936,7 +1936,7 @@
     "url": ""
   },
   {
-    "date": "16/03/2026",
+    "date": "23/05/2026",
     "name": "Insert in Linked List",
     "topic": "LinkedList",
     "source": "Scaler",
@@ -1944,15 +1944,7 @@
     "url": ""
   },
   {
-    "date": "15/03/2026",
-    "name": "Print Linked List",
-    "topic": "LinkedList",
-    "source": "Scaler",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "15/03/2026",
+    "date": "22/05/2026",
     "name": "kth Node in a List",
     "topic": "LinkedList",
     "source": "Scaler",
@@ -1960,39 +1952,7 @@
     "url": ""
   },
   {
-    "date": "14/03/2026",
-    "name": "Single Element in Sorted Array",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "14/03/2026",
-    "name": "Median of two sorted arrays",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "14/03/2026",
-    "name": "Common Elements",
-    "topic": "Hashing",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "14/03/2026",
-    "name": "Count unique elements",
-    "topic": "Hashing",
-    "source": "Scaler",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "14/03/2026",
+    "date": "21/05/2026",
     "name": "Count Pair Difference",
     "topic": "Hashing",
     "source": "Scaler",
@@ -2000,15 +1960,47 @@
     "url": ""
   },
   {
-    "date": "13/03/2026",
-    "name": "Allocate Books",
+    "date": "21/05/2026",
+    "name": "Print Linked List",
+    "topic": "LinkedList",
+    "source": "Scaler",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "20/05/2026",
+    "name": "Count unique elements",
+    "topic": "Hashing",
+    "source": "Scaler",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "19/05/2026",
+    "name": "Median of two sorted arrays",
     "topic": "Array",
     "source": "Scaler",
     "difficulty": "H",
     "url": ""
   },
   {
-    "date": "13/03/2026",
+    "date": "19/05/2026",
+    "name": "Common Elements",
+    "topic": "Hashing",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "18/05/2026",
+    "name": "Single Element in Sorted Array",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "17/05/2026",
     "name": "Rotated Sorted Array Search",
     "topic": "Array",
     "source": "Scaler",
@@ -2016,15 +2008,7 @@
     "url": ""
   },
   {
-    "date": "12/03/2026",
-    "name": "Painters Partition Problem",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "12/03/2026",
+    "date": "16/05/2026",
     "name": "Aggressive cows",
     "topic": "Array",
     "source": "Scaler",
@@ -2032,15 +2016,23 @@
     "url": ""
   },
   {
-    "date": "11/03/2026",
-    "name": "Quick Sort",
-    "topic": "Sorting",
+    "date": "16/05/2026",
+    "name": "Allocate Books",
+    "topic": "Array",
     "source": "Scaler",
     "difficulty": "H",
     "url": ""
   },
   {
-    "date": "11/03/2026",
+    "date": "15/05/2026",
+    "name": "Painters Partition Problem",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "14/05/2026",
     "name": "Search for a Range",
     "topic": "Array",
     "source": "Scaler",
@@ -2048,7 +2040,7 @@
     "url": ""
   },
   {
-    "date": "11/03/2026",
+    "date": "14/05/2026",
     "name": "Square Root of Integer",
     "topic": "Maths",
     "source": "Scaler",
@@ -2056,7 +2048,7 @@
     "url": ""
   },
   {
-    "date": "11/03/2026",
+    "date": "14/05/2026",
     "name": "Find a peak element",
     "topic": "Array",
     "source": "Scaler",
@@ -2064,7 +2056,7 @@
     "url": ""
   },
   {
-    "date": "10/03/2026",
+    "date": "13/05/2026",
     "name": "Factors sort",
     "topic": "Sorting",
     "source": "Scaler",
@@ -2072,7 +2064,7 @@
     "url": ""
   },
   {
-    "date": "10/03/2026",
+    "date": "13/05/2026",
     "name": "Partition Index",
     "topic": "Sorting",
     "source": "Scaler",
@@ -2080,39 +2072,15 @@
     "url": ""
   },
   {
-    "date": "09/03/2026",
-    "name": "Merge Two Sorted Arrays",
+    "date": "13/05/2026",
+    "name": "Quick Sort",
     "topic": "Sorting",
     "source": "Scaler",
-    "difficulty": "M",
+    "difficulty": "H",
     "url": ""
   },
   {
-    "date": "09/03/2026",
-    "name": "Sort by Color",
-    "topic": "Sorting",
-    "source": "Scaler",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "09/03/2026",
-    "name": "Merge Sort",
-    "topic": "Sorting",
-    "source": "Scaler",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "09/03/2026",
-    "name": "Count Sort",
-    "topic": "Sorting",
-    "source": "Scaler",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "09/03/2026",
+    "date": "12/05/2026",
     "name": "Smallest Number",
     "topic": "Sorting",
     "source": "Scaler",
@@ -2120,31 +2088,31 @@
     "url": ""
   },
   {
-    "date": "08/03/2026",
-    "name": "Longest Substring Without Repeat",
-    "topic": "Hashing",
+    "date": "11/05/2026",
+    "name": "Count Sort",
+    "topic": "Sorting",
     "source": "Scaler",
     "difficulty": "M",
     "url": ""
   },
   {
-    "date": "08/03/2026",
-    "name": "Sub-array with 0 sum",
-    "topic": "Hashing",
+    "date": "10/05/2026",
+    "name": "Sort by Color",
+    "topic": "Sorting",
     "source": "Scaler",
     "difficulty": "M",
     "url": ""
   },
   {
-    "date": "08/03/2026",
-    "name": "First Repeating element",
-    "topic": "Hashing",
+    "date": "10/05/2026",
+    "name": "Merge Sort",
+    "topic": "Sorting",
     "source": "Scaler",
     "difficulty": "M",
     "url": ""
   },
   {
-    "date": "08/03/2026",
+    "date": "09/05/2026",
     "name": "Subarray Sum Equals K",
     "topic": "Hashing",
     "source": "Scaler",
@@ -2152,23 +2120,39 @@
     "url": ""
   },
   {
-    "date": "07/03/2026",
-    "name": "Check Pair Sum",
+    "date": "09/05/2026",
+    "name": "Merge Two Sorted Arrays",
+    "topic": "Sorting",
+    "source": "Scaler",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "08/05/2026",
+    "name": "First Repeating element",
     "topic": "Hashing",
     "source": "Scaler",
     "difficulty": "M",
     "url": ""
   },
   {
-    "date": "07/03/2026",
-    "name": "Count distinct elements",
+    "date": "07/05/2026",
+    "name": "Sub-array with 0 sum",
     "topic": "Hashing",
     "source": "Scaler",
     "difficulty": "M",
     "url": ""
   },
   {
-    "date": "07/03/2026",
+    "date": "06/05/2026",
+    "name": "Longest Substring Without Repeat",
+    "topic": "Hashing",
+    "source": "Scaler",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "05/05/2026",
     "name": "Count Pair Sum",
     "topic": "Hashing",
     "source": "Scaler",
@@ -2176,7 +2160,7 @@
     "url": ""
   },
   {
-    "date": "07/03/2026",
+    "date": "05/05/2026",
     "name": "Frequency of element query",
     "topic": "Hashing",
     "source": "Scaler",
@@ -2184,15 +2168,23 @@
     "url": ""
   },
   {
-    "date": "06/03/2026",
-    "name": "Implement modulo calculation",
-    "topic": "Math",
+    "date": "04/05/2026",
+    "name": "Check Pair Sum",
+    "topic": "Hashing",
     "source": "Scaler",
-    "difficulty": "H",
+    "difficulty": "M",
     "url": ""
   },
   {
-    "date": "06/03/2026",
+    "date": "04/05/2026",
+    "name": "Count distinct elements",
+    "topic": "Hashing",
+    "source": "Scaler",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "03/05/2026",
     "name": "Recursive - GCD",
     "topic": "Math",
     "source": "Scaler",
@@ -2200,7 +2192,7 @@
     "url": ""
   },
   {
-    "date": "06/03/2026",
+    "date": "03/05/2026",
     "name": "Pair Sum divisible by M",
     "topic": "Array",
     "source": "Scaler",
@@ -2208,15 +2200,15 @@
     "url": ""
   },
   {
-    "date": "05/03/2026",
-    "name": "Fast Power",
+    "date": "02/05/2026",
+    "name": "Implement modulo calculation",
     "topic": "Math",
     "source": "Scaler",
     "difficulty": "H",
     "url": ""
   },
   {
-    "date": "05/03/2026",
+    "date": "01/05/2026",
     "name": "All Indices Of Array",
     "topic": "Array",
     "source": "Scaler",
@@ -2224,7 +2216,7 @@
     "url": ""
   },
   {
-    "date": "05/03/2026",
+    "date": "01/05/2026",
     "name": "Tower of Hanoi",
     "topic": "Math",
     "source": "Scaler",
@@ -2232,39 +2224,7 @@
     "url": ""
   },
   {
-    "date": "04/03/2026",
-    "name": "Recursion-1",
-    "topic": "Math",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "04/03/2026",
-    "name": "Recursion - Factorial",
-    "topic": "Math",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "04/03/2026",
-    "name": "Recursion - Fibonacci",
-    "topic": "Math",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "04/03/2026",
-    "name": "Recursion -Print",
-    "topic": "Math",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "04/03/2026",
+    "date": "30/04/2026",
     "name": "Recursion -Array",
     "topic": "Array",
     "source": "Scaler",
@@ -2272,23 +2232,47 @@
     "url": ""
   },
   {
-    "date": "03/03/2026",
-    "name": "Single Number II",
-    "topic": "Bit",
+    "date": "30/04/2026",
+    "name": "Fast Power",
+    "topic": "Math",
     "source": "Scaler",
     "difficulty": "H",
     "url": ""
   },
   {
-    "date": "03/03/2026",
-    "name": "Finding Good Days",
-    "topic": "Bit",
+    "date": "29/04/2026",
+    "name": "Recursion -Print",
+    "topic": "Math",
     "source": "Scaler",
     "difficulty": "H",
     "url": ""
   },
   {
-    "date": "03/03/2026",
+    "date": "28/04/2026",
+    "name": "Recursion - Fibonacci",
+    "topic": "Math",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "27/04/2026",
+    "name": "Recursion - Factorial",
+    "topic": "Math",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "26/04/2026",
+    "name": "Recursion-1",
+    "topic": "Math",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "25/04/2026",
     "name": "Subarrays with OR 1",
     "topic": "Bit",
     "source": "Scaler",
@@ -2296,23 +2280,15 @@
     "url": ""
   },
   {
-    "date": "02/03/2026",
-    "name": "Rain Water Trapped",
-    "topic": "Array",
+    "date": "24/04/2026",
+    "name": "Finding Good Days",
+    "topic": "Bit",
     "source": "Scaler",
     "difficulty": "H",
     "url": ""
   },
   {
-    "date": "02/03/2026",
-    "name": "Spiral Order Matrix II",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "02/03/2026",
+    "date": "23/04/2026",
     "name": "Next Permutation",
     "topic": "Array",
     "source": "Scaler",
@@ -2320,23 +2296,23 @@
     "url": ""
   },
   {
-    "date": "01/03/2026",
-    "name": "Single Number III",
+    "date": "23/04/2026",
+    "name": "Single Number II",
     "topic": "Bit",
     "source": "Scaler",
-    "difficulty": "L",
+    "difficulty": "H",
     "url": ""
   },
   {
-    "date": "01/03/2026",
-    "name": "Toggle i-th bit",
-    "topic": "Bit",
+    "date": "22/04/2026",
+    "name": "Spiral Order Matrix II",
+    "topic": "Array",
     "source": "Scaler",
-    "difficulty": "L",
+    "difficulty": "H",
     "url": ""
   },
   {
-    "date": "01/03/2026",
+    "date": "21/04/2026",
     "name": "Set Bit",
     "topic": "Bit",
     "source": "Scaler",
@@ -2344,7 +2320,7 @@
     "url": ""
   },
   {
-    "date": "01/03/2026",
+    "date": "21/04/2026",
     "name": "Find nth Magic Number",
     "topic": "Bit",
     "source": "Scaler",
@@ -2352,7 +2328,15 @@
     "url": ""
   },
   {
-    "date": "28/02/2026",
+    "date": "21/04/2026",
+    "name": "Rain Water Trapped",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "20/04/2026",
     "name": "Single Number",
     "topic": "Bit",
     "source": "Scaler",
@@ -2360,7 +2344,23 @@
     "url": ""
   },
   {
-    "date": "27/02/2026",
+    "date": "20/04/2026",
+    "name": "Single Number III",
+    "topic": "Bit",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "20/04/2026",
+    "name": "Toggle i-th bit",
+    "topic": "Bit",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "19/04/2026",
     "name": "Unset i-th bit",
     "topic": "Bit",
     "source": "Scaler",
@@ -2368,7 +2368,7 @@
     "url": ""
   },
   {
-    "date": "27/02/2026",
+    "date": "19/04/2026",
     "name": "Number of 1 Bits",
     "topic": "Bit",
     "source": "Scaler",
@@ -2376,15 +2376,7 @@
     "url": ""
   },
   {
-    "date": "26/02/2026",
-    "name": "First Missing Integer",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "26/02/2026",
+    "date": "18/04/2026",
     "name": "Sum of all Submatrices",
     "topic": "Array",
     "source": "Scaler",
@@ -2392,7 +2384,7 @@
     "url": ""
   },
   {
-    "date": "26/02/2026",
+    "date": "18/04/2026",
     "name": "Search in a row wise and column wise sorted matrix",
     "topic": "Array",
     "source": "Scaler",
@@ -2400,23 +2392,7 @@
     "url": ""
   },
   {
-    "date": "25/02/2026",
-    "name": "Max Sum Contiguous Subarray",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "25/02/2026",
-    "name": "Continuous Sum Query",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "25/02/2026",
+    "date": "17/04/2026",
     "name": "Merge Sorted Overlapping Intervals - 2",
     "topic": "Array",
     "source": "Scaler",
@@ -2424,15 +2400,15 @@
     "url": ""
   },
   {
-    "date": "24/02/2026",
-    "name": "Simple Reverse",
-    "topic": "String",
+    "date": "17/04/2026",
+    "name": "First Missing Integer",
+    "topic": "Array",
     "source": "Scaler",
-    "difficulty": "L",
+    "difficulty": "H",
     "url": ""
   },
   {
-    "date": "24/02/2026",
+    "date": "16/04/2026",
     "name": "Reverse the String",
     "topic": "String",
     "source": "Scaler",
@@ -2440,7 +2416,7 @@
     "url": ""
   },
   {
-    "date": "24/02/2026",
+    "date": "16/04/2026",
     "name": "Length of longest consecutive ones",
     "topic": "String",
     "source": "Scaler",
@@ -2448,7 +2424,31 @@
     "url": ""
   },
   {
-    "date": "23/02/2026",
+    "date": "16/04/2026",
+    "name": "Max Sum Contiguous Subarray",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "16/04/2026",
+    "name": "Continuous Sum Query",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "15/04/2026",
+    "name": "Simple Reverse",
+    "topic": "String",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "14/04/2026",
     "name": "Longest Palindromic Substring",
     "topic": "String",
     "source": "Scaler",
@@ -2456,7 +2456,7 @@
     "url": ""
   },
   {
-    "date": "23/02/2026",
+    "date": "14/04/2026",
     "name": "Toggle Case",
     "topic": "String",
     "source": "Scaler",
@@ -2464,15 +2464,7 @@
     "url": ""
   },
   {
-    "date": "22/02/2026",
-    "name": "Counting Subarrays Easy",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "22/02/2026",
+    "date": "13/04/2026",
     "name": "Good Subarrays",
     "topic": "Array",
     "source": "Scaler",
@@ -2480,7 +2472,15 @@
     "url": ""
   },
   {
-    "date": "21/02/2026",
+    "date": "12/04/2026",
+    "name": "Counting Subarrays Easy",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "11/04/2026",
     "name": "Subarray with least averag",
     "topic": "Array",
     "source": "Scaler",
@@ -2488,7 +2488,7 @@
     "url": ""
   },
   {
-    "date": "20/02/2026",
+    "date": "10/04/2026",
     "name": "Minimum Swaps",
     "topic": "Array",
     "source": "Scaler",
@@ -2496,15 +2496,7 @@
     "url": ""
   },
   {
-    "date": "19/02/2026",
-    "name": "Leaders in an array",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "19/02/2026",
+    "date": "09/04/2026",
     "name": "Pick from both sides!",
     "topic": "Array",
     "source": "Scaler",
@@ -2512,7 +2504,15 @@
     "url": ""
   },
   {
-    "date": "18/02/2026",
+    "date": "08/04/2026",
+    "name": "Leaders in an array",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "07/04/2026",
     "name": "Equal columns Matrix",
     "topic": "Array",
     "source": "Scaler",
@@ -2520,7 +2520,7 @@
     "url": ""
   },
   {
-    "date": "17/02/2026",
+    "date": "06/04/2026",
     "name": "Likewise Matrix",
     "topic": "Array",
     "source": "Scaler",
@@ -2528,15 +2528,7 @@
     "url": ""
   },
   {
-    "date": "16/02/2026",
-    "name": "Matrix Identity",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "15/02/2026",
+    "date": "05/04/2026",
     "name": "Column wise matrix",
     "topic": "Array",
     "source": "Scaler",
@@ -2544,15 +2536,15 @@
     "url": ""
   },
   {
-    "date": "14/02/2026",
-    "name": "Row wise matrix",
+    "date": "05/04/2026",
+    "name": "Matrix Identity",
     "topic": "Array",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "13/02/2026",
+    "date": "04/04/2026",
     "name": "Matrix equilibrium",
     "topic": "Array",
     "source": "Scaler",
@@ -2560,15 +2552,15 @@
     "url": ""
   },
   {
-    "date": "12/02/2026",
-    "name": "Row+Column",
+    "date": "04/04/2026",
+    "name": "Row wise matrix",
     "topic": "Array",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "11/02/2026",
+    "date": "03/04/2026",
     "name": "Matrix sum",
     "topic": "Array",
     "source": "Scaler",
@@ -2576,15 +2568,15 @@
     "url": ""
   },
   {
-    "date": "10/02/2026",
-    "name": "Column Sum",
+    "date": "03/04/2026",
+    "name": "Row+Column",
     "topic": "Array",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "09/02/2026",
+    "date": "02/04/2026",
     "name": "Row Sum",
     "topic": "Array",
     "source": "Scaler",
@@ -2592,15 +2584,15 @@
     "url": ""
   },
   {
-    "date": "08/02/2026",
-    "name": "Maximum subarray sum of fixed length",
+    "date": "02/04/2026",
+    "name": "Column Sum",
     "topic": "Array",
     "source": "Scaler",
-    "difficulty": "M",
+    "difficulty": "L",
     "url": ""
   },
   {
-    "date": "07/02/2026",
+    "date": "01/04/2026",
     "name": "Maximum Subarray",
     "topic": "Array",
     "source": "Scaler",
@@ -2608,15 +2600,15 @@
     "url": ""
   },
   {
-    "date": "06/02/2026",
-    "name": "Noble Integer",
+    "date": "01/04/2026",
+    "name": "Maximum subarray sum of fixed length",
     "topic": "Array",
     "source": "Scaler",
-    "difficulty": "L",
+    "difficulty": "M",
     "url": ""
   },
   {
-    "date": "06/02/2026",
+    "date": "31/03/2026",
     "name": "Elements Removal",
     "topic": "Array",
     "source": "Scaler",
@@ -2624,23 +2616,7 @@
     "url": ""
   },
   {
-    "date": "05/02/2026",
-    "name": "Best Time to Buy and Sell Stocks",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "05/02/2026",
-    "name": "Kth Smallest Element",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "05/02/2026",
+    "date": "30/03/2026",
     "name": "Arithmetic Progression?",
     "topic": "Array",
     "source": "Scaler",
@@ -2648,15 +2624,15 @@
     "url": ""
   },
   {
-    "date": "04/02/2026",
-    "name": "Even numbers in a range",
+    "date": "30/03/2026",
+    "name": "Noble Integer",
     "topic": "Array",
     "source": "Scaler",
-    "difficulty": "M",
+    "difficulty": "L",
     "url": ""
   },
   {
-    "date": "04/02/2026",
+    "date": "29/03/2026",
     "name": "Special Index",
     "topic": "Array",
     "source": "Scaler",
@@ -2664,23 +2640,31 @@
     "url": ""
   },
   {
-    "date": "03/02/2026",
-    "name": "Generate all subarrays",
+    "date": "29/03/2026",
+    "name": "Best Time to Buy and Sell Stocks",
     "topic": "Array",
     "source": "Scaler",
     "difficulty": "M",
     "url": ""
   },
   {
-    "date": "03/02/2026",
-    "name": "In-place Prefix Sum",
+    "date": "29/03/2026",
+    "name": "Kth Smallest Element",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "28/03/2026",
+    "name": "Even numbers in a range",
     "topic": "Array",
     "source": "Scaler",
     "difficulty": "M",
     "url": ""
   },
   {
-    "date": "03/02/2026",
+    "date": "27/03/2026",
     "name": "Closest MinMax",
     "topic": "Array",
     "source": "Scaler",
@@ -2688,15 +2672,23 @@
     "url": ""
   },
   {
-    "date": "02/02/2026",
-    "name": "Subarray with given sum and length",
+    "date": "26/03/2026",
+    "name": "Generate all subarrays",
     "topic": "Array",
     "source": "Scaler",
     "difficulty": "M",
     "url": ""
   },
   {
-    "date": "01/02/2026",
+    "date": "26/03/2026",
+    "name": "In-place Prefix Sum",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "25/03/2026",
     "name": "Sum of All Subarrays",
     "topic": "Array",
     "source": "Scaler",
@@ -2704,7 +2696,15 @@
     "url": ""
   },
   {
-    "date": "31/01/2026",
+    "date": "25/03/2026",
+    "name": "Subarray with given sum and length",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "24/03/2026",
     "name": "Sum of Odd indexed elements in a range",
     "topic": "Array",
     "source": "Scaler",
@@ -2712,7 +2712,7 @@
     "url": ""
   },
   {
-    "date": "30/01/2026",
+    "date": "23/03/2026",
     "name": "Equilibrium index of an array",
     "topic": "Array",
     "source": "Scaler",
@@ -2720,31 +2720,7 @@
     "url": ""
   },
   {
-    "date": "29/01/2026",
-    "name": "Rotation of array - O(N)",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "29/01/2026",
-    "name": "Range Sum Query",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "29/01/2026",
-    "name": "Sum of Even indexed elements in a range",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "29/01/2026",
+    "date": "22/03/2026",
     "name": "Carry Forward - Special Subsequences",
     "topic": "Array",
     "source": "Scaler",
@@ -2752,39 +2728,31 @@
     "url": ""
   },
   {
-    "date": "28/01/2026",
-    "name": "Linear Search - Multiple Occurences",
+    "date": "21/03/2026",
+    "name": "Rotation of array - O(N)",
     "topic": "Array",
     "source": "Scaler",
-    "difficulty": "L",
+    "difficulty": "M",
     "url": ""
   },
   {
-    "date": "28/01/2026",
-    "name": "Second Largest",
+    "date": "21/03/2026",
+    "name": "Range Sum Query",
     "topic": "Array",
     "source": "Scaler",
-    "difficulty": "L",
+    "difficulty": "M",
     "url": ""
   },
   {
-    "date": "27/01/2026",
-    "name": "Good Pair",
+    "date": "21/03/2026",
+    "name": "Sum of Even indexed elements in a range",
     "topic": "Array",
     "source": "Scaler",
-    "difficulty": "L",
+    "difficulty": "M",
     "url": ""
   },
   {
-    "date": "27/01/2026",
-    "name": "Max Min of an Array",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "27/01/2026",
+    "date": "20/03/2026",
     "name": "Time to equality",
     "topic": "Array",
     "source": "Scaler",
@@ -2792,87 +2760,23 @@
     "url": ""
   },
   {
-    "date": "26/01/2026",
-    "name": "Least Common Multiple",
-    "topic": "Maths",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "26/01/2026",
-    "name": "Add the matrices",
+    "date": "20/03/2026",
+    "name": "Linear Search - Multiple Occurences",
     "topic": "Array",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "26/01/2026",
-    "name": "Square Matrix Transpose",
+    "date": "20/03/2026",
+    "name": "Second Largest",
     "topic": "Array",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "26/01/2026",
-    "name": "Matrix Transpose - Rectangular",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "26/01/2026",
-    "name": "Main Diagonal Sum",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "26/01/2026",
-    "name": "Is It Identity Matrix?",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "26/01/2026",
-    "name": "Rotate Matrix",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "H",
-    "url": ""
-  },
-  {
-    "date": "26/01/2026",
-    "name": "Matrix Subtraction",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "26/01/2026",
-    "name": "String operations",
-    "topic": "String",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "26/01/2026",
-    "name": "Check if a String Is an Acronym of Word",
-    "topic": "String",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "26/01/2026",
+    "date": "19/03/2026",
     "name": "Longest Common Prefix",
     "topic": "String",
     "source": "Scaler",
@@ -2880,39 +2784,95 @@
     "url": ""
   },
   {
-    "date": "25/01/2026",
-    "name": "Extracting Numbers",
+    "date": "19/03/2026",
+    "name": "Good Pair",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "19/03/2026",
+    "name": "Max Min of an Array",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "18/03/2026",
+    "name": "Check if a String Is an Acronym of Word",
     "topic": "String",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "17/03/2026",
+    "name": "Matrix Subtraction",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "17/03/2026",
+    "name": "String operations",
+    "topic": "String",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "16/03/2026",
+    "name": "Rotate Matrix",
+    "topic": "Array",
     "source": "Scaler",
     "difficulty": "H",
     "url": ""
   },
   {
-    "date": "25/01/2026",
-    "name": "Conditional Replacement",
-    "topic": "String",
+    "date": "15/03/2026",
+    "name": "Main Diagonal Sum",
+    "topic": "Array",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "25/01/2026",
-    "name": "Length of the Longest word",
-    "topic": "String",
+    "date": "15/03/2026",
+    "name": "Is It Identity Matrix?",
+    "topic": "Array",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "25/01/2026",
-    "name": "Lowercase letters only",
-    "topic": "String",
+    "date": "14/03/2026",
+    "name": "Square Matrix Transpose",
+    "topic": "Array",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "25/01/2026",
+    "date": "14/03/2026",
+    "name": "Matrix Transpose - Rectangular",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "13/03/2026",
+    "name": "Add the matrices",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "12/03/2026",
     "name": "Highest Common Factor",
     "topic": "Maths",
     "source": "Scaler",
@@ -2920,143 +2880,47 @@
     "url": ""
   },
   {
-    "date": "24/01/2026",
-    "name": "Unique elements from every row",
-    "topic": "Array",
+    "date": "12/03/2026",
+    "name": "Least Common Multiple",
+    "topic": "Maths",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "11/03/2026",
+    "name": "Length of the Longest word",
+    "topic": "String",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "11/03/2026",
+    "name": "Lowercase letters only",
+    "topic": "String",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "10/03/2026",
+    "name": "Extracting Numbers",
+    "topic": "String",
     "source": "Scaler",
     "difficulty": "H",
     "url": ""
   },
   {
-    "date": "23/01/2026",
-    "name": "Check If Array Is Strictly Decreasing?",
-    "topic": "Array",
+    "date": "10/03/2026",
+    "name": "Conditional Replacement",
+    "topic": "String",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "23/01/2026",
-    "name": "Print matrix row by row",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "23/01/2026",
-    "name": "Even elements from every row",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "23/01/2026",
-    "name": "Sum Of Ith Row",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "23/01/2026",
-    "name": "Max of ith Row",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "23/01/2026",
-    "name": "Wave Print (Row Wise",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "23/01/2026",
-    "name": "Print matrix column by column",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "23/01/2026",
-    "name": "Sum Of Jth Column",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "23/01/2026",
-    "name": "Odd elements from every row",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "23/01/2026",
-    "name": "sum of column in matrix",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "23/01/2026",
-    "name": "Max of jth Column",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "23/01/2026",
-    "name": "Multiples of each element",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "23/01/2026",
-    "name": "Max Element In Matrix",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "23/01/2026",
-    "name": "Sum Of Every Column",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "23/01/2026",
-    "name": "Min element in Matrix",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "23/01/2026",
-    "name": "Row & Column Sums",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "23/01/2026",
+    "date": "09/03/2026",
     "name": "Return vowels from every row",
     "topic": "Array",
     "source": "Scaler",
@@ -3064,71 +2928,135 @@
     "url": ""
   },
   {
-    "date": "22/01/2026",
-    "name": "Natural Numbers - 1 to A",
+    "date": "09/03/2026",
+    "name": "Unique elements from every row",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "H",
+    "url": ""
+  },
+  {
+    "date": "08/03/2026",
+    "name": "Row & Column Sums",
     "topic": "Array",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "22/01/2026",
-    "name": "Right Shift an Array",
+    "date": "07/03/2026",
+    "name": "Sum Of Every Column",
     "topic": "Array",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "22/01/2026",
-    "name": "Reverse in a range",
+    "date": "07/03/2026",
+    "name": "Min element in Matrix",
     "topic": "Array",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "22/01/2026",
-    "name": "Frequency count",
+    "date": "06/03/2026",
+    "name": "Multiples of each element",
     "topic": "Array",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "22/01/2026",
-    "name": "Left Shift An Array",
+    "date": "06/03/2026",
+    "name": "Max Element In Matrix",
     "topic": "Array",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "22/01/2026",
-    "name": "Max and Min of an Array",
+    "date": "05/03/2026",
+    "name": "Max of jth Column",
     "topic": "Array",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "22/01/2026",
-    "name": "Pair Count",
+    "date": "04/03/2026",
+    "name": "Odd elements from every row",
     "topic": "Array",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "22/01/2026",
-    "name": "Check if Array is Sorted",
+    "date": "04/03/2026",
+    "name": "sum of column in matrix",
     "topic": "Array",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "22/01/2026",
+    "date": "03/03/2026",
+    "name": "Sum Of Jth Column",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "02/03/2026",
+    "name": "Max of ith Row",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "02/03/2026",
+    "name": "Wave Print (Row Wise",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "02/03/2026",
+    "name": "Print matrix column by column",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "01/03/2026",
+    "name": "Even elements from every row",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "01/03/2026",
+    "name": "Sum Of Ith Row",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "28/02/2026",
+    "name": "Print matrix row by row",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "27/02/2026",
     "name": "Count of elements",
     "topic": "Array",
     "source": "Scaler",
@@ -3136,7 +3064,7 @@
     "url": ""
   },
   {
-    "date": "22/01/2026",
+    "date": "27/02/2026",
     "name": "All Unique Elements",
     "topic": "Array",
     "source": "Scaler",
@@ -3144,23 +3072,79 @@
     "url": ""
   },
   {
-    "date": "21/01/2026",
-    "name": "Increment by one - In place",
+    "date": "27/02/2026",
+    "name": "Check If Array Is Strictly Decreasing?",
     "topic": "Array",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "21/01/2026",
-    "name": "Divisible by 5 and 7",
+    "date": "26/02/2026",
+    "name": "Pair Count",
     "topic": "Array",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "21/01/2026",
+    "date": "26/02/2026",
+    "name": "Check if Array is Sorted",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "25/02/2026",
+    "name": "Max and Min of an Array",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "24/02/2026",
+    "name": "Frequency count",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "24/02/2026",
+    "name": "Left Shift An Array",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "23/02/2026",
+    "name": "Right Shift an Array",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "23/02/2026",
+    "name": "Reverse in a range",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "22/02/2026",
+    "name": "Natural Numbers - 1 to A",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "21/02/2026",
     "name": "List of Positive numbers",
     "topic": "Array",
     "source": "Scaler",
@@ -3168,31 +3152,23 @@
     "url": ""
   },
   {
-    "date": "20/01/2026",
-    "name": "All Even Numbers",
+    "date": "20/02/2026",
+    "name": "Increment by one - In place",
     "topic": "Array",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "20/01/2026",
-    "name": "Increment by one - ArrayList",
+    "date": "20/02/2026",
+    "name": "Divisible by 5 and 7",
     "topic": "Array",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "19/01/2026",
-    "name": "Frequency of K in array",
-    "topic": "Array",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "19/01/2026",
+    "date": "19/02/2026",
     "name": "Print 1 to N array",
     "topic": "Array",
     "source": "Scaler",
@@ -3200,15 +3176,31 @@
     "url": ""
   },
   {
-    "date": "18/01/2026",
-    "name": "reverse array",
+    "date": "19/02/2026",
+    "name": "All Even Numbers",
     "topic": "Array",
     "source": "Scaler",
-    "difficulty": "H",
+    "difficulty": "L",
     "url": ""
   },
   {
-    "date": "17/01/2026",
+    "date": "19/02/2026",
+    "name": "Increment by one - ArrayList",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "18/02/2026",
+    "name": "Frequency of K in array",
+    "topic": "Array",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "17/02/2026",
     "name": "Array shift one step right",
     "topic": "Array",
     "source": "Scaler",
@@ -3216,15 +3208,15 @@
     "url": ""
   },
   {
-    "date": "16/01/2026",
-    "name": "Print in Reverse",
+    "date": "17/02/2026",
+    "name": "reverse array",
     "topic": "Array",
     "source": "Scaler",
-    "difficulty": "L",
+    "difficulty": "H",
     "url": ""
   },
   {
-    "date": "16/01/2026",
+    "date": "16/02/2026",
     "name": "Is X present ?",
     "topic": "Array",
     "source": "Scaler",
@@ -3232,7 +3224,7 @@
     "url": ""
   },
   {
-    "date": "16/01/2026",
+    "date": "16/02/2026",
     "name": "Position Of Element B",
     "topic": "Array",
     "source": "Scaler",
@@ -3240,31 +3232,7 @@
     "url": ""
   },
   {
-    "date": "15/01/2026",
-    "name": "Jewels and Stones",
-    "topic": "String",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "15/01/2026",
-    "name": "Isalnum()",
-    "topic": "String",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "15/01/2026",
-    "name": "Vowels vs Consonants - II",
-    "topic": "String",
-    "source": "Scaler",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "15/01/2026",
+    "date": "15/02/2026",
     "name": "Sum the Array",
     "topic": "Array",
     "source": "Scaler",
@@ -3272,23 +3240,31 @@
     "url": ""
   },
   {
-    "date": "14/01/2026",
-    "name": "Copy The String",
-    "topic": "String",
+    "date": "15/02/2026",
+    "name": "Print in Reverse",
+    "topic": "Array",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "14/01/2026",
-    "name": "Count uppercase and lowercase",
+    "date": "14/02/2026",
+    "name": "Vowels vs Consonants - II",
     "topic": "String",
     "source": "Scaler",
     "difficulty": "M",
     "url": ""
   },
   {
-    "date": "14/01/2026",
+    "date": "13/02/2026",
+    "name": "Isalnum()",
+    "topic": "String",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "12/02/2026",
     "name": "Character Pattern",
     "topic": "String",
     "source": "Scaler",
@@ -3296,15 +3272,31 @@
     "url": ""
   },
   {
-    "date": "13/01/2026",
-    "name": "Square root of a number",
-    "topic": "Basic",
+    "date": "12/02/2026",
+    "name": "Jewels and Stones",
+    "topic": "String",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "13/01/2026",
+    "date": "11/02/2026",
+    "name": "Count uppercase and lowercase",
+    "topic": "String",
+    "source": "Scaler",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "10/02/2026",
+    "name": "Copy The String",
+    "topic": "String",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "09/02/2026",
     "name": "Power function",
     "topic": "Basic",
     "source": "Scaler",
@@ -3312,31 +3304,15 @@
     "url": ""
   },
   {
-    "date": "12/01/2026",
-    "name": "Count of primes",
-    "topic": "Basic",
-    "source": "Scaler",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "11/01/2026",
-    "name": "Sum of evens!",
+    "date": "08/02/2026",
+    "name": "Square root of a number",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "11/01/2026",
-    "name": "s Perfect Square",
-    "topic": "Basic",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "11/01/2026",
+    "date": "07/02/2026",
     "name": "Print Even Odd - Function",
     "topic": "Basic",
     "source": "Scaler",
@@ -3344,31 +3320,31 @@
     "url": ""
   },
   {
-    "date": "10/01/2026",
-    "name": "Find The Ceil",
+    "date": "07/02/2026",
+    "name": "Count of primes",
+    "topic": "Basic",
+    "source": "Scaler",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "06/02/2026",
+    "name": "Sum of evens!",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "10/01/2026",
-    "name": "Volume Of Cuboid-Function",
+    "date": "06/02/2026",
+    "name": "s Perfect Square",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "10/01/2026",
-    "name": "Count Of Digits - Function",
-    "topic": "Basic",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "10/01/2026",
+    "date": "05/02/2026",
     "name": "find out if a number is perfect square or not",
     "topic": "Basic",
     "source": "Scaler",
@@ -3376,31 +3352,23 @@
     "url": ""
   },
   {
-    "date": "09/01/2026",
-    "name": "Square of a number - Function",
+    "date": "04/02/2026",
+    "name": "Volume Of Cuboid-Function",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "09/01/2026",
-    "name": "Cube It! - Function",
+    "date": "04/02/2026",
+    "name": "Count Of Digits - Function",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "09/01/2026",
-    "name": "Factorial of N - Functions",
-    "topic": "Basic",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "09/01/2026",
+    "date": "03/02/2026",
     "name": "Find The Floor",
     "topic": "Basic",
     "source": "Scaler",
@@ -3408,15 +3376,31 @@
     "url": ""
   },
   {
-    "date": "08/01/2026",
-    "name": "Leading spaces inverted pyramid",
+    "date": "03/02/2026",
+    "name": "Find The Ceil",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "08/01/2026",
+    "date": "02/02/2026",
+    "name": "Factorial of N - Functions",
+    "topic": "Basic",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "01/02/2026",
+    "name": "Cube It! - Function",
+    "topic": "Basic",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "31/01/2026",
     "name": "Add the numbers-Functions",
     "topic": "Basic",
     "source": "Scaler",
@@ -3424,7 +3408,7 @@
     "url": ""
   },
   {
-    "date": "08/01/2026",
+    "date": "31/01/2026",
     "name": "Multiply the numbers-FUNCTION",
     "topic": "Basic",
     "source": "Scaler",
@@ -3432,15 +3416,15 @@
     "url": ""
   },
   {
-    "date": "07/01/2026",
-    "name": "Inverted Numeric Pyramid",
+    "date": "31/01/2026",
+    "name": "Square of a number - Function",
     "topic": "Basic",
     "source": "Scaler",
-    "difficulty": "M",
+    "difficulty": "L",
     "url": ""
   },
   {
-    "date": "07/01/2026",
+    "date": "30/01/2026",
     "name": "Skip Even Numbers Half Pyramid",
     "topic": "Basic",
     "source": "Scaler",
@@ -3448,7 +3432,7 @@
     "url": ""
   },
   {
-    "date": "07/01/2026",
+    "date": "30/01/2026",
     "name": "Leading spaces pyramid",
     "topic": "Basic",
     "source": "Scaler",
@@ -3456,23 +3440,15 @@
     "url": ""
   },
   {
-    "date": "06/01/2026",
-    "name": "Inverted Full Pyramid",
+    "date": "30/01/2026",
+    "name": "Leading spaces inverted pyramid",
     "topic": "Basic",
     "source": "Scaler",
-    "difficulty": "M",
+    "difficulty": "L",
     "url": ""
   },
   {
-    "date": "06/01/2026",
-    "name": "Numeric Stair Pattern",
-    "topic": "Basic",
-    "source": "Scaler",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "06/01/2026",
+    "date": "29/01/2026",
     "name": "Armstrong number in a range",
     "topic": "Basic",
     "source": "Scaler",
@@ -3480,47 +3456,31 @@
     "url": ""
   },
   {
-    "date": "05/01/2026",
-    "name": "Hollow inverted pyramid pattern",
+    "date": "29/01/2026",
+    "name": "Inverted Numeric Pyramid",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "M",
     "url": ""
   },
   {
-    "date": "05/01/2026",
-    "name": "Hollow pyramid pattern",
+    "date": "28/01/2026",
+    "name": "Inverted Full Pyramid",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "M",
     "url": ""
   },
   {
-    "date": "05/01/2026",
-    "name": "Find Reverse Number",
+    "date": "28/01/2026",
+    "name": "Numeric Stair Pattern",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "M",
     "url": ""
   },
   {
-    "date": "05/01/2026",
-    "name": "Check Palindrome for T numbers",
-    "topic": "Basic",
-    "source": "Scaler",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "05/01/2026",
-    "name": "First vs Last",
-    "topic": "Basic",
-    "source": "Scaler",
-    "difficulty": "M",
-    "url": ""
-  },
-  {
-    "date": "05/01/2026",
+    "date": "27/01/2026",
     "name": "Find Last digit for T numbers",
     "topic": "Basic",
     "source": "Scaler",
@@ -3528,7 +3488,7 @@
     "url": ""
   },
   {
-    "date": "05/01/2026",
+    "date": "27/01/2026",
     "name": "Sum of digits for T numbers",
     "topic": "Basic",
     "source": "Scaler",
@@ -3536,7 +3496,7 @@
     "url": ""
   },
   {
-    "date": "05/01/2026",
+    "date": "27/01/2026",
     "name": "Full pyramid",
     "topic": "Basic",
     "source": "Scaler",
@@ -3544,47 +3504,47 @@
     "url": ""
   },
   {
-    "date": "04/01/2026",
-    "name": "space_pattern_1",
-    "topic": "Basic",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "04/01/2026",
-    "name": "space_pattern_2",
+    "date": "26/01/2026",
+    "name": "Find Reverse Number",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "M",
     "url": ""
   },
   {
-    "date": "04/01/2026",
-    "name": "space_pattern_3",
+    "date": "26/01/2026",
+    "name": "Check Palindrome for T numbers",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "M",
     "url": ""
   },
   {
-    "date": "04/01/2026",
-    "name": "space_pattern_4",
+    "date": "26/01/2026",
+    "name": "First vs Last",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "M",
     "url": ""
   },
   {
-    "date": "04/01/2026",
-    "name": "Diamond",
+    "date": "25/01/2026",
+    "name": "Hollow inverted pyramid pattern",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "M",
     "url": ""
   },
   {
-    "date": "04/01/2026",
+    "date": "25/01/2026",
+    "name": "Hollow pyramid pattern",
+    "topic": "Basic",
+    "source": "Scaler",
+    "difficulty": "M",
+    "url": ""
+  },
+  {
+    "date": "24/01/2026",
     "name": "Armstong",
     "topic": "Basic",
     "source": "Scaler",
@@ -3592,47 +3552,47 @@
     "url": ""
   },
   {
-    "date": "03/01/2026",
-    "name": "Append digit to number",
+    "date": "23/01/2026",
+    "name": "space_pattern_1",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "03/01/2026",
-    "name": "Stair Pattern",
+    "date": "23/01/2026",
+    "name": "space_pattern_2",
     "topic": "Basic",
     "source": "Scaler",
-    "difficulty": "L",
+    "difficulty": "M",
     "url": ""
   },
   {
-    "date": "03/01/2026",
-    "name": "Inverted Half Pyramid",
+    "date": "23/01/2026",
+    "name": "space_pattern_3",
     "topic": "Basic",
     "source": "Scaler",
-    "difficulty": "L",
+    "difficulty": "M",
     "url": ""
   },
   {
-    "date": "03/01/2026",
-    "name": "Print N stars",
+    "date": "23/01/2026",
+    "name": "space_pattern_4",
     "topic": "Basic",
     "source": "Scaler",
-    "difficulty": "L",
+    "difficulty": "M",
     "url": ""
   },
   {
-    "date": "03/01/2026",
-    "name": "Print a matrix of stars",
+    "date": "23/01/2026",
+    "name": "Diamond",
     "topic": "Basic",
     "source": "Scaler",
-    "difficulty": "L",
+    "difficulty": "M",
     "url": ""
   },
   {
-    "date": "03/01/2026",
+    "date": "22/01/2026",
     "name": "Arthemetic_pattern-1",
     "topic": "Basic",
     "source": "Scaler",
@@ -3640,7 +3600,7 @@
     "url": ""
   },
   {
-    "date": "03/01/2026",
+    "date": "22/01/2026",
     "name": "Arthemetic_pattern-2",
     "topic": "Basic",
     "source": "Scaler",
@@ -3648,7 +3608,7 @@
     "url": ""
   },
   {
-    "date": "03/01/2026",
+    "date": "22/01/2026",
     "name": "Arthemetic_pattern-3",
     "topic": "Basic",
     "source": "Scaler",
@@ -3656,23 +3616,39 @@
     "url": ""
   },
   {
-    "date": "02/01/2026",
-    "name": "Multiples of 4",
+    "date": "21/01/2026",
+    "name": "Print a matrix of stars",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "02/01/2026",
-    "name": "Count the digits -Different",
+    "date": "20/01/2026",
+    "name": "Stair Pattern",
     "topic": "Basic",
     "source": "Scaler",
-    "difficulty": "M",
+    "difficulty": "L",
     "url": ""
   },
   {
-    "date": "02/01/2026",
+    "date": "20/01/2026",
+    "name": "Inverted Half Pyramid",
+    "topic": "Basic",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "20/01/2026",
+    "name": "Print N stars",
+    "topic": "Basic",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "19/01/2026",
     "name": "Print Even numbers from N to 0",
     "topic": "Basic",
     "source": "Scaler",
@@ -3680,47 +3656,31 @@
     "url": ""
   },
   {
-    "date": "01/01/2026",
-    "name": "Print Even number n to 1",
+    "date": "19/01/2026",
+    "name": "Append digit to number",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "01/01/2026",
-    "name": "Multiple of 4",
+    "date": "18/01/2026",
+    "name": "Multiples of 4",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "01/01/2026",
-    "name": "Count of Digits",
+    "date": "18/01/2026",
+    "name": "Count the digits -Different",
     "topic": "Basic",
     "source": "Scaler",
-    "difficulty": "L",
+    "difficulty": "M",
     "url": ""
   },
   {
-    "date": "01/01/2026",
-    "name": "Sum of Digits",
-    "topic": "Basic",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "01/01/2026",
-    "name": "Multiplication Table",
-    "topic": "Basic",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "01/01/2026",
+    "date": "17/01/2026",
     "name": "Print in Range",
     "topic": "Basic",
     "source": "Scaler",
@@ -3728,7 +3688,7 @@
     "url": ""
   },
   {
-    "date": "01/01/2026",
+    "date": "17/01/2026",
     "name": "Even Game",
     "topic": "Basic",
     "source": "Scaler",
@@ -3736,23 +3696,47 @@
     "url": ""
   },
   {
-    "date": "31/12/2025",
-    "name": "Last Digit Of A Number",
+    "date": "16/01/2026",
+    "name": "Count of Digits",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "31/12/2025",
-    "name": "Print All Digits - From Right To Left",
+    "date": "16/01/2026",
+    "name": "Sum of Digits",
     "topic": "Basic",
     "source": "Scaler",
-    "difficulty": "M",
+    "difficulty": "L",
     "url": ""
   },
   {
-    "date": "31/12/2025",
+    "date": "16/01/2026",
+    "name": "Multiplication Table",
+    "topic": "Basic",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "15/01/2026",
+    "name": "Multiple of 4",
+    "topic": "Basic",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "14/01/2026",
+    "name": "Print Even number n to 1",
+    "topic": "Basic",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "13/1/2026",
     "name": "Print Even number 1 to n",
     "topic": "Basic",
     "source": "Scaler",
@@ -3760,31 +3744,15 @@
     "url": ""
   },
   {
-    "date": "30/12/2025",
-    "name": "Summation Game",
+    "date": "12/1/2026",
+    "name": "Print All Digits - From Right To Left",
     "topic": "Basic",
     "source": "Scaler",
-    "difficulty": "L",
+    "difficulty": "M",
     "url": ""
   },
   {
-    "date": "29/12/2025",
-    "name": "Coding Rating",
-    "topic": "Basic",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "29/12/2025",
-    "name": "From top to down",
-    "topic": "Basic",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "29/12/2025",
+    "date": "11/1/2026",
     "name": "From down to top",
     "topic": "Basic",
     "source": "Scaler",
@@ -3792,39 +3760,31 @@
     "url": ""
   },
   {
-    "date": "28/12/2025",
-    "name": "Min of two",
+    "date": "11/1/2026",
+    "name": "Summation Game",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "28/12/2025",
-    "name": "Percentage and Grade",
+    "date": "11/1/2026",
+    "name": "Last Digit Of A Number",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "28/12/2025",
-    "name": "Angles Of Valid Triangle",
+    "date": "10/1/2026",
+    "name": "From top to down",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "28/12/2025",
-    "name": "Music Certification",
-    "topic": "Basic",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "28/12/2025",
+    "date": "9/1/2026",
     "name": "Leap Year III",
     "topic": "Basic",
     "source": "Scaler",
@@ -3832,15 +3792,47 @@
     "url": ""
   },
   {
-    "date": "27/12/2025",
-    "name": "Divisible By 5?",
+    "date": "9/1/2026",
+    "name": "Coding Rating",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "27/12/2025",
+    "date": "8/1/2026",
+    "name": "Min of two",
+    "topic": "Basic",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "8/1/2026",
+    "name": "Percentage and Grade",
+    "topic": "Basic",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "8/1/2026",
+    "name": "Angles Of Valid Triangle",
+    "topic": "Basic",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "8/1/2026",
+    "name": "Music Certification",
+    "topic": "Basic",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "7/1/2026",
     "name": "Categorise the number - Nested if-else",
     "topic": "Basic",
     "source": "Scaler",
@@ -3848,7 +3840,7 @@
     "url": ""
   },
   {
-    "date": "27/12/2025",
+    "date": "7/1/2026",
     "name": "Max of two",
     "topic": "Basic",
     "source": "Scaler",
@@ -3856,23 +3848,7 @@
     "url": ""
   },
   {
-    "date": "26/12/2025",
-    "name": "Max of three",
-    "topic": "Basic",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "26/12/2025",
-    "name": "Which triangle",
-    "topic": "Basic",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "26/12/2025",
+    "date": "6/1/2026",
     "name": "Fizz Buzz",
     "topic": "Basic",
     "source": "Scaler",
@@ -3880,47 +3856,23 @@
     "url": ""
   },
   {
-    "date": "25/12/2025",
-    "name": "Check even/odd",
+    "date": "6/1/2026",
+    "name": "Divisible By 5?",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "25/12/2025",
-    "name": "Categories the number",
+    "date": "5/1/2026",
+    "name": "Which triangle",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "25/12/2025",
-    "name": "Situation Of Number",
-    "topic": "Basic",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "25/12/2025",
-    "name": "Categorise Age Of A Person",
-    "topic": "Basic",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "25/12/2025",
-    "name": "Divisible by 2 numbers",
-    "topic": "Basic",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "25/12/2025",
+    "date": "4/1/2026",
     "name": "Calculate Attendance",
     "topic": "Basic",
     "source": "Scaler",
@@ -3928,7 +3880,7 @@
     "url": ""
   },
   {
-    "date": "25/12/2025",
+    "date": "4/1/2026",
     "name": "Situation Of Person",
     "topic": "Basic",
     "source": "Scaler",
@@ -3936,55 +3888,55 @@
     "url": ""
   },
   {
-    "date": "24/12/2025",
-    "name": "Overflow multiplication",
+    "date": "4/1/2026",
+    "name": "Max of three",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "24/12/2025",
-    "name": "Logical Printing",
+    "date": "3/1/2026",
+    "name": "Situation Of Number",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "24/12/2025",
-    "name": "Operator Printing",
+    "date": "3/1/2026",
+    "name": "Categorise Age Of A Person",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "24/12/2025",
-    "name": "Modify-X",
+    "date": "3/1/2026",
+    "name": "Divisible by 2 numbers",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "24/12/2025",
-    "name": "Find New Volume",
+    "date": "2/1/2026",
+    "name": "Check even/odd",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "24/12/2025",
-    "name": "Check If One Condition is True",
+    "date": "2/1/2026",
+    "name": "Categories the number",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "24/12/2025",
+    "date": "1/1/2026",
     "name": "Check If All Conditions are True",
     "topic": "Basic",
     "source": "Scaler",
@@ -3992,55 +3944,55 @@
     "url": ""
   },
   {
-    "date": "23/12/2025",
-    "name": "Remaining Bake Time",
+    "date": "31/12/2025",
+    "name": "Check If One Condition is True",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "23/12/2025",
-    "name": "Sum 3",
+    "date": "30/12/2025",
+    "name": "Operator Printing",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "23/12/2025",
-    "name": "Problem With Younger Brother",
+    "date": "30/12/2025",
+    "name": "Modify-X",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "23/12/2025",
-    "name": "Preparation Time",
+    "date": "30/12/2025",
+    "name": "Find New Volume",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "23/12/2025",
-    "name": "Number of bills",
+    "date": "29/12/2025",
+    "name": "Overflow multiplication",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "23/12/2025",
-    "name": "Calculate Currency Change",
+    "date": "29/12/2025",
+    "name": "Logical Printing",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "23/12/2025",
+    "date": "28/12/2025",
     "name": "Area Of Rectangle",
     "topic": "Basic",
     "source": "Scaler",
@@ -4048,16 +4000,80 @@
     "url": ""
   },
   {
-    "date": "22/12/2025",
-    "name": "Q1. Hello World ! - 2",
+    "date": "27/12/2025",
+    "name": "Problem With Younger Brother",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
     "url": ""
   },
   {
-    "date": "22/12/2025",
-    "name": "Q2. Getting Started - 1",
+    "date": "27/12/2025",
+    "name": "Preparation Time",
+    "topic": "Basic",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "27/12/2025",
+    "name": "Number of bills",
+    "topic": "Basic",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "27/12/2025",
+    "name": "Calculate Currency Change",
+    "topic": "Basic",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "26/12/2025",
+    "name": "Sum 3",
+    "topic": "Basic",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "25/12/2025",
+    "name": "Remaining Bake Time",
+    "topic": "Basic",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "24/12/2025",
+    "name": "Print Rhombus",
+    "topic": "Basic",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "24/12/2025",
+    "name": "Print Table of 3 Detailed",
+    "topic": "Basic",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "23/12/2025",
+    "name": "Print Table of 3",
+    "topic": "Basic",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "23/12/2025",
+    "name": "Print Rectangle",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
@@ -4088,32 +4104,8 @@
     "url": ""
   },
   {
-    "date": "22/12/2025",
-    "name": "Print Table of 3",
-    "topic": "Basic",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "22/12/2025",
-    "name": "Print Rectangle",
-    "topic": "Basic",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "22/12/2025",
-    "name": "Print Rhombus",
-    "topic": "Basic",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "22/12/2025",
-    "name": "Print Table of 3 Detailed",
+    "date": "21/12/2025",
+    "name": "Q1. Hello World ! - 2",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
@@ -4121,31 +4113,7 @@
   },
   {
     "date": "21/12/2025",
-    "name": "Print O",
-    "topic": "Basic",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "21/12/2025",
-    "name": "Print Z",
-    "topic": "Basic",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "21/12/2025",
-    "name": "Print S",
-    "topic": "Basic",
-    "source": "Scaler",
-    "difficulty": "L",
-    "url": ""
-  },
-  {
-    "date": "21/12/2025",
-    "name": "Print Request",
+    "name": "Q2. Getting Started - 1",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
@@ -4153,7 +4121,15 @@
   },
   {
     "date": "20/12/2025",
-    "name": "Print C",
+    "name": "Print S",
+    "topic": "Basic",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "20/12/2025",
+    "name": "Print Request",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
@@ -4161,7 +4137,7 @@
   },
   {
     "date": "19/12/2025",
-    "name": "Manual pattern printing - 2",
+    "name": "Print Z",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
@@ -4169,6 +4145,22 @@
   },
   {
     "date": "18/12/2025",
+    "name": "Print C",
+    "topic": "Basic",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "18/12/2025",
+    "name": "Print O",
+    "topic": "Basic",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "17/12/2025",
     "name": "Manual pattern printing - 1",
     "topic": "Basic",
     "source": "Scaler",
@@ -4177,7 +4169,7 @@
   },
   {
     "date": "17/12/2025",
-    "name": "Simple Maths",
+    "name": "Manual pattern printing - 2",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
@@ -4186,6 +4178,14 @@
   {
     "date": "16/12/2025",
     "name": "Hello World !",
+    "topic": "Basic",
+    "source": "Scaler",
+    "difficulty": "L",
+    "url": ""
+  },
+  {
+    "date": "16/12/2025",
+    "name": "Simple Maths",
     "topic": "Basic",
     "source": "Scaler",
     "difficulty": "L",
